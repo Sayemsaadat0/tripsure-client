@@ -6,7 +6,8 @@ const Home = () => {
     return (
         <Container>
             <div className='bg-green-100'>
-                home
+                home 
+                Development branch
             </div>
         </Container>
     );
