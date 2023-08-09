@@ -6,13 +6,12 @@ import { CiMobile4, CiYoutube } from 'react-icons/ci'
 import { SlLocationPin, SlClock } from 'react-icons/sl'
 import { FaFacebookF, FaYoutube, FaLinkedinIn } from 'react-icons/fa'
 const Footar = () => {
-    var currentDate = new Date();
-    var currentYear = currentDate.getFullYear();
+    const currentYear = new Date().getFullYear
     return (
         <div>
             <footer className="bg-black text-white">
                 <Container>
-                    <div className=" mx-auto justify-between grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 py-8 md:py-12 gap-8">
+                    <div className="p-4 mx-auto justify-between grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 py-8 md:py-12 gap-8">
                         <div className="mb-4 md:mb-0">
                             <h2 className="text-xl font-semibold mb-2">About Us</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquam purus a ultrices.</p>

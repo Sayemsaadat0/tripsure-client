@@ -6,7 +6,6 @@ import Footar from '../../Components/Shared/Footar/Footar';
 const Main = () => {
     return (
         <div>
-           
             <Navbar></Navbar>
             <Outlet></Outlet>
             <Footar></Footar>
