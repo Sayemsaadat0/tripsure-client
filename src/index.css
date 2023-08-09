@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.feedbackCard {
+  background: #ffffff;
+  box-shadow: 5px 5px 3px #09213c, -5px -5px 3px #ffffff;
+}
