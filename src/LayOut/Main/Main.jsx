@@ -1,11 +1,17 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
+import Navbar from '../../Components/Shared/Navbar/Navbar';
+import Footar from '../../Components/Shared/Footar/Footar';
 
 const Main = () => {
     return (
         <div>
-            <h1>this is our main jsx</h1>
+           
             <Outlet></Outlet>   
+
+            <Navbar></Navbar>
+            <Outlet></Outlet>
+            <Footar></Footar>
         </div>
     );
 };
