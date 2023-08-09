@@ -10,9 +10,7 @@ import Feedback from './Feedback/Feedback';
 const Home = () => {
     return (
         <Container>
-            <div className='bg-green-200 w-full border-black'>
-                home
-            </div>
+
             <section>
                 <SearchSection></SearchSection>
             </section>
