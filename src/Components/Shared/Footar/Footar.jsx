@@ -2,10 +2,12 @@ import React from 'react';
 import Container from '../../../LayOut/Container';
 import logo from '../../../assets/logo.png'
 import { MdOutlineEmail } from 'react-icons/md'
-import { CiMobile4 } from 'react-icons/ci'
+import { CiMobile4, CiYoutube } from 'react-icons/ci'
 import { SlLocationPin, SlClock } from 'react-icons/sl'
 import { FaFacebookF, FaYoutube, FaLinkedinIn } from 'react-icons/fa'
 const Footar = () => {
+    var currentDate = new Date();
+    var currentYear = currentDate.getFullYear();
     return (
         <div>
             <footer className="bg-black text-white">
@@ -56,7 +58,7 @@ const Footar = () => {
                         </div>
                     </div>
                     <hr />
-                    <p className='w-full text-center py-6'>Copyright (c) 2018 Mobirise</p>
+                    <p className='w-full text-center py-6'>Copyright (c) {currentYear} Mobirise</p>
                 </Container>
             </footer>
         </div>

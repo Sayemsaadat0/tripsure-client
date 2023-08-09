@@ -12,8 +12,9 @@ const Navbar = () => {
         { id: 4, name: 'link 4' },
 
     ]
+    
     return (
-        <div className='mb-20 fixed z-10 bg-white h-20 w-full border-b-[2px] lg:hover:shadow-xl border-gray-300 shadow-lg'>
+        <div className=' fixed z-10 bg-white h-20 w-full border-b-[2px] lg:hover:shadow-xl border-gray-300 shadow-lg'>
             <div className='max-w-7xl mx-auto px-1 md:px-3 lg:px-5 h-full flex justify-between items-center  text-gray-800'>
                 <Link to='/'>
                     <img className='md:w-full md:h-[70px] w-[120px] max-w-[180px]' src={logo} alt="" />
