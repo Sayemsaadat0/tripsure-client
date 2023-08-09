@@ -11,8 +11,6 @@ const Home = () => {
     return (
         <Container>
             <div className='bg-green-100'>
-                home 
-                Development branch
                 <TopDestinations></TopDestinations>
             </div>
 
@@ -24,9 +22,6 @@ const Home = () => {
             </section>
             <section>
                 <TopThingsToDo></TopThingsToDo>
-            </section>
-            <section>
-                <TopDestinations></TopDestinations>
             </section>
             <section>
                 <AboutUs></AboutUs>
