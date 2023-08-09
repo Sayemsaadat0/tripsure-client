@@ -24,6 +24,12 @@ const Home = () => {
                 <TopThingsToDo></TopThingsToDo>
             </section>
             <section>
+<<<<<<< HEAD
+=======
+                <TopDestinations></TopDestinations>
+            </section>
+            <section >
+>>>>>>> e1b06315edfd101595973c1d4d2109f4f74d870f
                 <AboutUs></AboutUs>
             </section>
             <section>
