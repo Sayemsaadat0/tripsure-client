@@ -25,7 +25,7 @@ const Home = () => {
             <section>
                 <TopDestinations></TopDestinations>
             </section>
-            <section>
+            <section >
                 <AboutUs></AboutUs>
             </section>
             <section>
