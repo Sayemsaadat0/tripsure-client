@@ -3,14 +3,19 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
+import SectionTitle from '../../../Shared/SectionTitle/SectionTitle';
 
 const TopThingsToDo = () => {
     return (
-        <div className='bg-white my-20'>
+        <div className='bg-white my-20 mx-4'>
             
-        <div>
-            <h1 className='text-xl font-bold'>Top Things to Do by category</h1>
+      {/*   <div>
+            <h1 className='text-xl font-bold'></h1>
           <h4 className=' text-lg my-1 mb-4'>Top destinations for your next vacation</h4>
+        </div> */}
+        <div>
+            <SectionTitle subText={'Top destinations for your next vacation'}text={'Top Things to Do by category'}>
+            </SectionTitle>
         </div>
          <div>
          <Swiper
