@@ -38,3 +38,7 @@
   box-shadow: 5px 5px 3px #09213c, -5px -5px 3px #ffffff;
 }
 }
+
+.my-link::after {
+    @apply content-[''] text-black bg-[#6bccd3] w-[0%] h-[3px] absolute left-0 -bottom-1 rounded hover:w-[100%] duration-500
+}
