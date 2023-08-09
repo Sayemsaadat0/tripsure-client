@@ -1,6 +1,5 @@
 import React from 'react';
 import Container from '../../../LayOut/Container';
-import Navbar from '../../Shared/Navbar/Navbar';
 import SearchSection from './SearchSection/SearchSection';
 import Banner from './Banner/Banner';
 import TopThingsToDo from './TopThingsToDo/TopThingsToDo';
@@ -11,9 +10,7 @@ import Feedback from './Feedback/Feedback';
 const Home = () => {
     return (
         <Container>
-            <div className='pt-20'>
-                alhabib
-            </div>
+
             <section>
                 <SearchSection></SearchSection>
             </section>
