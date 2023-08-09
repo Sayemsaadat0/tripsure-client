@@ -1,10 +1,14 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
+import Navbar from '../../Components/Shared/Navbar/Navbar';
+import Footar from '../../Components/Shared/Footar/Footar';
 
 const Main = () => {
     return (
         <div>
-            <Outlet></Outlet>   
+            <Navbar></Navbar>
+            <Outlet></Outlet>
+            <Footar></Footar>
         </div>
     );
 };
