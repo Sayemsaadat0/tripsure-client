@@ -13,7 +13,7 @@ const TopDestinations = () => {
           </div>
            <div>
            <Swiper
-      spaceBetween={50}
+      spaceBetween={20}
       slidesPerView={4}
       navigation={true}
       modules={[Navigation]} className="mySwiper"

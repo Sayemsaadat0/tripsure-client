@@ -10,11 +10,11 @@ const TopThingsToDo = () => {
             
         <div>
             <h1 className='text-xl font-bold'>Top Things to Do by category</h1>
-          <h4 className=' text-lg my-1 mb-4'>Top destinations for your next vacation</h4>
+          <h4 className=' text-lg my-1 mb-4'>Travelers' Choice Best of the Best winners vacation</h4>
         </div>
          <div>
          <Swiper
-    spaceBetween={50}
+    spaceBetween={20}
     slidesPerView={4}
     navigation={true}
     modules={[Navigation]} className="mySwiper"
