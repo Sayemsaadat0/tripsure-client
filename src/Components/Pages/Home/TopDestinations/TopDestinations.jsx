@@ -24,7 +24,7 @@ const TopDestinations = () => {
       <SwiperSlide>
         <div>
         <img className='h-64 w-full  relative object-cover' src="https://plus.unsplash.com/premium_photo-1673529434553-72e165cbdc57?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80" alt="" />
-        <h2 className='absolute bottom-0 pb-3 pl-2  font-extrabold text-3xl text-white left-0 shadow-2xl  bg-gradient-to-t from-black'>Bucket List for Habibullah</h2>
+        <h2 className='absolute bottom-0 pb-3 pl-2  font-extrabold text-3xl text-white left-0 shadow-2xl  bg-gradient-to-t from-black'>Bucket List for Raju</h2>
         </div>
       </SwiperSlide>
       <SwiperSlide>
