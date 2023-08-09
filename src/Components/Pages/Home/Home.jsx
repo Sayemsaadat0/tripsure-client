@@ -1,6 +1,5 @@
 import React from 'react';
 import Container from '../../../LayOut/Container';
-import Navbar from '../../Shared/Navbar/Navbar';
 import SearchSection from './SearchSection/SearchSection';
 import Banner from './Banner/Banner';
 import TopThingsToDo from './TopThingsToDo/TopThingsToDo';
@@ -11,6 +10,9 @@ import Feedback from './Feedback/Feedback';
 const Home = () => {
     return (
         <Container>
+            <div className='bg-green-200 w-full border-black'>
+                home
+            </div>
             <section>
                 <SearchSection></SearchSection>
             </section>
