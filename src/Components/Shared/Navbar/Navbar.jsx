@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa'
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../../../assets/logo.png'
+import Container from '../../../LayOut/Container';
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false)
 

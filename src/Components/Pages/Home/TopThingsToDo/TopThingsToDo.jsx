@@ -1,93 +1,66 @@
-import React, { useEffect, useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import { Pagination } from 'swiper/modules';
-import Container from '../../../../LayOut/Container';
-import SectionTitle from '../../../Shared/SectionTitle/SectionTitle';
+import React, { useEffect, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import { Navigation } from "swiper/modules";
+import SectionTitle from "../../../Shared/SectionTitle/SectionTitle";
+import Container from "../../../../LayOut/Container";
 
-const Feedback = () => {
-    const [feedbacks, setFeedbacks] = useState([]);
-    const [selectedReview, setSelectedReview] = useState('');
+const TopThingsToDo = () => {
+  const [TopThingsTodo, setTopThingsTodo] = useState([]);
 
-    useEffect(() => {
-        fetch('Feedback.json')
-            .then(res => res.json())
-            .then(data => setFeedbacks(data));
-    }, []);
+  useEffect(() => {
+    fetch("TopThignsTodo.json")
+      .then((res) => res.json())
+      .then((data) => setTopThingsTodo(data));
+  }, []);
 
-    const openModal = (review) => {
-        setSelectedReview(review);
-        const modal = document.getElementById('my_modal_3');
-        modal.showModal();
-    };
+ 
+  return (
+    <Container>
+      <div className="my-20">
+      <div>
+            <h1 className='text-2xl font-bold'>Top Things to Do by category</h1>
+          <h4 className=' text-lg my-1 mb-4'>Top destinations for your next vacation</h4>
+        </div>
 
-    return (
-        <Container>
-            <div>
-                <SectionTitle
-                    subText={'Testimonials'}
-                    text={'What Our clients Say About Us'}
-                ></SectionTitle>
-                <p className='text-right mb-2'>Total Feedback : {feedbacks.length}</p>
+        <Swiper
+          slidesPerView={1}
+          spaceBetween={10}
+          modules={[Navigation]} className="mySwiper"
+          navigation={true}
+          onSlideChange={() => console.log('slide change')}
+          breakpoints={{
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 10,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            1024: {
+              slidesPerView: 4,
+              spaceBetween: 30,
+            },
+          }}
+          onSwiper={(swiper) => console.log(swiper)}
+        >
+          
+            
+            {
+             TopThingsTodo.map((todo,index)=>(<SwiperSlide>
+                <div>
+                <img className='h-64 w-full  relative object-cover' src={todo.imageURL} alt="" />
+                <h2 className='absolute bottom-0 pb-3 pl-2  font-extrabold text-3xl text-white left-0 shadow-2xl  bg-gradient-to-t from-black'>{todo.item_name}</h2>
+                </div>
+              </SwiperSlide>))   
+            }
+         
+        </Swiper>
+      </div>
 
-                <Swiper
-                    slidesPerView={1}
-                    spaceBetween={10}
-                    pagination={{
-                        clickable: true,
-                    }}
-                    breakpoints={{
-                        640: {
-                            slidesPerView: 2,
-                            spaceBetween: 10,
-                        },
-                        768: {
-                            slidesPerView: 2,
-                            spaceBetween: 20,
-                        },
-                        1024: {
-                            slidesPerView: 3,
-                            spaceBetween: 30,
-                        },
-                    }}
-                    modules={[Pagination]}
-                    className='mySwiper'>
-
-                    {feedbacks.map((feedback, index) => (
-                        <SwiperSlide className='p-4' key={index}>
-                            <div className='card  border border-black feedbackCard mb-16'>
-                                <div className='card-body m-0 p-0 '>
-                                    <div className='flex justify-center mt-5'>
-                                        <img className='h-20 w-20 rounded-full' src={feedback.picture} alt='' />
-                                    </div>
-                                    <div className='px-3'>
-                                        <h2 className='font-bold'>{feedback.name}</h2>
-                                        <h2 className='font-light'>{feedback.destination}</h2>
-                                        <p>{feedback.review.split(' ').slice(0, 15).join(' ')}</p>
-                                        {feedback.review.split(' ').length > 15 && (
-                                            <button className='p-0 text-blue-900 btn btn-link ' onClick={() => openModal(feedback.review)}>
-                                                Read more
-                                            </button>
-                                        )}
-                                    </div>
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
-            </div>
-
-            {/* Modal */}
-            <dialog id="my_modal_3" className="modal">
-                <form method="dialog" className="modal-box">
-                    <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" onClick={() => setSelectedReview('')}>✕</button>
-                    <h3 className="font-bold text-lg">Testimonials</h3>
-                    <p className="py-4">{selectedReview}</p>
-                </form>
-            </dialog>
-        </Container>
-    );
+    </Container>
+  );
 };
 
-export default Feedback;
+export default TopThingsToDo;

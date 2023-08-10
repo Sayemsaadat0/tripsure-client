@@ -7,7 +7,7 @@ import { Navigation } from 'swiper/modules';
 
 const TopDestinations = () => {
     return (
-        <div className='bg-white b my-20'>
+        <div className='bg-white b my-20 mx-4'>
           <div>
             <h1 className='text-xl font-bold mb-4'>Top destinations for your next vacation</h1>
           </div>

@@ -10,11 +10,7 @@ import Feedback from './Feedback/Feedback';
 const Home = () => {
     return (
         <Container>
-            <div className='bg-green-100'>
-                <TopDestinations></TopDestinations>
-            </div>
-
-            <section>
+            <section className='pt-28'>
                 <SearchSection></SearchSection>
             </section>
             <section>
@@ -24,6 +20,9 @@ const Home = () => {
                 <TopThingsToDo></TopThingsToDo>
             </section>
             <section>
+                <TopDestinations></TopDestinations>
+            </section>
+            <section >
                 <AboutUs></AboutUs>
             </section>
             <section>
