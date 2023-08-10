@@ -1,26 +1,22 @@
-import React from "react";
-import bgImage from '../../../../assets/Home/AboutUs2.png'
+import React from 'react';
+import Container from '../../../../LayOut/Container';
+// import "./AboutUs.css"
+
 const AboutUs = () => {
   return (
-    
-      <div
-        className="hero min-h-screen"
-        style={{
-          backgroundImage:
-            `url(${bgImage})`,
-        }}
-      >
-        <div className="hero-overlay bg-opacity-60"></div>
-        <div className="hero-content text-center text-neutral-content">
-          <div className="max-w-md">
-            <h1 className="mb-5 text-5xl font-bold">About us</h1>
-            <p className="mb-5">
-             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium quasi libero veritatis vitae laudantium voluptatem ab dicta enim autem? Nisi sit iure id eligendi adipisci quae deserunt quod. Placeat delectus veniam accusamus ipsam magnam inventore dignissimos excepturi quidem blanditiis repellat.
-            </p>
-            <button className="md:btn-lg button sm:btn-md btn-sm font-semibold">Get Started</button>
-          </div>
+    <Container>
+      <div className='background  h-96'>
+       <div className='h-96 bg-black bg-opacity-50'>
+       <div className='text-white h-96 flex flex-col justify-center items-center '>
+          <h2 className='text-3xl font-bold mb-3'>Know About Us</h2>
+          <p  className='w-[50%] mx-auto text-center'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis harum libero dolorum fugit impedit blanditiis, magni ipsa tempora eius architecto voluptatum earum debitis placeat, nobis atque distinctio iusto rerum nam.</p>
+          <button className='button1 mt-4 font-semibold text-2xl'>
+            Know More
+          </button>
         </div>
+       </div>
       </div>
+    </Container>
   );
 };
 
