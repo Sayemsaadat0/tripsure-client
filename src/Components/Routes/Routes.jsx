@@ -2,6 +2,7 @@ import {createBrowserRouter,} from "react-router-dom";
 import Main from "../../LayOut/Main/Main";
 import Home from "../Pages/Home/Home";
 import App from "../../App";
+import KnowMore from "../Pages/AboutUs/KnowMore";
 
 
 
@@ -16,7 +17,12 @@ const router = createBrowserRouter([
             {
               path: "/",
               element: <Home></Home>,
-            },
+          },
+          {
+            path: '/knowmore',
+            element: <KnowMore/>
+            
+          }
           ],
         }
 ]);
