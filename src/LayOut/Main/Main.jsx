@@ -6,7 +6,6 @@ import Footar from '../../Components/Shared/Footar/Footar';
 const Main = () => {
     return (
         <div>
-           
             <Navbar></Navbar>
             <div className="py-28">
             <Outlet></Outlet>
