@@ -7,7 +7,9 @@ const Main = () => {
     return (
         <div>
             <Navbar></Navbar>
+            <div className="py-28">
             <Outlet></Outlet>
+           </div>
             <Footar></Footar>
         </div>
     );
