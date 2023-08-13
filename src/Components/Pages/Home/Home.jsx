@@ -10,7 +10,7 @@ import Feedback from './Feedback/Feedback';
 const Home = () => {
     return (
         <Container>
-            <section className='pt-28'>
+            <section className='mb-14'>
                 <SearchSection></SearchSection>
             </section>
             <section>
