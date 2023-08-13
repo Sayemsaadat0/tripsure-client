@@ -4,6 +4,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
 import Container from '../../../../LayOut/Container';
+import SectionTitle from '../../../Shared/SectionTitle/SectionTitle';
 
 
 const TopDestinations = () => {
@@ -18,7 +19,9 @@ const TopDestinations = () => {
         <Container>
           <div className='bg-white b my-20 '>
           <div>
-            <h1 className='text-2xl font-medium mb-4'>Top destinations for your next vacation</h1>
+         <SectionTitle text={"Unveiling the Worlds Most Captivating Escapes"}
+         subText={""}
+         ></SectionTitle>
           </div>
            <div>
            <Swiper
