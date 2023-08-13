@@ -6,7 +6,7 @@ import { CiMobile4, CiYoutube } from 'react-icons/ci'
 import { SlLocationPin, SlClock } from 'react-icons/sl'
 import { FaFacebookF, FaYoutube, FaLinkedinIn } from 'react-icons/fa'
 const Footar = () => {
-    const currentYear = new Date().getFullYear
+    const currentYear = new Date().getFullYear()
     return (
         <div>
             <footer className="bg-black text-white">

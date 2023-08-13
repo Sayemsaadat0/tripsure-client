@@ -1,6 +1,9 @@
-import {createBrowserRouter,} from "react-router-dom";
+import { createBrowserRouter, } from "react-router-dom";
 import Main from "../../LayOut/Main/Main";
 import Home from "../Pages/Home/Home";
+import App from "../../App";
+import Register from "../Pages/Log&&Reg/Register";
+import Login from "../Pages/Log&&Reg/Login";
 import KnowMore from "../Pages/AboutUs/KnowMore";
 
 
@@ -9,21 +12,40 @@ import KnowMore from "../Pages/AboutUs/KnowMore";
 
 
 const router = createBrowserRouter([
-    {
+  {
+    path: "/",
+    element: <Main></Main>,
+    children: [
+      {
         path: "/",
-        element: <Main></Main>,
-        children: [
-            {
-              path: "/",
-              element: <Home></Home>,
-          },
-          {
-            path: '/knowmore',
-            element: <KnowMore/>
-            
-          }
-          ],
-        }
+        element: <Home></Home>
+      },
+      {
+        path: 'knowmore',
+        element: <KnowMore />
+      },
+      /* {
+        path: 'travelarsstory',
+        element: <KnowMore />
+      } */ 
+      /* {
+        path: 'postastory',
+        element: <KnowMore />
+      }, */ 
+      /* {
+        path: 'addareview',
+        element: <KnowMore />
+      }, */
+    ],
+  },
+  {
+    path: 'login', element: <Login></Login>
+  },
+  {
+    path: 'register',
+    element: <Register></Register>
+  },
+
 ]);
 
 

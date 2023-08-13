@@ -37,7 +37,7 @@ const SearchSection = () => {
     dispatch(setActiveCategory(category))
   };
   return (
-    <div className="w-full md:max-w-3xl mx-auto">
+    <div className="w-full md:max-w-3xl mx-auto mt-20">
       <div>
         <div>
           <h1 className="text-center text-5xl font-bold hidden md:block">
