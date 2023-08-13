@@ -8,78 +8,78 @@ import SectionTitle from '../../../Shared/SectionTitle/SectionTitle';
 const TopThingsToDo = () => {
     return (
         <div className='bg-white my-20 mx-4'>
-            
-      {/*   <div>
+
+            {/*   <div>
             <h1 className='text-xl font-bold'></h1>
           <h4 className=' text-lg my-1 mb-4'>Top destinations for your next vacation</h4>
         </div> */}
-        <div>
-            <SectionTitle subText={'Top destinations for your next vacation'}text={'Top Things to Do by category'}>
-            </SectionTitle>
+            <div>
+                <SectionTitle subText={'Top destinations for your next vacation'} text={'Top Things to Do by category'}>
+                </SectionTitle>
+            </div>
+            <div>
+                <Swiper
+                    spaceBetween={50}
+                    slidesPerView={4}
+                    navigation={true}
+                    modules={[Navigation]} className="mySwiper"
+                    onSlideChange={() => ''}
+                    onSwiper={(swiper) => ''}
+                >
+                    <SwiperSlide>
+                        <div>
+                            <img className='h-64 w-full  relative object-cover' src="https://images.unsplash.com/photo-1687360440731-d124aea41a3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="" />
+                            <h2 className='absolute bottom-0 pb-3 pl-2  font-extrabold text-3xl text-white left-0 shadow-2xl  bg-gradient-to-t from-black'>Bucket List for </h2>
+                        </div>
+
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div>
+                            <img className='h-64 w-full  relative object-cover' src="https://images.unsplash.com/photo-1687360440731-d124aea41a3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="" />
+                            <h2 className='absolute bottom-0 pb-3 pl-2  font-extrabold text-3xl text-white left-0 shadow-2xl  bg-gradient-to-t from-black'>Bucket List for </h2>
+                        </div>
+
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div>
+                            <img className='h-64 w-full  relative object-cover' src="https://images.unsplash.com/photo-1687360440731-d124aea41a3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="" />
+                            <h2 className='absolute bottom-0 pb-3 pl-2  font-extrabold text-3xl text-white left-0 shadow-2xl  bg-gradient-to-t from-black'>Bucket List for </h2>
+                        </div>
+
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div>
+                            <img className='h-64 w-full  relative object-cover' src="https://images.unsplash.com/photo-1687360440731-d124aea41a3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="" />
+                            <h2 className='absolute bottom-0 pb-3 pl-2  font-extrabold text-3xl text-white left-0 shadow-2xl  bg-gradient-to-t from-black'>Bucket List for </h2>
+                        </div>
+
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div>
+                            <img className='h-64 w-full  relative object-cover' src="https://images.unsplash.com/photo-1687360440731-d124aea41a3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="" />
+                            <h2 className='absolute bottom-0 pb-3 pl-2  font-extrabold text-3xl text-white left-0 shadow-2xl  bg-gradient-to-t from-black'>Bucket List for </h2>
+                        </div>
+
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div>
+                            <img className='h-64 w-full  relative object-cover' src="https://images.unsplash.com/photo-1687360440731-d124aea41a3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="" />
+                            <h2 className='absolute bottom-0 pb-3 pl-2  font-extrabold text-3xl text-white left-0 shadow-2xl  bg-gradient-to-t from-black'>Bucket List for </h2>
+                        </div>
+
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div>
+                            <img className='h-64 w-full  relative object-cover' src="https://images.unsplash.com/photo-1687360440731-d124aea41a3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="" />
+                            <h2 className='absolute bottom-0 pb-3 pl-2  font-extrabold text-3xl text-white left-0 shadow-2xl  bg-gradient-to-t from-black'>Bucket List for </h2>
+                        </div>
+
+                    </SwiperSlide>
+
+
+                </Swiper>
+            </div>
         </div>
-         <div>
-         <Swiper
-    spaceBetween={50}
-    slidesPerView={4}
-    navigation={true}
-    modules={[Navigation]} className="mySwiper"
-    onSlideChange={() => console.log('slide change')}
-    onSwiper={(swiper) => console.log(swiper)}
-  >
-    <SwiperSlide>
-    <div>
-        <img className='h-64 w-full  relative object-cover' src="https://images.unsplash.com/photo-1687360440731-d124aea41a3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="" />
-        <h2 className='absolute bottom-0 pb-3 pl-2  font-extrabold text-3xl text-white left-0 shadow-2xl  bg-gradient-to-t from-black'>Bucket List for </h2>
-    </div>
-      
-    </SwiperSlide>
-    <SwiperSlide>
-    <div>
-        <img className='h-64 w-full  relative object-cover' src="https://images.unsplash.com/photo-1687360440731-d124aea41a3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="" />
-        <h2 className='absolute bottom-0 pb-3 pl-2  font-extrabold text-3xl text-white left-0 shadow-2xl  bg-gradient-to-t from-black'>Bucket List for </h2>
-    </div>
-      
-    </SwiperSlide>
-    <SwiperSlide>
-    <div>
-        <img className='h-64 w-full  relative object-cover' src="https://images.unsplash.com/photo-1687360440731-d124aea41a3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="" />
-        <h2 className='absolute bottom-0 pb-3 pl-2  font-extrabold text-3xl text-white left-0 shadow-2xl  bg-gradient-to-t from-black'>Bucket List for </h2>
-    </div>
-      
-    </SwiperSlide>
-    <SwiperSlide>
-    <div>
-        <img className='h-64 w-full  relative object-cover' src="https://images.unsplash.com/photo-1687360440731-d124aea41a3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="" />
-        <h2 className='absolute bottom-0 pb-3 pl-2  font-extrabold text-3xl text-white left-0 shadow-2xl  bg-gradient-to-t from-black'>Bucket List for </h2>
-    </div>
-      
-    </SwiperSlide>
-    <SwiperSlide>
-    <div>
-        <img className='h-64 w-full  relative object-cover' src="https://images.unsplash.com/photo-1687360440731-d124aea41a3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="" />
-        <h2 className='absolute bottom-0 pb-3 pl-2  font-extrabold text-3xl text-white left-0 shadow-2xl  bg-gradient-to-t from-black'>Bucket List for </h2>
-    </div>
-      
-    </SwiperSlide>
-    <SwiperSlide>
-    <div>
-        <img className='h-64 w-full  relative object-cover' src="https://images.unsplash.com/photo-1687360440731-d124aea41a3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="" />
-        <h2 className='absolute bottom-0 pb-3 pl-2  font-extrabold text-3xl text-white left-0 shadow-2xl  bg-gradient-to-t from-black'>Bucket List for </h2>
-    </div>
-      
-    </SwiperSlide>
-    <SwiperSlide>
-    <div>
-        <img className='h-64 w-full  relative object-cover' src="https://images.unsplash.com/photo-1687360440731-d124aea41a3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="" />
-        <h2 className='absolute bottom-0 pb-3 pl-2  font-extrabold text-3xl text-white left-0 shadow-2xl  bg-gradient-to-t from-black'>Bucket List for </h2>
-    </div>
-      
-    </SwiperSlide>
-  
-   
-  </Swiper>
-         </div>
-      </div>
     );
 };
 
