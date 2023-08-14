@@ -1,18 +1,20 @@
 import React, { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa'
+import {MdFavoriteBorder} from 'react-icons/md'
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../../../assets/logo.png'
 import Container from '../../../LayOut/Container';
 import useAuth from '../../../Hooks/useAuth';
 import Swal from 'sweetalert2';
+import Dropdown from '../../Dropdown/Drpodown';
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false)
     const { logOut, user } = useAuth()
 
     const naviItems = [
-        { id: 1, name: 'link 1' },
-        { id: 2, name: 'link 2' },
-        { id: 3, name: 'link 3' },
+        { id: 1, name: 'discover', dropdown: true },
+        { id: 2, name: 'community', dropdown: true },
+        { id: 3, name: 'dashboard' },
         { id: 4, name: 'register' },
 
     ]
@@ -41,25 +43,44 @@ const Navbar = () => {
         <div className='mb-20 fixed z-10 bg-white h-20 w-full border-b-[2px] lg:hover:shadow-xl border-gray-300 shadow-lg'>
             <div className='max-w-7xl mx-auto px-1 md:px-3 lg:px-5 h-full flex justify-between items-center  text-gray-800'>
                 <Link to='/'>
+                    {/* <img src={logoSvg} alt="" /> */}
                     <img className='md:w-full md:h-[70px] w-[120px] max-w-[180px]' src={logo} alt="" />
                 </Link>
-
-
 
                 <ul className='hidden lg:flex items-center gap-4 lg:gap-7'>
 
                     {
-                        naviItems.map(navItem => <li className='my-link relative cursor-pointer font-bold uppercase duration-300' key={navItem.id}>
+                        naviItems.map(navItem => <li className=' cursor-pointer font-bold uppercase duration-300' key={navItem.id}>
                             {/* index.css file contain my-link class name */}
                             <NavLink
                                 to={navItem.name}
                                 className={({ isActive }) => isActive ? "text-[#2d969e]" : ""}
                             >
-                                {navItem.name}
+
+                                {
+                                    navItem.dropdown ? <div className="dropdown dropdown-hover">
+                                        <label tabIndex={0} className="">{navItem.name}</label>
+                                        <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+                                            <Link to='/login'>
+                                                <li className='cursor-pointer  font-medium uppercase px-6 py-3 hover:bg-gray-300  duration-300'>
+                                                    travel story
+                                                </li>
+                                            </Link>
+                                            <Link to='/login'>
+                                                <li className='cursor-pointer  font-medium uppercase px-6 py-3 hover:bg-gray-300  duration-300'>
+                                                  your guides
+                                                </li>
+                                            </Link>
+                                        </ul>
+                                    </div> : <>{navItem.name}</>
+                                }
+
                             </NavLink>
                         </li>)
                     }
-
+                    <Dropdown></Dropdown>
+                </ul>
+                <div className='hidden lg:flex'>
                     {
                         user ? <div className='flex gap-3 items-center'>
                             <button onClick={handleLogout} className="logout-button ">Log Out</button>
@@ -73,7 +94,7 @@ const Navbar = () => {
                             </NavLink>
                         </li>
                     }
-                </ul>
+                </div>
 
                 <div onClick={() => setMenuOpen(!menuOpen)} className="cursor-pointer  text-gray-800 lg:hidden">
                     {
