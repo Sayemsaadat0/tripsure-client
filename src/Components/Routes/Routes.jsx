@@ -25,6 +25,7 @@ const router = createBrowserRouter([
         path: 'knowmore',
         element: <KnowMore />
       },
+      {path: 'favorite', element: <Discover></Discover>},
       /* {
         path: 'travelarsstory',
         element: <KnowMore />
