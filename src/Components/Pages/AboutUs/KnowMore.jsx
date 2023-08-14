@@ -5,8 +5,8 @@ import Typical from "react-typical";
 const KnowMore = () => {
   return (
     <Container>
-      <div className="">
-        <div className="grid md:grid-cols-2 gap-4 justify-items-center items-center ">
+      <div className="my-14">
+        <div className="grid md:grid-cols-2 gap-4 justify-items-center items-center mx-4">
           <div>
             <h3 className="text-3xl font-semibold mb-4">
               <Typical

@@ -6,6 +6,7 @@ import Register from "../Pages/Log&&Reg/Register";
 import Login from "../Pages/Log&&Reg/Login";
 import KnowMore from "../Pages/AboutUs/KnowMore";
 import AddReview from "../Pages/Community/AddReview/AddReview";
+import PostAStory from "../Pages/Community/PostAStory/PostAStory";
 
 
 
@@ -29,10 +30,10 @@ const router = createBrowserRouter([
         path: 'travelarsstory',
         element: <KnowMore />
       } */ 
-      /* {
+       {
         path: 'postastory',
-        element: <KnowMore />
-      }, */ 
+        element: <PostAStory/>
+      }, 
       {
         path: 'addareview',
         element: <AddReview/>

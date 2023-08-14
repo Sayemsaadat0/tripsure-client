@@ -65,9 +65,9 @@ const Navbar = () => {
                       tabIndex={0}
                       className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
                     >
-                      <Link to="/login">
+                      <Link to="/postastory">
                         <li className="cursor-pointer  font-medium uppercase px-6 py-3 hover:bg-gray-300  duration-300">
-                          travel story
+                          Post a Story
                         </li>
                       </Link>
                       <Link to="/addareview">
