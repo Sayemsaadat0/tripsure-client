@@ -16,17 +16,36 @@ const router = createBrowserRouter([
     path: "/",
     element: <Main></Main>,
     children: [
-      { path: "/", element: <Home></Home> },
-      {path: '/register', element: <Register></Register>},
-      {path: '/login', element: <Login></Login>},
       {
-        path: '/knowmore',
-        element: <KnowMore/>
-        
-      }
+        path: "/",
+        element: <Home></Home>
+      },
+      {
+        path: 'knowmore',
+        element: <KnowMore />
+      },
+      /* {
+        path: 'travelarsstory',
+        element: <KnowMore />
+      } */ 
+      /* {
+        path: 'postastory',
+        element: <KnowMore />
+      }, */ 
+      /* {
+        path: 'addareview',
+        element: <KnowMore />
+      }, */
     ],
-  }
-    
+  },
+  {
+    path: 'login', element: <Login></Login>
+  },
+  {
+    path: 'register',
+    element: <Register></Register>
+  },
+
 ]);
 
 
