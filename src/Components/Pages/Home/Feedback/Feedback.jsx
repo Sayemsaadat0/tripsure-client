@@ -23,7 +23,7 @@ const Feedback = () => {
     };
 
     return (
-        <div className='bg-gray-100 '>
+        <div className=''>
             <Container>
                 <div className=' p-10'>
                     <SectionTitle
