@@ -14,10 +14,10 @@
 
 .button1 {
     position: relative;
-    padding: 1rem 2rem;
+    padding: 8px;
     overflow: hidden;
     border-radius: 8px;
-    background-color: #19a0c9;
+    background-color: #2a99be;
     color: rgb(255, 255, 255);
     font-size: larger;
 }
@@ -36,10 +36,6 @@
     transform: scale(0);
 }
 
-.feedbackCard {
-    background: #ffffff;
-    box-shadow: 5px 5px 3px #09213c, -5px -5px 3px #ffffff;
-}
 
 .my-link::after {
     @apply content-[''] text-black bg-[#6bccd3] w-[0%] h-[3px] absolute left-0 -bottom-1 rounded hover:w-[100%] duration-500;
