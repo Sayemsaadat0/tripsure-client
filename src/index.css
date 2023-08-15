@@ -12,6 +12,81 @@
    
 }
 
+/* more route */
+.flightBackground{
+    background-image: url("https://i.ibb.co/pLGYfBQ/image.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/* Custom hover and click animation styles */
+.custom-tab-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .custom-tab {
+    padding: 10px 20px;
+    background-color: #b2f0bd;
+    color: #333;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    border-radius: 5px 5px 0 0;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .custom-tab:hover {
+    background-color: #e0e0e0;
+    color: #555;
+    transform: scale(1.05);
+  }
+  
+  .custom-tab.react-tabs__tab--selected {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #e0e0e0;
+    border-bottom: none;
+    border-radius: 5px 5px 0 0;
+    transition: transform 0.2s ease;
+  }
+  
+  .custom-tab.react-tabs__tab--selected:hover {
+    transform: scale(1.05);
+  }
+  
+
+  
+  .react-tabs__tab-panel.react-tabs__tab-panel--selected {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .pulse-animation {
+    animation: pulse 1s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  
+
+
+
 .button1 {
     position: relative;
     padding: 8px;

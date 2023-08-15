@@ -7,6 +7,7 @@ import Login from "../Pages/Log&&Reg/Login";
 import KnowMore from "../Pages/AboutUs/KnowMore";
 import AddReview from "../Pages/Community/AddReview/AddReview";
 import PostAStory from "../Pages/Community/PostAStory/PostAStory";
+import Flights from "../Pages/More/Flights/Flights";
 
 
 
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
         path: 'addareview',
         element: <AddReview/>
       }, 
+      {
+        path: 'flights',
+        element: <Flights/>
+      }
     ],
   },
   {
