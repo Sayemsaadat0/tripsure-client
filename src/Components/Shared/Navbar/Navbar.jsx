@@ -14,7 +14,7 @@ const Navbar = () => {
     const naviItems = [
         { id: 1, name: 'discover', dropdown: true },
         { id: 2, name: 'community', dropdown: true },
-        { id: 3, name: 'dashboard' },
+        { id: 3, name: 'dashboard/adminhome' },
         { id: 4, name: 'register' },
 
     ]
