@@ -6,11 +6,12 @@ import TopThingsToDo from './TopThingsToDo/TopThingsToDo';
 import TopDestinations from './TopDestinations/TopDestinations';
 import AboutUs from './AboutUs/AboutUs';
 import Feedback from './Feedback/Feedback';
+import FamilyGuide from './FamilyGuide/FamilyGuide';
 
 const Home = () => {
     return (
         <Container>
-            <section className='pt-28'>
+            <section className='mb-14'>
                 <SearchSection></SearchSection>
             </section>
             <section>
@@ -18,6 +19,9 @@ const Home = () => {
             </section>
             <section>
                 <TopThingsToDo></TopThingsToDo>
+            </section>
+            <section>
+                <FamilyGuide></FamilyGuide>
             </section>
             <section>
                 <TopDestinations></TopDestinations>

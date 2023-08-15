@@ -4,6 +4,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
 import Container from '../../../../LayOut/Container';
+import SectionTitle from '../../../Shared/SectionTitle/SectionTitle';
 
 
 const TopDestinations = () => {
@@ -18,7 +19,9 @@ const TopDestinations = () => {
         <Container>
           <div className='bg-white b my-20 '>
           <div>
-            <h1 className='text-2xl font-medium mb-4'>Top destinations for your next vacation</h1>
+         <SectionTitle text={"Unveiling the Worlds Most Captivating Escapes"}
+         subText={""}
+         ></SectionTitle>
           </div>
            <div>
            <Swiper
@@ -49,7 +52,7 @@ const TopDestinations = () => {
              
               <SwiperSlide key={index}>
                 <div>
-                <img className='h-64 w-full relative object-cover' src={todo.imageURL} alt="" />
+                <img className='h-64 w-full relative  object-cover' src={todo.imageURL} alt="" />
                 <h2 className='absolute bottom-0 pb-3 pl-2  font-extrabold text-3xl text-white left-0 shadow-2xl  bg-gradient-to-t from-black'>{todo.item_name}</h2>
                 </div>
               </SwiperSlide>

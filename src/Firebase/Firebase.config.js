@@ -9,6 +9,6 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_appId
 };
 
-const tripsureApp = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 
-export default tripsureApp
+export default app

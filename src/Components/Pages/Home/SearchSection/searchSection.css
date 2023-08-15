@@ -1,0 +1,29 @@
+.searchFilter{
+    color: #545454;
+    font-size: 17px;
+    padding: 5px;
+    font-weight: 600;
+    padding-bottom: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border-bottom: 3px solid white;
+    white-space: nowrap;
+}
+.searchFilter:hover{
+    color: #333333;
+    border-bottom: 3px solid black;
+}
+.searchActive {
+    color: #333333;
+    border-bottom: 3px solid black;
+}
+
+.searchField {
+    border: 2px solid #e0e0e0;
+    box-shadow:  0 2px 3px 0 rgba(0,0,0,.15);
+}
+
+.searchBtn{
+    background-color: #34E0A1;
+}
