@@ -14,12 +14,12 @@ const RoundTrip = () => {
     };
 
   return (
-    <div className="my-36">
-      <div className="flex items-center mb-4 mt-4 h-12">
-        <div className="flex items-center relative">
+    <div className="my-36 w-full">
+      <div className="grid md:grid-cols-5 mb-6">
+        <div className="flex items-center relative md:border-r-2 border-b">
           <input
             type="text"
-            className="input pl-12  rounded-l-full border-r-2 focus:outline-none"
+            className="input pl-12  md:rounded-l-full rounded-none w-full  focus:outline-none"
             placeholder="From where?"
           />
           <HiLocationMarker
@@ -27,10 +27,10 @@ const RoundTrip = () => {
             className="absolute left-5 text-green-500"
           />
         </div>
-        <div className="flex items-center relative">
+        <div className="flex items-center relative md:border-r-2 border-b">
           <input
             type="text"
-            className="input  pl-12 rounded-none border-r-2 focus:outline-none"
+            className="input  pl-12 rounded-none w-full  focus:outline-none"
             placeholder="To where?"
           />
           <HiLocationMarker
@@ -38,18 +38,20 @@ const RoundTrip = () => {
             className="absolute left-5 text-green-500"
           />
         </div>
+        <div className="md:border-r-2 border-b">
         <input
           type="date"
-          className="input rounded-none border-r-2 focus:outline-none"
+          className="input rounded-none border-r-2 w-full focus:outline-none "
           placeholder="Input 3"
         />
-        <select name="" id="" className="select rounded-none outline-none">
+       </div>
+        <select name="" id="" className="select rounded-none border-none outline-none">
           <option value="economy">1 Person, Economy</option>
           <option value="premium">Premium Economy</option>
           <option value="business">Business Class</option>
           <option value="first">First Class</option>
         </select>
-        <button className="px-5 py-3 bg-blue-500 text-white font-semibold rounded-r-full">
+        <button className="px-5 py-3 bg-blue-500 text-white font-semibold md:rounded-r-full">
           Find Flights
         </button>
       </div>

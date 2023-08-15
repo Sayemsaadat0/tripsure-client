@@ -7,7 +7,7 @@ const AirLineReview = () => {
     <Container>
       <h3 className="text-2xl font-semibold my-6">Airline Review</h3>
       <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-        <div className="card w-full bg-base-100 ">
+        <div className="card w-full bg-base-100">
           <figure className="px-5 pt-5">
             <img
               src="https://i.ibb.co/mTSvPS1/image.png"
