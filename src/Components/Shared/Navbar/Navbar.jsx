@@ -11,20 +11,12 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { logOut, user } = useAuth();
 
-<<<<<<< HEAD
-    const naviItems = [
-        { id: 1, name: 'discover', dropdown: true },
-        { id: 2, name: 'community', dropdown: true },
-        { id: 3, name: 'dashboard/adminhome' },
-        { id: 4, name: 'register' },
-=======
   const naviItems = [
     { id: 1, name: "discover", dropdown: true },
     { id: 2, name: "community", dropdown: true },
-    { id: 3, name: "dashboard" },
+    { id: 3, name: "dashboard/adminhome" },
     { id: 4, name: "register" },
   ];
->>>>>>> 66a567b0e2e2418b32091e6bf088288dc33f68de
 
   const handleLogout = () => {
     logOut()
