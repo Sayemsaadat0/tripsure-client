@@ -1,7 +1,6 @@
 import { createBrowserRouter, } from "react-router-dom";
 import Main from "../../LayOut/Main/Main";
 import Home from "../Pages/Home/Home";
-import App from "../../App";
 import Register from "../Pages/Log&&Reg/Register";
 import Login from "../Pages/Log&&Reg/Login";
 import KnowMore from "../Pages/AboutUs/KnowMore";
@@ -36,11 +35,6 @@ const router = createBrowserRouter([
         path: 'knowmore',
         element: <KnowMore />
       },
-      // {path: 'favorite', element: <Discover></Discover>},
-      /* {
-        path: 'travelarsstory',
-        element: <KnowMore />
-      } */ 
        {
         path: 'postastory',
         element: <PostAStory/>
@@ -62,9 +56,6 @@ const router = createBrowserRouter([
     path: '/travelerChoose-thingsToDo',
     element:<TravelerChoose></TravelerChoose>
   },
-
-
-
   {
     path: '/dashboard',
     element: <Dashboard></Dashboard>,
