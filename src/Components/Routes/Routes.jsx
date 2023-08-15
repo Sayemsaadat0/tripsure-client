@@ -5,6 +5,7 @@ import App from "../../App";
 import Register from "../Pages/Log&&Reg/Register";
 import Login from "../Pages/Log&&Reg/Login";
 import KnowMore from "../Pages/AboutUs/KnowMore";
+<<<<<<< HEAD
 import Dashboard from "../../LayOut/Dashboard";
 import Totallview from "../Pages/DashBoard/Admin/Totallview";
 import AdminHome from "../Pages/DashBoard/Admin/AdminHome";
@@ -14,6 +15,11 @@ import ManagePackage from "../Pages/DashBoard/Admin/ManagePackage";
 import Reviews from "../Pages/DashBoard/Admin/Reviews";
 import Inquiries from "../Pages/DashBoard/Admin/Inquiries";
 import AddTour from "../Pages/DashBoard/Admin/AddTour";
+=======
+import AddReview from "../Pages/Community/AddReview/AddReview";
+import PostAStory from "../Pages/Community/PostAStory/PostAStory";
+import TravelerChoose from "../Pages/TravelerChoose/TravelerChoose";
+>>>>>>> 66a567b0e2e2418b32091e6bf088288dc33f68de
 
 
 
@@ -33,18 +39,19 @@ const router = createBrowserRouter([
         path: 'knowmore',
         element: <KnowMore />
       },
+      // {path: 'favorite', element: <Discover></Discover>},
       /* {
         path: 'travelarsstory',
         element: <KnowMore />
       } */ 
-      /* {
+       {
         path: 'postastory',
-        element: <KnowMore />
-      }, */ 
-      /* {
+        element: <PostAStory/>
+      }, 
+      {
         path: 'addareview',
-        element: <KnowMore />
-      }, */
+        element: <AddReview/>
+      }, 
     ],
   },
   {
@@ -54,6 +61,10 @@ const router = createBrowserRouter([
     path: 'register',
     element: <Register></Register>
   },
+  {
+    path: '/travelerChoose-thingsToDo',
+    element:<TravelerChoose></TravelerChoose>
+  }
 
 
 
