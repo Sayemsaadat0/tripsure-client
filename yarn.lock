@@ -1094,11 +1094,7 @@
   resolved "https://registry.npmjs.org/@babel/regjsgen/-/regjsgen-0.8.0.tgz"
   integrity sha512-x/rqGMdzj+fWZvCOYForTghzbtqPDZ5gPwaoNGHdgDfF2QA/XZbCBp4Moo5scrkAMPhB7z26XM/AaHuIJdgauA==
 
-<<<<<<< HEAD
 "@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.12.1", "@babel/runtime@^7.12.5", "@babel/runtime@^7.21.0", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.2":
-=======
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.12.1", "@babel/runtime@^7.12.5", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.2":
->>>>>>> 66a567b0e2e2418b32091e6bf088288dc33f68de
   version "7.22.10"
   resolved "https://registry.npmjs.org/@babel/runtime/-/runtime-7.22.10.tgz"
   integrity sha512-21t/fkKLMZI4pqP2wlmsQAWnYW1PDyKyyUV4vCi+B25ydmdaYTKXPwCj0BzSUnZf4seIiYvSA3jcZ3gdsMFkLQ==
@@ -1813,64 +1809,28 @@
   dependencies:
     merge-options "^3.0.4"
 
-<<<<<<< HEAD
-"@react-native-community/cli-clean@11.3.5":
-  version "11.3.5"
-  resolved "https://registry.npmjs.org/@react-native-community/cli-clean/-/cli-clean-11.3.5.tgz"
-  integrity sha512-1+7BU962wKkIkHRp/uW3jYbQKKGtU7L+R3g59D8K6uLccuxJYUBJv18753ojMa6SD3SAq5Xh31bAre+YwVcOTA==
-  dependencies:
-    "@react-native-community/cli-tools" "11.3.5"
-=======
 "@react-native-community/cli-clean@11.3.6":
   version "11.3.6"
   resolved "https://registry.npmjs.org/@react-native-community/cli-clean/-/cli-clean-11.3.6.tgz"
   integrity sha512-jOOaeG5ebSXTHweq1NznVJVAFKtTFWL4lWgUXl845bCGX7t1lL8xQNWHKwT8Oh1pGR2CI3cKmRjY4hBg+pEI9g==
   dependencies:
     "@react-native-community/cli-tools" "11.3.6"
->>>>>>> 66a567b0e2e2418b32091e6bf088288dc33f68de
     chalk "^4.1.2"
     execa "^5.0.0"
     prompts "^2.4.0"
 
-<<<<<<< HEAD
-"@react-native-community/cli-config@11.3.5":
-  version "11.3.5"
-  resolved "https://registry.npmjs.org/@react-native-community/cli-config/-/cli-config-11.3.5.tgz"
-  integrity sha512-fMblIsHlUleKfGsgWyjFJYfx1SqrsnhS/QXfA8w7iT6GrNOOjBp5UWx8+xlMDFcmOb9e42g1ExFDKl3n8FWkxQ==
-  dependencies:
-    "@react-native-community/cli-tools" "11.3.5"
-=======
 "@react-native-community/cli-config@11.3.6":
   version "11.3.6"
   resolved "https://registry.npmjs.org/@react-native-community/cli-config/-/cli-config-11.3.6.tgz"
   integrity sha512-edy7fwllSFLan/6BG6/rznOBCLPrjmJAE10FzkEqNLHowi0bckiAPg1+1jlgQ2qqAxV5kuk+c9eajVfQvPLYDA==
   dependencies:
     "@react-native-community/cli-tools" "11.3.6"
->>>>>>> 66a567b0e2e2418b32091e6bf088288dc33f68de
     chalk "^4.1.2"
     cosmiconfig "^5.1.0"
     deepmerge "^4.3.0"
     glob "^7.1.3"
     joi "^17.2.1"
 
-<<<<<<< HEAD
-"@react-native-community/cli-debugger-ui@11.3.5":
-  version "11.3.5"
-  resolved "https://registry.npmjs.org/@react-native-community/cli-debugger-ui/-/cli-debugger-ui-11.3.5.tgz"
-  integrity sha512-o5JVCKEpPUXMX4r3p1cYjiy3FgdOEkezZcQ6owWEae2dYvV19lLYyJwnocm9Y7aG9PvpgI3PIMVh3KZbhS21eA==
-  dependencies:
-    serve-static "^1.13.1"
-
-"@react-native-community/cli-doctor@11.3.5":
-  version "11.3.5"
-  resolved "https://registry.npmjs.org/@react-native-community/cli-doctor/-/cli-doctor-11.3.5.tgz"
-  integrity sha512-+4BuFHjoV4FFjX5y60l0s6nS0agidb1izTVwsFixeFKW73LUkOLu+Ae5HI94RAFEPE4ePEVNgYX3FynIau6K0g==
-  dependencies:
-    "@react-native-community/cli-config" "11.3.5"
-    "@react-native-community/cli-platform-android" "11.3.5"
-    "@react-native-community/cli-platform-ios" "11.3.5"
-    "@react-native-community/cli-tools" "11.3.5"
-=======
 "@react-native-community/cli-debugger-ui@11.3.6":
   version "11.3.6"
   resolved "https://registry.npmjs.org/@react-native-community/cli-debugger-ui/-/cli-debugger-ui-11.3.6.tgz"
@@ -1887,7 +1847,6 @@
     "@react-native-community/cli-platform-android" "11.3.6"
     "@react-native-community/cli-platform-ios" "11.3.6"
     "@react-native-community/cli-tools" "11.3.6"
->>>>>>> 66a567b0e2e2418b32091e6bf088288dc33f68de
     chalk "^4.1.2"
     command-exists "^1.2.8"
     envinfo "^7.7.2"
@@ -1897,25 +1856,12 @@
     node-stream-zip "^1.9.1"
     ora "^5.4.1"
     prompts "^2.4.0"
-<<<<<<< HEAD
-    semver "^6.3.0"
-=======
     semver "^7.5.2"
->>>>>>> 66a567b0e2e2418b32091e6bf088288dc33f68de
     strip-ansi "^5.2.0"
     sudo-prompt "^9.0.0"
     wcwidth "^1.0.1"
     yaml "^2.2.1"
 
-<<<<<<< HEAD
-"@react-native-community/cli-hermes@11.3.5":
-  version "11.3.5"
-  resolved "https://registry.npmjs.org/@react-native-community/cli-hermes/-/cli-hermes-11.3.5.tgz"
-  integrity sha512-+3m34hiaJpFel8BlJE7kJOaPzWR/8U8APZG2LXojbAdBAg99EGmQcwXIgsSVJFvH8h/nezf4DHbsPKigIe33zA==
-  dependencies:
-    "@react-native-community/cli-platform-android" "11.3.5"
-    "@react-native-community/cli-tools" "11.3.5"
-=======
 "@react-native-community/cli-hermes@11.3.6":
   version "11.3.6"
   resolved "https://registry.npmjs.org/@react-native-community/cli-hermes/-/cli-hermes-11.3.6.tgz"
@@ -1923,61 +1869,33 @@
   dependencies:
     "@react-native-community/cli-platform-android" "11.3.6"
     "@react-native-community/cli-tools" "11.3.6"
->>>>>>> 66a567b0e2e2418b32091e6bf088288dc33f68de
     chalk "^4.1.2"
     hermes-profile-transformer "^0.0.6"
     ip "^1.1.5"
 
-<<<<<<< HEAD
-"@react-native-community/cli-platform-android@11.3.5":
-  version "11.3.5"
-  resolved "https://registry.npmjs.org/@react-native-community/cli-platform-android/-/cli-platform-android-11.3.5.tgz"
-  integrity sha512-s4Lj7FKxJ/BofGi/ifjPfrA9MjFwIgYpHnHBSlqtbsvPoSYzmVCU2qlWM8fb3AmkXIwyYt4A6MEr3MmNT2UoBg==
-  dependencies:
-    "@react-native-community/cli-tools" "11.3.5"
-=======
 "@react-native-community/cli-platform-android@11.3.6":
   version "11.3.6"
   resolved "https://registry.npmjs.org/@react-native-community/cli-platform-android/-/cli-platform-android-11.3.6.tgz"
   integrity sha512-ZARrpLv5tn3rmhZc//IuDM1LSAdYnjUmjrp58RynlvjLDI4ZEjBAGCQmgysRgXAsK7ekMrfkZgemUczfn9td2A==
   dependencies:
     "@react-native-community/cli-tools" "11.3.6"
->>>>>>> 66a567b0e2e2418b32091e6bf088288dc33f68de
     chalk "^4.1.2"
     execa "^5.0.0"
     glob "^7.1.3"
     logkitty "^0.7.1"
 
-<<<<<<< HEAD
-"@react-native-community/cli-platform-ios@11.3.5":
-  version "11.3.5"
-  resolved "https://registry.npmjs.org/@react-native-community/cli-platform-ios/-/cli-platform-ios-11.3.5.tgz"
-  integrity sha512-ytJC/YCFD7P+KuQHOT5Jzh1ho2XbJEjq71yHa1gJP2PG/Q/uB4h1x2XpxDqv5iXU6E250yjvKMmkReKTW4CTig==
-  dependencies:
-    "@react-native-community/cli-tools" "11.3.5"
-=======
 "@react-native-community/cli-platform-ios@11.3.6":
   version "11.3.6"
   resolved "https://registry.npmjs.org/@react-native-community/cli-platform-ios/-/cli-platform-ios-11.3.6.tgz"
   integrity sha512-tZ9VbXWiRW+F+fbZzpLMZlj93g3Q96HpuMsS6DRhrTiG+vMQ3o6oPWSEEmMGOvJSYU7+y68Dc9ms2liC7VD6cw==
   dependencies:
     "@react-native-community/cli-tools" "11.3.6"
->>>>>>> 66a567b0e2e2418b32091e6bf088288dc33f68de
     chalk "^4.1.2"
     execa "^5.0.0"
     fast-xml-parser "^4.0.12"
     glob "^7.1.3"
     ora "^5.4.1"
 
-<<<<<<< HEAD
-"@react-native-community/cli-plugin-metro@11.3.5":
-  version "11.3.5"
-  resolved "https://registry.npmjs.org/@react-native-community/cli-plugin-metro/-/cli-plugin-metro-11.3.5.tgz"
-  integrity sha512-r9AekfeLKdblB7LfWB71IrNy1XM03WrByQlUQajUOZAP2NmUUBLl9pMZscPjJeOSgLpHB9ixEFTIOhTabri/qg==
-  dependencies:
-    "@react-native-community/cli-server-api" "11.3.5"
-    "@react-native-community/cli-tools" "11.3.5"
-=======
 "@react-native-community/cli-plugin-metro@11.3.6":
   version "11.3.6"
   resolved "https://registry.npmjs.org/@react-native-community/cli-plugin-metro/-/cli-plugin-metro-11.3.6.tgz"
@@ -1985,7 +1903,6 @@
   dependencies:
     "@react-native-community/cli-server-api" "11.3.6"
     "@react-native-community/cli-tools" "11.3.6"
->>>>>>> 66a567b0e2e2418b32091e6bf088288dc33f68de
     chalk "^4.1.2"
     execa "^5.0.0"
     metro "0.76.7"
@@ -1996,15 +1913,6 @@
     metro-runtime "0.76.7"
     readline "^1.3.0"
 
-<<<<<<< HEAD
-"@react-native-community/cli-server-api@11.3.5":
-  version "11.3.5"
-  resolved "https://registry.npmjs.org/@react-native-community/cli-server-api/-/cli-server-api-11.3.5.tgz"
-  integrity sha512-PM/jF13uD1eAKuC84lntNuM5ZvJAtyb+H896P1dBIXa9boPLa3KejfUvNVoyOUJ5s8Ht25JKbc3yieV2+GMBDA==
-  dependencies:
-    "@react-native-community/cli-debugger-ui" "11.3.5"
-    "@react-native-community/cli-tools" "11.3.5"
-=======
 "@react-native-community/cli-server-api@11.3.6":
   version "11.3.6"
   resolved "https://registry.npmjs.org/@react-native-community/cli-server-api/-/cli-server-api-11.3.6.tgz"
@@ -2012,7 +1920,6 @@
   dependencies:
     "@react-native-community/cli-debugger-ui" "11.3.6"
     "@react-native-community/cli-tools" "11.3.6"
->>>>>>> 66a567b0e2e2418b32091e6bf088288dc33f68de
     compression "^1.7.1"
     connect "^3.6.5"
     errorhandler "^1.5.1"
@@ -2021,17 +1928,10 @@
     serve-static "^1.13.1"
     ws "^7.5.1"
 
-<<<<<<< HEAD
-"@react-native-community/cli-tools@11.3.5":
-  version "11.3.5"
-  resolved "https://registry.npmjs.org/@react-native-community/cli-tools/-/cli-tools-11.3.5.tgz"
-  integrity sha512-zDklE1+ah/zL4BLxut5XbzqCj9KTHzbYBKX7//cXw2/0TpkNCaY9c+iKx//gZ5m7U1OKbb86Fm2b0AKtKVRf6Q==
-=======
 "@react-native-community/cli-tools@11.3.6":
   version "11.3.6"
   resolved "https://registry.npmjs.org/@react-native-community/cli-tools/-/cli-tools-11.3.6.tgz"
   integrity sha512-JpmUTcDwAGiTzLsfMlIAYpCMSJ9w2Qlf7PU7mZIRyEu61UzEawyw83DkqfbzDPBuRwRnaeN44JX2CP/yTO3ThQ==
->>>>>>> 66a567b0e2e2418b32091e6bf088288dc33f68de
   dependencies:
     appdirsjs "^1.2.4"
     chalk "^4.1.2"
@@ -2040,32 +1940,6 @@
     node-fetch "^2.6.0"
     open "^6.2.0"
     ora "^5.4.1"
-<<<<<<< HEAD
-    semver "^6.3.0"
-    shell-quote "^1.7.3"
-
-"@react-native-community/cli-types@11.3.5":
-  version "11.3.5"
-  resolved "https://registry.npmjs.org/@react-native-community/cli-types/-/cli-types-11.3.5.tgz"
-  integrity sha512-pf0kdWMEfPSV/+8rcViDCFzbLMtWIHMZ8ay7hKwqaoWegsJ0oprSF2tSTH+LSC/7X1Beb9ssIvHj1m5C4es5Xg==
-  dependencies:
-    joi "^17.2.1"
-
-"@react-native-community/cli@11.3.5":
-  version "11.3.5"
-  resolved "https://registry.npmjs.org/@react-native-community/cli/-/cli-11.3.5.tgz"
-  integrity sha512-wMXgKEWe6uesw7vyXKKjx5EDRog0QdXHxdgRguG14AjQRao1+4gXEWq2yyExOTi/GDY6dfJBUGTCwGQxhnk/Lg==
-  dependencies:
-    "@react-native-community/cli-clean" "11.3.5"
-    "@react-native-community/cli-config" "11.3.5"
-    "@react-native-community/cli-debugger-ui" "11.3.5"
-    "@react-native-community/cli-doctor" "11.3.5"
-    "@react-native-community/cli-hermes" "11.3.5"
-    "@react-native-community/cli-plugin-metro" "11.3.5"
-    "@react-native-community/cli-server-api" "11.3.5"
-    "@react-native-community/cli-tools" "11.3.5"
-    "@react-native-community/cli-types" "11.3.5"
-=======
     semver "^7.5.2"
     shell-quote "^1.7.3"
 
@@ -2090,7 +1964,6 @@
     "@react-native-community/cli-server-api" "11.3.6"
     "@react-native-community/cli-tools" "11.3.6"
     "@react-native-community/cli-types" "11.3.6"
->>>>>>> 66a567b0e2e2418b32091e6bf088288dc33f68de
     chalk "^4.1.2"
     commander "^9.4.1"
     execa "^5.0.0"
@@ -2098,11 +1971,7 @@
     fs-extra "^8.1.0"
     graceful-fs "^4.1.3"
     prompts "^2.4.0"
-<<<<<<< HEAD
-    semver "^6.3.0"
-=======
     semver "^7.5.2"
->>>>>>> 66a567b0e2e2418b32091e6bf088288dc33f68de
 
 "@react-native/assets-registry@^0.72.0":
   version "0.72.0"
@@ -2134,17 +2003,10 @@
   resolved "https://registry.npmjs.org/@react-native/normalize-colors/-/normalize-colors-0.72.0.tgz"
   integrity sha512-285lfdqSXaqKuBbbtP9qL2tDrfxdOFtIMvkKadtleRQkdOxx+uzGvFr82KHmc/sSiMtfXGp7JnFYWVh4sFl7Yw==
 
-<<<<<<< HEAD
-"@react-native/virtualized-lists@^0.72.6":
-  version "0.72.6"
-  resolved "https://registry.npmjs.org/@react-native/virtualized-lists/-/virtualized-lists-0.72.6.tgz"
-  integrity sha512-JhT6ydu35LvbSKdwnhWDuGHMOwM0WAh9oza/X8vXHA8ELHRyQ/4p8eKz/bTQcbQziJaaleUURToGhFuCtgiMoA==
-=======
 "@react-native/virtualized-lists@^0.72.8":
   version "0.72.8"
   resolved "https://registry.npmjs.org/@react-native/virtualized-lists/-/virtualized-lists-0.72.8.tgz"
   integrity sha512-J3Q4Bkuo99k7mu+jPS9gSUSgq+lLRSI/+ahXNwV92XgJ/8UgOTxu2LPwhJnBk/sQKxq7E8WkZBnBiozukQMqrw==
->>>>>>> 66a567b0e2e2418b32091e6bf088288dc33f68de
   dependencies:
     invariant "^2.2.4"
     nullthrows "^1.1.1"
@@ -2200,7 +2062,11 @@
   dependencies:
     "@sinonjs/commons" "^3.0.0"
 
-<<<<<<< HEAD
+"@smastrom/react-rating@^1.3.1":
+  version "1.3.1"
+  resolved "https://registry.npmjs.org/@smastrom/react-rating/-/react-rating-1.3.1.tgz"
+  integrity sha512-WOSeJ3HKorgCArbnJEOgJdiDNu77EwwfwDDTkWcEd1EUGRrIIHWg/cQKXciSuJzqBr2yb8JX3CwYn9FskTJU8A==
+
 "@types/d3-array@^3.0.3":
   version "3.0.5"
   resolved "https://registry.npmjs.org/@types/d3-array/-/d3-array-3.0.5.tgz"
@@ -2251,12 +2117,6 @@
   version "3.0.0"
   resolved "https://registry.npmjs.org/@types/d3-timer/-/d3-timer-3.0.0.tgz"
   integrity sha512-HNB/9GHqu7Fo8AQiugyJbv6ZxYz58wef0esl4Mv828w1ZKpAshw/uFWVDUcIB9KKFeFKoxS3cHY07FFgtTRZ1g==
-=======
-"@smastrom/react-rating@^1.3.1":
-  version "1.3.1"
-  resolved "https://registry.npmjs.org/@smastrom/react-rating/-/react-rating-1.3.1.tgz"
-  integrity sha512-WOSeJ3HKorgCArbnJEOgJdiDNu77EwwfwDDTkWcEd1EUGRrIIHWg/cQKXciSuJzqBr2yb8JX3CwYn9FskTJU8A==
->>>>>>> 66a567b0e2e2418b32091e6bf088288dc33f68de
 
 "@types/hoist-non-react-statics@^3.3.1":
   version "3.3.1"
@@ -2872,14 +2732,11 @@ classlist-polyfill@^1.2.0:
   resolved "https://registry.npmjs.org/classlist-polyfill/-/classlist-polyfill-1.2.0.tgz"
   integrity sha512-GzIjNdcEtH4ieA2S8NmrSxv7DfEV5fmixQeyTmqmRmRJPGpRBaSnA2a0VrCjyT8iW8JjEdMbKzDotAJf+ajgaQ==
 
-<<<<<<< HEAD
 classnames@^2.2.5, classnames@^2.2.6:
   version "2.3.2"
   resolved "https://registry.npmjs.org/classnames/-/classnames-2.3.2.tgz"
   integrity sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==
 
-=======
->>>>>>> 66a567b0e2e2418b32091e6bf088288dc33f68de
 cli-cursor@^3.1.0:
   version "3.1.0"
   resolved "https://registry.npmjs.org/cli-cursor/-/cli-cursor-3.1.0.tgz"
@@ -3190,7 +3047,6 @@ daisyui@^3.5.1:
     postcss-js "^4"
     tailwindcss "^3"
 
-<<<<<<< HEAD
 "date-fns@2.0.0-alpha.7 || >=2.0.0":
   version "2.30.0"
   resolved "https://registry.npmjs.org/date-fns/-/date-fns-2.30.0.tgz"
@@ -3198,8 +3054,6 @@ daisyui@^3.5.1:
   dependencies:
     "@babel/runtime" "^7.21.0"
 
-=======
->>>>>>> 66a567b0e2e2418b32091e6bf088288dc33f68de
 dayjs@^1.8.15:
   version "1.11.9"
   resolved "https://registry.npmjs.org/dayjs/-/dayjs-1.11.9.tgz"
@@ -3231,14 +3085,11 @@ decamelize@^1.2.0:
   resolved "https://registry.npmjs.org/decamelize/-/decamelize-1.2.0.tgz"
   integrity sha512-z2S+W9X73hAUUki+N+9Za2lBlun89zigOyGrsax+KUQ6wKW4ZoWpEYBkGhQjwAjjDCkWxhY0VKEhk8wzY7F5cA==
 
-<<<<<<< HEAD
 decimal.js-light@^2.4.1:
   version "2.5.1"
   resolved "https://registry.npmjs.org/decimal.js-light/-/decimal.js-light-2.5.1.tgz"
   integrity sha512-qIMFpTMZmny+MMIitAB6D7iVPEorVw6YQRWkvarTkT4tBeSLLiHzcwj6q0MmYSFCiVpiqPJTJEYIrpcPzVEIvg==
 
-=======
->>>>>>> 66a567b0e2e2418b32091e6bf088288dc33f68de
 deep-is@^0.1.3:
   version "0.1.4"
   resolved "https://registry.npmjs.org/deep-is/-/deep-is-0.1.4.tgz"
@@ -3317,7 +3168,6 @@ doctrine@^3.0.0:
   dependencies:
     esutils "^2.0.2"
 
-<<<<<<< HEAD
 dom-helpers@^3.4.0:
   version "3.4.0"
   resolved "https://registry.npmjs.org/dom-helpers/-/dom-helpers-3.4.0.tgz"
@@ -3325,8 +3175,6 @@ dom-helpers@^3.4.0:
   dependencies:
     "@babel/runtime" "^7.1.2"
 
-=======
->>>>>>> 66a567b0e2e2418b32091e6bf088288dc33f68de
 ee-first@1.1.1:
   version "1.1.1"
   resolved "https://registry.npmjs.org/ee-first/-/ee-first-1.1.1.tgz"
@@ -3632,14 +3480,11 @@ event-target-shim@^5.0.0, event-target-shim@^5.0.1:
   resolved "https://registry.npmjs.org/event-target-shim/-/event-target-shim-5.0.1.tgz"
   integrity sha512-i/2XbnSz/uxRCU6+NdVJgKWDTM427+MqYbkQzD321DuCQJUqOuJKIA0IM2+W2xtYHdKOmZ4dR6fExsd4SXL+WQ==
 
-<<<<<<< HEAD
 eventemitter3@^4.0.1:
   version "4.0.7"
   resolved "https://registry.npmjs.org/eventemitter3/-/eventemitter3-4.0.7.tgz"
   integrity sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw==
 
-=======
->>>>>>> 66a567b0e2e2418b32091e6bf088288dc33f68de
 execa@^5.0.0:
   version "5.1.1"
   resolved "https://registry.npmjs.org/execa/-/execa-5.1.1.tgz"
@@ -4185,14 +4030,11 @@ internal-slot@^1.0.3, internal-slot@^1.0.5:
     has "^1.0.3"
     side-channel "^1.0.4"
 
-<<<<<<< HEAD
 "internmap@1 - 2":
   version "2.0.3"
   resolved "https://registry.npmjs.org/internmap/-/internmap-2.0.3.tgz"
   integrity sha512-5Hh7Y1wQbvY5ooGgPbDaL5iYLAPzMTUrjMulskHLH6wnv/A+1q5rgEaiuqEjB+oxGXIVZs1FF+R/KPN3ZSQYYg==
 
-=======
->>>>>>> 66a567b0e2e2418b32091e6bf088288dc33f68de
 invariant@*, invariant@^2.2.4:
   version "2.2.4"
   resolved "https://registry.npmjs.org/invariant/-/invariant-2.2.4.tgz"
@@ -4702,14 +4544,11 @@ lodash.throttle@^4.1.1:
   resolved "https://registry.npmjs.org/lodash.throttle/-/lodash.throttle-4.1.1.tgz"
   integrity sha512-wIkUCfVKpVsWo3JSZlc+8MB5it+2AN5W8J7YVMST30UrvcQNZ1Okbj+rbVniijTWE6FGYy4XJq/rHkas8qJMLQ==
 
-<<<<<<< HEAD
 lodash@^4.17.19, lodash@^4.17.21:
   version "4.17.21"
   resolved "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
 
-=======
->>>>>>> 66a567b0e2e2418b32091e6bf088288dc33f68de
 log-symbols@^4.1.0:
   version "4.1.0"
   resolved "https://registry.npmjs.org/log-symbols/-/log-symbols-4.1.0.tgz"
@@ -4751,8 +4590,6 @@ lru-cache@^5.1.1:
   dependencies:
     yallist "^3.0.2"
 
-<<<<<<< HEAD
-=======
 lru-cache@^6.0.0:
   version "6.0.0"
   resolved "https://registry.npmjs.org/lru-cache/-/lru-cache-6.0.0.tgz"
@@ -4760,7 +4597,6 @@ lru-cache@^6.0.0:
   dependencies:
     yallist "^4.0.0"
 
->>>>>>> 66a567b0e2e2418b32091e6bf088288dc33f68de
 make-dir@^2.0.0, make-dir@^2.1.0:
   version "2.1.0"
   resolved "https://registry.npmjs.org/make-dir/-/make-dir-2.1.0.tgz"
@@ -4963,8 +4799,6 @@ metro-runtime@0.76.7:
     "@babel/runtime" "^7.0.0"
     react-refresh "^0.4.0"
 
-<<<<<<< HEAD
-=======
 metro-runtime@0.76.8:
   version "0.76.8"
   resolved "https://registry.npmjs.org/metro-runtime/-/metro-runtime-0.76.8.tgz"
@@ -4973,7 +4807,6 @@ metro-runtime@0.76.8:
     "@babel/runtime" "^7.0.0"
     react-refresh "^0.4.0"
 
->>>>>>> 66a567b0e2e2418b32091e6bf088288dc33f68de
 metro-source-map@0.76.7:
   version "0.76.7"
   resolved "https://registry.npmjs.org/metro-source-map/-/metro-source-map-0.76.7.tgz"
@@ -4988,8 +4821,6 @@ metro-source-map@0.76.7:
     source-map "^0.5.6"
     vlq "^1.0.0"
 
-<<<<<<< HEAD
-=======
 metro-source-map@0.76.8:
   version "0.76.8"
   resolved "https://registry.npmjs.org/metro-source-map/-/metro-source-map-0.76.8.tgz"
@@ -5004,7 +4835,6 @@ metro-source-map@0.76.8:
     source-map "^0.5.6"
     vlq "^1.0.0"
 
->>>>>>> 66a567b0e2e2418b32091e6bf088288dc33f68de
 metro-symbolicate@0.76.7:
   version "0.76.7"
   resolved "https://registry.npmjs.org/metro-symbolicate/-/metro-symbolicate-0.76.7.tgz"
@@ -5017,8 +4847,6 @@ metro-symbolicate@0.76.7:
     through2 "^2.0.1"
     vlq "^1.0.0"
 
-<<<<<<< HEAD
-=======
 metro-symbolicate@0.76.8:
   version "0.76.8"
   resolved "https://registry.npmjs.org/metro-symbolicate/-/metro-symbolicate-0.76.8.tgz"
@@ -5031,7 +4859,6 @@ metro-symbolicate@0.76.8:
     through2 "^2.0.1"
     vlq "^1.0.0"
 
->>>>>>> 66a567b0e2e2418b32091e6bf088288dc33f68de
 metro-transform-plugins@0.76.7:
   version "0.76.7"
   resolved "https://registry.npmjs.org/metro-transform-plugins/-/metro-transform-plugins-0.76.7.tgz"
@@ -5279,14 +5106,11 @@ ob1@0.76.7:
   resolved "https://registry.npmjs.org/ob1/-/ob1-0.76.7.tgz"
   integrity sha512-BQdRtxxoUNfSoZxqeBGOyuT9nEYSn18xZHwGMb0mMVpn2NBcYbnyKY4BK2LIHRgw33CBGlUmE+KMaNvyTpLLtQ==
 
-<<<<<<< HEAD
-=======
 ob1@0.76.8:
   version "0.76.8"
   resolved "https://registry.npmjs.org/ob1/-/ob1-0.76.8.tgz"
   integrity sha512-dlBkJJV5M/msj9KYA9upc+nUWVwuOFFTbu28X6kZeGwcuW+JxaHSBZ70SYQnk5M+j5JbNLR6yKHmgW4M5E7X5g==
 
->>>>>>> 66a567b0e2e2418b32091e6bf088288dc33f68de
 object-assign@^4.0.1, object-assign@^4.1.1:
   version "4.1.1"
   resolved "https://registry.npmjs.org/object-assign/-/object-assign-4.1.1.tgz"
@@ -5650,11 +5474,7 @@ prompts@^2.4.0:
     kleur "^3.0.3"
     sisteransi "^1.0.5"
 
-<<<<<<< HEAD
 prop-types@*, prop-types@^15.5.4, prop-types@^15.6.0, prop-types@^15.6.2, prop-types@^15.7.2, prop-types@^15.8.1, prop-types@15:
-=======
-prop-types@*, prop-types@^15.5.4, prop-types@^15.7.2, prop-types@^15.8.1:
->>>>>>> 66a567b0e2e2418b32091e6bf088288dc33f68de
   version "15.8.1"
   resolved "https://registry.npmjs.org/prop-types/-/prop-types-15.8.1.tgz"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
@@ -5745,11 +5565,7 @@ react-devtools-core@^4.27.2:
     shell-quote "^1.6.1"
     ws "^7"
 
-<<<<<<< HEAD
-"react-dom@^15.0.0 || ^16.0.0", "react-dom@^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react-dom@^16 || ^17 || ^18", "react-dom@^16.0.0 || ^17.0.0 || ^18.0.0", "react-dom@^16.6.0 || ^17.0.0 || ^18.0.0", "react-dom@^16.8 || ^17.0 || ^18.0", react-dom@^18.2.0, react-dom@>=15.0.0, react-dom@>=16, react-dom@>=16.8:
-=======
-"react-dom@^15.0.0 || ^16.0.0", "react-dom@^16 || ^17 || ^18", "react-dom@^16.6.0 || ^17.0.0 || ^18.0.0", "react-dom@^16.8 || ^17.0 || ^18.0", react-dom@^18.2.0, react-dom@>=16, react-dom@>=16.8, react-dom@>=17:
->>>>>>> 66a567b0e2e2418b32091e6bf088288dc33f68de
+"react-dom@^15.0.0 || ^16.0.0", "react-dom@^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react-dom@^16 || ^17 || ^18", "react-dom@^16.0.0 || ^17.0.0 || ^18.0.0", "react-dom@^16.6.0 || ^17.0.0 || ^18.0.0", "react-dom@^16.8 || ^17.0 || ^18.0", react-dom@^18.2.0, react-dom@>=15.0.0, react-dom@>=16, react-dom@>=16.8, react-dom@>=17:
   version "18.2.0"
   resolved "https://registry.npmjs.org/react-dom/-/react-dom-18.2.0.tgz"
   integrity sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==
@@ -5783,11 +5599,7 @@ react-icons@^4.10.1:
   resolved "https://registry.npmjs.org/react-icons/-/react-icons-4.10.1.tgz"
   integrity sha512-/ngzDP/77tlCfqthiiGNZeYFACw85fUjZtLbedmJ5DTlNDIwETxhwBzdOJ21zj4iJdvc0J3y7yOsX3PpxAJzrw==
 
-<<<<<<< HEAD
 react-is@^16.10.2, "react-is@^16.12.0 || ^17.0.0 || ^18.0.0", react-is@^16.13.1, react-is@^16.7.0:
-=======
-"react-is@^16.12.0 || ^17.0.0 || ^18.0.0", react-is@^16.13.1, react-is@^16.7.0:
->>>>>>> 66a567b0e2e2418b32091e6bf088288dc33f68de
   version "16.13.1"
   resolved "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
@@ -5802,7 +5614,6 @@ react-is@^18.0.0:
   resolved "https://registry.npmjs.org/react-is/-/react-is-18.2.0.tgz"
   integrity sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==
 
-<<<<<<< HEAD
 react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.npmjs.org/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz"
@@ -5816,16 +5627,6 @@ react-list@^0.8.13:
     prop-types "15"
 
 react-native@*, "react-native@^0.0.0-0 || 0.60 - 0.72 || 1000.0.0", react-native@>=0.59:
-  version "0.72.3"
-  resolved "https://registry.npmjs.org/react-native/-/react-native-0.72.3.tgz"
-  integrity sha512-QqISi+JVmCssNP2FlQ4MWhlc4O/I00MRE1/GClvyZ8h/6kdsyk/sOirkYdZqX3+DrJfI3q+OnyMnsyaXIQ/5tQ==
-  dependencies:
-    "@jest/create-cache-key-function" "^29.2.1"
-    "@react-native-community/cli" "11.3.5"
-    "@react-native-community/cli-platform-android" "11.3.5"
-    "@react-native-community/cli-platform-ios" "11.3.5"
-=======
-react-native@*, "react-native@^0.0.0-0 || 0.60 - 0.72 || 1000.0.0", react-native@>=0.59:
   version "0.72.4"
   resolved "https://registry.npmjs.org/react-native/-/react-native-0.72.4.tgz"
   integrity sha512-+vrObi0wZR+NeqL09KihAAdVlQ9IdplwznJWtYrjnQ4UbCW6rkzZJebRsugwUneSOKNFaHFEo1uKU89HsgtYBg==
@@ -5834,17 +5635,12 @@ react-native@*, "react-native@^0.0.0-0 || 0.60 - 0.72 || 1000.0.0", react-native
     "@react-native-community/cli" "11.3.6"
     "@react-native-community/cli-platform-android" "11.3.6"
     "@react-native-community/cli-platform-ios" "11.3.6"
->>>>>>> 66a567b0e2e2418b32091e6bf088288dc33f68de
     "@react-native/assets-registry" "^0.72.0"
     "@react-native/codegen" "^0.72.6"
     "@react-native/gradle-plugin" "^0.72.11"
     "@react-native/js-polyfills" "^0.72.1"
     "@react-native/normalize-colors" "^0.72.0"
-<<<<<<< HEAD
-    "@react-native/virtualized-lists" "^0.72.6"
-=======
     "@react-native/virtualized-lists" "^0.72.8"
->>>>>>> 66a567b0e2e2418b32091e6bf088288dc33f68de
     abort-controller "^3.0.0"
     anser "^1.4.9"
     base64-js "^1.1.2"
@@ -5855,13 +5651,8 @@ react-native@*, "react-native@^0.0.0-0 || 0.60 - 0.72 || 1000.0.0", react-native
     jest-environment-node "^29.2.1"
     jsc-android "^250231.0.0"
     memoize-one "^5.0.0"
-<<<<<<< HEAD
-    metro-runtime "0.76.7"
-    metro-source-map "0.76.7"
-=======
     metro-runtime "0.76.8"
     metro-source-map "0.76.8"
->>>>>>> 66a567b0e2e2418b32091e6bf088288dc33f68de
     mkdirp "^0.5.1"
     nullthrows "^1.1.1"
     pretty-format "^26.5.2"
@@ -5899,7 +5690,6 @@ react-refresh@^0.4.0:
   resolved "https://registry.npmjs.org/react-refresh/-/react-refresh-0.4.3.tgz"
   integrity sha512-Hwln1VNuGl/6bVwnd0Xdn1e84gT/8T9aYNL+HAKDArLCS7LWjwr7StE30IEYbIkx0Vi3vs+coQxe+SQDbGbbpA==
 
-<<<<<<< HEAD
 react-resize-detector@^8.0.4:
   version "8.1.0"
   resolved "https://registry.npmjs.org/react-resize-detector/-/react-resize-detector-8.1.0.tgz"
@@ -5907,8 +5697,6 @@ react-resize-detector@^8.0.4:
   dependencies:
     lodash "^4.17.21"
 
-=======
->>>>>>> 66a567b0e2e2418b32091e6bf088288dc33f68de
 react-router-dom@^6.14.2:
   version "6.14.2"
   resolved "https://registry.npmjs.org/react-router-dom/-/react-router-dom-6.14.2.tgz"
@@ -5932,7 +5720,6 @@ react-shallow-renderer@^16.15.0:
     object-assign "^4.1.1"
     react-is "^16.12.0 || ^17.0.0 || ^18.0.0"
 
-<<<<<<< HEAD
 react-smooth@^2.0.2:
   version "2.0.3"
   resolved "https://registry.npmjs.org/react-smooth/-/react-smooth-2.0.3.tgz"
@@ -5941,8 +5728,6 @@ react-smooth@^2.0.2:
     fast-equals "^5.0.0"
     react-transition-group "2.9.0"
 
-=======
->>>>>>> 66a567b0e2e2418b32091e6bf088288dc33f68de
 react-toastify@^9.1.3:
   version "9.1.3"
   resolved "https://registry.npmjs.org/react-toastify/-/react-toastify-9.1.3.tgz"
@@ -5967,11 +5752,7 @@ react-typical@^0.1.3:
   dependencies:
     "@camwiegert/typical" "^0.1.1"
 
-<<<<<<< HEAD
-react@*, "react@^0.14 || ^15.0.0-rc || >=15.0", "react@^15.0.0 || ^16.0.0", "react@^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16 || ^17 || ^18", "react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.6.0 || ^17.0.0 || ^18.0.0", "react@^16.8 || ^17.0 || ^18.0", "react@^16.8.0 || ^17 || ^18", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.9.0 || ^17.0.0 || ^18", react@^18.2.0, react@>=15.0.0, react@>=16, react@>=16.8, "react@0.14 || 15 - 18", react@18.2.0:
-=======
-react@*, "react@^15.0.0 || ^16.0.0", "react@^16 || ^17 || ^18", "react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.6.0 || ^17.0.0 || ^18.0.0", "react@^16.8 || ^17.0 || ^18.0", "react@^16.8.0 || ^17 || ^18", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.9.0 || ^17.0.0 || ^18", react@^18.2.0, react@>=16, react@>=16.8, react@>=17, react@18.2.0:
->>>>>>> 66a567b0e2e2418b32091e6bf088288dc33f68de
+react@*, "react@^0.14 || ^15.0.0-rc || >=15.0", "react@^15.0.0 || ^16.0.0", "react@^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16 || ^17 || ^18", "react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.6.0 || ^17.0.0 || ^18.0.0", "react@^16.8 || ^17.0 || ^18.0", "react@^16.8.0 || ^17 || ^18", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.9.0 || ^17.0.0 || ^18", react@^18.2.0, react@>=15.0.0, react@>=16, react@>=16.8, react@>=17, "react@0.14 || 15 - 18", react@18.2.0:
   version "18.2.0"
   resolved "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
   integrity sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==
@@ -6029,7 +5810,6 @@ recast@^0.21.0:
     source-map "~0.6.1"
     tslib "^2.0.1"
 
-<<<<<<< HEAD
 recharts-scale@^0.4.4:
   version "0.4.5"
   resolved "https://registry.npmjs.org/recharts-scale/-/recharts-scale-0.4.5.tgz"
@@ -6060,8 +5840,6 @@ reduce-css-calc@^2.1.8:
     css-unit-converter "^1.1.1"
     postcss-value-parser "^3.3.0"
 
-=======
->>>>>>> 66a567b0e2e2418b32091e6bf088288dc33f68de
 redux-thunk@^2.4.2:
   version "2.4.2"
   resolved "https://registry.npmjs.org/redux-thunk/-/redux-thunk-2.4.2.tgz"
@@ -6286,17 +6064,11 @@ semver@^5.6.0:
   resolved "https://registry.npmjs.org/semver/-/semver-5.7.2.tgz"
   integrity sha512-cBznnQ9KjJqU67B52RMC65CMarK2600WFnbkcaiwWq3xy/5haFJlshgnpjovMVJ+Hff49d8GEn0b87C5pDQ10g==
 
-<<<<<<< HEAD
-semver@^6.3.0, semver@^6.3.1:
-=======
 semver@^6.3.1:
->>>>>>> 66a567b0e2e2418b32091e6bf088288dc33f68de
   version "6.3.1"
   resolved "https://registry.npmjs.org/semver/-/semver-6.3.1.tgz"
   integrity sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==
 
-<<<<<<< HEAD
-=======
 semver@^7.5.2:
   version "7.5.4"
   resolved "https://registry.npmjs.org/semver/-/semver-7.5.4.tgz"
@@ -6304,7 +6076,6 @@ semver@^7.5.2:
   dependencies:
     lru-cache "^6.0.0"
 
->>>>>>> 66a567b0e2e2418b32091e6bf088288dc33f68de
 send@0.18.0:
   version "0.18.0"
   resolved "https://registry.npmjs.org/send/-/send-0.18.0.tgz"
@@ -6356,14 +6127,11 @@ shallow-clone@^3.0.0:
   dependencies:
     kind-of "^6.0.2"
 
-<<<<<<< HEAD
 shallow-equal@^1.2.1:
   version "1.2.1"
   resolved "https://registry.npmjs.org/shallow-equal/-/shallow-equal-1.2.1.tgz"
   integrity sha512-S4vJDjHHMBaiZuT9NPb616CSmLf618jawtv3sufLl6ivK8WocjAo58cXwbRV1cgqxH0Qbv+iUt6m05eqEa2IRA==
 
-=======
->>>>>>> 66a567b0e2e2418b32091e6bf088288dc33f68de
 shallowequal@^1.1.0:
   version "1.1.0"
   resolved "https://registry.npmjs.org/shallowequal/-/shallowequal-1.1.0.tgz"
@@ -6908,7 +6676,6 @@ vary@~1.1.2:
   resolved "https://registry.npmjs.org/vary/-/vary-1.1.2.tgz"
   integrity sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==
 
-<<<<<<< HEAD
 victory-vendor@^36.6.8:
   version "36.6.11"
   resolved "https://registry.npmjs.org/victory-vendor/-/victory-vendor-36.6.11.tgz"
@@ -6929,8 +6696,6 @@ victory-vendor@^36.6.8:
     d3-time "^3.0.0"
     d3-timer "^3.0.1"
 
-=======
->>>>>>> 66a567b0e2e2418b32091e6bf088288dc33f68de
 vite@^4.2.0, vite@^4.4.5:
   version "4.4.9"
   resolved "https://registry.npmjs.org/vite/-/vite-4.4.9.tgz"
@@ -7096,14 +6861,11 @@ yallist@^3.0.2:
   resolved "https://registry.npmjs.org/yallist/-/yallist-3.1.1.tgz"
   integrity sha512-a4UGQaWPH59mOXUYnAG2ewncQS4i4F43Tv3JoAM+s2VDAmS9NsK8GpDMLrCHPksFT7h3K6TOoUNn2pb7RoXx4g==
 
-<<<<<<< HEAD
-=======
 yallist@^4.0.0:
   version "4.0.0"
   resolved "https://registry.npmjs.org/yallist/-/yallist-4.0.0.tgz"
   integrity sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==
 
->>>>>>> 66a567b0e2e2418b32091e6bf088288dc33f68de
 yaml@^2.1.1, yaml@^2.2.1:
   version "2.3.1"
   resolved "https://registry.npmjs.org/yaml/-/yaml-2.3.1.tgz"
