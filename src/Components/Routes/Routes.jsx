@@ -50,7 +50,7 @@ const router = createBrowserRouter([
     element: <Register></Register>
   },
   {
-    path: '/travelerChoose-thingsToDo',
+    path: '/travelerChoose-thingsToDo/:category',
     element:<TravelerChoose></TravelerChoose>
   }
 
