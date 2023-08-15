@@ -7,6 +7,7 @@ import Login from "../Pages/Log&&Reg/Login";
 import KnowMore from "../Pages/AboutUs/KnowMore";
 import AddReview from "../Pages/Community/AddReview/AddReview";
 import PostAStory from "../Pages/Community/PostAStory/PostAStory";
+import TravelerChoose from "../Pages/TravelerChoose/TravelerChoose";
 
 
 
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
     path: 'register',
     element: <Register></Register>
   },
+  {
+    path: '/travelerChoose-thingsToDo',
+    element:<TravelerChoose></TravelerChoose>
+  }
 
 ]);
 
