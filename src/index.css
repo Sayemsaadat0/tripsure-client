@@ -21,7 +21,22 @@
 
 }
 
-
+/* Trips route */
+.tripDesignBackground1{
+  background-image: url("https://i.ibb.co/CJjVncw/image.png");
+  background-position: center;
+  background-size: cover;
+}
+.tripDesignBackground2{
+  background-image: url("https://i.ibb.co/54DH6LW/image.png");
+  background-position: center;
+  background-size: cover;
+}
+.tripDesignBackground3{
+  background-image: url("https://i.ibb.co/fHgBPJs/image.png");
+  background-position: center;
+  background-size: cover;
+}
 
 /* more route */
 .flightBackground{

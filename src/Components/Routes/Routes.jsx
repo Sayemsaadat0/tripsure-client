@@ -9,6 +9,7 @@ import AddReview from "../Pages/Community/AddReview/AddReview";
 import PostAStory from "../Pages/Community/PostAStory/PostAStory";
 import Flights from "../Pages/More/Flights/Flights";
 import RentalCars from "../Pages/More/RentalCars/RentalCars";
+import HireATripDesigner from "../Pages/Trips/HireATripDesigner/HireATripDesigner";
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
         path: "rentalCars",
         element: <RentalCars/>
       },
+      {
+        path: "hireATripDesign",
+        element: <HireATripDesigner/>
+      }
     ],
   },
   {
