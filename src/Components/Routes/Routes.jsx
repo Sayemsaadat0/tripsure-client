@@ -20,8 +20,6 @@ import TravelerChoose from "../Pages/TravelerChoose/TravelerChoose";
 
 
 
-
-
 const router = createBrowserRouter([
   {
     path: "/",
