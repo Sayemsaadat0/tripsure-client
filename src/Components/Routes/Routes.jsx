@@ -8,6 +8,7 @@ import KnowMore from "../Pages/AboutUs/KnowMore";
 import AddReview from "../Pages/Community/AddReview/AddReview";
 import PostAStory from "../Pages/Community/PostAStory/PostAStory";
 import TravelerChoose from "../Pages/TravelerChoose/TravelerChoose";
+import TourDetails from "../Pages/TourDetails/TourDetails";
 
 
 
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
   {
     path: '/travelerChoose-thingsToDo/:category',
     element:<TravelerChoose></TravelerChoose>
+  },
+  {
+    path: 'tourDetails/:id',
+    element: <TourDetails></TourDetails>
   }
 
 ]);

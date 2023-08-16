@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Container from "../../../LayOut/Container";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { FaLocationDot, FaClockRotateLeft, FaUserGroup, FaCircle, FaCircleNotch } from "react-icons/fa6";
 import Rating from "react-rating";
 import TourCard from "./TourCard";
@@ -9,8 +9,6 @@ import TourCard from "./TourCard";
 const TravelerChoose = () => {
   const { category } = useParams();
   const [allTour, setAllTour] = useState([]);
-  const fistCardItem = allTour.slice(0,1);
-  console.log(fistCardItem);
   console.log(category);
   console.log(allTour);
   useEffect(() => {
@@ -61,7 +59,7 @@ const TravelerChoose = () => {
           {/* //tour  card */}
           <div className="divider"></div>
           {
-            fistCardItem.map((fistOneCard,index) => <div key={index} className="shadow-2xl pb-4  rounded-lg bg-base-300">
+            allTour.slice(0,1).map((fistOneCard,index) => <div key={index} className="shadow-2xl pb-4  rounded-lg bg-base-300">
             <div className="">
               <img
                 className="w-full h-60 md:h-72 lg:h-[30rem] rounded-2xl bg-cover object-cover"
@@ -72,9 +70,9 @@ const TravelerChoose = () => {
             <div className="m-10 lg:flex  items-center  gap-4  space-y-3">
               <div className="space-y-4 ">
               <h2 className="text-xl ">0{index +1}.</h2>
-              <h1 className="text-4xl font-bold text-black">
+              <Link to={`/tourDetails/${fistOneCard?._id}`} className="text-4xl font-bold text-black">
                 {fistOneCard?.cardtitle}
-              </h1>
+              </Link>
               <h4 className="flex items-center gap-2">
                 <FaLocationDot></FaLocationDot>{fistOneCard?.country}
               </h4>

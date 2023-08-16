@@ -1,9 +1,10 @@
 import React from "react";
 import { FaCircle, FaCircleNotch, FaClockRotateLeft, FaLocationDot, FaUserGroup } from "react-icons/fa6";
 import Rating from "react-rating";
+import { Link } from "react-router-dom";
 
 const TourCard = ({singleTour, index}) => {
-    const {cardtitle,ratings,country,placetitle,placedetails,conditions} = singleTour;
+    const {_id, cardtitle,ratings,country,placetitle,placedetails,conditions} = singleTour;
   return (
     <div className="grid lg:grid-cols-2 gap-6 mb-10">
       <div className="">
@@ -14,7 +15,7 @@ const TourCard = ({singleTour, index}) => {
       </div>
       <div className="space-y-3">
         <h2 className="text-xl">0{index+2}.</h2>
-        <h1 className="text-3xl font-semibold">{placetitle}</h1>
+        <Link to={`/tourDetails/${_id}`} className="text-3xl font-semibold">{placetitle}</Link>
         <h4 className="flex items-center gap-2">
           <FaLocationDot></FaLocationDot> {country}
         </h4>
