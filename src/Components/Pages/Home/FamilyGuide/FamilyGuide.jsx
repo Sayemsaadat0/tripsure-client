@@ -1,5 +1,6 @@
 import React from 'react';
 import Container from '../../../../LayOut/Container';
+import { Link } from 'react-router-dom';
 
 const FamilyGuide = () => {
     return (
@@ -10,7 +11,8 @@ const FamilyGuide = () => {
                     <div className="max-w-xl p-10 py-24">
                         <h1 className="mb-5 text-3xl font-bold">The ultimate family travel guide</h1>
                         <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et</p>
-                        <button className="button1 ">Read More</button>
+                        <Link className='btn border-none hover:text-white hover:border-none hover:bg-[#2884b6]' to='familyguidedetails'>Read More</Link>
+
                     </div>
                 </div>
             </div>

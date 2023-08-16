@@ -4,16 +4,18 @@
 
 /* About us section style */
 .background {
-    background-image: url("https://i.ibb.co/v1y0v5m/AboutUs1.png");
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-   
+  background-image: url("https://i.ibb.co/v1y0v5m/AboutUs1.png");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
+
+ 
 .button1 {
-    position: relative;
+    position: relative; 
+    text-align: center;
     padding: 8px;
     overflow: hidden;
     border-radius: 8px;
@@ -34,13 +36,12 @@
 
 .button1:hover:after {
     transform: scale(0);
-}
-
+} 
 
 .my-link::after {
-    @apply content-[''] text-black bg-[#6bccd3] w-[0%] h-[3px] absolute left-0 -bottom-1 rounded hover:w-[100%] duration-500;
+  @apply content-[''] text-black bg-[#6bccd3] w-[0%] h-[3px] absolute left-0 -bottom-1 rounded hover:w-[100%] duration-500;
 }
 
 .logout-button {
-    @apply relative w-full flex justify-center items-center gap-2 py-2 px-4 border border-transparent text-sm font-bold uppercase tracking-[1px] rounded-md text-white bg-[#2d969e] hover:bg-[#53a9af] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500 duration-500
+  @apply relative w-full flex justify-center items-center gap-2 py-2 px-4 border border-transparent text-sm font-bold uppercase tracking-[1px] rounded-md text-white bg-[#2d969e] hover:bg-[#53a9af] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500 duration-500;
 }

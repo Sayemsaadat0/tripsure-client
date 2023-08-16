@@ -16,6 +16,8 @@ import AddTour from "../Pages/DashBoard/Admin/AddTour";
 import AddReview from "../Pages/Community/AddReview/AddReview";
 import PostAStory from "../Pages/Community/PostAStory/PostAStory";
 import TravelerChoose from "../Pages/TravelerChoose/TravelerChoose";
+import ErrorPage from "../../LayOut/ErrorPage/ErrorPage";
+import FamilyGuideDetails from "../Pages/Home/FamilyGuide/FamilyGuideDetails";
 
 
 
@@ -24,6 +26,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -32,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: 'knowmore',
         element: <KnowMore />
+      },
+      {
+        path: 'familyguidedetails',
+        element: <FamilyGuideDetails/>
       },
        {
         path: 'postastory',
