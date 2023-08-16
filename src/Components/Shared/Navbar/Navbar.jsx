@@ -12,7 +12,7 @@ const Navbar = () => {
     const { logOut, user } = useAuth()
     const color = '19a0c9'
     const naviItems = [
-        { id: 1, name: 'discover', dropdown: true, routes: [{ routeName: 'travel story', linkName: 'travelStory' }, { routeName: 'your guides', linkName: 'yourGuides' }] },
+        { id: 1, name: 'discover', dropdown: true, routes: [{ routeName: 'travel story', linkName: 'travelStory' }, { routeName: 'travel guides', linkName: 'travelGuides' }] },
         { id: 2, name: 'community', dropdown: true, routes: [{ routeName: 'post a story', linkName: 'postastory' }, { routeName: 'add a review', linkName: 'addareview' }] },
         { id: 3, name: 'dashboard' },
     ]

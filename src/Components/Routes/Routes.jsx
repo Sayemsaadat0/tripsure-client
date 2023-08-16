@@ -16,6 +16,10 @@ import AddTour from "../Pages/DashBoard/Admin/AddTour";
 import AddReview from "../Pages/Community/AddReview/AddReview";
 import PostAStory from "../Pages/Community/PostAStory/PostAStory";
 import TravelerChoose from "../Pages/TravelerChoose/TravelerChoose";
+import TravelarStories from "../Pages/TravelerStories/TravelStories";
+import Stories from "../Pages/TravelerStories/Stories/Stories";
+import TravelGuides from "../Pages/TravelGuides/TravelGuides";
+import GuideDetails from "../Pages/TravelGuides/GuideDetails/GuideDetails";
 
 
 
@@ -40,6 +44,22 @@ const router = createBrowserRouter([
       {
         path: 'addareview',
         element: <AddReview/>
+      }, 
+      {
+        path: 'travelStory',
+        element: <TravelarStories/>
+      }, 
+      {
+        path: 'travelStory/stories',
+        element: <Stories/>
+      }, 
+      {
+        path: 'travelGuides',
+        element: <TravelGuides/>
+      }, 
+      {
+        path: 'travelGuides/details',
+        element: <GuideDetails/>
       }, 
     ],
   },
