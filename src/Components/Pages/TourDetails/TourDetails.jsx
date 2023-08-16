@@ -12,9 +12,11 @@ import {
 } from "react-icons/fa6";
 import Rating from "react-rating";
 import { useParams } from "react-router-dom";
+import { DatePicker, Space } from "antd";
+const { RangePicker } = DatePicker;
 
 const TourDetails = () => {
-  const [tourDetails, setTourDetails] = useState([]);
+  const [tourDetails, setTourDetails] = useState({});
   const { id } = useParams();
   console.log(id);
   useEffect(() => {
@@ -23,18 +25,29 @@ const TourDetails = () => {
     });
   }, [id]);
   console.log(tourDetails);
+  const {
+    placetitle,
+    placedetails,
+    costperperson,
+    conditions,
+    awards,
+    postedby,
+    ratings,
+    included,
+    additionalInfo,
+    faq,
+    refundprocess,
+  } = tourDetails;
   return (
     <div className="lg:mx-10 mx-4 mt-10">
       <div>
-        <h2 className="text-3xl font-bold">
-          Grand Circle Island and Haleiwa 9 Hour Tour
-        </h2>
-        <h4 className="my-2">By Royal Star Hawaii Deluxe Tours</h4>
+        <h2 className="text-3xl font-bold">{placetitle}</h2>
+        <h4 className="my-2">Posted By {postedby}</h4>
         <h1 className="font-semibold flex items-center ">
           <p className=" flex gap-2">
             <p className="text-green-700">
               <Rating
-                placeholderRating={4.5}
+                placeholderRating={ratings}
                 emptySymbol={<FaCircleNotch className="w-4"></FaCircleNotch>}
                 placeholderSymbol={<FaCircle className="w-4"></FaCircle>}
                 fullSymbol={<FaCircle className="w-4"></FaCircle>}
@@ -51,20 +64,20 @@ const TourDetails = () => {
             alt=""
           />
         </div>
-        <div className="grid grid-cols-2">
+        <div className="grid lg:grid-cols-2">
           <div>
             <h3 className="font-bold text-black text-xl">About</h3>
             <p>
-              Ideal for first-time visitors, or those with limited time, this
-              full-day tour takes you all around Oahu, making sure that you
-              don't miss a thing. You'll see top attractions including Diamond
-              Head, Hanauma Bay, Halona Blowhole, the Byodo-In Temple and the
+              {placedetails} Halona Blowhole, the Byodo-In Temple and the
               surfing beaches of the North Shore. Plus, you'll have time to
               explore Haleiwa town.
             </p>
             <p className="my-3">
-              from <span className="text-2xl font-semibold">$135.00</span> per
-              adult
+              from{" "}
+              <span className="text-2xl font-semibold">
+                ${costperperson}.00
+              </span>{" "}
+              per adult
             </p>
             <p className="flex items-center gap-2">
               <FaSimplybuilt></FaSimplybuilt>
@@ -75,19 +88,22 @@ const TourDetails = () => {
             <div className="divider"></div>
 
             <p className="flex items-center gap-2">
-              <FaUserGroup></FaUserGroup>Ages 0-99, max of 50 per group
+              <FaUserGroup></FaUserGroup>
+              {conditions?.agelimitations}
             </p>
             <p className="flex items-center gap-2">
-              <FaClockRotateLeft></FaClockRotateLeft>Duration: 9h
+              <FaClockRotateLeft></FaClockRotateLeft>
+              {conditions?.duration}
             </p>
             <p className="flex items-center gap-2">
-              <FaClock></FaClock>Start time: Check availability
+              <FaClock></FaClock>Start time: {conditions?.startTime}
             </p>
             <p className="flex items-center gap-2">
               <FaPhone></FaPhone>Mobile ticket
             </p>
             <p className="flex items-center gap-2">
-              <FaLanguage></FaLanguage>English
+              <FaLanguage></FaLanguage>
+              {conditions?.language}
             </p>
 
             <div className="flex gap-2 items-center my-6">
@@ -108,56 +124,60 @@ const TourDetails = () => {
             <div className="collapse collapse-arrow bg-base-200">
               <input type="radio" name="my-accordion-2" checked="checked" />
               <div className="collapse-title text-xl font-medium">
-                Cancellation policy
+                What's Includes
               </div>
               <div className="collapse-content">
-                <p>hello</p>
+                {included?.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
               </div>
             </div>
             <div className="collapse collapse-arrow bg-base-200">
               <input type="radio" name="my-accordion-2" />
               <div className="collapse-title text-xl font-medium">
-                What's included
+                Additional information's
               </div>
               <div className="collapse-content">
-                <p>hello</p>
+                {additionalInfo?.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
               </div>
             </div>
             <div className="collapse collapse-arrow bg-base-200">
               <input type="radio" name="my-accordion-2" />
-              <div className="collapse-title text-xl font-medium">
-                What to expect
-              </div>
+              <div className="collapse-title text-xl font-medium">FAQ</div>
               <div className="collapse-content">
-                <p>hello</p>
+                {faq?.map((item) => (
+                  <h2>
+                    <span className="font-bold">
+                      Question: {item?.question}
+                    </span>{" "}
+                    <br /> Answer: {item?.answer}
+                  </h2>
+                ))}
               </div>
             </div>
             <div className="collapse collapse-plus bg-base-200">
-              <input type="radio" name="my-accordion-3" />
+              <input type="radio" name="my-accordion-2" />
               <div className="collapse-title text-xl font-medium">
-                Accessibility
+                Re-Found Process
               </div>
               <div className="collapse-content">
-                <p>hello</p>
-              </div>
-            </div>
-            <div className="collapse collapse-plus bg-base-200">
-              <input type="radio" name="my-accordion-3" />
-              <div className="collapse-title text-xl font-medium">
-                Additional information
-              </div>
-              <div className="collapse-content">
-                <p>hello</p>
+                {refundprocess?.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
               </div>
             </div>
           </div>
-          <div className="border-2 m-6 rounded-2xl">
+          <div className="border-2 h-fit m-6 rounded-2xl">
             {/* revers your slot section */}
             <div className="p-4">
               <h2 className="text-3xl font-bold pb-6">Reserve your spot</h2>
               <div className="flex gap-4">
-                <button className="btn-wide btn btn-outline rounded-full font-bold">
-                  31 June 2025
+                <button className="btn-wide btn hover:bg-white btn-outline rounded-full font-bold">
+                  <Space direction="vertical" size={12}>
+                    <RangePicker />
+                  </Space>
                 </button>
                 <button className="btn btn-outline rounded-full font-bold">
                   X Person
@@ -175,11 +195,17 @@ const TourDetails = () => {
                 <p>(No additional taxes or booking fees)</p>
               </div>
               <div className="flex gap-3 items-center justify-around">
-                <button className="btn rounded-full px-14 btn-warning">Add TO Card</button>
-                <button className="btn rounded-full px-14 btn-warning">Reserve Now</button>
+                <button className="btn rounded-full lg:px-14 btn-warning">
+                  Add TO Card
+                </button>
+                <button className="btn rounded-full lg:px-14 btn-warning">
+                  Reserve Now
+                </button>
               </div>
-              <p className="p-4">Not sure? You can cancel this reservation up to 24 hours in advance for a full refund.</p>
-
+              <p className="p-4">
+                Not sure? You can cancel this reservation up to 24 hours in
+                advance for a full refund.
+              </p>
             </div>
           </div>
         </div>
