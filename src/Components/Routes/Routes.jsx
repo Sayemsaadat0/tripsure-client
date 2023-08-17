@@ -18,6 +18,10 @@ import PostAStory from "../Pages/Community/PostAStory/PostAStory";
 import TravelerChoose from "../Pages/TravelerChoose/TravelerChoose";
 import ErrorPage from "../../LayOut/ErrorPage/ErrorPage";
 import FamilyGuideDetails from "../Pages/Home/FamilyGuide/FamilyGuideDetails";
+import Flights from "../Pages/More/Flights/Flights";
+import RentalCars from "../Pages/More/RentalCars/RentalCars";
+
+
 
 
 
@@ -48,6 +52,14 @@ const router = createBrowserRouter([
         path: 'addareview',
         element: <AddReview/>
       }, 
+      {
+        path: 'flights',
+        element: <Flights/>
+      }, 
+      {
+        path: 'rentalcars',
+        element: <RentalCars/>
+      }
     ],
   },
   {
@@ -101,9 +113,6 @@ const router = createBrowserRouter([
   ]
   },
 
-
- 
- 
 
 ]);
 

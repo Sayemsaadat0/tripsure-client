@@ -19,8 +19,8 @@ const TopDestinations = () => {
         <Container>
           <div className='bg-white b my-20 '>
           <div>
-         <SectionTitle text={"Unveiling the Worlds Most Captivating Escapes"}
-         subText={""}
+         <SectionTitle text={"Explor the Ultimate Top Destinations "}
+         subText={"Journey to Perfection"}
          ></SectionTitle>
           </div>
            <div>

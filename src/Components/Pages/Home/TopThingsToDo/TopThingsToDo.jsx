@@ -4,6 +4,7 @@ import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import Container from "../../../../LayOut/Container";
 import { Link } from "react-router-dom";
+import SectionTitle from "../../../Shared/SectionTitle/SectionTitle";
 
 const TopThingsToDo = () => {
    
@@ -20,8 +21,7 @@ const TopThingsToDo = () => {
     <Container>
       <div className="my-20">
       <div>
-            <h1 className='text-2xl font-bold'>Top Things to Do by category</h1>
-          <h4 className=' text-lg my-1 mb-4'>Top destinations for your next vacation</h4>
+          <SectionTitle text={'Top Things to Do for Every Adventurer'} subText={'Worldwide Escapes'}></SectionTitle>
         </div>
 
         <Swiper

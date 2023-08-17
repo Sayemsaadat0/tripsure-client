@@ -14,7 +14,8 @@ const Navbar = () => {
     const naviItems = [
         { id: 1, name: 'discover', dropdown: true, routes: [{ routeName: 'travel story', linkName: 'travelStory' }, { routeName: 'your guides', linkName: 'yourGuides' }] },
         { id: 2, name: 'community', dropdown: true, routes: [{ routeName: 'post a story', linkName: 'postastory' }, { routeName: 'add a review', linkName: 'addareview' }] },
-        { id: 3, name: 'dashboard' },
+        { id: 3, name: 'more', dropdown: true, routes: [{ routeName: 'flights', linkName: 'flights' }, { routeName: 'Rental Cars', linkName: 'rentalcars' }] },
+        { id: 4, name: 'dashboard' },
     ]
 
     const handleLogout = () => {

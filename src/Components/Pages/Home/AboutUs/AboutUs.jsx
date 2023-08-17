@@ -9,7 +9,7 @@ const AboutUs = () => {
       <div className="background  h-96">
         <div className="h-96 bg-black bg-opacity-50">
           <div className="text-white h-96 flex flex-col justify-center items-center ">
-            <h2 className="text-3xl font-bold mb-3">Know About Us</h2>
+            <h2 className="text-3xl font-bold mb-3">Get to Know Us: Our Story and Values</h2>
             <p className="w-[50%] mx-auto text-center">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
               harum libero dolorum fugit impedit blanditiis, magni ipsa tempora

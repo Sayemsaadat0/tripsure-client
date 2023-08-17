@@ -23,12 +23,13 @@ const Feedback = () => {
     };
 
     return (
-        <div className=''>
-            <Container>
-                <div className=' p-10'>
+        <Container>
+            <div>
+
+                <div className='p-10'>
                     <SectionTitle
                         subText={'Testimonials'}
-                        text={'What Our clients Say About Us'}
+                        text={'What Our clients Say'}
                     ></SectionTitle>
                     <p className='text-right mb-2'>Total Feedback : {feedbacks.length}</p>
 
@@ -56,8 +57,8 @@ const Feedback = () => {
                         className='mySwiper'>
 
                         {feedbacks.map((feedback, index) => (
-                            <SwiperSlide className='px-2 ' key={index}>
-                                <div className='card border border-black  mb-16'>
+                            <SwiperSlide key={index}>
+                                <div className='card border mb-16'>
                                     <div className='card-body m-0 p-0 '>
                                         <div className='px-3 mt-5'>
                                             <img className='h-20 w-20 rounded-full' src={feedback.picture} alt='' />
@@ -94,8 +95,8 @@ const Feedback = () => {
                         )}
                     </form>
                 </dialog>
-            </Container>
-        </div>
+            </div>
+        </Container>
     );
 };
 
