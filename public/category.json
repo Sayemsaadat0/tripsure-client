@@ -1,0 +1,149 @@
+[
+    {
+      "categoryname": "Restaurant",
+      "country": "United States",
+      "visitcount": 1200,
+      "cardtitle": "New York Bistro Delights",
+      "postedby": "Culinary Discoveries",
+      "picture": "https://example.com/nyc-bistro.jpg",
+      "ratings": 4.7,
+      "placetitle": "New York City, Culinary Haven",
+      "placedetails": "Experience the diverse culinary scene of New York City as you dine in charming bistros, taste gourmet creations, and immerse yourself in the vibrant food culture...",
+      "costperperson": 85,
+      "conditions": {
+        "agelimitations": "Minimum age: 12 years",
+        "duration": "4 hours",
+        "startTime": "6:00 PM",
+        "language": "English",
+        "awards": ["TripAdvisor Certificate of Excellence", "Culinary Delights Award"]
+      },
+      "included": [
+        "Visit to renowned NYC bistros",
+        "Multi-course gourmet dinner",
+        "Wine pairings with each course",
+        "Expert commentary from culinary guide",
+        "Opportunity to meet local chefs",
+        "Local transportation between venues"
+      ],
+      "itinerary": [
+        "6:00 PM: Start at iconic bistro, Welcome aperitif",
+        "7:30 PM: Move to second venue, Appetizer and wine pairing",
+        "8:45 PM: Third venue, Main course and wine pairing",
+        "10:00 PM: Final stop, Dessert and farewell"
+      ],
+      "additionalInfo": [
+        "Dress code: Smart casual attire.",
+        "Currency: US Dollar ($)",
+        "Weather: Check local forecast before your visit.",
+        "Emergency contact: +1 123-456-7890",
+        "Recommended dietary preferences in advance."
+      ],
+      "faq": [
+        {
+          "question": "Is this tour suitable for vegetarians?",
+          "answer": "Yes, vegetarian options are available at each venue."
+        },
+        {
+          "question": "Is alcohol included in the tour?",
+          "answer": "Yes, wine pairings are included with dinner."
+        },
+        {
+          "question": "Can I bring children on the tour?",
+          "answer": "The tour is recommended for ages 12 and up."
+        },
+        {
+          "question": "Is transportation provided between venues?",
+          "answer": "Yes, local transportation is arranged between restaurants."
+        },
+        {
+          "question": "Can I customize the itinerary?",
+          "answer": "The tour follows a set itinerary to showcase the best culinary experiences."
+        },
+        {
+          "question": "How do I make a reservation?",
+          "answer": "You can reserve online through our website or by contacting our customer service."
+        }
+      ],
+      "refundprocess": [
+        "Full refund available up to 7 days before the tour.",
+        "50% refund if canceled 3-6 days prior.",
+        "No refunds for cancellations within 48 hours of the tour.",
+        "Refunds processed within 14 business days.",
+        "Contact our support team for refund inquiries."
+      ]
+    },
+    {
+      "categoryname": "Restaurant",
+      "country": "France",
+      "visitcount": 950,
+      "cardtitle": "Parisian Gastronomy Journey",
+      "postedby": "French Flavors Tours",
+      "picture": "https://example.com/paris-restaurant.jpg",
+      "ratings": 4.9,
+      "placetitle": "Paris, Culinary Elegance",
+      "placedetails": "Embark on a gastronomic adventure through the enchanting streets of Paris, where Michelin-starred restaurants and charming bistros await...",
+      "costperperson": 135,
+      "conditions": {
+        "agelimitations": "Minimum age: 16 years",
+        "duration": "5 hours",
+        "startTime": "7:30 PM",
+        "language": "English and French",
+        "awards": ["TripAdvisor Certificate of Excellence", "Culinary Delights Award"]
+      },
+      "included": [
+        "Dinner at renowned Parisian restaurants",
+        "Multiple-course gourmet meal",
+        "Wine pairings curated by sommelier",
+        "Insights from culinary expert",
+        "Chance to meet renowned chefs",
+        "Transportation to and from venues"
+      ],
+      "itinerary": [
+        "7:30 PM: Begin at Michelin-starred restaurant, Welcome champagne",
+        "8:45 PM: Second venue, Appetizer and wine pairing",
+        "9:30 PM: Main course at charming bistro, Wine pairing",
+        "10:45 PM: Culinary masterpiece dessert"
+      ],
+      "additionalInfo": [
+        "Elegant attire is recommended.",
+        "Currency: Euro (€)",
+        "Weather: Varies by season, plan accordingly.",
+        "Emergency contact: +33 (0)1 23 45 67 89",
+        "Advance notice of dietary restrictions required."
+      ],
+      "faq": [
+        {
+          "question": "Are vegetarian meal options available?",
+          "answer": "Yes, vegetarian options are available at each restaurant."
+        },
+        {
+          "question": "Is transportation included?",
+          "answer": "Yes, transportation to and from the restaurants is provided."
+        },
+        {
+          "question": "Can children participate in the tour?",
+          "answer": "The tour is designed for adult participants."
+        },
+        {
+          "question": "Can I customize the itinerary?",
+          "answer": "The tour follows a set itinerary to showcase the finest dining experiences."
+        },
+        {
+          "question": "Is there a dress code for the tour?",
+          "answer": "Elegant attire is recommended for the upscale dining venues."
+        },
+        {
+          "question": "How do I make a reservation?",
+          "answer": "You can reserve online through our website or by contacting our customer service."
+        }
+      ],
+      "refundprocess": [
+        "Full refund available up to 7 days before the tour.",
+        "50% refund if canceled 3-6 days prior.",
+        "No refunds for cancellations within 48 hours of the tour.",
+        "Refunds processed within 14 business days.",
+        "Contact our support team for refund inquiries."
+      ]
+    }
+  ]
+  
