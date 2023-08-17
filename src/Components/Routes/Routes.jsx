@@ -9,6 +9,7 @@ import AddReview from "../Pages/Community/AddReview/AddReview";
 import PostAStory from "../Pages/Community/PostAStory/PostAStory";
 import TravelerChoose from "../Pages/TravelerChoose/TravelerChoose";
 import TourDetails from "../Pages/TourDetails/TourDetails";
+import TopDestinationDetails from "../Pages/TopDestinationDetails/TopDestinationDetails";
 
 
 
@@ -55,8 +56,12 @@ const router = createBrowserRouter([
     element:<TravelerChoose></TravelerChoose>
   },
   {
-    path: 'tourDetails/:id',
+    path: '/tourDetails/:id',
     element: <TourDetails></TourDetails>
+  },
+  {
+    path: '/top-destination',
+    element: <TopDestinationDetails></TopDestinationDetails>
   }
 
 ]);
