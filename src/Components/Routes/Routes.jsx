@@ -20,6 +20,9 @@ import TravelarStories from "../Pages/TravelerStories/TravelStories";
 import Stories from "../Pages/TravelerStories/Stories/Stories";
 import TravelGuides from "../Pages/TravelGuides/TravelGuides";
 import GuideDetails from "../Pages/TravelGuides/GuideDetails/GuideDetails";
+import TourCard from "../Pages/TravelerChoose/TourCard";
+import TourDetails from "../Pages/TourDetails/TourDetails";
+import TopDestinationDetails from "../Pages/TopDestinationDetails/TopDestinationDetails";
 
 
 
@@ -74,6 +77,7 @@ const router = createBrowserRouter([
     path: '/travelerChoose-thingsToDo/:category',
     element:<TravelerChoose></TravelerChoose>
   },
+
   {
     path: '/dashboard',
     element: <Dashboard></Dashboard>,
@@ -112,6 +116,14 @@ const router = createBrowserRouter([
           element: <AddTour />
         },
   ]
+  },
+  {
+    path: '/tourDetails/:id',
+    element:<TourDetails></TourDetails>
+  },
+  {
+    path: '/top-destination-details',
+    element:<TopDestinationDetails></TopDestinationDetails>
   },
 
 

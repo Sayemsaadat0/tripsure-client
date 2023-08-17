@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 const TourCard = ({singleTour, index}) => {
     const {_id, cardtitle,ratings,country,placetitle,placedetails,conditions} = singleTour;
+    console.log(_id);
   return (
     <div className="grid lg:grid-cols-2 gap-6 mb-10">
       <div className="">
