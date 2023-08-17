@@ -20,7 +20,6 @@ import TravelarStories from "../Pages/TravelerStories/TravelStories";
 import Stories from "../Pages/TravelerStories/Stories/Stories";
 import TravelGuides from "../Pages/TravelGuides/TravelGuides";
 import GuideDetails from "../Pages/TravelGuides/GuideDetails/GuideDetails";
-import TourCard from "../Pages/TravelerChoose/TourCard";
 import TourDetails from "../Pages/TourDetails/TourDetails";
 import TopDestinationDetails from "../Pages/TopDestinationDetails/TopDestinationDetails";
 
