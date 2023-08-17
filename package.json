@@ -25,7 +25,11 @@
     "react-helmet-async": "^1.3.0",
     "react-hook-form": "^7.45.4",
     "react-icons": "^4.10.1",
+<<<<<<< HEAD
     "react-modal": "^3.16.1",
+=======
+    "react-rating": "^2.0.5",
+>>>>>>> 8ce278f8dfbef3f993ab83cd762efe33382cd679
     "react-redux": "^8.1.2",
     "react-router-dom": "^6.14.2",
     "react-toastify": "^9.1.3",

@@ -2145,6 +2145,7 @@
   dependencies:
     "@types/istanbul-lib-report" "*"
 
+<<<<<<< HEAD
 "@types/lodash.memoize@^4.1.7":
   version "4.1.7"
   resolved "https://registry.npmjs.org/@types/lodash.memoize/-/lodash.memoize-4.1.7.tgz"
@@ -2153,6 +2154,9 @@
     "@types/lodash" "*"
 
 "@types/lodash@*":
+=======
+"@types/lodash@^4.14.105":
+>>>>>>> 8ce278f8dfbef3f993ab83cd762efe33382cd679
   version "4.14.197"
   resolved "https://registry.npmjs.org/@types/lodash/-/lodash-4.14.197.tgz"
   integrity sha512-BMVOiWs0uNxHVlHBgzTIqJYmj+PgCo4euloGF+5m4okL3rEYzM2EEv78mw8zWSMM57dM7kVIgJ2QDvwHSoCI5g==
@@ -2183,6 +2187,15 @@
   version "18.2.19"
   resolved "https://registry.npmjs.org/@types/react/-/react-18.2.19.tgz"
   integrity sha512-e2S8wmY1ePfM517PqCG80CcE48Xs5k0pwJzuDZsfE8IZRRBfOMCF+XqnFxu6mWtyivum1MQm4aco+WIt6Coimw==
+  dependencies:
+    "@types/prop-types" "*"
+    "@types/scheduler" "*"
+    csstype "^3.0.2"
+
+"@types/react@^16.0.40":
+  version "16.14.45"
+  resolved "https://registry.npmjs.org/@types/react/-/react-16.14.45.tgz"
+  integrity sha512-XFtKkY3yuPO5VJSE6Lru9yLkVQvYE+l6NbmLp6IWCg4jo5S8Ijbpke8wC9q4NmQ5pJErT8KKboG5eY7n5n718A==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -5616,7 +5629,11 @@ react-devtools-core@^4.27.2:
     shell-quote "^1.6.1"
     ws "^7"
 
+<<<<<<< HEAD
 "react-dom@^0.14.0 || ^15.0.0 || ^16 || ^17 || ^18", "react-dom@^15.0.0 || ^16.0.0", "react-dom@^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react-dom@^16 || ^17 || ^18", "react-dom@^16.0.0 || ^17.0.0 || ^18.0.0", "react-dom@^16.6.0 || ^17.0.0 || ^18.0.0", "react-dom@^16.8 || ^17.0 || ^18.0", "react-dom@^16.8.0 || ^17.0.0 || ^18.0.0", react-dom@^18.2.0, react-dom@>=15.0.0, react-dom@>=16, react-dom@>=16.8, react-dom@>=17:
+=======
+"react-dom@^15.0.0 || ^16.0.0", "react-dom@^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react-dom@^16 || ^17 || ^18", "react-dom@^16.0.0 || ^17.0.0 || ^18.0.0", "react-dom@^16.6.0 || ^17.0.0 || ^18.0.0", "react-dom@^16.8 || ^17.0 || ^18.0", react-dom@^18.2.0, react-dom@>=15.0.0, react-dom@>=16, react-dom@>=16.3.0, react-dom@>=16.8, react-dom@>=17:
+>>>>>>> 8ce278f8dfbef3f993ab83cd762efe33382cd679
   version "18.2.0"
   resolved "https://registry.npmjs.org/react-dom/-/react-dom-18.2.0.tgz"
   integrity sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==
@@ -5729,6 +5746,14 @@ react-native@*, "react-native@^0.0.0-0 || 0.60 - 0.72 || 1000.0.0", react-native
     ws "^6.2.2"
     yargs "^17.6.2"
 
+react-rating@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.npmjs.org/react-rating/-/react-rating-2.0.5.tgz"
+  integrity sha512-uldxgLCe5bzqGX7V+7/bPgQQj2Kok6eiMgTMxjKOhfhnQkFLDlc4TjMlp7gaJFAHWdbiOnqpiShI7z8as6oWtg==
+  dependencies:
+    "@types/lodash" "^4.14.105"
+    "@types/react" "^16.0.40"
+
 "react-redux@^7.2.1 || ^8.0.2", react-redux@^8.1.2:
   version "8.1.2"
   resolved "https://registry.npmjs.org/react-redux/-/react-redux-8.1.2.tgz"
@@ -5813,7 +5838,11 @@ react-typical@^0.1.3:
   dependencies:
     "@camwiegert/typical" "^0.1.1"
 
+<<<<<<< HEAD
 react@*, "react@^0.14 || ^15.0.0-rc || >=15.0", "react@^0.14.0 || ^15.0.0 || ^16 || ^17 || ^18", "react@^15.0.0 || ^16.0.0", "react@^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16 || ^17 || ^18", "react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.6.0 || ^17.0.0 || ^18.0.0", "react@^16.8 || ^17.0 || ^18.0", "react@^16.8.0 || ^17 || ^18", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.9.0 || ^17.0.0 || ^18", react@^18.2.0, react@>=15.0.0, react@>=16, react@>=16.8, react@>=17, "react@0.14 || 15 - 18", react@18.2.0:
+=======
+react@*, "react@^0.14 || ^15.0.0-rc || >=15.0", "react@^15.0.0 || ^16.0.0", "react@^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16 || ^17 || ^18", "react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.6.0 || ^17.0.0 || ^18.0.0", "react@^16.8 || ^17.0 || ^18.0", "react@^16.8.0 || ^17 || ^18", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.9.0 || ^17.0.0 || ^18", react@^18.2.0, react@>=15.0.0, react@>=16, react@>=16.3.0, react@>=16.8, react@>=17, "react@0.14 || 15 - 18", react@18.2.0:
+>>>>>>> 8ce278f8dfbef3f993ab83cd762efe33382cd679
   version "18.2.0"
   resolved "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
   integrity sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==
