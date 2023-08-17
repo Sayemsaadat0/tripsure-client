@@ -12,7 +12,7 @@ const TravelerChoose = () => {
   console.log(category);
   console.log(allTour);
   useEffect(() => {
-    axios.get(`http://localhost:1000/category/${category}`).then((data) => {
+    axios.get(`https://tripsure-server.vercel.app/category/${category}`).then((data) => {
         setAllTour(data.data);
     });
   }, []);
