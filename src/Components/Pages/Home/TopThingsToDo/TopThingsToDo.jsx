@@ -53,7 +53,7 @@ const TopThingsToDo = () => {
              
              
               <SwiperSlide key={index}>
-                <Link to='/travelerChoose-thingsToDo'>
+                <Link to={`/travelerChoose-thingsToDo/${todo?.categoryName}`}>
                 <div>
                 <img className='h-64 w-full  relative object-cover' src={todo.picture} alt="" />
                 <h2 className='absolute bottom-0 pb-3 pl-2  font-extrabold text-3xl text-white left-0 shadow-2xl  bg-gradient-to-t from-black'>{todo.categoryName}</h2>

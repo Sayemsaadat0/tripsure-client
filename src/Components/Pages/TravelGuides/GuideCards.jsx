@@ -4,7 +4,7 @@ import KeepExploring from "../TravelerStories/KeepExploring";
 import { Link } from "react-router-dom";
 
 import React from 'react';
-import { Rating } from "@smastrom/react-rating";
+// import { Rating } from "@smastrom/react-rating";
 
 const GuideCards = () => {
   return (
