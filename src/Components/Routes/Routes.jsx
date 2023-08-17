@@ -20,8 +20,10 @@ import ErrorPage from "../../LayOut/ErrorPage/ErrorPage";
 import FamilyGuideDetails from "../Pages/Home/FamilyGuide/FamilyGuideDetails";
 import Flights from "../Pages/More/Flights/Flights";
 import RentalCars from "../Pages/More/RentalCars/RentalCars";
-
-
+import TravelarStories from "../Pages/TravelerStories/TravelStories";
+import Stories from "../Pages/TravelerStories/Stories/Stories";
+import TravelGuides from "../Pages/TravelGuides/TravelGuides";
+import GuideDetails from "../Pages/TravelGuides/GuideDetails/GuideDetails";
 
 
 
@@ -59,7 +61,23 @@ const router = createBrowserRouter([
       {
         path: 'rentalcars',
         element: <RentalCars/>
-      }
+      },
+      {
+        path: 'travelStory',
+        element: <TravelarStories/>
+      }, 
+      {
+        path: 'travelStory/stories',
+        element: <Stories/>
+      }, 
+      {
+        path: 'travelGuides',
+        element: <TravelGuides/>
+      }, 
+      {
+        path: 'travelGuides/details',
+        element: <GuideDetails/>
+      }, 
     ],
   },
   {
