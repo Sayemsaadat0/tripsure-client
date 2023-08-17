@@ -8,7 +8,7 @@ import AirLineReview from "./AirLineReview";
 
 const Flights = () => {
   return (
-    <div>
+    <>
       <div className="flightBackground">
         <h3 className="text-center text-4xl font-bold text-white pt-12">
           Find the best flight for the right price
@@ -16,7 +16,7 @@ const Flights = () => {
         <div className="flex justify-center mt-6 ">
           <Tabs>
             <TabList className="custom-tab-list">
-              <Tab className="custom-tab">Round Trip</Tab>
+              <Tab className=" custom-tab">Round Trip</Tab>
               <Tab className="custom-tab">One-way</Tab>
               <Tab className="custom-tab">Multi-city</Tab>
             </TabList>
@@ -27,8 +27,8 @@ const Flights = () => {
             </TabPanel>
             <TabPanel>
               <div>
-                <OneWay/>
-             </div>
+                <OneWay />
+              </div>
             </TabPanel>
             <TabPanel>
               <h2>Multi-city</h2>
@@ -37,8 +37,8 @@ const Flights = () => {
         </div>
       </div>
       <Card />
-      <AirLineReview/>
-    </div>
+      <AirLineReview />
+    </>
   );
 };
 
