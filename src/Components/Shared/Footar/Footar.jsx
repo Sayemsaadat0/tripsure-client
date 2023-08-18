@@ -10,8 +10,7 @@ const Footar = () => {
     useAOSInit()
     const currentYear = new Date().getFullYear()
     return (
-        <div data-aos="fade-up"
-        data-aos-anchor-placement="top-bottom">
+        <div>
             <footer className="bg-black text-white">
                 <Container>
                     <div className="p-4 mx-auto justify-between grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 py-8 md:py-12 gap-8">

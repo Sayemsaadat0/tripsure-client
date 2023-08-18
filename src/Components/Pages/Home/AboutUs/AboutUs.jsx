@@ -7,9 +7,6 @@ const AboutUs = () => {
   return (
     <Container>
       <div
-        data-aos="fade-down"
-        data-aos-duration="3000"
-        data-aos-anchor-placement="top-top"
         className="background  h-96">
         <div className="h-96 bg-black bg-opacity-50">
           <div className="text-white h-96 flex flex-col justify-center items-center ">
