@@ -107,40 +107,48 @@ const router = createBrowserRouter([
     path: '/dashboard',
     element: <Dashboard></Dashboard>,
     children: [
-      {
-        path: 'adminhome',
-        element: <AdminHome></AdminHome>
-      },
-
-      {
-        path: 'admin/totalview',
-        element: <Totallview />
-      },
-      {
-        path: 'manageusers',
-        element: <ManageUser></ManageUser>
-      },
-      {
-        path: 'managebookings',
-        element: <ManageBookings />
-      },
-      {
-        path: 'managepackage',
-        element: <ManagePackage />
-      },
-      {
-        path: 'reviews',
-        element: <Reviews />
-      },
-      {
-        path: 'inquires',
-        element: <Inquiries />
-      },
-      {
-        path: 'addtour',
-        element: <AddTour />
-      },
-    ]
+        {
+          path: 'adminhome',
+          element: <AdminHome></AdminHome>
+        },
+      
+        {
+          path: 'admin/totalview',
+          element: <Totallview />
+        },
+        {
+          path: 'manageusers',
+          element: <ManageUser></ManageUser>
+        },
+        {
+          path: 'managebookings',
+          element: <ManageBookings />
+        },
+        {
+          path: 'managepackage',
+          element: <ManagePackage />
+        },
+        {
+          path: 'reviews',
+          element: <Reviews />
+        },
+        {
+          path: 'inquires',
+          element: <Inquiries />
+        },
+        {
+          path: 'addtour',
+          element: <AddTour />
+        },
+  ]
+  },
+  {
+    path: '/tourDetails/:id',
+    element:<TourDetails></TourDetails>
+  },
+  {
+    path: '/top-destination-details/:id',
+    element:<TopDestinationDetails></TopDestinationDetails>
   },
 
 
