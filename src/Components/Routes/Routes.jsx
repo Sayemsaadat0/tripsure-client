@@ -6,6 +6,8 @@ import Register from "../Pages/Log&&Reg/Register";
 import Login from "../Pages/Log&&Reg/Login";
 import KnowMore from "../Pages/AboutUs/KnowMore";
 import Discover from "../Discover";
+import Profile from "../Pages/Profile/Profile";
+import Overview from "../Pages/Overview/Overview";
 
 
 
@@ -25,15 +27,23 @@ const router = createBrowserRouter([
         path: 'knowmore',
         element: <KnowMore />
       },
-      {path: 'favorite', element: <Discover></Discover>}
+      {
+        path: 'profile/:name',
+        element: <Profile></Profile>
+      },
+      {
+        path: 'overview',
+        element: <Overview></Overview>
+      },
+      { path: 'favorite', element: <Discover></Discover> }
       /* {
         path: 'travelarsstory',
         element: <KnowMore />
-      } */ 
+      } */
       /* {
         path: 'postastory',
         element: <KnowMore />
-      }, */ 
+      }, */
       /* {
         path: 'addareview',
         element: <KnowMore />

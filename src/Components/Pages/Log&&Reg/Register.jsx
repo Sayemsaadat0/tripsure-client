@@ -64,7 +64,7 @@ const Register = () => {
     };
 
     return (
-        <div style={{ backgroundImage: `url(${signupImg})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
+        <div style={{ backgroundImage: `url(https://i.ibb.co/rxYf1Nf/endgaem-register.jpg)`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
             <div className=' flex bg-black bg-opacity-60 p-4 items-center justify-center flex-col h-full min-h-[calc(100vh)]'>
                 <div className="max-w-lg w-full mx-auto mt-4 border-2 border-[#2d969e] p-4 md:p-8 lg:p-12 text-gray-300 bg-white bg-opacity-60 hover:bg-opacity-70 duration-500 rounded-lg hover:shadow-lg">
                     <h2 className="text-2xl text-[#2d969e] text-center font-bold mb-4">Please Register</h2>

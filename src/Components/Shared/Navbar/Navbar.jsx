@@ -16,6 +16,7 @@ const Navbar = () => {
     const naviItems = [
         { id: 1, name: 'discover', dropdown: true, routes: [{ routeName: 'travel story', linkName: 'travelStory' }, { routeName: 'your guides', linkName: 'yourGuides' }] },
         { id: 2, name: 'community', dropdown: true, routes: [{ routeName: 'post a story', linkName: 'postStory' }, { routeName: 'add a review', linkName: 'addReview' }] },
+        { id: 2, name: 'more', dropdown: true, routes: [{ routeName: 'post a story', linkName: 'postStory' }, { routeName: 'add a review', linkName: 'addReview' }] },
         { id: 3, name: 'dashboard' },
     ]
 
@@ -70,7 +71,6 @@ const Navbar = () => {
                             }
                         </div>)
                     }
-                    {/* <Dropdown></Dropdown> */}
                 </div>
                 <div className='hidden lg:flex'>
                     {
@@ -106,10 +106,10 @@ const Navbar = () => {
                                 <p className='text-lg font-medium'>{user?.displayName}</p>
                                 <button onClick={handleLogout} className=" logout-button w-full bg-white">Log Out</button>
 
-                                <div className='flex items-center gap-3 w-full cursor-pointer  font-medium uppercase px-4 py-2 rounded hover:bg-gray-300  duration-300'>
+                                <Link onClick={() => setMenuOpen(false)} to={`/profile/${user?.displayName.split(' ').join('-')}`} className='flex items-center gap-3 w-full cursor-pointer  font-medium uppercase px-4 py-2 rounded hover:bg-gray-300  duration-300'>
                                     <CgProfile size={20} color='19a0c9'></CgProfile>
                                     <span>Your Profile</span>
-                                </div>
+                                </Link>
                             </div>
                                 : <Link to='/login'>
                                     <li className='cursor-pointer font-medium uppercase px-6 py-3 hover:bg-gray-300  duration-300'>
