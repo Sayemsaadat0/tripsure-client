@@ -1,7 +1,9 @@
 import { Menu, Transition } from '@headlessui/react'
 import { Fragment, useEffect, useRef, useState } from 'react'
 import { CgProfile } from 'react-icons/cg'
+import { LuView } from 'react-icons/lu'
 import useAuth from '../../Hooks/useAuth'
+import { Link } from 'react-router-dom'
 
 const Dropdown = () => {
   const { user, logOut } = useAuth()
@@ -28,7 +30,7 @@ const Dropdown = () => {
     <div className=" w-[56px] text-right">
       <Menu as="div" className="relative inline-block text-left">
         <Menu.Button className="">
-          <img className='w-full h-full rounded-full border-2 border-[#2d969e] p-[2px]' src={`${user?.photoURL}`} alt="" />
+          <img className='w-full h-full rounded-full border-2 border-[#19a0c9] p-[2px]' src={`${user?.photoURL}`} alt="" />
         </Menu.Button>
         <Transition
           as={Fragment}
@@ -53,11 +55,18 @@ const Dropdown = () => {
               </Menu.Item>
 
               <Menu.Item>
-                <div className='flex items-center gap-3 px-2 py-1 hover:bg-gray-300 rounded
+                <Link to={`/profile/${user?.displayName.split(' ').join('-')}`} className='flex items-center gap-3 px-2 py-1 hover:bg-gray-300 rounded
                 '>
                   <CgProfile size={20} color='19a0c9'></CgProfile>
                   <span className='text-lg'>Your Profile</span>
-                </div>
+                </Link>
+              </Menu.Item>
+              <Menu.Item>
+                <Link to='/overview' className='flex items-center gap-3 px-2 py-1 hover:bg-gray-300 rounded
+                '>
+                  <LuView size={20} color='19a0c9'></LuView>
+                  <span className='text-lg'>View Overview</span>
+                </Link>
               </Menu.Item>
             </div>
           </Menu.Items>

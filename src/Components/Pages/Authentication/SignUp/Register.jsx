@@ -1,29 +1,32 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import useAuth from '../../../Hooks/useAuth';
-import GoogleLogin from '../../SocialLogin/GoogleLogin';
-import FacebookLogin from '../../SocialLogin/FacebookLogin';
-import LoadingButton from '../../Button/LoadingButton';
-import signupImg from '../../../assets/login/signup.png'
+// import GoogleLogin;
+// import FacebookLogin from '../../SocialLogin/FacebookLogin';
+// import LoadingButton from '../../Button/LoadingButton';
+import useAuth from '../../../../Hooks/useAuth';
+import LoadingButton from '../../../Button/LoadingButton';
+import GoogleLogin from '../../../SocialLogin/GoogleLogin';
+import FacebookLogin from '../../../SocialLogin/FacebookLogin';
 const Register = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
-    const { createUser, updateUserProfile } = useAuth()
+    const { createUser, updateUserProfile, logOut } = useAuth()
     const [loading, setLoading] = useState(false)
     const [show, setShow] = useState(false)
+    const navigate = useNavigate()
 
     const onSubmit = (data) => {
         // Handle form submission here, e.g., make an API call to register the user
         console.log(data);
+        setLoading(true)
         const { name, email, password, image } = data
         const fromData = new FormData()
         fromData.append('image', image[0])
         const url = `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMGBB_KEY}`
         axios.post(url, fromData)
             .then(imgData => {
-                setLoading(true)
                 console.log(imgData.data.data.display_url);
                 const photoUrl = imgData?.data?.data?.display_url
                 createUser(email, password)
@@ -31,7 +34,6 @@ const Register = () => {
                         console.log(result)
                         updateUserProfile(name, photoUrl)
                             .then(() => {
-                                setLoading(false)
                                 reset()
                                 Swal.fire({
                                     title: 'Success!',
@@ -39,7 +41,9 @@ const Register = () => {
                                     icon: 'success',
                                     confirmButtonText: 'Cool'
                                 })
-
+                                setLoading(false)
+                                logOut()
+                                navigate('/login', { replace: true })
                             })
                             .catch(error => {
                                 console.log(error)
@@ -55,6 +59,7 @@ const Register = () => {
                     })
                     .catch(error => {
                         console.log(error)
+                        setLoading(false)
                     })
             })
             .catch(error => {
@@ -66,7 +71,7 @@ const Register = () => {
     return (
         <div style={{ backgroundImage: `url(https://i.ibb.co/rxYf1Nf/endgaem-register.jpg)`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
             <div className=' flex bg-black bg-opacity-60 p-4 items-center justify-center flex-col h-full min-h-[calc(100vh)]'>
-                <div className="max-w-lg w-full mx-auto mt-4 border-2 border-[#2d969e] p-4 md:p-8 lg:p-12 text-gray-300 bg-white bg-opacity-60 hover:bg-opacity-70 duration-500 rounded-lg hover:shadow-lg">
+                <div className="max-w-lg w-full mx-auto mt-4 border-2 border-[#2d969e] p-4 md:p-8 lg:p-12 text-gray-300 bg-white bg-opacity-80 duration-500 rounded-lg hover:shadow-lg">
                     <h2 className="text-2xl text-[#2d969e] text-center font-bold mb-4">Please Register</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="mb-4">

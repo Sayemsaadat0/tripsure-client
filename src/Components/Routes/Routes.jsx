@@ -1,8 +1,18 @@
 import { createBrowserRouter, } from "react-router-dom";
 import Main from "../../LayOut/Main/Main";
 import Home from "../Pages/Home/Home";
-import Register from "../Pages/Log&&Reg/Register";
-import Login from "../Pages/Log&&Reg/Login";
+// import App from "../../App";
+// import Register from "../Pages/Log&&Reg/Register";
+// import Login from "../Pages/Log&&Reg/Login";
+// import KnowMore from "../Pages/AboutUs/KnowMore";
+import Discover from "../Discover";
+import Profile from "../Pages/Profile/Profile";
+import Overview from "../Pages/Overview/Overview";
+import Login from "../Pages/Authentication/Login/Login";
+import Register from "../Pages/Authentication/SignUp/Register";
+
+
+
 import KnowMore from "../Pages/AboutUs/KnowMore";
 import Dashboard from "../../LayOut/Dashboard";
 import Totallview from "../Pages/DashBoard/Admin/Totallview";
@@ -44,6 +54,23 @@ const router = createBrowserRouter([
         path: 'knowmore',
         element: <KnowMore />
       },
+      {
+        path: 'profile/:name',
+        element: <Profile></Profile>
+      },
+      {
+        path: 'overview',
+        element: <Overview></Overview>
+      },
+      { path: 'favorite', element: <Discover></Discover> },
+       {
+        path: 'travelarsstory',
+        element: <KnowMore />
+      } ,
+       {
+        path: 'postastory',
+        element: <KnowMore />
+      }, 
       {
         path: 'familyguidedetails',
         element: <FamilyGuideDetails />
