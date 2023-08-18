@@ -2,12 +2,14 @@ import { createBrowserRouter, } from "react-router-dom";
 import Main from "../../LayOut/Main/Main";
 import Home from "../Pages/Home/Home";
 import App from "../../App";
-import Register from "../Pages/Log&&Reg/Register";
-import Login from "../Pages/Log&&Reg/Login";
+// import Register from "../Pages/Log&&Reg/Register";
+// import Login from "../Pages/Log&&Reg/Login";
 import KnowMore from "../Pages/AboutUs/KnowMore";
 import Discover from "../Discover";
 import Profile from "../Pages/Profile/Profile";
 import Overview from "../Pages/Overview/Overview";
+import Login from "../Pages/Authentication/Login/Login";
+import Register from "../Pages/Authentication/SignUp/Register";
 
 
 
