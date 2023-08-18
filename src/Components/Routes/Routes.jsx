@@ -81,6 +81,14 @@ const router = createBrowserRouter([
         element: <Stories />
       },
       {
+        path: '/tourDetails/:id',
+        element:<TourDetails></TourDetails>
+      },
+      {
+        path: '/top-destination-details/:id',
+        element:<TopDestinationDetails></TopDestinationDetails>
+      },
+      {
         path: 'travelGuides',
         element: <TravelGuides />
       },
@@ -142,14 +150,7 @@ const router = createBrowserRouter([
         },
   ]
   },
-  {
-    path: '/tourDetails/:id',
-    element:<TourDetails></TourDetails>
-  },
-  {
-    path: '/top-destination-details/:id',
-    element:<TopDestinationDetails></TopDestinationDetails>
-  },
+
 
 
 
