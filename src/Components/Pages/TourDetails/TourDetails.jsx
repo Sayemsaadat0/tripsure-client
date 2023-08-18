@@ -31,6 +31,7 @@ const TourDetails = () => {
     costperperson,
     conditions,
     awards,
+    picture,
     postedby,
     ratings,
     included,
@@ -60,7 +61,7 @@ const TourDetails = () => {
         <div className="my-6">
           <img
             className="w-full h-60 md:h-72 lg:h-[25rem] object-bottom rounded-md bg-cover object-cover"
-            src="https://plus.unsplash.com/premium_photo-1683134415500-097cfbf33d7a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+            src={picture}
             alt=""
           />
         </div>
@@ -196,7 +197,7 @@ const TourDetails = () => {
               </div>
               <div className="flex gap-3 items-center justify-around">
                 <button className="btn rounded-full lg:px-14 btn-warning">
-                  Add TO Card
+                  Add TO Favorite
                 </button>
                 <button className="btn rounded-full lg:px-14 btn-warning">
                   Reserve Now

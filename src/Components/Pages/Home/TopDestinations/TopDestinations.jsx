@@ -9,12 +9,12 @@ import { Link } from 'react-router-dom';
 
 
 const TopDestinations = () => {
-  const [TopDestinatins, setTopDestinatins] = useState([]);
+  const [TopDestinations, setTopDestinations] = useState([]);
 
   useEffect(() => {
-    fetch("TopThignsTodo.json")
+    fetch("http://localhost:1000/top-destinations")
       .then((res) => res.json())
-      .then((data) => setTopDestinatins(data));
+      .then((data) => setTopDestinations(data));
   }, []);
     return (
         <Container>
@@ -48,13 +48,13 @@ const TopDestinations = () => {
        onSwiper={(swiper) => console.log(swiper)}
     >
         {
-             TopDestinatins.map((todo,index)=>(
+             TopDestinations.map((todo,index)=>(
              
              
               <SwiperSlide key={index}>
-                <Link to={'/top-destination-details'}>
-                <img className='h-64 w-full relative  object-cover' src={todo.imageURL} alt="" />
-                <h2 className='absolute bottom-0 pb-3 pl-2  font-extrabold text-3xl text-white left-0 shadow-2xl  bg-gradient-to-t from-black'>{todo.item_name}</h2>
+                <Link to={`/top-destination-details/${todo?._id}`}>
+                <img className='h-64 w-full relative  object-cover' src={todo.picture} alt="" />
+                <h2 className='absolute bottom-0 pb-3 pl-2  font-extrabold text-3xl text-white left-0 shadow-2xl  bg-gradient-to-t from-black'>{todo.cardtitle}</h2>
                 </Link>
               </SwiperSlide>
              

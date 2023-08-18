@@ -63,7 +63,7 @@ const TravelerChoose = () => {
             <div className="">
               <img
                 className="w-full h-60 md:h-72 lg:h-[30rem] rounded-2xl bg-cover object-cover"
-                src="https://plus.unsplash.com/premium_photo-1683134415500-097cfbf33d7a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+                src={fistOneCard?.picture}
                 alt=""
               />
             </div>

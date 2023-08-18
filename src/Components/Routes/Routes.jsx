@@ -121,7 +121,7 @@ const router = createBrowserRouter([
     element:<TourDetails></TourDetails>
   },
   {
-    path: '/top-destination-details',
+    path: '/top-destination-details/:id',
     element:<TopDestinationDetails></TopDestinationDetails>
   },
 
