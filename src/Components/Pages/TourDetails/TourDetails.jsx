@@ -20,7 +20,7 @@ const TourDetails = () => {
   const { id } = useParams();
   console.log(id);
   useEffect(() => {
-    axios.get(`http://localhost:1000/tourDetails/${id}`).then((data) => {
+    axios.get(`https://tripsure-server.vercel.app/tourDetails/${id}`).then((data) => {
       setTourDetails(data.data);
     });
   }, [id]);

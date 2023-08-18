@@ -6,7 +6,11 @@ import { Link } from "react-router-dom";
 const AboutUs = () => {
   return (
     <Container>
-      <div className="background  h-96">
+      <div
+        data-aos="fade-down"
+        data-aos-duration="3000"
+        data-aos-anchor-placement="top-top"
+        className="background  h-96">
         <div className="h-96 bg-black bg-opacity-50">
           <div className="text-white h-96 flex flex-col justify-center items-center ">
             <h2 className="text-3xl font-bold mb-3">Get to Know Us: Our Story and Values</h2>

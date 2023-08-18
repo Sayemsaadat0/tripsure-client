@@ -5,10 +5,13 @@ import { MdOutlineEmail } from 'react-icons/md'
 import { CiMobile4, CiYoutube } from 'react-icons/ci'
 import { SlLocationPin, SlClock } from 'react-icons/sl'
 import { FaFacebookF, FaYoutube, FaLinkedinIn } from 'react-icons/fa'
-const Footar = () => {
+import useAOSInit from '../../../Hooks/useAOSInit';
+const Footar = () => { 
+    useAOSInit()
     const currentYear = new Date().getFullYear()
     return (
-        <div>
+        <div data-aos="fade-up"
+        data-aos-anchor-placement="top-bottom">
             <footer className="bg-black text-white">
                 <Container>
                     <div className="p-4 mx-auto justify-between grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 py-8 md:py-12 gap-8">

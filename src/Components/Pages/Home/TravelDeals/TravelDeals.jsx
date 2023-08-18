@@ -1,12 +1,16 @@
 import React from 'react';
 import SectionTitle from '../../../Shared/SectionTitle/SectionTitle';
 import Container from '../../../../LayOut/Container';
+import useAOSInit from '../../../../Hooks/useAOSInit';
 
-const TravelDeals = () => {
+const TravelDeals = () => { 
+    useAOSInit()
     return (
-        <div>
+        <div data-AOS="fade-left"
+            data-aos-duration="3000"
+            data-aos-easing="ease">
             <SectionTitle subText={'Adventures Await'}
-                text={'Hot Travel Offers'}>
+                text={'Hot Travel Deals'}>
             </SectionTitle>
 
             <Container>

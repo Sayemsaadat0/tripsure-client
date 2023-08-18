@@ -1,11 +1,15 @@
 import React from 'react';
 import Container from '../../../../LayOut/Container';
 import { Link } from 'react-router-dom';
+import useAOSInit from '../../../../Hooks/useAOSInit';
 
 const FamilyGuide = () => {
+    useAOSInit()
     return (
         <Container>
-            <div className="hero h-[100%] " style={{ backgroundImage: 'url(https://i.ibb.co/bBXybCn/Untitled-design-3.png)' }}>
+            <div data-aos="fade-up"
+                data-aos-duration="3000"
+                data-aos-anchor-placement="bottom-bottom" className="hero h-[100%] " style={{ backgroundImage: 'url(https://i.ibb.co/bBXybCn/Untitled-design-3.png)' }}>
                 <div className="hero-overlay bg-opacity-40"></div>
                 <div className="hero-content text-center text-neutral-content">
                     <div className="max-w-xl p-10 py-24">

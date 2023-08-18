@@ -5,11 +5,14 @@ import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 import Container from '../../../../LayOut/Container';
 import SectionTitle from '../../../Shared/SectionTitle/SectionTitle';
+import useAOSInit from '../../../../Hooks/useAOSInit';
+
 
 const Feedback = () => {
     const [feedbacks, setFeedbacks] = useState([]);
-    const [selectedReview, setSelectedReview] = useState(null); // Changed to null
+    const [selectedReview, setSelectedReview] = useState(null);
 
+    useAOSInit()
     useEffect(() => {
         fetch('Feedback.json')
             .then(res => res.json())
@@ -24,7 +27,9 @@ const Feedback = () => {
 
     return (
         <Container>
-            <div>
+            <div data-AOS="fade-left"
+                data-aos-duration="3000"
+                data-aos-easing="ease">
 
                 <div className='p-10'>
                     <SectionTitle
@@ -81,17 +86,19 @@ const Feedback = () => {
                 </div>
 
                 {/* Modal */}
-                <dialog id="my_modal_3" className="modal">
+                <dialog id="my_modal_3" className="modal ">
                     <form method="dialog" className="modal-box">
-                        <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 hover:bg-red-500" onClick={() => setSelectedReview(null)}>✕</button>
+                        <button className="btn hover:text-white btn-circle btn-ghost absolute right-2 top-2 hover:bg-red-500" onClick={() => setSelectedReview(null)}>✕</button>
                         {selectedReview && (
-                            <>
+                            <div className=''>
                                 <h3 className="font-bold text-lg">Testimonials</h3>
                                 <div className="flex justify-center mt-5">
                                     <img className='h-20 w-20 rounded-full' src={selectedReview.picture} alt='' />
                                 </div>
+                                <h2 className='font-bold'>{selectedReview.name}</h2>
+                                <h2 className='font-light'>{selectedReview.destination}</h2>
                                 <p className="py-4">{selectedReview.review}</p>
-                            </>
+                            </div>
                         )}
                     </form>
                 </dialog>
