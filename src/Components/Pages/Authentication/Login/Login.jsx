@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 // import GoogleLogin from '../../Components/socialLogin/GoogleLogin';
 // import FacebookLogin from '../../Components/socialLogin/FacebookLogin';
 // import useAuth from '../../Hooks/useAuth';
@@ -18,6 +18,7 @@ import FacebookLogin from '../../../SocialLogin/FacebookLogin';
 import ResetPassword from '../../../Modal/ResetPassword';
 const Login = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
+    const navigate = useNavigate()
     const { signInUser } = useAuth()
     const [loading, setLoading] = useState(false)
     const [isOpen, setIsOpen] = useState(false)
@@ -40,6 +41,7 @@ const Login = () => {
                     icon: 'success',
                     confirmButtonText: 'Cool'
                 })
+                navigate('/', {replace: true})
                 setLoading(false)
 
             })

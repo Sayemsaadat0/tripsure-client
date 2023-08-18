@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 // import GoogleLogin;
 // import FacebookLogin from '../../SocialLogin/FacebookLogin';
@@ -12,20 +12,21 @@ import GoogleLogin from '../../../SocialLogin/GoogleLogin';
 import FacebookLogin from '../../../SocialLogin/FacebookLogin';
 const Register = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
-    const { createUser, updateUserProfile } = useAuth()
+    const { createUser, updateUserProfile, logOut } = useAuth()
     const [loading, setLoading] = useState(false)
     const [show, setShow] = useState(false)
+    const navigate = useNavigate()
 
     const onSubmit = (data) => {
         // Handle form submission here, e.g., make an API call to register the user
         console.log(data);
+        setLoading(true)
         const { name, email, password, image } = data
         const fromData = new FormData()
         fromData.append('image', image[0])
         const url = `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMGBB_KEY}`
         axios.post(url, fromData)
             .then(imgData => {
-                setLoading(true)
                 console.log(imgData.data.data.display_url);
                 const photoUrl = imgData?.data?.data?.display_url
                 createUser(email, password)
@@ -33,7 +34,6 @@ const Register = () => {
                         console.log(result)
                         updateUserProfile(name, photoUrl)
                             .then(() => {
-                                setLoading(false)
                                 reset()
                                 Swal.fire({
                                     title: 'Success!',
@@ -41,7 +41,9 @@ const Register = () => {
                                     icon: 'success',
                                     confirmButtonText: 'Cool'
                                 })
-
+                                setLoading(false)
+                                logOut()
+                                navigate('/login', { replace: true })
                             })
                             .catch(error => {
                                 console.log(error)
@@ -57,6 +59,7 @@ const Register = () => {
                     })
                     .catch(error => {
                         console.log(error)
+                        setLoading(false)
                     })
             })
             .catch(error => {

@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { FaFacebook, FaSpinner } from 'react-icons/fa';
 import useAuth from '../../Hooks/useAuth';
 import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 const FacebookLogin = () => {
+    const navigate = useNavigate()
     const { facebookLogin } = useAuth()
     const [loading, setLoading] = useState(false)
     const handleFacebookLogin = () => {
@@ -16,6 +18,7 @@ const FacebookLogin = () => {
                     icon: 'success',
                     confirmButtonText: 'Cool'
                 })
+                navigate('/', {replace: true})
                 setLoading(false)
             })
             .catch(error => {
