@@ -1,0 +1,5 @@
+.bg-guide {
+    background: linear-gradient(180deg,rgba(0,0,0,.01),rgba(0,0,0,.5) 30%,rgba(0,0,0,.95)), url('https://static.tacdn.com/img2/tc/hero/dest_hero_2023-c1.png');
+    background-position: center;
+    background-size: cover;
+}

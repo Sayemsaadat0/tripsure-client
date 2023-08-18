@@ -4,10 +4,12 @@ import { IoBedOutline, IoRestaurantSharp } from "react-icons/io5";
 import { FaArrowsToDot } from "react-icons/fa6";
 import { BsKey } from "react-icons/bs";
 import { AiOutlineSearch } from "react-icons/ai";
-import {useSelector, useDispatch} from "react-redux"
+import { useSelector, useDispatch } from "react-redux"
 import { setActiveCategory } from "../../../../Features/searchCategory/categorySlice";
+import useAOSInit from "../../../../Hooks/useAOSInit";
 
-const SearchSection = () => {
+const SearchSection = () => { 
+  useAOSInit()
   const categories = [
     {
       title: "Search All",
@@ -37,23 +39,26 @@ const SearchSection = () => {
     dispatch(setActiveCategory(category))
   };
   return (
-    <div className="w-full md:max-w-3xl mx-auto mt-20">
+    <div data-AOS="fade-down"
+      data-aos-duration="3000"
+      data-aos-easing="ease" 
+      className="w-full md:max-w-3xl mx-auto mt-20">
       <div>
         <div>
           <h1 className="text-center text-5xl font-bold hidden md:block">
             {
               activeCategory === "Hotels" ? "Stay somewhere great" : activeCategory === "Things To Do" ? "Do something fun" : activeCategory === "Restaurants" ? "Find places to eat" : activeCategory === "Vacation Rentals" ? "Explore places to rent" : "Where to?"
             }
-            
+
           </h1>
           <ul className="flex overflow-x-auto w-full my-5">
             {
-              categories.map((category, i )=> <li key={i} className={`searchFilter mx-2 ${activeCategory === category.title ? 'searchActive' : ''}`}  onClick={() =>{handleCategoryClick(category.title)}}>
-              <span className="mr-1 text-xl">
-                {category.icon}
-              </span>
-              {category.title}
-            </li>)
+              categories.map((category, i) => <li key={i} className={`searchFilter mx-2 ${activeCategory === category.title ? 'searchActive' : ''}`} onClick={() => { handleCategoryClick(category.title) }}>
+                <span className="mr-1 text-xl">
+                  {category.icon}
+                </span>
+                {category.title}
+              </li>)
             }
           </ul>
         </div>
@@ -66,7 +71,7 @@ const SearchSection = () => {
             <div>
               <input
                 type="text"
-                placeholder= {
+                placeholder={
                   activeCategory === "Hotels" ? "Hotel name or destination" : activeCategory === "Things To Do" ? "Attraction, activity or destination" : activeCategory === "Restaurants" ? "Restaurant or Destination" : activeCategory === "Vacation Rentals" ? "Destination" : "Place to go, things to do, hotels..."
                 }
                 className="py-2 pl-7 block w-full md:rounded-full border-b-2 md:border-none focus:outline-0 text-md"
