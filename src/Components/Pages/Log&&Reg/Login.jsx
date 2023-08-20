@@ -109,8 +109,7 @@ const Login = () => {
                                 loading ? <LoadingButton></LoadingButton>
                                     : <button
                                         type="submit"
-                                        className="logout-button"
-                                    >
+                                        className="logout-button">
                                         login
                                     </button>
                             }

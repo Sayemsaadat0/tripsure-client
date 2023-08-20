@@ -1,11 +1,8 @@
 import { createBrowserRouter, } from "react-router-dom";
 import Main from "../../LayOut/Main/Main";
 import Home from "../Pages/Home/Home";
-// import App from "../../App";
-// import Register from "../Pages/Log&&Reg/Register";
-// import Login from "../Pages/Log&&Reg/Login";
-// import KnowMore from "../Pages/AboutUs/KnowMore";
-import Discover from "../Discover";
+
+// import Discover from "../Discover";
 import Profile from "../Pages/Profile/Profile";
 import Overview from "../Pages/Overview/Overview";
 import Login from "../Pages/Authentication/Login/Login";
@@ -62,15 +59,10 @@ const router = createBrowserRouter([
         path: 'overview',
         element: <Overview></Overview>
       },
-      { path: 'favorite', element: <Discover></Discover> },
        {
         path: 'travelarsstory',
         element: <KnowMore />
-      } ,
-       {
-        path: 'postastory',
-        element: <KnowMore />
-      }, 
+      } , 
       {
         path: 'familyguidedetails',
         element: <FamilyGuideDetails />
@@ -96,6 +88,10 @@ const router = createBrowserRouter([
         element: <TopDestinationDetails></TopDestinationDetails>
       },
       {
+        path: '/top-destination-details/:id',
+        element:<TopDestinationDetails></TopDestinationDetails>
+      },
+      {
         path: 'rentalcars',
         element: <RentalCars />
       },
@@ -107,14 +103,8 @@ const router = createBrowserRouter([
         path: 'travelStory/stories',
         element: <Stories />
       },
-      {
-        path: '/tourDetails/:id',
-        element:<TourDetails></TourDetails>
-      },
-      {
-        path: '/top-destination-details/:id',
-        element:<TopDestinationDetails></TopDestinationDetails>
-      },
+      
+   
       {
         path: 'travelGuides',
         element: <TravelGuides />
