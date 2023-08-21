@@ -1,15 +1,10 @@
 import { createBrowserRouter, } from "react-router-dom";
 import Main from "../../LayOut/Main/Main";
 import Home from "../Pages/Home/Home";
-
-// import Discover from "../Discover";
 import Profile from "../Pages/Profile/Profile";
 import Overview from "../Pages/Overview/Overview";
 import Login from "../Pages/Authentication/Login/Login";
 import Register from "../Pages/Authentication/SignUp/Register";
-
-
-
 import KnowMore from "../Pages/AboutUs/KnowMore";
 import Dashboard from "../../LayOut/Dashboard";
 import Totallview from "../Pages/DashBoard/Admin/Totallview";
@@ -33,6 +28,7 @@ import TravelGuides from "../Pages/TravelGuides/TravelGuides";
 import GuideDetails from "../Pages/TravelGuides/GuideDetails/GuideDetails";
 import TourDetails from "../Pages/TourDetails/TourDetails";
 import TopDestinationDetails from "../Pages/TopDestinationDetails/TopDestinationDetails";
+import Favorite from "../Shared/Navbar/Favorite";
 
 
 
@@ -50,6 +46,10 @@ const router = createBrowserRouter([
       {
         path: 'knowmore',
         element: <KnowMore />
+      },
+      {
+        path: 'favorite',
+        element: <Favorite /> 
       },
       {
         path: 'profile/:name',
