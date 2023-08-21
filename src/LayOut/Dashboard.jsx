@@ -5,7 +5,7 @@ const Dashboard = () => {
   return (
     <div className="drawer lg:drawer-open ">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content flex flex-col items-center justify-center">
+      <div className="drawer-content flex flex-col items-center justify-center px-4 bg-slate-200">
         {/* Page content here */}
         <Outlet></Outlet>
         <label
@@ -46,7 +46,7 @@ const Dashboard = () => {
             <NavLink to="/dashboard/inquires">inquires</NavLink>
           </li>
           <li className="mt-2">
-            <NavLink to="/dashboard/admin/totalview">totalview</NavLink>
+            <NavLink to="/dashboard/addresource">Add resource</NavLink>
           </li>
 
           {/* users Home */}

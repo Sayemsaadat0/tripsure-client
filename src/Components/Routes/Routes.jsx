@@ -20,6 +20,13 @@ import TravelarStories from "../Pages/TravelerStories/TravelStories";
 import Stories from "../Pages/TravelerStories/Stories/Stories";
 import TravelGuides from "../Pages/TravelGuides/TravelGuides";
 import GuideDetails from "../Pages/TravelGuides/GuideDetails/GuideDetails";
+import Addresource from "../Pages/DashBoard/Admin/Addresource";
+import Addthings from "../Pages/DashBoard/Admin/Addthings";
+import Addplaces from "../Pages/DashBoard/Admin/addplaces";
+import Addhotels from "../Pages/DashBoard/Admin/Addhotels";
+import Addflights from "../Pages/DashBoard/Admin/Addflights";
+import AddResturants from "../Pages/DashBoard/Admin/AddResturants";
+import Addpackage from "../Pages/DashBoard/Admin/Addpackage";
 
 
 
@@ -110,6 +117,34 @@ const router = createBrowserRouter([
         {
           path: 'addtour',
           element: <AddTour />
+        },
+        {
+          path: 'addresource',
+          element: <Addresource />
+        },
+        {
+          path: 'addthings',
+          element: <Addthings />
+        },
+        {
+          path: 'addhotels',
+          element: <Addhotels />
+        },
+        {
+          path: 'addplaces',
+          element: <Addplaces />
+        },
+        {
+          path: 'addresturants',
+          element: <AddResturants />
+        },
+        {
+          path: 'addflights',
+          element: <Addflights />
+        },
+        {
+          path: 'addpackages',
+          element: <Addpackage />
         },
   ]
   },
