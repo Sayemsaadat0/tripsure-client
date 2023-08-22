@@ -1,10 +1,11 @@
-import { createBrowserRouter, } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import Main from "../../LayOut/Main/Main";
 import Home from "../Pages/Home/Home";
 import Profile from "../Pages/Profile/Profile";
 import Overview from "../Pages/Overview/Overview";
 import Login from "../Pages/Authentication/Login/Login";
 import Register from "../Pages/Authentication/SignUp/Register";
+
 import KnowMore from "../Pages/AboutUs/KnowMore";
 import Dashboard from "../../LayOut/Dashboard";
 import Totallview from "../Pages/DashBoard/Admin/Totallview";
@@ -39,6 +40,7 @@ import Addpackage from "../Pages/DashBoard/Admin/Addpackage";
 
 
 
+import SearchResult from "../Pages/SearchResult/SearchResult";
 
 const router = createBrowserRouter([
   {
@@ -48,11 +50,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home></Home>
+        element: <Home></Home>,
       },
       {
-        path: 'knowmore',
-        element: <KnowMore />
+        path: "knowmore",
+        element: <KnowMore />,
       },
       {
         path: 'favorite',
@@ -63,80 +65,83 @@ const router = createBrowserRouter([
         element: <Profile></Profile>
       },
       {
-        path: 'overview',
-        element: <Overview></Overview>
-      },
-       {
-        path: 'travelarsstory',
-        element: <KnowMore />
-      } , 
-      {
-        path: 'familyguidedetails',
-        element: <FamilyGuideDetails />
+        path: "overview",
+        element: <Overview></Overview>,
       },
       {
-        path: 'postastory',
-        element: <PostAStory />
+        path: "travelarsstory",
+        element: <KnowMore />,
       },
       {
-        path: 'addareview',
-        element: <AddReview />
+        path: "familyguidedetails",
+        element: <FamilyGuideDetails />,
       },
       {
-        path: 'flights',
-        element: <Flights />
+        path: "postastory",
+        element: <PostAStory />,
       },
       {
-        path: '/tourDetails/:id',
-        element: <TourDetails></TourDetails>
+        path: "addareview",
+        element: <AddReview />,
       },
       {
-        path: '/top-destination-details',
-        element: <TopDestinationDetails></TopDestinationDetails>
+        path: "flights",
+        element: <Flights />,
       },
       {
-        path: '/top-destination-details/:id',
-        element:<TopDestinationDetails></TopDestinationDetails>
+        path: "/tourDetails/:id",
+        element: <TourDetails></TourDetails>,
       },
       {
-        path: 'rentalcars',
-        element: <RentalCars />
+        path: "/top-destination-details",
+        element: <TopDestinationDetails></TopDestinationDetails>,
       },
       {
-        path: 'travelStory',
-        element: <TravelarStories />
+        path: "/top-destination-details/:id",
+        element: <TopDestinationDetails></TopDestinationDetails>,
       },
       {
-        path: 'travelStory/stories',
-        element: <Stories />
-      },
-      
-   
-      {
-        path: 'travelGuides',
-        element: <TravelGuides />
+        path: "rentalcars",
+        element: <RentalCars />,
       },
       {
-        path: 'travelGuides/details',
-        element: <GuideDetails />
+        path: "travelStory",
+        element: <TravelarStories />,
       },
       {
-        path: '/travelerChoose-thingsToDo/:category',
-        element: <TravelerChoose></TravelerChoose>
+        path: "travelStory/stories",
+        element: <Stories />,
+      },
+
+      {
+        path: "travelGuides",
+        element: <TravelGuides />,
+      },
+      {
+        path: "travelGuides/details",
+        element: <GuideDetails />,
+      },
+      {
+        path: "/travelerChoose-thingsToDo/:category",
+        element: <TravelerChoose></TravelerChoose>,
+      },
+      {
+        path: "searchResult",
+        element: <SearchResult />,
       },
     ],
   },
   {
-    path: 'login', element: <Login></Login>
+    path: "login",
+    element: <Login></Login>,
   },
   {
-    path: 'register',
-    element: <Register></Register>
+    path: "register",
+    element: <Register></Register>,
   },
 
-
   {
-    path: '/dashboard',
+    path: "/dashboard",
     element: <Dashboard></Dashboard>,
     children: [
         {
@@ -203,10 +208,6 @@ const router = createBrowserRouter([
   ]
   },
 
-
-
-
 ]);
 
-
-export default router
+export default router;
