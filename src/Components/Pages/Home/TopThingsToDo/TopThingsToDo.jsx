@@ -5,10 +5,10 @@ import { Navigation } from "swiper/modules";
 import Container from "../../../../LayOut/Container";
 import { Link } from "react-router-dom";
 import SectionTitle from "../../../Shared/SectionTitle/SectionTitle";
-import useAOSInit from "../../../../Hooks/useAOSInit";
+
 
 const TopThingsToDo = () => {
-  useAOSInit()
+ 
 
   const [TopThingsTodo, setTopThingsTodo] = useState([]);
 
@@ -26,7 +26,7 @@ const TopThingsToDo = () => {
         data-aos-easing="ease"
         className="my-20 px-10">
         <div>
-          <SectionTitle text={'Top Things to Do for Every Adventurer'} subText={'Worldwide Escapes'}></SectionTitle>
+          <SectionTitle text={'Top Things to Do for '} coloredText={'Every Adventurer'} subText={'Worldwide Escapes'}></SectionTitle>
         </div>
 
         <Swiper

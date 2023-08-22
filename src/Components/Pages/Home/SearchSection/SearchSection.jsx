@@ -6,10 +6,12 @@ import { BsKey } from "react-icons/bs";
 import { AiOutlineSearch } from "react-icons/ai";
 import { useSelector, useDispatch } from "react-redux"
 import { setActiveCategory } from "../../../../Features/searchCategory/categorySlice";
-import useAOSInit from "../../../../Hooks/useAOSInit";
 
-const SearchSection = () => { 
-  useAOSInit()
+import { BsSearch } from 'react-icons/bs'
+
+
+const SearchSection = () => {
+
   const categories = [
     {
       title: "Search All",
@@ -41,7 +43,7 @@ const SearchSection = () => {
   return (
     <div data-AOS="fade-down"
       data-aos-duration="3000"
-      data-aos-easing="ease" 
+      data-aos-easing="ease"
       className="w-full md:max-w-3xl mx-auto mt-20">
       <div>
         <div>
@@ -65,8 +67,8 @@ const SearchSection = () => {
 
         <form className="">
           <div className="searchField rounded-xl md:rounded-full w-[90%] mx-auto md:w-full p-2 relative">
-            <button className="absolute top-5">
-              <AiOutlineSearch className="text-xl" />
+            <button className="absolute top-3">
+              <AiOutlineSearch className="text-3xl" />
             </button>
             <div>
               <input
@@ -77,10 +79,20 @@ const SearchSection = () => {
                 className="py-2 pl-7 block w-full md:rounded-full border-b-2 md:border-none focus:outline-0 text-md"
               />
             </div>
-            <div className="w-full md:w-[120px] md:absolute md:bottom-2 md:right-2">
-              <button className="bg-[#19a0c9] text-white  hover:bg-blue-600 transition duration-300 px-4 py-2 text-lg font-semibold rounded-full w-full mt-5">
-                Search
+            <div className="w-full md:w-[120px] md:absolute md:bottom-[6px] md:right-2 ">
+              <button className="hover:bg-[#046060] text-white 
+              bg-[#7bb9b9] 
+          
+              transition duration-300 px-4 py-2 
+              text-lg 
+              font-semibold 
+              rounded-full 
+              w-full mt-5 
+              flex justify-center items-center gap-2
+              ">
+                <BsSearch></BsSearch>   Search
               </button>
+
             </div>
           </div>
         </form>

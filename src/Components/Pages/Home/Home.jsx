@@ -9,6 +9,7 @@ import Feedback from './Feedback/Feedback';
 import FamilyGuide from './FamilyGuide/FamilyGuide';
 import WhyUs from './WhyUs/WhyUs';
 import TravelDeals from './TravelDeals/TravelDeals';
+import Upcoming from './Upcoming/Upcoming';
 
 const Home = () => {
     return (
@@ -35,6 +36,10 @@ const Home = () => {
 
             <section>
                 <TopDestinations></TopDestinations>
+            </section>
+
+            <section>
+              <Upcoming></Upcoming>
             </section>
 
             <section >

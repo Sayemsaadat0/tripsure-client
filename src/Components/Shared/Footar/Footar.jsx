@@ -5,9 +5,9 @@ import { MdOutlineEmail } from 'react-icons/md'
 import { CiMobile4, CiYoutube } from 'react-icons/ci'
 import { SlLocationPin, SlClock } from 'react-icons/sl'
 import { FaFacebookF, FaYoutube, FaLinkedinIn } from 'react-icons/fa'
-import useAOSInit from '../../../Hooks/useAOSInit';
+ ;
 const Footar = () => { 
-    useAOSInit()
+   
     const currentYear = new Date().getFullYear()
     return (
         <div>
