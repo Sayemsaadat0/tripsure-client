@@ -16,59 +16,66 @@ const TopDestinations = () => {
       .then((res) => res.json())
       .then((data) => setTopDestinations(data));
   }, []);
-    return (
-        <Container>
-          <div className='bg-white b my-20 '>
-          <div>
-         <SectionTitle text={"Explor the Ultimate"} coloredText={'Top Destinations'}
-         subText={"Journey to Perfection"}
-         ></SectionTitle>
-          </div>
-           <div>
-           <Swiper
-       slidesPerView={1}
-       spaceBetween={10}
-       modules={[Navigation]} className="mySwiper"
-       navigation={true}
-       onSlideChange={() => console.log('slide change')}
-       breakpoints={{
-         640: {
-           slidesPerView: 2,
-           spaceBetween: 10,
-         },
-         768: {
-           slidesPerView: 2,
-           spaceBetween: 20,
-         },
-         1024: {
-           slidesPerView: 4,
-           spaceBetween: 30,
-         },
-       }}
-       onSwiper={(swiper) => console.log(swiper)}
-    >
-        {
-             TopDestinations.map((todo,index)=>(
-             
-             
-              <SwiperSlide key={index}>
-                <Link to={`/top-destination-details/${todo?._id}`}>
-                <img className='h-64 w-full relative  object-cover' src={todo.picture} alt="" />
-                <h2 className='absolute bottom-0 pb-3 pl-2  font-extrabold text-3xl text-white left-0 shadow-2xl  bg-gradient-to-t from-black'>{todo.cardtitle}</h2>
-                </Link>
-              </SwiperSlide>
-             
-             
-              ))   
-            }
-     
-
-     
-    </Swiper>
-           </div>
+  return (
+    <Container>
+      <div className='bg-white b my-20 px-10'>
+        <div>
+          <SectionTitle text={"Explor the Ultimate"} coloredText={'Top Destinations'}
+            subText={"Journey to Perfection"}
+          ></SectionTitle>
         </div>
-        </Container>
-    );
+        <div>
+          <Swiper
+            slidesPerView={1}
+            spaceBetween={10}
+            modules={[Navigation]} className="mySwiper"
+            navigation={true}
+            onSlideChange={() => console.log('slide change')}
+            breakpoints={{
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 10,
+              },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              1024: {
+                slidesPerView: 4,
+                spaceBetween: 30,
+              },
+            }}
+            onSwiper={(swiper) => console.log(swiper)}
+          >
+            {
+              TopDestinations.map((todo, index) => (
+
+
+                <SwiperSlide key={index}>
+                  <Link to={`/top-destination-details/${todo?._id}`}>
+
+                    <div className='     hover:scale-110 duration-700'>
+                      <img className='h-64 w-full relative object-cover       
+                rounded-tl-[5px] 
+                rounded-tr-[50px]  '
+                        src={todo.picture} alt="" />
+
+                      <h2 className='absolute bottom-3 pb-3 pl-2  font-extrabold text-xl text-white left-3   '>{todo.cardtitle}</h2>
+                    </div>
+                  </Link>
+                </SwiperSlide>
+
+
+              ))
+            }
+
+
+
+          </Swiper>
+        </div>
+      </div>
+    </Container>
+  );
 };
 
 export default TopDestinations;

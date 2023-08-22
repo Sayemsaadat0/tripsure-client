@@ -35,7 +35,7 @@ const SearchSection = () => {
     }
   ]
   const activeCategory = useSelector(state => state.category.category)
-  console.log(activeCategory)
+  // console.log(activeCategory)
   const dispatch = useDispatch()
   const handleCategoryClick = (category) => {
     dispatch(setActiveCategory(category))
