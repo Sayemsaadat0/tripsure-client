@@ -11,7 +11,7 @@ const TravelDeals = () => {
   const [travelDeals, setTravelDeals] = useState([]);
 
   useEffect(() => {
-    fetch('./TravelDeals.json')
+    fetch('http://localhost:1000/travelDeals')
       .then(res => res.json())
       .then(data => setTravelDeals(data));
   }, []);
@@ -20,7 +20,7 @@ const TravelDeals = () => {
     <div data-AOS="fade-left" data-aos-duration="3000" data-aos-easing="ease">
       <Container>
         <div >
-        <SectionTitle subText={'Create Memories'} text={'Select Your Ideal'} coloredText={'Tour Package'} />
+        <SectionTitle subText={'Create Memories'} text={'Travel Deals'} coloredText={'Tour Package'} />
           <Swiper
             slidesPerView={1}
             spaceBetween={10}

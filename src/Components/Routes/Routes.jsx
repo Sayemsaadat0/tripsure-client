@@ -44,6 +44,7 @@ import RestaurantAttractionReview from "../Pages/RestaurantAttractionReview/Rest
 
 import SearchResult from "../Pages/SearchResult/SearchResult";
 import PackageDetails from "../Pages/Home/Packages/PackageDetails";
+import TravelDealsDetails from "../Pages/Home/TravelDeals/TravelDealsDetails";
 
 const router = createBrowserRouter([
   {
@@ -79,6 +80,10 @@ const router = createBrowserRouter([
       {
         path: "travelarsstory",
         element: <KnowMore />,
+      },
+      {
+        path: '/TravelDeals/:id',
+        element: <TravelDealsDetails></TravelDealsDetails>
       },
       {
         path: "familyguidedetails",
