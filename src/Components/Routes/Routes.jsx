@@ -5,7 +5,6 @@ import Profile from "../Pages/Profile/Profile";
 import Overview from "../Pages/Overview/Overview";
 import Login from "../Pages/Authentication/Login/Login";
 import Register from "../Pages/Authentication/SignUp/Register";
-
 import KnowMore from "../Pages/AboutUs/KnowMore";
 import Dashboard from "../../LayOut/Dashboard";
 import Totallview from "../Pages/DashBoard/Admin/Totallview";
@@ -37,6 +36,9 @@ import Addhotels from "../Pages/DashBoard/Admin/Addhotels";
 import Addflights from "../Pages/DashBoard/Admin/Addflights";
 import AddResturants from "../Pages/DashBoard/Admin/AddResturants";
 import Addpackage from "../Pages/DashBoard/Admin/Addpackage";
+import DoThingsAttractionReviews from "../Pages/DoThingsAttractionReviews/DoThingsAttractionReviews";
+import StayThingsAttractionReviews from "../Pages/StayThingsAttractionReviews/StayThingsAttractionReviews";
+import RestaurantAttractionReview from "../Pages/RestaurantAttractionReview/RestaurantAttractionReview";
 
 
 
@@ -91,6 +93,21 @@ const router = createBrowserRouter([
       {
         path: "/tourDetails/:id",
         element: <TourDetails></TourDetails>,
+
+        path: '/dothings-attraction-reviews/:id',
+        element: <DoThingsAttractionReviews></DoThingsAttractionReviews>
+      },
+      {
+        path: '/staythinngs-attraction-reviews/:id',
+        element: <StayThingsAttractionReviews></StayThingsAttractionReviews>
+      },
+      {
+        path: '/restaurant-attraction-reviews/:id',
+        element: <RestaurantAttractionReview></RestaurantAttractionReview>
+      },
+      {
+        path: '/top-destination-details/:id',
+        element:<TopDestinationDetails></TopDestinationDetails>
       },
       {
         path: "/top-destination-details",
