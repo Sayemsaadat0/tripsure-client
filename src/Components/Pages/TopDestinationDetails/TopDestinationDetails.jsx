@@ -40,7 +40,7 @@ const TopDestinationDetails = () => {
     })
   },[topDestinationDetails])
   useEffect(()=> {
-    axios.get(`http://localhost:1000/restaurant/${"united states"}`)
+    axios.get(`http://localhost:1000/restaurant/${topDestinationDetails?.country}`)
     .then((data)=>{
       setRestaurants(data.data);
     })
@@ -178,7 +178,7 @@ const TopDestinationDetails = () => {
                 <h3 className="text-2xl font-bold text-black">Eat</h3>
                 <p>
                   Places to see, ways to wander, and signature experiences that
-                  define
+                  define Tulum.
                 </p>
                 <Link className="underline">See all</Link>
               </div>
