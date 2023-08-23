@@ -33,6 +33,9 @@ import TravelGuides from "../Pages/TravelGuides/TravelGuides";
 import GuideDetails from "../Pages/TravelGuides/GuideDetails/GuideDetails";
 import TourDetails from "../Pages/TourDetails/TourDetails";
 import TopDestinationDetails from "../Pages/TopDestinationDetails/TopDestinationDetails";
+import DoThingsAttractionReviews from "../Pages/DoThingsAttractionReviews/DoThingsAttractionReviews";
+import StayThingsAttractionReviews from "../Pages/StayThingsAttractionReviews/StayThingsAttractionReviews";
+import RestaurantAttractionReview from "../Pages/RestaurantAttractionReview/RestaurantAttractionReview";
 
 
 
@@ -86,6 +89,18 @@ const router = createBrowserRouter([
       {
         path: '/top-destination-details',
         element: <TopDestinationDetails></TopDestinationDetails>
+      },
+      {
+        path: '/dothings-attraction-reviews/:id',
+        element: <DoThingsAttractionReviews></DoThingsAttractionReviews>
+      },
+      {
+        path: '/staythinngs-attraction-reviews/:id',
+        element: <StayThingsAttractionReviews></StayThingsAttractionReviews>
+      },
+      {
+        path: '/restaurant-attraction-reviews/:id',
+        element: <RestaurantAttractionReview></RestaurantAttractionReview>
       },
       {
         path: '/top-destination-details/:id',

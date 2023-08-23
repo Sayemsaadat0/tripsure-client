@@ -8,10 +8,10 @@ import Rating from "react-rating";
 import { FaCircle, FaCircleNotch } from "react-icons/fa6";
 
 
-const CommonSwiper = ({ allHotels }) => {
-  return (
-    <div>
-      <Swiper
+const RestaurantSwiper = ({restaurant}) => {
+    return (
+        <div>
+           <Swiper
         slidesPerView={1}
         spaceBetween={10}
         modules={[Navigation]}
@@ -34,18 +34,18 @@ const CommonSwiper = ({ allHotels }) => {
         }}
         onSwiper={(swiper) => console.log(swiper)}
       >
-        {allHotels?.map((todo, index) => (
+        {restaurant?.map((todo, index) => (
           <SwiperSlide key={index}>
-            <Link to={`/staythinngs-attraction-reviews/${todo._id}`}>
+            <Link to={`/restaurant-attraction-reviews/${todo?._id}`}>
               <img
                 className="h-64 w-full  object-cover"
                 src={todo.picture}
                 alt=""
               />
-              <h2 className="text-black font-bold text-xl">{todo.hotelName}</h2>
+              <h2 className="text-black font-bold text-xl">{todo.title}</h2>
               <p className="text-green-700  flex items-center  justify-between gap-2">
                 <Rating
-                  placeholderRating={todo.ratings}
+                  placeholderRating={todo.ratings.food}
                   emptySymbol={<FaCircleNotch className="w-3"></FaCircleNotch>}
                   placeholderSymbol={<FaCircle className="w-3"></FaCircle>}
                   fullSymbol={<FaCircle className="w-4"></FaCircle>}
@@ -54,14 +54,14 @@ const CommonSwiper = ({ allHotels }) => {
                 <span className="text-sm">{todo.visitcount}</span>
               </p>
               <h3 className="text-md font-bold">
-                From ${todo?.costperperson}/night
+              {todo.address.city},{todo.address.state}
               </h3>
             </Link>
           </SwiperSlide>
         ))}
-      </Swiper>
-    </div>
-  );
+      </Swiper> 
+        </div>
+    );
 };
 
-export default CommonSwiper;
+export default RestaurantSwiper;

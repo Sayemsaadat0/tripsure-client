@@ -8,10 +8,10 @@ import Rating from "react-rating";
 import { FaCircle, FaCircleNotch } from "react-icons/fa6";
 
 
-const CommonSwiper = ({ allHotels }) => {
-  return (
-    <div>
-      <Swiper
+const DoSwiper = ({doPlace}) => {
+    return (
+        <div>
+            <Swiper
         slidesPerView={1}
         spaceBetween={10}
         modules={[Navigation]}
@@ -34,15 +34,15 @@ const CommonSwiper = ({ allHotels }) => {
         }}
         onSwiper={(swiper) => console.log(swiper)}
       >
-        {allHotels?.map((todo, index) => (
+        {doPlace?.map((todo, index) => (
           <SwiperSlide key={index}>
-            <Link to={`/staythinngs-attraction-reviews/${todo._id}`}>
+            <Link to={`/dothings-attraction-reviews/${todo._id}`}>
               <img
                 className="h-64 w-full  object-cover"
                 src={todo.picture}
                 alt=""
               />
-              <h2 className="text-black font-bold text-xl">{todo.hotelName}</h2>
+              <h2 className="text-black font-bold text-xl">{todo.placetitle}</h2>
               <p className="text-green-700  flex items-center  justify-between gap-2">
                 <Rating
                   placeholderRating={todo.ratings}
@@ -54,14 +54,14 @@ const CommonSwiper = ({ allHotels }) => {
                 <span className="text-sm">{todo.visitcount}</span>
               </p>
               <h3 className="text-md font-bold">
-                From ${todo?.costperperson}/night
+                {todo.cardtitle}
               </h3>
             </Link>
           </SwiperSlide>
         ))}
       </Swiper>
-    </div>
-  );
+        </div>
+    );
 };
 
-export default CommonSwiper;
+export default DoSwiper;
