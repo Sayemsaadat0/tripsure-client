@@ -11,7 +11,7 @@ const Packages = () => {
   const [packages, setPackages] = useState([]);
 
   useEffect(() => {
-    fetch('./Packages.json')
+    fetch('http://localhost:1000/packages')
       .then(res => res.json())
       .then(data => setPackages(data));
   }, []);
@@ -54,7 +54,7 @@ const Packages = () => {
                     <p>{packageItem.destination}</p>
                     <div>
                       {/* todo habibullah- bhai id diye data aina diyen */}
-                      <Link to={`/packages/${packageItem?._id}`} className="btn">View Details</Link>
+                      <Link to={`/packageDetails/${packageItem?._id}`} className="btn">View Details</Link>
                     </div>
                   </div>
                 </div>

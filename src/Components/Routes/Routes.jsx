@@ -45,6 +45,7 @@ import RestaurantAttractionReview from "../Pages/RestaurantAttractionReview/Rest
 import SearchResult from "../Pages/SearchResult/SearchResult";
 import PackageDetails from "../Pages/Home/Packages/PackageDetails";
 import FamilyGuideSingleCardDetails from "../Pages/Home/FamilyGuide/FamilyGuideSingleCardDetails";
+import TravelDealsDetails from "../Pages/Home/TravelDeals/TravelDealsDetails";
 
 const router = createBrowserRouter([
   {
@@ -85,6 +86,10 @@ const router = createBrowserRouter([
         element: <KnowMore />,
       },
       {
+        path: '/TravelDeals/:id',
+        element: <TravelDealsDetails></TravelDealsDetails>
+      },
+      {
         path: "familyguidedetails",
         element: <FamilyGuideDetails />,
       },
@@ -103,7 +108,8 @@ const router = createBrowserRouter([
       {
         path: "/tourDetails/:id",
         element: <TourDetails></TourDetails>,
-
+      },
+      {
         path: '/dothings-attraction-reviews/:id',
         element: <DoThingsAttractionReviews></DoThingsAttractionReviews>
       },

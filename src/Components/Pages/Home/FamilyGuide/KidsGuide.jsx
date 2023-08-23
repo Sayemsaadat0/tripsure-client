@@ -9,6 +9,7 @@ const KidsGuide = () => {
 
 
 
+  
   return (
     <div >
       <Container>
@@ -48,7 +49,7 @@ const KidsGuide = () => {
                     <p>PostedTime</p>
                     <div>
                       {/* todo habibullah- bhai id diye data aina diyen */}
-                      <Link className="btn">Read More</Link>
+                      <Link  className="btn">Read More</Link>
                     </div>
                   </div>
                 </div>
