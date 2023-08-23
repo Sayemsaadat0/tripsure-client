@@ -99,7 +99,8 @@ const router = createBrowserRouter([
       {
         path: "/tourDetails/:id",
         element: <TourDetails></TourDetails>,
-
+      },
+      {
         path: '/dothings-attraction-reviews/:id',
         element: <DoThingsAttractionReviews></DoThingsAttractionReviews>
       },
