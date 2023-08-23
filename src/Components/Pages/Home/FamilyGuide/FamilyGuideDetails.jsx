@@ -8,6 +8,19 @@ import ThemePark from './ThemePark';
 // import div from '../../../../LayOut/div';
 
 const FamilyGuideDetails = () => {
+
+
+
+
+
+
+
+
+
+
+
+
+
     return (
         <div>
             {/* todo by sayem need to dynamix this datas */}
