@@ -5,6 +5,7 @@ import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 import Container from '../../../../LayOut/Container';
 import SectionTitle from '../../../Shared/SectionTitle/SectionTitle';
+import { Link } from 'react-router-dom';
 
 const Packages = () => {
   const [packages, setPackages] = useState([]);
@@ -52,7 +53,8 @@ const Packages = () => {
                     <h2 className="card-title">{packageItem.title}</h2>
                     <p>{packageItem.destination}</p>
                     <div>
-                      <button className="btn">Reserve Now</button>
+                      {/* todo habibullah- bhai id diye data aina diyen */}
+                      <Link to={`/packages/${packageItem?._id}`} className="btn">View Details</Link>
                     </div>
                   </div>
                 </div>

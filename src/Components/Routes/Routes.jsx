@@ -43,6 +43,7 @@ import RestaurantAttractionReview from "../Pages/RestaurantAttractionReview/Rest
 
 
 import SearchResult from "../Pages/SearchResult/SearchResult";
+import PackageDetails from "../Pages/Home/Packages/PackageDetails";
 
 const router = createBrowserRouter([
   {
@@ -57,6 +58,11 @@ const router = createBrowserRouter([
       {
         path: "knowmore",
         element: <KnowMore />,
+      },
+      {
+        path: "/packageDetails/:id",
+        element: <PackageDetails></PackageDetails>,
+        // todo habibullah bhai - eita routes
       },
       {
         path: 'favorite',

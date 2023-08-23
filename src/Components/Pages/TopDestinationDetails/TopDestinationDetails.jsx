@@ -16,7 +16,7 @@ const TopDestinationDetails = () => {
   const [doPlace, setDoPlace] = useState([])
   const [restaurants, setRestaurants] = useState([]);
   const eatWithSwiper = doPlace.slice(1,)
-  console.log(topDestinationDetails);
+
 
  
 
