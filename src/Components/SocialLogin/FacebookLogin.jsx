@@ -3,6 +3,7 @@ import { FaFacebook, FaSpinner } from 'react-icons/fa';
 import useAuth from '../../Hooks/useAuth';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
+import { saveUser } from '../../apiCall/users';
 const FacebookLogin = () => {
     const navigate = useNavigate()
     const { facebookLogin } = useAuth()
@@ -18,6 +19,7 @@ const FacebookLogin = () => {
                     icon: 'success',
                     confirmButtonText: 'Cool'
                 })
+                saveUser(result.user)
                 navigate('/', {replace: true})
                 setLoading(false)
             })

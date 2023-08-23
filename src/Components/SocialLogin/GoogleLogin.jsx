@@ -3,6 +3,7 @@ import { FaGoogle, FaSpinner } from 'react-icons/fa';
 import useAuth from '../../Hooks/useAuth';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
+import { saveUser } from '../../apiCall/users';
 
 const GoogleLogin = () => {
     const navigate = useNavigate()
@@ -19,8 +20,10 @@ const GoogleLogin = () => {
                     icon: 'success',
                     confirmButtonText: 'Cool'
                 })
-                navigate('/', {replace: true})
+                saveUser(result.user)
                 setLoading(false)
+                navigate('/', {replace: true})
+                
             })
             .catch(error => {
                 Swal.fire({
