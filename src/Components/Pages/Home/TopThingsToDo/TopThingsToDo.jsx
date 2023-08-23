@@ -4,9 +4,12 @@ import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import Container from "../../../../LayOut/Container";
 import { Link } from "react-router-dom";
+import SectionTitle from "../../../Shared/SectionTitle/SectionTitle";
+import useAOSInit from "../../../../Hooks/useAOSInit";
 
 const TopThingsToDo = () => {
-   
+  useAOSInit()
+
   const [TopThingsTodo, setTopThingsTodo] = useState([]);
 
   useEffect(() => {
@@ -15,13 +18,15 @@ const TopThingsToDo = () => {
       .then((data) => setTopThingsTodo(data));
   }, []);
 
- 
+
   return (
     <Container>
-      <div className="my-20">
-      <div>
-            <h1 className='text-2xl font-bold'>Top Things to Do by category</h1>
-          <h4 className=' text-lg my-1 mb-4'>Top destinations for your next vacation</h4>
+      <div data-AOS="fade-right"
+        data-aos-duration="3000"
+        data-aos-easing="ease"
+        className="my-20 px-10">
+        <div>
+          <SectionTitle text={'Top Things to Do for Every Adventurer'} subText={'Worldwide Escapes'}></SectionTitle>
         </div>
 
         <Swiper
@@ -46,25 +51,25 @@ const TopThingsToDo = () => {
           }}
           onSwiper={(swiper) => console.log(swiper)}
         >
-          
-            
-            {
-             TopThingsTodo.map((todo,index)=>(
-             
-             
+
+
+          {
+            TopThingsTodo.map((todo, index) => (
+
+
               <SwiperSlide key={index}>
-                <Link to='/travelerChoose-thingsToDo'>
-                <div>
-                <img className='h-64 w-full  relative object-cover' src={todo.picture} alt="" />
-                <h2 className='absolute bottom-0 pb-3 pl-2  font-extrabold text-3xl text-white left-0 shadow-2xl  bg-gradient-to-t from-black'>{todo.categoryName}</h2>
-                </div>
+                <Link to={`/travelerChoose-thingsToDo/${todo?.categoryName}`}>
+                  <div>
+                    <img className='h-64 w-full  relative object-cover' src={todo.picture} alt="" />
+                    <h2 className='absolute bottom-0 pb-3 pl-2  font-extrabold text-3xl text-white left-0 shadow-2xl  bg-gradient-to-t from-black'>{todo.categoryName}</h2>
+                  </div>
                 </Link>
               </SwiperSlide>
-             
-             
-              ))   
-            }
-         
+
+
+            ))
+          }
+
         </Swiper>
       </div>
 

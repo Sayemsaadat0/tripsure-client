@@ -22,7 +22,7 @@ const Dashboard = () => {
           <div className="navbar mb-10">
           <NavLink to='/'>
              
-                   <img className='md:w-full md:h-[30%] w-[120px] max-w-[180px]' src="https://i.ibb.co/dQmmYnC/logo.png" alt="" /> 
+                   <img className='md:w-full md:h-[30%] w-[120px] max-w-[180px]' src="https://i.ibb.co/F6hSztb/2.png" alt="" /> 
         </NavLink>
 
           </div>

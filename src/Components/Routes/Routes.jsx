@@ -1,8 +1,18 @@
 import { createBrowserRouter, } from "react-router-dom";
 import Main from "../../LayOut/Main/Main";
 import Home from "../Pages/Home/Home";
-import Register from "../Pages/Log&&Reg/Register";
-import Login from "../Pages/Log&&Reg/Login";
+// import App from "../../App";
+// import Register from "../Pages/Log&&Reg/Register";
+// import Login from "../Pages/Log&&Reg/Login";
+// import KnowMore from "../Pages/AboutUs/KnowMore";
+import Discover from "../Discover";
+import Profile from "../Pages/Profile/Profile";
+import Overview from "../Pages/Overview/Overview";
+import Login from "../Pages/Authentication/Login/Login";
+import Register from "../Pages/Authentication/SignUp/Register";
+
+
+
 import KnowMore from "../Pages/AboutUs/KnowMore";
 import Dashboard from "../../LayOut/Dashboard";
 import Totallview from "../Pages/DashBoard/Admin/Totallview";
@@ -16,6 +26,10 @@ import AddTour from "../Pages/DashBoard/Admin/AddTour";
 import AddReview from "../Pages/Community/AddReview/AddReview";
 import PostAStory from "../Pages/Community/PostAStory/PostAStory";
 import TravelerChoose from "../Pages/TravelerChoose/TravelerChoose";
+import ErrorPage from "../../LayOut/ErrorPage/ErrorPage";
+import FamilyGuideDetails from "../Pages/Home/FamilyGuide/FamilyGuideDetails";
+import Flights from "../Pages/More/Flights/Flights";
+import RentalCars from "../Pages/More/RentalCars/RentalCars";
 import TravelarStories from "../Pages/TravelerStories/TravelStories";
 import Stories from "../Pages/TravelerStories/Stories/Stories";
 import TravelGuides from "../Pages/TravelGuides/TravelGuides";
@@ -27,6 +41,8 @@ import Addhotels from "../Pages/DashBoard/Admin/Addhotels";
 import Addflights from "../Pages/DashBoard/Admin/Addflights";
 import AddResturants from "../Pages/DashBoard/Admin/AddResturants";
 import Addpackage from "../Pages/DashBoard/Admin/Addpackage";
+import TourDetails from "../Pages/TourDetails/TourDetails";
+import TopDestinationDetails from "../Pages/TopDestinationDetails/TopDestinationDetails";
 
 
 
@@ -35,6 +51,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -44,30 +61,71 @@ const router = createBrowserRouter([
         path: 'knowmore',
         element: <KnowMore />
       },
+      {
+        path: 'profile/:name',
+        element: <Profile></Profile>
+      },
+      {
+        path: 'overview',
+        element: <Overview></Overview>
+      },
+      { path: 'favorite', element: <Discover></Discover> },
+       {
+        path: 'travelarsstory',
+        element: <KnowMore />
+      } ,
        {
         path: 'postastory',
-        element: <PostAStory/>
+        element: <KnowMore />
       }, 
+      {
+        path: 'familyguidedetails',
+        element: <FamilyGuideDetails />
+      },
+      {
+        path: 'postastory',
+        element: <PostAStory />
+      },
       {
         path: 'addareview',
-        element: <AddReview/>
-      }, 
+        element: <AddReview />
+      },
+      {
+        path: 'flights',
+        element: <Flights />
+      },
+      {
+        path: '/tourDetails/:id',
+        element: <TourDetails></TourDetails>
+      },
+      {
+        path: '/top-destination-details',
+        element: <TopDestinationDetails></TopDestinationDetails>
+      },
+      {
+        path: 'rentalcars',
+        element: <RentalCars />
+      },
       {
         path: 'travelStory',
-        element: <TravelarStories/>
-      }, 
+        element: <TravelarStories />
+      },
       {
         path: 'travelStory/stories',
-        element: <Stories/>
-      }, 
+        element: <Stories />
+      },
       {
         path: 'travelGuides',
-        element: <TravelGuides/>
-      }, 
+        element: <TravelGuides />
+      },
       {
         path: 'travelGuides/details',
-        element: <GuideDetails/>
-      }, 
+        element: <GuideDetails />
+      },
+      {
+        path: '/travelerChoose-thingsToDo/:category',
+        element: <TravelerChoose></TravelerChoose>
+      },
     ],
   },
   {
@@ -77,10 +135,8 @@ const router = createBrowserRouter([
     path: 'register',
     element: <Register></Register>
   },
-  {
-    path: '/travelerChoose-thingsToDo',
-    element:<TravelerChoose></TravelerChoose>
-  },
+
+
   {
     path: '/dashboard',
     element: <Dashboard></Dashboard>,
@@ -150,8 +206,6 @@ const router = createBrowserRouter([
   },
 
 
- 
- 
 
 ]);
 

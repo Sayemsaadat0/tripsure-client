@@ -1,8 +1,9 @@
-import GuideCard from "./GuideCard";
+import Container from "../../../LayOut/Container";
+import GuideCards from "./GuideCards";
 import "./TravelGuides.css";
 const TravelGuides = () => {
   return (
-    <div>
+    <Container>
 
       <div className="mx-auto">
         {/* Banner  */}
@@ -18,9 +19,9 @@ const TravelGuides = () => {
         </div>
       </div>
 
-      <GuideCard />
+      <GuideCards></GuideCards>
 
-    </div>
+    </Container>
   );
 };
 

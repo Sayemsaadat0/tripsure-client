@@ -165,7 +165,7 @@ const PostAStory = () => {
               className="input input-success cursor-pointer"
             />
           </div>
-          <input type="submit" className="btn btn-primary w-full mt-4" />
+          <input type="submit" className="btn  bg-[#2884b6] text-white hover:text-black w-full mt-4" />
         </form>
       </div>
     </Container>

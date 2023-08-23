@@ -38,10 +38,10 @@ const Navbar = () => {
     }
 
     return (
-        <div className='sticky top-0 z-10 bg-white h-24 w-full border-b-[2px] lg:hover:shadow-xl border-gray-300 shadow-lg'>
+        <div className='sticky top-0 z-10 bg-white h-16 w-full '>
             <div className='max-w-7xl mx-auto px-1 md:px-3 lg:px-5 h-full flex justify-between items-center  text-gray-800'>
                 <Link c to='/'>
-                    <img className='md:w-full md:h-[30%] w-[120px] max-w-[180px]' src="https://i.ibb.co/dQmmYnC/logo.png" alt="" />
+                    <img className='md:w-full md:h-[30%] w-[120px] max-w-[180px]' src="https://i.ibb.co/F6hSztb/2.png" alt="" />
                 </Link>
 
                 <div className='hidden lg:flex items-center gap-4 lg:gap-7'>
@@ -68,7 +68,6 @@ const Navbar = () => {
                             }
                         </div>)
                     }
-                    {/* <Dropdown></Dropdown> */}
                 </div>
                 <div className='hidden lg:flex'>
                     {
@@ -97,17 +96,17 @@ const Navbar = () => {
                 </div>
 
                 {
-                    menuOpen && <ul className='absolute z-10 top-20 bg-white box-border mt-4 mr-2 shadow-lg w-full min-w-[200px] max-w-[50vw] rounded-xl py-6 right-0'>
+                    menuOpen && <ul className='absolute z-10 top-16 bg-gray-300 box-border md:mt-4 md:mr-2 shadow-lg w-full md:max-w-[50vw] rounded-xl py-6 right-0'>
                         {
                             user ? <div className='flex px-6 mb-1 flex-col gap-3 items-center'>
                                 <img className='w-20 h-20 rounded-full border-2 border-[#19a0c9] p-[2px]' src={`${user?.photoURL}`} alt="" />
                                 <p className='text-lg font-medium'>{user?.displayName}</p>
                                 <button onClick={handleLogout} className=" logout-button w-full bg-white">Log Out</button>
 
-                                <div className='flex items-center gap-3 w-full cursor-pointer  font-medium uppercase px-4 py-2 rounded hover:bg-gray-300  duration-300'>
+                                <Link onClick={() => setMenuOpen(false)} to={`/profile/${user?.displayName.split(' ').join('-')}`} className='flex items-center gap-3 w-full cursor-pointer  font-medium uppercase px-4 py-2 rounded hover:bg-gray-300  duration-300'>
                                     <CgProfile size={20} color='19a0c9'></CgProfile>
                                     <span>Your Profile</span>
-                                </div>
+                                </Link>
                             </div>
                                 : <Link to='/login'>
                                     <li className='cursor-pointer font-medium uppercase px-6 py-3 hover:bg-gray-300  duration-300'>
