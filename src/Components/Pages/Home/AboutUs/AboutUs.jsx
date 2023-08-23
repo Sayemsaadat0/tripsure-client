@@ -18,7 +18,7 @@ const AboutUs = () => {
               distinctio iusto rerum nam.
             </p>
             <Link to='/knowmore'>
-              <button className="button1 mt-4 font-semibold text-2xl">
+              <button className="btn mt-2">
                 Know More
               </button>
             </Link>

@@ -5,10 +5,10 @@ import { Navigation } from "swiper/modules";
 import Container from "../../../../LayOut/Container";
 import { Link } from "react-router-dom";
 import SectionTitle from "../../../Shared/SectionTitle/SectionTitle";
-import useAOSInit from "../../../../Hooks/useAOSInit";
+
 
 const TopThingsToDo = () => {
-  useAOSInit()
+
 
   const [TopThingsTodo, setTopThingsTodo] = useState([]);
 
@@ -26,7 +26,7 @@ const TopThingsToDo = () => {
         data-aos-easing="ease"
         className="my-20 px-10">
         <div>
-          <SectionTitle text={'Top Things to Do for Every Adventurer'} subText={'Worldwide Escapes'}></SectionTitle>
+          <SectionTitle text={'Top Things to Do for '} coloredText={'Every Adventurer'} subText={'Worldwide Escapes'}></SectionTitle>
         </div>
 
         <Swiper
@@ -59,9 +59,13 @@ const TopThingsToDo = () => {
 
               <SwiperSlide key={index}>
                 <Link to={`/travelerChoose-thingsToDo/${todo?.categoryName}`}>
-                  <div>
-                    <img className='h-64 w-full  relative object-cover' src={todo.picture} alt="" />
-                    <h2 className='absolute bottom-0 pb-3 pl-2  font-extrabold text-3xl text-white left-0 shadow-2xl  bg-gradient-to-t from-black'>{todo.categoryName}</h2>
+                  <div className=" 
+                hover:scale-110 duration-700 ">
+                    <img className=' 
+                    rounded-tl-[5px] 
+                    rounded-tr-[50px]    
+                    h-64 w-full  relative object-cover ' src={todo.picture} alt="" />
+                    <h2 className='absolute bottom-2 pb-3 pl-2  font-extrabold text-xl text-white left-5  '>{todo.categoryName}</h2>
                   </div>
                 </Link>
               </SwiperSlide>

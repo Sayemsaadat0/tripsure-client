@@ -1,17 +1,10 @@
-import { createBrowserRouter, } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import Main from "../../LayOut/Main/Main";
 import Home from "../Pages/Home/Home";
-// import App from "../../App";
-// import Register from "../Pages/Log&&Reg/Register";
-// import Login from "../Pages/Log&&Reg/Login";
-// import KnowMore from "../Pages/AboutUs/KnowMore";
-import Discover from "../Discover";
 import Profile from "../Pages/Profile/Profile";
 import Overview from "../Pages/Overview/Overview";
 import Login from "../Pages/Authentication/Login/Login";
 import Register from "../Pages/Authentication/SignUp/Register";
-
-
 
 import KnowMore from "../Pages/AboutUs/KnowMore";
 import Dashboard from "../../LayOut/Dashboard";
@@ -36,9 +29,18 @@ import TravelGuides from "../Pages/TravelGuides/TravelGuides";
 import GuideDetails from "../Pages/TravelGuides/GuideDetails/GuideDetails";
 import TourDetails from "../Pages/TourDetails/TourDetails";
 import TopDestinationDetails from "../Pages/TopDestinationDetails/TopDestinationDetails";
+import Favorite from "../Shared/Navbar/Favorite";
+import Addresource from "../Pages/DashBoard/Admin/Addresource";
+import Addthings from "../Pages/DashBoard/Admin/Addthings";
+import Addplaces from "../Pages/DashBoard/Admin/addplaces";
+import Addhotels from "../Pages/DashBoard/Admin/Addhotels";
+import Addflights from "../Pages/DashBoard/Admin/Addflights";
+import AddResturants from "../Pages/DashBoard/Admin/AddResturants";
+import Addpackage from "../Pages/DashBoard/Admin/Addpackage";
 
 
 
+import SearchResult from "../Pages/SearchResult/SearchResult";
 
 const router = createBrowserRouter([
   {
@@ -48,131 +50,164 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home></Home>
+        element: <Home></Home>,
       },
       {
-        path: 'knowmore',
-        element: <KnowMore />
+        path: "knowmore",
+        element: <KnowMore />,
+      },
+      {
+        path: 'favorite',
+        element: <Favorite /> 
       },
       {
         path: 'profile/:name',
         element: <Profile></Profile>
       },
       {
-        path: 'overview',
-        element: <Overview></Overview>
-      },
-      { path: 'favorite', element: <Discover></Discover> },
-       {
-        path: 'travelarsstory',
-        element: <KnowMore />
-      } ,
-       {
-        path: 'postastory',
-        element: <KnowMore />
-      }, 
-      {
-        path: 'familyguidedetails',
-        element: <FamilyGuideDetails />
+        path: "overview",
+        element: <Overview></Overview>,
       },
       {
-        path: 'postastory',
-        element: <PostAStory />
+        path: "travelarsstory",
+        element: <KnowMore />,
       },
       {
-        path: 'addareview',
-        element: <AddReview />
+        path: "familyguidedetails",
+        element: <FamilyGuideDetails />,
       },
       {
-        path: 'flights',
-        element: <Flights />
+        path: "postastory",
+        element: <PostAStory />,
       },
       {
-        path: '/tourDetails/:id',
-        element: <TourDetails></TourDetails>
+        path: "addareview",
+        element: <AddReview />,
       },
       {
-        path: '/top-destination-details',
-        element: <TopDestinationDetails></TopDestinationDetails>
+        path: "flights",
+        element: <Flights />,
       },
       {
-        path: 'rentalcars',
-        element: <RentalCars />
+        path: "/tourDetails/:id",
+        element: <TourDetails></TourDetails>,
       },
       {
-        path: 'travelStory',
-        element: <TravelarStories />
+        path: "/top-destination-details",
+        element: <TopDestinationDetails></TopDestinationDetails>,
       },
       {
-        path: 'travelStory/stories',
-        element: <Stories />
+        path: "/top-destination-details/:id",
+        element: <TopDestinationDetails></TopDestinationDetails>,
       },
       {
-        path: 'travelGuides',
-        element: <TravelGuides />
+        path: "rentalcars",
+        element: <RentalCars />,
       },
       {
-        path: 'travelGuides/details',
-        element: <GuideDetails />
+        path: "travelStory",
+        element: <TravelarStories />,
       },
       {
-        path: '/travelerChoose-thingsToDo/:category',
-        element: <TravelerChoose></TravelerChoose>
+        path: "travelStory/stories",
+        element: <Stories />,
+      },
+
+      {
+        path: "travelGuides",
+        element: <TravelGuides />,
+      },
+      {
+        path: "travelGuides/details",
+        element: <GuideDetails />,
+      },
+      {
+        path: "/travelerChoose-thingsToDo/:category",
+        element: <TravelerChoose></TravelerChoose>,
+      },
+      {
+        path: "searchResult",
+        element: <SearchResult />,
       },
     ],
   },
   {
-    path: 'login', element: <Login></Login>
+    path: "login",
+    element: <Login></Login>,
   },
   {
-    path: 'register',
-    element: <Register></Register>
+    path: "register",
+    element: <Register></Register>,
   },
 
-
   {
-    path: '/dashboard',
+    path: "/dashboard",
     element: <Dashboard></Dashboard>,
     children: [
-      {
-        path: 'adminhome',
-        element: <AdminHome></AdminHome>
-      },
-
-      {
-        path: 'admin/totalview',
-        element: <Totallview />
-      },
-      {
-        path: 'manageusers',
-        element: <ManageUser></ManageUser>
-      },
-      {
-        path: 'managebookings',
-        element: <ManageBookings />
-      },
-      {
-        path: 'managepackage',
-        element: <ManagePackage />
-      },
-      {
-        path: 'reviews',
-        element: <Reviews />
-      },
-      {
-        path: 'inquires',
-        element: <Inquiries />
-      },
-      {
-        path: 'addtour',
-        element: <AddTour />
-      },
-    ]
+        {
+          path: 'adminhome',
+          element: <AdminHome></AdminHome>
+        },
+      
+        {
+          path: 'admin/totalview',
+          element: <Totallview />
+        },
+        {
+          path: 'manageusers',
+          element: <ManageUser></ManageUser>
+        },
+        {
+          path: 'managebookings',
+          element: <ManageBookings />
+        },
+        {
+          path: 'managepackage',
+          element: <ManagePackage />
+        },
+        {
+          path: 'reviews',
+          element: <Reviews />
+        },
+        {
+          path: 'inquires',
+          element: <Inquiries />
+        },
+        {
+          path: 'addtour',
+          element: <AddTour />
+        },
+        {
+          path: 'addresource',
+          element: <Addresource />
+        },
+        {
+          path: 'addthings',
+          element: <Addthings />
+        },
+        {
+          path: 'addhotels',
+          element: <Addhotels />
+        },
+        {
+          path: 'addplaces',
+          element: <Addplaces />
+        },
+        {
+          path: 'addresturants',
+          element: <AddResturants />
+        },
+        {
+          path: 'addflights',
+          element: <Addflights />
+        },
+        {
+          path: 'addpackages',
+          element: <Addpackage />
+        },
+  ]
   },
-
-
 
 ]);
 
-
-export default router
+export default router;

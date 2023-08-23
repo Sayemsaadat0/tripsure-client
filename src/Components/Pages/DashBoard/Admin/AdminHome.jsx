@@ -1,5 +1,7 @@
 import React from "react";
 import { BarChart, Bar, Tooltip } from "recharts";
+import VisitedChart from "./Overview/VisitedChart";
+import UserCharts from "./Overview/UserCharts";
 const AdminHome = () => {
   const data = [
     {
@@ -43,7 +45,7 @@ const AdminHome = () => {
           Welcome Back Andrew Dashboard
         </h2>
       </div>
-      <div className="grid grid-cols-2 gap-5 ">
+      <div className="grid grid-cols-2 gap-8 ">
         <div className="px-4">
           <div className="card w-80 bg-[#bbe0f1] ">
             <div className="card-body">
@@ -109,6 +111,14 @@ const AdminHome = () => {
             </BarChart>
           </div>
         </div>
+      </div>
+      <div className="mt-20 ">
+       <section className="">
+        <VisitedChart></VisitedChart>
+       </section>
+       <section>
+             <UserCharts></UserCharts>
+       </section>
       </div>
     </div>
   );
