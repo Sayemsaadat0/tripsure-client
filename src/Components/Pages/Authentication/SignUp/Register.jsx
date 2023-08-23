@@ -10,6 +10,7 @@ import useAuth from '../../../../Hooks/useAuth';
 import LoadingButton from '../../../Button/LoadingButton';
 import GoogleLogin from '../../../SocialLogin/GoogleLogin';
 import FacebookLogin from '../../../SocialLogin/FacebookLogin';
+import { saveUser } from '../../../../apiCall/users';
 const Register = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const { createUser, updateUserProfile, logOut } = useAuth()
@@ -44,6 +45,7 @@ const Register = () => {
                                 setLoading(false)
                                 logOut()
                                 navigate('/login', { replace: true })
+                                saveUser(result.user)
                             })
                             .catch(error => {
                                 console.log(error)

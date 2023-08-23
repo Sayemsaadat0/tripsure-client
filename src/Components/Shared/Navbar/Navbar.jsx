@@ -97,7 +97,7 @@ const Navbar = () => {
                 </div>
 
                 {
-                    menuOpen && <ul className='absolute z-10 top-20 bg-white box-border mt-4 mr-2 shadow-lg w-full min-w-[200px] max-w-[50vw] rounded-xl py-6 right-0'>
+                    menuOpen && <ul className='absolute z-10 top-16 bg-gray-300 box-border md:mt-4 md:mr-2 shadow-lg w-full md:max-w-[50vw] rounded-xl py-6 right-0'>
                         {
                             user ? <div className='flex px-6 mb-1 flex-col gap-3 items-center'>
                                 <img className='w-20 h-20 rounded-full border-2 border-[#19a0c9] p-[2px]' src={`${user?.photoURL}`} alt="" />
