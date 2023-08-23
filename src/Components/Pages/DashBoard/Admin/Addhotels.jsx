@@ -37,7 +37,7 @@ const Addhotels = () => {
       roomFeatures,
       faq,
       details,
-      picture,
+      picture
     };
     console.log(roomData);
     setUploadButtonText("Uploading...");
