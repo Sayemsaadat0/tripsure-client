@@ -46,7 +46,7 @@ const TravelDeals = () => {
           >
             {travelDeals.map((deals, index) => (
               <SwiperSlide className='lg:p-10' key={index}>
-                <div className="card card-compact bg-white shadow-2xl relative ">
+                <div className="card card-compact bg-white shadow-2xl h-96 relative ">
                   <p className='badge badge-primary absolute right-1 top-3 animate-bounce p-2'>TravelDeals</p>
                   <figure><img className='rounded-lg' src={deals.picture} alt={deals.title} /></figure>
                   <div className="card-body">

@@ -25,3 +25,15 @@ export const addresturants = async resturantsData => {
     const data = await response.json()
     return data
   }
+export const addpackages = async packageData => {
+    const response = await fetch(`http://localhost:1000/dashboard/packages`, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(packageData),
+    })
+  
+    const data = await response.json()
+    return data
+  }

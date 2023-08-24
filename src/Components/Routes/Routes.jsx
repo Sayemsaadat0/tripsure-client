@@ -39,9 +39,6 @@ import Addpackage from "../Pages/DashBoard/Admin/Addpackage";
 import DoThingsAttractionReviews from "../Pages/DoThingsAttractionReviews/DoThingsAttractionReviews";
 import StayThingsAttractionReviews from "../Pages/StayThingsAttractionReviews/StayThingsAttractionReviews";
 import RestaurantAttractionReview from "../Pages/RestaurantAttractionReview/RestaurantAttractionReview";
-
-
-
 import SearchResult from "../Pages/SearchResult/SearchResult";
 import PackageDetails from "../Pages/Home/Packages/PackageDetails";
 import TravelDealsDetails from "../Pages/Home/TravelDeals/TravelDealsDetails";
