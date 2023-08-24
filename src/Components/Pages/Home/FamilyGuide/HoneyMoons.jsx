@@ -4,10 +4,20 @@ import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 import { Link } from 'react-router-dom';
 import Container from '../../../../LayOut/Container';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 
 const HoneyMoons = () => {
 
+  const [allHoneyMoons, setAllHoneyMoons] = useState([]);
 
+  useEffect(()=>{
+    axios.get(`http://localhost:1000/allFamilyGuide/honeymoon`)
+    .then((res)=>{
+      setAllHoneyMoons(res.data)
+    })
+  },[])
+  console.log(allHoneyMoons);
 
   return (
     <div >

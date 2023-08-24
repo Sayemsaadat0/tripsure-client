@@ -4,8 +4,20 @@ import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 import { Link } from 'react-router-dom';
 import Container from '../../../../LayOut/Container';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 const KidsGuide = () => {
+const [kidsAllData, setKidsAllData] = useState([]);
+
+useEffect(()=>{
+  axios.get(`http://localhost:1000/allFamilyGuide/kids`)
+  .then((res)=>{
+    setKidsAllData(res.data)
+  })
+},[])
+console.log(kidsAllData);
+
 
 
 

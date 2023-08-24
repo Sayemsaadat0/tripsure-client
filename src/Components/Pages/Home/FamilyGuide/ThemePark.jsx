@@ -4,10 +4,20 @@ import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 import { Link } from 'react-router-dom';
 import Container from '../../../../LayOut/Container';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 
 const ThemePark = () => {
 
+  const [allThemePark, setAllThemePark] = useState([]);
 
+  useEffect(()=>{
+    axios.get(`http://localhost:1000/allFamilyGuide/theme%20park`)
+    .then((res)=>{
+      setAllThemePark(res.data)
+    })
+  },[])
+  console.log(allThemePark);
 
   return (
     <div >

@@ -4,10 +4,20 @@ import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 import { Link } from 'react-router-dom';
 import Container from '../../../../LayOut/Container';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 const Zoo = () => {
 
-
+  const [allZoo, setAllZoo] = useState([]);
+ 
+  useEffect(()=>{
+    axios.get(`http://localhost:1000/allFamilyGuide/zoo`)
+    .then((res)=>{
+      setAllZoo(res.data)
+    })
+  },[])
+  console.log(allZoo);
 
   return (
     <div >

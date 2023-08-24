@@ -44,8 +44,8 @@ import RestaurantAttractionReview from "../Pages/RestaurantAttractionReview/Rest
 
 import SearchResult from "../Pages/SearchResult/SearchResult";
 import PackageDetails from "../Pages/Home/Packages/PackageDetails";
-import FamilyGuideSingleCardDetails from "../Pages/Home/FamilyGuide/FamilyGuideSingleCardDetails";
 import TravelDealsDetails from "../Pages/Home/TravelDeals/TravelDealsDetails";
+import FamilyGuideSingleCardDetails from "../Pages/Home/FamilyGuide/FamilyGuideSingleCardDetails";
 
 const router = createBrowserRouter([
   {

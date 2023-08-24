@@ -4,10 +4,18 @@ import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 import { Link } from 'react-router-dom';
 import Container from '../../../../LayOut/Container';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 
 const FamilyBeach = () => {
-
-
+  const [allBeach, setAllBeach] = useState([]);
+  useEffect(()=>{
+    axios.get(`http://localhost:1000/allFamilyGuide/beach`)
+    .then((res)=>{
+      setAllBeach(res.data)
+    })
+  },[])
+  console.log(allBeach);
 
   return (
     <div >
