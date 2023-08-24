@@ -21,7 +21,7 @@ const RestaurantAttractionReview = () => {
   const [restaurantsDetails, setRestaurantsDetails] = useState({});
   useEffect(() => {
     axios
-      .get(`http://localhost:1000/restaurantAttractionReviews/${id}`)
+      .get(`https://tripsure-server-sayemsaadat0.vercel.app/restaurantAttractionReviews/${id}`)
       .then((data) => {
         setRestaurantsDetails(data.data);
       });

@@ -10,7 +10,7 @@ const DoThingsAttractionReviews = () => {
   const { id } = useParams();
   useEffect(() => {
     axios
-      .get(`http://localhost:1000/doThingsAttractionReviews/${id}`)
+      .get(`https://tripsure-server-sayemsaadat0.vercel.app/doThingsAttractionReviews/${id}`)
       .then((data) => {
         setDoThingsAttractionReview(data.data);
       });

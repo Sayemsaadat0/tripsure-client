@@ -28,19 +28,19 @@ const TopDestinationDetails = () => {
   },[])
   
   useEffect(()=> {
-    axios.get(`http://localhost:1000/all-hotels/${topDestinationDetails?.country}`)
+    axios.get(`https://tripsure-server-sayemsaadat0.vercel.app/all-hotels/${topDestinationDetails?.country}`)
     .then((data)=>{
       setAllHotels(data.data);
     })
   },[topDestinationDetails])
   useEffect(()=> {
-    axios.get(`http://localhost:1000/tourCountry/${topDestinationDetails?.country}`)
+    axios.get(`https://tripsure-server-sayemsaadat0.vercel.app/tourCountry/${topDestinationDetails?.country}`)
     .then((data)=>{
       setDoPlace(data.data);
     })
   },[topDestinationDetails])
   useEffect(()=> {
-    axios.get(`http://localhost:1000/restaurant/${topDestinationDetails?.country}`)
+    axios.get(`https://tripsure-server-sayemsaadat0.vercel.app/restaurant/${topDestinationDetails?.country}`)
     .then((data)=>{
       setRestaurants(data.data);
     })
@@ -195,3 +195,7 @@ const TopDestinationDetails = () => {
 };
 
 export default TopDestinationDetails;
+
+
+
+// https://tripsure-server-sayemsaadat0.vercel.app

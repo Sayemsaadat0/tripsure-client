@@ -8,7 +8,7 @@ const PackageDetails = () => {
 
   const { title, destination, country, description, price, departureDates, departureTime, departurePlace, totalPeople, limitPerBooking, includedItems, optionalActivities, conditions, accommodationDetails, meals, itinerary, additionalInfo, picture, ratings, reviews } = packageDetails
   useEffect(() => {
-    axios.get(`http://localhost:1000/packages/${id}`)
+    axios.get(`https://tripsure-server-sayemsaadat0.vercel.app/packages/${id}`)
       .then((response) => {
         setPackageDetails(response.data)
       })

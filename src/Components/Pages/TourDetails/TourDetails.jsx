@@ -184,6 +184,7 @@ const TourDetails = () => {
             </div>
           </div>
           <div className="border-2 h-fit m-6 rounded-2xl">
+         
             {/* revers your slot section */}
             <div className="p-4">
               <h2 className="text-3xl font-bold pb-6">Reserve your spot</h2>

@@ -11,7 +11,7 @@ const TravelDeals = () => {
   const [travelDeals, setTravelDeals] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:1000/travelDeals')
+    fetch('https://tripsure-server-sayemsaadat0.vercel.app/travelDeals')
       .then(res => res.json())
       .then(data => setTravelDeals(data));
   }, []);

@@ -11,7 +11,7 @@ const Packages = () => {
   const [packages, setPackages] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:1000/packages')
+    fetch('https://tripsure-server-sayemsaadat0.vercel.app/packages')
       .then(res => res.json())
       .then(data => setPackages(data));
   }, []);

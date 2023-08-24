@@ -41,7 +41,6 @@ const Home = () => {
                 <TopThingsToDo></TopThingsToDo>
             </section>
 
-
             <section >
                 <AboutUs></AboutUs>
             </section>
