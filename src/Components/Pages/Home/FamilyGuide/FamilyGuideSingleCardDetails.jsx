@@ -6,7 +6,7 @@ const FamilyGuideSingleCardDetails = () => {
     const [familyGuideDetails, setFamilyGuideDetails] = useState({});
     const {id} = useParams();
         useEffect(()=>{
-            axios.get(`http://localhost:1000/familyDetails/${id}`)
+            axios.get(`https://tripsure-server-sayemsaadat0.vercel.app/familyDetails/${id}`)
             .then((res)=>{
                 setFamilyGuideDetails(res.data);
             })

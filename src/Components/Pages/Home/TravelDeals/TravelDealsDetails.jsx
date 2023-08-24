@@ -5,7 +5,8 @@ import Container from '../../../../LayOut/Container';
 import { GoLocation } from 'react-icons/go';
 import { BiTime } from 'react-icons/bi';
 import { Typewriter } from 'react-simple-typewriter'
-
+import { FaCalendarDay, FaHotel } from 'react-icons/fa';
+import { GrCircleInformation } from 'react-icons/gr';
 
 const TravelDealsDetails = () => {
     const { id } = useParams();
@@ -151,19 +152,14 @@ const TravelDealsDetails = () => {
                 </div>
                 <hr />
 
-
-
-
-
-
-
                 {/* itinerary */}
                 <div>
                     <p className='font-bold'>Itinerary</p>
-                    <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3'>
+                    <div className='grid grid-cols-1 sm:grid-cols-2 lg::grid-cols-3'>
                         {itinerary?.map((day, dayIndex) => (
                             <div key={dayIndex}>
-                                <h3 className='font-semibold'>Day {day.day}</h3>
+                                <h3 className='font-bold flex items-center gap-2'>
+                                    <FaCalendarDay></FaCalendarDay> Day {day.day}</h3>
                                 <p>
                                     {day.activities.map((activity, activityIndex) => (
                                         <li key={activityIndex}>{activity}</li>
@@ -179,26 +175,26 @@ const TravelDealsDetails = () => {
                 <div className='grid grid-cols-1 md:grid-cols-2'>
                     {/* hotels */}
                     <div>
-                        <p className='font-bold'>Accommodations </p>
+                        <p className='font-bold flex items-center gap-2'><FaHotel></FaHotel> Accommodations </p>
                         {hotels?.map((hotel, index) => (
                             <div key={index}>
-                                <h2>Name : {hotel.name}</h2>
+                                <h2>Title  : {hotel.name}</h2>
                                 <p>Type : {hotel.type}</p>
-                                <p>Stay : {hotel.nights}</p>
-                                <ul>
-                                    {hotel.amenities.map((amenity, amenityIndex) => (
-                                        <li key={amenityIndex}>{amenity}</li>
-                                    ))}
-                                </ul>
+                                <p>Duration of Stay : {hotel.nights} Nights</p>
+
+                                <p className='font-bold'> Amenity  </p>
+                                {hotel.amenities.map((amenity, amenityIndex) => (
+                                    <li key={amenityIndex}>{amenity}</li>
+                                ))}
                             </div>
                         ))}
                     </div>
                     <div>
                         {/* Additional Info*/}
                         <div>
-                            <p className='font-bold'> Additional Information  </p>
+                            <p className='font-bold list-none flex items-center gap-2'><GrCircleInformation className='text-2xl'></GrCircleInformation> Additional Information  </p>
                             {additionalInfo?.map((d, index) => (
-                                <li key={index}>{d}</li>
+                                <li className='' key={index}>  {d}</li>
                             ))}
                         </div>
                     </div>
@@ -206,17 +202,29 @@ const TravelDealsDetails = () => {
                 <hr />
                 {/* review */}
                 <div>
-                    <div>
+                    <div className=' p-4'>
                         <p className='font-bold'>Reviews</p>
-                        <div>
-                            <img src={reviews?.userImage} alt="df" />
-                            <h3>{reviews?.name}</h3>
-                            <h3>{reviews?.review}</h3>
-                            <h3>{reviews?.ratings?.overall}</h3>
-                            <h3>{reviews?.ratings?.accommodation}</h3>
-                            <h3>{reviews?.ratings?.activities}</h3>
-                            <h3>{reviews?.ratings?.food}</h3>
-                            <h3>{reviews?.ratings?.guide}</h3>
+                        <div className='border rounded-lg p-4'>
+
+                            {/* <img src={reviews?.userImage} alt="df" /> */}
+                            {/* <h3>{reviews?.name}</h3> */}
+
+                            <div className='flex'>
+                                <div className='w-full'>
+                                        <img className='w-16 h-16 rounded-full' src="https://i.pinimg.com/564x/d9/7b/bb/d97bbb08017ac2309307f0822e63d082.jpg" alt="df" />
+                                        {<h3 className='text-xl font-semibold'>Rafin Hossain</h3>}
+                                        <p>Ratings :</p>
+                                        <h3>overall : {reviews?.ratings?.overall}</h3>
+                                        <h3>accommodation : {reviews?.ratings?.accommodation}</h3>
+                                        <h3>activities : {reviews?.ratings?.activities}</h3>
+                                        <h3>food : {reviews?.ratings?.food}</h3>
+                                        <h3>guide : {reviews?.ratings?.guide}</h3>
+                                </div>
+                                <div>
+                                    <p>{reviews.review}</p>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -231,3 +239,28 @@ export default TravelDealsDetails;
 
 
 
+{/* 
+
+toggle
+
+ const [showFullReview, setShowFullReview] = useState(false);
+
+    const toggleShowReview = () => {
+        setShowFullReview(!showFullReview);
+    };
+
+
+<h3>
+Review :{' '}
+{showFullReview ? (
+    <>
+        {reviews?.review}
+        <button className='text-blue-500 btn-link' onClick={toggleShowReview}>Show Less</button>
+    </>
+) : (
+    <>
+        {reviews?.review.split(' ').slice(0, 10).join(' ')}...
+        <button className='text-blue-500 btn-link' onClick={toggleShowReview}>Show More</button>
+    </>
+)}
+</h3> */}

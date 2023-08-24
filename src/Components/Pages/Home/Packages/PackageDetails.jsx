@@ -30,15 +30,15 @@ const PackageDetails = () => {
       {/* departure time */}
       <div>
 
-        {departureDates && departureDates.map((d, index) => (
+       {/*  { departureDates?.map((d, index) => (
           <p key={index}>Departure Date: {d}</p>
-        ))}
+        ))} */}
 
         <p>{limitPerBooking}</p>
         <p>{totalPeople}</p>
 
         <p>Conditions:</p>
-        {conditions && conditions.map((condition, index) => (
+        {conditions.map((condition, index) => (
           <p key={index}>{condition}</p>
         ))}
         {/* includes item */}

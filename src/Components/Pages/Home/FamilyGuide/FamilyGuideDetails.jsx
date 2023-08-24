@@ -13,12 +13,12 @@ const FamilyGuideDetails = () => {
   const [inspiredByFamily, setInspiredByFamily] = useState([]);
   const [summerData, setSummerData] = useState([]);
   useEffect(() => {
-    axios.get(`http://localhost:1000/allFamilyGuide/family`).then((res) => {
+    axios.get(`https://tripsure-server-sayemsaadat0.vercel.app/allFamilyGuide/family`).then((res) => {
       setInspiredByFamily(res.data);
     });
   }, []);
   useEffect(() => {
-    axios.get(`http://localhost:1000/allFamilyGuide/summer`).then((res) => {
+    axios.get(`https://tripsure-server-sayemsaadat0.vercel.app/allFamilyGuide/summer`).then((res) => {
       setSummerData(res.data);
     });
   }, []);

@@ -7,7 +7,7 @@ const Dashboard = () => {
   // console.log(user);
   // const [usersdata, setUsersData] = useState([]);
   // useEffect(() => {
-  //   fetch(`http://localhost:1000/users`)
+  //   fetch(`https://tripsure-server-sayemsaadat0.vercel.app/users`)
   //     .then((res) => res.json())
   //     .then((data) => {
   //       setUsersData(data);

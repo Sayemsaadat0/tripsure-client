@@ -26,7 +26,7 @@ export const addresturants = async resturantsData => {
     return data
   }
 export const addpackages = async packageData => {
-    const response = await fetch(`http://localhost:1000/dashboard/packages`, {
+    const response = await fetch(`https://tripsure-server-sayemsaadat0.vercel.app/dashboard/packages`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

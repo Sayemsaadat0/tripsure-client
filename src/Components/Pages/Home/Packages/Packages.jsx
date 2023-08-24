@@ -17,7 +17,7 @@ const Packages = () => {
   }, []);
 
   return (
-    <div data-AOS="fade-left" data-aos-duration="3000" data-aos-easing="ease">
+    <div data-AOS="fade-left" data-aos-duration="3000" data-aos-easing="ease" className='p-10'>
       <Container>
         <div >
         <SectionTitle subText={'Create Memories'} text={'Select Your Ideal'} coloredText={'Tour Package'} />

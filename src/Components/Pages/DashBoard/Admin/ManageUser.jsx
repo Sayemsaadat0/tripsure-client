@@ -8,7 +8,7 @@ const ManageUser = () => {
   const [usersdata, setUsersData] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:1000/users')
+    axios.get('https://tripsure-server-sayemsaadat0.vercel.app/users')
       .then(response => {
         setUsersData(response.data);
       })
@@ -45,7 +45,7 @@ const handleDelete = user => {
       confirmButtonText: 'Yes, delete it!'
   }).then((result) => {
       if (result.isConfirmed) {
-          fetch(`http://localhost:1000/users/${user._id}`, {
+          fetch(`https://tripsure-server-sayemsaadat0.vercel.app/users/${user._id}`, {
               method: 'DELETE'
           })
               .then(res => res.json())
