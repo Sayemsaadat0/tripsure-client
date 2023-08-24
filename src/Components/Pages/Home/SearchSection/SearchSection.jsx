@@ -52,7 +52,8 @@ const SearchSection = () => {
       `https://tripsure-server-sayemsaadat0.vercel.app/searchResult/${
         activeCategory.toLowerCase() === "search all"
           ? "search-all"
-          : activeCategory.toLowerCase()
+          : activeCategory.toLowerCase() === "things to do"
+          ? "search-all" : activeCategory.toLowerCase()
       }/${searchText}`
     )
       .then((res) => res.json())

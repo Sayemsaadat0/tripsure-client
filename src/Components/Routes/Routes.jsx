@@ -43,6 +43,8 @@ import SearchResult from "../Pages/SearchResult/SearchResult";
 import PackageDetails from "../Pages/Home/Packages/PackageDetails";
 import TravelDealsDetails from "../Pages/Home/TravelDeals/TravelDealsDetails";
 import FamilyGuideSingleCardDetails from "../Pages/Home/FamilyGuide/FamilyGuideSingleCardDetails";
+import ContactDetails from "../Pages/Payment/ContactDetails/ContactDetails";
+import ActivityDetails from "../Pages/Payment/ActivityDetails/ActivityDetails";
 
 const router = createBrowserRouter([
   {
@@ -158,6 +160,14 @@ const router = createBrowserRouter([
       {
         path: "searchResult",
         element: <SearchResult />,
+      },
+      {
+        path: "contactDetails",
+        element: <ContactDetails/>
+      },
+      {
+        path: "activityDetails",
+        element: <ActivityDetails/>
       },
     ],
   },
