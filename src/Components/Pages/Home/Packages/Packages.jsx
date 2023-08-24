@@ -48,7 +48,7 @@ const Packages = () => {
               <SwiperSlide className='lg:p-10' key={index}>
                 <div className="card card-compact bg-white shadow-2xl relative ">
                   <p className='badge badge-primary absolute right-1 top-3 animate-bounce p-2'>Packages</p>
-                  <figure><img className='rounded-lg' src={packageItem.picture} alt={packageItem.title} /></figure>
+                  <figure><img className='rounded-lg' src={packageItem?.picture} alt={packageItem.title} /></figure>
                   <div className="card-body">
                     <h2 className="card-title">{packageItem.title}</h2>
                     <p>{packageItem.destination}</p>
