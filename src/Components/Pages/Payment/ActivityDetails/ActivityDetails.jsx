@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import ReviewCard from "../ReviewCard";
 import BookInfoCard from "../BookInfoCard";
+import {Link} from "react-router-dom";
 
 
 const ActivityDetails = () => {
@@ -15,7 +16,7 @@ const ActivityDetails = () => {
     <div>
       <PaymentPath active={true} />
       <div className="mx-5 md:mx-20 mt-5">
-        <span className="flex items-center gap-1 text-sm"> <AiOutlineArrowRight /> Contact Details</span>
+        <Link to="/contactDetails"><span className="flex items-center gap-1 text-sm"> <AiOutlineArrowRight /> Contact Details</span></Link>
         <h1 className="font-semibold text-2xl text-black mt-10">Activity Details</h1>
         <div className="pb-10 flex flex-col lg:flex-row justify-between lg:gap-5">
         <form onClick={handleSubmit(onSubmit)} className="lg:w-[60%] pt-10 mb-10 lg:mb-0">

@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import BookInfoCard from "../BookInfoCard";
 import PaymentPath from "../PaymentPath";
 import ReviewCard from "../ReviewCard";
+import { Link } from "react-router-dom";
 
 const ContactDetails = () => {
   const {
@@ -17,7 +18,10 @@ const ContactDetails = () => {
     <div>
       <PaymentPath />
       <div className="mx-5 md:mx-20 py-10 flex flex-col lg:flex-row justify-between lg:gap-5">
-        <form onClick={handleSubmit(onSubmit)} className="lg:w-[60%] mb-10 lg:mb-0">
+        <form
+          onClick={handleSubmit(onSubmit)}
+          className="lg:w-[60%] mb-10 lg:mb-0"
+        >
           <div className="flex gap-5">
             <div className="form-control mb-4 w-1/2">
               <label className="label">
@@ -93,20 +97,26 @@ const ContactDetails = () => {
             </label>
           </div>
           <div className="my-5">
-            <h2 className="text-2xl font-semibold pb-3 border-b-2">Promo Code</h2>
-            <p className="text-lg underline mt-3 cursor-pointer text-green-800">Enter Promo Code</p>
+            <h2 className="text-2xl font-semibold pb-3 border-b-2">
+              Promo Code
+            </h2>
+            <p className="text-lg underline mt-3 cursor-pointer text-green-800">
+              Enter Promo Code
+            </p>
           </div>
           <div className="text-center">
-            <input
-              className="btn                                      rounded-full bg-black hover:bg-[#584B9F] text-white"
-              type="submit"
-              value="Next"
-            />
+            <Link to="/activityDetails">
+              <input
+                className="btn     rounded-full bg-black hover:bg-[#584B9F] text-white"
+                type="submit"
+                value="Next"
+              />
+            </Link>
           </div>
         </form>
         <div className="space-y-3 w-4/4 mx-auto">
-            <ReviewCard />
-            <BookInfoCard />
+          <ReviewCard />
+          <BookInfoCard />
         </div>
       </div>
     </div>

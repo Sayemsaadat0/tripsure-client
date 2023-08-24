@@ -165,11 +165,11 @@ const router = createBrowserRouter([
         element: <SearchResult />,
       },
       {
-        path: "payment/contactDetails",
+        path: "contactDetails",
         element: <ContactDetails/>
       },
       {
-        path: "payment/activityDetails",
+        path: "activityDetails",
         element: <ActivityDetails/>
       },
     ],
