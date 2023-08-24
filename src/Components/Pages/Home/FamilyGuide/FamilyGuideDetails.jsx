@@ -102,7 +102,7 @@ const FamilyGuideDetails = () => {
         </section>
 
         {/* get inspired by real familys */}
-        <section className="mb-20 bg-[#DCFCE7]">
+        <section className="mb-20">
           <Container>
             <div>
               {/* inspiration */}
@@ -123,8 +123,8 @@ const FamilyGuideDetails = () => {
                 </h2>
                 <div className="mt-10 md:p-4">
                   <CommonSwiperForFamilyAndSummer
-                    SwiperData={summerData}
-                  ></CommonSwiperForFamilyAndSummer>
+                    SwiperData={summerData}>
+                  </CommonSwiperForFamilyAndSummer>
                 </div>
               </div>
             </div>

@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import Container from '../../../../LayOut/Container';
 import { GoLocation } from 'react-icons/go';
 import { BiTime } from 'react-icons/bi';
@@ -100,7 +100,7 @@ const TravelDealsDetails = () => {
                                 <p>Reservation Limit : {limitPerBooking} spots per person</p>
                             </div>
                             {/*todo Reserve your spot */}
-                            <button className='btn mt-10'>Reserve Now</button>
+                            <Link to='/contactDetails' className='btn mt-10'>Reserve Now</Link>
                         </div>
                     </div>
                 </div>
@@ -221,7 +221,7 @@ const TravelDealsDetails = () => {
                                         <h3>guide : {reviews?.ratings?.guide}</h3>
                                 </div>
                                 <div>
-                                    <p>{reviews.review}</p>
+                                    <p>{reviews?.review}</p>
                                 </div>
                             </div>
 
@@ -241,7 +241,7 @@ export default TravelDealsDetails;
 
 {/* 
 
-toggle
+toggle see more button
 
  const [showFullReview, setShowFullReview] = useState(false);
 
