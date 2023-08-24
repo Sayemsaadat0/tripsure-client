@@ -3,9 +3,9 @@ import Container from '../../../LayOut/Container';
 import { ImLocation } from 'react-icons/im'
 import { MdOutlineWatchLater } from 'react-icons/md'
 import CountDown from './CountDown';
-import Marquee from "react-fast-marquee";
 import MyTrips from './MyTrips';
 import WeatherForecast from './WeatherForecast';
+import Marquee from 'react-fast-marquee';
 
 const Overview = () => {
     const hotDeals = [
@@ -72,7 +72,13 @@ const Overview = () => {
                                         <button className="px-4 py-2 mx-auto font-medium rounded border-2 border-[#F85606] hover:bg-[#d93f1e] hover:text-white duration-300 text-[#F85606]">View Details</button>
                                     </div>
                                 </div>
-                                <span className="inline-flex absolute top-4 right-0 items-center rounded-l-full bg-[#d93f1e] px-3 py-1 text-lg font-medium text-gray-100 ring-1 ring-inset ring-yellow-600/20">
+                                <span className="inline-flex
+   absolute top-4 right-0 
+   items-center 
+   rounded-l-full 
+   bg-[#d93f1e] px-3 py-1 
+   text-lg font-medium text-gray-100 
+   ring-1 ring-inset ring-yellow-600/20">
                                     {deal.discount}%
                                 </span>
                             </div>)

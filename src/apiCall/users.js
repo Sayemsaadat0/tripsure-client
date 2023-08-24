@@ -8,6 +8,6 @@ export const saveUser = async(user) => {
         photo: user.photoURL
     }
     console.log(user)
-    const data = await axios.put(`http://localhost:1000/users/${user?.email}`, currentUser)
+    const data = await axios.put(`https://tripsure-server-sayemsaadat0.vercel.app/users/${user?.email}`, currentUser)
     console.log(data)
 }

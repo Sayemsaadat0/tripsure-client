@@ -1,13 +1,13 @@
 import React from 'react';
 import SectionTitle from '../../../Shared/SectionTitle/SectionTitle';
 import Container from '../../../../LayOut/Container';
-import useAOSInit from '../../../../Hooks/useAOSInit';
+
 
 const WhyUs = () => {
-    useAOSInit()
+   
     return (
         <Container>
-            <SectionTitle subText={'Discover the Difference'} text={'why choose us?'}>
+            <SectionTitle subText={'Discover the Difference'} text={'why '} coloredText={'choose us?'}>
             </SectionTitle>
             <div data-AOS="fade-right"
                 data-aos-duration="3000"

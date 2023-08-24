@@ -5,14 +5,14 @@ import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 import Container from '../../../../LayOut/Container';
 import SectionTitle from '../../../Shared/SectionTitle/SectionTitle';
-import useAOSInit from '../../../../Hooks/useAOSInit';
+
 
 
 const Feedback = () => {
     const [feedbacks, setFeedbacks] = useState([]);
     const [selectedReview, setSelectedReview] = useState(null);
 
-    useAOSInit()
+   
     useEffect(() => {
         fetch('Feedback.json')
             .then(res => res.json())
@@ -34,7 +34,7 @@ const Feedback = () => {
                 <div className='p-10'>
                     <SectionTitle
                         subText={'Testimonials'}
-                        text={'What Our clients Say'}
+                        text={'What Our'} coloredText={'clients Say'}
                     ></SectionTitle>
                     <p className='text-right mb-2'>Total Feedback : {feedbacks.length}</p>
 
@@ -73,7 +73,7 @@ const Feedback = () => {
                                             <h2 className='font-light'>{feedback.destination}</h2>
                                             <p>{feedback.review.split(' ').slice(0, 15).join(' ')}</p>
                                             {feedback.review.split(' ').length > 15 && (
-                                                <button className='p-0 text-blue-900 btn btn-link ' onClick={() => openModal(feedback)}>
+                                                <button className=' btn-link text-[#2a9f9f]' onClick={() => openModal(feedback)}>
                                                     Read more
                                                 </button>
                                             )}
@@ -88,7 +88,7 @@ const Feedback = () => {
                 {/* Modal */}
                 <dialog id="my_modal_3" className="modal ">
                     <form method="dialog" className="modal-box">
-                        <button className="btn hover:text-white btn-circle btn-ghost absolute right-2 top-2 hover:bg-red-500" onClick={() => setSelectedReview(null)}>✕</button>
+                        <button className=" hover:text-white btn-circle btn-ghost absolute duration-500 right-2 top-2 hover:bg-red-500" onClick={() => setSelectedReview(null)}>✕</button>
                         {selectedReview && (
                             <div className=''>
                                 <h3 className="font-bold text-lg">Testimonials</h3>

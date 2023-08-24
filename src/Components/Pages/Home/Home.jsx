@@ -9,6 +9,7 @@ import Feedback from './Feedback/Feedback';
 import FamilyGuide from './FamilyGuide/FamilyGuide';
 import WhyUs from './WhyUs/WhyUs';
 import TravelDeals from './TravelDeals/TravelDeals';
+import Packages from './Packages/Packages';
 
 const Home = () => {
     return (
@@ -26,7 +27,7 @@ const Home = () => {
             </section>
 
             <section>
-                <TopThingsToDo></TopThingsToDo>
+                <Packages></Packages>
             </section>
 
             <section>
@@ -35,6 +36,9 @@ const Home = () => {
 
             <section>
                 <TopDestinations></TopDestinations>
+            </section>
+            <section>
+                <TopThingsToDo></TopThingsToDo>
             </section>
 
             <section >

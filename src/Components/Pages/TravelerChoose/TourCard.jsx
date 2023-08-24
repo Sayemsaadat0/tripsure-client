@@ -4,13 +4,13 @@ import Rating from "react-rating";
 import { Link } from "react-router-dom";
 
 const TourCard = ({singleTour, index}) => {
-    const {_id, cardtitle,ratings,country,placetitle,placedetails,conditions} = singleTour;
+    const {_id, picture, cardtitle,ratings,country,placetitle,placedetails,conditions} = singleTour;
     console.log(_id);
   return (
     <div className="grid lg:grid-cols-2 gap-6 mb-10">
       <div className="">
         <img className="rounded-lg w-full"
-          src="https://plus.unsplash.com/premium_photo-1683134415500-097cfbf33d7a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+          src={picture}
           alt=""
         />
       </div>

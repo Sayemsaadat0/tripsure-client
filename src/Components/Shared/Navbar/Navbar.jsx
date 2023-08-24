@@ -7,13 +7,17 @@ import { Link, NavLink } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
 import Swal from 'sweetalert2';
 import Dropdown from '../../Dropdown/Drpodown';
+
+
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false)
     const { logOut, user } = useAuth()
     const color = '19a0c9'
+   
     const naviItems = [
         { id: 1, name: 'discover', dropdown: true, routes: [{ routeName: 'travel story', linkName: 'travelStory' }, { routeName: 'travel guides', linkName: 'travelGuides' }] },
         { id: 2, name: 'community', dropdown: true, routes: [{ routeName: 'post a story', linkName: 'postastory' }, { routeName: 'add a review', linkName: 'addareview' }] },
+        { id: 3, name: 'more', dropdown: true, routes: [{ routeName: 'flights', linkName: 'flights' }, { routeName: 'Rental Cars', linkName: 'rentalcars' }] },
         { id: 3, name: 'dashboard',linkName:"dashboard/adminhome" },
     ]
 

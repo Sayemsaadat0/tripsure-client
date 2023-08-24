@@ -2,6 +2,7 @@ import { Rating } from "@smastrom/react-rating";
 import React, { useState } from "react";
 import Container from "../../../../LayOut/Container";
 
+
 const AddReview = () => {
   const [rating, setRating] = useState(3);
   const [textareaValue, setTextareaValue] = useState("");
@@ -19,7 +20,7 @@ const AddReview = () => {
     <Container>
       <div className="">
         <div className="w-4/5 sm:w-3/6 mx-auto my-20">
-          <div className="border-2 border-gray-300 px-4 sm:px-6 py-4 sm:py-8 rounded-xl hover:shadow-2xl hover:border-none">
+          <div className="border-2 border-gray-300 px-4 sm:px-6 py-4 sm:py-8 rounded-xl hover:shadow-2xl hover:border-none duration-200">
             <h3 className="text-3xl font-semibold">Rating and Review</h3>
             <p className="my-3 text-lg">Rating {rating}</p>
             <Rating
