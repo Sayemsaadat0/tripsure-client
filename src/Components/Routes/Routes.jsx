@@ -62,7 +62,7 @@ const router = createBrowserRouter([
         element: <KnowMore />,
       },
       {
-        path: "/FamilyGuideSingleCardDetails",
+        path: "/FamilyGuideSingleCardDetails/:id",
         element: <FamilyGuideSingleCardDetails></FamilyGuideSingleCardDetails>,
       },
       {

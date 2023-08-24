@@ -6,26 +6,25 @@ import FamilyBeach from "./FamilyBeach";
 import Zoo from "./Zoo";
 import ThemePark from "./ThemePark";
 import axios from "axios";
+import CommonSwiperForFamilyAndSummer from "./CommonSwiperForFamilyAndSummer";
 // import div from '../../../../LayOut/div';
 
 const FamilyGuideDetails = () => {
-    const [inspiredByFamily, setInspiredByFamily] = useState([]);
-    const [summerData, setSummerData] = useState([]);
-    useEffect(()=>{
-        axios.get(`http://localhost:1000/allFamilyGuide/family`)
-        .then((res)=>{
-            setInspiredByFamily(res.data)
-        })
-      },[])
-    useEffect(()=>{
-        axios.get(`http://localhost:1000/allFamilyGuide/summer`)
-        .then((res)=>{
-            setSummerData(res.data)
-        })
-      },[])
-      console.log(inspiredByFamily);
-      console.log(summerData);
-    
+  const [inspiredByFamily, setInspiredByFamily] = useState([]);
+  const [summerData, setSummerData] = useState([]);
+  useEffect(() => {
+    axios.get(`http://localhost:1000/allFamilyGuide/family`).then((res) => {
+      setInspiredByFamily(res.data);
+    });
+  }, []);
+  useEffect(() => {
+    axios.get(`http://localhost:1000/allFamilyGuide/summer`).then((res) => {
+      setSummerData(res.data);
+    });
+  }, []);
+  console.log(inspiredByFamily);
+  console.log(summerData);
+
   return (
     <div>
       {/* todo by sayem need to dynamix this datas */}
@@ -103,63 +102,18 @@ const FamilyGuideDetails = () => {
         </section>
 
         {/* get inspired by real familys */}
-        <section className="mb-20">
+        <section className="mb-20 bg-[#DCFCE7]">
           <Container>
             <div>
               {/* inspiration */}
               <div className="mt-20">
                 <h2 className="pt-10 ps-4 md:ps-10 text-2xl md:text-6xl font-bold">
-                  get inspired by real familys
+                  Get inspired by real family
                 </h2>
-                <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-5 md:p-4">
-                  {/* card */}
-                  <div className="card card-compact  bg-white shadow-xl">
-                    <figure>
-                      <img
-                        src="https://i.pinimg.com/564x/0b/d3/c6/0bd3c636bd80be4e3bb0232d8ec83985.jpg"
-                        alt="title"
-                      />
-                    </figure>
-                    <div className="card-body">
-                      <h2 className="card-title">title!</h2>
-                      <p>If a dog chews title whose title does he choose?</p>
-                      <div className="">
-                        <button className="btn">Buy Now</button>
-                      </div>
-                    </div>
-                  </div>
-                  {/* card */}
-                  <div className="card card-compact  bg-white shadow-xl">
-                    <figure>
-                      <img
-                        src="https://i.pinimg.com/564x/0b/d3/c6/0bd3c636bd80be4e3bb0232d8ec83985.jpg"
-                        alt="title"
-                      />
-                    </figure>
-                    <div className="card-body">
-                      <h2 className="card-title">title!</h2>
-                      <p>If a dog chews title whose title does he choose?</p>
-                      <div className="">
-                        <button className="btn">Buy Now</button>
-                      </div>
-                    </div>
-                  </div>
-                  {/* card */}
-                  <div className="card card-compact  bg-white shadow-xl">
-                    <figure>
-                      <img
-                        src="https://i.pinimg.com/564x/0b/d3/c6/0bd3c636bd80be4e3bb0232d8ec83985.jpg"
-                        alt="title"
-                      />
-                    </figure>
-                    <div className="card-body">
-                      <h2 className="card-title">title!</h2>
-                      <p>If a dog chews title whose title does he choose?</p>
-                      <div className="">
-                        <button className="btn">Buy Now</button>
-                      </div>
-                    </div>
-                  </div>
+                <div className="my-10  gap-5 md:p-4">
+                  <CommonSwiperForFamilyAndSummer
+                    SwiperData={inspiredByFamily}
+                  ></CommonSwiperForFamilyAndSummer>
                 </div>
               </div>
               {/* Summer Trip tips for family */}
@@ -167,55 +121,10 @@ const FamilyGuideDetails = () => {
                 <h2 className="pt-10 ps-4 md:ps-10 text-2xl md:text-6xl font-bold">
                   Summer Trip tips for family
                 </h2>
-                <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-5 md:p-4">
-                  {/* card */}
-                  <div className="card card-compact  bg-white shadow-xl">
-                    <figure>
-                      <img
-                        src="https://i.pinimg.com/564x/0b/d3/c6/0bd3c636bd80be4e3bb0232d8ec83985.jpg"
-                        alt="title"
-                      />
-                    </figure>
-                    <div className="card-body">
-                      <h2 className="card-title">title!</h2>
-                      <p>If a dog chews title whose title does he choose?</p>
-                      <div className="">
-                        <button className="btn">Buy Now</button>
-                      </div>
-                    </div>
-                  </div>
-                  {/* card */}
-                  <div className="card card-compact  bg-white shadow-xl">
-                    <figure>
-                      <img
-                        src="https://i.pinimg.com/564x/0b/d3/c6/0bd3c636bd80be4e3bb0232d8ec83985.jpg"
-                        alt="title"
-                      />
-                    </figure>
-                    <div className="card-body">
-                      <h2 className="card-title">title!</h2>
-                      <p>If a dog chews title whose title does he choose?</p>
-                      <div className="">
-                        <button className="btn">Buy Now</button>
-                      </div>
-                    </div>
-                  </div>
-                  {/* card */}
-                  <div className="card card-compact  bg-white shadow-xl">
-                    <figure>
-                      <img
-                        src="https://i.pinimg.com/564x/0b/d3/c6/0bd3c636bd80be4e3bb0232d8ec83985.jpg"
-                        alt="title"
-                      />
-                    </figure>
-                    <div className="card-body">
-                      <h2 className="card-title">title!</h2>
-                      <p>If a dog chews title whose title does he choose?</p>
-                      <div className="">
-                        <button className="btn">Buy Now</button>
-                      </div>
-                    </div>
-                  </div>
+                <div className="mt-10 md:p-4">
+                  <CommonSwiperForFamilyAndSummer
+                    SwiperData={summerData}
+                  ></CommonSwiperForFamilyAndSummer>
                 </div>
               </div>
             </div>
