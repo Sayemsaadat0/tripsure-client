@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 // import GoogleLogin from '../../Components/socialLogin/GoogleLogin';
 // import FacebookLogin from '../../Components/socialLogin/FacebookLogin';
 // import useAuth from '../../Hooks/useAuth';
@@ -19,6 +19,9 @@ import ResetPassword from '../../../Modal/ResetPassword';
 const Login = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const navigate = useNavigate()
+    const location = useLocation()
+    let from = location.state?.from?.pathname || "/";
+
     const { signInUser } = useAuth()
     const [loading, setLoading] = useState(false)
     const [isOpen, setIsOpen] = useState(false)
@@ -27,6 +30,7 @@ const Login = () => {
     const closeModal = () => {
         setIsOpen(false)
     }
+
     const onSubmit = (data) => {
         // Handle form submission here, e.g., make an API call to register the user
         console.log(data);
@@ -41,7 +45,7 @@ const Login = () => {
                     icon: 'success',
                     confirmButtonText: 'Cool'
                 })
-                navigate('/', {replace: true})
+                navigate(from, { replace: true })
                 setLoading(false)
 
             })

@@ -18,7 +18,7 @@ const Navbar = () => {
         { id: 1, name: 'discover', dropdown: true, routes: [{ routeName: 'travel story', linkName: 'travelStory' }, { routeName: 'travel guides', linkName: 'travelGuides' }] },
         { id: 2, name: 'community', dropdown: true, routes: [{ routeName: 'post a story', linkName: 'postastory' }, { routeName: 'add a review', linkName: 'addareview' }] },
         { id: 3, name: 'more', dropdown: true, routes: [{ routeName: 'flights', linkName: 'flights' }, { routeName: 'Rental Cars', linkName: 'rentalcars' }] },
-        { id: 3, name: 'dashboard',linkName:"dashboard/adminhome" },
+        { id: 4, name: 'dashboard',linkName:"dashboard/adminhome" },
     ]
 
     const handleLogout = () => {
@@ -42,7 +42,7 @@ const Navbar = () => {
     }
 
     return (
-        <div className='sticky top-0 z-10 bg-white h-16 w-full '>
+        <div className='fixed top-0 z-10 bg-white h-16 w-full '>
             <div className='max-w-7xl mx-auto px-1 md:px-3 lg:px-5 h-full flex justify-between items-center  text-gray-800'>
                 <Link c to='/'>
                     <img className='md:w-full md:h-[30%] w-[120px] max-w-[180px]' src="https://i.ibb.co/F6hSztb/2.png" alt="" />

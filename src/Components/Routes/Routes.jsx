@@ -41,6 +41,8 @@ import Addpackage from "../Pages/DashBoard/Admin/Addpackage";
 
 
 import SearchResult from "../Pages/SearchResult/SearchResult";
+import PrivateRoutes from "./PrivateRoutes";
+import NewProfile from "../Pages/Profile/NewProfile";
 
 const router = createBrowserRouter([
   {
@@ -58,11 +60,11 @@ const router = createBrowserRouter([
       },
       {
         path: 'favorite',
-        element: <Favorite /> 
+        element: <PrivateRoutes><Favorite /></PrivateRoutes> 
       },
       {
-        path: 'profile/:name',
-        element: <Profile></Profile>
+        path: 'profile/:email',
+        element: <PrivateRoutes><NewProfile></NewProfile></PrivateRoutes>
       },
       {
         path: "overview",

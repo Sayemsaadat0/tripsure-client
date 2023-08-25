@@ -4,6 +4,7 @@ import { CgProfile } from 'react-icons/cg'
 import { LuView } from 'react-icons/lu'
 import useAuth from '../../Hooks/useAuth'
 import { Link } from 'react-router-dom'
+import Swal from 'sweetalert2'
 
 const Dropdown = () => {
   const { user, logOut } = useAuth()
@@ -55,7 +56,7 @@ const Dropdown = () => {
               </Menu.Item>
 
               <Menu.Item>
-                <Link to={`/profile/${user?.displayName.split(' ').join('-')}`} className='flex items-center gap-3 px-2 py-1 hover:bg-gray-300 rounded
+                <Link to={`/profile/${user?.email.split('.')[0]}`} className='flex items-center gap-3 px-2 py-1 hover:bg-gray-300 rounded
                 '>
                   <CgProfile size={20} color='19a0c9'></CgProfile>
                   <span className='text-lg'>Your Profile</span>
