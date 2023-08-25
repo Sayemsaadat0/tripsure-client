@@ -15,7 +15,7 @@ const FamilyGuideSingleCardDetails = () => {
     console.log('family details',id, familyGuideDetails);
     return (
         <div>
-
+            single card
         </div>
     );
 };

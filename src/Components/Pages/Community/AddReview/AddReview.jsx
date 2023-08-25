@@ -1,6 +1,7 @@
-import { Rating } from "@smastrom/react-rating";
 import React, { useState } from "react";
 import Container from "../../../../LayOut/Container";
+import Rating from "react-rating";
+
 
 
 const AddReview = () => {
@@ -24,7 +25,7 @@ const AddReview = () => {
             <h3 className="text-3xl font-semibold">Rating and Review</h3>
             <p className="my-3 text-lg">Rating {rating}</p>
             <Rating
-              style={{ maxWidth: 180 }}
+              style={{ maxWidth: 12 }}
               value={rating}
               onChange={setRating}
               isRequired

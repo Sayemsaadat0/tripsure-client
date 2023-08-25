@@ -71,8 +71,9 @@ const FamilyGuideDetails = () => {
           </div>
         </Container>
 
+
         {/* Tips part */}
-        <section className="mt-10 w-full h-full bg-green-100">
+        <section className="mt-10 w-full h-full bg-green-50">
           <Container>
             <div>
               <h1 className="pt-10 ps-4 md:ps-10 text-4xl md:text-6xl font-bold ">
