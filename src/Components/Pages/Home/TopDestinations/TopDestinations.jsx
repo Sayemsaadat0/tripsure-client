@@ -55,11 +55,10 @@ const TopDestinations = () => {
                 <Link to={`/top-destination-details/${todo?._id}`}>
                   <div className="  re   hover:scale-110 duration-700">
                     <img
-                      className="h-64 relative w-full relative object-cover first-letter:rounded-tl-[5px] rounded-tr-[50px]"
+                      className="h-64  w-full  object-cover first-letter:rounded-tl-[5px] rounded-tr-[50px]"
                       src={todo.picture}
                       alt=""
                     />
-                    <button  className="absolute top-4 left-4 p-2  border-2 border-black   rounded-full "><FaHeart className="text-2xl"></FaHeart></button>
 
                     <h2 className="absolute bottom-3 pb-3 pl-2  font-extrabold text-xl text-white left-3   ">
                       {todo.cardtitle}
