@@ -17,7 +17,8 @@ export const saveUser = async (user, countryName, phone, gender) => {
 }
 // add cover photo 
 export const addCoverPhoto = async (email, coverPhoto) => {
-    const response = await axios.patch(`http://localhost:1000/users/${email}`, coverPhoto)
+    console.log(coverPhoto)
+    const response = await axios.patch(`http://localhost:1000/users/${email}`, {data: coverPhoto})
     return response
 }
 export const findUserbyEmail = async (email) => {
