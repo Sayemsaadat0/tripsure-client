@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import Container from "../../../../LayOut/Container";
 
@@ -8,9 +8,50 @@ const PostAStory = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => {
-    console.log(data);
+
+  const [images, setImages] = useState([]);
+  const photos = [];
+  console.log("photos form", photos);
+
+  // //  post image from imgbb
+  const handlePostImagUrl = async (img) => {
+    const formData = new FormData();
+    formData.append("image", img[0]);
+    const url = `https://api.imgbb.com/1/upload?key=${
+      import.meta.env.VITE_IMGBB_API_KEY
+    }`;
+    const response = await fetch(url, {
+      method: "POST",
+      body: formData,
+    });
+    const data = await response.json();
+    console.log(data.data);
+
+    return data;
   };
+
+  const onSubmit = async (data) => {
+    console.log(data);
+     handlePostImagUrl(data?.firstPicture);
+     handlePostImagUrl(data?.largePicture);
+      handlePostImagUrl(data?.secondPicture);
+     handlePostImagUrl(data?.thirdPicture);
+  
+
+    fetch("http://localhost:1000/postStory", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(data, images),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((err) => console.log(err.message));
+  };
+
   return (
     <Container>
       <div className="my-14">
@@ -33,6 +74,7 @@ const PostAStory = () => {
             />
             <input
               type="file"
+              // required
               accept=".jpg, .jpeg, .png"
               {...register("largePicture")}
               className="input input-success cursor-pointer"
@@ -44,7 +86,7 @@ const PostAStory = () => {
               {...register("morningTitle1")}
               className="input input-success"
             />
-            <input
+            <textarea
               placeholder="day one morging description"
               type="text"
               {...register("morningDescription1")}
@@ -56,7 +98,7 @@ const PostAStory = () => {
               {...register("noonTitle1")}
               className="input input-success"
             />
-            <input
+            <textarea
               placeholder="Day one afternoon description"
               type="text"
               {...register("noonDescription1")}
@@ -68,7 +110,7 @@ const PostAStory = () => {
               {...register("nightTitle1")}
               className="input input-success"
             />
-            <input
+            <textarea
               placeholder="Day one night description"
               type="text"
               {...register("nightDescription1")}
@@ -76,6 +118,7 @@ const PostAStory = () => {
             />
             <input
               type="file"
+              // required
               accept=".jpg, .jpeg, .png"
               {...register("firstPicture")}
               className="input input-success cursor-pointer"
@@ -86,7 +129,7 @@ const PostAStory = () => {
               {...register("morningTitle2")}
               className="input input-success"
             />
-            <input
+            <textarea
               placeholder="day two morging description"
               type="text"
               {...register("morningDescription2")}
@@ -98,7 +141,7 @@ const PostAStory = () => {
               {...register("noonTitle2")}
               className="input input-success"
             />
-            <input
+            <textarea
               placeholder="Day two afternoon description"
               type="text"
               {...register("noonDescription2")}
@@ -110,7 +153,7 @@ const PostAStory = () => {
               {...register("nightTitle2")}
               className="input input-success"
             />
-            <input
+            <textarea
               placeholder="Day two night description"
               type="text"
               {...register("nightDescription2")}
@@ -118,6 +161,7 @@ const PostAStory = () => {
             />
             <input
               type="file"
+              // required
               accept=".jpg, .jpeg, .png"
               {...register("secondPicture")}
               className="input input-success cursor-pointer"
@@ -128,7 +172,7 @@ const PostAStory = () => {
               {...register("morningTitle3")}
               className="input input-success"
             />
-            <input
+            <textarea
               placeholder="day three morging description"
               type="text"
               {...register("morningDescription3")}
@@ -140,7 +184,7 @@ const PostAStory = () => {
               {...register("noonTitle3")}
               className="input input-success"
             />
-            <input
+            <textarea
               placeholder="Day three afternoon description"
               type="text"
               {...register("noonDescription3")}
@@ -152,7 +196,7 @@ const PostAStory = () => {
               {...register("nightTitle3")}
               className="input input-success"
             />
-            <input
+            <textarea
               placeholder="Day three night description"
               type="text"
               {...register("nightDescription3")}
@@ -160,12 +204,16 @@ const PostAStory = () => {
             />
             <input
               type="file"
+              // required
               accept=".jpg, .jpeg, .png"
               {...register("thirdPicture")}
               className="input input-success cursor-pointer"
             />
           </div>
-          <input type="submit" className="btn  bg-[#2884b6] text-white hover:text-black w-full mt-4" />
+          <input
+            type="submit"
+            className=" py-3 rounded-lg bg-[#2884b6] text-white hover:text-black w-full mt-4"
+          />
         </form>
       </div>
     </Container>
