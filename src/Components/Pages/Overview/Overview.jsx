@@ -47,9 +47,15 @@ const Overview = () => {
         <div className='bg-[#f6f6f8] min-h-screen'>
             <Container>
                 <div className='pt-10 max-w-xl mx-auto'>
+
+                    
+                    <WeatherForecast></WeatherForecast>
                     <Marquee>
                         <h1 className='text-[#F85606]'>I can be a React component, multiple React components, or just some text.</h1>
                     </Marquee>
+
+
+
                 </div>
                 <div className='mb-10'>
                     <h2 className='text-2xl font-bold py-10 md:pt-14'>Hot Deals</h2>
@@ -110,7 +116,7 @@ const Overview = () => {
                         }
                     </div>
                 </div>
-                <WeatherForecast></WeatherForecast>
+
                 <MyTrips></MyTrips>
 
                 {/* <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
