@@ -20,7 +20,7 @@ const TravelDeals = () => {
     <div data-AOS="fade-left" data-aos-duration="3000" data-aos-easing="ease" className='p-10'>
       <Container>
         <div >
-        <SectionTitle subText={'Savings Safari'} text={'Hunt for the '} coloredText={'THottest Deals'} />
+        <SectionTitle subText={'Savings Safari'} text={'Hunt for the '} coloredText={'Hottest Deals'} />
           <Swiper
             slidesPerView={1}
             spaceBetween={10}
