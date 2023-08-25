@@ -37,7 +37,7 @@ const handleAddToFavorite = (item) => {
   })
 }
   return (
-    <div data-AOS="fade-left" data-aos-duration="3000" data-aos-easing="ease" className='p-10'>
+    <div  className='px-10'>
       <Container>
         <div >
         <SectionTitle subText={'Create Memories'} text={'Select Your Ideal'} coloredText={'Tour Package'} />
@@ -69,7 +69,7 @@ const handleAddToFavorite = (item) => {
                 <div className="card card-compact bg-white shadow-2xl relative ">
                   <p className='badge badge-primary absolute right-1 top-3 animate-bounce p-2'>Packages</p>
                   <figure><img className='relative rounded-lg' src={packageItem?.picture} alt={packageItem.title} />
-                  <button onClick={()=>handleAddToFavorite(packageItem?._id)} className="absolute bg-white top-2 right-2 p-2   border-black   rounded-full "><FaHeart className="text-xl"></FaHeart></button>
+                  <button onClick={()=>handleAddToFavorite(packageItem?._id)} className="absolute bg-white top-2 right-2 p-2   border-black 2a9f9f rounded-full "><FaHeart className="text-xl"></FaHeart></button>
                   </figure>
                   <div className="card-body">
                     <h2 className="card-title">{packageItem.title}</h2>

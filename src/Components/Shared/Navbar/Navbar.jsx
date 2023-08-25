@@ -37,13 +37,13 @@ const Navbar = () => {
   };
 
     return (
-        <div className='fixed top-0 z-10 bg-white h-16 w-full '>
+        <div className="fixed top-0 z-10 h-16 w-full backdrop-blur-lg ">
             <div className='max-w-7xl mx-auto px-1 md:px-3 lg:px-5 h-full flex justify-between items-center  text-gray-800'>
                 <Link c to='/'>
-                    <img className='md:w-full md:h-[30%] w-[120px] max-w-[180px]' src="https://i.ibb.co/F6hSztb/2.png" alt="" />
+                    <img className='md:w-full md:h-[30%] w-[120px] max-w-[180px]' src="https://i.ibb.co/3dXKrfL/logo-3.png" alt="" />
                 </Link>
 
-        <div className="hidden lg:flex items-center gap-4 lg:gap-7">
+        <div className="hidden lg:flex items-center gap-4 lg:gap-7 text-[#62cbe3]">
           {naviItems.map((navItem) => (
             <div
               className=" cursor-pointer font-bold uppercase duration-300"
@@ -57,7 +57,7 @@ const Navbar = () => {
                   </label>
                   <ul
                     tabIndex={0}
-                    className="dropdown-content z-[10] menu  shadow bg-base-100 rounded-box w-52"
+                    className="dropdown-content z-10  menu shadow text-[#428e8e] rounded-lg w-52 bg-base-300 p-0"
                   >
                     {navItem.routes.map((route, index) => (
                       <NavLink
@@ -67,7 +67,7 @@ const Navbar = () => {
                         key={index}
                         to={`${route.linkName}`}
                       >
-                        <li className="cursor-pointer rounded-lg font-medium uppercase px-6 py-3 hover:bg-gray-300  duration-300">
+                        <li className="cursor-pointer rounded-lg font-medium uppercase px-6 py-3 hover:bg-base-100  duration-300">
                           {route.routeName}
                         </li>
                       </NavLink>
@@ -127,7 +127,7 @@ const Navbar = () => {
         </div>
 
         {menuOpen && (
-          <ul className="absolute z-10 top-16 bg-gray-300 box-border md:mt-4 md:mr-2 shadow-lg w-full md:max-w-[50vw] rounded-xl py-6 right-0">
+          <ul className="absolute z-10 top-16 bg-base-200 box-border md:mt-4 md:mr-2 shadow-lg w-full md:max-w-[50vw] rounded-xl py-6 right-0">
             {user ? (
               <div className="flex px-6 mb-1 flex-col gap-3 items-center">
                 <img
@@ -135,7 +135,7 @@ const Navbar = () => {
                   src={`${user?.photoURL}`}
                   alt=""
                 />
-                <p className="text-lg font-medium">{user?.displayName}</p>
+                <p className="text-lg font-medium text-[#428e8e]">{user?.displayName}</p>
                 <button
                   onClick={handleLogout}
                   className=" logout-button w-full bg-white"

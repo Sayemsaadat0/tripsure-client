@@ -57,7 +57,7 @@ const TourDetails = () => {
     console.log(date, dateString);
   };
   return (
-    <div className="lg:mx-10 mx-4 mt-10">
+    <div className="lg:mx-10 mx-4 mt-24">
       <div>
         <h2 className="text-3xl font-bold">{placetitle}</h2>
         <h4 className="my-2">Posted By {postedby}</h4>
@@ -294,11 +294,11 @@ const TourDetails = () => {
                           </button>
                         </div>
                       </div>
-                      <div className="flex justify-end">
+                     {/*  <div className="flex justify-end">
                         <button className="btn btn-warning rounded-full">
                           Update search
                         </button>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 )}

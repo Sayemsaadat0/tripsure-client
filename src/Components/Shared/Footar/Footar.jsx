@@ -18,7 +18,7 @@ const Footar = () => {
                             <div className="mb-4 md:mb-0">
                                 <h2 className="text-xl font-semibold mb-2">About Us</h2>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquam purus a ultrices.</p>
-                                <img className='mt-4 w-full max-w-[200px]' src={"https://i.ibb.co/F6hSztb/2.png"} alt="" />
+                                <img className='mt-4 w-full max-w-[200px]' src={"https://i.ibb.co/3dXKrfL/logo-3.png"} alt="" />
                             </div>
                             <div>
                                 <h2 className="text-xl font-semibold mb-2">Contact</h2>

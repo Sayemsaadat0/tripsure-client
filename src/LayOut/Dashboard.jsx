@@ -41,7 +41,7 @@ const Dashboard = () => {
             <NavLink to="/">
               <img
                 className="md:w-full md:h-[30%] w-[120px] max-w-[180px]"
-                src="https://i.ibb.co/F6hSztb/2.png"
+                src="https://i.ibb.co/3dXKrfL/logo-3.png"
                 alt=""
               />
             </NavLink>

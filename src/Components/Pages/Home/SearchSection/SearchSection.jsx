@@ -47,7 +47,6 @@ const SearchSection = () => {
     e.preventDefault();
     const searchText = e.target.searchText.value;
     dispatch(setSearchText(searchText));
-    console.log(searchText, activeCategory)
     fetch(
       `https://tripsure-server-sayemsaadat0.vercel.app/searchResult/${
         activeCategory.toLowerCase() === "search all"
@@ -58,14 +57,12 @@ const SearchSection = () => {
     )
       .then((res) => res.json())
       .then((data) => dispatch(setSearchData(data)));
-    
-    console.log(searchText);
     e.target.reset();
     navigate("/searchResult");
   };
 
   return (
-    <div className="w-full md:max-w-3xl mx-auto">
+    <div className="w-full md:max-w-3xl mx-auto mt-20 text-[#62cbe3]">
       <div>
         <div>
           <h1 className="text-center text-5xl font-bold hidden md:block">
@@ -99,9 +96,9 @@ const SearchSection = () => {
 
         <form onSubmit={handleSearch}>
           <div className="searchField rounded-xl md:rounded-full w-[90%] mx-auto md:w-full p-2 relative">
-            <button className="absolute top-3">
-              <AiOutlineSearch className="text-3xl" />
-            </button>
+            <p className="absolute top-3">
+              <AiOutlineSearch className="text-3xl " />
+            </p>
             <div>
               <input
                 type="text"
@@ -121,17 +118,19 @@ const SearchSection = () => {
               />
             </div>
             <div className="w-full md:w-[120px] md:absolute md:bottom-[6px] md:right-2 ">
-              <button className="hover:bg-[#046060] text-white 
-              bg-[#7bb9b9] 
-          
+              <button 
+              className="
+              hover:bg-[#6599b1] 
+              text-white 
+              bg-[#62cbe3] 
               transition duration-300 px-4 py-2 
               text-lg 
               font-semibold 
               rounded-full 
               w-full mt-5 
-              flex justify-center items-center gap-2
-              ">
-                <BsSearch></BsSearch>   Search
+              flex justify-center items-center gap-2">
+              <BsSearch></BsSearch>   
+              Search
               </button>
 
             </div>
