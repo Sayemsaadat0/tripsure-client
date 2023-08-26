@@ -37,6 +37,7 @@ const Navbar = () => {
       });
   };
 
+  // todo alhabib favorite button ashe na
     return (
         <div className="fixed top-0 z-10 h-16 w-full backdrop-blur-lg ">
             <div className='max-w-7xl mx-auto px-1 md:px-3 lg:px-5 h-full flex justify-between items-center  text-gray-800'>
@@ -97,8 +98,7 @@ const Navbar = () => {
                 to="favorite"
                 className={`flex  items-center gap-2 hover:text-[#19a0c9] duration-500 w-full  font-medium uppercase ${({
                   isActive,
-                }) => (isActive ? "text-[#79c7ff]" : "")}`}
-              >
+                }) => (isActive ? "text-[#79c7ff]" : "")}`}>
                 <MdFavoriteBorder size={25} color="19a0c9"></MdFavoriteBorder>
                 <span>Favorite</span>
               </NavLink>
