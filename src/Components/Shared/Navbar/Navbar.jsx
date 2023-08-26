@@ -40,7 +40,7 @@ const Navbar = () => {
         <div className="fixed top-0 z-10 h-16 w-full backdrop-blur-lg ">
             <div className='max-w-7xl mx-auto px-1 md:px-3 lg:px-5 h-full flex justify-between items-center  text-gray-800'>
                 <Link c to='/'>
-                    <img className='md:w-full md:h-[30%] w-[120px] max-w-[180px]' src="https://i.ibb.co/3dXKrfL/logo-3.png" alt="" />
+                    <img className='md:w-full md:h-[30%] w-[120px] max-w-[180px]' src="https://i.ibb.co/tqZsGcq/logo-4.png" alt="" />
                 </Link>
 
         <div className="hidden lg:flex items-center gap-4 lg:gap-7 text-[#79c7ff]">
