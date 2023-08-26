@@ -22,11 +22,8 @@ const Home = () => {
             <section>
                 <Banner></Banner>
             </section>
-            <section>
+            <section className=' shadow-lg bg-gradient-to-tr from-white to-[#dbf6fbfd]'>
                 <TravelDeals></TravelDeals>
-            </section>
-
-            <section>
                 <Packages></Packages>
             </section>
 
@@ -40,7 +37,6 @@ const Home = () => {
             <section>
                 <TopThingsToDo></TopThingsToDo>
             </section>
-
 
             <section >
                 <AboutUs></AboutUs>

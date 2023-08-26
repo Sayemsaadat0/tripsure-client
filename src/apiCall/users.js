@@ -6,13 +6,14 @@ export const saveUser = async (user, countryName, phone, gender) => {
         name: user.displayName,
         email: user.email,
         photo: user.photoURL,
+        role :"user",
         countryName,
         phone,
         gender,
         coverPhoto: ''
     }
     console.log(user)
-    const data = await axios.put(`http://localhost:1000/users/${user?.email}`, currentUser)
+    const data = await axios.put(`https://tripsure-server-sayemsaadat0.vercel.app/users/${user?.email}`, currentUser)
     console.log(data)
 }
 // add cover photo 

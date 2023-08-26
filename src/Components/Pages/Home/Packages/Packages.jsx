@@ -5,18 +5,39 @@ import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 import Container from '../../../../LayOut/Container';
 import SectionTitle from '../../../Shared/SectionTitle/SectionTitle';
+import { Link } from 'react-router-dom';
+import { FaHeart } from 'react-icons/fa6';
+import useAuth from '../../../../Hooks/useAuth';
+import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const Packages = () => {
+  const { logOut, user } = useAuth();
   const [packages, setPackages] = useState([]);
 
   useEffect(() => {
-    fetch('./Packages.json')
+    fetch('https://tripsure-server-sayemsaadat0.vercel.app/packages')
       .then(res => res.json())
       .then(data => setPackages(data));
   }, []);
-
+  console.log(user?.email, packages);
+const handleAddToFavorite = (item) => {
+  axios.put(`http://localhost:1000/addToFavoritePackage/${user?.email}`,{"packageId": item})
+  .then((res)=>{
+    console.log(res.data);
+    if (res.data.modifiedCount > 0) {
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Successfully added your Favorite List!",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    }
+  })
+}
   return (
-    <div data-AOS="fade-left" data-aos-duration="3000" data-aos-easing="ease">
+    <div  className='px-10'>
       <Container>
         <div >
         <SectionTitle subText={'Create Memories'} text={'Select Your Ideal'} coloredText={'Tour Package'} />
@@ -47,12 +68,14 @@ const Packages = () => {
               <SwiperSlide className='lg:p-10' key={index}>
                 <div className="card card-compact bg-white shadow-2xl relative ">
                   <p className='badge badge-primary absolute right-1 top-3 animate-bounce p-2'>Packages</p>
-                  <figure><img className='rounded-lg' src={packageItem.picture} alt={packageItem.title} /></figure>
+                  <figure><img className='relative rounded-lg' src={packageItem?.picture} alt={packageItem.title} />
+                  <button onClick={()=>handleAddToFavorite(packageItem?._id)} className="absolute bg-white top-2 right-2 p-2   border-black 2a9f9f rounded-full "><FaHeart className="text-xl"></FaHeart></button>
+                  </figure>
                   <div className="card-body">
                     <h2 className="card-title">{packageItem.title}</h2>
                     <p>{packageItem.destination}</p>
                     <div>
-                      <button className="btn">Reserve Now</button>
+                      <Link to={`/packageDetails/${packageItem?._id}`} className="btn">View Details</Link>
                     </div>
                   </div>
                 </div>

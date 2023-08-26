@@ -56,7 +56,7 @@ const NewProfile = () => {
                     </label>
                     {/* profile picture */}
                     <div className='flex gap-3'>
-                        <img className='h-[100px] w-[100px] md:h-[120px] md:w-[120px] rounded-full ml-5 md:ml-10 -mt-14' src="https://i.ibb.co/XFpZysc/profile.jpg" alt="" />
+                        <img className='h-[100px] w-[100px] md:h-[120px] md:w-[120px] rounded-full ml-5 md:ml-10 -mt-14' src={user?.photoURL} alt="" />
                         <div>
                             <p className='font-medium text-lg '>{user.displayName}</p>
                             <p className='flex gap-2 items-center text-gray-700'><HiOutlineLocationMarker></HiOutlineLocationMarker><span>{countryName}</span></p>

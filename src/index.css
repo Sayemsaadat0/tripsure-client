@@ -114,7 +114,10 @@
   }
 }
 
-
+.sectionTitle {
+  font-family: "Supermercado One", cursive;
+  font-family: "Syne", sans-serif;
+}
 
 .my-link::after {
   @apply content-[''] text-black bg-[#6bccd3] w-[0%] h-[3px] absolute left-0 -bottom-1 rounded hover:w-[100%] duration-500;
@@ -125,12 +128,13 @@
 }
 
 .btn {
-  @apply bg-[#7bb9b9] 
-    text-white
-    hover:bg-[#046060]  
+  @apply 
+  bg-[#62cbe3] 
+    text-black
+    hover:bg-[#66a5bd]  
+    hover:text-white
     duration-500 
     rounded-full w-auto border-none;
-    
 }
 .btn-primary {
   @apply bg-white text-black rounded-full border border-black 
@@ -141,17 +145,16 @@
    px-4 py-3;
 }
 
-.badge{
-  background: #c5ffff; 
-  border: none; 
+.badge {
+  background: #c5ffff;
+  border: none;
   color: rgb(6, 100, 121);
   font-weight: 800;
 }
 
-
-.footar-image{
-  background-image: url('https://images.unsplash.com/photo-1553877447-327dce914f35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1354&q=80');
+.footar-image {
+  background-image: url("https://images.unsplash.com/photo-1553877447-327dce914f35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1354&q=80");
   background-repeat: no-repeat;
   margin: auto;
-background-size: cover;
+  background-size: cover;
 }

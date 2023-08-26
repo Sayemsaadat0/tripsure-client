@@ -1,37 +1,82 @@
-import React from 'react';
-import SectionTitle from '../../../Shared/SectionTitle/SectionTitle';
+import React, { useEffect, useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Pagination } from 'swiper/modules';
 import Container from '../../../../LayOut/Container';
+import SectionTitle from '../../../Shared/SectionTitle/SectionTitle';
+import { Link } from 'react-router-dom';
+import { GoLocation, GoStarFill } from 'react-icons/go';
+
+
+
+
 
 
 const TravelDeals = () => {
+  const [travelDeals, setTravelDeals] = useState([]);
 
-    return (
-        <div>
-            <SectionTitle subText={'Adventures Await'}
-                text={'Hot Travel '} coloredText={'Deals'}>
-            </SectionTitle>
+  useEffect(() => {
+    fetch('https://tripsure-server-sayemsaadat0.vercel.app/travelDeals')
+      .then(res => res.json())
+      .then(data => setTravelDeals(data));
+  }, []);
 
-            <Container>
+  return (
+    <div className='pt-24 px-10 '>
+      <Container>
+        <div >
+          <SectionTitle subText={'Savings Safari'} text={'Hunt for the '} coloredText={'Hottest Deals'} />
+          <Swiper
+            slidesPerView={1}
+            spaceBetween={10}
+            pagination={{
+              clickable: true,
+            }}
+            breakpoints={{
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 10,
+              },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+              },
+            }}
+            modules={[Pagination]}
+            className='mySwiper'
+          >
+            {travelDeals.map((deals, index) => (
+              <SwiperSlide className='lg:p-10  ' key={index}>
+                <div className="card card-compact bg-white shadow-md  relative ">
+                  <p className='badge badge-primary absolute right-1 top-3 animate-bounce p-2'>{deals.discountPercentage}% Savings</p>
+                  <Link to={`/TravelDeals/${deals?._id}`} >
+                    <figure><img className='rounded-lg' src={deals.picture} alt={deals.title} /></figure></Link>
 
-                <div>
-                    <div className='mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-5 md:p-4'>
-                        {/* card */}
-                        <div className="card card-compact  bg-white shadow-xl relative">
-                            <p className='badge badge-primary absolute right-1 top-3 animate-bounce'>30%</p>
-                            <figure><img src="https://i.pinimg.com/564x/0b/d3/c6/0bd3c636bd80be4e3bb0232d8ec83985.jpg" alt="title" /></figure>
-                            <div className="card-body">
-                                <h2 className="card-title">title!</h2>
-                                <p>Address</p>
-                                <div className="">
-                                    <button className="btn  ">Buy Now</button>
-                                </div>
-                            </div>
-                        </div>
+                  <div className="card-body">
+                    <Link to={`/TravelDeals/${deals?._id}`} ><h2 className="card-title hover:text-[#6ac2c2] duration-500">{deals.title}</h2></Link>
+                    <p className='flex gap-2'><GoLocation className='text-xl'></GoLocation> {deals.destination}</p>
+                    <p>Booking End Date : {deals.dealExpires}</p>
+
+                    <div className='flex justify-between w-full'>
+                      <p><span className='text-red-500 font-bold text-lg'>{deals.newPrice?.adult}</span>/person</p>
+                      <p className='flex justify-end items-center gap-1'> <GoStarFill className='text-red-500 '></GoStarFill>
+                        {deals.reviews?.ratings?.overall} (45)
+                      </p>
                     </div>
+                  </div>
                 </div>
-            </Container>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
-    );
+      </Container>
+    </div>
+  );
 };
 
 export default TravelDeals;

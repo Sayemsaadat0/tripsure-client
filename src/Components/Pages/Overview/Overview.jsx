@@ -3,9 +3,9 @@ import Container from '../../../LayOut/Container';
 import { ImLocation } from 'react-icons/im'
 import { MdOutlineWatchLater } from 'react-icons/md'
 import CountDown from './CountDown';
-import Marquee from "react-fast-marquee";
 import MyTrips from './MyTrips';
 import WeatherForecast from './WeatherForecast';
+import Marquee from 'react-fast-marquee';
 
 const Overview = () => {
     const hotDeals = [
@@ -47,9 +47,15 @@ const Overview = () => {
         <div className='bg-[#f6f6f8] min-h-screen'>
             <Container>
                 <div className='pt-10 max-w-xl mx-auto'>
+
+                    
+                    <WeatherForecast></WeatherForecast>
                     <Marquee>
                         <h1 className='text-[#F85606]'>I can be a React component, multiple React components, or just some text.</h1>
                     </Marquee>
+
+
+
                 </div>
                 <div className='mb-10'>
                     <h2 className='text-2xl font-bold py-10 md:pt-14'>Hot Deals</h2>
@@ -72,7 +78,13 @@ const Overview = () => {
                                         <button className="px-4 py-2 mx-auto font-medium rounded border-2 border-[#F85606] hover:bg-[#d93f1e] hover:text-white duration-300 text-[#F85606]">View Details</button>
                                     </div>
                                 </div>
-                                <span className="inline-flex absolute top-4 right-0 items-center rounded-l-full bg-[#d93f1e] px-3 py-1 text-lg font-medium text-gray-100 ring-1 ring-inset ring-yellow-600/20">
+                                <span className="inline-flex
+   absolute top-4 right-0 
+   items-center 
+   rounded-l-full 
+   bg-[#d93f1e] px-3 py-1 
+   text-lg font-medium text-gray-100 
+   ring-1 ring-inset ring-yellow-600/20">
                                     {deal.discount}%
                                 </span>
                             </div>)
@@ -104,7 +116,7 @@ const Overview = () => {
                         }
                     </div>
                 </div>
-                <WeatherForecast></WeatherForecast>
+
                 <MyTrips></MyTrips>
 
                 {/* <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>

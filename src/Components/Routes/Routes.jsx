@@ -5,7 +5,6 @@ import Profile from "../Pages/Profile/Profile";
 import Overview from "../Pages/Overview/Overview";
 import Login from "../Pages/Authentication/Login/Login";
 import Register from "../Pages/Authentication/SignUp/Register";
-
 import KnowMore from "../Pages/AboutUs/KnowMore";
 import Dashboard from "../../LayOut/Dashboard";
 import Totallview from "../Pages/DashBoard/Admin/Totallview";
@@ -37,10 +36,15 @@ import Addhotels from "../Pages/DashBoard/Admin/Addhotels";
 import Addflights from "../Pages/DashBoard/Admin/Addflights";
 import AddResturants from "../Pages/DashBoard/Admin/AddResturants";
 import Addpackage from "../Pages/DashBoard/Admin/Addpackage";
-
-
-
+import DoThingsAttractionReviews from "../Pages/DoThingsAttractionReviews/DoThingsAttractionReviews";
+import StayThingsAttractionReviews from "../Pages/StayThingsAttractionReviews/StayThingsAttractionReviews";
+import RestaurantAttractionReview from "../Pages/RestaurantAttractionReview/RestaurantAttractionReview";
 import SearchResult from "../Pages/SearchResult/SearchResult";
+import PackageDetails from "../Pages/Home/Packages/PackageDetails";
+import TravelDealsDetails from "../Pages/Home/TravelDeals/TravelDealsDetails";
+import FamilyGuideSingleCardDetails from "../Pages/Home/FamilyGuide/FamilyGuideSingleCardDetails";
+import ContactDetails from "../Pages/Payment/ContactDetails/ContactDetails";
+import ActivityDetails from "../Pages/Payment/ActivityDetails/ActivityDetails";
 import PrivateRoutes from "./PrivateRoutes";
 import NewProfile from "../Pages/Profile/NewProfile";
 
@@ -59,6 +63,14 @@ const router = createBrowserRouter([
         element: <KnowMore />,
       },
       {
+        path: "/FamilyGuideSingleCardDetails/:id",
+        element: <FamilyGuideSingleCardDetails></FamilyGuideSingleCardDetails>,
+      },
+      {
+        path: "/packageDetails/:id",
+        element: <PackageDetails></PackageDetails>,
+      },
+      {
         path: 'favorite',
         element: <PrivateRoutes><Favorite /></PrivateRoutes> 
       },
@@ -73,6 +85,10 @@ const router = createBrowserRouter([
       {
         path: "travelarsstory",
         element: <KnowMore />,
+      },
+      {
+        path: '/TravelDeals/:id',
+        element: <TravelDealsDetails></TravelDealsDetails>
       },
       {
         path: "familyguidedetails",
@@ -93,6 +109,22 @@ const router = createBrowserRouter([
       {
         path: "/tourDetails/:id",
         element: <TourDetails></TourDetails>,
+      },
+      {
+        path: '/dothings-attraction-reviews/:id',
+        element: <DoThingsAttractionReviews></DoThingsAttractionReviews>
+      },
+      {
+        path: '/staythinngs-attraction-reviews/:id',
+        element: <StayThingsAttractionReviews></StayThingsAttractionReviews>
+      },
+      {
+        path: '/restaurant-attraction-reviews/:id',
+        element: <RestaurantAttractionReview></RestaurantAttractionReview>
+      },
+      {
+        path: '/top-destination-details/:id',
+        element:<TopDestinationDetails></TopDestinationDetails>
       },
       {
         path: "/top-destination-details",
@@ -130,6 +162,14 @@ const router = createBrowserRouter([
       {
         path: "searchResult",
         element: <SearchResult />,
+      },
+      {
+        path: "contactDetails",
+        element: <ContactDetails/>
+      },
+      {
+        path: "activityDetails",
+        element: <ActivityDetails/>
       },
     ],
   },

@@ -2,14 +2,21 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import CommonSwiper from "../../CommonSwiper/CommonSwiper";
 import axios from "axios";
+import DoSwiper from "../../CommonSwiper/DoSwiper";
+import RestaurantSwiper from "../../CommonSwiper/RestaurantSwiper";
+import ClockLogo from "../../../assets/time-png-6175.png"
+import lightLogo from "../../../assets/light.png"
+import tripcustome from "../../../assets/tripcustome.png"
+import Container from "../../../LayOut/Container";
 
 const TopDestinationDetails = () => {
   const {id} = useParams();
   const [topDestinationDetails, setTopDestinationsDetails] = useState({})
   const [allHotels, setAllHotels] = useState([])
   const [doPlace, setDoPlace] = useState([])
-  const eatWithSwiper = doPlace.slice(5,)
-  console.log(topDestinationDetails);
+  const [restaurants, setRestaurants] = useState([]);
+  const eatWithSwiper = doPlace.slice(1,)
+
 
  
 
@@ -21,20 +28,27 @@ const TopDestinationDetails = () => {
   },[])
   
   useEffect(()=> {
-    axios.get('https://tripsure-server-sayemsaadat0.vercel.app/all-hotels')
+    axios.get(`https://tripsure-server-sayemsaadat0.vercel.app/all-hotels/${topDestinationDetails?.country}`)
     .then((data)=>{
       setAllHotels(data.data);
     })
-  },[])
+  },[topDestinationDetails])
   useEffect(()=> {
-    axios.get('https://tripsure-server-sayemsaadat0.vercel.app/category')
+    axios.get(`https://tripsure-server-sayemsaadat0.vercel.app/tourCountry/${topDestinationDetails?.country}`)
     .then((data)=>{
       setDoPlace(data.data);
     })
-  },[])
+  },[topDestinationDetails])
+  useEffect(()=> {
+    axios.get(`https://tripsure-server-sayemsaadat0.vercel.app/restaurant/${topDestinationDetails?.country}`)
+    .then((data)=>{
+      setRestaurants(data.data);
+    })
+  },[topDestinationDetails])
  
   return (
-    <div className="lg:mx-10 mx-2">
+    <Container>
+      <div className="lg:mx-10 mx-2">
       <div>
         <h1 className="text-5xl space-x-5 font-bold">{topDestinationDetails?.cardtitle}</h1>
         <div className="text-center mx-auto lg:grid lg:overflow-x-hidden overflow-y-hidden flex lg:grid-cols-4 my-4 gap-2 overflow-scroll  ">
@@ -80,7 +94,7 @@ const TopDestinationDetails = () => {
                 fine-dining spots.
               </p>
             </div>
-            <h4>Tulum Tourism: Best of Tulum</h4>
+            <h4>Best of {topDestinationDetails?.placetitle}</h4>
           </div>
 
           {/* travel advice section design start */}
@@ -92,7 +106,7 @@ const TopDestinationDetails = () => {
                 <div>
                   <img
                     className="w-14 rounded-full "
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAuTWa_9svFXYKl_R7w5WOuNO1J_OAtcFStg&usqp=CAU"
+                    src={ClockLogo}
                     alt=""
                   />
                 </div>
@@ -102,7 +116,7 @@ const TopDestinationDetails = () => {
                 <div>
                   <img
                     className="w-14 rounded-full "
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXKj8BFMfRxojqSibeUdynDLWvd4O6WcnmAdIVQf3rgGzbpzE3bxe6FPiD51LKr0xkhLs&usqp=CAU"
+                    src={tripcustome}
                     alt=""
                   />
                 </div>
@@ -122,7 +136,7 @@ const TopDestinationDetails = () => {
                 <div>
                   <img
                     className="w-14 rounded-full "
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXKj8BFMfRxojqSibeUdynDLWvd4O6WcnmAdIVQf3rgGzbpzE3bxe6FPiD51LKr0xkhLs&usqp=CAU"
+                    src={lightLogo}
                     alt=""
                   />
                 </div>
@@ -138,12 +152,12 @@ const TopDestinationDetails = () => {
                 <h3 className="text-2xl font-bold text-black">Do</h3>
                 <p>
                   Places to see, ways to wander, and signature experiences that
-                  define Tulum.
+                  define .
                 </p>
                 <Link className="underline">See all</Link>
               </div>
               <div>
-               <CommonSwiper allHotels={doPlace}></CommonSwiper>
+               <DoSwiper doPlace={doPlace.slice(1,)}></DoSwiper>
               </div>
             </div>
             <div className="lg:grid lg:my-32 my-20 justify-between gap-2 grid-cols-[300px_minmax(900px,_1fr)_100px]">
@@ -151,7 +165,7 @@ const TopDestinationDetails = () => {
                 <h3 className="text-2xl font-bold text-black">Stay</h3>
                 <p>
                   Places to see, ways to wander, and signature experiences that
-                  define Tulum.
+                  define .
                 </p>
                 <Link className="underline">See all</Link>
               </div>
@@ -169,14 +183,19 @@ const TopDestinationDetails = () => {
                 <Link className="underline">See all</Link>
               </div>
               <div>
-               <CommonSwiper allHotels={eatWithSwiper}></CommonSwiper>
+               <RestaurantSwiper restaurant={restaurants}></RestaurantSwiper>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    </Container>
   );
 };
 
 export default TopDestinationDetails;
+
+
+
+// https://tripsure-server-sayemsaadat0.vercel.app
