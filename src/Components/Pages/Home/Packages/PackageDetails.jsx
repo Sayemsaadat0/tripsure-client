@@ -22,7 +22,6 @@ const PackageDetails = () => {
         destination,
         duration,
         price,
-        newPrice,
         departureDates,
         totalPeople,
         limitPerBooking,
