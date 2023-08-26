@@ -7,18 +7,19 @@ import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 import Swal from "sweetalert2";
 import Dropdown from "../../Dropdown/Drpodown";
+import MobileDropdown from "./MobileDropdown";
 
 const Navbar = () => {
-    const [menuOpen, setMenuOpen] = useState(false)
-    const { logOut, user } = useAuth()
-    const color = '19a0c9'
-   
-    const naviItems = [
-        { id: 1, name: 'discover', dropdown: true, routes: [{ routeName: 'travel story', linkName: 'travelStory' }, { routeName: 'travel guides', linkName: 'travelGuides' }] },
-        { id: 2, name: 'community', dropdown: true, routes: [{ routeName: 'post a story', linkName: 'postastory' }, { routeName: 'add a review', linkName: 'addareview' }] },
-        { id: 3, name: 'more', dropdown: true, routes: [{ routeName: 'flights', linkName: 'flights' }, { routeName: 'Rental Cars', linkName: 'rentalcars' }] },
-        { id: 4, name: 'dashboard',linkName:"dashboard/adminhome" },
-    ]
+  const [menuOpen, setMenuOpen] = useState(false)
+  const { logOut, user } = useAuth()
+  const color = '19a0c9'
+
+  const naviItems = [
+    { id: 1, name: 'discover', dropdown: true, routes: [{ routeName: 'travel story', linkName: 'travelStory' }, { routeName: 'travel guides', linkName: 'travelGuides' }] },
+    { id: 2, name: 'community', dropdown: true, routes: [{ routeName: 'post a story', linkName: 'postastory' }, { routeName: 'add a review', linkName: 'addareview' }] },
+    { id: 3, name: 'more', dropdown: true, routes: [{ routeName: 'flights', linkName: 'flights' }, { routeName: 'Rental Cars', linkName: 'rentalcars' }] },
+    { id: 4, name: 'dashboard', linkName: "dashboard/adminhome" },
+  ]
 
   const handleLogout = () => {
     logOut()
@@ -36,12 +37,12 @@ const Navbar = () => {
       });
   };
 
-    return (
-        <div className="fixed top-0 z-10 h-16 w-full backdrop-blur-lg ">
-            <div className='max-w-7xl mx-auto px-1 md:px-3 lg:px-5 h-full flex justify-between items-center  text-gray-800'>
-                <Link c to='/'>
-                    <img className='md:w-full md:h-[30%] w-[120px] max-w-[180px]' src="https://i.ibb.co/3dXKrfL/logo-3.png" alt="" />
-                </Link>
+  return (
+    <div className="fixed top-0 z-10 h-16 w-full backdrop-blur-lg ">
+      <div className='max-w-7xl mx-auto px-1 md:px-3 lg:px-5 h-full flex justify-between items-center  text-gray-800'>
+        <Link c to='/'>
+          <img className='md:w-full md:h-[30%] w-[120px] max-w-[180px]' src="https://i.ibb.co/3dXKrfL/logo-3.png" alt="" />
+        </Link>
 
         <div className="hidden lg:flex items-center gap-4 lg:gap-7 text-[#62cbe3]">
           {naviItems.map((navItem) => (
@@ -128,6 +129,7 @@ const Navbar = () => {
 
         {menuOpen && (
           <ul className="absolute z-10 top-16 bg-base-200 box-border md:mt-4 md:mr-2 shadow-lg w-full md:max-w-[50vw] rounded-xl py-6 right-0">
+            {/* this code render base on user */}
             {user ? (
               <div className="flex px-6 mb-1 flex-col gap-3 items-center">
                 <img
@@ -160,49 +162,18 @@ const Navbar = () => {
               </Link>
             )}
             <div className="divider"></div>
-            {naviItems.map((navItem, index) => (
-              <div
-                onClick={() => setMenuOpen(false)}
-                key={index}
-                to={navItem.name}
-              >
-                {navItem.dropdown ? (
-                  <div className="dropdown dropdown-hover ">
-                    <div>
-                      <label
-                        className="w-full group flex items-center gap-2 font-medium uppercase px-6 py-3"
-                        tabIndex={0}
-                      >
-                        {navItem.name}{" "}
-                        <BsChevronDown className="group-hover:rotate-180 duration-300"></BsChevronDown>
-                      </label>
-                    </div>
-                    <ul
-                      tabIndex={0}
-                      className="dropdown-content z-[10] ml-3 menu shadow-lg bg-base-200 rounded-box  w-52"
-                    >
-                      {navItem.routes.map((route, index) => (
-                        <NavLink
-                          className={({ isActive }) =>
-                            isActive ? "text-[#19a0c9]" : ""
-                          }
-                          key={index}
-                          to={`${route.linkName}`}
-                        >
-                          <li className="cursor-pointer rounded-lg font-medium uppercase px-6 py-3 hover:bg-gray-300  duration-300">
-                            {route.routeName}
-                          </li>
-                        </NavLink>
-                      ))}
-                    </ul>
-                  </div>
-                ) : (
-                  <li className=" cursor-pointer font-medium uppercase px-6 py-3 hover:bg-gray-300  duration-300">
+            {/* this code render always when screen mobile or tablat */}
+            {naviItems.map((navItem, index) =>
+              <div key={index}>
+                {navItem.dropdown ? 
+                  <MobileDropdown key={index} navItem={navItem}></MobileDropdown>
+                : 
+                  <li className="text-lg px-6">
                     <NavLink to={navItem.name}>{navItem.name}</NavLink>
                   </li>
-                )}
+                }
               </div>
-            ))}
+            )}
           </ul>
         )}
       </div>
