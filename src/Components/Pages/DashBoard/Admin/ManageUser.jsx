@@ -152,8 +152,8 @@ const ManageUser = () => {
                     )}
                   </td>
                   <td>
-                    {user.role === "instructor" ? (
-                      "instructor"
+                    {user.role === "operator" ? (
+                      "operator"
                     ) : (
                       <button
                         onClick={() => handleMakeInstructor(user)}
