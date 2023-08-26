@@ -18,8 +18,8 @@ const NewProfile = () => {
         if (image) {
             imageUpload(image)
                 .then(data => {
-                    console.log(data.data.display_url)
-                    addCoverPhoto(user.email, data.data.display_url)
+                    const url = data.data.display_url
+                    addCoverPhoto(user.email, url)
                     console.log(data)
                 })
         }
@@ -38,7 +38,7 @@ const NewProfile = () => {
             <div className='bg-white mt-10  p-5 rounded-md  max-w-3xl mx-auto '>
                 <div className='relative'>
                     {/* cover photo */}
-                    <img className='h-[200px] md:h-[300px] w-full' src={coverPhoto?.data ? coverPhoto?.data : ''} alt="" />
+                    <img className='h-[200px] md:h-[300px] w-full' src={coverPhoto ? coverPhoto: ''} alt="" />
                     <label>
                         <input
                             onChange={event => { setImage(event.target.files[0]) }}

@@ -1,22 +1,29 @@
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useEffect, useState } from 'react'
 import { useForm } from "react-hook-form"
-import { findUserbyEmail } from '../../apiCall/users';
+import { findUserbyEmail, updateUserDeatails } from '../../apiCall/users';
 import useAuth from '../../Hooks/useAuth';
 
 const EditUserDataModal = ({ closeModal, isOpen }) => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const [userDetails, setUserDetails] = useState({})
-    const onSubmit = (data) => {
-        console.log(data)
-    }
     const {user} = useAuth()
+
+    const onSubmit = (data) => {
+        const {phone, gender, countryName} = data
+        const updateDeatails = {phone, gender, countryName}
+        console.log(data)
+        updateUserDeatails(user.email, updateDeatails )
+        closeModal()
+    }
+
     const { countryName, gender, phone } = userDetails
     useEffect(() => {
         if (user) {
             findUserbyEmail(user.email).then(data => setUserDetails(data))
         }
     }, [user])
+
     return (
         <>
             <Transition appear show={isOpen} as={Fragment}>
@@ -97,7 +104,7 @@ const EditUserDataModal = ({ closeModal, isOpen }) => {
                                                 type="submit"
                                                 className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                                             >
-                                                submit
+                                                Update
                                             </button>
                                         </div>
                                     </form>
