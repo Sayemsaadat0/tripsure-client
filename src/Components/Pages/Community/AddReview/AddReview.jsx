@@ -5,6 +5,7 @@ import Rating from "react-rating";
 import useAuth from "../../../../Hooks/useAuth";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import { BsStar, BsStarFill } from 'react-icons/bs';
 
 const AddReview = () => {
   const [rating, setRating] = useState(0);
@@ -19,7 +20,7 @@ const AddReview = () => {
   const handleAddReview = () => {
     const review = {
       rating,
-      textareaValue ,
+      textareaValue,
       user,
     };
     console.log(review);
@@ -34,7 +35,6 @@ const AddReview = () => {
       .then((data) => {
         if (data.modifiedCount < 1) {
           Swal.fire({
-            position: "top",
             icon: "success",
             title: "Thanks, Your Review added Successful !",
             showConfirmButton: false,
@@ -43,7 +43,7 @@ const AddReview = () => {
         }
         setTextareaValue("");
         setRating("");
-        // naviget("/");
+        naviget("/");
         console.log(data);
       })
       .catch((err) => console.log(err.message));
@@ -56,14 +56,22 @@ const AddReview = () => {
 
   return (
     <Container>
-      <div className="">
-        <div className="w-4/5 sm:w-3/6 mx-auto my-20">
-          <div className="border-2 border-gray-300 px-4 sm:px-6 py-4 sm:py-8 rounded-xl hover:shadow-xl hover:border-none duration-200">
-            <h3 className="text-3xl font-semibold">Rating and Review</h3>
-            <p className="my-3 text-lg">Rating {rating}</p>
+      <div className="min-h-screen md:flex justify-around items-center">
+        <div className="md:w-1/2 flex justify-center mt-20 md:mt-0">
+          <img className="w-3/4" src="https://i.ibb.co/2YzNmXy/We-wab-Feedback-2.gif" alt="" />
+        </div>
+
+        <div className="md:w-1/2 p-10 ">
+          <div className=" shadow-2xl px-6 py-5 border  rounded-xl ">
+            <h3 className="text-3xl font-semibold sectionTitle">How Was Your Experience?</h3>
+            <p className="my-3 text-lg">Scale : <span className="text-red-500 font-bold">{rating}</span></p>
             <Rating
-              style={{ maxWidth: 12 }}
+              emptySymbol={<BsStar size={30} color="red" />}
+              fullSymbol={<BsStarFill size={30} color="red" />}
+              fractions={2}
+              style={{ maxWidth: 200 }}
               value={rating}
+              initialRating={5}
               onChange={setRating}
               isRequired
             />
@@ -77,20 +85,20 @@ const AddReview = () => {
                 id="review"
                 rows={4}
                 cols={50}
-                className="textarea textarea-primary textarea-lg w-full text-black"
+                className="textarea border-black textarea-lg w-full text-black"
               ></textarea>
             </div>
             <div className="flex flex-row justify-between mt-4">
               <button
                 disabled={textareaValue ? false : true}
                 onClick={handleCancle}
-                className="btn  btn-xs sm:btn-sm md:btn-md "
+                className="btn-primary"
               >
                 Cancel
               </button>
               <button
                 onClick={handleAddReview}
-                className="btn btn-primary  btn-xs sm:btn-sm md:btn-md"
+                className="btn "
               >
                 Add review
               </button>

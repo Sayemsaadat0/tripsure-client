@@ -32,8 +32,8 @@ const PostAStory = () => {
 
   const onSubmit = async (data) => {
     console.log(data);
+    handlePostImagUrl(data?.largePicture);
      handlePostImagUrl(data?.firstPicture);
-     handlePostImagUrl(data?.largePicture);
       handlePostImagUrl(data?.secondPicture);
      handlePostImagUrl(data?.thirdPicture);
   
@@ -51,6 +51,9 @@ const PostAStory = () => {
       })
       .catch((err) => console.log(err.message));
   };
+
+// todo sayem Story , Food nd Restaurant, Hotels, places i have visited , Things i have done, Tips for other 
+
 
   return (
     <Container>
