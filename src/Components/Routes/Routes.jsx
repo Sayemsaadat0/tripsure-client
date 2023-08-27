@@ -47,6 +47,8 @@ import ContactDetails from "../Pages/Payment/ContactDetails/ContactDetails";
 import ActivityDetails from "../Pages/Payment/ActivityDetails/ActivityDetails";
 import PrivateRoutes from "./PrivateRoutes";
 import NewProfile from "../Pages/Profile/NewProfile";
+import SearchCountry from "../Pages/SearchResult/searchCountryPage/SearchCountry";
+import SearchResultDetails from "../Pages/SearchResult/SearchResultDetails/SearchResultDetails";
 
 const router = createBrowserRouter([
   {
@@ -162,6 +164,15 @@ const router = createBrowserRouter([
       {
         path: "searchResult",
         element: <SearchResult />,
+      },
+      {
+        path: 'searchResult/searchCountry',
+        element: <SearchCountry/>
+      },
+      {
+        path: "searchResult/:id",
+        element: <SearchResultDetails/>,
+        loader: ({params}) => fetch(`http://localhost:1000/searchResult/${params.id}`)
       },
       {
         path: "contactDetails",

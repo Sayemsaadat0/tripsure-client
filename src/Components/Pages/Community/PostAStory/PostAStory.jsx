@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import Container from "../../../../LayOut/Container";
+import axios from "axios";
 
 const PostAStory = () => {
   const {
@@ -10,24 +11,34 @@ const PostAStory = () => {
   } = useForm();
 
   const [images, setImages] = useState([]);
-  const photos = [];
-  console.log("photos form", photos);
+
 
   // //  post image from imgbb
   const handlePostImagUrl = async (img) => {
+    // event.preventDefault();
     const formData = new FormData();
-    formData.append("image", img[0]);
+
     const url = `https://api.imgbb.com/1/upload?key=${
       import.meta.env.VITE_IMGBB_API_KEY
     }`;
-    const response = await fetch(url, {
-      method: "POST",
-      body: formData,
-    });
-    const data = await response.json();
-    console.log(data.data);
 
-    return data;
+    for (let i = 1; i <= 4; i++) {
+      const inputName = "image" + i;
+      if (event.target[inputName].files[0]) {
+        formData.append("image" + i, event.target[inputName].files[0]);
+      }
+    }
+
+    const uploadResponse = await axios.post(url, formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
+    const newImageUrls = uploadResponse.data.data.map(
+      (imageData) => imageData.url
+    );
+    setImages(newImageUrls);
+    console.log(images);
   };
 
   const onSubmit = async (data) => {
@@ -37,13 +48,14 @@ const PostAStory = () => {
       handlePostImagUrl(data?.secondPicture);
      handlePostImagUrl(data?.thirdPicture);
   
+ 
 
     fetch("https://tripsure-server-sayemsaadat0.vercel.app/postStory", {
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(data, images),
+      body: JSON.stringify(data),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -78,7 +90,7 @@ const PostAStory = () => {
             <input
               type="file"
               // required
-              accept=".jpg, .jpeg, .png"
+              accept="image/*"
               {...register("largePicture")}
               className="input input-success cursor-pointer"
             />
@@ -122,7 +134,7 @@ const PostAStory = () => {
             <input
               type="file"
               // required
-              accept=".jpg, .jpeg, .png"
+              accept="image/*"
               {...register("firstPicture")}
               className="input input-success cursor-pointer"
             />
@@ -165,7 +177,7 @@ const PostAStory = () => {
             <input
               type="file"
               // required
-              accept=".jpg, .jpeg, .png"
+              accept="image/*"
               {...register("secondPicture")}
               className="input input-success cursor-pointer"
             />
@@ -208,7 +220,7 @@ const PostAStory = () => {
             <input
               type="file"
               // required
-              accept=".jpg, .jpeg, .png"
+              accept="image/*"
               {...register("thirdPicture")}
               className="input input-success cursor-pointer"
             />
