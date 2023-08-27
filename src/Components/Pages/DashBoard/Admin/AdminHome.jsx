@@ -1,9 +1,60 @@
-import React from "react";
+import React from 'react';
+
+const AdminHome = () => {
+  return (
+    <div className=' pt-4 px-4'>
+
+      {/* input */}
+      <section className='flex  items-center justify-between'>
+      <div className="form-control ">
+      
+      <div className="input-group">
+        <input type="text" placeholder="Search User" className="input input-bordered" />
+        <button className="btn">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div className='bg-white p-3 rounded-lg shadow-md'>
+      <p >7.47 pm 27 Aug 2023</p>
+    </div>
+      </section>
+
+
+
+      <section className='grid grid-cols-1 md:grid-cols-3 mt-10'>
+        <div className='border flex flex-col items-center justify-center card bg-white shadow-md w-40 h-40'>
+          <h3 className='text-3xl font-semibold '>545555</h3>
+          <p>Satisfied Customer</p>
+        </div>
+        <div className='border flex flex-col items-center justify-center card bg-white shadow-md w-40 h-40'>
+          <h3 className='text-3xl font-semibold '>545555</h3>
+          <p>Satisfied Customer</p>
+        </div>
+        <div className='border flex flex-col items-center justify-center card bg-white shadow-md w-40 h-40'>
+          <h3 className='text-3xl font-semibold '>545555</h3>
+          <p>Satisfied Customer</p>
+        </div>
+      </section>
+
+    </div>
+  );
+};
+
+export default AdminHome;
+
+
+
+
+/* 
 import { BarChart, Bar, Tooltip } from "recharts";
 import VisitedChart from "./Overview/VisitedChart";
-import UserCharts from "./Overview/UserCharts";
-const AdminHome = () => {
-  const data = [
+import UserCharts from "./Overview/UserCharts"; */
+
+/* 
+ const data = [
     {
       name: "Page A",
       uv: 4000,
@@ -34,37 +85,18 @@ const AdminHome = () => {
       pv: 4800,
       amt: 2181,
     },
-    
-   
   ];
 
-  return (
-    <div className="h-full px-2">
-      <div>
-        <h2 className="text-teal-500 text-2xl mt-5 mb-10 ">
-          Welcome Back Andrew Dashboard
-        </h2>
-      </div>
-      <div className="grid grid-cols-2 gap-8 ">
-        <div className="px-4">
-          <div className="card w-80 bg-[#bbe0f1] ">
-            <div className="card-body">
-              <h2>
-                Total Users: <span>1500 +</span>{" "}
-              </h2>
-              <h2>
-                Total Users: <span>1500 +</span>
-              </h2>
-            </div>
-          </div>
+*/
 
-          <div className="card rounded-md mt-10">
+
+{/*  <div className="card rounded-md mt-10">
             <h2 className="text-teal-600 font-semibold text-lg mb-4">
               New Users
             </h2>
             <div className="overflow-x-auto">
               <table className="table bg-[#bbe0f1] ">
-                {/* head */}
+            
                 <thead>
                   <tr>
                     <th>#</th>
@@ -74,34 +106,17 @@ const AdminHome = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {/* row 1 */}
                   <tr>
                     <th>1</th>
                     <td>Cy Ganderton</td>
                     <td>Quality Control Specialist</td>
                     <td>Blue</td>
                   </tr>
-                  {/* row 2 */}
-                  <tr>
-                    <th>2</th>
-                    <td>Hart Hagerty</td>
-                    <td>Desktop Support Technician</td>
-                    <td>Purple</td>
-                  </tr>
-                  {/* row 3 */}
-                  <tr>
-                    <th>3</th>
-                    <td>Brice Swyre</td>
-                    <td>Tax Accountant</td>
-                    <td>Red</td>
-                  </tr>
                 </tbody>
               </table>
             </div>
-          </div>
-        </div>
-
-        <div className="card  bg-[#bbe0f1] ">
+          </div> */}
+{/*   <div className="card  bg-[#bbe0f1] ">
           <div className="card-body">
             <h2>Month OVerview</h2>
 
@@ -110,18 +125,14 @@ const AdminHome = () => {
               <Tooltip />
             </BarChart>
           </div>
-        </div>
-      </div>
-      <div className="mt-20 ">
+        </div> */}
+
+
+{/*  <div className="mt-20 ">
        <section className="">
         <VisitedChart></VisitedChart>
        </section>
        <section>
              <UserCharts></UserCharts>
        </section>
-      </div>
-    </div>
-  );
-};
-
-export default AdminHome;
+      </div> */}

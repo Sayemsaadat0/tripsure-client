@@ -1,113 +1,102 @@
-import React, { useEffect, useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import { FaHome, FaUserAlt, FaBookmark } from 'react-icons/fa';
+import { FiSettings } from 'react-icons/fi';
 import { BsFillDatabaseFill, BsDatabaseAdd, BsCollectionFill } from 'react-icons/bs';
+import useAuth from "../Hooks/useAuth";
+import DasNav from "../Components/Pages/DashBoard/DasNav";
 
 
 const Dashboard = () => {
 
+  const { user } = useAuth()
+  console.log(user);
+
 
   return (
-    <div className="drawer lg:drawer-open text-[#0184a4]">
+    <div className="drawer lg:drawer-open max-w-7xl mx-auto">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content flex flex-col items-center justify-center px-4 DashColor">
-        {/* Page content here */}
+      <div className="drawer-content bg-gray-100">
+        <DasNav></DasNav>
 
         <Outlet></Outlet>
+
         <label
           htmlFor="my-drawer-2"
           className="btn btn-primary drawer-button lg:hidden" >
           Open drawer
         </label>
       </div>
-      <div className="drawer-side DashNav  shadow">
+      <div className="drawer-side  shadow">
         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-        <ul className="menu pl-0 h-full text-xl">
-          {/* Sidebar content here */}
-          <div className="navbar grid grid-cols-1 mb-10">
-            <Link className="flex justify-center w-full" to="/">
-              <img
-                className="mb-10 md:w-full md:h-[30%] w-[120px] max-w-[180px]"
-                src="https://i.ibb.co/tqZsGcq/logo-4.png"
-                alt=""
-              />
-            </Link>
+        <div className="navbar grid grid-cols-1  ">
+          <NavLink className="w-full pt-6  flex flex-col justify-center" to="/">
+            <img
+              className="w-20 hidden md:block"
+              src="https://i.ibb.co/qkVKbxM/Untitled-design-4.png"
+              alt="" />
 
+            <p>TripSure</p>
+          </NavLink>
 
-            <div className="flex flex-col justify-center">
-              <img className="w-24 rounded-full" src="https://e1.pxfuel.com/desktop-wallpaper/170/458/desktop-wallpaper-super-saiyan-blue-vegeta-by-aubreiprince-vegeta-super-saiyan-blue-2.jpg" />
-              <p>name name</p>
+          {/* optional */}
+          {/*  <div className="">
+            <img className="w-16 rounded-full" src={user.photoURL} />
+            <div className="m-2">
+              <p>{user.displayName}</p>
               <p>role</p>
             </div>
-          </div>
-          <hr />
+          </div> */}
+        </div>
 
+        <ul className="menu  text-xl">
+          <li><NavLink
+            to="/dashboard/adminhome">
+            <FaHome></FaHome>
+            Admin Home
+          </NavLink></li>
 
+          <li className="mt-2"><NavLink
+            to="/dashboard/manageusers">
+            <FaUserAlt></FaUserAlt>
+            User Management
+          </NavLink></li>
 
-          <li>
-            <Link
-              to="/dashboard/adminhome">
-              <FaHome></FaHome>
-              Admin Home
-            </Link>
-          </li>
-
-
-
-
-
-
-
-
-
-
-
-          <li className="mt-2 ">
-            <Link
-              to="/dashboard/manageusers">
-              <FaUserAlt></FaUserAlt>
-              User Management
-            </Link>
-          </li>
-
+          <li className="mt-2"><NavLink
+            to="/dashboard/managebookings">
+            <FaBookmark></FaBookmark>
+            Bookings Management
+          </NavLink></li>
 
           <li className="mt-2">
-            <Link
-              to="/dashboard/managebookings">
-              <FaBookmark></FaBookmark>
-              Bookings Management
-            </Link>
-          </li>
-
-          <li className="mt-2">
-            <Link to='/dashboard/managebookings'>
-              <BsFillDatabaseFill></BsFillDatabaseFill>
+            <NavLink to='/dashboard/managebookings'>
+              <FiSettings></FiSettings>
               Resource  Management
-            </Link>
+            </NavLink>
           </li>
 
           <li className="mt-2">
-            <Link
+            <NavLink
               to="/dashboard/addresource">
               <BsDatabaseAdd></BsDatabaseAdd>
               Add resources
-            </Link>
+            </NavLink>
           </li>
           <li className="mt-2">
-            <Link
+            <NavLink
               to="/dashboard/addresource">
               <BsCollectionFill></BsCollectionFill>
               My Added Resources
-            </Link>
+            </NavLink>
           </li>
-
-
-
-
         </ul>
+        <div className="flex justify-center items-end ">
+        <img className="w-52" src="https://i.ibb.co/km4tN6D/Set-of-programmers-02-03.jpg" alt=""/>
+        </div>
       </div>
     </div>
   );
 };
 
 export default Dashboard;
+
+
