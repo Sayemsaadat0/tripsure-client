@@ -4,14 +4,16 @@ import { MdOutlineEmail } from 'react-icons/md'
 import { CiMobile4, CiYoutube } from 'react-icons/ci'
 import { SlLocationPin, SlClock } from 'react-icons/sl'
 import { FaFacebookF, FaYoutube, FaLinkedinIn } from 'react-icons/fa'
+import footarvideo from '../../../../public/footar.mp4'
     ;
 const Footar = () => {
-
+  
     const currentYear = new Date().getFullYear()
     return (
         <div>
             {/* footar-image / next div -bg-black w-full bg-opacity-50 */}
-            <footer className=' text-black bg-[#fff4db]'>
+            <footer className=' text-black'>
+             
                 <div className=''>
                     <Container>
                         <div className="p-4 mx-auto justify-between grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 py-8 md:py-12 gap-8">
