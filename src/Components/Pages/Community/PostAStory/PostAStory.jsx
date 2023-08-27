@@ -38,7 +38,7 @@ const PostAStory = () => {
      handlePostImagUrl(data?.thirdPicture);
   
 
-    fetch("http://localhost:1000/postStory", {
+    fetch("https://tripsure-server-sayemsaadat0.vercel.app/postStory", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -52,7 +52,7 @@ const PostAStory = () => {
       .catch((err) => console.log(err.message));
   };
 
-// todo sayem Story , Food nd Restaurant, Hotels, places i have visited , Things i have done, Tips for other 
+// todo Story, title, country , Food and Restaurant , Hotels name class rating, places i have visited , Things i have done, Tips for other 
 
 
   return (

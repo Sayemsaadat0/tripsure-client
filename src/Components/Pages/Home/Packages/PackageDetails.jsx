@@ -36,7 +36,8 @@ const PackageDetails = () => {
         additionalInfo,
         hotels,
         includedItems,
-        reviews } = packageDetails
+        reviews } = packageDetails 
+        console.log(packageDetails);
     useEffect(() => {
         axios.get(`https://tripsure-server-sayemsaadat0.vercel.app/packages/${id}`)
             .then((response) => {

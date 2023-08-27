@@ -17,7 +17,7 @@ const Home = () => {
             </section>
             <Banner></Banner>
             <section
-                className='shadow-lg bg-gradient-to-r from-sky-200 to-indigo-100'>
+                className='shadow-lg bg-gradient-to-r from-sky-100 to-purple-100'>
                 <TravelDeals></TravelDeals>
                 <Packages></Packages>
             </section>

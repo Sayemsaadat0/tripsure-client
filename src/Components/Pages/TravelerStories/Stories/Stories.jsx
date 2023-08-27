@@ -4,7 +4,7 @@ import KeepExploring from "../KeepExploring";
 const Stories = () => {
   const [allStoryData, setAllStoryData] = useState([]);
 
-  fetch("http://localhost:1000/postStory")
+  fetch("https://tripsure-server-sayemsaadat0.vercel.app/postStory")
     .then((res) => res.json())
     .then((data) => {
       setAllStoryData(data);

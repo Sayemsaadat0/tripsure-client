@@ -25,7 +25,7 @@ const ManageUser = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:1000/users/${user._id}`, {
+        fetch(`https://tripsure-server-sayemsaadat0.vercel.app/users/${user._id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -42,7 +42,7 @@ const ManageUser = () => {
 
   const handleMakeAdmin = user => { 
     console.log(user)
-    fetch(`http://localhost:1000/users/admin/${user._id}`, {
+    fetch(`https://tripsure-server-sayemsaadat0.vercel.app/users/admin/${user._id}`, {
       method: 'PATCH'
     })
       .then(res => res.json())
@@ -65,7 +65,7 @@ const ManageUser = () => {
 // todo need to add vercel
   const handleMakeInstructor = (user) => {
     console.log(user)
-    fetch(`http://localhost:1000/users/operator/${user._id}`, {
+    fetch(`https://tripsure-server-sayemsaadat0.vercel.app/users/operator/${user._id}`, {
       method: 'PATCH'
     })
       .then(res => res.json())

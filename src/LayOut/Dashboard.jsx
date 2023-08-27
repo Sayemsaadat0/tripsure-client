@@ -1,130 +1,109 @@
 import React, { useEffect, useState } from "react";
-import { Link, NavLink, Outlet } from "react-router-dom";
-import useAuth from "../Hooks/useAuth";
+import { Link, Outlet } from "react-router-dom";
+import { FaHome, FaUserAlt, FaBookmark } from 'react-icons/fa';
+import { BsFillDatabaseFill, BsDatabaseAdd, BsCollectionFill } from 'react-icons/bs';
+
 
 const Dashboard = () => {
-  // const { user } = useAuth();
-  // console.log(user);
-  // const [usersdata, setUsersData] = useState([]);
-  // useEffect(() => {
-  //   fetch(`https://tripsure-server-sayemsaadat0.vercel.app/users`)
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setUsersData(data);
-  //     });
-  // }, []);
-  // console.log("shihab", usersdata);
 
-  // const activeUserEmail = user?.email;
-  // console.log(activeUserEmail);
-  // const findUser = usersdata?.find((user) => user?.email === activeUserEmail);
-  // console.log("role", findUser);
 
   return (
-    <div className="drawer lg:drawer-open ">
+    <div className="drawer lg:drawer-open text-[#0184a4]">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content flex flex-col items-center justify-center px-4 bg-slate-200">
+      <div className="drawer-content flex flex-col items-center justify-center px-4 DashColor">
         {/* Page content here */}
+
         <Outlet></Outlet>
         <label
           htmlFor="my-drawer-2"
-          className="btn btn-primary drawer-button lg:hidden"
-        >
+          className="btn btn-primary drawer-button lg:hidden" >
           Open drawer
         </label>
       </div>
-      <div className="drawer-side ">
+      <div className="drawer-side DashNav  shadow">
         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-        <ul className="menu p-4 w-80 h-full bg-[#7bb1eb] bg-opacity-40  text-xl">
+        <ul className="menu pl-0 h-full text-xl">
           {/* Sidebar content here */}
-          <div className="navbar mb-10">
-            <NavLink to="/">
+          <div className="navbar grid grid-cols-1 mb-10">
+            <Link className="flex justify-center w-full" to="/">
               <img
-                className="md:w-full md:h-[30%] w-[120px] max-w-[180px]"
+                className="mb-10 md:w-full md:h-[30%] w-[120px] max-w-[180px]"
                 src="https://i.ibb.co/tqZsGcq/logo-4.png"
                 alt=""
               />
-            </NavLink>
+            </Link>
+
+
+            <div className="flex flex-col justify-center">
+              <img className="w-24 rounded-full" src="https://e1.pxfuel.com/desktop-wallpaper/170/458/desktop-wallpaper-super-saiyan-blue-vegeta-by-aubreiprince-vegeta-super-saiyan-blue-2.jpg" />
+              <p>name name</p>
+              <p>role</p>
+            </div>
           </div>
+          <hr />
 
-          {/* {findUser?.role === "admin" && (
-            <>
-              <li>
-                <NavLink to="/dashboard/adminhome">Home</NavLink>
-              </li>
-              <li className="mt-2">
-                <NavLink to="/dashboard/manageusers">Manage users</NavLink>
-              </li>
-              <li className="mt-2">
-                <NavLink to="/dashboard/managebookings">
-                  Manage Bookings
-                </NavLink>
-              </li>
-              <li className="mt-2">
-                <NavLink to="/dashboard/managepackage">Manage Package</NavLink>
-              </li>
-              <li className="mt-2">
-                <NavLink to="/dashboard/reviews">Reviews</NavLink>
-              </li>
 
-              <li className="mt-2">
-                <NavLink to="/dashboard/addresource">Add resource</NavLink>
-              </li>
-            </>
-          )} */}
-
-          {/* {findUser?.role === "operator" && (
-            <>
-              <li className="mt-2">
-                <NavLink to="/dashboard/inquires">inquires</NavLink>
-              </li>
-            </>
-          )} */}
-
-          {/* users Home */}
-          {/* 
-        
-         {!findUser?.role && (
-    <>
-      <li className="mt-2">
-          <NavLink to="/dashboard/adminhome">Users Home</NavLink>
-        </li>
-        <li className="mt-2">
-          <NavLink to="/dashboard/addresource">ManageTrip</NavLink>
-        </li>
-        <li className="mt-2">
-          <NavLink to="/dashboard/addtour">Add tour</NavLink>
-        </li>
-    </>
-  )} */}
 
           <li>
-            <NavLink to="/dashboard/adminhome">Home</NavLink>
+            <Link
+              to="/dashboard/adminhome">
+              <FaHome></FaHome>
+              Admin Home
+            </Link>
           </li>
-          <li className="mt-2">
-            <NavLink to="/dashboard/manageusers">Manage users</NavLink>
+
+
+
+
+
+
+
+
+
+
+
+          <li className="mt-2 ">
+            <Link
+              to="/dashboard/manageusers">
+              <FaUserAlt></FaUserAlt>
+              User Management
+            </Link>
           </li>
+
+
           <li className="mt-2">
-            <NavLink to="/dashboard/managebookings">Manage Bookings</NavLink>
-          </li>
-          <li className="mt-2">
-            <NavLink to="/dashboard/managepackage">Manage Package</NavLink>
-          </li>
-          <li className="mt-2">
-            <NavLink to="/dashboard/reviews">Reviews</NavLink>
+            <Link
+              to="/dashboard/managebookings">
+              <FaBookmark></FaBookmark>
+              Bookings Management
+            </Link>
           </li>
 
           <li className="mt-2">
-            <NavLink to="/dashboard/addresource">Add resource</NavLink>
+            <Link to='/dashboard/managebookings'>
+              <BsFillDatabaseFill></BsFillDatabaseFill>
+              Resource  Management
+            </Link>
           </li>
-          <li className="mt-2">
-                <NavLink to="/dashboard/inquires">inquires</NavLink>
-             </li>
 
-         
           <li className="mt-2">
-            <NavLink to="/dashboard/addtour">Add tour</NavLink>
+            <Link
+              to="/dashboard/addresource">
+              <BsDatabaseAdd></BsDatabaseAdd>
+              Add resources
+            </Link>
           </li>
+          <li className="mt-2">
+            <Link
+              to="/dashboard/addresource">
+              <BsCollectionFill></BsCollectionFill>
+              My Added Resources
+            </Link>
+          </li>
+
+
+
+
         </ul>
       </div>
     </div>
