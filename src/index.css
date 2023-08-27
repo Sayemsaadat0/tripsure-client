@@ -158,3 +158,12 @@
   margin: auto;
   background-size: cover;
 }
+
+/* rating style */
+.empty-star {
+  color: grey;  /* Set the color for empty stars */
+}
+
+.full-star {
+  color: green; /* Set the color for filled stars */
+}
