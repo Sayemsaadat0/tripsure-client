@@ -1,128 +1,216 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import Container from '../../../../LayOut/Container';
+import { FaCalendarDay, FaHotel } from 'react-icons/fa';
+import { GrCircleInformation } from 'react-icons/gr';
+import { GoLocation } from 'react-icons/go';
+import { BiTime } from 'react-icons/bi';
+
+
 
 const PackageDetails = () => {
-  const { id } = useParams();
-  const [packageDetails, setPackageDetails] = useState({});
+    const { id } = useParams();
+    const [packageDetails, setPackageDetails] = useState({});
 
-  const { title, destination, country, description, price, departureDates, departureTime, departurePlace, totalPeople, limitPerBooking, includedItems, optionalActivities, conditions, accommodationDetails, meals, itinerary, additionalInfo, picture, ratings, reviews } = packageDetails
-  useEffect(() => {
-    axios.get(`https://tripsure-server-sayemsaadat0.vercel.app/packages/${id}`)
-      .then((response) => {
-        setPackageDetails(response.data)
-      })
-  }, [id])
-  return (
-    <div>
-      <h2 className='text-4xl font-bold'>{title}</h2>
-      <p>{destination}</p>
-      <p> {additionalInfo} </p>
-      <p> {ratings} </p>
-      <img src={picture} alt="" />
+    const { title,
+        destination,
+        duration,
+        price,
+        departureDates,
+        totalPeople,
+        limitPerBooking,
+        conditions,
+        picture,
+        dealExpires,
+        description,
+        departureTime,
+        optionalActivities,
+        itinerary,
+        departurePlace,
+        additionalInfo,
+        hotels,
+        includedItems,
+        reviews } = packageDetails 
+        console.log(packageDetails);
+    useEffect(() => {
+        axios.get(`https://tripsure-server-sayemsaadat0.vercel.app/packages/${id}`)
+            .then((response) => {
+                setPackageDetails(response.data)
+            })
+    }, [id])
+    return (
+        <Container>
+            <div className='my-4 md:my-20 px-4 md:px-10 leading-8'>
+                {/* primary */}
+                <h2 className='text-4xl font-bold text-[#7bb9b9]'>{title}</h2>
+                <div className='flex items-center my-3 gap-5 '>
+                    <p className='flex items-center gap-2 '><GoLocation className='text-xl'></GoLocation> {destination}</p>
+                    <p className='flex items-center gap-2 '><BiTime className='text-xl'></BiTime> Duration : {duration}</p>
+                    <p>Booking End: {dealExpires}</p>
+                </div>
+                {/* about */}
+                <div className='my-3'>
+                    <h4 className='font-bold'>About : </h4>
+                    <p>{description}</p>
+                </div>
+                {/* price and section image */}
+                <div className='grid grid-cols-1 md:grid-cols-2 md:gap-10 w-full'>
+                    <div>
+                        <img src={picture} alt="" />
+                    </div>
+                    <div className=' p-4'>
 
-      <div>
-        <p>Price For Adult: {price?.adult}</p>
-        <p>Price For child: {price?.child}</p>
-
-      </div>
-
-      {/* departure time */}
-      <div>
-
-        {departureDates && departureDates.map((d, index) => (
-          <p key={index}>Departure Date: {d}</p>
-        ))}
-
-        <p>{limitPerBooking}</p>
-        <p>{totalPeople}</p>
-
-        <p>Conditions:</p>
-        {conditions && conditions.map((condition, index) => (
-          <p key={index}>{condition}</p>
-        ))}
-        {/* includes item */}
-        <p>includedItems:</p>
-        {includedItems && includedItems.map((includedItem, index) => (
-          <p key={index}>{includedItem}</p>
-        ))}
-        {/* optionalActivities */}
-        <p>optionalActivities:</p>
-        {optionalActivities && optionalActivities.map((item, index) => (
-          <p key={index}>{item}</p>
-        ))}
-      </div>
-
-
-      {/* hotels */}
-      <div>
-        {accommodationDetails?.hotels.map((d, index) => (
-          <div key={index}>
-            <p>Name: {d.name}</p>
-            <p>Type: {d.type}</p>
-            <p>Amenities:</p>
-            <ul>
-              {d.amenities.map((amenity, index) => (
-                <li key={index}>{amenity}</li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
+                        {/* price */}
+                        <div>
+                            <p className='font-bold'> Price </p>
+                            <p>Cost Per Adult : <span className='text-red-400 font-bold '>{price?.adult}</span></p>
+                            <p>Cost Per child : <span className='text-red-400 font-bold '>{price?.child}</span> </p>
 
 
-      {/* meals */}
-      <div>
-        {/* breakfast  */}
-        <ul>
-          {meals?.breakfast.map((d, index) => (
-            <li key={index}>{d}</li>
-          ))}
-        </ul>
-        {/* lunch  */}
-        <ul>
-          {meals?.lunch.map((d, index) => (
-            <li key={index}>{d}</li>
-          ))}
-        </ul>
-        {/* dinner  */}
-        <ul>
-          {meals?.dinner.map((d, index) => (
-            <li key={index}>{d}</li>
-          ))}
-        </ul>
-      </div>
+                            <div className='mt-5'>
+                                <hr />
+                                <p>Total Available Spots : {totalPeople}</p>
+                                <p>Reservation Limit : {limitPerBooking} spots per person</p>
+                            </div>
+                            {/*todo Reserve your spot */}
+                            <Link to='/contactDetails' className='btn mt-10'>Reserve Now</Link>
+                        </div>
+                    </div>
+                </div>
 
-      {/* itinerary */}
-      <div>
-        {itinerary?.map((day, dayIndex) => (
-          <div key={dayIndex}>
-            <h3>Day {day.day}</h3>
-            <ul>
-              {day.activities.map((activity, activityIndex) => (
-                <li key={activityIndex}>{activity}</li>
-              ))}
-            </ul>
-          </div>
-        ))}
+                <div className='grid grid-cols-1 md:grid-cols-2'>
+                    {/* departure  */}
+                    <div className='mt-5'>
+                        <h3 className='text-lg font-semibold'>Departure Details : </h3>
 
-      </div>
+                        <p className='flex gap-2'>Departure  Dates :
+                            <span >    {departureDates && departureDates.map((d, index) => (
+                                <li key={index}>{d}</li>
+                            ))}</span>
+                        </p>
+                        <div>
+                            <p>Departure Time :  {departureTime}</p>
+                            <p>Departure Place :  {departurePlace}</p>
+                        </div>
+                        <hr className='my-2' />
+                    </div>
 
-      {/* review */}
-      <div>
-        {reviews?.map((review, index) => (
-          <div key={index}>
-            <h3>{review.author}</h3>
-            <p>Rating: {review.rating}</p>
-            <p>{review.comment}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+                    {/* Conditions */}
+                    <div>
+                        <p className='font-bold'>Conditions:</p>
+                        {conditions && conditions.map((condition, index) => (
+                            <li key={index}>{condition}</li>
+                        ))}
+                    </div>
+                </div>
+
+
+                {/* items and activies */}
+                <div className='grid grid-cols-1 md:grid-cols-2'>
+                    {/* includes item */}
+                    <div>
+                        <p className='font-bold'>Includes Items : </p>
+                        {includedItems?.map((d, index) => (
+                            <li className='list-disc' key={index}>{d}</li>
+
+                        ))}
+                    </div>
+                    {/* optional activites */}
+                    <div >
+                        <p className='font-bold'>optional Activities </p>
+                        {optionalActivities?.map((d, index) => (
+                            <li className='list-disc' key={index}>{d}</li>
+                        ))}
+                    </div>
+                </div>
+                <hr />
+
+                {/* itinerary */}
+                <div>
+                    <p className='font-bold'>Itinerary</p>
+                    <div className='grid grid-cols-1 sm:grid-cols-2 lg::grid-cols-3'>
+                        {itinerary?.map((day, dayIndex) => (
+                            <div key={dayIndex}>
+                                <h3 className='font-bold flex items-center gap-2'>
+                                    <FaCalendarDay></FaCalendarDay> Day {day.day}</h3>
+                                <p>
+                                    {day.activities.map((activity, activityIndex) => (
+                                        <li key={activityIndex}>{activity}</li>
+                                    ))}
+                                </p>
+                            </div>
+                        ))}
+
+                    </div>
+                    <hr />
+                </div>
+
+                <div className='grid grid-cols-1 md:grid-cols-2'>
+                    {/* hotels */}
+                    <div>
+                        <p className='font-bold flex items-center gap-2'><FaHotel></FaHotel> Accommodations </p>
+                        {hotels?.map((hotel, index) => (
+                            <div key={index}>
+                                <h2>Title  : {hotel.name}</h2>
+                                <p>Type : {hotel.type}</p>
+                                <p>Duration of Stay : {hotel.nights} Nights</p>
+
+                                <p className='font-bold'> Amenity  </p>
+                                {hotel.amenities.map((amenity, amenityIndex) => (
+                                    <li key={amenityIndex}>{amenity}</li>
+                                ))}
+                            </div>
+                        ))}
+                    </div>
+                    <div>
+                        {/* Additional Info*/}
+                        <div>
+                            <p className='font-bold list-none flex items-center gap-2'><GrCircleInformation className='text-2xl'></GrCircleInformation> Additional Information  </p>
+                            {additionalInfo?.map((d, index) => (
+                                <li className='' key={index}>  {d}</li>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                {/* review */}
+                <div>
+                    <div className=' p-4'>
+                        <p className='font-bold'>Reviews</p>
+                        <div className='border rounded-lg p-4'>
+
+                            {/* <img src={reviews?.userImage} alt="df" /> */}
+                            {/* <h3>{reviews?.name}</h3> */}
+
+                            <div className='flex'>
+                                <div className='w-full'>
+                                    <img className='w-16 h-16 rounded-full' src="https://i.pinimg.com/564x/d9/7b/bb/d97bbb08017ac2309307f0822e63d082.jpg" alt="df" />
+                                    {<h3 className='text-xl font-semibold'>Rafin Hossain</h3>}
+                                    <p>Ratings :</p>
+                                    <h3>overall : {reviews?.ratings?.overall}</h3>
+                                    <h3>accommodation : {reviews?.ratings?.accommodation}</h3>
+                                    <h3>activities : {reviews?.ratings?.activities}</h3>
+                                    <h3>food : {reviews?.ratings?.food}</h3>
+                                    <h3>guide : {reviews?.ratings?.guide}</h3>
+                                </div>
+                                <div>
+                                    <p>{reviews?.review}</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </Container>
+    );
 };
 
 export default PackageDetails;
 
 
 // todo sayem
+
+
+

@@ -1,508 +1,123 @@
-[
-    
-    {
-        "title": "Himalayan Retreat",
-        "destination": "Himalayas, India",
-        "country": "India",
-        "duration": "4 days",
-        "description": "Escape to the serene Himalayan mountains for a rejuvenating getaway...",
-        "price": {
-          "adult": "$850",
-          "child": "$500"
-        },
-        "departureDates": [
-          "2023-11-10",
-          "2023-12-05"
-        ],
-        "departureTime": "8:00 AM",
-        "departurePlace": "New Delhi International Airport",
-        "totalPeople": 15,
-        "limitPerBooking": 5,
-        "includedItems": [
-          "Accommodation in comfortable hotels",
-          "Guided nature walks",
-          "Meals as per itinerary (Breakfast, Lunch, Dinner)",
-          "Transportation between destinations (by plane)",
-          "Experienced local tour guide",
-          "Travel insurance"
-        ],
-        "optionalActivities": [
-          "Spa and wellness treatments",
-          "Horseback riding in the mountains",
-          "Local handicraft workshops"
-        ],
-        "conditions": [
-          "Participants must be at least 12 years old.",
-          "Infants are not allowed on this tour."
-        ],
-        "accommodationDetails": {
-          "hotels": [
-            {
-              "name": "Himalayan View Hotel",
-              "type": "Hotel",
-              "nights": 3,
-              "amenities": ["Swimming Pool", "Restaurant", "Spa"]
-            }
-          ]
-        },
-        "meals": {
-          "breakfast": ["Fresh fruits", "Yogurt", "Breads", "Tea/Coffee"],
-          "lunch": ["Local Cuisine Buffet", "Salads", "Refreshments"],
-          "dinner": ["Multi-Course Gourmet Dinner", "Desserts"]
-        },
-        "itinerary": [
-          {
-            "day": 1,
-            "activities": [
-              "Arrival in Delhi",
-              "Meet at the airport",
-              "Travel to the mountains (by plane)"
-            ]
-          },
-          {
-            "day": 2,
-            "activities": [
-              "Guided hike to scenic viewpoints",
-              "Learn about local flora and fauna",
-              "Picnic lunch amidst nature",
-              "Evening bonfire and storytelling"
-            ]
-          },
-          {
-            "day": 3,
-            "activities": [
-              "Visit local village",
-              "Cultural interactions with villagers",
-              "Experience traditional Himalayan cuisine",
-              "Guided meditation session"
-            ]
-          },
-          {
-            "day": 4,
-            "activities": [
-              "Morning yoga session",
-              "Free time for relaxation",
-              "Return to Delhi (by plane)"
-            ]
-          }
-        ],
-        "additionalInfo": "Participants should be prepared for light hiking. Comfortable clothing and walking shoes are recommended.",
-        "picture": "https://i.pinimg.com/564x/eb/9a/08/eb9a081c85da88b228d02120668bb4fb.jpg",
-        "ratings": 4.8,
-        "reviews": [
-          {
-            "author": "John Doe",
-            "rating": 5,
-            "comment": "Absolutely amazing experience! The guided hikes were breathtaking, and the food was delicious. The hotel was comfortable and had stunning views."
-          },
-          {
-            "author": "Jane Smith",
-            "rating": 4.5,
-            "comment": "The itinerary was well-organized, and the cultural interactions were a highlight. The only downside was the limited free time."
-          },
-          {
-            "author": "Michael Johnson",
-            "rating": 4,
-            "comment": "The yoga sessions were rejuvenating, but I wish there were more options for vegetarian meals."
-          },
-          {
-            "author": "Emily Williams",
-            "rating": 5,
-            "comment": "Everything about this retreat exceeded my expectations. I left feeling refreshed and inspired."
-          },
-          {
-            "author": "David Brown",
-            "rating": 5,
-            "comment": "A perfect blend of adventure and relaxation. The local guides were knowledgeable, and I made wonderful memories."
-          }
-        ]
-      },
+{
+     "title": "Exploring the Enchanting Andes",
+      "type": "Hiking",
+    "destination": "Andes Mountains, Chile",
+    "country": "Chile",
+    "duration": "6 days",
+    "price": {
+      "adult": "$1200",
+      "child": "$800"
+    },
+    "departureDates": [
+      "2023-09-05",
+      "2023-10-10"
+    ],
+    "totalPeople": 10,
+    "limitPerBooking": 3,
+    "conditions": [
+      "Participants must be at least 16 years old.",
+      "Children under 16 must be accompanied by an adult."
+    ],
+    "picture": "https://i.pinimg.com/564x/2e/0d/22/2e0d22948d4879b64b02c34d6994f400.jpg",
+    "description": "Embark on a captivating 6-day journey to the majestic Andes Mountains in Chile. Immerse yourself in the awe-inspiring landscapes, engage in cultural exchanges with local communities, and relish the flavors of authentic Chilean cuisine. Limited spots available.",
+    "departureTime": "10:00 AM",
+    "departurePlace": "Santiago International Airport , Chile",
+    "includedItems": [
+      "Accommodation in charming mountain lodges",
+      "Guided trekking adventures",
+      "Meals as per itinerary (Breakfast, Lunch, Dinner)",
+      "Airport transfers",
+      "Experienced local guide",
+      "Travel insurance",
+      "Cultural workshops",
+      "Visit to local markets",
+      "Traditional dance performances",
+      "Visit to hot springs"
+    ],
+    "optionalActivities": [
+      "Horseback riding expeditions",
+      "Mountain photography tours",
+      "Wine tasting excursions"
+    ],
+    "hotels": [
       {
-        "title": "Alpine Escape",
-        "destination": "Swiss Alps, Switzerland",
-        "country": "Switzerland",
-        "duration": "5 days",
-        "description": "Embark on a serene journey to the majestic Swiss Alps for an unforgettable retreat...",
-        "price": {
-          "adult": "$1200",
-          "child": "$750"
-        },
-        "departureDates": [
-          "2023-10-15",
-          "2023-11-20"
-        ],
-        "departureTime": "9:00 AM",
-        "departurePlace": "Zurich International Airport",
-        "totalPeople": 12,
-        "limitPerBooking": 4,
-        "includedItems": [
-          "Accommodation in charming alpine lodges",
-          "Guided mountain hikes",
-          "Meals as per itinerary (Breakfast, Lunch, Dinner)",
-          "Scenic train rides between destinations",
-          "Local mountain guide",
-          "Travel insurance"
-        ],
-        "optionalActivities": [
-          "Spa and wellness treatments",
-          "Skiing or snowboarding lessons",
-          "Swiss chocolate tasting"
-        ],
-        "conditions": [
-          "Participants must be at least 16 years old.",
-          "Infants and young children are not allowed on this tour."
-        ],
-        "accommodationDetails": {
-            "hotels": [
-              {
-                "name": "Seaside Elegance Hotel",
-                "type": "Luxury Beachfront Hotel",
-                "nights": 5,
-                "amenities": ["Private Beach Access", "Infinity Pool", "Spa and Wellness Center"]
-              }
-            ]
-          },
-        "meals": {
-          "breakfast": ["Fresh Croissants", "Cheese", "Muesli", "Hot Chocolate"],
-          "lunch": ["Alpine Picnic", "Soups", "Beverages"],
-          "dinner": ["Gourmet Swiss Cuisine", "Fondue", "Desserts"]
-        },
-        "itinerary": [
-          {
-            "day": 1,
-            "activities": [
-              "Arrival in Zurich",
-              "Meet at the airport",
-              "Transfer to the Swiss Alps (by scenic train)"
-            ]
-          },
-          {
-            "day": 2,
-            "activities": [
-              "Guided hike to breathtaking viewpoints",
-              "Discover local flora and fauna",
-              "Picnic lunch in the alpine meadows",
-              "Evening campfire and storytelling"
-            ]
-          },
-          {
-            "day": 3,
-            "activities": [
-              "Visit a traditional Swiss village",
-              "Interact with locals and artisans",
-              "Savor authentic Swiss mountain cuisine",
-              "Guided mindfulness session"
-            ]
-          },
-          {
-            "day": 4,
-            "activities": [
-              "Morning yoga amidst the mountains",
-              "Free time for personal exploration",
-              "Experience Swiss mountain culture",
-              "Night photography workshop"
-            ]
-          },
-          {
-            "day": 5,
-            "activities": [
-              "Scenic train ride back to Zurich",
-              "Last-minute shopping and exploration",
-              "Departure from Zurich"
-            ]
-          }
-        ],
-        "additionalInfo": "Participants should be prepared for moderate hiking. Warm clothing and sturdy shoes are recommended.",
-        "picture": "https://i.pinimg.com/564x/eb/9a/08/eb9a081c85da88b228d02120668bb4fb.jpg",
-        "ratings": 4.9,
-        "reviews": [
-          {
-            "author": "Sophie Martin",
-            "rating": 5,
-            "comment": "An absolutely magical experience! The hikes offered breathtaking views, and the lodge was cozy and inviting."
-          },
-          {
-            "author": "Liam Johnson",
-            "rating": 4.5,
-            "comment": "The Swiss village visit was a highlight, and the food was superb. I only wish there was more time for skiing."
-          },
-          {
-            "author": "Ella Davis",
-            "rating": 4.8,
-            "comment": "The yoga sessions were rejuvenating, and the lodge's sauna was a real treat. Swiss hospitality at its best!"
-          },
-          {
-            "author": "Alex Turner",
-            "rating": 5,
-            "comment": "This retreat surpassed all expectations. The alpine air and cultural experiences left me inspired."
-          },
-          {
-            "author": "Isabella Garcia",
-            "rating": 5,
-            "comment": "A perfect blend of adventure and relaxation. The local guide's knowledge added depth to the journey."
-          }
-        ]
-      },
-      {
-        "title": "Santorini Serenity",
-        "destination": "Santorini, Greece",
-        "country": "Greece",
-        "duration": "6 days",
-        "description": "Immerse yourself in the tranquil beauty of Santorini's coastal charm for a rejuvenating escape...",
-        "price": {
-          "adult": "$1100",
-          "child": "$700"
-        },
-        "departureDates": [
-          "2023-09-25",
-          "2023-10-15"
-        ],
-        "departureTime": "10:30 AM",
-        "departurePlace": "Athens International Airport",
-        "totalPeople": 18,
-        "limitPerBooking": 6,
-        "includedItems": [
-          "Accommodation in traditional seaside villas",
-          "Guided coastal walks and explorations",
-          "Meals as per itinerary (Breakfast, Lunch, Dinner)",
-          "Boat trips to nearby islands",
-          "Local coastal expert as guide",
-          "Travel insurance"
-        ],
-        "optionalActivities": [
-          "Spa and wellness treatments",
-          "Wine tasting in local vineyards",
-          "Greek cooking classes"
-        ],
-        "conditions": [
-          "Participants must be at least 18 years old.",
-          "This retreat is not suitable for young children."
-        ],
-        "accommodationDetails": {
-          "hotels": [
-            {
-              "name": "Aegean Bliss Hotel",
-              "type": "Luxury Seaside Hotel",
-              "nights": 5,
-              "amenities": ["Private Beach Access", "Spa and Wellness Center", "Ocean-View Rooms"]
-            }
-          ]
-        },
-        "meals": {
-          "breakfast": ["Fresh Pastries", "Greek Yogurt", "Honey", "Fruit Juices"],
-          "lunch": ["Mediterranean Delights", "Salads", "Local Delicacies"],
-          "dinner": ["Seafood Extravaganza", "Greek Specialties", "Desserts"]
-        },
-        "itinerary": [
-          {
-            "day": 1,
-            "activities": [
-              "Arrival in Athens",
-              "Meet at the airport",
-              "Transfer to Santorini (by ferry)"
-            ]
-          },
-          {
-            "day": 2,
-            "activities": [
-              "Guided coastal walk along pristine beaches",
-              "Discover hidden coves and rock formations",
-              "Picnic lunch by the sea",
-              "Stargazing on the beach"
-            ]
-          },
-          {
-            "day": 3,
-            "activities": [
-              "Visit local fishing village",
-              "Interact with fishermen and artisans",
-              "Savor authentic Greek seaside cuisine",
-              "Sunset meditation by the cliffs"
-            ]
-          },
-          {
-            "day": 4,
-            "activities": [
-              "Morning yoga overlooking the Aegean",
-              "Free time for personal relaxation",
-              "Boat trip to nearby islands",
-              "Capturing coastal beauty in a photography session"
-            ]
-          },
-          {
-            "day": 5,
-            "activities": [
-              "Exploration of ancient ruins",
-              "Local market visit for ingredients",
-              "Greek cooking class and lunch preparation",
-              "Farewell sunset cruise"
-            ]
-          },
-          {
-            "day": 6,
-            "activities": [
-              "Transfer to Athens (by ferry)",
-              "Last-minute shopping and exploration",
-              "Departure from Athens"
-            ]
-          }
-        ],
-        "additionalInfo": "Participants should be prepared for light walking. Comfortable clothing and swimwear are recommended.",
-        "picture": "https://i.pinimg.com/564x/eb/9a/08/eb9a081c85da88b228d02120668bb4fb.jpg",
-        "ratings": 4.7,
-        "reviews": [
-          {
-            "author": "Olivia White",
-            "rating": 5,
-            "comment": "A truly serene experience! The coastal walks were captivating, and the hotel's amenities were top-notch."
-          },
-          {
-            "author": "William Harris",
-            "rating": 4.5,
-            "comment": "The fishing village visit was a highlight, and the seafood was divine. I wish there was more time for swimming."
-          },
-          {
-            "author": "Sophia Lee",
-            "rating": 4.8,
-            "comment": "Yoga sessions were rejuvenating, and the cooking class added a personal touch. A perfect coastal retreat!"
-          },
-          {
-            "author": "Liam Turner",
-            "rating": 5,
-            "comment": "This retreat exceeded my expectations. The coastal guide's knowledge brought the region to life."
-          },
-          {
-            "author": "Eva Martinez",
-            "rating": 4,
-            "comment": "A wonderful mix of relaxation and exploration. The Greek cooking class was a delightful experience."
-          }
-        ]
-      },
-      {
-        "title": "Kyoto Tranquility",
-        "destination": "Kyoto, Japan",
-        "country": "Japan",
-        "duration": "5 days",
-        "description": "Embark on a serene journey to Kyoto's cultural wonders for a rejuvenating escape...",
-        "price": {
-          "adult": "$1300",
-          "child": "$800"
-        },
-        "departureDates": [
-          "2023-11-15",
-          "2023-12-10"
-        ],
-        "departureTime": "9:30 AM",
-        "departurePlace": "Tokyo International Airport",
-        "totalPeople": 14,
-        "limitPerBooking": 4,
-        "includedItems": [
-          "Accommodation in centrally-located luxury hotels",
-          "Guided temple visits and cultural experiences",
-          "Meals as per itinerary (Breakfast, Lunch, Dinner)",
-          "Bullet train travel between destinations",
-          "Local cultural expert as guide",
-          "Travel insurance"
-        ],
-        "optionalActivities": [
-          "Traditional tea ceremony",
-          "Kimono rental and photoshoot",
-          "Calligraphy and art workshops"
-        ],
-        "conditions": [
-          "Participants must be at least 16 years old.",
-          "This retreat is not suitable for young children."
-        ],
-        "accommodationDetails": {
-          "hotels": [
-            {
-              "name": "Zen Oasis Hotel",
-              "type": "Luxury City Hotel",
-              "nights": 4,
-              "amenities": ["Spa", "Japanese Garden", "Fine Dining"]
-            }
-          ]
-        },
-        "meals": {
-          "breakfast": ["Traditional Japanese Breakfast", "Green Tea", "Grilled Fish", "Rice"],
-          "lunch": ["Kyoto Delights", "Sushi", "Tempura", "Miso Soup"],
-          "dinner": ["Kaiseki Cuisine", "Sake Pairing", "Desserts"]
-        },
-        "itinerary": [
-          {
-            "day": 1,
-            "activities": [
-              "Arrival in Tokyo",
-              "Meet at the airport",
-              "Travel to Kyoto (by bullet train)"
-            ]
-          },
-          {
-            "day": 2,
-            "activities": [
-              "Guided visit to historic temples",
-              "Experience tea ceremony in a traditional tearoom",
-              "Lunch at a local Kyoto restaurant",
-              "Evening stroll through Gion district"
-            ]
-          },
-          {
-            "day": 3,
-            "activities": [
-              "Explore Arashiyama Bamboo Grove",
-              "Visit cultural heritage sites",
-              "Savor Kyoto's culinary specialties for lunch",
-              "Attend a traditional Kyoto theater performance"
-            ]
-          },
-          {
-            "day": 4,
-            "activities": [
-              "Morning meditation in Zen temple",
-              "Free time for shopping and relaxation",
-              "Japanese art workshop",
-              "Farewell dinner at a Michelin-starred restaurant"
-            ]
-          },
-          {
-            "day": 5,
-            "activities": [
-              "Bullet train back to Tokyo",
-              "Last-minute shopping and exploration",
-              "Departure from Tokyo"
-            ]
-          }
-        ],
-        "additionalInfo": "Participants should be prepared for walking in historic areas. Comfortable clothing and footwear are recommended.",
-        "picture": "https://i.pinimg.com/564x/eb/9a/08/eb9a081c85da88b228d02120668bb4fb.jpg",
-        "ratings": 4.9,
-        "reviews": [
-          {
-            "author": "Oliver Clark",
-            "rating": 5,
-            "comment": "An enchanting experience! The temple visits were mesmerizing, and the hotel's spa was a perfect relaxation spot."
-          },
-          {
-            "author": "Emma Wilson",
-            "rating": 4.5,
-            "comment": "The traditional tea ceremony was a highlight, and Kyoto's beauty left me in awe. I wish there was more time for shopping."
-          },
-          {
-            "author": "Haruki Nakamura",
-            "rating": 4.8,
-            "comment": "Meditation in the Zen temple was truly calming, and the art workshop was a unique touch. A remarkable cultural retreat!"
-          },
-          {
-            "author": "Aiko Tanaka",
-            "rating": 5,
-            "comment": "This retreat opened my eyes to Kyoto's rich culture. The guide's insights made the experience unforgettable."
-          },
-          {
-            "author": "Luisa Perez",
-            "rating": 4,
-            "comment": "A wonderful blend of history and luxury. The Michelin-starred dinner was a culinary journey."
-          }
+        "name": "Andean Bliss Lodge",
+        "type": "Mountain Lodge",
+        "nights": 5,
+        "amenities": [
+          "Hot Springs",
+          "Restaurant",
+          "Scenic Views"
         ]
       }
-      
-]
+    ],
+    "itinerary": [
+      {
+        "day": 1,
+        "activities": [
+          "Arrival in Santiago",
+          "Meet at the airport",
+          "Travel to the Andes (by van)"
+        ]
+      },
+      {
+        "day": 2,
+        "activities": [
+          "Guided trek to high-altitude viewpoints",
+          "Learn about local flora and fauna",
+          "Picnic lunch amidst the mountains",
+          "Evening dance performance"
+        ]
+      },
+      {
+        "day": 3,
+        "activities": [
+          "Visit to a traditional village",
+          "Cultural exchange with local artisans",
+          "Authentic Chilean dinner",
+          "Stargazing session"
+        ]
+      },
+      {
+        "day": 4,
+        "activities": [
+          "Horseback riding through scenic trails",
+          "Free time for relaxation and exploration",
+          "Traditional cooking class",
+          "Bonfire storytelling"
+        ]
+      },
+      {
+        "day": 5,
+        "activities": [
+          "Exploration of local markets",
+          "Wellness session: Hot springs relaxation",
+          "Sunset photography tour",
+          "Return to Santiago (by van)"
+        ]
+      },
+      {
+        "day": 6,
+        "activities": [
+          "Morning yoga session",
+          "Farewell ceremony",
+          "Departure from Santiago"
+        ]
+      }
+    ],
+    "additionalInfo": [
+      "Participants should have a moderate level of fitness.",
+      "Layered clothing suitable for changing weather is recommended."
+    ],
+    "reviews": {
+      "userImage": "https://example.com/user789.jpg",
+      "ratings": {
+        "overall": 4,
+        "accommodation": 4,
+        "activities": 5,
+        "food": 4,
+        "guide": 5
+      },
+      "review": "My experience on the Exploring the Enchanting Andes tour was incredible. The mountain lodges were cozy and provided stunning views. The guided trekking adventures allowed me to connect with nature and experience the grandeur of the Andes. The cultural workshops and interactions with local artisans were both educational and heartwarming. I enjoyed the traditional Chilean cuisine and the dance performance added a festive touch. The horseback riding and hot springs were definite highlights, offering relaxation and adventure. The tour guide was knowledgeable and made the trip enjoyable with their insights. The photography tour during sunset was magical. This journey allowed me to immerse myself in the culture and beauty of the Andes, and I would highly recommend it to anyone seeking a unique and enriching experience."
+    }
+}

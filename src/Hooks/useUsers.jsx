@@ -7,7 +7,7 @@ const useUsers = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await axios.get('http://localhost:1000/users'); // Replace YOUR_PORT with the appropriate port number
+        const response = await axios.get('https://tripsure-server-sayemsaadat0.vercel.app/users'); // Replace YOUR_PORT with the appropriate port number
         setUserData(response.data);
       } catch (error) {
         console.error('Error fetching user data:', error);

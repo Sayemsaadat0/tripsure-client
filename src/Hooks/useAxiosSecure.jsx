@@ -9,7 +9,7 @@ const useAxiosSecure = () => {
   const navigate = useNavigate();
 
   const axiosSecure = axios.create({
-    baseURL: 'http://localhost:1000',
+    baseURL: 'https://tripsure-server-sayemsaadat0.vercel.app',
   });
 
   useEffect(() => {

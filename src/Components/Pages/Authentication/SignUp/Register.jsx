@@ -22,13 +22,13 @@ const Register = () => {
         // Handle form submission here, e.g., make an API call to register the user
         console.log(data);
         setLoading(true)
-        const { name, email, password, image } = data
+        const { name, email, password, image, countryName, phone, gender } = data
+
         const fromData = new FormData()
         fromData.append('image', image[0])
         const url = `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMGBB_KEY}`
         axios.post(url, fromData)
             .then(imgData => {
-                console.log(imgData.data.data.display_url);
                 const photoUrl = imgData?.data?.data?.display_url
                 createUser(email, password)
                     .then(result => {
@@ -45,7 +45,7 @@ const Register = () => {
                                 setLoading(false)
                                 logOut()
                                 navigate('/login', { replace: true })
-                                saveUser(result.user)
+                                saveUser(result.user, countryName, phone, gender)
                             })
                             .catch(error => {
                                 console.log(error)
@@ -77,7 +77,6 @@ const Register = () => {
                     <h2 className="text-2xl text-[#2d969e] text-center font-bold mb-4">Please Register</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="mb-4">
-
                             <input
                                 type="text"
                                 name="name"
@@ -90,7 +89,43 @@ const Register = () => {
                             )}
                         </div>
                         <div className="mb-4">
+                            <input
+                                type="text"
+                                name="country"
+                                placeholder='Country Name'
+                                {...register('countryName', { required: 'Country Name is required' })}
+                                className='w-full border text-[#2d969e] border-gray-300 px-3 py-2 rounded-md focus:outline-none ring-[#6bccd3] focus:ring-2 placeholder-[#2d969e] ring-offset-2 focus:border-blue-500'
+                            />
+                            {errors.countryName && (
+                                <span className="text-red-500 text-sm">{errors.countryName.message}</span>
+                            )}
+                        </div>
+                        <div className='md:flex gap-3 '>
+                            <div className="w-full mb-4">
+                                <input
+                                    type="text"
+                                    name="phone"
+                                    placeholder='Enter Phone'
+                                    {...register('phone', { required: 'phone is required' })}
+                                    className='w-full border text-[#2d969e] border-gray-300 px-3 py-2 rounded-md focus:outline-none ring-[#6bccd3] focus:ring-2 placeholder-[#2d969e] ring-offset-2 focus:border-blue-500'
+                                />
+                                {errors.phone && (
+                                    <span className="text-red-500 text-sm">{errors.phone.message}</span>
+                                )}
+                            </div>
+                            <div className="w-full mb-4">
 
+                                <select
+                                    className='w-full border text-[#2d969e] border-gray-300 px-3 py-2 rounded-md focus:outline-none ring-[#6bccd3] focus:ring-2 placeholder-[#2d969e] ring-offset-2 focus:border-blue-500'
+                                    {...register("gender")}
+                                >
+                                    <option value="female">female</option>
+                                    <option value="male">male</option>
+                                    <option value="other">other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div className="mb-4">
                             <input
                                 type="email"
                                 name="email"

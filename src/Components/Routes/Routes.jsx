@@ -39,13 +39,16 @@ import Addpackage from "../Pages/DashBoard/Admin/Addpackage";
 import DoThingsAttractionReviews from "../Pages/DoThingsAttractionReviews/DoThingsAttractionReviews";
 import StayThingsAttractionReviews from "../Pages/StayThingsAttractionReviews/StayThingsAttractionReviews";
 import RestaurantAttractionReview from "../Pages/RestaurantAttractionReview/RestaurantAttractionReview";
-
-
-
 import SearchResult from "../Pages/SearchResult/SearchResult";
 import PackageDetails from "../Pages/Home/Packages/PackageDetails";
 import TravelDealsDetails from "../Pages/Home/TravelDeals/TravelDealsDetails";
 import FamilyGuideSingleCardDetails from "../Pages/Home/FamilyGuide/FamilyGuideSingleCardDetails";
+import ContactDetails from "../Pages/Payment/ContactDetails/ContactDetails";
+import ActivityDetails from "../Pages/Payment/ActivityDetails/ActivityDetails";
+import PrivateRoutes from "./PrivateRoutes";
+import NewProfile from "../Pages/Profile/NewProfile";
+import SearchCountry from "../Pages/SearchResult/searchCountryPage/SearchCountry";
+import SearchResultDetails from "../Pages/SearchResult/SearchResultDetails/SearchResultDetails";
 
 const router = createBrowserRouter([
   {
@@ -71,11 +74,11 @@ const router = createBrowserRouter([
       },
       {
         path: 'favorite',
-        element: <Favorite /> 
+        element: <PrivateRoutes><Favorite /></PrivateRoutes> 
       },
       {
-        path: 'profile/:name',
-        element: <Profile></Profile>
+        path: 'profile/:email',
+        element: <PrivateRoutes><NewProfile></NewProfile></PrivateRoutes>
       },
       {
         path: "overview",
@@ -161,6 +164,23 @@ const router = createBrowserRouter([
       {
         path: "searchResult",
         element: <SearchResult />,
+      },
+      {
+        path: 'searchResult/searchCountry',
+        element: <SearchCountry/>
+      },
+      {
+        path: "searchResult/:id",
+        element: <SearchResultDetails/>,
+        loader: ({params}) => fetch(`http://localhost:1000/searchResult/${params.id}`)
+      },
+      {
+        path: "contactDetails",
+        element: <ContactDetails/>
+      },
+      {
+        path: "activityDetails",
+        element: <ActivityDetails/>
       },
     ],
   },

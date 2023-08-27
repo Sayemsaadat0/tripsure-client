@@ -10,7 +10,7 @@ import { useEffect, useState } from 'react';
 const FamilyBeach = () => {
   const [allBeach, setAllBeach] = useState([]);
   useEffect(()=>{
-    axios.get(`http://localhost:1000/allFamilyGuide/beach`)
+    axios.get(`https://tripsure-server-sayemsaadat0.vercel.app/allFamilyGuide/beach`)
     .then((res)=>{
       setAllBeach(res.data)
     })
@@ -46,22 +46,22 @@ const FamilyBeach = () => {
             modules={[Pagination]}
             className='mySwiper'
           >
-            {/* {packages.map((packageItem, index) => ( */}
+            {allBeach.map((item, index) => (
               <SwiperSlide className='lg:p-10' >
                 <div className="card card-compact bg-white shadow-2xl relative ">
                   <figure><img className='rounded-lg' src="https://i.pinimg.com/736x/9d/93/08/9d9308a98680e14a64f98f1c3f22222c.jpg" alt="" /></figure>
                   <div className="card-body">
-                    <h2 className="card-title">Title</h2>
+                    <h2 className="card-title">{item?.title}</h2>
                     <p>Country</p>
                     <p>PostedTime</p>
                     <div>
                       {/* todo habibullah- bhai id diye data aina diyen */}
-                      <Link className="btn">Read More</Link>
+                      <Link to={`/FamilyGuideSingleCardDetails/${item?._id}`} className="btn">Read More</Link>
                     </div>
                   </div>
                 </div>
               </SwiperSlide>
-            {/* ))} */}
+            ))}
           </Swiper>
         </div>
       </Container>

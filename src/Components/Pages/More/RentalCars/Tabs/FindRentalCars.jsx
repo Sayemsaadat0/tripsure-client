@@ -78,22 +78,26 @@ const FindRentalCars = () => {
               Find Rental cars
             </button>
           </div>
-        <div className="flex items-center gap-3 mt-5">
-          <span className="font-semibold">Drive's age</span>
-          <select name="" id="" className=" select-sm select-bordered border-neutral-500 border">
-            <option value="30">30+</option>
-            <option value="29">29</option>
-            <option value="28">28</option>
-            <option value="27">27</option>
-            <option value="26">30</option>
-            <option value="25">25</option>
-            <option value="24">24</option>
-            <option value="23">23</option>
-            <option value="22">22</option>
-            <option value="21">21</option>
-            <option value="20">under 20</option>
-          </select>
-        </div>
+          <div className="flex items-center gap-3 mt-5">
+            <span className="font-semibold">Drive's age</span>
+            <select
+              name=""
+              id=""
+              className=" select-sm select-bordered border-neutral-500 border"
+            >
+              <option value="30">30+</option>
+              <option value="29">29</option>
+              <option value="28">28</option>
+              <option value="27">27</option>
+              <option value="26">30</option>
+              <option value="25">25</option>
+              <option value="24">24</option>
+              <option value="23">23</option>
+              <option value="22">22</option>
+              <option value="21">21</option>
+              <option value="20">under 20</option>
+            </select>
+          </div>
         </div>
       </Container>
     </div>

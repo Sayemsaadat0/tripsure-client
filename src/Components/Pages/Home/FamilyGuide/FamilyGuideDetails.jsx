@@ -13,12 +13,12 @@ const FamilyGuideDetails = () => {
   const [inspiredByFamily, setInspiredByFamily] = useState([]);
   const [summerData, setSummerData] = useState([]);
   useEffect(() => {
-    axios.get(`http://localhost:1000/allFamilyGuide/family`).then((res) => {
+    axios.get(`https://tripsure-server-sayemsaadat0.vercel.app/allFamilyGuide/family`).then((res) => {
       setInspiredByFamily(res.data);
     });
   }, []);
   useEffect(() => {
-    axios.get(`http://localhost:1000/allFamilyGuide/summer`).then((res) => {
+    axios.get(`https://tripsure-server-sayemsaadat0.vercel.app/allFamilyGuide/summer`).then((res) => {
       setSummerData(res.data);
     });
   }, []);
@@ -71,8 +71,9 @@ const FamilyGuideDetails = () => {
           </div>
         </Container>
 
+
         {/* Tips part */}
-        <section className="mt-10 w-full h-full bg-green-100">
+        <section className="mt-10 w-full h-full bg-green-50">
           <Container>
             <div>
               <h1 className="pt-10 ps-4 md:ps-10 text-4xl md:text-6xl font-bold ">
@@ -102,7 +103,7 @@ const FamilyGuideDetails = () => {
         </section>
 
         {/* get inspired by real familys */}
-        <section className="mb-20 bg-[#DCFCE7]">
+        <section className="mb-20">
           <Container>
             <div>
               {/* inspiration */}
@@ -123,8 +124,8 @@ const FamilyGuideDetails = () => {
                 </h2>
                 <div className="mt-10 md:p-4">
                   <CommonSwiperForFamilyAndSummer
-                    SwiperData={summerData}
-                  ></CommonSwiperForFamilyAndSummer>
+                    SwiperData={summerData}>
+                  </CommonSwiperForFamilyAndSummer>
                 </div>
               </div>
             </div>

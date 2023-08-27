@@ -2,9 +2,96 @@
 @tailwind components;
 @tailwind utilities;
 
+/* dashboard */
+.DashColor {
+  background-image: radial-gradient(
+      circle at 69% 86%,
+      rgba(105, 101, 101, 0.06) 0%,
+      rgba(165, 165, 165, 0.06) 25%,
+      rgba(193, 193, 193, 0.06) 25%,
+      rgba(193, 193, 193, 0.06) 50%,
+      rgba(221, 221, 221, 0.06) 50%,
+      rgba(221, 221, 221, 0.06) 75%,
+      rgba(249, 249, 249, 0.06) 75%,
+      rgba(249, 249, 249, 0.06) 100%
+    ),
+    radial-gradient(
+      circle at 49% 76%,
+      rgba(129, 129, 129, 0.06) 0%,
+      rgba(129, 129, 129, 0.06) 25%,
+      rgba(164, 164, 164, 0.06) 25%,
+      rgba(164, 164, 164, 0.06) 50%,
+      rgba(200, 200, 200, 0.06) 50%,
+      rgba(200, 200, 200, 0.06) 75%,
+      rgba(235, 235, 235, 0.06) 75%,
+      rgba(235, 235, 235, 0.06) 100%
+    ),
+    radial-gradient(
+      circle at 22% 64%,
+      rgba(173, 173, 173, 0.06) 0%,
+      rgba(173, 173, 173, 0.06) 25%,
+      rgba(119, 119, 119, 0.06) 25%,
+      rgba(119, 119, 119, 0.06) 50%,
+      rgba(64, 64, 64, 0.06) 50%,
+      rgba(64, 64, 64, 0.06) 75%,
+      rgba(10, 10, 10, 0.06) 75%,
+      rgba(10, 10, 10, 0.06) 100%
+    ),
+    linear-gradient(307deg, rgb(211, 236, 240), rgb(255, 255, 255));
+}
+.dashbox {
+  border-radius: 6px;
+  background: #ffffff;
+  box-shadow: 2px 2px 5px #c2c1c1, -5px -5px 10px #ffffff;
+}
+
+.DashNav {
+  background-image: radial-gradient(
+      circle at 69% 86%,
+      rgba(165, 165, 165, 0.06) 0%,
+      rgba(165, 165, 165, 0.06) 25%,
+      rgba(193, 193, 193, 0.06) 25%,
+      rgba(193, 193, 193, 0.06) 50%,
+      rgba(221, 221, 221, 0.06) 50%,
+      rgba(221, 221, 221, 0.06) 75%,
+      rgba(249, 249, 249, 0.06) 75%,
+      rgba(249, 249, 249, 0.06) 100%
+    ),
+    radial-gradient(
+      circle at 49% 76%,
+      rgba(129, 129, 129, 0.06) 0%,
+      rgba(129, 129, 129, 0.06) 25%,
+      rgba(164, 164, 164, 0.06) 25%,
+      rgba(164, 164, 164, 0.06) 50%,
+      rgba(200, 200, 200, 0.06) 50%,
+      rgba(200, 200, 200, 0.06) 75%,
+      rgba(235, 235, 235, 0.06) 75%,
+      rgba(235, 235, 235, 0.06) 100%
+    ),
+    radial-gradient(
+      circle at 22% 64%,
+      rgba(173, 173, 173, 0.06) 0%,
+      rgba(173, 173, 173, 0.06) 25%,
+      rgba(119, 119, 119, 0.06) 25%,
+      rgba(119, 119, 119, 0.06) 50%,
+      rgba(64, 64, 64, 0.06) 50%,
+      rgba(64, 64, 64, 0.06) 75%,
+      rgba(10, 10, 10, 0.06) 75%,
+      rgba(10, 10, 10, 0.06) 100%
+    ),
+    linear-gradient(307deg, rgb(255, 255, 255), rgb(255, 255, 255));
+}
+
 /* About us section style */
 .background {
-  background-image: url("https://i.ibb.co/v1y0v5m/AboutUs1.png");
+  background-image: url("https://i.ibb.co/3C144Q3/Untitled-design.png");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.background1 {
+  background-image: url("https://i.ibb.co/c1RMT3p/2.png");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -114,45 +201,53 @@
   }
 }
 
-
+.sectionTitle {
+  font-family: "Space Mono", monospace;
+}
 
 .my-link::after {
-  @apply content-[''] text-black bg-[#6bccd3] w-[0%] h-[3px] absolute left-0 -bottom-1 rounded hover:w-[100%] duration-500;
+  @apply content-[''] text-black bg-[#79c7ff] w-[0%] h-[3px] absolute left-0 -bottom-1 rounded hover:w-[100%] duration-500;
 }
 
 .logout-button {
-  @apply relative w-full flex justify-center items-center gap-2 py-2 px-4 border border-transparent text-sm font-bold uppercase tracking-[1px] rounded-md text-white bg-[#2d969e] hover:bg-[#53a9af] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500 duration-500;
+  @apply relative w-full flex justify-center items-center gap-2 py-2 px-4 border border-transparent text-sm font-bold uppercase tracking-[1px] rounded-md text-white bg-[#79c7ff] hover:bg-[#53a9af] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500 duration-500;
 }
 
 .btn {
-  @apply bg-[#7bb9b9] 
+  @apply bg-[#79c7ff] 
+    hover:bg-[#66a5bd]  
     text-white
-    hover:bg-[#046060]  
     duration-500 
     rounded-full w-auto border-none;
-    
 }
 .btn-primary {
   @apply bg-white text-black rounded-full border border-black 
-  hover:hover:bg-[#046060]  hover:border-none hover:text-white
+  hover:hover:bg-[#73c7c7]  hover:border-white hover:text-white
    uppercase 
    font-semibold
    duration-500 
    px-4 py-3;
 }
 
-.badge{
-  background: #c5ffff; 
-  border: none; 
-  color: rgb(6, 100, 121);
+.badge {
+  background: white;
+  border: none;
+  color: red;
   font-weight: 800;
-  
 }
 
-
-.footar-image{
-  background-image: url('https://images.unsplash.com/photo-1553877447-327dce914f35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1354&q=80');
+.footar-image {
+  background-image: url("https://images.unsplash.com/photo-1553877447-327dce914f35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1354&q=80");
   background-repeat: no-repeat;
   margin: auto;
-background-size: cover;
+  background-size: cover;
+}
+
+/* rating style */
+.empty-star {
+  color: grey;  /* Set the color for empty stars */
+}
+
+.full-star {
+  color: green; /* Set the color for filled stars */
 }
