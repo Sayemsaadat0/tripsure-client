@@ -9,11 +9,6 @@ import { BiTime } from 'react-icons/bi';
 
 
 
-
-
-
-
-
 const PackageDetails = () => {
     const { id } = useParams();
     const [packageDetails, setPackageDetails] = useState({});
