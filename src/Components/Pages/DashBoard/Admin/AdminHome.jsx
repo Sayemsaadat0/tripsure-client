@@ -112,13 +112,13 @@ const AdminHome = () => {
           </div>
         </div>
       </div>
-      <div className="mt-20 ">
-       <section className="">
+      <div className="mt-20 lg:flex gap-10 justify-center items-center">
+       <div className="">
         <VisitedChart></VisitedChart>
-       </section>
-       <section>
+       </div>
+       <div>
              <UserCharts></UserCharts>
-       </section>
+       </div>
       </div>
     </div>
   );

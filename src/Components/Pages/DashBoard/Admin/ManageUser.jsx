@@ -75,8 +75,6 @@ const ManageUser = () => {
     })
 }
 
-
-
   const handleMakeInstructor = (user) =>{
     console.log(user)
     fetch(`http://localhost:1000/users/operator/${user._id}`, {
