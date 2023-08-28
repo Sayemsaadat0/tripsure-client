@@ -56,16 +56,18 @@ const Login = () => {
   };
 
 
+
+
   return (
-    <div className="authentication">
-      <div className=" bg-black flex items-center justify-center w-full min-h-screen bg-opacity-30">
+    <div className="authenticationImg">
+      <div className="flex items-center justify-center w-full min-h-screen ">
 
         {/* box */}
-        <div className="p-6 bg-white w-80 shadow-2xl rounded-lg text-black">
-          <Particle></Particle>
+        <Particle></Particle>
+        <div className="p-6 bg-transparent w-80 shadow-2xl hover:shadow-sm rounded-lg text-white md:hover:shadow-white duration-700">
 
-          <div className="flex justify-start gap-4">
-            <img className="w-16 h-16" src="https://i.ibb.co/sjk5nbQ/Untitled-design-1.gif" alt="" />
+          <div className="flex justify-start gap-4 ">
+            <img className="w-16 h-16" src="https://i.ibb.co/ng9Sdrp/Untitled-design-1-unscreen.gif" alt="" />
             <h2
               className="text-2xl  font-bold mb-4">
               Hello ,
@@ -82,7 +84,7 @@ const Login = () => {
                 {...register("email", {
                   required: "Email is required",
                 })}
-                className="w-full border font-extralight  border-gray-300 px-3 py-2 rounded-md focus:outline-none ring-[#6bccd3] focus:ring-2" />
+                className="w-full shadow-sm  shadow-white bg-transparent px-3 py-2 rounded-md focus:outline-none placeholder-text-color" />
 
             </div>
             <div className="mb-4  relative" >
@@ -97,7 +99,7 @@ const Login = () => {
                     message: "Password must be at least 6 characters",
                   },
                 })}
-                className="w-full border font-extralight  border-gray-300 px-3 py-2 rounded-md focus:outline-none ring-[#6bccd3] focus:ring-2" />
+                className="w-full shadow-sm  shadow-white bg-transparent px-3 py-2 rounded-md focus:outline-none placeholder-text-color" />
 
               <span
                 className="w-fit mr-0 cursor-pointer absolute right-2 top-3 "
@@ -105,27 +107,19 @@ const Login = () => {
                 {show ? <BsFillEyeFill></BsFillEyeFill> : <BsFillEyeSlashFill></BsFillEyeSlashFill>}
               </span>
               {errors.password && (
-                <span className="text-red-500 text-sm">
+                <span className=" text-sm">
                   {errors.password.message}
                 </span>
               )}
             </div>
             <span
               onClick={() => setIsOpen(true)}
-              className="btn-link cursor-pointer transform text-red-500 ">
+              className="btn-link cursor-pointer transform text-white">
               Forget Password?
             </span>
 
 
-            <p className="text-sm font-extralight mt-4">
-              New Here? Please {' '}
-              <Link
-                className="my-link font-bold relative"
-                to={"/register"}
-              >
-                Register
-              </Link>
-            </p>
+
 
 
             {/* login button */}
@@ -133,11 +127,19 @@ const Login = () => {
               {loading ? (
                 <LoadingButton></LoadingButton>
               ) : (
-                <button type="submit" className="btn-primary w-full">
-                  login
+                <button type="submit" className=" w-full flex justify-center shadow-sm py-2 rounded-lg shadow-white hover:scale-105 duration-500">
+                  Login
                 </button>
               )}
             </div>
+            <p className="text-sm font-extralight mt-4">
+              New Here? Please {' '}
+              <Link
+                className="my-link font-bold relative"
+                to={"/register"} >
+                Register
+              </Link>
+            </p>
 
             <div className="divider">
               <p>or</p>

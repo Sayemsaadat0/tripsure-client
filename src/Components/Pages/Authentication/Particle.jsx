@@ -47,13 +47,13 @@ const Particle = () => {
                 },
                 particles: {
                     color: {
-                        value: "#ffffff",
+                        value: "#ffffff17",
                     },
                     links: {
-                        color: "#ffffff",
-                        distance: 150,
+                        color: "#ffffffef",
+                        distance: 120,
                         enable: true,
-                        opacity: 0.5,
+                        opacity: 1,
                         width: 1,
                     },
                     move: {
@@ -63,15 +63,15 @@ const Particle = () => {
                             default: "bounce",
                         },
                         random: false,
-                        speed: 6,
+                        speed: 1,
                         straight: false,
                     },
                     number: {
                         density: {
                             enable: true,
-                            area: 800,
+                            area: 1900,
                         },
-                        value: 80,
+                        value: 50,
                     },
                     opacity: {
                         value: 0.5,
@@ -80,7 +80,7 @@ const Particle = () => {
                         type: "circle",
                     },
                     size: {
-                        value: { min: 1, max: 5 },
+                        value: { min: 1, max: 10 },
                     },
                 },
                 detectRetina: true,

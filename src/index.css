@@ -68,10 +68,15 @@
     ),
     linear-gradient(252deg, rgb(55, 82, 118), rgb(117, 220, 202));
 }
+
 .authenticationImg {
-  background-image: url("https://i.ibb.co/Qnf5MgH/ABCDEFGHI-JKLMNO-1.png");
+  background-image: url("https://i.ibb.co/26q4PYj/ABCDEFGHI-JKLMNO-3.png");
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.placeholder-text-color::placeholder {
+  color: white;
 }
 
 .DashNav {
