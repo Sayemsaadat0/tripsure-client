@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { FaTrashAlt, FaUserCheck, FaUserShield } from "react-icons/fa";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
+import { useEffect, useState } from "react";
 
 const ManageUser = () => {
 
@@ -11,6 +12,46 @@ const ManageUser = () => {
     const res = await axiosSecure.get('/users')
     return res.data;
   })
+
+
+  const [operator, setOperator] = useState('');
+  const [sortOrder, setSortOrder] = useState('asc');
+  const [sortColumn, setSortColumn] = useState('name');
+  const [filteredUsers, setFilteredUsers] = useState([]);
+
+  useEffect(() => {
+    let filteredAndSortedUsers = [...usersdata];
+
+    if (operator === 'admin') {
+      filteredAndSortedUsers = filteredAndSortedUsers.filter(user => user.role === 'admin');
+    } else if (operator === 'operator') {
+      filteredAndSortedUsers = filteredAndSortedUsers.filter(user => user.role === 'operator');
+    }
+
+    // Sort users based on sortColumn and sortOrder
+    filteredAndSortedUsers.sort((a, b) => {
+      if (sortOrder === 'asc') {
+        return a[sortColumn].localeCompare(b[sortColumn]);
+      } else {
+        return b[sortColumn].localeCompare(a[sortColumn]);
+      }
+    });
+
+    setFilteredUsers(filteredAndSortedUsers);
+  }, [usersdata, operator, sortColumn, sortOrder]);
+
+  const handleSort = (column) => {
+    if (sortColumn === column) {
+      setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
+    } else {
+      setSortColumn(column);
+      setSortOrder('asc');
+    }
+  };
+
+
+
+
 
   // delete make
 
@@ -89,13 +130,18 @@ const ManageUser = () => {
         {usersdata.length}{" "}
       </h2>
       <div className="overflow-x-auto">
+      <select value={operator} onChange={(e) => setOperator(e.target.value)}>
+          <option value="">All Operators</option>
+          <option value="admin">Admin</option>
+          <option value="operator">Operator</option>
+        </select>
         <table className="table w-full">
           {/* head */}
           <thead>
             <tr>
               <th>#</th>
               <th>image</th>
-              <th>Name</th>
+              <th onClick={() => handleSort('name')}>Name</th>
               <th>Email</th>
               <th>Role</th>
               <th>admin</th>
@@ -103,7 +149,7 @@ const ManageUser = () => {
             </tr>
           </thead>
           <tbody>
-            {usersdata?.map((user, i) => (
+            {filteredUsers?.map((user, i) => (
 
               <tr key={user._id}>
                 <th>{i + 1}</th>
