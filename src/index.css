@@ -243,11 +243,12 @@
   background-size: cover;
 }
 
-/* rating style */
-.empty-star {
-  color: grey;  /* Set the color for empty stars */
-}
-
-.full-star {
-  color: green; /* Set the color for filled stars */
+/* search hotel page banner */
+.hotel-backgroundImg{
+  background-image: url("https://i.ibb.co/kKf9F78/image.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 40px 0px;
+ 
 }
