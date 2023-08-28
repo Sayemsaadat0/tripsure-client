@@ -47,6 +47,7 @@ import ContactDetails from "../Pages/Payment/ContactDetails/ContactDetails";
 import ActivityDetails from "../Pages/Payment/ActivityDetails/ActivityDetails";
 import PrivateRoutes from "./PrivateRoutes";
 import NewProfile from "../Pages/Profile/NewProfile";
+import PostStory from "../Pages/Community/PostAStory/PostStory";
 
 const router = createBrowserRouter([
   {
@@ -96,7 +97,8 @@ const router = createBrowserRouter([
       },
       {
         path: "postastory",
-        element: <PostAStory />,
+        // render new component which name <PostStory> but previus Component name <PostAStory>
+        element: <PostStory></PostStory>,
       },
       {
         path: "addareview",
@@ -143,7 +145,7 @@ const router = createBrowserRouter([
         element: <TravelarStories />,
       },
       {
-        path: "travelStory/stories",
+        path: "travelStory/:id",
         element: <Stories />,
       },
 

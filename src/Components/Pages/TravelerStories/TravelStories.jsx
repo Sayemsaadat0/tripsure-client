@@ -3,14 +3,25 @@ import FoodAndDrink from "./FoodAndDrink";
 import KeepExploring from "./KeepExploring";
 import PlacesToVisit from "./PlacesToVisit";
 import "./TravelerStories.css";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import stories from "./Stories/Stories";
 
 const TravelarStories = () => {
- 
+  const [stories, setStories] = useState([])
+  useEffect(() => {
+    axios.get(`http://localhost:1000/story`)
+      .then(res => {
+        setStories(res.data)
+        console.log(res.data)
+      })
+  }, [])
+
   return (
-    <div className="max-w-7xl mx-auto pb-10">
+    <div className="max-w-7xl mx-auto mt-16 pb-10">
       <div className="mx-auto">
         {/* Banner  */}
-        <div className="bg-story bg-cover bg-center max-w-6xl mx-auto h-[550px] md:h-[620px] relative">
+        <div className="bg-story bg-cover bg-center max-w-7xl mx-auto h-[550px] md:h-[620px] relative">
           <div className="mx-5 lg:mx-16 absolute bottom-10">
             <h1 className="text-white text-3xl md:text-5xl font-bold">
               Where to go between July 4th and Labor Day
@@ -26,7 +37,19 @@ const TravelarStories = () => {
           </div>
         </div>
         {/* food and drink  */}
-        <FoodAndDrink />
+        <div>
+          <div className="mx-auto text-center mt-10">
+            <h1 className="text-4xl font-bold text-black">Food and Drink</h1>
+            <p className="text-xl mt-3">
+              Dig into the best restaurants and bars, street food, and culinary
+              hotspots around the world. <br /> Whos hungry?
+            </p>
+          </div>
+          {
+            stories.map(story => <FoodAndDrink key={story._id} story={story} />)
+          }
+        </div>
+
         <PlacesToVisit />
         <KeepExploring />
       </div>

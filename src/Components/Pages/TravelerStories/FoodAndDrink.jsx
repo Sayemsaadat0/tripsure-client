@@ -1,37 +1,29 @@
 import { Link } from "react-router-dom";
 
-const FoodAndDrink = () => {
+const FoodAndDrink = ({story}) => {
+  console.log(story)
     return (
       <div className="my-16">
         {/* title  */}
-        <div className="mx-auto text-center">
-          <h1 className="text-4xl font-bold text-black">Food and Drink</h1>
-          <p className="text-xl mt-3">
-            Dig into the best restaurants and bars, street food, and culinary
-            hotspots around the world. <br /> Whos hungry?
-          </p>
-        </div>
-        <div className="mt-20">
+       
+        <div className="mt-10">
           {/* article1 */}
-          <div className="flex flex-col lg:flex-row mx-5 mb-10 lg:mx-0 justify-between gap-4 items-center">
-            <div className="lg:w-[40%]">
+          <div className="flex flex-col lg:flex-row mx-auto mb-10 lg:mx-0 justify-between gap-6 items-center">
+            <div className="lg:w-[40%] w-full">
               <img
-                className="rounded-md"
-                src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/29/d8/a8/0c/caption.jpg?w=1200&h=-1&s=1&cx=1920&cy=1080&chk=v1_2caabd6f175750cb5d01"
+                className="rounded-md w-full"
+                src={story.url}
                 alt=""
               />
             </div>
-            <div  className="lg:w-[60%]">
+            <div  className="lg:w-[60%] w-full">
               <h2 className="text-2xl md:text-3xl text-black font-bold">
-                Where to eat in Cancun beyond your resort
+                {story.title}
               </h2>
               <p className="text-base md:text-lg font-medium my-2 text-justify">
-                When you’re on a beach vacation, it’s easy to get lazy and stay at
-                the resort since everything you need—especially food and drinks—is
-                right there. Even more so at all-inclusives, where not only is it
-                right there, but it’s also unlimited and included...
+                {story.description}
               </p>
-              <Link to="stories">
+              <Link to={`/travelStory/${story._id}`}>
               <button className="bg-transparent text-black border-2  border-[#19a0c9] hover:text-white  hover:bg-[#19a0c9] transition duration-300 px-3 py-2 text-md font-semibold rounded-full">
                 Read More
               </button>
@@ -39,7 +31,7 @@ const FoodAndDrink = () => {
             </div>
           </div>
           {/* article2 */}
-          <div className="flex flex-col lg:flex-row mx-5 mb-10 lg:mx-0 justify-between gap-4 items-center">
+          {/* <div className="flex flex-col lg:flex-row mx-5 mb-10 lg:mx-0 justify-between gap-4 items-center">
             <div  className="lg:w-[40%]">
               <img
                 className="rounded-md"
@@ -60,9 +52,9 @@ const FoodAndDrink = () => {
               </button>
               </Link>
             </div>
-          </div>
+          </div> */}
           {/* article3 */}
-          <div className="flex flex-col lg:flex-row mx-5 mb-10 lg:mx-0 justify-between gap-4 items-center">
+          {/* <div className="flex flex-col lg:flex-row mx-5 mb-10 lg:mx-0 justify-between gap-4 items-center">
             <div  className="lg:w-[40%]">
               <img
                 className="rounded-md"
@@ -83,7 +75,7 @@ const FoodAndDrink = () => {
               </button>
               </Link>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     );
