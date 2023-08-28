@@ -68,6 +68,12 @@
     ),
     linear-gradient(252deg, rgb(55, 82, 118), rgb(117, 220, 202));
 }
+.authenticationImg {
+  background-image: url("https://i.ibb.co/Qnf5MgH/ABCDEFGHI-JKLMNO-1.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .DashNav {
   background-image: radial-gradient(
       circle at 69% 86%,

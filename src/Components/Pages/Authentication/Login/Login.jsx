@@ -10,13 +10,6 @@ import { BsFillEyeFill, BsFillEyeSlashFill } from 'react-icons/bs';
 import Particle from "../Particle";
 
 
-
-
-
-
-
-
-
 const Login = () => {
   const {
     register,
@@ -64,8 +57,8 @@ const Login = () => {
 
 
   return (
-    <div className="flex authentication   items-center justify-center min-h-screen p-4">
-      <div className="">
+    <div className="authentication">
+      <div className=" bg-black flex items-center justify-center w-full min-h-screen bg-opacity-30">
 
         {/* box */}
         <div className="p-6 bg-white w-80 shadow-2xl rounded-lg text-black">
@@ -167,6 +160,6 @@ export default Login;
 
   // bg-[url('https://i.ibb.co/9h7VBjC/two-athletic-man-floats-red-boat-river.jpg')] bg-no-repeat bg-cover
   // bg-[url('https://i.ibb.co/Qnf5MgH/ABCDEFGHI-JKLMNO-1.png')] bg-no-repeat bg-cover
-
+  // authentication
 
 
