@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 
 const AdminHome = () => {
   return (
@@ -18,22 +19,22 @@ const AdminHome = () => {
       </div>
     </div>
     <div className='bg-white p-3 rounded-lg shadow-md'>
-      <p >7.47 pm 27 Aug 2023</p>
+      <p>{moment().format('Do MMMM YYYY, h:mm a')} </p>
     </div>
       </section>
 
 
 
       <section className='grid grid-cols-1 md:grid-cols-3 mt-10'>
-        <div className='border flex flex-col items-center justify-center card bg-white shadow-md w-40 h-40'>
+        <div className='border flex flex-col items-center justify-center card bg-white shadow-md w-40 h-28'>
           <h3 className='text-3xl font-semibold '>545555</h3>
           <p>Satisfied Customer</p>
         </div>
-        <div className='border flex flex-col items-center justify-center card bg-white shadow-md w-40 h-40'>
+        <div className='border flex flex-col items-center justify-center card bg-white shadow-md w-40 h-28'>
           <h3 className='text-3xl font-semibold '>545555</h3>
           <p>Satisfied Customer</p>
         </div>
-        <div className='border flex flex-col items-center justify-center card bg-white shadow-md w-40 h-40'>
+        <div className='border flex flex-col items-center justify-center card bg-white shadow-md w-40 h-28'>
           <h3 className='text-3xl font-semibold '>545555</h3>
           <p>Satisfied Customer</p>
         </div>
