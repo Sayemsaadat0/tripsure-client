@@ -47,6 +47,7 @@ import ContactDetails from "../Pages/Payment/ContactDetails/ContactDetails";
 import ActivityDetails from "../Pages/Payment/ActivityDetails/ActivityDetails";
 import PrivateRoutes from "./PrivateRoutes";
 import NewProfile from "../Pages/Profile/NewProfile";
+import PaymentDetails from "../Pages/Payment/PaymentDetails/PaymentDetails";
 
 const router = createBrowserRouter([
   {
@@ -171,6 +172,10 @@ const router = createBrowserRouter([
         path: "activityDetails",
         element: <ActivityDetails/>
       },
+      {
+        path: "/paymentDetails",
+        element: <PaymentDetails></PaymentDetails>
+      }
     ],
   },
   {
