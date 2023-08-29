@@ -1,10 +1,15 @@
 import React from 'react';
 import HotelBanner from './hotelComponents/HotelBanner';
+import SideBar from './hotelComponents/SideBar';
 
 const SearchHotel = () => {
     return (
         <div className='mt-24'>
-            <HotelBanner/>
+            <HotelBanner />
+            <div>
+                <SideBar/>
+            </div>
+           
         </div>
     );
 };
