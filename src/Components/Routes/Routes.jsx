@@ -48,9 +48,9 @@ import ActivityDetails from "../Pages/Payment/ActivityDetails/ActivityDetails";
 import PrivateRoutes from "./PrivateRoutes";
 import NewProfile from "../Pages/Profile/NewProfile";
 import SearchCountry from "../Pages/SearchResult/searchCountryPage/SearchCountry";
-import SearchResultDetails from "../Pages/SearchResult/SearchResultDetails/SearchResultDetails";
+
 import SearchHotel from "../Pages/SearchResult/searchHotelPage/SearchHotel";
-import SearchCardDetails from "../Pages/SearchResult/SearchCardDetails/SearchCardDetails";
+
 import SearchDetails from "../Pages/SearchResult/SearchDetails";
 
 const router = createBrowserRouter([

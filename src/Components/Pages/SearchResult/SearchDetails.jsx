@@ -7,26 +7,38 @@ import { BiDockTop } from "react-icons/bi";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import ShareModal from "../../Modal/ShareModal";
 import PlaceDetails from "./PlaceDetails";
+import { useLoaderData } from "react-router-dom";
 
 const SearchDetails = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const searchDetailsData = useLoaderData()
+  console.log(searchDetailsData)
+  const { address, picture, title, reviews, ratings, specialties, description } = searchDetailsData;
+  
+  const ratingValues = Object.values(ratings)
+  const sumOfRatings = ratingValues.reduce((sum, rating) => sum + rating, 0);
+  const averageRating = (sumOfRatings / ratingValues.length).toFixed(1);
+
+
+  
 
   return (
     <div className="pt-16">
       <Container>
         <div className="mt-10 mb-14">
           <h2 className="text-xl md:text-3xl mb-2 font-semibold">
-            Veluvana Bali - Owl Bamboo House
+            {searchDetailsData && title}
           </h2>
           <div className="flex items-center justify-between gap-4 mb-4">
             <div className="flex items-center justify-between gap-4">
               <p className="flex items-center text-black gap-1">
-                <FaStar></FaStar>4.86{" "}
-                <span className="underline cursor-pointer">134 reviews</span>
+                <FaStar></FaStar>{searchDetailsData && averageRating}
+                <span className="underline cursor-pointer ml-2">   {searchDetailsData && reviews?.length} reviews</span>
               </p>
               <p>Superhost</p>
               <p className="underline cursor-pointer text-black ">
-                Sidemen, Bali, Indonesia
+              {searchDetailsData && address?.city},  {searchDetailsData && address?.state},  {searchDetailsData && address?.country}
               </p>
             </div>
             <div className="flex items-center">
@@ -36,39 +48,19 @@ const SearchDetails = () => {
               </p>
             </div>
           </div>
-          <div className="flex gap-[10px] mb-8">
-            <div className="md:w-1/2">
+          <div className=" mb-8">
+            <div className="md:w-full">
               <img
-                className="rounded-l-lg w-full"
-                src="https://i.ibb.co/MZkMY4V/room4.webp"
-                alt=""
+                className="rounded-lg w-full"
+                src={searchDetailsData && picture}
+                alt="hotel"
               />
             </div>
-            <div className="hidden md:grid grid-cols-2 md:w-1/2 gap-[10px]">
-              <img
-                className=""
-                src="https://i.ibb.co/N6D9vcz/Treehouse.webp"
-                alt=""
-              />
-              <img
-                className="rounded-tr-lg"
-                src="https://i.ibb.co/prXxK9m/Treehouse.webp"
-                alt=""
-              />
-              <img
-                className=""
-                src="https://i.ibb.co/MZkMY4V/room4.webp"
-                alt=""
-              />
-              <img
-                className="rounded-br-lg"
-                src="https://i.ibb.co/MZkMY4V/room4.webp"
-                alt=""
-              />
-            </div>
+            
           </div>
           <div className="flex gap-5">
             <div className="md:w-2/3  ">
+                  {/* todo: json a ai data ta add korte hobe */}
               <div className="flex justify-between items-center ">
                 <div>
                   <h2 className="text-2xl font-semibold">
@@ -83,7 +75,7 @@ const SearchDetails = () => {
                   <img
                     className="w-14 h-14 rounded-full"
                     src="https://i.ibb.co/MZkMY4V/room4.webp"
-                    alt=""
+                    alt="user"
                   />
                 </div>
               </div>
@@ -98,8 +90,7 @@ const SearchDetails = () => {
                       Veluvana is a Superhost
                     </h4>
                     <p className="text-sm">
-                      Superhosts are experienced, highly rated hosts who are
-                      committed to providing great stays for guests.{" "}
+                     {searchDetailsData && specialties[0]}
                     </p>
                   </div>
                 </div>
@@ -110,7 +101,7 @@ const SearchDetails = () => {
                   <div>
                     <h4 className="text-xl font-medium">Great location</h4>
                     <p className="text-sm">
-                      90% of recent guests gave the location a 5-star rating.{" "}
+                    {searchDetailsData && specialties[1]}
                     </p>
                   </div>
                 </div>
@@ -120,20 +111,14 @@ const SearchDetails = () => {
                   </div>
                   <div>
                     <h4 className="text-xl font-medium">
-                      Free cancellation for 48 hours.
+                    {searchDetailsData && specialties[2]}
                     </h4>
                   </div>
                 </div>
               </div>
               <div className="divider"></div>
               <p>
-                Veluvana is a unique bamboo house with a wonderful view of
-                Sidemen Valley, a genuine tropical landscape with Mount Agung
-                peak on its back. This getaway spot is a great place to bring
-                into reality the dream adventure of the true wanderer. We invite
-                you to feel the magnificent vibes of the entire house to escape
-                the life that is full of drama into a journey with ultimate
-                joys...
+               {searchDetailsData && description.slice(0,80)}...
               </p>
               <div
                 onClick={() => setIsOpen(true)}
