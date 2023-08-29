@@ -19,7 +19,7 @@ const UserGuide = () => {
 
   return (
     <div className="w-full">
-      <h2>User Guide Information</h2>
+      <h2  className="text-xl font-bold mt-20 mb-15 text-center">User Guide Information</h2>
       {guideData ? (
         <table>
           <thead>
@@ -42,7 +42,7 @@ const UserGuide = () => {
           </tbody>
         </table>
       ) : (
-        <p>No guide data available.</p>
+        <p className="text-pink-700 text-center mt-20 ">No guide data available.</p>
       )}
     </div>
   );
