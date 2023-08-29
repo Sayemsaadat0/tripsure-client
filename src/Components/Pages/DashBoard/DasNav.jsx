@@ -1,14 +1,15 @@
 import React from 'react';
-
+import { AiFillMessage } from 'react-icons/ai';
 
 
 const DasNav = () => {
     return (
-        <div className="navbar bg-white shadow max-w-7xl">
+        <div className="navbar bg-white shadow ">
             <div className="flex-1">
                 <h3 className='text-lg'> Welcome Back, <span className='text-2xl'>brother</span></h3>
             </div>
-            <div className="flex-none gap-2">
+            <div className="noti icon flex gap-4">
+            <AiFillMessage className='text-2xl'></AiFillMessage>  
              
                 {/* profile */}
                 <div className="dropdown dropdown-end">
