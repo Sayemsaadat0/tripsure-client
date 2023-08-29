@@ -31,21 +31,20 @@ const Dashboard = () => {
         <div className="navbar grid grid-cols-1  ">
           <NavLink className="w-full pt-6  flex flex-col justify-center" to="/">
             <img
-              className="w-20 hidden md:block"
+              className="w-20 hidden md:block mb-10"
               src="https://i.ibb.co/qkVKbxM/Untitled-design-4.png"
               alt="" />
 
-            <p>TripSure</p>
           </NavLink>
 
-          {/* optional */}
-          {/*  <div className="">
+        {/* opional */}
+        {/*   <div className="">
             <img className="w-16 rounded-full" src={user.photoURL} />
             <div className="m-2">
               <p>{user.displayName}</p>
               <p>role</p>
             </div>
-          </div> */}
+          </div>  */}
         </div>
 
         <ul className="menu  text-xl">
@@ -83,9 +82,9 @@ const Dashboard = () => {
           </li>
           <li className="mt-2">
             <NavLink
-              to="/dashboard/addresource">
+              to="/dashboard/usergueide">
               <BsCollectionFill></BsCollectionFill>
-              My Added Resources
+             Userguiede
             </NavLink>
           </li>
         </ul>

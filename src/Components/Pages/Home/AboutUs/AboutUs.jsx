@@ -7,7 +7,8 @@ const AboutUs = () => {
   return (
     <div className="background ">
       <Container>
-        <div className="text-white h-96 flex flex-col justify-center items-center ">
+        <div className="text-white flex flex-col justify-center items-center h-96 x ">
+
           <h2 className="text-3xl font-bold mb-3">Get to Know Us: Our Story and Values</h2>
           <p className="w-[50%] mx-auto text-center">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis

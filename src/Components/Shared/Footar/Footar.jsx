@@ -10,7 +10,7 @@ const Footar = () => {
 
     const currentYear = new Date().getFullYear()
     return (
-        <div>
+        <div className='footar-image'>
             {/* footar-image / next div -bg-black w-full bg-opacity-50 */}
             <footer className=' text-black '>
                 <div >
@@ -60,7 +60,6 @@ const Footar = () => {
                                 </div>
                             </div>
                         </div>
-                        <hr />
                         <p className='w-full text-center py-6'>Copyright (c) {currentYear} by <span className='font-bold'>Tripsure Enterprise LTD.</span></p>
                     </Container>
                 </div>

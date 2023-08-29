@@ -49,6 +49,8 @@ import PrivateRoutes from "./PrivateRoutes";
 import NewProfile from "../Pages/Profile/NewProfile";
 import SearchCountry from "../Pages/SearchResult/searchCountryPage/SearchCountry";
 import SearchResultDetails from "../Pages/SearchResult/SearchResultDetails/SearchResultDetails";
+import Addguide from "../Pages/DashBoard/Admin/Addguide";
+import UserGuide from "../Pages/DashBoard/User/UserGuide";
 
 const router = createBrowserRouter([
   {
@@ -172,7 +174,7 @@ const router = createBrowserRouter([
       {
         path: "searchResult/:id",
         element: <SearchResultDetails/>,
-        loader: ({params}) => fetch(`http://localhost:1000/searchResult/${params.id}`)
+        loader: ({params}) => fetch(`https://tripsure-server-sayemsaadat0.vercel.app/searchResult/${params.id}`)
       },
       {
         path: "contactDetails",
@@ -257,6 +259,14 @@ const router = createBrowserRouter([
         {
           path: 'addpackages',
           element: <Addpackage />
+        },
+        {
+          path: 'addgueide',
+          element: <Addguide />
+        },
+        {
+          path: 'usergueide',
+          element: <UserGuide />
         },
   ]
   },

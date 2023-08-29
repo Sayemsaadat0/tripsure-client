@@ -64,7 +64,7 @@ const Login = () => {
 
         {/* box */}
         <Particle></Particle>
-        <div className="p-6 bg-transparent w-80 shadow-2xl hover:shadow-sm rounded-lg text-white md:hover:shadow-white duration-700">
+        <div className="p-6   w-80 shadow-2xl hover:shadow-sm rounded-lg text-white md:hover:shadow-white duration-700">
 
           <div className="flex justify-start gap-4 ">
             <img className="w-16 h-16" src="https://i.ibb.co/ng9Sdrp/Untitled-design-1-unscreen.gif" alt="" />
