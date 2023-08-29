@@ -15,7 +15,7 @@ const SideBar = () => {
           >
             Open drawer
           </label>
-          <div className="flex items-center space-x-3 mb-5">
+          <div className="flex items-center space-x-3 mb-8">
             <h4 className="text-lg font-semibold">Sort by:</h4>
             <select
               name=""

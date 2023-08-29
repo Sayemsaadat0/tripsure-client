@@ -51,6 +51,7 @@ import SearchCountry from "../Pages/SearchResult/searchCountryPage/SearchCountry
 import SearchResultDetails from "../Pages/SearchResult/SearchResultDetails/SearchResultDetails";
 import SearchHotel from "../Pages/SearchResult/searchHotelPage/SearchHotel";
 import SearchCardDetails from "../Pages/SearchResult/SearchCardDetails/SearchCardDetails";
+import SearchDetails from "../Pages/SearchResult/SearchDetails";
 
 const router = createBrowserRouter([
   {
@@ -185,7 +186,7 @@ const router = createBrowserRouter([
       },
       {
         path: "searchCardDetails/:id",
-        element: <SearchCardDetails />,
+        element: <SearchDetails />,
         loader: ({ params }) =>
           fetch(`http://localhost:1000/searchResult/${params.id}`),
       },

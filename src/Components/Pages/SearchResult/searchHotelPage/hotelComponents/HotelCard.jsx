@@ -11,40 +11,42 @@ import { FiHeart } from "react-icons/fi";
 
 const HotelCard = () => {
   return (
-    <div className="flex items-center justify-center bg-base-100 hover:shadow-xl  rounded-md border-2">
-      <Swiper
-        effect={"flip"}
-        pagination={true}
-        modules={[EffectFlip, Pagination, Navigation]}
-        slidesPerView={1}
-        className="swiper"
-      >
-        <SwiperSlide className="swiper-slide ">
-          <div className="relative">
-            <img src="https://i.ibb.co/BgbGfBN/image.png" />
-            <button className="btn absolute top-1 right-1">
-              <FiHeart size={18} />
-            </button>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="swiper-slide">
-          <div className="relative">
-            <img src="https://i.ibb.co/BgbGfBN/image.png" />
-            <button className="btn absolute top-1 right-1">
-              <FiHeart size={18} />
-            </button>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="swiper-slide">
-          <div className="relative">
-            <img src="https://i.ibb.co/BgbGfBN/image.png" />
-            <button className="btn absolute top-1 right-1">
-              <FiHeart size={18} />
-            </button>
-          </div>
-        </SwiperSlide>
-      </Swiper>
-      <div>
+    <div className="flex items-center justify-center bg-base-100 hover:shadow-xl rounded-[7px] border-2 md:h-[305px] h-auto ml-8 md:relative md:w-full w-auto">
+      <div className="md:absolute md:left-0 md:top-0 order-first md:order-none">
+        <Swiper
+          effect={"flip"}
+          pagination={true}
+          modules={[EffectFlip, Pagination, Navigation]}
+          slidesPerView={1}
+          className="swiper"
+        >
+          <SwiperSlide className="swiper-slide ">
+            <div className="relative">
+              <img src="https://i.ibb.co/BgbGfBN/image.png" />
+              <button className="btn absolute top-1 right-1">
+                <FiHeart size={18} />
+              </button>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide className="swiper-slide">
+            <div className="relative">
+              <img src="https://i.ibb.co/BgbGfBN/image.png" />
+              <button className="btn absolute top-1 right-1">
+                <FiHeart size={18} />
+              </button>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide className="swiper-slide">
+            <div className="relative">
+              <img src="https://i.ibb.co/BgbGfBN/image.png" />
+              <button className="btn absolute top-1 right-1">
+                <FiHeart size={18} />
+              </button>
+            </div>
+          </SwiperSlide>
+        </Swiper>
+      </div>
+      <div className="order-last md:order-none">
         <div className="card card-side ">
           <div className="card-body">
             <h2 className="card-title">New movie is released!</h2>
