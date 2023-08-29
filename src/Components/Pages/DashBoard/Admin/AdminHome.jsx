@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import useUsers from '../../../../Hooks/useUsers';
 
 const AdminHome = () => {
 
@@ -19,6 +20,8 @@ const AdminHome = () => {
   //   handleSearch();
   // }, [searchTerm]);
 
+  const users = useUsers()
+  console.log(users)
   
 
 
@@ -97,7 +100,7 @@ const AdminHome = () => {
 
       <section className='grid grid-cols-1 md:grid-cols-3 mt-10'>
         <div className='border flex flex-col items-center justify-center card bg-white shadow-md w-40 h-40'>
-          <h3 className='text-3xl font-semibold '>545555</h3>
+          <h3 className='text-3xl font-semibold '>{users.length}+</h3>
           <p>Satisfied Customer</p>
         </div>
         <div className='border flex flex-col items-center justify-center card bg-white shadow-md w-40 h-40'>
@@ -105,7 +108,7 @@ const AdminHome = () => {
           <p>Satisfied Customer</p>
         </div>
         <div className='border flex flex-col items-center justify-center card bg-white shadow-md w-40 h-40'>
-          <h3 className='text-3xl font-semibold '>545555</h3>
+          <h3 className='text-3xl font-semibold'>545555</h3>
           <p>Satisfied Customer</p>
         </div>
       </section>
