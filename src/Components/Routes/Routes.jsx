@@ -48,6 +48,7 @@ import ActivityDetails from "../Pages/Payment/ActivityDetails/ActivityDetails";
 import PrivateRoutes from "./PrivateRoutes";
 import NewProfile from "../Pages/Profile/NewProfile";
 import PostStory from "../Pages/Community/PostAStory/PostStory";
+import SearchDetails from "../Pages/SearchResult/SearchDetails";
 
 const router = createBrowserRouter([
   {
@@ -164,6 +165,10 @@ const router = createBrowserRouter([
       {
         path: "searchResult",
         element: <SearchResult />,
+      }, 
+      {
+        path: 'SearchDetails',
+        element: <SearchDetails></SearchDetails>
       },
       {
         path: "contactDetails",
