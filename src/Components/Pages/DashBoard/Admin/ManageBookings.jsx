@@ -85,7 +85,7 @@ const ManageBookings = () => {
       <div className="">
         <h2 className="text-center my-20 text-2xl font-bold"> Manage Bookings </h2>
 
-        <div className="card mb-10   m-2">
+        <div className="card mb-10 m-2">
           <p className="card-title">total Bokings & inqueires : <span className="text-pink-500">{trips.length} </span></p>
         </div>
         <div className="overflow-x-auto">

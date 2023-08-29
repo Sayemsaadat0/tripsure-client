@@ -34,6 +34,11 @@ const Addresource = () => {
       route: 'addhotels',
       name: "Add hotels",
     },
+    {
+      picture: 'https://i.ibb.co/SxcP9T2/Restaurant-2.png',
+      route: 'addgueide',
+      name: "Add Guide",
+    },
   ];
   return (
     <div>

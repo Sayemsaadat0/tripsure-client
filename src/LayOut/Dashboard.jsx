@@ -83,9 +83,9 @@ const Dashboard = () => {
           </li>
           <li className="mt-2">
             <NavLink
-              to="/dashboard/addresource">
+              to="/dashboard/usergueide">
               <BsCollectionFill></BsCollectionFill>
-              My Added Resources
+             Userguiede
             </NavLink>
           </li>
         </ul>
