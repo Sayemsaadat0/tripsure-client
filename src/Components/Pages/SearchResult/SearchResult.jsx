@@ -35,7 +35,7 @@ const SearchResult = () => {
       </div>
       <div className="flex justify-center gap-2 mb-12 bg-white py-5">
           {
-            pageNumbers.map(number =>  <button key={number} onClick={()=>setCurrentPage(number)} className={`${currentPage === number ? "bg-green-600 py-2  px-4 rounded-full font-semibold  border-2 text-white border-teal-600 bg-teal-600" : " px-4 rounded-full font-semibold  py-2 border-2 border-teal-600"}`}>{number}</button>)
+            pageNumbers.map(number =>  <button key={number} onClick={()=>setCurrentPage(number)} className={`${currentPage === number ? " py-2  px-4 rounded-full font-semibold  border-2 text-white border-teal-600 bg-teal-600" : " px-4 rounded-full font-semibold  py-2 border-2 border-teal-600"}`}>{number}</button>)
           }
         </div>
     </div>
