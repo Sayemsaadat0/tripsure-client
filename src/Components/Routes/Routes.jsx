@@ -177,7 +177,7 @@ const router = createBrowserRouter([
         element: <SearchResult />,
       },
       {
-        path: "searchResult/searchCountry/:country",
+        path: "searchCountry/:country",
         element: <SearchCountry />,
       },
       {

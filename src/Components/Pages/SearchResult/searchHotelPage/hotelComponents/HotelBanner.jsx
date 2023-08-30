@@ -6,11 +6,24 @@ import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import { DatePicker } from "antd";
 import { FiUsers } from "react-icons/fi";
+import { FaUserGroup } from "react-icons/fa6";
+import { FaMinus, FaPlus } from "react-icons/fa";
 
 const HotelBanner = () => {
-  // todo habibullah bhai input fild er design baki ache
+  const [modalForCountPeople, setModalForCountPeople] = useState(true);
+  const [adultCount, setAdultCount] = useState(2);
+  const [childrenCount, setChildrenCount] = useState(0);
+  const [infantsCount, setInfantsCount] = useState(0);
 
-  // const [size, setSize] = useState("large");
+  const handlePeopleForReserve = () => {
+    setModalForCountPeople((modalForCountPeople) =>
+      setModalForCountPeople(!modalForCountPeople)
+    );
+  };
+
+  const handleDate = (date) => {
+    console.log(date.format("YYYY-MM-DD"))
+  }
 
   return (
     <div className="hotel-backgroundImg h-[500px] w-full  bg-black bg-opacity-100">
@@ -23,13 +36,101 @@ const HotelBanner = () => {
             <p className="font-bold">Enter dates to find the best prices</p>
           </div>
           <div className="grid md:grid-cols-3 w-[90%] mx-auto gap-3 ">
-            <DatePicker size={"large"} placeholder="Check in" />
-            <DatePicker size={"large"} placeholder="Check out" />
-            <select name="guests" id="" className="select">
-              <option value="rooms">Rooms</option>
-              <option value="adults">Adults</option>
-              <option value="children">Children</option>
-            </select>
+            <DatePicker onChange={handleDate} size={"large"} placeholder="Check in" />
+            <DatePicker name="checkOut" size={"large"} placeholder="Check out" />
+            <button
+              onClick={handlePeopleForReserve}
+              className="btn btn-outline rounded-full  font-bold"
+            >
+              <FaUserGroup className="w-5"></FaUserGroup>
+              <span className="text-xl">
+                {adultCount + childrenCount + infantsCount}
+              </span>
+            </button>
+            {modalForCountPeople && (
+              <div className="border-2 top-14 bg-white shadow-xl  rounded-2xl p-2 right-4 w-full lg:w-3/4 absolute">
+                <div className="m-4 space-y-3">
+                  <div className="flex justify-between items-center">
+                    <div>
+                      <h1 className="font-bold">Adults</h1>
+                      <span>Age 12 - 99</span>
+                    </div>
+                    <div className="space-x-3">
+                      <button
+                        disabled={adultCount == 1 ? true : false}
+                        onClick={() =>
+                          setAdultCount((adultCount) => adultCount - 1)
+                        }
+                        className="btn btn-sm btn-circle bg-black hover:bg-black  rounded-full"
+                      >
+                        <FaMinus className="w-4 text-white "></FaMinus>
+                      </button>
+                      <span className="font-bold">{adultCount}</span>
+                      <button
+                        onClick={() =>
+                          setAdultCount((adultCount) => adultCount + 1)
+                        }
+                        className="btn btn-sm btn-circle bg-black hover:bg-black  rounded-full"
+                      >
+                        <FaPlus className="w-4 text-white "></FaPlus>
+                      </button>
+                    </div>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <div>
+                      <h1 className="font-bold">Children</h1>
+                      <span>Age 3 - 11</span>
+                    </div>
+                    <div className="space-x-3">
+                      <button
+                        disabled={childrenCount == 0 ? true : false}
+                        onClick={() =>
+                          setChildrenCount((childrenCount) => childrenCount - 1)
+                        }
+                        className="btn btn-sm btn-circle bg-black hover:bg-black  rounded-full"
+                      >
+                        <FaMinus className="w-4 text-white "></FaMinus>
+                      </button>
+                      <span className="font-bold">{childrenCount}</span>
+                      <button
+                        onClick={() =>
+                          setChildrenCount((childrenCount) => childrenCount + 1)
+                        }
+                        className="btn btn-sm btn-circle bg-black hover:bg-black  rounded-full"
+                      >
+                        <FaPlus className="w-4 text-white "></FaPlus>
+                      </button>
+                    </div>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <div>
+                      <h1 className="font-bold">Infants</h1>
+                      <span>Age 0 - 2</span>
+                    </div>
+                    <div className="space-x-3">
+                      <button
+                        disabled={infantsCount == 0 ? true : false}
+                        onClick={() =>
+                          setInfantsCount((infantsCount) => infantsCount - 1)
+                        }
+                        className="btn btn-sm btn-circle bg-black hover:bg-black  rounded-full"
+                      >
+                        <FaMinus className="w-4 text-white "></FaMinus>
+                      </button>
+                      <span className="font-bold">{infantsCount}</span>
+                      <button
+                        onClick={() =>
+                          setInfantsCount((infantsCount) => infantsCount + 1)
+                        }
+                        className="btn btn-sm btn-circle bg-black hover:bg-black  rounded-full"
+                      >
+                        <FaPlus className="w-4 text-white "></FaPlus>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </Container>

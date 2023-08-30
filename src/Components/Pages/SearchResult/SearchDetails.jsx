@@ -12,16 +12,21 @@ import { useLoaderData } from "react-router-dom";
 const SearchDetails = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const searchDetailsData = useLoaderData()
-  console.log(searchDetailsData)
-  const { address, picture, title, reviews, ratings, specialties, description } = searchDetailsData;
-  
-  const ratingValues = Object.values(ratings)
+  const searchDetailsData = useLoaderData();
+  console.log(searchDetailsData);
+  const {
+    address,
+    picture,
+    title,
+    reviews,
+    ratings,
+    specialties,
+    description,
+  } = searchDetailsData;
+
+  const ratingValues = Object.values(ratings);
   const sumOfRatings = ratingValues.reduce((sum, rating) => sum + rating, 0);
   const averageRating = (sumOfRatings / ratingValues.length).toFixed(1);
-
-
-  
 
   return (
     <div className="pt-16">
@@ -33,12 +38,18 @@ const SearchDetails = () => {
           <div className="flex items-center justify-between gap-4 mb-4">
             <div className="flex items-center justify-between gap-4">
               <p className="flex items-center text-black gap-1">
-                <FaStar></FaStar>{searchDetailsData && averageRating}
-                <span className="underline cursor-pointer ml-2">   {searchDetailsData && reviews?.length} reviews</span>
+                <FaStar></FaStar>
+                {searchDetailsData && averageRating}
+                <span className="underline cursor-pointer ml-2">
+                  {" "}
+                  {searchDetailsData && reviews?.length} reviews
+                </span>
               </p>
               <p>Superhost</p>
               <p className="underline cursor-pointer text-black ">
-              {searchDetailsData && address?.city},  {searchDetailsData && address?.state},  {searchDetailsData && address?.country}
+                {searchDetailsData && address?.city},{" "}
+                {searchDetailsData && address?.state},{" "}
+                {searchDetailsData && address?.country}
               </p>
             </div>
             <div className="flex items-center">
@@ -56,11 +67,10 @@ const SearchDetails = () => {
                 alt="hotel"
               />
             </div>
-            
           </div>
           <div className="flex gap-5">
             <div className="md:w-2/3  ">
-                  {/* todo: json a ai data ta add korte hobe */}
+              {/* todo: json a ai data ta add korte hobe */}
               <div className="flex justify-between items-center ">
                 <div>
                   <h2 className="text-2xl font-semibold">
@@ -89,37 +99,31 @@ const SearchDetails = () => {
                     <h4 className="text-xl font-medium">
                       Veluvana is a Superhost
                     </h4>
-                    <p className="text-sm">
-                     {searchDetailsData && specialties[0]}
-                    </p>
+                    <p className="text-sm">{specialties[0]}</p>
                   </div>
                 </div>
+
                 <div className="flex gap-4">
                   <div>
                     <GoLocation size={25}></GoLocation>
                   </div>
                   <div>
                     <h4 className="text-xl font-medium">Great location</h4>
-                    <p className="text-sm">
-                    {searchDetailsData && specialties[1]}
-                    </p>
+                    <p className="text-sm">{specialties[1]}</p>
                   </div>
                 </div>
+
                 <div className="flex gap-4">
                   <div>
                     <BiDockTop size={25}></BiDockTop>
                   </div>
                   <div>
-                    <h4 className="text-xl font-medium">
-                    {searchDetailsData && specialties[2]}
-                    </h4>
+                    <h4 className="text-xl font-medium">{specialties[2]}</h4>
                   </div>
                 </div>
               </div>
               <div className="divider"></div>
-              <p>
-               {searchDetailsData && description.slice(0,80)}...
-              </p>
+              <p>{searchDetailsData && description.slice(0, 80)}...</p>
               <div
                 onClick={() => setIsOpen(true)}
                 className="cursor-pointer group w-fit flex gap-1 items-center underline underline-offset-2 font-bold"

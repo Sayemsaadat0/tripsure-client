@@ -14,19 +14,23 @@ const SearchResult = () => {
   return (
     <div className=" pt-12">
       <div className="mb-12">
-      <SearchSection/>
-     </div>
+        <SearchSection />
+      </div>
       <div className=" w-full bg-base-100 rounded-tl-lg rounded-tr-lg">
         <Container>
-        <div className="border-t border-x p-4 ">
-          <h4 className="text-xl font-semibold">
-            Search results matching "{searchText}"
-          </h4>
-        </div>
-        {searchData.map((data) => (
-          <SearchResultCard data={data} key={data._id}/>
-        ))}
-      </Container>
+          <div className="border-t border-x p-4 ">
+            <h4 className="text-xl font-semibold">
+              Search results matching "{searchText}"
+            </h4>
+          </div>
+          {searchData.map((data) => (
+            <SearchResultCard
+              data={data}
+              country={data.country}
+              key={data._id}
+            />
+          ))}
+        </Container>
       </div>
     </div>
   );
