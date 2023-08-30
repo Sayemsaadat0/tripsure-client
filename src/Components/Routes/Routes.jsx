@@ -51,6 +51,8 @@ import SearchCountry from "../Pages/SearchResult/searchCountryPage/SearchCountry
 import SearchResultDetails from "../Pages/SearchResult/SearchResultDetails/SearchResultDetails";
 import Addguide from "../Pages/DashBoard/Admin/Addguide";
 import UserGuide from "../Pages/DashBoard/User/UserGuide";
+import PostStory from "../Pages/Community/PostAStory/PostStory";
+import SearchDetails from "../Pages/SearchResult/SearchDetails";
 
 const router = createBrowserRouter([
   {
@@ -100,7 +102,8 @@ const router = createBrowserRouter([
       },
       {
         path: "postastory",
-        element: <PostAStory />,
+        // render new component which name <PostStory> but previus Component name <PostAStory>
+        element: <PostStory></PostStory>,
       },
       {
         path: "addareview",
@@ -147,7 +150,7 @@ const router = createBrowserRouter([
         element: <TravelarStories />,
       },
       {
-        path: "travelStory/stories",
+        path: "travelStory/:id",
         element: <Stories />,
       },
 
@@ -166,6 +169,10 @@ const router = createBrowserRouter([
       {
         path: "searchResult",
         element: <SearchResult />,
+      }, 
+      {
+        path: 'SearchDetails',
+        element: <SearchDetails></SearchDetails>
       },
       {
         path: 'searchResult/searchCountry',
