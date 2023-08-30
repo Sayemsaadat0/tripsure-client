@@ -2,22 +2,35 @@ import React from "react";
 import Rating from "react-rating";
 
 import { Link } from "react-router-dom";
-import { Navigation } from "swiper/modules";
+import {  Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FaCircle, FaCircleNotch, FaHeart } from "react-icons/fa6";
+import { useEffect } from "react";
+import axios from "axios";
+import { useState } from "react";
 
 // todo:button and fetch kore data dekhano baki ache
 
-const Eat = () => {
+const Eat = ({ country }) => {
+  const [restaurants, setRestaurants] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:1000/restaurant`)
+      .then((data) => {
+        setRestaurants(data.data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
     <div>
       <Swiper
         slidesPerView={1}
         spaceBetween={10}
-        modules={[Navigation]}
-        className="mySwiper"
-        navigation={true}
-        onSlideChange={() => console.log("slide change")}
+        pagination={{
+          clickable: true,
+        }}
         breakpoints={{
           640: {
             slidesPerView: 2,
@@ -32,52 +45,63 @@ const Eat = () => {
             spaceBetween: 30,
           },
         }}
-        onSwiper={(swiper) => console.log(swiper)}
+     
       >
         <SwiperSlide>
-          <div className="space-y-4">
+          <div className="space-y-4 ">
             <h3 className="text-2xl font-semibold">Eat</h3>
             <p>A mix of the charming, modern, and tried and true.</p>
           </div>
         </SwiperSlide>
-        <SwiperSlide>
-          <Link>
-            <div>
-              <img
-                className="h-64  w-full  hover:scale-105 duration-300  object-cover hover:bg-white hover:opacity-80"
-                src="https://i.ibb.co/kMdWhPN/image.png"
-                alt=""
-              />
-              <button className="btn absolute top-2 right-2">
-                <FaHeart size={20} />
-              </button>
-              <div>
-                <h3 className="text-xl font-bold hover:underline mt-2">
-                  Sayeman Beach Resort
-                </h3>
-
-                <p className="text-green-700 mt-[6px] flex space-x-2 items-center">
-                  <Rating
-                    placeholderRating={4.7}
-                    emptySymbol={
-                      <FaCircleNotch className="w-[14px]"></FaCircleNotch>
-                    }
-                    placeholderSymbol={
-                      <FaCircle className="w-[14px]"></FaCircle>
-                    }
-                    fullSymbol={<FaCircle className="w-[14px]"></FaCircle>}
-                    readonly
+        {restaurants &&
+          restaurants.slice(0, 9).map((restaurant) => (
+            <SwiperSlide key={restaurant._id}>
+              <Link>
+                <div>
+                  <img
+                    className="h-64  w-full  hover:scale-105 duration-300  object-cover hover:bg-white hover:opacity-80"
+                    src={restaurant && restaurant?.picture}
+                    alt="Restaurant"
                   />
-                  <span className=" text-[17px] inline-block text-black">
-                    432
-                  </span>
-                </p>
-                <p>$$ - $$$ • Asian, Bangladeshi, Vegetarian Friendly</p>
-                <h3 className="font-bold">Cox's Bazar, Bangladesh</h3>
-              </div>
-            </div>
-          </Link>
-        </SwiperSlide>
+                  <button className="btn absolute top-2 right-2">
+                    <FaHeart size={20} />
+                  </button>
+                  <div>
+                    <h3 className="text-xl font-bold hover:underline mt-2">
+                      {restaurant && restaurant?.title}
+                    </h3>
+
+                    <p className="text-green-700 mt-[6px] flex space-x-2 items-center">
+                      <Rating
+                        placeholderRating={
+                          restaurant && restaurant?.ratings?.atmosphere
+                        }
+                        emptySymbol={
+                          <FaCircleNotch className="w-[14px]"></FaCircleNotch>
+                        }
+                        placeholderSymbol={
+                          <FaCircle className="w-[14px]"></FaCircle>
+                        }
+                        fullSymbol={<FaCircle className="w-[14px]"></FaCircle>}
+                        readonly
+                      />
+                      <span className=" text-[17px] inline-block text-black">
+                        432
+                      </span>
+                    </p>
+                    <p>
+                      $$ - $$$ • {restaurant && restaurant?.address?.city},{" "}
+                      {restaurant && restaurant?.address?.country}{" "}
+                    </p>
+                    <h3 className="font-bold">
+                      {restaurant && restaurant?.address?.state},{" "}
+                      {restaurant && restaurant?.address?.country}
+                    </h3>
+                  </div>
+                </div>
+              </Link>
+            </SwiperSlide>
+          ))}
       </Swiper>
     </div>
   );

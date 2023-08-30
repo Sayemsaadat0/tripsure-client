@@ -2,23 +2,27 @@ import React from "react";
 import Rating from "react-rating";
 
 import { Link } from "react-router-dom";
-import { Navigation } from "swiper/modules";
+import {  Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FaCircle, FaCircleNotch, FaHeart } from "react-icons/fa6";
 
 // todo:button and fetch kore data dekhano baki ache
 
-const Stay = () => {
+const Stay = ({ countryDatas, country }) => {
+  // todo: gettin empty array in stayData
+  // const stayData = countryDatas.filter(countryData => countryData.country === country);
+  // console.log(stayData);
+
   return (
     <div>
-      <h2 className="text-3xl font-semibold mb-4">Essential Bangladesh</h2>
+      <h2 className="text-3xl font-semibold my-10">Essential Bangladesh</h2>
+
       <Swiper
-        slidesPerView={1}
-        spaceBetween={10}
-        modules={[Navigation]}
-        className="mySwiper"
-        navigation={true}
-        onSlideChange={() => console.log("slide change")}
+          slidesPerView={1}
+          spaceBetween={10}
+          pagination={{
+            clickable: true,
+          }}
         breakpoints={{
           640: {
             slidesPerView: 2,
@@ -32,8 +36,9 @@ const Stay = () => {
             slidesPerView: 4,
             spaceBetween: 30,
           },
+          
         }}
-        onSwiper={(swiper) => console.log(swiper)}
+        
       >
         <SwiperSlide>
           <div className="space-y-4">
@@ -41,44 +46,49 @@ const Stay = () => {
             <p>A mix of the charming, modern, and tried and true.</p>
           </div>
         </SwiperSlide>
-        <SwiperSlide>
-          <Link>
-            <div>
-              <img
-                className="h-64  w-full  hover:scale-105 duration-300  object-cover hover:bg-white hover:opacity-80"
-                src="https://i.ibb.co/kMdWhPN/image.png"
-                alt=""
-              />
-              <button className="btn absolute top-2 right-2">
-                <FaHeart size={20} />
-              </button>
-              <div>
-                <h3 className="text-xl font-bold hover:underline mt-2">
-                  Sayeman Beach Resort
-                </h3>
 
-                <p className="text-green-700 mt-[6px] flex space-x-2 items-center">
-                  <Rating
-                    placeholderRating={4.3}
-                    emptySymbol={
-                      <FaCircleNotch className="w-[14px]"></FaCircleNotch>
-                    }
-                    placeholderSymbol={
-                      <FaCircle className="w-[14px]"></FaCircle>
-                    }
-                    fullSymbol={<FaCircle className="w-[14px]"></FaCircle>}
-                    readonly
+        {countryDatas &&
+          countryDatas.map((countryData) => (
+          
+            <SwiperSlide>
+              <Link>
+                <div>
+                  <img
+                    className="h-64  w-full  hover:scale-105 duration-300  object-cover hover:bg-white hover:opacity-80"
+                    src={countryData && countryData?.picture}
+                    alt="hotel"
                   />
-                  <span className=" text-[17px] inline-block text-black">
-                    1,432
-                  </span>
-                </p>
-                <p>Cox's Bazar, Bangladesh</p>
-                <h3 className="font-bold">from $87/night</h3>
-              </div>
-            </div>
-          </Link>
-        </SwiperSlide>
+                  <button className="btn absolute top-2 right-2">
+                    <FaHeart size={20} />
+                  </button>
+                  <div>
+                    <h3 className="text-xl font-bold hover:underline mt-2">
+                     {countryData && countryData?.cardtitle}
+                    </h3>
+
+                    <p className="text-green-700 mt-[6px] flex space-x-2 items-center">
+                      <Rating
+                        placeholderRating={countryData && countryData?.ratings}
+                        emptySymbol={
+                          <FaCircleNotch className="w-[14px]"></FaCircleNotch>
+                        }
+                        placeholderSymbol={
+                          <FaCircle className="w-[14px]"></FaCircle>
+                        }
+                        fullSymbol={<FaCircle className="w-[14px]"></FaCircle>}
+                        readonly
+                      />
+                      <span className=" text-[17px] inline-block text-black">
+                       {countryData && countryData?.visitcount}
+                      </span>
+                    </p>
+                    <p>{ countryData && countryData?.placetitle }</p>
+                    <h3 className="font-bold">from $57/night</h3>
+                  </div>
+                </div>
+              </Link>
+            </SwiperSlide>
+          ))}
       </Swiper>
     </div>
   );

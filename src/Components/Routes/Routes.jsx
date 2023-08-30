@@ -16,7 +16,7 @@ import Reviews from "../Pages/DashBoard/Admin/Reviews";
 import Inquiries from "../Pages/DashBoard/Admin/Inquiries";
 import AddTour from "../Pages/DashBoard/Admin/AddTour";
 import AddReview from "../Pages/Community/AddReview/AddReview";
-import PostAStory from "../Pages/Community/PostAStory/PostAStory";
+// import PostAStory from "../Pages/Community/PostAStory/PostAStory";
 import TravelerChoose from "../Pages/TravelerChoose/TravelerChoose";
 import ErrorPage from "../../LayOut/ErrorPage/ErrorPage";
 import FamilyGuideDetails from "../Pages/Home/FamilyGuide/FamilyGuideDetails";
@@ -52,6 +52,9 @@ import SearchResultDetails from "../Pages/SearchResult/SearchResultDetails/Searc
 import Addguide from "../Pages/DashBoard/Admin/Addguide";
 import UserGuide from "../Pages/DashBoard/User/UserGuide";
 import PostStory from "../Pages/Community/PostAStory/PostStory";
+
+import SearchHotel from "../Pages/SearchResult/searchHotelPage/SearchHotel";
+
 import SearchDetails from "../Pages/SearchResult/SearchDetails";
 
 const router = createBrowserRouter([
@@ -77,12 +80,20 @@ const router = createBrowserRouter([
         element: <PackageDetails></PackageDetails>,
       },
       {
-        path: 'favorite',
-        element: <PrivateRoutes><Favorite /></PrivateRoutes> 
+        path: "favorite",
+        element: (
+          <PrivateRoutes>
+            <Favorite />
+          </PrivateRoutes>
+        ),
       },
       {
-        path: 'profile/:email',
-        element: <PrivateRoutes><NewProfile></NewProfile></PrivateRoutes>
+        path: "profile/:email",
+        element: (
+          <PrivateRoutes>
+            <NewProfile></NewProfile>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "overview",
@@ -93,8 +104,8 @@ const router = createBrowserRouter([
         element: <KnowMore />,
       },
       {
-        path: '/TravelDeals/:id',
-        element: <TravelDealsDetails></TravelDealsDetails>
+        path: "/TravelDeals/:id",
+        element: <TravelDealsDetails></TravelDealsDetails>,
       },
       {
         path: "familyguidedetails",
@@ -118,20 +129,20 @@ const router = createBrowserRouter([
         element: <TourDetails></TourDetails>,
       },
       {
-        path: '/dothings-attraction-reviews/:id',
-        element: <DoThingsAttractionReviews></DoThingsAttractionReviews>
+        path: "/dothings-attraction-reviews/:id",
+        element: <DoThingsAttractionReviews></DoThingsAttractionReviews>,
       },
       {
-        path: '/staythinngs-attraction-reviews/:id',
-        element: <StayThingsAttractionReviews></StayThingsAttractionReviews>
+        path: "/staythinngs-attraction-reviews/:id",
+        element: <StayThingsAttractionReviews></StayThingsAttractionReviews>,
       },
       {
-        path: '/restaurant-attraction-reviews/:id',
-        element: <RestaurantAttractionReview></RestaurantAttractionReview>
+        path: "/restaurant-attraction-reviews/:id",
+        element: <RestaurantAttractionReview></RestaurantAttractionReview>,
       },
       {
-        path: '/top-destination-details/:id',
-        element:<TopDestinationDetails></TopDestinationDetails>
+        path: "/top-destination-details/:id",
+        element: <TopDestinationDetails></TopDestinationDetails>,
       },
       {
         path: "/top-destination-details",
@@ -175,21 +186,26 @@ const router = createBrowserRouter([
         element: <SearchDetails></SearchDetails>
       },
       {
-        path: 'searchResult/searchCountry',
-        element: <SearchCountry/>
+        path: "searchCountry/:country",
+        element: <SearchCountry />,
       },
       {
-        path: "searchResult/:id",
-        element: <SearchResultDetails/>,
-        loader: ({params}) => fetch(`https://tripsure-server-sayemsaadat0.vercel.app/searchResult/${params.id}`)
+        path: "searchHotel",
+        element: <SearchHotel />,
+      },
+      {
+        path: "searchCardDetails/:id",
+        element: <SearchDetails />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:1000/searchResult/${params.id}`),
       },
       {
         path: "contactDetails",
-        element: <ContactDetails/>
+        element: <ContactDetails />,
       },
       {
         path: "activityDetails",
-        element: <ActivityDetails/>
+        element: <ActivityDetails />,
       },
     ],
   },
@@ -206,78 +222,69 @@ const router = createBrowserRouter([
     path: "/dashboard",
     element: <Dashboard></Dashboard>,
     children: [
-        {
-          path: 'adminhome',
-          element: <AdminHome></AdminHome>
-        },
-      
-        {
-          path: 'admin/totalview',
-          element: <Totallview />
-        },
-        {
-          path: 'manageusers',
-          element: <ManageUser></ManageUser>
-        },
-        {
-          path: 'managebookings',
-          element: <ManageBookings />
-        },
-        {
-          path: 'managepackage',
-          element: <ManagePackage />
-        },
-        {
-          path: 'reviews',
-          element: <Reviews />
-        },
-        {
-          path: 'inquires',
-          element: <Inquiries />
-        },
-        {
-          path: 'addtour',
-          element: <AddTour />
-        },
-        {
-          path: 'addresource',
-          element: <Addresource />
-        },
-        {
-          path: 'addthings',
-          element: <Addthings />
-        },
-        {
-          path: 'addhotels',
-          element: <Addhotels />
-        },
-        {
-          path: 'addplaces',
-          element: <Addplaces />
-        },
-        {
-          path: 'addresturants',
-          element: <AddResturants />
-        },
-        {
-          path: 'addflights',
-          element: <Addflights />
-        },
-        {
-          path: 'addpackages',
-          element: <Addpackage />
-        },
-        {
-          path: 'addgueide',
-          element: <Addguide />
-        },
-        {
-          path: 'usergueide',
-          element: <UserGuide />
-        },
-  ]
-  },
+      {
+        path: "adminhome",
+        element: <AdminHome></AdminHome>,
+      },
 
+      {
+        path: "admin/totalview",
+        element: <Totallview />,
+      },
+      {
+        path: "manageusers",
+        element: <ManageUser></ManageUser>,
+      },
+      {
+        path: "managebookings",
+        element: <ManageBookings />,
+      },
+      {
+        path: "managepackage",
+        element: <ManagePackage />,
+      },
+      {
+        path: "reviews",
+        element: <Reviews />,
+      },
+      {
+        path: "inquires",
+        element: <Inquiries />,
+      },
+      {
+        path: "addtour",
+        element: <AddTour />,
+      },
+      {
+        path: "addresource",
+        element: <Addresource />,
+      },
+      {
+        path: "addthings",
+        element: <Addthings />,
+      },
+      {
+        path: "addhotels",
+        element: <Addhotels />,
+      },
+      {
+        path: "addplaces",
+        element: <Addplaces />,
+      },
+      {
+        path: "addresturants",
+        element: <AddResturants />,
+      },
+      {
+        path: "addflights",
+        element: <Addflights />,
+      },
+      {
+        path: "addpackages",
+        element: <Addpackage />,
+      },
+    ],
+  },
 ]);
 
 export default router;
