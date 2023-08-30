@@ -24,9 +24,16 @@ const Home = () => {
             <FamilyGuide></FamilyGuide>
             <TopDestinations></TopDestinations>
             <TopThingsToDo></TopThingsToDo>
-            <AboutUs></AboutUs>
-            <WhyUs></WhyUs>
-            <Feedback></Feedback>
+
+            <section className='md:my-40'>
+                <AboutUs></AboutUs>
+            </section>
+
+
+            <section className=''>
+                <WhyUs></WhyUs>
+                <Feedback></Feedback>
+            </section>
         </div>
     );
 };
