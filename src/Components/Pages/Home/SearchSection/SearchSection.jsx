@@ -29,7 +29,7 @@ const SearchSection = () => {
       icon: <FaArrowsToDot />,
     },
     {
-      title: "Restaurant",
+      title: "Restaurants",
       icon: <IoRestaurantSharp />,
     },
   ];
