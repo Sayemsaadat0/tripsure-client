@@ -7,6 +7,7 @@ import { ResponsiveContainer, PieChart, Pie, Cell, Legend } from "recharts";
 
 
 
+import useUsers from '../../../../Hooks/useUsers';
 
 const AdminHome = () => {
 
@@ -23,6 +24,16 @@ const AdminHome = () => {
 const COLORS = ['#34a0a4' ]
 
 
+  // useEffect(() => {
+  //   handleSearch();
+  // }, [searchTerm]);
+
+  const users = useUsers()
+  
+
+
+
+  
 
   return (
     <div className=' pt-4 px-4 mx-auto '>

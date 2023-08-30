@@ -1,22 +1,23 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../LayOut/Main/Main";
 import Home from "../Pages/Home/Home";
-import Profile from "../Pages/Profile/Profile";
+
+
+
+
+
+
 import Overview from "../Pages/Overview/Overview";
 import Login from "../Pages/Authentication/Login/Login";
 import Register from "../Pages/Authentication/SignUp/Register";
-import KnowMore from "../Pages/AboutUs/KnowMore";
-import Dashboard from "../../LayOut/Dashboard";
-import Totallview from "../Pages/DashBoard/Admin/Totallview";
-import AdminHome from "../Pages/DashBoard/Admin/AdminHome";
-import ManageUser from "../Pages/DashBoard/Admin/ManageUser";
-import ManageBookings from "../Pages/DashBoard/Admin/ManageBookings";
-import ManagePackage from "../Pages/DashBoard/Admin/ManagePackage";
-import Reviews from "../Pages/DashBoard/Admin/Reviews";
-import Inquiries from "../Pages/DashBoard/Admin/Inquiries";
-import AddTour from "../Pages/DashBoard/Admin/AddTour";
+
+// import Reviews from "../Pages/DashBoard/Admin/Reviews";
+// import Inquiries from "../Pages/DashBoard/Admin/Inquiries";
+// import AddTour from "../Pages/DashBoard/Admin/AddTour";
+
+
+
 import AddReview from "../Pages/Community/AddReview/AddReview";
-// import PostAStory from "../Pages/Community/PostAStory/PostAStory";
 import TravelerChoose from "../Pages/TravelerChoose/TravelerChoose";
 import ErrorPage from "../../LayOut/ErrorPage/ErrorPage";
 import FamilyGuideDetails from "../Pages/Home/FamilyGuide/FamilyGuideDetails";
@@ -29,17 +30,34 @@ import GuideDetails from "../Pages/TravelGuides/GuideDetails/GuideDetails";
 import TourDetails from "../Pages/TourDetails/TourDetails";
 import TopDestinationDetails from "../Pages/TopDestinationDetails/TopDestinationDetails";
 import Favorite from "../Shared/Navbar/Favorite";
+
+
+// dashboard ad resources
 import Addresource from "../Pages/DashBoard/Admin/Addresource";
 import Addthings from "../Pages/DashBoard/Admin/Addthings";
 import Addplaces from "../Pages/DashBoard/Admin/addplaces";
 import Addhotels from "../Pages/DashBoard/Admin/Addhotels";
 import Addflights from "../Pages/DashBoard/Admin/Addflights";
 import AddResturants from "../Pages/DashBoard/Admin/AddResturants";
+import Addguide from "../Pages/DashBoard/Admin/Addguide";
+import UserGuide from "../Pages/DashBoard/User/UserGuide";
 import Addpackage from "../Pages/DashBoard/Admin/Addpackage";
+
+import AdminHome from "../Pages/DashBoard/Admin/AdminHome";
+import ManageUser from "../Pages/DashBoard/Admin/ManageUser";
+import ManageBookings from "../Pages/DashBoard/Admin/ManageBookings";
+import ManagePackage from "../Pages/DashBoard/Admin/ManagePackage";
+import KnowMore from "../Pages/AboutUs/KnowMore";
+import Dashboard from "../../LayOut/Dashboard";
+import Totallview from "../Pages/DashBoard/Admin/Totallview";
+
+
+
+
 import DoThingsAttractionReviews from "../Pages/DoThingsAttractionReviews/DoThingsAttractionReviews";
 import StayThingsAttractionReviews from "../Pages/StayThingsAttractionReviews/StayThingsAttractionReviews";
 import RestaurantAttractionReview from "../Pages/RestaurantAttractionReview/RestaurantAttractionReview";
-import SearchResult from "../Pages/SearchResult/SearchResult";
+
 import PackageDetails from "../Pages/Home/Packages/PackageDetails";
 import TravelDealsDetails from "../Pages/Home/TravelDeals/TravelDealsDetails";
 import FamilyGuideSingleCardDetails from "../Pages/Home/FamilyGuide/FamilyGuideSingleCardDetails";
@@ -47,15 +65,18 @@ import ContactDetails from "../Pages/Payment/ContactDetails/ContactDetails";
 import ActivityDetails from "../Pages/Payment/ActivityDetails/ActivityDetails";
 import PrivateRoutes from "./PrivateRoutes";
 import NewProfile from "../Pages/Profile/NewProfile";
-import SearchCountry from "../Pages/SearchResult/searchCountryPage/SearchCountry";
-import SearchResultDetails from "../Pages/SearchResult/SearchResultDetails/SearchResultDetails";
-import Addguide from "../Pages/DashBoard/Admin/Addguide";
-import UserGuide from "../Pages/DashBoard/User/UserGuide";
 import PostStory from "../Pages/Community/PostAStory/PostStory";
 
-import SearchHotel from "../Pages/SearchResult/searchHotelPage/SearchHotel";
 
+
+// search
+import SearchResult from "../Pages/SearchResult/SearchResult";
+import SearchCountry from "../Pages/SearchResult/searchCountryPage/SearchCountry";
+import SearchHotel from "../Pages/SearchResult/searchHotelPage/SearchHotel";
 import SearchDetails from "../Pages/SearchResult/SearchDetails";
+
+
+// payment
 import PaymentDetails from "../Pages/Payment/PaymentDetails/PaymentDetails";
 
 const router = createBrowserRouter([
@@ -248,7 +269,7 @@ const router = createBrowserRouter([
         path: "managepackage",
         element: <ManagePackage />,
       },
-      {
+     /*  {
         path: "reviews",
         element: <Reviews />,
       },
@@ -259,7 +280,7 @@ const router = createBrowserRouter([
       {
         path: "addtour",
         element: <AddTour />,
-      },
+      }, */
       {
         path: "addresource",
         element: <Addresource />,
@@ -280,6 +301,16 @@ const router = createBrowserRouter([
         path: "addresturants",
         element: <AddResturants />,
       },
+      
+      {
+        path: "addguide",
+        element: <Addguide />,
+      },
+      {
+        path: "usergueide",
+        element: <UserGuide />,
+      },
+      
       {
         path: "addflights",
         element: <Addflights />,

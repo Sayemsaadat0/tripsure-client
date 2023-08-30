@@ -1,22 +1,28 @@
 import React, { useState } from "react";
-import Rating from "react-rating";
-import { FaCircle, FaCircleNotch } from "react-icons/fa";
 import { useSelector } from "react-redux";
-import { MdLocationPin } from "react-icons/md";
 import SearchResultCard from "./SearchResultCard";
 import SearchSection from "../Home/SearchSection/SearchSection";
-import Container from "../../../LayOut/Container";
+
 
 const SearchResult = () => {
   const searchData = useSelector((state) => state.searchData.data);
+  
   const searchText = useSelector((state) => state.searchData.searchText);
+
   console.log(searchData);
+  
   const [currentPage, setCurrentPage] = useState(0)
   console.log(currentPage)
+  
   const totalSearchData = searchData.length
+  
   console.log(totalSearchData)
+  
   const dataPerPages = 5;
-  const totalPages = Math.ceil(totalSearchData / dataPerPages)
+  
+  const totalPages = Math.ceil(totalSearchData / 
+  dataPerPages)
+  
   const pageNumbers = [...Array(totalPages).keys()]
   return (
     <div className=" pt-12">
