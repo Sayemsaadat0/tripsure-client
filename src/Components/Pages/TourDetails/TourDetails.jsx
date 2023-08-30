@@ -24,15 +24,22 @@ const TourDetails = () => {
   const [childrenCount, setChildrenCount] = useState(0);
   const [infantsCount, setInfantsCount] = useState(0);
   const { id } = useParams();
-  console.log(id);
+  const [unavailableDates, setUnavailableDates] = useState([]);
+ 
+  const [selectedDate, setSelectedDate] = useState(null);
+  const handleDateChange = (date) => {
+    setSelectedDate(date);
+  };
+ 
+  
   useEffect(() => {
     axios
       .get(`https://tripsure-server.vercel.app/tourDetails/${id}`)
       .then((data) => {
         setTourDetails(data.data);
+        setUnavailableDates(data.data?.unavailableSlots)
       });
   }, [id]);
-  console.log(tourDetails);
   const {
     placetitle,
     placedetails,
@@ -46,16 +53,40 @@ const TourDetails = () => {
     additionalInfo,
     faq,
     refundprocess,
+    price,
   } = tourDetails;
-
   const handlePeopleForReserve = () => {
     setModalForCountPeople((modalForCountPeople) =>
       setModalForCountPeople(!modalForCountPeople)
     );
   };
   const onChange = (date, dateString) => {
-    console.log(date, dateString);
+    // dateString);
   };
+
+  const isDateUnavailable = (date) => {
+    return unavailableDates.includes(date.format("YYYY-MM-DD"));
+  };
+
+
+  const orderDetails = {
+    card: tourDetails,
+    selectedDate: selectedDate?.format("YYYY-MM-DD"),
+    price: {
+      adult: tourDetails?.price?.[0]?.amount * adultCount,
+      children: tourDetails?.price?.[1]?.amount * childrenCount,
+      infants: tourDetails?.price?.[2]?.amount * infantsCount,
+      totalPrice: tourDetails?.price?.[0]?.amount * adultCount + tourDetails?.price?.[1]?.amount * childrenCount + tourDetails?.price?.[2]?.amount * infantsCount
+
+    },
+    travelerCount: {
+      adult: adultCount,
+      children: childrenCount,
+      infants: infantsCount
+    }
+  }
+  //
+
   return (
     <div className="lg:mx-10 mx-4 mt-24">
       <div>
@@ -90,13 +121,13 @@ const TourDetails = () => {
               surfing beaches of the North Shore. Plus, you'll have time to
               explore Haleiwa town.
             </p>
-            <p className="my-3">
+            { price && <p className="my-3">
               from{" "}
               <span className="text-2xl font-semibold">
-                ${costperperson}.00
+                ${price[0]?.amount}.00
               </span>{" "}
               per adult
-            </p>
+            </p>}
             <p className="flex items-center gap-2">
               <FaSimplybuilt></FaSimplybuilt>
               <span className="underline">Lowest price guarantee</span>{" "}
@@ -165,8 +196,8 @@ const TourDetails = () => {
               <input type="radio" name="my-accordion-2" />
               <div className="collapse-title text-xl font-medium">FAQ</div>
               <div className="collapse-content">
-                {faq?.map((item) => (
-                  <h2>
+                {faq?.map((item,index) => (
+                  <h2 key={index}>
                     <span className="font-bold">
                       Question: {item?.question}
                     </span>{" "}
@@ -188,22 +219,33 @@ const TourDetails = () => {
             </div>
           </div>
           <div className="border-2 h-fit m-6 rounded-2xl">
-         
             {/* revers your slot section */}
             <div className="p-4">
               <h2 className="text-3xl font-bold pb-6">Reserve your spot</h2>
               <div className="flex gap-4 relative">
                 <button className="font-bold h-10 border-2 border-black rounded-full">
-                  <Space direction="vertical" size={14}>
+                  {/* <Space direction="vertical" size={14}>
                     <DatePicker className="rounded-full" onChange={onChange} />
-                  </Space>
+                  </Space> */}
+                  <DatePicker
+                    onChange={handleDateChange}
+                    disabledDate={isDateUnavailable}
+                    className=" border-none focus:outline-none rounded-full"
+                  />
+                  {selectedDate && (
+                    <p className="mt-2">
+                      Selected date: {selectedDate.format("YYYY-MM-DD")}
+                    </p>
+                  )}
                 </button>
                 <button
                   onClick={handlePeopleForReserve}
                   className="btn btn-outline rounded-full  font-bold"
                 >
                   <FaUserGroup className="w-5"></FaUserGroup>
-                  <span className="text-xl">{adultCount + childrenCount + infantsCount}</span>
+                  <span className="text-xl">
+                    {adultCount + childrenCount + infantsCount}
+                  </span>
                 </button>
                 {modalForCountPeople && (
                   <div className="border-2 top-14 bg-white shadow-xl  rounded-2xl p-2 right-4 w-full lg:w-3/4 absolute">
@@ -294,7 +336,8 @@ const TourDetails = () => {
                           </button>
                         </div>
                       </div>
-                     {/*  <div className="flex justify-end">
+                      
+                      {/*  <div className="flex justify-end">
                         <button className="btn btn-warning rounded-full">
                           Update search
                         </button>
@@ -308,18 +351,31 @@ const TourDetails = () => {
                 <p className="text-xl font-bold">{placetitle}</p>
                 <p>Pickup included</p>
                 <p>
-                  {adultCount} Adults x ${800.0 * adultCount}
+                  {adultCount} Adults x ${price?.[0]?.amount * adultCount}
                 </p>
-                <p>{childrenCount} Children x ${400.00 * childrenCount}</p>
-                <p>{infantsCount} Infants x ${250.57 * infantsCount}</p>
-                <p className="text-xl font-semibold">Total ${800.0 * adultCount +400.00 * childrenCount +250.57 * infantsCount } </p>
+                <p>
+                  {childrenCount} Children x ${price?.[1]?.amount * childrenCount}
+                </p>
+                <p>
+                  {infantsCount} Infants x ${price?.[2]?.amount * infantsCount}
+                </p>
+                <p className="text-xl font-semibold">
+                  Total $
+                  {price?.[0]?.amount * adultCount +
+                    price?.[1]?.amount * childrenCount +
+                    price?.[2]?.amount * infantsCount}
+                </p>
                 <p>(No additional taxes or booking fees)</p>
               </div>
               <div className="flex gap-3 items-center justify-around">
                 <button className="btn rounded-full lg:px-14 btn-warning">
                   Add TO Favorite
                 </button>
-                <Link to='/contactDetails' className="btn rounded-full lg:px-14 btn-warning">
+                <Link  disabled={selectedDate == null}
+                  to="/contactDetails"
+                  state={{ orderDetails: orderDetails }}
+                  className="btn rounded-full lg:px-14 btn-warning"
+                >
                   Reserve Now
                 </Link>
               </div>

@@ -56,6 +56,7 @@ import PostStory from "../Pages/Community/PostAStory/PostStory";
 import SearchHotel from "../Pages/SearchResult/searchHotelPage/SearchHotel";
 
 import SearchDetails from "../Pages/SearchResult/SearchDetails";
+import PaymentDetails from "../Pages/Payment/PaymentDetails/PaymentDetails";
 
 const router = createBrowserRouter([
   {
@@ -207,6 +208,10 @@ const router = createBrowserRouter([
         path: "activityDetails",
         element: <ActivityDetails />,
       },
+      {
+        path: "/paymentDetails",
+        element: <PaymentDetails></PaymentDetails>
+      }
     ],
   },
   {
