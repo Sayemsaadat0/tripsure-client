@@ -7,9 +7,8 @@ const FamilyGuide = () => {
    
     return (
             <div 
-            className="hero h-[100%] " style={{ backgroundImage: 'url(https://i.ibb.co/c1RMT3p/2.png)' }}>
-                
-                <div className="hero-overlay bg-opacity-40"></div>
+            className="hero h-[100%] background1" >
+                <div className='hero-overlay bg-opacity-20'></div>
                 <div className="hero-content text-center text-neutral-content">
                     <div className="max-w-xl p-10 py-24 text-white">
                         <h1 className="mb-5 text-3xl font-bold ">The ultimate family travel guide</h1>
@@ -30,3 +29,6 @@ export default FamilyGuide;
 
 /* https://i.ibb.co/tm1YGg4/1.png
 https://i.ibb.co/c1RMT3p/2.png */
+
+/* 
+style={{ backgroundImage: 'url(https://i.ibb.co/c1RMT3p/2.png)' }} */

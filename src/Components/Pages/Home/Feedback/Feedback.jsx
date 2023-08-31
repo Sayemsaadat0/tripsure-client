@@ -9,11 +9,10 @@ import Rating from "react-rating";
 
 const Feedback = () => {
   const [feedbacks, setFeedbacks] = useState([]);
+  const [selectedReview, setSelectedReview] = useState(null);
 
-    const [selectedReview, setSelectedReview] = useState(null);
-    console.log(selectedReview)
 
- 
+
 
   useEffect(() => {
     fetch("https://tripsure-server-sayemsaadat0.vercel.app/addReview")
@@ -70,6 +69,7 @@ const Feedback = () => {
                 <div className="card border mb-16">
                   <div className="card-body m-0 p-0 h-72">
                     <div className="px-3 mt-5">
+                      <Rating style={{ maxWidth: 180 }} placeholderRating={feedback?.rating} readonly />
                       <img
                         className="h-20 w-20 rounded-full"
                         src={feedback?.user?.photoURL}
@@ -78,16 +78,20 @@ const Feedback = () => {
                     </div>
                     <div className="px-3">
                       <h2 className="font-bold">{feedback?.user?.displayName}</h2>
-                      <Rating style={{ maxWidth: 180 }}  placeholderRating={feedback?.rating}  readonly />
+
+
+
+
+
                       <p>{feedback?.textareaValue.split(" ").slice(0, 15).join(" ")}</p>
-                     {feedback?.textareaValue.split(" ").length > 15 && (
+                      {feedback?.textareaValue.split(" ").length > 15 && (
                         <button
                           className=" btn-link text-[#2a9f9f]"
-                          onClick={() => openModal(feedback)}
-                        >
-                          Read more
+                          onClick={() => openModal(feedback)}>Read more
                         </button>
-                      )} 
+                      )}
+
+
                     </div>
                   </div>
                 </div>
@@ -121,7 +125,7 @@ const Feedback = () => {
               </div>
             )}
           </form>
-        </dialog> 
+        </dialog>
       </div>
     </Container>
   );

@@ -6,41 +6,40 @@ import { Pagination } from 'swiper/modules';
 import Container from '../../../../LayOut/Container';
 import SectionTitle from '../../../Shared/SectionTitle/SectionTitle';
 import { Link } from 'react-router-dom';
-import { FaHeart } from 'react-icons/fa6';
+import { BsSuitHeart, BsSuitHeartFill } from 'react-icons/bs';
 import useAuth from '../../../../Hooks/useAuth';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import { GoLocation, GoStarFill } from 'react-icons/go';
+import { BiTimeFive } from 'react-icons/bi';
+import { MdFeedback } from 'react-icons/md';
 
 const Packages = () => {
   const { logOut, user } = useAuth();
   const [packages, setPackages] = useState([]);
+  const [favoritePackageIds, setFavoritePackageIds] = useState([]); // Store favorite package IDs
 
   useEffect(() => {
     fetch('https://tripsure-server-sayemsaadat0.vercel.app/packages')
       .then(res => res.json())
       .then(data => setPackages(data));
   }, []);
-  console.log(user?.email, packages);
-const handleAddToFavorite = (item) => {
-  axios.put(`http://localhost:1000/addToFavoritePackage/${user?.email}`,{"packageId": item})
-  .then((res)=>{
-    console.log(res.data);
-    if (res.data.modifiedCount > 0) {
-      Swal.fire({
-        position: "top-end",
-        icon: "success",
-        title: "Successfully added your Favorite List!",
-        showConfirmButton: false,
-        timer: 1500,
-      });
+
+  useEffect(() => {
+    if (user) {
+      axios.get(`https://tripsure-server-sayemsaadat0.vercel.app/getFavoritePackage/${user?.email}/favorite-packages`)
+        .then((res) => {
+          const favoriteIds = res.data.map(item => item._id);
+          setFavoritePackageIds(favoriteIds);
+        });
     }
-  })
-}
+  }, [user]);
+
   return (
-    <div  className='px-10'>
+    <div className='px-10 pb-10'>
       <Container>
-        <div >
-        <SectionTitle subText={'Create Memories'} text={'Select Your Ideal'} coloredText={'Tour Package'} />
+        <div>
+          <SectionTitle subText={'Create Memories'} text={'Select Your Ideal'} coloredText={'Tour Package'} />
           <Swiper
             slidesPerView={1}
             spaceBetween={10}
@@ -64,23 +63,53 @@ const handleAddToFavorite = (item) => {
             modules={[Pagination]}
             className='mySwiper'
           >
-            {packages.map((packageItem, index) => (
-              <SwiperSlide className='lg:p-10' key={index}>
-                <div className="card card-compact bg-white shadow-2xl relative ">
-                  <p className='badge badge-primary absolute right-1 top-3 animate-bounce p-2'>Packages</p>
-                  <figure><img className='relative rounded-lg' src={packageItem?.picture} alt={packageItem.title} />
-                  <button onClick={()=>handleAddToFavorite(packageItem?._id)} className="absolute bg-white top-2 right-2 p-2   border-black 2a9f9f rounded-full "><FaHeart className="text-xl"></FaHeart></button>
-                  </figure>
-                  <div className="card-body">
-                    <h2 className="card-title">{packageItem.title}</h2>
-                    <p>{packageItem.destination}</p>
-                    <div>
-                      <Link to={`/packageDetails/${packageItem?._id}`} className="btn">View Details</Link>
+            {packages.map((packageItem, index) => {
+              const isFavorite = favoritePackageIds.includes(packageItem._id);
+              return (
+                <SwiperSlide className='lg:p-10' key={index}>
+                  <div className="card card-compact bg-white shadow-md  relative h-96 overflow-hidden">
+                    <Link to={`/packageDetails/${packageItem?._id}`}>
+                      <img className='transition duration-700 ease-in-out hover:scale-110  rounded-lg' src={packageItem?.picture} alt={packageItem.title} />
+                    </Link>
+                    <button
+                      onClick={() => handleAddToFavorite(packageItem?._id)}
+                      className="absolute top-2 right-2 p-2  rounded-full bg-white">
+                      {isFavorite ? (
+                        <BsSuitHeartFill className="text-lg" />
+                      ) : (
+                        <BsSuitHeart className="text-lg" />
+                      )}
+                    </button>
+                    <div className="card-body">
+
+
+                      <h2 className="card-title text-black hover:text-[#79c7ff] duration-500">
+                        <Link to={`/packageDetails/${packageItem?._id}`}>
+                          {packageItem.title}
+                        </Link>
+                      </h2>
+
+
+
+
+
+
+
+
+                      <p className='flex gap-1 items-center'><GoLocation className='text-xl'></GoLocation> {packageItem.destination}</p>
+
+                      <p className='flex gap-1 items-center'><span className='font-bold text-lg text-red-500'>{packageItem.price?.adult}</span>/person</p>
+
+                      <div className='flex'>
+                        <p className='flex gap-1 items-center'><BiTimeFive className='text-xl'></BiTimeFive> Duration : {packageItem?.duration}</p>
+
+                        <p className='flex gap-1 items-center justify-end'><GoStarFill className=' text-red-500'></GoStarFill> {packageItem?.reviews?.ratings?.overall} (45)</p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </SwiperSlide>
-            ))}
+                </SwiperSlide>
+              );
+            })}
           </Swiper>
         </div>
       </Container>

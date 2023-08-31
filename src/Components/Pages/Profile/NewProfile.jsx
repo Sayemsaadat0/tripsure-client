@@ -18,13 +18,14 @@ const NewProfile = () => {
         if (image) {
             imageUpload(image)
                 .then(data => {
-                    const url = data.data.display_url
+                    const url = data.data?.display_url
                     addCoverPhoto(user.email, url)
                     console.log(data)
                 })
         }
     }, [image])
     console.log(userDetails)
+    
     const { countryName, phone, name, email, gender, photo, coverPhoto } = userDetails
 
     useEffect(() => {
@@ -38,7 +39,7 @@ const NewProfile = () => {
             <div className='bg-white mt-10  p-5 rounded-md  max-w-3xl mx-auto '>
                 <div className='relative'>
                     {/* cover photo */}
-                    <img className='h-[200px] md:h-[300px] w-full' src={coverPhoto ? coverPhoto: ''} alt="" />
+                    <img className='h-[200px] md:h-[300px] w-full' src={coverPhoto ? coverPhoto : 'no imge'} alt="" />
                     <label>
                         <input
                             onChange={event => { setImage(event.target.files[0]) }}

@@ -1,6 +1,5 @@
 import React from 'react';
 import Container from '../../../LayOut/Container';
-import logo from '../../../assets/logo.png'
 import { MdOutlineEmail } from 'react-icons/md'
 import { CiMobile4, CiYoutube } from 'react-icons/ci'
 import { SlLocationPin, SlClock } from 'react-icons/sl'
@@ -11,14 +10,15 @@ const Footar = () => {
     const currentYear = new Date().getFullYear()
     return (
         <div>
-            <footer className='footar-image text-white '>
-                <div className='bg-black w-full bg-opacity-50'>
+            {/* footar-image / next div -bg-black w-full bg-opacity-50 */}
+            <footer className=' text-black bg-[#fff4db]'>
+                <div className=''>
                     <Container>
                         <div className="p-4 mx-auto justify-between grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 py-8 md:py-12 gap-8">
                             <div className="mb-4 md:mb-0">
                                 <h2 className="text-xl font-semibold mb-2">About Us</h2>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquam purus a ultrices.</p>
-                                <img className='mt-4 w-full max-w-[200px]' src={"https://i.ibb.co/3dXKrfL/logo-3.png"} alt="" />
+                                <img className='mt-4 w-full max-w-[200px]' src={"https://i.ibb.co/tqZsGcq/logo-4.png"} alt="" />
                             </div>
                             <div>
                                 <h2 className="text-xl font-semibold mb-2">Contact</h2>
@@ -52,10 +52,10 @@ const Footar = () => {
                             </div>
                             <div>
                                 <h2 className="text-xl font-semibold mb-2">Follow Us</h2>
-                                <div className="flex space-x-4">
-                                    <span className='bg-[#418c92] p-2 rounded-full hoer:bg-[#6bccd3] hover:scale-110 cursor-pointer duration-300'><FaFacebookF size={20}></FaFacebookF></span>
-                                    <span className='bg-[#418c92] p-2 rounded-full hoer:bg-[#6bccd3] hover:scale-110 cursor-pointer duration-300'><FaYoutube size={20}></FaYoutube></span>
-                                    <span className='bg-[#418c92] p-2 rounded-full hoer:bg-[#6bccd3] hover:scale-110 cursor-pointer duration-300'><FaLinkedinIn size={20}></FaLinkedinIn></span>
+                                <div className="flex space-x-4 text-white">
+                                    <span className='bg-[#79c7ff] p-2 rounded-full hoer:bg-[#6bccd3] hover:scale-110 cursor-pointer duration-300'><FaFacebookF size={20}></FaFacebookF></span>
+                                    <span className='bg-[#79c7ff] p-2 rounded-full hoer:bg-[#6bccd3] hover:scale-110 cursor-pointer duration-300'><FaYoutube size={20}></FaYoutube></span>
+                                    <span className='bg-[#79c7ff] p-2 rounded-full hoer:bg-[#6bccd3] hover:scale-110 cursor-pointer duration-300'><FaLinkedinIn size={20}></FaLinkedinIn></span>
                                 </div>
                             </div>
                         </div>

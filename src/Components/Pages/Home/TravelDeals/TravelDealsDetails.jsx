@@ -51,7 +51,7 @@ const TravelDealsDetails = () => {
         <Container>
             <div className='my-4 md:my-20 px-4 md:px-10 leading-8'>
                 {/* primary */}
-                <h2 className='text-4xl font-bold text-[#7bb9b9]'>{title}</h2>
+                <h2 className='text-4xl font-bold text-[#79c7ff]'>{title}</h2>
                 <div className='flex items-center my-3 gap-5 '>
                     <p className='flex items-center gap-2 '><GoLocation className='text-xl'></GoLocation> {destination}</p>
                     <p className='flex items-center gap-2 '><BiTime className='text-xl'></BiTime> Duration : {duration}</p>

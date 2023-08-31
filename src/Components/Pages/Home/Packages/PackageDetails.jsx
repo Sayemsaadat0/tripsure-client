@@ -9,11 +9,6 @@ import { BiTime } from 'react-icons/bi';
 
 
 
-
-
-
-
-
 const PackageDetails = () => {
     const { id } = useParams();
     const [packageDetails, setPackageDetails] = useState({});
@@ -22,7 +17,6 @@ const PackageDetails = () => {
         destination,
         duration,
         price,
-        newPrice,
         departureDates,
         totalPeople,
         limitPerBooking,
@@ -37,7 +31,8 @@ const PackageDetails = () => {
         additionalInfo,
         hotels,
         includedItems,
-        reviews } = packageDetails
+        reviews } = packageDetails 
+        console.log(packageDetails);
     useEffect(() => {
         axios.get(`https://tripsure-server-sayemsaadat0.vercel.app/packages/${id}`)
             .then((response) => {

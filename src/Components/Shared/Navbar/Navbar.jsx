@@ -37,14 +37,14 @@ const Navbar = () => {
       });
   };
 
-  return (
-    <div className="fixed top-0 z-10 h-16 w-full backdrop-blur-lg ">
-      <div className='max-w-7xl mx-auto px-1 md:px-3 lg:px-5 h-full flex justify-between items-center  text-gray-800'>
-        <Link c to='/'>
-          <img className='md:w-full md:h-[30%] w-[120px] max-w-[180px]' src="https://i.ibb.co/3dXKrfL/logo-3.png" alt="" />
-        </Link>
+    return (
+        <div className="fixed top-0 z-10 h-16 w-full backdrop-blur-lg ">
+            <div className='max-w-7xl mx-auto px-1 md:px-3 lg:px-5 h-full flex justify-between items-center  text-gray-800'>
+                <Link  to='/'>
+                    <img className='md:w-full md:h-[30%] w-[120px] max-w-[180px]' src="https://i.ibb.co/tqZsGcq/logo-4.png" alt="" />
+                </Link>
 
-        <div className="hidden lg:flex items-center gap-4 lg:gap-7 text-[#62cbe3]">
+        <div className="hidden lg:flex items-center gap-4 lg:gap-7 text-[#79c7ff]">
           {naviItems.map((navItem) => (
             <div
               className=" cursor-pointer font-bold uppercase duration-300"
@@ -58,12 +58,12 @@ const Navbar = () => {
                   </label>
                   <ul
                     tabIndex={0}
-                    className="dropdown-content z-10  menu shadow text-[#428e8e] rounded-lg w-52 bg-base-300 p-0"
+                    className="dropdown-content z-10  menu shadow text-[#79c7ff] rounded-lg w-52 bg-base-300 p-0"
                   >
                     {navItem.routes.map((route, index) => (
                       <NavLink
                         className={({ isActive }) =>
-                          isActive ? "text-[#2d9693]" : ""
+                          isActive ? "text-[#79c7ff]" : ""
                         }
                         key={index}
                         to={`${route.linkName}`}
@@ -80,7 +80,7 @@ const Navbar = () => {
                   <NavLink
                     to={navItem.linkName}
                     className={({ isActive }) =>
-                      isActive ? "text-[#2d9693]" : ""
+                      isActive ? "text-[#79c7ff]" : ""
                     }
                   >
                     {navItem.name}
@@ -97,8 +97,7 @@ const Navbar = () => {
                 to="favorite"
                 className={`flex  items-center gap-2 hover:text-[#19a0c9] duration-500 w-full  font-medium uppercase ${({
                   isActive,
-                }) => (isActive ? "text-[#19a0c9]" : "")}`}
-              >
+                }) => (isActive ? "text-[#79c7ff]" : "")}`}>
                 <MdFavoriteBorder size={25} color="19a0c9"></MdFavoriteBorder>
                 <span>Favorite</span>
               </NavLink>
@@ -108,7 +107,7 @@ const Navbar = () => {
             <li className="my-link relative cursor-pointer list-none font-bold uppercase duration-300">
               <NavLink
                 to="/login"
-                className={({ isActive }) => (isActive ? "text-[#19a0c9]" : "")}
+                className={({ isActive }) => (isActive ? "text-[#79c7ff]" : "")}
               >
                 login
               </NavLink>

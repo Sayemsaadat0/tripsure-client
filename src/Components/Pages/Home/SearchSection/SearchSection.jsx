@@ -62,7 +62,7 @@ const SearchSection = () => {
   };
 
   return (
-    <div className="w-full md:max-w-3xl mx-auto mt-20 text-[#62cbe3]">
+    <div className="w-full md:max-w-3xl mx-auto mt-20 text-[#79c7ff]">
       <div>
         <div>
           <h1 className="text-center text-5xl font-bold hidden md:block">
@@ -122,7 +122,7 @@ const SearchSection = () => {
               className="
               hover:bg-[#6599b1] 
               text-white 
-              bg-[#62cbe3] 
+              bg-[#79c7ff] 
               transition duration-300 px-4 py-2 
               text-lg 
               font-semibold 
