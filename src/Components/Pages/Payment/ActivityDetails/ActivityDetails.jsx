@@ -4,10 +4,12 @@ import { useForm } from "react-hook-form";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import ReviewCard from "../ReviewCard";
 import BookInfoCard from "../BookInfoCard";
-import {Link} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 
 
 const ActivityDetails = () => {
+  const location = useLocation();
+  console.log(location);
     const {register,handleSubmit,formState: { errors },} = useForm();
       const onSubmit = (data) => {
         console.log(data);
@@ -67,15 +69,17 @@ const ActivityDetails = () => {
               )}
             </div>
           <div className="text-center">
+            <Link state={{orderDetails: location?.state?.orderDetails}} to={'/paymentDetails'}>
             <input
               className="btn w-[40%] rounded-full bg-black hover:bg-[#584B9F] text-white"
               type="submit"
               value="Next"
             />
+            </Link>
           </div>
         </form>
         <div className="space-y-3 w-4/4 mx-auto">
-            <ReviewCard />
+            <ReviewCard orderDetails={location?.state?.orderDetails} />
             <BookInfoCard />
         </div>
       </div>

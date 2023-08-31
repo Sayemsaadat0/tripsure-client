@@ -29,7 +29,7 @@ const SearchCountry = () => {
       <Container>
         <div>
           <h2 className="text-5xl font-bold">
-            <span className="text-red-500">Explore</span> Bangladesh
+            <span className="text-red-500">Explore</span> {country}
           </h2>
           {/* todo: todo overflow isnt working well */}
 

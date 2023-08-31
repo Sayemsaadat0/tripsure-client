@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import ShareModal from "../../Modal/ShareModal";
 
 const PlaceDetails = ({ isOpen, setIsOpen }) => {

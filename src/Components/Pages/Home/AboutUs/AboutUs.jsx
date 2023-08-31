@@ -5,11 +5,12 @@ import { Link } from "react-router-dom";
 
 const AboutUs = () => {
   return (
-    <div className="background ">
+    <div className="background">
       <Container>
-        <div className="text-white h-96 flex flex-col justify-center items-center ">
+        <div className="text-white flex flex-col justify-center items-center text-center h-96 ">
+
           <h2 className="text-3xl font-bold mb-3">Get to Know Us: Our Story and Values</h2>
-          <p className="w-[50%] mx-auto text-center">
+          <p className="md:w-[50%] p-4 mx-auto text-center">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
             harum libero dolorum fugit impedit blanditiis, magni ipsa tempora
             eius architecto voluptatum earum debitis placeat, nobis atque

@@ -1,44 +1,207 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import moment from 'moment';
+import { ResponsiveContainer, PieChart, Pie, Cell, Legend } from "recharts";
+
+
+
+
+
+
+import useUsers from '../../../../Hooks/useUsers';
 
 const AdminHome = () => {
+
+
+  // total Earnings chart
+  const data = [
+    { name: "Group A", month: "January", value: 400 },
+    { name: "Group B", month: "February", value: 300 },
+    { name: "Group B", month: "February", value: 300 },
+    { name: "Group B", month: "February", value: 300 },
+    { name: "Group C", month: "March", value: 300 },
+
+  ];
+const COLORS = ['#34a0a4' ]
+
+
+  // useEffect(() => {
+  //   handleSearch();
+  // }, [searchTerm]);
+
+  const users = useUsers()
+  
+
+
+
+  
+
   return (
-    <div className=' pt-4 px-4'>
+    <div className=' pt-4 px-4 mx-auto '>
 
       {/* input */}
-      <section className='flex  items-center justify-between'>
-      <div className="form-control ">
-      
-      <div className="input-group">
-        <input type="text" placeholder="Search User" className="input input-bordered" />
-        <button className="btn">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-          </svg>
-        </button>
+      <section className='flex justify-end'>
+
+
+        {/*  <div>
+          <div className="overflow-x-auto">
+            <table className="table">
+              head
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Name</th>
+                  <th>Job</th>
+                  <th>Favorite Color</th>
+                </tr>
+              </thead>
+              <tbody>
+
+                {
+                  searchResults.length > 0 && (
+                    searchResults.map(user => (
+                      <tr>
+                        <th>1</th>
+                        <td>{user.name}</td>
+                        <td>{user.email}</td>
+                        <td>Blue</td>
+                      </tr>
+                    ))
+                  )
+                }
+
+              </tbody>
+            </table>
+          </div>
+        </div> */}
+
+        {/* 
+    {searchResults.length > 0 && (
+        <div>
+          <h2>Search Results:</h2>
+          <ul>
+            {searchResults.map((user) => (
+              <li key={user._id}>{user.email}</li>
+            ))}
+          </ul>
+        </div>
+      )} */}
+        <div className='bg-white p-3 rounded-lg shadow-md'>
+          <p>{moment().format('Do MMMM YYYY, h:mm a')} </p>
+
+        </div>
+      </section>
+
+
+
+
+      <div className="flex flex-col lg:flex-row mt-4 ">
+        {/* left content */}
+        <div className="grid flex-grow card shadow-md shadow-gray-400 w-3/5 bg-white p-2">
+
+          <section className='grid grid-cols-1 md:grid-cols-3   w-full'>
+            <div className='border flex flex-col items-center  justify-center card bg-red-100 shadow-md w-40  h-28'>
+              <h3 className='text-3xl font-semibold '>45646</h3>
+              <p>Total Users</p>
+            </div>
+            <div className='border flex flex-col items-center justify-center card bg-amber-100 shadow-md w-40 h-28'>
+              <h3 className='text-3xl font-semibold '>150</h3>
+              <p>New Bookings</p>
+            </div>
+            <div className='border flex flex-col items-center justify-center card bg-indigo-200 shadow-md w-40 h-28'>
+              <h3 className='text-3xl font-semibold '>54k</h3>
+              <p>total earning</p>
+            </div>
+          </section>
+
+
+        </div>
+
+
+        <div className="divider lg:divider-horizontal"></div>
+
+        {/* right conent */}
+        <div className="grid flex-grow w-2/5 card bg-white  shadow-md shadow-gray-400 ">
+
+          {/* table */}
+          <div className="overflow-x-auto">
+            <p className='px-2 font-bold mt-2 text-xl'>New Users</p>
+            <table className="table">
+              {/* head */}
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Job</th>
+                  <th>Favorite Color</th>
+                </tr>
+              </thead>
+              <tbody>
+                {/* row 1 */}
+                <tr>
+                  <td><span className='font-semibold'>Abu Saadat Md sayem </span></td>
+                  <td>QualityControl@Specialist.com
+                    <br />
+                    country
+                  </td>
+                  <td>Blue</td>
+
+                </tr>
+                <tr>
+                  <td><span className='font-semibold'>Abu Saadat Md sayem </span></td>
+                  <td>QualityControl@Specialist.com
+                    <br />
+                    country
+                  </td>
+                  <td>Blue</td>
+                </tr>
+                <tr>
+                  <td><span className='font-semibold'>Abu Saadat Md sayem </span></td>
+                  <td>QualityControl@Specialist.com
+                    <br />
+                    country
+                  </td>
+                  <td>Blue</td>
+                </tr>
+                <tr>
+                  <td><span className='font-semibold'>Abu Saadat Md sayem </span></td>
+                  <td>QualityControl@Specialist.com
+                    <br />
+                    country
+                  </td>
+                  <td>Blue</td>
+                </tr>
+                <tr>
+                  <td><span className='font-semibold'>Abu Saadat Md sayem </span></td>
+                  <td>QualityControl@Specialist.com
+                    <br />
+                    country
+                  </td>
+                  <td>Blue</td>
+                </tr>
+              </tbody>
+            </table>
+            <hr />
+          </div>
+
+          {/* chart */}
+          <section className='flex  justify-center'>
+            <h2 className='px-4 py-2 font-bold text-xl'>Total Earning : 42k</h2>
+            <div style={{ width: 350, height: 200 }}>
+              <ResponsiveContainer>
+                <PieChart>
+                  <Pie dataKey="value" data={data} label fill="#fff">
+                    {data.map((entry, index) => (
+                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                    ))}
+                  </Pie>
+                </PieChart>
+              </ResponsiveContainer>
+            </div>
+            <hr />
+          </section>
+
+
+        </div>
       </div>
-    </div>
-    <div className='bg-white p-3 rounded-lg shadow-md'>
-      <p >7.47 pm 27 Aug 2023</p>
-    </div>
-      </section>
-
-
-
-      <section className='grid grid-cols-1 md:grid-cols-3 mt-10'>
-        <div className='border flex flex-col items-center justify-center card bg-white shadow-md w-40 h-40'>
-          <h3 className='text-3xl font-semibold '>545555</h3>
-          <p>Satisfied Customer</p>
-        </div>
-        <div className='border flex flex-col items-center justify-center card bg-white shadow-md w-40 h-40'>
-          <h3 className='text-3xl font-semibold '>545555</h3>
-          <p>Satisfied Customer</p>
-        </div>
-        <div className='border flex flex-col items-center justify-center card bg-white shadow-md w-40 h-40'>
-          <h3 className='text-3xl font-semibold '>545555</h3>
-          <p>Satisfied Customer</p>
-        </div>
-      </section>
-
     </div>
   );
 };
@@ -47,92 +210,5 @@ export default AdminHome;
 
 
 
+// {getRandomColor()}
 
-/* 
-import { BarChart, Bar, Tooltip } from "recharts";
-import VisitedChart from "./Overview/VisitedChart";
-import UserCharts from "./Overview/UserCharts"; */
-
-/* 
- const data = [
-    {
-      name: "Page A",
-      uv: 4000,
-      pv: 2400,
-      amt: 2400,
-    },
-    {
-      name: "Page B",
-      uv: 3000,
-      pv: 1398,
-      amt: 2210,
-    },
-    {
-      name: "Page C",
-      uv: 2000,
-      pv: 9800,
-      amt: 2290,
-    },
-    {
-      name: "Page D",
-      uv: 2780,
-      pv: 3908,
-      amt: 2000,
-    },
-    {
-      name: "Page E",
-      uv: 1890,
-      pv: 4800,
-      amt: 2181,
-    },
-  ];
-
-*/
-
-
-{/*  <div className="card rounded-md mt-10">
-            <h2 className="text-teal-600 font-semibold text-lg mb-4">
-              New Users
-            </h2>
-            <div className="overflow-x-auto">
-              <table className="table bg-[#bbe0f1] ">
-            
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>place</th>
-                    <th>status</th>
-                    <th>discount</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th>1</th>
-                    <td>Cy Ganderton</td>
-                    <td>Quality Control Specialist</td>
-                    <td>Blue</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div> */}
-{/*   <div className="card  bg-[#bbe0f1] ">
-          <div className="card-body">
-            <h2>Month OVerview</h2>
-
-            <BarChart width={400} height={300} data={data}>
-              <Bar  dataKey="uv" fill="#8884d8" />
-              <Tooltip />
-            </BarChart>
-          </div>
-        </div> */}
-
-
-{/*  <div className="mt-20 ">
-       <section className="">
-        <VisitedChart></VisitedChart>
-       </section>
-       <section>
-             <UserCharts></UserCharts>
-       </section>
-      </div> */}
