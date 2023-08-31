@@ -17,7 +17,7 @@ const CheckoutForm = ({price}) => {
     console.log(user);
 
     useEffect(()=>{
-        axios.post('http://localhost:1000/stripe-payment-intent', {price}, {
+        axios.post('https://tripsure-server-sayemsaadat0.vercel.app/stripe-payment-intent', {price}, {
       headers: {
         'Content-Type': 'application/json',
       },

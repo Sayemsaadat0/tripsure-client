@@ -1,12 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import { Navigation } from "swiper/modules";
-import Container from "../../../../LayOut/Container";
-import SectionTitle from "../../../Shared/SectionTitle/SectionTitle";
-import { Link } from "react-router-dom";
-// import { FaHeart } from "react-icons/fa6";
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import Container from '../../../../LayOut/Container';
+import SectionTitle from '../../../Shared/SectionTitle/SectionTitle';
 
 const TopDestinations = () => {
   const [TopDestinations, setTopDestinations] = useState([]);
@@ -18,60 +13,33 @@ const TopDestinations = () => {
   }, []);
   return (
     <Container>
-      <div className="bg-white b my-20 ">
-        <div>
-          <SectionTitle
-            text={"Explor the Ultimate"}
-            coloredText={"Top Destinations"}
-            subText={"Journey to Perfection"}
-          ></SectionTitle>
-        </div>
-        <div>
-          <Swiper
-            slidesPerView={1}
-            spaceBetween={10}
-            modules={[Navigation]}
-            className="mySwiper"
-            navigation={true}
-            onSlideChange={() => console.log("slide change")}
-            breakpoints={{
-              640: {
-                slidesPerView: 2,
-                spaceBetween: 10,
-              },
-              768: {
-                slidesPerView: 2,
-                spaceBetween: 20,
-              },
-              1024: {
-                slidesPerView: 4,
-                spaceBetween: 30,
-              },
-            }}
-            onSwiper={(swiper) => console.log(swiper)}
-          >
-            {TopDestinations.map((todo, index) => (
-              <SwiperSlide key={index}>
-                <Link to={`/top-destination-details/${todo?._id}`}>
-                  <div className="  re   hover:scale-110 duration-700">
-                    <img
-                      className="h-64  w-full  object-cover first-letter:rounded-tl-[5px] rounded-tr-[50px]"
-                      src={todo.picture}
-                      alt=""
-                    />
+      <SectionTitle
+        text={"Explor the Ultimate Top Destinations"}
+        subText={"Journey to Perfection"}>
+      </SectionTitle>
 
-                    <h2 className="absolute bottom-3 pb-3 pl-2  font-extrabold text-xl text-white left-3   ">
-                      {todo.cardtitle}
-                    </h2>
-                  </div>
-                </Link>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-      </div>
+      <section className='grid overflow-x-auto lg:grid-cols-4 gap-12 px-5 py-20 text-center'>
+
+        {TopDestinations.map((todo, index) => (
+          <Link key={index} to={`/top-destination-details/${todo?._id}`}>
+            <div className=" card hover:scale-110 duration-700">
+              <img
+                className="h-64 w-full object-cover"
+                src={todo.picture}
+                alt="" />
+
+              <h2 className="  font-extrabold text-xl    ">
+                {todo.cardtitle}
+              </h2>
+            </div>
+          </Link>
+        ))}
+      </section>
     </Container>
   );
 };
 
 export default TopDestinations;
+
+
+

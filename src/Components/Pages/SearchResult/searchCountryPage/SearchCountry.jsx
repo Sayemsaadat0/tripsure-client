@@ -15,7 +15,7 @@ const SearchCountry = () => {
   const { country } = useParams();
 
   useEffect(() => {
-    axios.get(`http://localhost:1000/tourCountry/${country}`).then((data) => {
+    axios.get(`https://tripsure-server-sayemsaadat0.vercel.app/tourCountry/${country}`).then((data) => {
       setCountryDatas(data.data).catch(err => console.log(err))
     });
   

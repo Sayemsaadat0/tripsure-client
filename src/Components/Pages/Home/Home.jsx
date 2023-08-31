@@ -17,10 +17,11 @@ const Home = () => {
             </section>
             <Banner></Banner>
             <section
-                className='shadow-lg bg-gradient-to-r from-sky-100 to-purple-100'>
+                className='pt-32'>
                 <TravelDeals></TravelDeals>
                 <Packages></Packages>
             </section>
+
             <FamilyGuide></FamilyGuide>
             <TopDestinations></TopDestinations>
             <TopThingsToDo></TopThingsToDo>
@@ -29,11 +30,14 @@ const Home = () => {
                 <AboutUs></AboutUs>
             </section>
 
-
-            <section className=''>
+            <section>
                 <WhyUs></WhyUs>
-                <Feedback></Feedback>
             </section>
+            
+            <section className='py-24'>
+            <Feedback></Feedback>
+            </section>
+
         </div>
     );
 };

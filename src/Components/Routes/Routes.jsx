@@ -219,7 +219,7 @@ const router = createBrowserRouter([
         path: "searchCardDetails/:id",
         element: <SearchDetails />,
         loader: ({ params }) =>
-          fetch(`http://localhost:1000/searchResult/${params.id}`),
+          fetch(`https://tripsure-server-sayemsaadat0.vercel.app/searchResult/${params.id}`),
       },
       {
         path: "contactDetails",

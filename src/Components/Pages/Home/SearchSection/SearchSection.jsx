@@ -48,7 +48,7 @@ const SearchSection = () => {
     const searchText = e.target.searchText.value;
     dispatch(setSearchText(searchText));
     fetch(
-      `http://localhost:1000/searchResult/${
+      `https://tripsure-server-sayemsaadat0.vercel.app/searchResult/${
         activeCategory.toLowerCase() === "search all"
           ? "search-all"
           : activeCategory.toLowerCase() === "things to do"
