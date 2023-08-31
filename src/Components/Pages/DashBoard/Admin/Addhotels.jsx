@@ -254,7 +254,10 @@ const Addhotels = () => {
               <select
                 required
                 className="w-full px-4 py-3 text-gray-800 border border-cyan-300  focus:outline-cyan-500 rounded-md"
-                name="category"
+                name="language"
+                id="language"
+                type="text"
+                placeholder="language"
               >
                 {languages.map((category) => (
                   <option value={category.label} key={category.label}>
@@ -287,7 +290,7 @@ const Addhotels = () => {
               >
                 Room Features
               </label>
-              <div className="flex items-center">
+              {/* <div className="flex items-center">
                 <label className="cursor-pointer label">
                   <span className="label-text">Select All</span>
                   <input
@@ -298,8 +301,8 @@ const Addhotels = () => {
                     onChange={handleFeatureChange}
                   />
                 </label>
-              </div>
-              {features.map((feature, index) => (
+              </div> */}
+              {/* {features.map((feature, index) => (
                 <div key={index} className="flex items-center">
                   <label className="cursor-pointer label">
                     <span className="label-text">{feature}</span>
@@ -313,7 +316,19 @@ const Addhotels = () => {
                     />
                   </label>
                 </div>
-              ))}
+              ))} */}
+               <select
+                required
+                className="w-full px-4 py-3 text-gray-800 border border-cyan-300  focus:outline-cyan-500 rounded-md"
+                name="roomFeatures"
+              >
+                {features.map((category) => (
+                  <option value={category} key={category}>
+                    {category}
+                  </option>
+                ))}
+              </select>
+
             </div>
             <div className=" p-4 bg-white w-full  m-auto rounded-lg">
               <div className="file_upload px-5 py-3 relative border-4 border-dotted border-gray-300 rounded-lg">
