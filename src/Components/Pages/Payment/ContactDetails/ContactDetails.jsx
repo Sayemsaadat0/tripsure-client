@@ -47,7 +47,7 @@ useEffect(()=>{
   return (
     <div>
       {
-        isLoading && <progress className="progress mt-44 w-56"></progress>
+        isLoading && <p className="text-red-600">Your Phone number is require</p>
       }
       <PaymentPath />
       <div className="mx-5 md:mx-20 py-10 flex flex-col lg:flex-row justify-between lg:gap-5">
