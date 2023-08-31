@@ -113,7 +113,7 @@ const Addpackage = () => {
     return (
         <div className="w-full">
         <div>
-          <h2 className="text-center font-bold text-xl mb-20">Add Packages </h2>
+          <h2 className=" font-bold text-xl my-15">Add Packages </h2>
         </div>
   
         <form onSubmit={handleSubmit}>
