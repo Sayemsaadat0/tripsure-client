@@ -21,8 +21,7 @@ const ErrorPage = () => {
                         gap-5  
                         items-center
                         border
-                        w-[40%]                        
-                        '
+                        w-[40%]  '
                             to='/'>
                             <BsArrowLeftCircle className='text-2xl'>
                             </BsArrowLeftCircle>
