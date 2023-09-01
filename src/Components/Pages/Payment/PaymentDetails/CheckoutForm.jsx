@@ -49,7 +49,7 @@ const CheckoutForm = ({ price, orderDetails }) => {
   useEffect(() => {
     axios
       .post(
-        "http://localhost:1000/stripe-payment-intent",
+        "https://tripsure-server-sayemsaadat0.vercel.app/stripe-payment-intent",
         { price },
         {
           headers: {
@@ -116,7 +116,7 @@ const CheckoutForm = ({ price, orderDetails }) => {
         travelerCount: orderDetails?.travelerCount,
       };
       axios
-        .post(`http://localhost:1000/payments`, payment)
+        .post(`https://tripsure-server-sayemsaadat0.vercel.app/payments`, payment)
         .then((response) => {
           console.log("Payment successful:", response.data);
           if (response.data.insertedId) {
