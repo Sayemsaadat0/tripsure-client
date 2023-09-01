@@ -16,7 +16,7 @@ const TravelDeals = () => {
   return (
     <Container>
       <SectionTitle subText={'Savings Safari'} text={'Hunt for the Hottest Deals'}  />
-      <section className='overflow-x-auto md:grid  md:grid-cols-3 gap-12 px-5 py-20 '>
+      <section className='overflow-x-auto md:grid  md:grid-cols-3 gap-12 px-5 py-12 '>
 
         {travelDeals.map((deals, index) => (
           <div className="card card-compact bg-base-100 border overflow-hidden">

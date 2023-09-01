@@ -36,8 +36,9 @@ const Packages = () => {
   }, [user]);
   return (
     <Container>
+
       <SectionTitle subText={'Create Memories'} text={'Select Your Ideal Tour Package'} />
-      <section className='grid overflow-x-auto lg:grid-cols-3 gap-12 px-5 py-20 '>
+      <section className='grid overflow-x-auto lg:grid-cols-3 gap-12 px-5 pb-24 pt-12'>
 
         {packages.map((packageItem, index) => {
           const isFavorite = favoritePackageIds.includes(packageItem._id);
