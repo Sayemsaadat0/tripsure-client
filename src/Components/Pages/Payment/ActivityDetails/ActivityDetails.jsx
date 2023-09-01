@@ -5,9 +5,11 @@ import { AiOutlineArrowRight } from "react-icons/ai";
 import ReviewCard from "../ReviewCard";
 import BookInfoCard from "../BookInfoCard";
 import {Link, useLocation} from "react-router-dom";
+import useAuth from "../../../../Hooks/useAuth";
 
 
 const ActivityDetails = () => {
+  const {user} = useAuth();
   const location = useLocation();
   console.log(location);
     const {register,handleSubmit,formState: { errors },} = useForm();
@@ -30,6 +32,7 @@ const ActivityDetails = () => {
               </label>
               <input
                 type="text"
+                value={user?.displayName?.split(' ')[0]}
                 {...register("firstName", { required: true })}
                 placeholder="First Name"
                 className="input input-bordered"
@@ -44,6 +47,7 @@ const ActivityDetails = () => {
               </label>
               <input
                 type="text"
+                value={user?.displayName?.split(' ')[1]}
                 {...register("lastName", { required: true })}
                 placeholder="Last Name"
                 className="input input-bordered"

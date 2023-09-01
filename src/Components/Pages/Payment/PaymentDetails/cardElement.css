@@ -1,0 +1,32 @@
+#card-element {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  #card-element::placeholder {
+    color: #ccc;
+  }
+  
+  /* Adjust the height and spacing as needed */
+  #card-element .StripeElement {
+    height: 40px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    transition: box-shadow 150ms ease;
+  }
+  
+  #card-element .StripeElement--focus {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  #card-number {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
