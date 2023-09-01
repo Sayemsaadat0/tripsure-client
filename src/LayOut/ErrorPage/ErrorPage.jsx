@@ -13,7 +13,7 @@ const ErrorPage = () => {
                 <div className="grid flex-grow  rounded-box ">
                     <div className='px-12'>
                         <h3 className='text-5xl '>Lost?</h3>
-                        <p className='font-extralight mt-2'>Some places are great to lose yourself in. But not on this occasion. <br /> You could reuturn to our home page.</p>
+                        <p className='font-extralight mt-2'>Some places are great to lose yourself in. But not on this occasion. <br /> You could reuturn to our home page</p>
                         <Link
                             className='flex 
                         mt-5
