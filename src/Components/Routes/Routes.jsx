@@ -78,6 +78,7 @@ import SearchDetails from "../Pages/SearchResult/SearchDetails";
 
 // payment
 import PaymentDetails from "../Pages/Payment/PaymentDetails/PaymentDetails";
+import AddRentalCars from "../Pages/DashBoard/Admin/Overview/AddRentalCars";
 
 const router = createBrowserRouter([
   {
@@ -202,17 +203,13 @@ const router = createBrowserRouter([
       {
         path: "searchResult",
         element: <SearchResult />,
-      }, 
-      {
-        path: 'SearchDetails',
-        element: <SearchDetails></SearchDetails>
       },
       {
         path: "searchCountry/:country",
         element: <SearchCountry />,
       },
       {
-        path: "searchHotel",
+        path: "searchHotel/:hotel",
         element: <SearchHotel />,
       },
       {
@@ -319,6 +316,10 @@ const router = createBrowserRouter([
         path: "addpackages",
         element: <Addpackage />,
       },
+      {
+        path: 'addrentalcars',
+        element: <AddRentalCars/>
+      }
     ],
   },
 ]);

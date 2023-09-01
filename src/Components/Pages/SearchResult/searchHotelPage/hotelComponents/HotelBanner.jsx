@@ -10,15 +10,13 @@ import { FaUserGroup } from "react-icons/fa6";
 import { FaMinus, FaPlus } from "react-icons/fa";
 
 const HotelBanner = () => {
-  const [modalForCountPeople, setModalForCountPeople] = useState(true);
+  const [modalForCountPeople, setModalForCountPeople] = useState(false);
   const [adultCount, setAdultCount] = useState(2);
   const [childrenCount, setChildrenCount] = useState(0);
   const [infantsCount, setInfantsCount] = useState(0);
 
   const handlePeopleForReserve = () => {
-    setModalForCountPeople((modalForCountPeople) =>
-      setModalForCountPeople(!modalForCountPeople)
-    );
+    setModalForCountPeople(!modalForCountPeople)
   };
 
   const handleDate = (date) => {
@@ -38,17 +36,11 @@ const HotelBanner = () => {
           <div className="grid md:grid-cols-3 w-[90%] mx-auto gap-3 ">
             <DatePicker onChange={handleDate} size={"large"} placeholder="Check in" />
             <DatePicker name="checkOut" size={"large"} placeholder="Check out" />
-            <button
-              onClick={handlePeopleForReserve}
-              className="btn btn-outline rounded-full  font-bold"
-            >
-              <FaUserGroup className="w-5"></FaUserGroup>
-              <span className="text-xl">
-                {adultCount + childrenCount + infantsCount}
-              </span>
-            </button>
+            <select name="" id="" onClick={handlePeopleForReserve}>
+              
+         </select>
             {modalForCountPeople && (
-              <div className="border-2 top-14 bg-white shadow-xl  rounded-2xl p-2 right-4 w-full lg:w-3/4 absolute">
+              <div className="border-2 top-14 bg-white shadow-xl  rounded-2xl p-2 mx-auto w-full lg:w-[100%] ">
                 <div className="m-4 space-y-3">
                   <div className="flex justify-between items-center">
                     <div>

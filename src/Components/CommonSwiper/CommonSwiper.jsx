@@ -9,6 +9,7 @@ import { FaCircle, FaCircleNotch } from "react-icons/fa6";
 
 
 const CommonSwiper = ({ allHotels }) => {
+
   return (
     <div>
       <Swiper
