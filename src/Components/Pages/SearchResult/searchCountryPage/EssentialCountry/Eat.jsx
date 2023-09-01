@@ -56,7 +56,7 @@ const Eat = ({ country }) => {
         {restaurants &&
           restaurants.slice(0, 9).map((restaurant) => (
             <SwiperSlide key={restaurant._id}>
-              <Link>
+              <Link to={`/restaurant-attraction-reviews/${restaurant?._id}`}>
                 <div>
                   <img
                     className="h-64  w-full  hover:scale-105 duration-300  object-cover hover:bg-white hover:opacity-80"

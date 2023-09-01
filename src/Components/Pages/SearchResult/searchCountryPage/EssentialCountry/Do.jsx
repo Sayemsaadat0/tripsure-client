@@ -55,7 +55,7 @@ const Do = ({ country }) => {
         {allCategory &&
           allCategory.slice(0, 9).map((category) => (
             <SwiperSlide>
-              <Link>
+              <Link  to={`/staythinngs-attraction-reviews/${category._id}`}>
                 <div>
                   <img
                     className="h-64  w-full  hover:scale-105 duration-300  object-cover hover:bg-white hover:opacity-80"
