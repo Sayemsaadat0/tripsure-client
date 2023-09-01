@@ -35,7 +35,7 @@ const stripePromise  = loadStripe(import.meta.env.VITE_PAYMENT_GETWAY_PK)
 
   return (
     <div>
-      <PaymentPath active={true}></PaymentPath>
+      <PaymentPath  active={true}></PaymentPath>
       <div className="mx-5 md:mx-20 mt-5">
         <Link to="/activityDetails">
           <span className="flex items-center gap-1 text-sm">
@@ -50,7 +50,7 @@ const stripePromise  = loadStripe(import.meta.env.VITE_PAYMENT_GETWAY_PK)
           <div className="lg:w-[60%] pt-10 mb-10 lg:mb-0">
             <h4 className="font-semibold mb-2">Pay with:</h4>
 
-            <form onClick={handleSubmit}>
+            {/* <form onClick={handleSubmit}>
               <div className="border-2 p-4 bg-[#F2F2F2] border-black rounded-xl">
                 <h2 className="text-xl font-bold flex items-center gap-2">
                   <span>Credit/Debit Card</span>
@@ -185,9 +185,9 @@ const stripePromise  = loadStripe(import.meta.env.VITE_PAYMENT_GETWAY_PK)
                   />
                 </Link>
               </div>
-            </form>
+            </form> */}
             <Elements stripe={stripePromise}>
-            <CheckoutForm price={totalPrice}></CheckoutForm>
+            <CheckoutForm orderDetails={location?.state?.orderDetails} price={totalPrice}></CheckoutForm>
             </Elements>
 
           </div>

@@ -15,6 +15,7 @@ import {
 import Rating from "react-rating";
 import { Link, useParams } from "react-router-dom";
 import { DatePicker, Space } from "antd";
+import useAuth from "../../../Hooks/useAuth";
 const { RangePicker } = DatePicker;
 
 const TourDetails = () => {
@@ -24,6 +25,7 @@ const TourDetails = () => {
   const [childrenCount, setChildrenCount] = useState(0);
   const [infantsCount, setInfantsCount] = useState(0);
   const { id } = useParams();
+  const {user} = useAuth()
   const [unavailableDates, setUnavailableDates] = useState([]);
  
   const [selectedDate, setSelectedDate] = useState(null);
@@ -372,7 +374,7 @@ const TourDetails = () => {
                   Add TO Favorite
                 </button>
                 <Link  disabled={selectedDate == null}
-                  to="/contactDetails"
+                 to={user ? '/contactDetails' : '/login'}
                   state={{ orderDetails: orderDetails }}
                   className="btn rounded-full lg:px-14 btn-warning"
                 >
