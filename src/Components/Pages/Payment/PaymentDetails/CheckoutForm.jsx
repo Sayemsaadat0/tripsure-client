@@ -1,6 +1,5 @@
 import {
   CardElement,
-
   useElements,
   useStripe,
 } from "@stripe/react-stripe-js";
@@ -19,6 +18,8 @@ import {
 import "./cardElement.css";
 import Swal from "sweetalert2";
 
+import "./cardElement.css";
+import Swal from "sweetalert2";
 
 
 
