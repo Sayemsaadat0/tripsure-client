@@ -35,7 +35,7 @@ const stripePromise  = loadStripe(import.meta.env.VITE_PAYMENT_GETWAY_PK)
 
   return (
     <div>
-      <PaymentPath ></PaymentPath>
+      <PaymentPath  active={true}></PaymentPath>
       <div className="mx-5 md:mx-20 mt-5">
         <Link to="/activityDetails">
           <span className="flex items-center gap-1 text-sm">
