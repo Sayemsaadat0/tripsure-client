@@ -181,7 +181,7 @@ const router = createBrowserRouter([
         element: <SearchCountry />,
       },
       {
-        path: "searchHotel",
+        path: "searchHotel/:hotel",
         element: <SearchHotel />,
       },
       {
