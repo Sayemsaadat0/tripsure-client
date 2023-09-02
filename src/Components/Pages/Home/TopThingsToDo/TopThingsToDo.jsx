@@ -21,9 +21,7 @@ const TopThingsToDo = () => {
 
   return (
     <Container>
-      <div data-AOS="fade-right"
-        data-aos-duration="3000"
-        data-aos-easing="ease"
+      <div
         className="my-20 px-10">
         <div>
           <SectionTitle text={'Top Things to Do for '} coloredText={'Every Adventurer'} subText={'Worldwide Escapes'}></SectionTitle>

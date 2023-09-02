@@ -33,7 +33,7 @@ const Feedback = () => {
 
   return (
     <Container>
-      <div data-AOS="fade-left" data-aos-duration="3000" data-aos-easing="ease">
+      <div>
         <div className="p-10 md:my-20">
           <SectionTitle
             subText={"Testimonials"}

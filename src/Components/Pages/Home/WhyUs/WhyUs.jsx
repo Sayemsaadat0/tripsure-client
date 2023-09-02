@@ -9,9 +9,7 @@ const WhyUs = () => {
         <Container>
             <SectionTitle subText={'Discover the Difference'} text={'why '} coloredText={'choose us?'}>
             </SectionTitle>
-            <div data-AOS="fade-right"
-                data-aos-duration="3000"
-                data-aos-easing="ease" className='grid grid-cols-1 lg:grid-cols-4 place-items-center  gap-10'>
+            <div className='grid grid-cols-1 lg:grid-cols-4 place-items-center  gap-10'>
                 {/* 1 */}
                 <div>
                     <img className='w-16 h-16' src="https://i.ibb.co/zHqNS1d/1.png" alt="" />
