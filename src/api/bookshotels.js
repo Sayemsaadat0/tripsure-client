@@ -1,5 +1,5 @@
 export const addRoom = async roomData => {
-    const response = await fetch(`https://tripsure-server-sayemsaadat0.vercel.app/dashboard/addhotels`, {
+    const response = await fetch(`http://localhost:1000/dashboard/addhotels`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
