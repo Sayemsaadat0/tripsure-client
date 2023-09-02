@@ -36,7 +36,7 @@ const Addresource = () => {
     },
     {
       picture: 'https://i.ibb.co/SxcP9T2/Restaurant-2.png',
-      route: 'addgueide',
+      route: 'addguide',
       name: "Add Guide",
     },
   ];

@@ -27,12 +27,12 @@ const TourDetails = () => {
   const { id } = useParams();
   const {user} = useAuth()
   const [unavailableDates, setUnavailableDates] = useState([]);
-  console.log(unavailableDates);
+ 
   const [selectedDate, setSelectedDate] = useState(null);
   const handleDateChange = (date) => {
     setSelectedDate(date);
   };
-  console.log(id);
+ 
   
   useEffect(() => {
     axios
@@ -42,7 +42,6 @@ const TourDetails = () => {
         setUnavailableDates(data.data?.unavailableSlots)
       });
   }, [id]);
-  console.log(tourDetails);
   const {
     placetitle,
     placedetails,
@@ -64,7 +63,7 @@ const TourDetails = () => {
     );
   };
   const onChange = (date, dateString) => {
-    console.log(date, dateString);
+    // dateString);
   };
 
   const isDateUnavailable = (date) => {
@@ -88,7 +87,7 @@ const TourDetails = () => {
       infants: infantsCount
     }
   }
-  console.log(orderDetails);
+  //
 
   return (
     <div className="lg:mx-10 mx-4 mt-24">
@@ -199,8 +198,8 @@ const TourDetails = () => {
               <input type="radio" name="my-accordion-2" />
               <div className="collapse-title text-xl font-medium">FAQ</div>
               <div className="collapse-content">
-                {faq?.map((item) => (
-                  <h2>
+                {faq?.map((item,index) => (
+                  <h2 key={index}>
                     <span className="font-bold">
                       Question: {item?.question}
                     </span>{" "}

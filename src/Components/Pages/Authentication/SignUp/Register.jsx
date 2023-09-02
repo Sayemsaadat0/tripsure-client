@@ -6,10 +6,19 @@ import Swal from 'sweetalert2';
 import useAuth from '../../../../Hooks/useAuth';
 import LoadingButton from '../../../Button/LoadingButton';
 import GoogleLogin from '../../../SocialLogin/GoogleLogin';
-import FacebookLogin from '../../../SocialLogin/FacebookLogin';
 import { saveUser } from '../../../../apiCall/users';
 import Particle from '../Particle';
 import { BsFillEyeFill, BsFillEyeSlashFill } from 'react-icons/bs';
+
+
+
+
+
+
+
+
+
+
 const Register = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const { createUser, updateUserProfile, logOut } = useAuth()
@@ -69,8 +78,8 @@ const Register = () => {
     return (
         <div className='authenticationImg'>
             <div className='flex items-center justify-center w-full min-h-screen'>
-                <Particle></Particle>
-                <div className="p-6  w-96 shadow-2xl hover:shadow-sm rounded-lg text-white md:hover:shadow-white duration-700">
+      
+                <div className="p-6  w-96 shadow-sm hover:shadow-sm rounded-lg text-white md:hover:shadow-white duration-700">
                     <div className='flex gap-2'>
                         <img className="w-16 h-16" src="https://i.ibb.co/ng9Sdrp/Untitled-design-1-unscreen.gif" alt="" />
                         <div>

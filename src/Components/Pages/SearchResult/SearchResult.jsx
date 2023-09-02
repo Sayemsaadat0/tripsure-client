@@ -1,16 +1,15 @@
-import React from "react";
-import Rating from "react-rating";
-import { FaCircle, FaCircleNotch } from "react-icons/fa";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import { MdLocationPin } from "react-icons/md";
 import SearchResultCard from "./SearchResultCard";
 import SearchSection from "../Home/SearchSection/SearchSection";
 import Container from "../../../LayOut/Container";
-import { useState } from "react";
+// import { useState } from "react";
 
 const SearchResult = () => {
   const searchData = useSelector((state) => state.searchData.data);
+  
   const searchText = useSelector((state) => state.searchData.searchText);
+
   console.log(searchData);
   // pagination
   const [currentPage, setCurrentPage] = useState(0);

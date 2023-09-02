@@ -2,7 +2,6 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const MobileDropdown = ({ navItem }) => {
-    console.log(navItem.routes)
     return (
         <details className="dropdown">
             <summary className="px-6 text-lg mb-1 cursor-pointer">{navItem.name}</summary>

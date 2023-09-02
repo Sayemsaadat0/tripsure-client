@@ -18,7 +18,7 @@ const TopDestinations = () => {
   }, []);
   return (
     <Container>
-      <div className="bg-white b my-20 px-10">
+      <div className="bg-white b my-20 ">
         <div>
           <SectionTitle
             text={"Explor the Ultimate"}
