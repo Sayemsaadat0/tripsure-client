@@ -16,7 +16,7 @@ const Eat = ({ country }) => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:1000/restaurant`)
+      .get(`https://tripsure-server-sayemsaadat0.vercel.app/restaurant`)
       .then((data) => {
         setRestaurants(data.data);
       })
@@ -56,7 +56,7 @@ const Eat = ({ country }) => {
         {restaurants &&
           restaurants.slice(0, 9).map((restaurant) => (
             <SwiperSlide key={restaurant._id}>
-              <Link>
+              <Link to={`/restaurant-attraction-reviews/${restaurant?._id}`}>
                 <div>
                   <img
                     className="h-64  w-full  hover:scale-105 duration-300  object-cover hover:bg-white hover:opacity-80"

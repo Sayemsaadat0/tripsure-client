@@ -17,23 +17,32 @@ const Home = () => {
             </section>
             <Banner></Banner>
             <section
-                className='shadow-lg bg-gradient-to-r from-sky-100 to-purple-100'>
+                className='pt-32 bg-gradient-to-tr from-[#efd9fb] to-[#d8f3dc]'>
                 <TravelDeals></TravelDeals>
                 <Packages></Packages>
             </section>
+
             <FamilyGuide></FamilyGuide>
-            <TopDestinations></TopDestinations>
-            <TopThingsToDo></TopThingsToDo>
+
+
+
+            <section className='md:my-40'>
+                <TopDestinations></TopDestinations>
+                <TopThingsToDo></TopThingsToDo>
+            </section>
 
             <section className='md:my-40'>
                 <AboutUs></AboutUs>
             </section>
 
-
-            <section className=''>
+            <section>
                 <WhyUs></WhyUs>
+            </section>
+
+            <section className='py-24'>
                 <Feedback></Feedback>
             </section>
+
         </div>
     );
 };

@@ -1,15 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css/navigation";
-import { Navigation } from "swiper/modules";
 import Container from "../../../../LayOut/Container";
 import { Link } from "react-router-dom";
 import SectionTitle from "../../../Shared/SectionTitle/SectionTitle";
 
-
 const TopThingsToDo = () => {
-
-
   const [TopThingsTodo, setTopThingsTodo] = useState([]);
 
   useEffect(() => {
@@ -17,66 +11,70 @@ const TopThingsToDo = () => {
       .then((res) => res.json())
       .then((data) => setTopThingsTodo(data));
   }, []);
-
-
   return (
     <Container>
-      <div
-        className="my-20 px-10">
-        <div>
-          <SectionTitle text={'Top Things to Do for '} coloredText={'Every Adventurer'} subText={'Worldwide Escapes'}></SectionTitle>
-        </div>
+      <SectionTitle text={'Top Things to Do for Every Adventurer'} subText={'Worldwide Escapes'}></SectionTitle>
 
-        <Swiper
-          slidesPerView={1}
-          spaceBetween={10}
-          modules={[Navigation]} className="mySwiper"
-          navigation={true}
-          onSlideChange={() => console.log('slide change')}
-          breakpoints={{
-            640: {
-              slidesPerView: 2,
-              spaceBetween: 10,
-            },
-            768: {
-              slidesPerView: 2,
-              spaceBetween: 20,
-            },
-            1024: {
-              slidesPerView: 4,
-              spaceBetween: 30,
-            },
-          }}
-          onSwiper={(swiper) => console.log(swiper)}
-        >
+      <section className='grid overflow-x-auto lg:grid-cols-4 gap-12 px-5 pb-20 pt-12'>
 
+        {
+          TopThingsTodo.map((todo, index) => (
 
-          {
-            TopThingsTodo.map((todo, index) => (
+            <Link key={index} to={`/travelerChoose-thingsToDo/${todo?.categoryName}`}>
+              <div className="">
+                <img className='h-40 hover:scale-110 duration-700 rounded-lg w-full  
+                relative 
+                object-cover'
+                  src={todo.picture} alt="" />
+                <h2 className='font-bold mt-3  '>{todo.categoryName}</h2>
+              </div>
+            </Link>
+          ))}
 
-
-              <SwiperSlide key={index}>
-                <Link to={`/travelerChoose-thingsToDo/${todo?.categoryName}`}>
-                  <div className=" 
-                hover:scale-110 duration-700 ">
-                    <img className=' 
-                    rounded-tl-[5px] 
-                    rounded-tr-[50px]    
-                    h-64 w-full  relative object-cover ' src={todo.picture} alt="" />
-                    <h2 className='absolute bottom-2 pb-3 pl-2  font-extrabold text-xl text-white left-5  '>{todo.categoryName}</h2>
-                  </div>
-                </Link>
-              </SwiperSlide>
-
-
-            ))
-          }
-
-        </Swiper>
-      </div>
-
+      </section>
     </Container>
   );
 };
 
 export default TopThingsToDo;
+
+
+/* 
+
+
+
+const TopDestinations = () => {
+  const [TopDestinations, setTopDestinations] = useState([]);
+
+  useEffect(() => {
+    fetch("https://tripsure-server-sayemsaadat0.vercel.app/top-destinations")
+      .then((res) => res.json())
+      .then((data) => setTopDestinations(data));
+  }, []);
+  return (
+   
+  );
+};
+
+export default TopDestinations;
+
+
+
+ */
+
+
+
+/* 
+
+
+
+
+
+
+ */
+
+/* 
+
+
+   
+*/

@@ -15,7 +15,7 @@ const Stay = ({ countryDatas, country }) => {
 
   return (
     <div>
-      <h2 className="text-3xl font-semibold my-10">Essential Bangladesh</h2>
+      <h2 className="text-3xl font-semibold my-10">Essential {country }</h2>
 
       <Swiper
           slidesPerView={1}
@@ -48,10 +48,10 @@ const Stay = ({ countryDatas, country }) => {
         </SwiperSlide>
 
         {countryDatas &&
-          countryDatas.map((countryData) => (
+          countryDatas.slice(0,9).map((countryData) => (
           
             <SwiperSlide>
-              <Link>
+              <Link to={`/dothings-attraction-reviews/${countryData._id}`}>
                 <div>
                   <img
                     className="h-64  w-full  hover:scale-105 duration-300  object-cover hover:bg-white hover:opacity-80"

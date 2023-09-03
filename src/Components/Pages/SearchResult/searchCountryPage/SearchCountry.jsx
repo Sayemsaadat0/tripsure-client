@@ -15,13 +15,13 @@ const SearchCountry = () => {
   const { country } = useParams();
 
   useEffect(() => {
-    axios.get(`http://localhost:1000/tourCountry/${country}`).then((data) => {
+    axios.get(`https://tripsure-server-sayemsaadat0.vercel.app/tourCountry/${country}`).then((data) => {
       setCountryDatas(data.data).catch(err => console.log(err))
     });
   
   }, [country]);
-   
- 
+
+
 
 
   return (
@@ -36,12 +36,12 @@ const SearchCountry = () => {
           <div className="mt-8 flex md:grid  md:grid-cols-4  overflow-x-auto gap-4 p-4">
             <button className="btn">Hotel</button>
             <button className="btn">Thingn to Do</button>
-            <button className="btn">Thingn to Do</button>
-            <button className="btn">Thingn to Do</button>
-            <button className="btn">Thingn to Do</button>
-            <button className="btn">Thingn to Do</button>
-            <button className="btn">Thingn to Do</button>
-            <button className="btn">Thingn to Do</button>
+            <button className="btn">Vacantion Rentals</button>
+            <button className="btn"> Restaurants</button>
+            <button className="btn">Travel Forums</button>
+            <button className="btn">Hire a Trip Desiger</button>
+            <button className="btn">Flights</button>
+            <button className="btn">More</button>
           </div>
           <div className="grid md:grid-cols-3 gap-1 mt-8">
             <div className="md:col-span-2 col-span-3 ">

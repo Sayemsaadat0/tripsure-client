@@ -20,7 +20,7 @@ const PostStory = () => {
             .then(data => {
                 const url = data.data.display_url
                 const story = {description, title, withYou, whenYouGo, url, imgUrlTitleDescription}
-                axios.post(`http://localhost:1000/sotry`, story)
+                axios.post(`https://tripsure-server-sayemsaadat0.vercel.app/sotry`, story)
                 .then(res => {
                     console.log(res)
                 })

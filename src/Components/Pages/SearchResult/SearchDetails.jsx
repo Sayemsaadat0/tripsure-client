@@ -23,7 +23,7 @@ const SearchDetails = () => {
     specialties,
     description,
   } = searchDetailsData;
-
+  console.log('searchDetailsData',searchDetailsData)
   const ratingValues = Object.values(ratings);
   const sumOfRatings = ratingValues.reduce((sum, rating) => sum + rating, 0);
   const averageRating = (sumOfRatings / ratingValues.length).toFixed(1);
