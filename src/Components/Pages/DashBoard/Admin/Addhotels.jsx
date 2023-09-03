@@ -269,14 +269,7 @@ const Addhotels = () => {
               >
                 Language
               </label>
-              {/* <input
-                className="w-full px-4 py-3 text-gray-800 border border-cyan-300  focus:outline-cyan-500 rounded-md "
-                name="language"
-                id="language"
-                type="text"
-                placeholder="language"
-                required
-              /> */}
+             
               <select
                 required
                 className="w-full px-4 py-3 text-gray-800 border border-cyan-300  focus:outline-cyan-500 rounded-md"
@@ -321,7 +314,7 @@ const Addhotels = () => {
             </div>
 
             {features.map((category) => (
-              <label key={category} className="flex items-center space-x-2">
+              <label key={category} className=" flex  items-center space-x-2">
                 <input
                   type="checkbox"
                   name="roomFeatures"

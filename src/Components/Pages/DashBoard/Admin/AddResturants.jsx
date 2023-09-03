@@ -2,28 +2,43 @@ import React, { useState } from "react";
 import { TbFidgetSpinner } from "react-icons/tb";
 import { imageUpload } from "../../../../api/utilities";
 import { addresturants } from "../../../../api/bookshotels";
+
 const AddResturants = () => {
   const [loading, setLoading] = useState(false);
-
+  const [selectedRoomFeatures, setSelectedRoomFeatures] = useState([]);
+  const [selectAll, setSelectAll] = useState(false);
   const handleSubmit = (event) => {
     event.preventDefault();
     setLoading(true);
     const form = event.target;
     const title = form.title.value;
-    const address = form.address.value;
+    // const state = form.state.value;
+    // const city = form.city.value;
+    // const street = form.street.value;
+    // const postal_code = form.postal_code.value;
+    // const country = form.country.value;
     const cuisine = form.cuisine.value;
     const hours = form.hours.value;
     const menu = form.menu.value;
     const email = form.email.value;
     const number = form.number.value;
     const reviews = form.reviews.value;
-    const speciality = form.speciality.value;
-    const ratings = form.ratings.value;
-    const features = form.features.value;
+    // const speciality = form.speciality.value;
+    const food = form.food.value;
+    const service = form.service.value;
+    const atmosphere = form.atmosphere.value;
+    // const features = form.features.value;
     const faq = form.faq.value;
     const description = form.description.value;
     const picture = event.target.image.files[0];
 
+    const address = {
+      street: form.street.value,
+      city: form.city.value,
+      state: form.state.value,
+      postal_code:parseFloat( form.postal_code.value),
+      country: form.country.value,
+    };
     const bookresturants = {
       title,
       address,
@@ -33,16 +48,20 @@ const AddResturants = () => {
       email,
       number,
       reviews,
-      speciality,
-      ratings,
-      features,
+      speciality: selectedspecial,
+      ratings: {
+        food: parseFloat(food),
+        service: parseFloat(service),
+        atmosphere: parseFloat(atmosphere),
+      },
+      features: selectedRoomFeatures,
       faq,
       description,
       picture,
     };
-    console.log(bookresturants);
-
+console.log(bookresturants)
     setUploadButtonText("Uploading...");
+
     // Upload image
     imageUpload(picture)
       .then((data) => {
@@ -55,21 +74,22 @@ const AddResturants = () => {
           email,
           number,
           reviews,
-          speciality,
-          features,
+          speciality: selectedspecial,
+          features: selectedRoomFeatures,
           faq,
           description,
           ratings: parseFloat(ratings),
           picture: data.data.display_url,
         };
 
-        // post room data to server
+        // Post restaurant data to the server
         addresturants(bookresturants)
           .then((data) => {
             console.log(data);
             setUploadButtonText("Uploaded!");
             setLoading(false);
-            alert("resturants Added!");
+            
+            alert("Restaurant Added!");
             // navigate('/dashboard/adminhome')
           })
           .catch((err) => console.log(err));
@@ -88,10 +108,93 @@ const AddResturants = () => {
     setUploadButtonText(image.name);
   };
 
+
+
+  const features = [
+    "Elegant Dining",
+      "Private Events Space",
+      "Wine and Cocktail Bar",
+      "Live Music on Fridays",
+      "Outdoor Patio Seating"];
+   
+  
+    const handleRoomFeatureChange = (event) => {
+      const feature = event.target.value;
+      if (event.target.checked) {
+        // Add the feature to the selectedRoomFeatures array if it's checked
+        setSelectedRoomFeatures([...selectedRoomFeatures, feature]);
+      } else {
+        // Remove the feature from the selectedRoomFeatures array if it's unchecked
+        setSelectedRoomFeatures(
+          selectedRoomFeatures.filter((item) => item !== feature)
+        );
+      }
+    };
+
+
+  
+    const handleSelectAllChange = (event) => {
+      const checked = event.target.checked;
+      setSelectAll(checked);
+  
+      // If "Select All" is checked, set all room features as selected; otherwise, clear the selectedRoomFeatures array.
+      if (checked) {
+        setSelectedRoomFeatures(features);
+      } else {
+        setSelectedRoomFeatures([]);
+      }
+    };
+
+ const [selectedspecial, setSelectedspecial] = useState([]);
+    const [selectAlls, setSelectAlls] = useState(false);
+  
+    const specialties = [
+      "Signature Seafood Risotto",
+      "Prime Rib with Truffle Butter",
+      "Decadent Chocolate Fondue"
+    ];
+
+    const handleSpecialChange = (event) => {
+      const specialties = event.target.value;
+      if (event.target.checked) {
+        // Add the feature to the selectedRoomFeatures array if it's checked
+        setSelectedspecial([...selectedspecial, specialties]);
+      } else {
+        // Remove the feature from the selectedRoomFeatures array if it's unchecked
+        setSelectedspecial(
+          selectedspecial.filter((item) => item !== specialties)
+        );
+      }
+    };
+
+
+  
+    const handleSelectAllChanges = (event) => {
+      const checked = event.target.checked;
+      setSelectAlls(checked);
+  
+      // If "Select All" is checked, set all room features as selected; otherwise, clear the selectedRoomFeatures array.
+      if (checked) {
+        setSelectedspecial(specialties);
+      } else {
+        setSelectedspecial([]);
+      }
+    };
+
+
+
+
+
+
+
+
+
+
+
   return (
     <div className="max-w-screen-lg mx-auto px-4 py-8">
       <div>
-        <h2 className="text-2xl mt-10 mb-6">Add Resturants </h2>
+        <h2 className="text-2xl mt-10 mb-6">Add Restaurants </h2>
       </div>
 
       <form onSubmit={handleSubmit}>
@@ -102,7 +205,7 @@ const AddResturants = () => {
                 Title
               </label>
               <input
-                className="w-full px-4 py-3 text-gray-800 border border-cyan-300  focus:outline-cyan-500 rounded-md "
+                className="w-full px-4 py-3 text-gray-800 border border-cyan-300 focus:outline-cyan-500 rounded-md"
                 name="title"
                 id="title"
                 type="text"
@@ -111,54 +214,99 @@ const AddResturants = () => {
               />
             </div>
             <div className="space-y-1 text-sm">
-              <label htmlFor="address" className="block text-gray-600 text-lg mb-2">
-                Address Name
+              <label htmlFor="city" className="block text-gray-600 text-lg mb-2">
+                city
               </label>
               <input
-                className="w-full px-4 py-3 text-gray-800 border border-cyan-300  focus:outline-cyan-500 rounded-md "
-                name="address"
-                id="address"
+                className="w-full px-4 py-3 text-gray-800 border border-cyan-300 focus:outline-cyan-500 rounded-md"
+                name="city"
+                id="city"
                 type="text"
-                placeholder=" Address Name"
+                placeholder="city"
                 required
               />
             </div>
             <div className="space-y-1 text-sm">
-              <label htmlFor="cuisine" className="block text-gray-600 text-lg mb-2">
-                cuisine
+              <label htmlFor="country" className="block text-gray-600 text-lg mb-2">
+              country
               </label>
               <input
-                className="w-full px-4 py-3 text-gray-800 border border-cyan-300  focus:outline-cyan-500 rounded-md "
+                className="w-full px-4 py-3 text-gray-800 border border-cyan-300 focus:outline-cyan-500 rounded-md"
+                name="country"
+                id="country"
+                type="text"
+                placeholder="country"
+                required
+              />
+            </div>
+            <div className="space-y-1 text-sm ">
+            <label htmlFor="address" className="block text-gray-600 text-lg mb-2">
+                Address:
+              </label>
+             <div className="flex items-center gap-2">
+              <input
+                className="w-32 px-4 py-3 text-gray-800 border border-cyan-300 focus:outline-cyan-500 rounded-md"
+                name="street"
+                id="street"
+                type="text"
+                placeholder="Address"
+                required
+              />
+              <input
+                className="w-32 px-4 py-3 text-gray-800 border border-cyan-300 focus:outline-cyan-500 rounded-md"
+                name="state"
+                id="state"
+                type="text"
+                placeholder="state"
+                required
+              />
+              <input
+                className="w-32 px-4 py-3 text-gray-800 border border-cyan-300 focus:outline-cyan-500 rounded-md"
+                name="postal_code"
+                id="postal_code"
+                type="text"
+                placeholder="postal_code"
+                required
+              />
+             </div>
+           
+            </div>
+            <div className="space-y-1 text-sm">
+              <label htmlFor="cuisine" className="block text-gray-600 text-lg mb-2">
+                Cuisine
+              </label>
+              <input
+                className="w-full px-4 py-3 text-gray-800 border border-cyan-300 focus:outline-cyan-500 rounded-md"
                 name="cuisine"
                 id="cuisine"
                 type="text"
-                placeholder="cuisine "
+                placeholder="Cuisine"
                 required
               />
             </div>
             <div className="space-y-1 text-sm">
               <label htmlFor="menu" className="block text-gray-600 text-lg mb-2">
-                menu
+                Menu
               </label>
               <input
-                className="w-full px-4 py-3 text-gray-800 border border-cyan-300  focus:outline-cyan-500 rounded-md "
+                className="w-full px-4 py-3 text-gray-800 border border-cyan-300 focus:outline-cyan-500 rounded-md"
                 name="menu"
                 id="menu"
                 type="text"
-                placeholder="  menu "
+                placeholder="Menu"
                 required
               />
             </div>
             <div className="space-y-1 text-sm">
               <label htmlFor="email" className="block text-gray-600 text-lg mb-2">
-                email
+                Email
               </label>
               <input
-                className="w-full px-4 py-3 text-gray-800 border border-cyan-300  focus:outline-cyan-500 rounded-md "
+                className="w-full px-4 py-3 text-gray-800 border border-cyan-300 focus:outline-cyan-500 rounded-md"
                 name="email"
                 id="email"
                 type="text"
-                placeholder="  email "
+                placeholder="Email"
                 required
               />
             </div>
@@ -167,11 +315,11 @@ const AddResturants = () => {
                 Hours
               </label>
               <input
-                className="w-full px-4 py-3 text-gray-800 border border-cyan-300  focus:outline-cyan-500 rounded-md "
+                className="w-full px-4 py-3 text-gray-800 border border-cyan-300 focus:outline-cyan-500 rounded-md"
                 name="hours"
                 id="hours"
                 type="time"
-                placeholder="hours how many days stay "
+                placeholder="Hours of Operation"
                 required
               />
             </div>
@@ -180,57 +328,102 @@ const AddResturants = () => {
                 Reviews
               </label>
               <input
-                className="w-full px-4 py-3 text-gray-800 border border-cyan-300  focus:outline-cyan-500 rounded-md "
+                className="w-full px-4 py-3 text-gray-800 border border-cyan-300 focus:outline-cyan-500 rounded-md"
                 name="reviews"
                 id="reviews"
                 type="text"
-                placeholder="reviews "
+                placeholder="Reviews"
                 required
               />
             </div>
           </div>
           <div className="space-y-6">
-            <div className="space-y-1 text-sm">
-              <label htmlFor="speciality" className="block text-gray-600 text-lg mb-2">
-                speciality
+          <div className="space-y-1 text-sm">
+              <label className="flex items-center space-x-2">
+                <input
+                  type="checkbox"
+                  onChange={handleSelectAllChanges}
+                  checked={selectAlls}
+                />
+                <span>Select All</span>
               </label>
-              <input
-                className="w-full px-4 py-3 text-gray-800 border border-cyan-300  focus:outline-cyan-500 rounded-md "
-                name="speciality"
-                id="speciality"
-                type="text"
-                placeholder="speciality"
-                required
-              />
             </div>
 
-            <div className="space-y-1 text-sm">
+            {specialties.map((category) => (
+              <label key={category} className=" flex  items-center space-x-2">
+                <input
+                  type="checkbox"
+                  name="specialties"
+                  value={category}
+                  onChange={handleSpecialChange}
+                  checked={selectedspecial.includes(category)}
+                />
+                <span>{category}</span>
+              </label>
+            ))}
+
+            <div className="space-y-1 text-sm flex gap-2 items-center">
               <label htmlFor="ratings" className="block text-gray-600 text-lg mb-2">
-                ratings
+                Ratings
               </label>
               <input
-                className="w-full px-4 py-3 text-gray-800 border border-cyan-300  focus:outline-cyan-500 rounded-md "
-                name="ratings"
+                className="w-32 px-4 py-3 text-gray-800 border border-cyan-300 focus:outline-cyan-500 rounded-md"
+                name="food"
                 id="ratings"
-                type="text"
-                placeholder="ratings"
+                type="number"
+                step="0.1"
+                min="0"
+                max="5"
+                placeholder="food"
+                required
+              />
+              <input
+                className="w-32 px-4 py-3 text-gray-800 border border-cyan-300 focus:outline-cyan-500 rounded-md"
+                name="service"
+                id="ratings"
+                type="number"
+                step="0.1"
+                min="0"
+                max="5"
+                placeholder="service"
+                required
+              />
+              <input
+                className="w-32 px-4 py-3 text-gray-800 border border-cyan-300 focus:outline-cyan-500 rounded-md"
+                name="atmosphere"
+                id="ratings"
+                type="number"
+                step="0.1"
+                min="0"
+                max="5"
+                placeholder="atmosphere"
                 required
               />
             </div>
             <div className="space-y-1 text-sm">
-              <label htmlFor="features" className="block text-gray-600 text-lg mb-2">
-                Features
+              <label className="flex items-center space-x-2">
+                <input
+                  type="checkbox"
+                  onChange={handleSelectAllChange}
+                  checked={selectAll}
+                />
+                <span>Select All</span>
               </label>
-              <input
-                className="w-full px-4 py-3 text-gray-800 border border-cyan-300  focus:outline-cyan-500 rounded-md "
-                name="features"
-                id="features"
-                type="text"
-                placeholder="roomFeatures"
-                required
-              />
             </div>
-            <div className=" p-4 bg-white w-full  m-auto rounded-lg">
+
+            {features.map((category) => (
+              <label key={category} className=" flex  items-center space-x-2">
+                <input
+                  type="checkbox"
+                  name="features"
+                  value={category}
+                  onChange={handleRoomFeatureChange}
+                  checked={selectedRoomFeatures.includes(category)}
+                />
+                <span>{category}</span>
+              </label>
+            ))}
+            <div className="p-4 bg-white w-full m-auto rounded-lg">
               <div className="file_upload px-5 py-3 relative border-4 border-dotted border-gray-300 rounded-lg">
                 <div className="flex flex-col w-max mx-auto text-center">
                   <label>
@@ -254,42 +447,42 @@ const AddResturants = () => {
             </div>
             <div className="space-y-1 text-sm">
               <label htmlFor="faq" className="block text-gray-600 text-lg mb-2">
-                Faq
+                FAQ
               </label>
               <input
-                className="w-full px-4 py-3 text-gray-800 border border-cyan-300  focus:outline-cyan-500 rounded-md "
+                className="w-full px-4 py-3 text-gray-800 border border-cyan-300 focus:outline-cyan-500 rounded-md"
                 name="faq"
                 id="faq"
                 type="text"
-                placeholder="faq"
+                placeholder="FAQ"
                 required
               />
             </div>
             <div className="space-y-1 text-sm">
               <label htmlFor="number" className="block text-gray-600 text-lg mb-2">
-                number
+                Number
               </label>
               <input
-                className="w-full px-4 py-3 text-gray-800 border border-cyan-300  focus:outline-cyan-500 rounded-md "
+                className="w-full px-4 py-3 text-gray-800 border border-cyan-300 focus:outline-cyan-500 rounded-md"
                 name="number"
                 id="number"
                 type="text"
-                placeholder="number"
+                placeholder="Number"
                 required
               />
             </div>
             <div className="space-y-1 text-sm">
               <label
-                htmlFor=" description"
+                htmlFor="description"
                 className="block text-gray-600 text-lg mb-2"
               >
-                description
+                Description
               </label>
-
               <textarea
                 id="description"
-                className="block rounded-md focus:rose-300 w-full h-32 px-4 py-3 text-gray-800  border border-cyan-300 focus:outline-cyan-500 "
+                className="block rounded-md focus:rose-300 w-full h-32 px-4 py-3 text-gray-800 border border-cyan-300 focus:outline-cyan-500"
                 name="description"
+                placeholder="Description"
               ></textarea>
             </div>
           </div>
