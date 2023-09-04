@@ -25,23 +25,23 @@ const Banner = () => {
 
 
           {/* bottom data */}
-          <div className='hidden md:flex justify-around w-full md:w-[80%] bg-white rounded-2xl  absolute -bottom-12 left-0 md:left-32 h-24 text-[#79c7ff]'>
-            <div className='h-full flex flex-col justify-center items-center border-b-4 border-black'>
+          <div className='hidden md:flex justify-around w-full md:w-[80%]  rounded-2xl absolute -bottom-12 left-0 font-bold md:left-32 h-28 text-black bg-[url("https://i.ibb.co/xf8cGmr/Untitled-design-7.png")] bg-no-repeat bg-cover '>
+            <div className='h-full flex flex-col justify-center items-center border-b-4 border-[#0184a4]'>
               <h3 className='text-3xl font-semibold '><CountUp start={20} end={220} duration={5} suffix='+' /></h3>
               <p>Destinations</p>
             </div>
 
-            <div className='h-full flex flex-col justify-center items-center border-b-4 border-black'>
+            <div className='h-full flex flex-col justify-center items-center border-b-4 border-[#0184a4]'>
               <h3 className='text-3xl font-semibold '><CountUp start={20} end={80} duration={5} suffix='+' /></h3>
               <p>Travel Agencies</p>
             </div>
 
-            <div className='h-full flex flex-col justify-center items-center border-b-4 border-black'>
+            <div className='h-full flex flex-col justify-center items-center border-b-4 border-[#0184a4]'>
               <h3 className='text-3xl font-semibold '><CountUp start={10000} end={40000} duration={5} suffix='+' /></h3>
               <p>Satisfied Customer</p>
             </div>
 
-            <div className='h-full flex flex-col justify-center items-center border-b-4 border-black'>
+            <div className='h-full flex flex-col justify-center items-center border-b-4 border-[#0184a4]'>
               <h3 className='text-3xl font-semibold '><CountUp start={10000} end={19000} duration={5} suffix='+' /></h3>
               <p>Reviews</p>
             </div>

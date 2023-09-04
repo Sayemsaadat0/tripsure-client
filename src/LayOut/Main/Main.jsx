@@ -17,3 +17,8 @@ const Main = () => {
 };
 
 export default Main;
+
+
+
+
+// todo mobile responsiveness

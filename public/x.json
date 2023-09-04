@@ -32,22 +32,6 @@
       "about": "Welcome to Adventure Explorers! We're your companions in seeking out heart-pounding adventures in the world's most daring locations. Our team is dedicated to delivering unforgettable experiences that challenge your limits and ignite your passion for exploration. Get ready to dive into the unknown!"
     },
     {
-      "categoryName": "Top Bucket",
-      "picture": "https://images.unsplash.com/photo-1514190051997-0f6f39ca5cde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
-      "logo": "https://example.com/images/cultural_logo.png",
-      "bannerPicture": "https://images.unsplash.com/photo-1505870136463-c17bc84b30a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=928&q=80",
-      "title": "Best of the Best Things to Do",
-      "subTitle": "Travelers' Choice",
-      "menu": [
-        "World",
-        "Asia",
-        "United State",
-        "Australia",
-        "Switzerland"
-      ],
-      "about": "Welcome to Cultural Voyages! We're here to guide you through immersive journeys that delve deep into the vibrant cultures of our world. Join us in exploring traditions, connecting with locals, and gaining profound insights that transform the way you see the world."
-    },
-    {
       "categoryName": "Food and Culinary",
       "picture": "https://plus.unsplash.com/premium_photo-1664910200216-cdb7987cea6f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=869&q=80",
       "logo": "https://example.com/images/nature_logo.png",
