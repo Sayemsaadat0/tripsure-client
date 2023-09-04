@@ -52,7 +52,8 @@ const SearchSection = () => {
         activeCategory.toLowerCase() === "search all"
           ? "search-all"
           : activeCategory.toLowerCase() === "things to do"
-          ? "search-all" : activeCategory.toLowerCase()
+          ? "search-all"
+          : activeCategory.toLowerCase()
       }/${searchText}`
     )
       .then((res) => res.json())
@@ -118,8 +119,8 @@ const SearchSection = () => {
               />
             </div>
             <div className="w-full md:w-[120px] md:absolute md:bottom-[6px] md:right-2 ">
-              <button 
-              className="
+              <button
+                className="
               hover:bg-[#6599b1] 
               text-white 
               bg-[#79c7ff] 
@@ -128,11 +129,11 @@ const SearchSection = () => {
               font-semibold 
               rounded-full 
               w-full mt-5 
-              flex justify-center items-center gap-2">
-              <BsSearch></BsSearch>   
-              Search
+              flex justify-center items-center gap-2"
+              >
+                <BsSearch></BsSearch>
+                Search
               </button>
-
             </div>
           </div>
         </form>

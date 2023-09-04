@@ -39,7 +39,7 @@ const Addhotels = () => {
       roomFeatures,
       faq,
       details,
-      picture
+      picture,
     };
     console.log(roomData);
     setUploadButtonText("Uploading...");
@@ -87,17 +87,49 @@ const Addhotels = () => {
     setUploadButtonText(image.name);
   };
   const [isOpen, setIsOpen] = useState(false)
+
+  const [selectedFeatures, setSelectedFeatures] = useState([]);
+  const features = ["Wi-Fi", "TV", "Air Conditioning", "Mini Fridge"];
+
+  const handleFeatureChange = (event) => {
+    const { value } = event.target;
+    if (value === "all") {
+      setSelectedFeatures(event.target.checked ? features : []);
+    } else {
+      setSelectedFeatures((prevSelected) =>
+        event.target.checked
+          ? [...prevSelected, value]
+          : prevSelected.filter((feature) => feature !== value)
+      );
+    }
+  };
+
+  const languages = [
+    {
+      label: "bangla",
+    },
+    {
+      label: "english",
+    },
+    {
+      label: "Hindi",
+    },
+    {
+      label: "pakistani",
+    },
+  ];
+
   return (
-    <div className="w-full">
+    <div className="max-w-screen-lg mx-auto px-4 py-8">
       <div>
-        <h2 className="text-center font-bold text-xl mb-20">Add Hotels </h2>
+        <h2 className="text-2xl mt-10 mb-6">Add Hotel Details </h2>
       </div>
 
       <form onSubmit={handle_submit}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           <div className="space-y-6">
             <div className="space-y-1 text-sm">
-              <label htmlFor="hotelName" className="block text-gray-600 mb-2">
+              <label htmlFor="hotelName" className="text-gray-600 text-lg mb-2">
                 Hotel Name
               </label>
               <input
@@ -110,7 +142,10 @@ const Addhotels = () => {
               />
             </div>
             <div className="space-y-1 text-sm">
-              <label htmlFor="address" className="block text-gray-600 mb-2">
+              <label
+                htmlFor="address"
+                className="block text-gray-600 mb-2 text-lg"
+              >
                 Address Name
               </label>
               <input
@@ -123,7 +158,10 @@ const Addhotels = () => {
               />
             </div>
             <div className="space-y-1 text-sm">
-              <label htmlFor="country" className="block text-gray-600 mb-2">
+              <label
+                htmlFor="country"
+                className="block text-gray-600 mb-2 text-lg"
+              >
                 Country
               </label>
               <input
@@ -138,7 +176,7 @@ const Addhotels = () => {
             <div className="space-y-1 text-sm">
               <label
                 htmlFor="hotel_website"
-                className="block text-gray-600 mb-2"
+                className="block text-gray-600 mb-2 text-lg"
               >
                 Hotel Website
               </label>
@@ -152,7 +190,10 @@ const Addhotels = () => {
               />
             </div>
             <div className="space-y-1 text-sm">
-              <label htmlFor="email" className="block text-gray-600 mb-2">
+              <label
+                htmlFor="email"
+                className="block text-gray-600 mb-2 text-lg"
+              >
                 email
               </label>
               <input
@@ -167,7 +208,7 @@ const Addhotels = () => {
             <div className="space-y-1 text-sm">
               <label
                 htmlFor="hotline_number"
-                className="block text-gray-600 mb-2"
+                className="block text-gray-600 mb-2 text-lg"
               >
                 hotline Number
               </label>
@@ -181,7 +222,10 @@ const Addhotels = () => {
               />
             </div>
             <div className="space-y-1 text-sm">
-              <label htmlFor="reviews" className="block text-gray-600 mb-2">
+              <label
+                htmlFor="reviews"
+                className="block text-gray-600 mb-2 text-lg"
+              >
                 Reviews
               </label>
               <input
@@ -196,21 +240,41 @@ const Addhotels = () => {
           </div>
           <div className="space-y-6">
             <div className="space-y-1 text-sm">
-              <label htmlFor="language" className="block text-gray-600 mb-2">
+              <label
+                htmlFor="language"
+                className="block text-gray-600 mb-2 text-lg"
+              >
                 Language
               </label>
-              <input
+              {/* <input
                 className="w-full px-4 py-3 text-gray-800 border border-cyan-300  focus:outline-cyan-500 rounded-md "
                 name="language"
                 id="language"
                 type="text"
                 placeholder="language"
                 required
-              />
+              /> */}
+              <select
+                required
+                className="w-full px-4 py-3 text-gray-800 border border-cyan-300  focus:outline-cyan-500 rounded-md"
+                name="language"
+                id="language"
+                type="text"
+                placeholder="language"
+              >
+                {languages.map((category) => (
+                  <option value={category.label} key={category.label}>
+                    {category.label}
+                  </option>
+                ))}
+              </select>
             </div>
 
             <div className="space-y-1 text-sm">
-              <label htmlFor="ratings" className="block text-gray-600 mb-2">
+              <label
+                htmlFor="ratings"
+                className="block text-gray-600 mb-2 text-lg"
+              >
                 ratings
               </label>
               <input
@@ -225,18 +289,49 @@ const Addhotels = () => {
             <div className="space-y-1 text-sm">
               <label
                 htmlFor="roomFeatures"
-                className="block text-gray-600 mb-2"
+                className="block text-gray-600 mb-2 text-lg"
               >
                 Room Features
               </label>
-              <input
-                className="w-full px-4 py-3 text-gray-800 border border-cyan-300  focus:outline-cyan-500 rounded-md "
-                name="roomFeatures"
-                id="roomFeatures"
-                type="text"
-                placeholder="roomFeatures"
+              {/* <div className="flex items-center">
+                <label className="cursor-pointer label">
+                  <span className="label-text">Select All</span>
+                  <input
+                    type="checkbox"
+                    className="checkbox checkbox-accent"
+                    value="all"
+                    checked={selectedFeatures.length === features.length}
+                    onChange={handleFeatureChange}
+                  />
+                </label>
+              </div> */}
+              {/* {features.map((feature, index) => (
+                <div key={index} className="flex items-center">
+                  <label className="cursor-pointer label">
+                    <span className="label-text">{feature}</span>
+                    <input
+                      type="checkbox"
+                      className="checkbox checkbox-accent"
+                      value={feature}
+                      name= "roomFeatures"
+                      checked={selectedFeatures.includes(feature)}
+                      onChange={handleFeatureChange}
+                    />
+                  </label>
+                </div>
+              ))} */}
+               <select
                 required
-              />
+                className="w-full px-4 py-3 text-gray-800 border border-cyan-300  focus:outline-cyan-500 rounded-md"
+                name="roomFeatures"
+              >
+                {features.map((category) => (
+                  <option value={category} key={category}>
+                    {category}
+                  </option>
+                ))}
+              </select>
+
             </div>
             <div className=" p-4 bg-white w-full  m-auto rounded-lg">
               <div className="file_upload px-5 py-3 relative border-4 border-dotted border-gray-300 rounded-lg">
@@ -274,7 +369,7 @@ const Addhotels = () => {
               />
             </div>
             <div className="space-y-1 text-sm">
-              <label htmlFor="q&a" className="block text-gray-600 mb-2">
+              <label htmlFor="q&a" className="block text-gray-600 mb-2 text-lg">
                 Q & A
               </label>
               <input
@@ -287,7 +382,10 @@ const Addhotels = () => {
               />
             </div>
             <div className="space-y-1 text-sm">
-              <label htmlFor=" details" className="block text-gray-600 mb-2">
+              <label
+                htmlFor=" details"
+                className="block text-gray-600 mb-2 text-lg"
+              >
                 details
               </label>
 
