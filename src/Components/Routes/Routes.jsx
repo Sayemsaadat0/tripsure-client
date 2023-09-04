@@ -20,6 +20,7 @@ import GuideDetails from "../Pages/TravelGuides/GuideDetails/GuideDetails";
 import TourDetails from "../Pages/TourDetails/TourDetails";
 import TopDestinationDetails from "../Pages/TopDestinationDetails/TopDestinationDetails";
 import Favorite from "../Shared/Navbar/Favorite";
+
 // dashboard ad resources
 import Addresource from "../Pages/DashBoard/Admin/Addresource";
 import Addthings from "../Pages/DashBoard/Admin/Addthings";

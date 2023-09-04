@@ -13,7 +13,7 @@ const TopThingsToDo = () => {
   }, []);
   return (
     <Container>
-      <SectionTitle text={'Top Things to Do for Every Adventurer'} subText={'Worldwide Escapes'}></SectionTitle>
+      <SectionTitle text={'Top Travel Categories & Destinations'} subText={'Things to Do for Every Adventurer'}></SectionTitle>
 
       <section className='grid overflow-x-auto lg:grid-cols-4 gap-12 px-5 pb-20 pt-12'>
 

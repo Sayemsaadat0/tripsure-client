@@ -31,7 +31,7 @@ const TravelDealsDetails = () => {
         additionalInfo,
         hotels,
         includedItems,
-        } = travelDealsDetails
+    } = travelDealsDetails
     useEffect(() => {
         axios.get(`https://tripsure-server-sayemsaadat0.vercel.app/travelDeals/${id}`)
             .then((res) => {
@@ -108,12 +108,6 @@ const TravelDealsDetails = () => {
                     {/* departure  */}
                     <div className='mt-5'>
                         <h3 className='text-lg font-semibold'>Departure Details : </h3>
-
-                        <p className='flex gap-2'>Departure  Dates :
-                            <span >    {departureDates && departureDates.map((d, index) => (
-                                <li key={index}>{d}</li>
-                            ))}</span>
-                        </p>
                         <div>
                             <p>Departure Time :  {departureTime}</p>
                             <p>Departure Place :  {departurePlace}</p>
@@ -180,11 +174,6 @@ const TravelDealsDetails = () => {
                                 <h2>Title  : {hotel.name}</h2>
                                 <p>Type : {hotel.type}</p>
                                 <p>Duration of Stay : {hotel.nights} Nights</p>
-
-                                <p className='font-bold'> Amenity  </p>
-                                {hotel.amenities.map((amenity, amenityIndex) => (
-                                    <li key={amenityIndex}>{amenity}</li>
-                                ))}
                             </div>
                         ))}
                     </div>
@@ -208,7 +197,8 @@ export default TravelDealsDetails;
 
 
 
-
+// todo think about how you implement the itrenary 
+// todo add ratings as number
 
 
 

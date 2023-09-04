@@ -297,3 +297,9 @@
   z-index: 1;
 }
 
+
+::selection{
+  color: rgb(114, 162, 228);
+  background-color: white;
+}
+
