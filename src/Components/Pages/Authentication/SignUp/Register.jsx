@@ -81,7 +81,7 @@ const Register = () => {
       
                 <div className="p-6  w-96 shadow-sm hover:shadow-sm rounded-lg text-white md:hover:shadow-white duration-700">
                     <div className='flex gap-2'>
-                        <img className="w-16 h-16" src="https://i.ibb.co/ng9Sdrp/Untitled-design-1-unscreen.gif" alt="" />
+                        <img className="w-16 h-16" loading='lazy' src="https://i.ibb.co/ng9Sdrp/Untitled-design-1-unscreen.gif" alt="" />
                         <div>
                             <h2 className="text-2xl   font-bold ">Welcome to Tripsure</h2>
                             <p>Register Your Account</p>

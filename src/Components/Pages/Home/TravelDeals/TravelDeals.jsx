@@ -39,7 +39,8 @@ const TravelDeals = () => {
                 <p
                   className='flex justify-end items-center gap-1'>
                   <GoStarFill className='text-red-500'></GoStarFill>
-                  {deals.reviews?.ratings?.overall} (45)
+                  {/* todo add ratings */}
+                  4.5(40)
                 </p>
               </div>
             </div>

@@ -290,3 +290,10 @@
   padding: 40px 0px;
 }
 
+/* banner */
+
+.banner{
+  position: absolute;
+  z-index: 1;
+}
+
