@@ -53,7 +53,7 @@ const TopDestinations = () => {
             {TopDestinations.map((todo, index) => (
               <SwiperSlide key={index}>
                 <Link to={`/top-destination-details/${todo?._id}`}>
-                  <div className="  re   hover:scale-110 duration-700">
+                  <div className=" hover:scale-110 duration-700">
                     <img
                       className="h-64  w-full  object-cover first-letter:rounded-tl-[5px] rounded-tr-[50px]"
                       src={todo.picture}
