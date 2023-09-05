@@ -72,6 +72,7 @@ const TourDetails = () => {
 
 
   const orderDetails = {
+    email: user?.email,
     card: tourDetails,
     selectedDate: selectedDate?.format("YYYY-MM-DD"),
     price: {

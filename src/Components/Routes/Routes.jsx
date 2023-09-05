@@ -62,6 +62,8 @@ import SearchDetails from "../Pages/SearchResult/SearchDetails";
 // payment
 import PaymentDetails from "../Pages/Payment/PaymentDetails/PaymentDetails";
 import AddRentalCars from "../Pages/DashBoard/Admin/Overview/AddRentalCars";
+import PaymentSuccessPage from "../Pages/Payment/PaymentSuccessPage/PaymentSuccessPage";
+import PaymentFailPage from "../Pages/Payment/PaymentFailPage/PaymentFailPage";
 
 const router = createBrowserRouter([
   {
@@ -212,6 +214,14 @@ const router = createBrowserRouter([
       {
         path: "/paymentDetails",
         element: <PaymentDetails></PaymentDetails>
+      },
+      {
+        path: "/payment/success/:id",
+        element: <PaymentSuccessPage></PaymentSuccessPage>
+      },
+      {
+        path: "/payment/fail/:id",
+        element: <PaymentFailPage></PaymentFailPage>
       }
     ],
   },
