@@ -19,11 +19,11 @@ const PostStory = () => {
         imageUpload(data.image[0])
             .then(data => {
                 const url = data.data.display_url
-                const story = {description, title, withYou, whenYouGo, url, imgUrlTitleDescription}
+                const story = { description, title, withYou, whenYouGo, url, imgUrlTitleDescription }
                 axios.post(`https://tripsure-server-sayemsaadat0.vercel.app/sotry`, story)
-                .then(res => {
-                    console.log(res)
-                })
+                    .then(res => {
+                        console.log(res)
+                    })
                 console.log(url)
             })
         // console.log(console.log(story))
@@ -40,30 +40,31 @@ const PostStory = () => {
 
 
     return (
-        <div className='mt-16 min-h-[calc(100vh-64px)] bg-[#EFEFF5]'>
+        <div className='mt-16 '>
             <Container>
-                <h2 className='font-semibold text-xl text-center pt-10'>Post a story</h2>
-                <div className='max-w-lg mx-auto'>
-
-                    <form onSubmit={handleSubmit(onSubmit)}>
-                        <label htmlFor="">Main image</label>
+                
+                <h2 className='font-semibold text-2xl underline  tracking-widest text-center pt-10 px-4'>Tell Us Your Story About the Trip </h2>
+                <div className='mx-auto gap-20 mt-10 md:flex'>
+                <img className='md:w-1/2' src="https://i.ibb.co/kMbh2BW/6492134.jpg" alt="" />
+                  <div className='md:w-1/2'>
+                  <form onSubmit={handleSubmit(onSubmit)}>
+                        <label htmlFor="">Upload A Image</label>
                         <div className="mb-3">
                             <input
                                 type="file"
                                 name="image"
                                 {...register('image', { required: 'Image is required' })}
-                                className='rounded-md w-full border-2 border-gray-400 py-1 px-2'
-                            />
+                                className='rounded-md w-full border-2 border-gray-400 py-1 px-2' />
                             {errors.image && (
                                 <span className="text-red-500 text-sm">{errors.image.message}</span>
                             )}
                         </div>
                         <div className=' mb-3'>
-                            <label htmlFor="title">Give your review a title (required)</label>
+                            <label htmlFor="title">Give a Title to Your Story (required)</label>
                             <input type='text' placeholder='Summarize your experience' className='rounded-md w-full border-2 border-gray-400 py-1 px-2' {...register("title")} />
                         </div>
-                        <div className=' mb-3'>
-                            <label htmlFor="title">Desceription </label>
+                        <div className=' mb-3 '>
+                            <label htmlFor="title">Details About The Trip </label>
                             <textarea placeholder='What were some things you enjoyed about this experience? How can it be improved?' className='rounded-md w-full border-2 border-gray-400 py-1 px-2'  {...register("description")} cols="30" rows="5"></textarea>
                         </div>
                         <div className=' mb-3'>
@@ -111,12 +112,15 @@ const PostStory = () => {
                                 }
                             </div>
                         }
+
                         <AddPhotoModal setImgUrlTitleDescription={setImgUrlTitleDescription} isOpen={isOpen} closeModal={closeModal}></AddPhotoModal>
+
 
                         <div className='flex gap-3'>
                             <button className='px-3 py-1 bg-green-500 hover:bg-green-600 rounded-md text-white font-bold' type='submit'>Submit</button>
                         </div>
                     </form>
+                  </div>
                 </div>
             </Container>
         </div>

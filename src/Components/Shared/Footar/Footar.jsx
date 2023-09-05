@@ -6,7 +6,7 @@ const Footar = () => {
   const currentYear = new Date().getFullYear()
   return (
     <div className=''>
-      <Wave fill='#b5daec'
+      <Wave fill='#edede9'
         paused={false}
         style={{ display: 'flex' }}
         options={{
@@ -17,7 +17,7 @@ const Footar = () => {
         }}
       />
       {/* footar-image / next div -bg-black w-full bg-opacity-50 */}
-      <footer class="text-gray-600 body-font bg-[#b5daec]">
+      <footer class="text-gray-600 body-font bg-[#edede9]">
         <div class="container px-5 py-12 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
           <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mt-0 mt-10">
             <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">

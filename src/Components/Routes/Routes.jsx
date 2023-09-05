@@ -4,9 +4,6 @@ import Home from "../Pages/Home/Home";
 import Overview from "../Pages/Overview/Overview";
 import Login from "../Pages/Authentication/Login/Login";
 import Register from "../Pages/Authentication/SignUp/Register";
-// import Reviews from "../Pages/DashBoard/Admin/Reviews";
-// import Inquiries from "../Pages/DashBoard/Admin/Inquiries";
-// import AddTour from "../Pages/DashBoard/Admin/AddTour";
 import AddReview from "../Pages/Community/AddReview/AddReview";
 import TravelerChoose from "../Pages/TravelerChoose/TravelerChoose";
 import ErrorPage from "../../LayOut/ErrorPage/ErrorPage";
@@ -16,14 +13,13 @@ import RentalCars from "../Pages/More/RentalCars/RentalCars";
 import TravelarStories from "../Pages/TravelerStories/TravelStories";
 import Stories from "../Pages/TravelerStories/Stories/Stories";
 import TravelGuides from "../Pages/TravelGuides/TravelGuides";
-import GuideDetails from "../Pages/TravelGuides/GuideDetails/GuideDetails";
 import TourDetails from "../Pages/TourDetails/TourDetails";
 import TopDestinationDetails from "../Pages/TopDestinationDetails/TopDestinationDetails";
 import Favorite from "../Shared/Navbar/Favorite";
 
 // dashboard ad resources
 import Addresource from "../Pages/DashBoard/Admin/Addresource";
-import Addthings from "../Pages/DashBoard/Admin/Addthings";
+
 import Addplaces from "../Pages/DashBoard/Admin/addplaces";
 import Addhotels from "../Pages/DashBoard/Admin/Addhotels";
 import Addflights from "../Pages/DashBoard/Admin/Addflights";
@@ -35,9 +31,7 @@ import AdminHome from "../Pages/DashBoard/Admin/AdminHome";
 import ManageUser from "../Pages/DashBoard/Admin/ManageUser";
 import ManageBookings from "../Pages/DashBoard/Admin/ManageBookings";
 import ManagePackage from "../Pages/DashBoard/Admin/ManagePackage";
-
 import Dashboard from "../../LayOut/Dashboard";
-import Totallview from "../Pages/DashBoard/Admin/Totallview";
 import DoThingsAttractionReviews from "../Pages/DoThingsAttractionReviews/DoThingsAttractionReviews";
 import StayThingsAttractionReviews from "../Pages/StayThingsAttractionReviews/StayThingsAttractionReviews";
 import RestaurantAttractionReview from "../Pages/RestaurantAttractionReview/RestaurantAttractionReview";
@@ -101,10 +95,6 @@ const router = createBrowserRouter([
         path: "overview",
         element: <Overview></Overview>,
       },
-     /*  {
-        path: "travelarsstory",
-        element: <KnowMore />,
-      }, */
       {
         path: "/TravelDeals/:id",
         element: <TravelDealsDetails></TravelDealsDetails>,
@@ -115,7 +105,6 @@ const router = createBrowserRouter([
       },
       {
         path: "postastory",
-        // render new component which name <PostStory> but previus Component name <PostAStory>
         element: <PostStory></PostStory>,
       },
       {
@@ -172,10 +161,6 @@ const router = createBrowserRouter([
         element: <TravelGuides />,
       },
       {
-        path: "travelGuides/details",
-        element: <GuideDetails />,
-      },
-      {
         path: "/travelerChoose-thingsToDo/:category",
         element: <TravelerChoose></TravelerChoose>,
       },
@@ -208,7 +193,7 @@ const router = createBrowserRouter([
       {
         path: "/paymentDetails",
         element: <PaymentDetails></PaymentDetails>
-      }
+      },
     ],
   },
   {
@@ -228,11 +213,6 @@ const router = createBrowserRouter([
         path: "adminhome",
         element: <AdminHome></AdminHome>,
       },
-
-      {
-        path: "admin/totalview",
-        element: <Totallview />,
-      },
       {
         path: "manageusers",
         element: <ManageUser></ManageUser>,
@@ -245,25 +225,9 @@ const router = createBrowserRouter([
         path: "managepackage",
         element: <ManagePackage />,
       },
-     /*  {
-        path: "reviews",
-        element: <Reviews />,
-      },
-      {
-        path: "inquires",
-        element: <Inquiries />,
-      },
-      {
-        path: "addtour",
-        element: <AddTour />,
-      }, */
       {
         path: "addresource",
         element: <Addresource />,
-      },
-      {
-        path: "addthings",
-        element: <Addthings />,
       },
       {
         path: "addhotels",
