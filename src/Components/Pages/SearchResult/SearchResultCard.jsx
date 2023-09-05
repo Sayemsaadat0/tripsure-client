@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const SearchResultCard = ({ data, country }) => {
   // console.log(data);
-
+// todo hotelName diye link ta dinamic hocche na
   return (
     <Link
       to={
