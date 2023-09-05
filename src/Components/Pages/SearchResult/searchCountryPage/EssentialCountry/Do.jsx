@@ -14,7 +14,7 @@ const Do = ({ country }) => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:1000/category`)
+      .get(`https://tripsure-server-sayemsaadat0.vercel.app/category`)
       .then((data) => {
         setAllCategory(data.data);
         console.log(data.data);

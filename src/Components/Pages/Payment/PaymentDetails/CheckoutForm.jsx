@@ -1,7 +1,5 @@
 import {
   CardElement,
-  LinkAuthenticationElement,
-  PaymentElement,
   useElements,
   useStripe,
 } from "@stripe/react-stripe-js";
@@ -20,21 +18,38 @@ import {
 import "./cardElement.css";
 import Swal from "sweetalert2";
 
+
+
+
+
+
+
+
+
+
+
+
+
 const CheckoutForm = ({ price, orderDetails }) => {
-  console.log(price, orderDetails);
+ 
   const stripe = useStripe();
+
   const elements = useElements();
+
   const [cardError, setCardError] = useState("");
+
   const [clientSecret, setClientSecret] = useState("");
+
   const [processing, setProcessing] = useState(false);
+
   const [transactionId, setTransactionId] = useState("");
+
   const { user } = useAuth();
-  console.log(user);
 
   useEffect(() => {
     axios
       .post(
-        "http://localhost:1000/stripe-payment-intent",
+        "https://tripsure-server-sayemsaadat0.vercel.app/stripe-payment-intent",
         { price },
         {
           headers: {
@@ -68,7 +83,6 @@ const CheckoutForm = ({ price, orderDetails }) => {
       setCardError(error.message);
     } else {
       setCardError("");
-      // console.log('payment method', paymentMethod);
     }
     setProcessing(true);
     const { paymentIntent, error: confirmError } =
@@ -102,7 +116,7 @@ const CheckoutForm = ({ price, orderDetails }) => {
         travelerCount: orderDetails?.travelerCount,
       };
       axios
-        .post(`http://localhost:1000/payments`, payment)
+        .post(`https://tripsure-server-sayemsaadat0.vercel.app/payments`, payment)
         .then((response) => {
           console.log("Payment successful:", response.data);
           if (response.data.insertedId) {
@@ -182,3 +196,7 @@ const CheckoutForm = ({ price, orderDetails }) => {
 };
 
 export default CheckoutForm;
+
+
+
+// https://tripsure-server-sayemsaadat0.vercel.app

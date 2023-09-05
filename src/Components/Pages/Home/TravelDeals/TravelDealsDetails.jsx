@@ -17,7 +17,6 @@ const TravelDealsDetails = () => {
         price,
         savings,
         newPrice,
-        departureDates,
         totalPeople,
         limitPerBooking,
         conditions,
@@ -32,7 +31,7 @@ const TravelDealsDetails = () => {
         additionalInfo,
         hotels,
         includedItems,
-        reviews } = travelDealsDetails
+    } = travelDealsDetails
     useEffect(() => {
         axios.get(`https://tripsure-server-sayemsaadat0.vercel.app/travelDeals/${id}`)
             .then((res) => {
@@ -109,12 +108,6 @@ const TravelDealsDetails = () => {
                     {/* departure  */}
                     <div className='mt-5'>
                         <h3 className='text-lg font-semibold'>Departure Details : </h3>
-
-                        <p className='flex gap-2'>Departure  Dates :
-                            <span >    {departureDates && departureDates.map((d, index) => (
-                                <li key={index}>{d}</li>
-                            ))}</span>
-                        </p>
                         <div>
                             <p>Departure Time :  {departureTime}</p>
                             <p>Departure Place :  {departurePlace}</p>
@@ -181,11 +174,6 @@ const TravelDealsDetails = () => {
                                 <h2>Title  : {hotel.name}</h2>
                                 <p>Type : {hotel.type}</p>
                                 <p>Duration of Stay : {hotel.nights} Nights</p>
-
-                                <p className='font-bold'> Amenity  </p>
-                                {hotel.amenities.map((amenity, amenityIndex) => (
-                                    <li key={amenityIndex}>{amenity}</li>
-                                ))}
                             </div>
                         ))}
                     </div>
@@ -200,34 +188,6 @@ const TravelDealsDetails = () => {
                     </div>
                 </div>
                 <hr />
-                {/* review */}
-                <div>
-                    <div className=' p-4'>
-                        <p className='font-bold'>Reviews</p>
-                        <div className='border rounded-lg p-4'>
-
-                            {/* <img src={reviews?.userImage} alt="df" /> */}
-                            {/* <h3>{reviews?.name}</h3> */}
-
-                            <div className='flex'>
-                                <div className='w-full'>
-                                        <img className='w-16 h-16 rounded-full' src="https://i.pinimg.com/564x/d9/7b/bb/d97bbb08017ac2309307f0822e63d082.jpg" alt="df" />
-                                        {<h3 className='text-xl font-semibold'>Rafin Hossain</h3>}
-                                        <p>Ratings :</p>
-                                        <h3>overall : {reviews?.ratings?.overall}</h3>
-                                        <h3>accommodation : {reviews?.ratings?.accommodation}</h3>
-                                        <h3>activities : {reviews?.ratings?.activities}</h3>
-                                        <h3>food : {reviews?.ratings?.food}</h3>
-                                        <h3>guide : {reviews?.ratings?.guide}</h3>
-                                </div>
-                                <div>
-                                    <p>{reviews?.review}</p>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
             </div>
         </Container>
     );
@@ -237,30 +197,9 @@ export default TravelDealsDetails;
 
 
 
+// todo think about how you implement the itrenary 
+// todo add ratings as number
 
 
-{/* 
-
-toggle see more button
-
- const [showFullReview, setShowFullReview] = useState(false);
-
-    const toggleShowReview = () => {
-        setShowFullReview(!showFullReview);
-    };
 
 
-<h3>
-Review :{' '}
-{showFullReview ? (
-    <>
-        {reviews?.review}
-        <button className='text-blue-500 btn-link' onClick={toggleShowReview}>Show Less</button>
-    </>
-) : (
-    <>
-        {reviews?.review.split(' ').slice(0, 10).join(' ')}...
-        <button className='text-blue-500 btn-link' onClick={toggleShowReview}>Show More</button>
-    </>
-)}
-</h3> */}

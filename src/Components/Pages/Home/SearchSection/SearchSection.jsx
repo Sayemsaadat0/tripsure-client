@@ -25,10 +25,6 @@ const SearchSection = () => {
       icon: <IoBedOutline />,
     },
     {
-      title: "Things To Do",
-      icon: <FaArrowsToDot />,
-    },
-    {
       title: "Restaurants",
       icon: <IoRestaurantSharp />,
     },
@@ -48,7 +44,7 @@ const SearchSection = () => {
     const searchText = e.target.searchText.value;
     dispatch(setSearchText(searchText));
     fetch(
-      `http://localhost:1000/searchResult/${
+      `https://tripsure-server-sayemsaadat0.vercel.app/searchResult/${
         activeCategory.toLowerCase() === "search all"
           ? "search-all"
           : activeCategory.toLowerCase() === "things to do"
@@ -63,21 +59,17 @@ const SearchSection = () => {
   };
 
   return (
-    <div className="w-full md:max-w-3xl mx-auto mt-20 text-[#79c7ff]">
+    <div className="w-full md:max-w-3xl mx-auto mt-20 ">
       <div>
         <div>
-          <h1 className="text-center text-5xl font-bold hidden md:block">
+          <h1 className="text-center text-5xl text-[#79c7ff] font-bold hidden md:block">
             {activeCategory === "Hotels"
               ? "Stay somewhere great"
-              : activeCategory === "Things To Do"
-              ? "Do something fun"
               : activeCategory === "Restaurants"
               ? "Find places to eat"
-              : activeCategory === "Vacation Rentals"
-              ? "Explore places to rent"
               : "Where to?"}
           </h1>
-          <ul className="flex overflow-x-auto w-full justify-center mx-auto my-5">
+          <ul className="flex w-full justify-center mx-auto my-5">
             {categories.map((category, i) => (
               <li
                 key={i}

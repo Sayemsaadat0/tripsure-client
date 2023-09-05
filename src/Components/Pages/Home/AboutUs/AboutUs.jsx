@@ -16,7 +16,7 @@ const AboutUs = () => {
             eius architecto voluptatum earum debitis placeat, nobis atque
             distinctio iusto rerum nam.
           </p>
-          <Link to='/knowmore'>
+          <Link to='/aboutusdetails'>
             <button className="btn mt-2">
               Know More
             </button>
@@ -29,3 +29,21 @@ const AboutUs = () => {
 };
 
 export default AboutUs;
+
+
+
+/* 
+import Typical from "react-typical";
+ <Typical
+                loop={Infinity}
+                wrapper="w"
+                steps={[
+                  "Popular Destinations",
+                  1000,
+                  "What Our Travelers Say",
+                  1000,
+                  "Get in Touch",
+                  1000,
+                ]}
+              />
+*/

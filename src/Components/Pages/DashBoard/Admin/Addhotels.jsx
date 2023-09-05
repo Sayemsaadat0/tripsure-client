@@ -86,7 +86,6 @@ const Addhotels = () => {
     console.log(image);
     setUploadButtonText(image.name);
   };
-  const [isOpen, setIsOpen] = useState(false)
 
   const [selectedFeatures, setSelectedFeatures] = useState([]);
   const features = ["Wi-Fi", "TV", "Air Conditioning", "Mini Fridge"];
@@ -119,6 +118,7 @@ const Addhotels = () => {
     },
   ];
 
+  const [isOpen, setIsOpen] = useState(false)
   return (
     <div className="max-w-screen-lg mx-auto px-4 py-8">
       <div>

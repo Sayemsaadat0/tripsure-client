@@ -8,7 +8,7 @@ const Main = () => {
     const noHeaderFooter = location.pathname.includes('login') || location.pathname.includes('register');
 
     return (
-        <div>
+        <div className='scroll-container'>
             {noHeaderFooter || <Navbar></Navbar>}
             <Outlet></Outlet>
             {noHeaderFooter || <Footar></Footar>}
@@ -17,3 +17,8 @@ const Main = () => {
 };
 
 export default Main;
+
+
+
+
+// todo mobile responsiveness

@@ -53,8 +53,7 @@ const Packages = () => {
         <div>
           <SectionTitle
             subText={"Create Memories"}
-            text={"Select Your Ideal"}
-            coloredText={"Tour Package"}
+            text={"Select Your Ideal Tour Package"}
           />
           <Swiper
             slidesPerView={1}

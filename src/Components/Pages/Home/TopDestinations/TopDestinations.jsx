@@ -6,7 +6,8 @@ import { Navigation } from "swiper/modules";
 import Container from "../../../../LayOut/Container";
 import SectionTitle from "../../../Shared/SectionTitle/SectionTitle";
 import { Link } from "react-router-dom";
-// import { FaHeart } from "react-icons/fa6";
+import { GoStarFill } from "react-icons/go";
+import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
 
 const TopDestinations = () => {
   const [TopDestinations, setTopDestinations] = useState([]);
@@ -32,7 +33,7 @@ const TopDestinations = () => {
             spaceBetween={10}
             modules={[Navigation]}
             className="mySwiper"
-            navigation={true}
+            // navigation={true}
             onSlideChange={() => console.log("slide change")}
             breakpoints={{
               640: {
@@ -53,25 +54,52 @@ const TopDestinations = () => {
             {TopDestinations.map((todo, index) => (
               <SwiperSlide key={index}>
                 <Link to={`/top-destination-details/${todo?._id}`}>
-                  <div className=" hover:scale-110 duration-700">
+                  <div className="">
                     <img
-                      className="h-64  w-full  object-cover first-letter:rounded-tl-[5px] rounded-tr-[50px]"
+                      className="h-40 w-full object-cover rounded-xl hover:scale-105 duration-700 "
                       src={todo.picture}
-                      alt=""
-                    />
-
-                    <h2 className="absolute bottom-3 pb-3 pl-2  font-extrabold text-xl text-white left-3   ">
-                      {todo.cardtitle}
+                      alt="" />
+                    <h2 className="font-semibold mt-3 hover:text-blue-400 duration-500">
+                      {todo.placetitle}
                     </h2>
+                    <div className='flex justify-between'>
+                      <p>{todo.costperperson}$/ <span className='text-xs'>per person</span> </p>
+                      <p className='flex items-center gap-2'><GoStarFill className='text-red-500'></GoStarFill>  {todo.ratings}</p>
+                    </div>
+
                   </div>
                 </Link>
               </SwiperSlide>
             ))}
           </Swiper>
         </div>
+        <p className="text-right flex gap-2 justify-end">
+          <AiOutlineArrowLeft></AiOutlineArrowLeft>
+          <AiOutlineArrowRight></AiOutlineArrowRight>
+        </p>
       </div>
     </Container>
   );
 };
 
 export default TopDestinations;
+
+/* 
+
+   <div className=" card ">
+              <img
+                className="h-40 w-full object-cover rounded-xl hover:scale-105 duration-700 overflow-hidden"
+                src={todo.picture}
+                alt="" />
+              <h2 className="font-semibold mt-3 hover:text-blue-400 duration-500">
+                {todo.placetitle}
+              </h2>
+              <div className='flex justify-between'>
+                <p>{todo.costperperson}$/ <span className='text-xs'>per person</span> </p>
+                <p className='flex items-center gap-2'><GoStarFill className='text-red-500'></GoStarFill>  {todo.ratings}</p>
+              </div>
+
+            </div>
+*/
+
+

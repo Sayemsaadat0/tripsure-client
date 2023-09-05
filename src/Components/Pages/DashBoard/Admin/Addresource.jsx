@@ -39,6 +39,9 @@ const Addresource = () => {
       route: 'addguide',
       name: "Add Guide",
     },
+
+    // todo add travelDeals page and form with backend data
+    // departure dates will be single date
   ];
   return (
     <div className="p-6">
@@ -54,11 +57,7 @@ const Addresource = () => {
                 <img
                   className="hover:scale-110 duration-700 w-full "
                   src={card.picture}
-                  alt="tour"
-                /></Link>
-
-
-
+                  alt="tour"/></Link>
               <div className="py-2 px-2">
                 <h2 className="card-title">
                   <Link to={`/dashboard/${card.route}`} className="link  no-underline hover:underline">
