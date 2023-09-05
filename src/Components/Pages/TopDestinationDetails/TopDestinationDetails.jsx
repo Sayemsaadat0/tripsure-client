@@ -132,7 +132,6 @@ const TopDestinationDetails = () => {
                   Places to see, ways to wander, and signature experiences that
                   define .
                 </p>
-                <Link className="underline">See all</Link>
               </div>
               <div>
                <DoSwiper doPlace={doPlace.slice(1,)}></DoSwiper>
@@ -145,7 +144,6 @@ const TopDestinationDetails = () => {
                   Places to see, ways to wander, and signature experiences that
                   define .
                 </p>
-                <Link className="underline">See all</Link>
               </div>
               <div>
                <CommonSwiper allHotels={allHotels}></CommonSwiper>
@@ -156,9 +154,9 @@ const TopDestinationDetails = () => {
                 <h3 className="text-2xl font-bold text-black">Eat</h3>
                 <p>
                   Places to see, ways to wander, and signature experiences that
-                  define Tulum.
+                  define.
                 </p>
-                <Link className="underline">See all</Link>
+                
               </div>
               <div>
                <RestaurantSwiper restaurant={restaurants}></RestaurantSwiper>
