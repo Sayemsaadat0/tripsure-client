@@ -2,9 +2,18 @@ import { useForm } from "react-hook-form";
 import BookInfoCard from "../BookInfoCard";
 import PaymentPath from "../PaymentPath";
 import ReviewCard from "../ReviewCard";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import useAuth from "../../../../Hooks/useAuth";
+import { useEffect, useState } from "react";
 
 const ContactDetails = () => {
+  const [contactDetails, setContactDetails] = useState(null)
+  const [orderDetails, setOrderDetails] = useState({})
+  const [isLoading, setIsLoading] = useState(false)
+  const navigate = useNavigate()
+  const {user} = useAuth();
+  console.log(user);
+  const location = useLocation();
   const {
     register,
     handleSubmit,
@@ -12,11 +21,35 @@ const ContactDetails = () => {
   } = useForm();
   const onSubmit = (data) => {
     console.log(data);
+    setContactDetails(data)
+    
+    
   };
 
+  const handleLoader = ()=>{
+    if (contactDetails == null) {
+      setIsLoading(true);
+      console.log(contactDetails);
+    }
+    else{
+      setIsLoading(false);
+      navigate('/activityDetails')
+      console.log('activityDetails', contactDetails);
+    }
+  }
+
+
+useEffect(()=>{
+  if (orderDetails && location.state) {
+    setOrderDetails(location.state.orderDetails);
+  }
+},[location.state])
   return (
     <div>
-      <PaymentPath />
+      {
+        isLoading && <p className="text-red-600">Your Phone number is require</p>
+      }
+      <PaymentPath active={true} />
       <div className="mx-5 md:mx-20 py-10 flex flex-col lg:flex-row justify-between lg:gap-5">
         <form
           onClick={handleSubmit(onSubmit)}
@@ -29,6 +62,7 @@ const ContactDetails = () => {
               </label>
               <input
                 type="text"
+                value={user?.displayName?.split(' ')[0]}
                 {...register("firstName", { required: true })}
                 placeholder="First Name"
                 className="input input-bordered"
@@ -43,6 +77,7 @@ const ContactDetails = () => {
               </label>
               <input
                 type="text"
+                value={user?.displayName?.split(' ')[1]}
                 {...register("lastName", { required: true })}
                 placeholder="Last Name"
                 className="input input-bordered"
@@ -58,6 +93,8 @@ const ContactDetails = () => {
             </label>
             <input
               type="email"
+              value={user?.email}
+              required
               {...register("email", { required: true })}
               placeholder="Email"
               className="input input-bordered"
@@ -105,17 +142,22 @@ const ContactDetails = () => {
             </p>
           </div>
           <div className="text-center">
-            <Link to="/activityDetails">
+            <Link onClick={handleLoader} 
+            state={{orderDetails: orderDetails, contactDetails: contactDetails}}
+             >
+            
               <input
-                className="btn     rounded-full bg-black hover:bg-[#584B9F] text-white"
+                className="btn rounded-full bg-black hover:bg-[#584B9F] text-white"
                 type="submit"
                 value="Next"
               />
+              
             </Link>
           </div>
         </form>
+             
         <div className="space-y-3 w-4/4 mx-auto">
-          <ReviewCard />
+          <ReviewCard  orderDetails={location?.state?.orderDetails} />
           <BookInfoCard />
         </div>
       </div>

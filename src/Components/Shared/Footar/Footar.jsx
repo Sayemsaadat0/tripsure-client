@@ -4,15 +4,16 @@ import { MdOutlineEmail } from 'react-icons/md'
 import { CiMobile4, CiYoutube } from 'react-icons/ci'
 import { SlLocationPin, SlClock } from 'react-icons/sl'
 import { FaFacebookF, FaYoutube, FaLinkedinIn } from 'react-icons/fa'
+import footarvideo from '../../../../public/footar.mp4'
     ;
 const Footar = () => {
 
     const currentYear = new Date().getFullYear()
     return (
-        <div>
+        <div className='bg-blue-100'>
             {/* footar-image / next div -bg-black w-full bg-opacity-50 */}
-            <footer className=' text-black bg-[#fff4db]'>
-                <div className=''>
+            <footer className=' text-blue-400 py-20'>
+                <div>
                     <Container>
                         <div className="p-4 mx-auto justify-between grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 py-8 md:py-12 gap-8">
                             <div className="mb-4 md:mb-0">
@@ -59,7 +60,6 @@ const Footar = () => {
                                 </div>
                             </div>
                         </div>
-                        <hr />
                         <p className='w-full text-center py-6'>Copyright (c) {currentYear} by <span className='font-bold'>Tripsure Enterprise LTD.</span></p>
                     </Container>
                 </div>

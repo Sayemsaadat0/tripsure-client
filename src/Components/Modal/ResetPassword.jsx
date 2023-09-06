@@ -23,10 +23,8 @@ const ResetPassword = ({ isOpen, closeModal }) => {
     resetPassword(userEmail)
       .then(() => {
         Swal.fire({
-          title: "Success!",
-          text: "Your account has been successfully login.",
-          icon: "success",
-          confirmButtonText: "Cool",
+          text: "Please Check Your Email to Reset Your Password.",
+          confirmButtonText: "okay",
         });
         setLoading(false);
         closeModal();
@@ -91,9 +89,8 @@ const ResetPassword = ({ isOpen, closeModal }) => {
                       <button
                         onClick={handleResetPassword}
                         type="submit"
-                        className="logout-button "
-                      >
-                        reset password
+                        className=" w-full flex justify-center   shadow-sm shadow-black py-2 rounded-lg ">
+                        Reset Password
                       </button>
                     )}
                   </div>

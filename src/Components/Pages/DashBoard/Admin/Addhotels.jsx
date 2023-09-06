@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import { addRoom } from "../../../../api/bookshotels";
 import { TbFidgetSpinner } from "react-icons/tb";
 import { imageUpload } from "../../../../api/utilities";
+import AddHotelQ_Ans from "./AddHotelQ_Ans";
 
 const Addhotels = () => {
   const [loading, setLoading] = useState(false);
-  const [selectedRoomFeatures, setSelectedRoomFeatures] = useState([]);
-  const [selectAll, setSelectAll] = useState(false);
-
-  const handleSubmit = (event) => {
+  const [QA, setQA] = useState([])
+  console.log(QA)
+  const handle_submit = (event) => {
     event.preventDefault();
     setLoading(true);
     const form = event.target;
@@ -87,6 +87,7 @@ const Addhotels = () => {
     console.log(image);
     setUploadButtonText(image.name);
   };
+  const [isOpen, setIsOpen] = useState(false)
 
   const features = [
   "Blackout Curtains",
@@ -148,7 +149,7 @@ const Addhotels = () => {
         <h2 className="text-2xl mt-10 mb-6">Add Hotel Details </h2>
       </div>
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handle_submit}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           <div className="space-y-6">
             <div className="space-y-1 text-sm">
@@ -389,7 +390,7 @@ const Addhotels = () => {
             </div>
           </div>
         </div>
-
+        <button onClick={() => setIsOpen(true)} className="btn">add questions and answer</button>
         <button
           type="submit"
           className="w-full p-3 mt-5 text-center font-medium text-white transition duration-200 rounded shadow-md bg-cyan-500"
@@ -401,6 +402,7 @@ const Addhotels = () => {
           )}
         </button>
       </form>
+      <AddHotelQ_Ans QA={QA} setQA={setQA} isOpen={isOpen} setIsOpen={setIsOpen}></AddHotelQ_Ans>
     </div>
   );
 };

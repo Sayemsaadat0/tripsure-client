@@ -3,14 +3,22 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
-// import GoogleLogin;
-// import FacebookLogin from '../../SocialLogin/FacebookLogin';
-// import LoadingButton from '../../Button/LoadingButton';
 import useAuth from '../../../../Hooks/useAuth';
 import LoadingButton from '../../../Button/LoadingButton';
 import GoogleLogin from '../../../SocialLogin/GoogleLogin';
-import FacebookLogin from '../../../SocialLogin/FacebookLogin';
 import { saveUser } from '../../../../apiCall/users';
+import Particle from '../Particle';
+import { BsFillEyeFill, BsFillEyeSlashFill } from 'react-icons/bs';
+
+
+
+
+
+
+
+
+
+
 const Register = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const { createUser, updateUserProfile, logOut } = useAuth()
@@ -19,8 +27,7 @@ const Register = () => {
     const navigate = useNavigate()
 
     const onSubmit = (data) => {
-        // Handle form submission here, e.g., make an API call to register the user
-        console.log(data);
+
         setLoading(true)
         const { name, email, password, image, countryName, phone, gender } = data
 
@@ -37,10 +44,8 @@ const Register = () => {
                             .then(() => {
                                 reset()
                                 Swal.fire({
-                                    title: 'Success!',
                                     text: 'Your account has been successfully created.',
                                     icon: 'success',
-                                    confirmButtonText: 'Cool'
                                 })
                                 setLoading(false)
                                 logOut()
@@ -53,7 +58,7 @@ const Register = () => {
                                     title: 'Error!',
                                     text: `${error.message}`,
                                     icon: 'error',
-                                    confirmButtonText: 'Cool'
+                                    confirmButtonText: 'error'
                                 })
 
                                 setLoading(false)
@@ -71,18 +76,26 @@ const Register = () => {
     };
 
     return (
-        <div style={{ backgroundImage: `url(https://i.ibb.co/rxYf1Nf/endgaem-register.jpg)`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
-            <div className=' flex bg-black bg-opacity-60 p-4 items-center justify-center flex-col h-full min-h-[calc(100vh)]'>
-                <div className="max-w-lg w-full mx-auto mt-4 border-2 border-[#2d969e] p-4 md:p-8 lg:p-12 text-gray-300 bg-white bg-opacity-80 duration-500 rounded-lg hover:shadow-lg">
-                    <h2 className="text-2xl text-[#2d969e] text-center font-bold mb-4">Please Register</h2>
+        <div className='authenticationImg'>
+            <div className='flex items-center justify-center w-full min-h-screen'>
+      
+                <div className="p-6  w-96 shadow-sm hover:shadow-sm rounded-lg text-white md:hover:shadow-white duration-700">
+                    <div className='flex gap-2'>
+                        <img className="w-16 h-16" src="https://i.ibb.co/ng9Sdrp/Untitled-design-1-unscreen.gif" alt="" />
+                        <div>
+                            <h2 className="text-2xl   font-bold ">Welcome to Tripsure</h2>
+                            <p>Register Your Account</p>
+                        </div>
+                    </div>
+
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        <div className="mb-4">
+                        <div className="mb-4 mt-4">
                             <input
                                 type="text"
                                 name="name"
                                 placeholder='Enter Name'
                                 {...register('name', { required: 'Name is required' })}
-                                className='w-full border text-[#2d969e] border-gray-300 px-3 py-2 rounded-md focus:outline-none ring-[#6bccd3] focus:ring-2 placeholder-[#2d969e] ring-offset-2 focus:border-blue-500'
+                                className='w-full shadow-sm  shadow-white bg-transparent px-3 py-2 rounded-md focus:outline-none placeholder-text-color'
                             />
                             {errors.name && (
                                 <span className="text-red-500 text-sm">{errors.name.message}</span>
@@ -94,7 +107,7 @@ const Register = () => {
                                 name="country"
                                 placeholder='Country Name'
                                 {...register('countryName', { required: 'Country Name is required' })}
-                                className='w-full border text-[#2d969e] border-gray-300 px-3 py-2 rounded-md focus:outline-none ring-[#6bccd3] focus:ring-2 placeholder-[#2d969e] ring-offset-2 focus:border-blue-500'
+                                className='w-full shadow-sm  shadow-white bg-transparent px-3 py-2 rounded-md focus:outline-none placeholder-text-color'
                             />
                             {errors.countryName && (
                                 <span className="text-red-500 text-sm">{errors.countryName.message}</span>
@@ -107,7 +120,7 @@ const Register = () => {
                                     name="phone"
                                     placeholder='Enter Phone'
                                     {...register('phone', { required: 'phone is required' })}
-                                    className='w-full border text-[#2d969e] border-gray-300 px-3 py-2 rounded-md focus:outline-none ring-[#6bccd3] focus:ring-2 placeholder-[#2d969e] ring-offset-2 focus:border-blue-500'
+                                    className='w-full shadow-sm  shadow-white bg-transparent px-3 py-2 rounded-md focus:outline-none placeholder-text-color'
                                 />
                                 {errors.phone && (
                                     <span className="text-red-500 text-sm">{errors.phone.message}</span>
@@ -116,12 +129,11 @@ const Register = () => {
                             <div className="w-full mb-4">
 
                                 <select
-                                    className='w-full border text-[#2d969e] border-gray-300 px-3 py-2 rounded-md focus:outline-none ring-[#6bccd3] focus:ring-2 placeholder-[#2d969e] ring-offset-2 focus:border-blue-500'
-                                    {...register("gender")}
-                                >
-                                    <option value="female">female</option>
-                                    <option value="male">male</option>
-                                    <option value="other">other</option>
+                                    className='w-full shadow-sm  shadow-white bg-transparent px-3 py-2 rounded-md focus:outline-none placeholder-text-color'
+                                    {...register("gender")} >
+                                    <option className='text-black ' value="female">female</option>
+                                    <option className='text-black ' value="male">male</option>
+                                    <option className='text-black ' value="other">other</option>
                                 </select>
                             </div>
                         </div>
@@ -137,13 +149,13 @@ const Register = () => {
                                         message: 'Invalid email address',
                                     },
                                 })}
-                                className="w-full border text-[#2d969e] border-gray-300 px-3 py-2 rounded-md focus:outline-none ring-[#6bccd3] focus:ring-2 placeholder-[#2d969e] ring-offset-2 focus:border-blue-500"
+                                className="w-full shadow-sm  shadow-white bg-transparent px-3 py-2 rounded-md focus:outline-none placeholder-text-color"
                             />
                             {errors.email && (
                                 <span className="text-red-500 text-sm">{errors.email.message}</span>
                             )}
                         </div>
-                        <div className="mb-4">
+                        <div className="mb-4 relative">
 
                             <input
                                 type={`${show ? 'text' : 'password'}`}
@@ -156,9 +168,12 @@ const Register = () => {
                                         message: 'Password must be at least 6 characters',
                                     },
                                 })}
-                                className="w-full border text-[#2d969e] border-gray-300 px-3 py-2 rounded-md focus:outline-none ring-[#6bccd3] focus:ring-2 placeholder-[#2d969e] ring-offset-2 focus:border-blue-500"
-                            />
-                            <span className=' w-fit mr-0 cursor-pointer text-[#2d969e]' onClick={() => setShow(!show)}>{show ? 'hide' : 'show'}</span>
+                                className="w-full shadow-sm  shadow-white bg-transparent px-3 py-2 rounded-md focus:outline-none placeholder-text-color" />
+                            <span
+                                className="w-fit mr-0 cursor-pointer absolute right-2 top-3 "
+                                onClick={() => setShow(!show)}>
+                                {show ? <BsFillEyeFill></BsFillEyeFill> : <BsFillEyeSlashFill></BsFillEyeSlashFill>}
+                            </span>
                             {errors.password && (
                                 <span className="text-red-500 text-sm">{errors.password.message}</span>
                             )}
@@ -169,33 +184,27 @@ const Register = () => {
                                 type="file"
                                 name="image"
                                 {...register('image', { required: 'Image is required' })}
-                                className="w-full border text-[#2d969e] border-[#2d969e] px-3 py-2 rounded-md focus:outline-none ring-[#6bccd3] focus:ring-2 placeholder-[#2d969e] ring-offset-2 focus:border-blue-500"
+                                className="w-full border   px-3 py-2 rounded-md focus:outline-none ring-[#6bccd3] focus:ring-2  ring-offset-2 focus:border-blue-500"
                             />
                             {errors.image && (
                                 <span className="text-red-500 text-sm">{errors.image.message}</span>
                             )}
                         </div>
-                        <p className=' w-fit text-[#2d969e]'>alredy have an account <Link className='my-link text-[#2d969e] font-bold relative' to={'/login'}>Login</Link></p>
+
                         <div className="mt-4">
                             {
                                 loading ? <LoadingButton></LoadingButton>
                                     : <button
                                         type="submit"
-                                        className="logout-button "
-                                    >
+                                        className=" w-full flex justify-center shadow-sm py-2 rounded-lg shadow-white hover:scale-105 duration-500">
                                         Register
-                                    </button>
-                            }
+                                    </button>}
                         </div>
-                        <div className='flex justify-center gap-2 my-2 items-center'>
-                            <span className='border-[2px] w-full border-white'></span>
-                            <span className='text-white'>or</span>
-                            <span className='border-[2px] w-full border-white'></span>
+                        <p className=' w-fit '>alredy have an account <Link className='my-link  font-bold relative' to={'/login'}>Login</Link></p>
+                        <div className='divider'>
+                            <p>or</p>
                         </div>
-                        <div className='flex justify-center items-center gap-4'>
-                            <GoogleLogin></GoogleLogin>
-                            <FacebookLogin></FacebookLogin>
-                        </div>
+                        <GoogleLogin></GoogleLogin>
                     </form>
                 </div>
             </div>

@@ -6,7 +6,6 @@ import { Navigation } from "swiper/modules";
 import Container from "../../../../LayOut/Container";
 import SectionTitle from "../../../Shared/SectionTitle/SectionTitle";
 import { Link } from "react-router-dom";
-// import { FaHeart } from "react-icons/fa6";
 
 const TopDestinations = () => {
   const [TopDestinations, setTopDestinations] = useState([]);
@@ -18,7 +17,7 @@ const TopDestinations = () => {
   }, []);
   return (
     <Container>
-      <div className="bg-white b my-20 px-10">
+      <div className="bg-white b my-20 ">
         <div>
           <SectionTitle
             text={"Explor the Ultimate"}

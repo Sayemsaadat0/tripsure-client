@@ -36,12 +36,12 @@ const Addresource = () => {
     },
     {
       picture: 'https://i.ibb.co/SxcP9T2/Restaurant-2.png',
-      route: 'addgueide',
+      route: 'addguide',
       name: "Add Guide",
     },
   ];
   return (
-    <div>
+    <div className="p-6">
       <div>
         <h2 className="uppercase font-semibold text-xl text-center mb-10 h-full"></h2>
       </div>

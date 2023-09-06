@@ -13,7 +13,7 @@ const Dashboard = () => {
 
 
   return (
-    <div className="drawer lg:drawer-open max-w-7xl mx-auto">
+    <div className="drawer lg:drawer-open mx-auto">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content bg-gray-100">
         <DasNav></DasNav>
@@ -31,21 +31,20 @@ const Dashboard = () => {
         <div className="navbar grid grid-cols-1  ">
           <NavLink className="w-full pt-6  flex flex-col justify-center" to="/">
             <img
-              className="w-20 hidden md:block"
+              className="w-20 hidden md:block mb-10"
               src="https://i.ibb.co/qkVKbxM/Untitled-design-4.png"
               alt="" />
 
-            <p>TripSure</p>
           </NavLink>
 
-          {/* optional */}
-          {/*  <div className="">
+        {/* opional */}
+        {/*   <div className="">
             <img className="w-16 rounded-full" src={user.photoURL} />
             <div className="m-2">
               <p>{user.displayName}</p>
               <p>role</p>
             </div>
-          </div> */}
+          </div>  */}
         </div>
 
         <ul className="menu  text-xl">

@@ -3,6 +3,7 @@ import { FaTrashAlt, FaUserCheck, FaUserShield } from "react-icons/fa";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
 import { useEffect, useState } from "react";
+import UserStatus from "../../../Shared/Status/UserStatus";
 
 const ManageUser = () => {
 
@@ -81,7 +82,7 @@ const ManageUser = () => {
 
   //  make role handlling
 
-  const handleMakeAdmin = user => { 
+  const handleMakeAdmin = user => {
     console.log(user)
     fetch(`https://tripsure-server-sayemsaadat0.vercel.app/users/admin/${user._id}`, {
       method: 'PATCH'
@@ -102,7 +103,7 @@ const ManageUser = () => {
       })
   }
 
-  const handleMakeInstructor = (user) =>{
+  const handleMakeOperator = (user) => {
     console.log(user)
     fetch(`https://tripsure-server-sayemsaadat0.vercel.app/users/operator/${user._id}`, {
       method: 'PATCH'
@@ -113,7 +114,7 @@ const ManageUser = () => {
         if (data.acknowledged) {
           refetch();
           Swal.fire({
-           
+
             icon: 'success',
             title: `WOW is an operator Now!`,
             showConfirmButton: false,
@@ -121,52 +122,92 @@ const ManageUser = () => {
           })
         }
       })
-
   }
+
+  // search 
+  const [searchTerm, setSearchTerm] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+  const handleSearch = async () => {
+    try {
+      const response = await fetch(`https://tripsure-server-sayemsaadat0.vercel.app/users?email=${searchTerm}`);
+      const data = await response.json();
+      setSearchResults(data);
+    } catch (error) {
+      console.error("Error searching for users:", error);
+    }
+  };
+
+
   return (
     <div className="w-full">
-      <h2 className="text-center mb-10 font-bold text-2xl">
-        {" "}
-        {usersdata.length}{" "}
-      </h2>
+      <div className="flex justify-between items-center mr-10 mt-4">
+        <h2 className="text-center mb-6 ml-4 font-bold text-2xl">
+          Total Users : <span className="text-red-500">{usersdata.length}</span>
+        </h2>
+        <div>
+          <UserStatus/>
+        </div>
+      </div>
+
+
       <div className="overflow-x-auto">
-      <select value={operator} onChange={(e) => setOperator(e.target.value)}>
-          <option value="">All Operators</option>
-          <option value="admin">Admin</option>
-          <option value="operator">Operator</option>
-        </select>
-        <table className="table w-full">
+        <div className="flex justify-between  mr-10 ">
+          {/* search  */}
+          <div className="form-control ml-3">
+            <div className="input-group">
+              <input value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)} type="text" placeholder="Enter Email" className="input input-bordered" />
+              <button className="btn" onClick={handleSearch}>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </button>
+
+            </div>
+          </div>
+          {/* sort */}
+          <select className="select shadow-lg w-40 focus:outline-none"
+            value={operator} onChange={(e) => setOperator(e.target.value)}>
+            <option value="">All Users</option>
+            <option value="admin">Admin</option>
+            <option value="operator">Operator</option>
+          </select>
+
+        </div>
+
+
+        <table className="table w-full table-zebra mt-5" >
           {/* head */}
           <thead>
-            <tr>
-              <th>#</th>
+            <tr className="bg-[#85c8f7] text-lg text-white shadow-md">
+              <th>Index</th>
               <th>image</th>
               <th onClick={() => handleSort('name')}>Name</th>
-              <th>Email</th>
               <th>Role</th>
-              <th>admin</th>
-              <th>operation</th>
+              <th>Admin</th>
+              <th>Operator</th>
+              <th>Delete</th>
+
             </tr>
           </thead>
           <tbody>
             {filteredUsers?.map((user, i) => (
-
-              <tr key={user._id}>
-                <th>{i + 1}</th>
+              <tr key={user._id} >
+                <td>{i + 1}</td>
                 <td>
-                  <div className="flex items-center space-x-3">
-                    <div className="avatar">
-                      <div className="mask mask-squircle w-12 h-12">
-                        <img
-                          src={user.photo}
-                          alt="Avatar Tailwind CSS Component"
-                        />
-                      </div>
+                  <div className="flex items-center ">
+                    <div className="mask mask-squircle w-12 h-12">
+                      <img
+                        src={user.photo}
+                        alt="Avatar Tailwind CSS Component" />
                     </div>
                   </div>
                 </td>
-                <td>{user?.name}</td>
-                <td>{user?.email}</td>
+                <td>
+                  <span className="font-semibold text-lg">{user?.name}</span>
+                  <br />
+                  <span>{user?.email}</span>
+                </td>
                 <td>{user?.role ? user.role : 'userNotset'}</td>
                 <td>
                   {user.role === "admin" ? (
@@ -181,12 +222,12 @@ const ManageUser = () => {
                     </button>
                   )}
                 </td>
-                <td>
+                <td >
                   {user.role === "operator" ? (
                     "operator"
                   ) : (
                     <button
-                      onClick={() => handleMakeInstructor(user)}
+                      onClick={() => handleMakeOperator(user)}
                       disabled={user.role === "admin"}
                       className="btn btn-ghost bg-teal-800  text-white"
                     >
@@ -194,11 +235,10 @@ const ManageUser = () => {
                     </button>
                   )}
                 </td>
-                <th>
+                <th   >
                   <button
                     onClick={() => handleDelete(user)}
-                    className="btn btn-outline btn-circle bg-pink-700 text-white"
-                  >
+                    className=" btn mr-4" >
                     <FaTrashAlt></FaTrashAlt>
                   </button>
                 </th>

@@ -8,6 +8,7 @@ import ClockLogo from "../../../assets/time-png-6175.png"
 import lightLogo from "../../../assets/light.png"
 import tripcustome from "../../../assets/tripcustome.png"
 import Container from "../../../LayOut/Container";
+import bestTrip from "../../../assets/travelpng.png"
 
 const TopDestinationDetails = () => {
   const {id} = useParams();
@@ -51,30 +52,7 @@ const TopDestinationDetails = () => {
       <div className="lg:mx-10 mx-2">
       <div>
         <h1 className="text-5xl space-x-5 font-bold">{topDestinationDetails?.cardtitle}</h1>
-        <div className="text-center mx-auto lg:grid lg:overflow-x-hidden overflow-y-hidden flex lg:grid-cols-4 my-4 gap-2 overflow-scroll  ">
-          <button className="btn btn-md btn-outline lg:btn-wide">Hotel</button>
-          <button className="btn btn-md btn-outline lg:btn-wide">
-            Things To do
-          </button>
-          <button className="btn btn-md btn-outline lg:btn-wide">
-            Trip Advice
-          </button>
-          <button className="btn btn-md btn-outline lg:btn-wide">
-            Trip Advice
-          </button>
-          <button className="btn btn-md btn-outline lg:btn-wide">
-            Trip Advice
-          </button>
-          <button className="btn btn-md btn-outline lg:btn-wide">
-            Trip Advice
-          </button>
-          <button className="btn btn-md btn-outline lg:btn-wide">
-            Trip Advice
-          </button>
-          <button className="btn btn-md btn-outline lg:btn-wide">
-            Trip Advice
-          </button>
-        </div>
+        
         <div className="my-6">
           <img
             className="w-full h-60 md:h-72 lg:h-[28rem] object-bottom rounded-md bg-cover object-cover"
@@ -126,7 +104,7 @@ const TopDestinationDetails = () => {
                 <div>
                   <img
                     className="w-14 rounded-full "
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAuTWa_9svFXYKl_R7w5WOuNO1J_OAtcFStg&usqp=CAU"
+                    src={bestTrip}
                     alt=""
                   />
                 </div>
@@ -154,7 +132,6 @@ const TopDestinationDetails = () => {
                   Places to see, ways to wander, and signature experiences that
                   define .
                 </p>
-                <Link className="underline">See all</Link>
               </div>
               <div>
                <DoSwiper doPlace={doPlace.slice(1,)}></DoSwiper>
@@ -167,7 +144,6 @@ const TopDestinationDetails = () => {
                   Places to see, ways to wander, and signature experiences that
                   define .
                 </p>
-                <Link className="underline">See all</Link>
               </div>
               <div>
                <CommonSwiper allHotels={allHotels}></CommonSwiper>
@@ -178,9 +154,9 @@ const TopDestinationDetails = () => {
                 <h3 className="text-2xl font-bold text-black">Eat</h3>
                 <p>
                   Places to see, ways to wander, and signature experiences that
-                  define Tulum.
+                  define.
                 </p>
-                <Link className="underline">See all</Link>
+                
               </div>
               <div>
                <RestaurantSwiper restaurant={restaurants}></RestaurantSwiper>

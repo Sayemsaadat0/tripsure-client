@@ -6,6 +6,7 @@ import { Pagination } from "swiper/modules";
 import Container from "../../../../LayOut/Container";
 import SectionTitle from "../../../Shared/SectionTitle/SectionTitle";
 import Rating from "react-rating";
+import { BsStar, BsStarFill } from 'react-icons/bs';
 
 const Feedback = () => {
   const [feedbacks, setFeedbacks] = useState([]);
@@ -33,7 +34,7 @@ const Feedback = () => {
   return (
     <Container>
       <div data-AOS="fade-left" data-aos-duration="3000" data-aos-easing="ease">
-        <div className="p-10">
+        <div className="p-10 md:my-20">
           <SectionTitle
             subText={"Testimonials"}
             text={"What Our"}
@@ -62,37 +63,35 @@ const Feedback = () => {
               },
             }}
             modules={[Pagination]}
-            className="mySwiper"
-          >
+            className="mySwiper">
             {feedbacks.map((feedback) => (
               <SwiperSlide key={feedback._id}>
-                <div className="card border mb-16">
-                  <div className="card-body m-0 p-0 h-72">
-                    <div className="px-3 mt-5">
-                      <Rating style={{ maxWidth: 180 }} placeholderRating={feedback?.rating} readonly />
+                <div className="card  mb-16">
+                  <div className="card-body m-0 p-0 h-72 ">
+                    <div className="p-3 flex justify-center">
                       <img
-                        className="h-20 w-20 rounded-full"
+                        className="h-20 w-20 rounded-full "
                         src={feedback?.user?.photoURL}
-                        alt="Review user picture"
-                      />
+                        alt="Review user picture" />
                     </div>
-                    <div className="px-3">
+                    <div className="px-3 text-center leading-7">
                       <h2 className="font-bold">{feedback?.user?.displayName}</h2>
-
-
-
-
+                      <Rating
+                        initialRating={feedback?.rating}
+                        fullSymbol={<BsStarFill size={30} color="red" />}
+                        emptySymbol={<BsStar size={30} color="red" />}
+                        style={{ maxWidth: 200 }}
+                        readonly />
 
                       <p>{feedback?.textareaValue.split(" ").slice(0, 15).join(" ")}</p>
                       {feedback?.textareaValue.split(" ").length > 15 && (
                         <button
                           className=" btn-link text-[#2a9f9f]"
                           onClick={() => openModal(feedback)}>Read more
-                        </button>
-                      )}
-
+                        </button>)}
 
                     </div>
+
                   </div>
                 </div>
               </SwiperSlide>

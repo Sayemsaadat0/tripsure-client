@@ -5,12 +5,41 @@ import Container from '../../../../LayOut/Container';
 import { GoLocation } from 'react-icons/go';
 import { BiTime } from 'react-icons/bi';
 import { Typewriter } from 'react-simple-typewriter'
-import { FaCalendarDay, FaHotel } from 'react-icons/fa';
+import { FaCalendarDay, FaHotel, FaMinus, FaPlus } from 'react-icons/fa';
 import { GrCircleInformation } from 'react-icons/gr';
+import useAuth from '../../../../Hooks/useAuth';
+import { DatePicker } from 'antd';
+import { FaUserGroup } from 'react-icons/fa6';
 
 const TravelDealsDetails = () => {
+    const [modalForCountPeople, setModalForCountPeople] = useState(false);
+    const [adultCount, setAdultCount] = useState(2);
+    const [childrenCount, setChildrenCount] = useState(0);
+    const [infantsCount, setInfantsCount] = useState(0);
     const { id } = useParams();
     const [travelDealsDetails, setTravelDealsDetails] = useState({});
+
+    const [packageDetails, setPackageDetails] = useState({});
+    const [unavailableDates, setUnavailableDates] = useState([]);
+    const {user} = useAuth();
+    const [selectedDate, setSelectedDate] = useState(null);
+    const handleDateChange = (date) => {
+      setSelectedDate(date);
+    };
+
+
+    const handlePeopleForReserve = () => {
+        setModalForCountPeople(!modalForCountPeople);
+      };
+      const onChange = (date, dateString) => {
+        // dateString);
+      };
+    
+      const isDateUnavailable = (date) => {
+        return unavailableDates.includes(date.format("YYYY-MM-DD"));
+      };
+
+
     const { title,
         destination,
         duration,
@@ -33,6 +62,7 @@ const TravelDealsDetails = () => {
         hotels,
         includedItems,
         reviews } = travelDealsDetails
+        console.log(travelDealsDetails);
     useEffect(() => {
         axios.get(`https://tripsure-server-sayemsaadat0.vercel.app/travelDeals/${id}`)
             .then((res) => {
@@ -46,6 +76,26 @@ const TravelDealsDetails = () => {
         `Get ${savings?.adult} off per adult`,
         `and ${savings?.child} off per child.`,
     ];
+
+
+
+    const orderDetails = {
+        email: user?.email,
+        card: travelDealsDetails,
+        selectedDate: selectedDate?.format("YYYY-MM-DD"),
+        price: {
+          adult: travelDealsDetails?.newPrice?.adult * adultCount,
+          children: travelDealsDetails?.newPrice?.child * childrenCount,
+          totalPrice: travelDealsDetails?.newPrice?.adult * adultCount + travelDealsDetails?.newPrice?.child * childrenCount
+    
+        },
+        travelerCount: {
+          adult: adultCount,
+          children: childrenCount,
+          infants: infantsCount
+        }
+      }
+
 
     return (
         <Container>
@@ -96,11 +146,160 @@ const TravelDealsDetails = () => {
 
                             <div className='mt-5'>
                                 <hr />
-                                <p>Total Available Spots : {totalPeople}</p>
-                                <p>Reservation Limit : {limitPerBooking} spots per person</p>
+                                <div className="p-4">
+              <h2 className="text-3xl font-bold pb-6">Reserve your spot</h2>
+              <div className="flex gap-4 relative">
+                <button className="font-bold h-10 border-2 border-black rounded-full">
+                  {/* <Space direction="vertical" size={14}>
+                    <DatePicker className="rounded-full" onChange={onChange} />
+                  </Space> */}
+                  <DatePicker
+                    onChange={handleDateChange}
+                    disabledDate={isDateUnavailable}
+                    className=" border-none focus:outline-none rounded-full"
+                  />
+                  {selectedDate && (
+                    <p className="mt-2">
+                      Selected date: {selectedDate.format("YYYY-MM-DD")}
+                    </p>
+                  )}
+                </button>
+                <button
+                  onClick={handlePeopleForReserve}
+                  className="btn btn-outline rounded-full  font-bold"
+                >
+                  <FaUserGroup className="w-5"></FaUserGroup>
+                  <span className="text-xl">
+                    {adultCount + childrenCount + infantsCount}
+                  </span>
+                </button>
+                {modalForCountPeople && (
+                  <div className="border-2 top-14 bg-white shadow-xl  rounded-2xl p-2 right-4 w-full lg:w-3/4 absolute">
+                    <div className="m-4 space-y-3">
+                      <div className="flex justify-between items-center">
+                        <div>
+                          <h1 className="font-bold">Adults</h1>
+                          <span>Age 12 - 99</span>
+                        </div>
+                        <div className="space-x-3">
+                          <button
+                            disabled={adultCount == 1 ? true : false}
+                            onClick={() =>
+                              setAdultCount((adultCount) => adultCount - 1)
+                            }
+                            className="btn btn-sm btn-circle bg-black hover:bg-black  rounded-full"
+                          >
+                            <FaMinus className="w-4 text-white "></FaMinus>
+                          </button>
+                          <span className="font-bold">{adultCount}</span>
+                          <button
+                            onClick={() =>
+                              setAdultCount((adultCount) => adultCount + 1)
+                            }
+                            className="btn btn-sm btn-circle bg-black hover:bg-black  rounded-full"
+                          >
+                            <FaPlus className="w-4 text-white "></FaPlus>
+                          </button>
+                        </div>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <div>
+                          <h1 className="font-bold">Children</h1>
+                          <span>Age 3 - 11</span>
+                        </div>
+                        <div className="space-x-3">
+                          <button
+                            disabled={childrenCount == 0 ? true : false}
+                            onClick={() =>
+                              setChildrenCount(
+                                (childrenCount) => childrenCount - 1
+                              )
+                            }
+                            className="btn btn-sm btn-circle bg-black hover:bg-black  rounded-full"
+                          >
+                            <FaMinus className="w-4 text-white "></FaMinus>
+                          </button>
+                          <span className="font-bold">{childrenCount}</span>
+                          <button
+                            onClick={() =>
+                              setChildrenCount(
+                                (childrenCount) => childrenCount + 1
+                              )
+                            }
+                            className="btn btn-sm btn-circle bg-black hover:bg-black  rounded-full"
+                          >
+                            <FaPlus className="w-4 text-white "></FaPlus>
+                          </button>
+                        </div>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <div>
+                          <h1 className="font-bold">Infants</h1>
+                          <span>Age 0 - 2</span>
+                        </div>
+                        <div className="space-x-3">
+                          <button
+                            disabled={infantsCount == 0 ? true : false}
+                            onClick={() =>
+                              setInfantsCount(
+                                (infantsCount) => infantsCount - 1
+                              )
+                            }
+                            className="btn btn-sm btn-circle bg-black hover:bg-black  rounded-full"
+                          >
+                            <FaMinus className="w-4 text-white "></FaMinus>
+                          </button>
+                          <span className="font-bold">{infantsCount}</span>
+                          <button
+                          disabled
+                            onClick={() =>
+                              setInfantsCount(
+                                (infantsCount) => infantsCount + 1
+                              )
+                            }
+                            className="btn btn-sm btn-circle bg-black hover:bg-black  rounded-full"
+                          >
+                            <FaPlus className="w-4 text-white "></FaPlus>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+              <p className="py-4 text-md">1 option available for 8/17</p>
+              <div className="m-4 border-2 space-y-2 p-3 border-black rounded-3xl">
+                <p className="text-xl font-bold">{title}</p>
+                <p>Pickup included</p>
+                <p>
+                  {adultCount} Adults x ${newPrice?.adult * adultCount}
+                </p>
+                <p>
+                  {childrenCount} Children x ${newPrice?.child * childrenCount}
+                </p>
+                <p className="text-xl font-semibold">
+                  Total $
+                  {newPrice?.adult  * adultCount +
+                    newPrice?.child * childrenCount }
+                </p>
+                <p>(No additional taxes or booking fees)</p>
+              </div>
+              <div className="flex gap-3 items-center justify-around">
+                <Link  disabled={selectedDate == null}
+                 to={user ? '/contactDetails' : '/login'}
+                  state={{ orderDetails: orderDetails }}
+                  className="btn rounded-full lg:px-14 btn-warning"
+                >
+                  Reserve Now
+                </Link>
+              </div>
+              <p className="p-4">
+                Not sure? You can cancel this reservation up to 24 hours in
+                advance for a full refund.
+              </p>
+            </div>
                             </div>
-                            {/*todo Reserve your spot */}
-                            <Link to='/contactDetails' className='btn mt-10'>Reserve Now</Link>
+                            
                         </div>
                     </div>
                 </div>
@@ -183,51 +382,14 @@ const TravelDealsDetails = () => {
                                 <p>Duration of Stay : {hotel.nights} Nights</p>
 
                                 <p className='font-bold'> Amenity  </p>
-                                {hotel.amenities.map((amenity, amenityIndex) => (
+                                {hotel?.amenities?.map((amenity, amenityIndex) => (
                                     <li key={amenityIndex}>{amenity}</li>
                                 ))}
                             </div>
                         ))}
                     </div>
-                    <div>
-                        {/* Additional Info*/}
-                        <div>
-                            <p className='font-bold list-none flex items-center gap-2'><GrCircleInformation className='text-2xl'></GrCircleInformation> Additional Information  </p>
-                            {additionalInfo?.map((d, index) => (
-                                <li className='' key={index}>  {d}</li>
-                            ))}
-                        </div>
-                    </div>
                 </div>
                 <hr />
-                {/* review */}
-                <div>
-                    <div className=' p-4'>
-                        <p className='font-bold'>Reviews</p>
-                        <div className='border rounded-lg p-4'>
-
-                            {/* <img src={reviews?.userImage} alt="df" /> */}
-                            {/* <h3>{reviews?.name}</h3> */}
-
-                            <div className='flex'>
-                                <div className='w-full'>
-                                        <img className='w-16 h-16 rounded-full' src="https://i.pinimg.com/564x/d9/7b/bb/d97bbb08017ac2309307f0822e63d082.jpg" alt="df" />
-                                        {<h3 className='text-xl font-semibold'>Rafin Hossain</h3>}
-                                        <p>Ratings :</p>
-                                        <h3>overall : {reviews?.ratings?.overall}</h3>
-                                        <h3>accommodation : {reviews?.ratings?.accommodation}</h3>
-                                        <h3>activities : {reviews?.ratings?.activities}</h3>
-                                        <h3>food : {reviews?.ratings?.food}</h3>
-                                        <h3>guide : {reviews?.ratings?.guide}</h3>
-                                </div>
-                                <div>
-                                    <p>{reviews?.review}</p>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
             </div>
         </Container>
     );
