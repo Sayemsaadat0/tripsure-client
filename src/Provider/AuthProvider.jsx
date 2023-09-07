@@ -1,14 +1,22 @@
 import React, { createContext, useEffect, useState } from 'react';
 import { FacebookAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import app from '../Firebase/Firebase.config';
+import { getRole } from '../apiCall/users';
 
 export const AuthContext = createContext()
 const AuthProvider = ({ children }) => {
     const [loading, setLoading] = useState(true)
     const [user, setUser] = useState('')
+    const [role, setRole] = useState(null)
     const auth = getAuth(app)
     const googleProvider = new GoogleAuthProvider()
     const facebookProvider = new FacebookAuthProvider()
+
+    useEffect(() => {
+        if (user) {
+          getRole(user.email).then(data => setRole(data))
+        }
+      }, [user])
 
     const createUser = (email, password) => {
         setLoading(true)
@@ -57,6 +65,7 @@ const AuthProvider = ({ children }) => {
 
 
     const value = {
+        role,
         user,
         loading,
         setLoading,

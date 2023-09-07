@@ -3,11 +3,28 @@ import { AiFillMessage } from 'react-icons/ai';
 import useAuth from '../../../Hooks/useAuth';
 import { FaHandPaper } from 'react-icons/fa';
 import moment from 'moment';
+import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 
 
 const DasNav = () => {
-    const { user } = useAuth()
+    const {logOut, user } = useAuth()
+    const handleLogout = () => {
+        logOut()
+          .then(() => {
+            Swal.fire("Good job!", "log Out your account ", "success");
+          })
+          .catch((error) => {
+            console.log(error);
+            Swal.fire({
+              title: "Error!",
+              text: `${error.message}`,
+              icon: "error",
+              confirmButtonText: "Cool",
+            });
+          });
+      };
 
     const currentTime = moment();
     let greeting = '';
@@ -39,14 +56,14 @@ const DasNav = () => {
                 <div className="dropdown dropdown-end">
                     <label tabIndex={0} className="avatar">
                         <div className="w-10 rounded-full">
-                            <img src={user?.photoURL} />
+                            <img className='cursor-pointer' src={user?.photoURL} />
                         </div>
                     </label>
                     <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
                         <li>
-                            <a className="justify-between">Profile</a>
+                            <Link to={`/profile/${user?.email?.split('.')[0]}`} className="justify-between">Profile</Link>
                         </li>
-                        <li><a>Logout</a></li>
+                        <li onClick={handleLogout}><a>Logout</a></li>
                     </ul>
                 </div>
             </div>
