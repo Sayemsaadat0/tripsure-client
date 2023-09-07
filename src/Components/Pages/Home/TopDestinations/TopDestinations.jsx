@@ -20,7 +20,7 @@ const TopDestinations = () => {
       <div className="bg-white b my-20 ">
         <div>
           <SectionTitle
-            text={"Explor the Ultimate"}
+            text={"Explore the Ultimate"}
             coloredText={"Top Destinations"}
             subText={"Journey to Perfection"}
           ></SectionTitle>
