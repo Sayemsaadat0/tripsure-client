@@ -1,6 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../LayOut/Main/Main";
 import Home from "../Pages/Home/Home";
+
+import AboutUsDetails from "../Pages/Home/AboutUs/AboutUsDetails";
 import Overview from "../Pages/Overview/Overview";
 import Login from "../Pages/Authentication/Login/Login";
 import Register from "../Pages/Authentication/SignUp/Register";
@@ -51,7 +53,7 @@ import SearchDetails from "../Pages/SearchResult/SearchDetails";
 // payment
 import PaymentDetails from "../Pages/Payment/PaymentDetails/PaymentDetails";
 import AddRentalCars from "../Pages/DashBoard/Admin/Overview/AddRentalCars";
-import AboutUsDetails from "../Pages/Home/AboutUs/AboutUsDetails";
+
 
 const router = createBrowserRouter([
   {

@@ -31,11 +31,6 @@ const COLORS = ['#34a0a4' ]
 
   const users = useUsers()
   
-
-
-
-  
-
   return (
     <div className=' pt-4 px-4 mx-auto '>
 

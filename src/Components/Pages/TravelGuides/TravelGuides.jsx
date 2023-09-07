@@ -81,6 +81,4 @@ export default TravelGuides;
   "description": "Explore the rich cultural heritage and breathtaking natural beauty of Bangladesh with me. From bustling Dhaka to the serene Sundarbans, I'll be your guide to this remarkable land.",
   "image": "bangladeshi-guide.jpg"
   "age" : 30 ,
-
-
 */

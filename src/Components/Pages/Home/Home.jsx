@@ -8,6 +8,7 @@ import FamilyGuide from './FamilyGuide/FamilyGuide';
 import WhyUs from './WhyUs/WhyUs';
 import TravelDeals from './TravelDeals/TravelDeals';
 import Packages from './Packages/Packages';
+import Medical from './Medical/Medical';
 
 const Home = () => {
     return (
@@ -34,7 +35,7 @@ https://i.ibb.co/9HhFbwm/2.png*/}
             </section>
 
             <section className='md:my-40'>
-                <AboutUs></AboutUs>
+                <Medical></Medical>
             </section>
 
             <section>

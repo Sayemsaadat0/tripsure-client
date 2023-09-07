@@ -3,9 +3,9 @@ import Container from "../../../../LayOut/Container";
 import { Link } from "react-router-dom";
 
 
-const AboutUs = () => {
+const Medical = () => {
   return (
-    <div className="aboutus">
+    <div className="Medical">
       <div className="text-white bg-black bg-opacity-40 flex flex-col justify-center items-center text-center h-[450px] ">
         <Container>
 
@@ -13,7 +13,7 @@ const AboutUs = () => {
           <p className="md:w-[60%] p-4 mx-auto text-center">
             Your trusted companion for maintaining health and safety in a global environment. Discover essential medical resources, practical tips, and comprehensive guidance for worry-free experiences.
           </p>
-          <Link to='/aboutusdetails'>
+          <Link to='/Medicaldetails'>
             <button className="btn mt-2">
               Details
             </button>
@@ -25,22 +25,5 @@ const AboutUs = () => {
   );
 };
 
-export default AboutUs;
+export default Medical;
 
-
-
-/* 
-import Typical from "react-typical";
- <Typical
-                loop={Infinity}
-                wrapper="w"
-                steps={[
-                  "Popular Destinations",
-                  1000,
-                  "What Our Travelers Say",
-                  1000,
-                  "Get in Touch",
-                  1000,
-                ]}
-              />
-*/
