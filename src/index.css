@@ -290,3 +290,23 @@
   padding: 40px 0px;
 }
 
+/* banner */
+
+.banner{
+  position: absolute;
+  z-index: 1;
+}
+
+
+::selection{
+  color: rgb(114, 162, 228);
+  background-color: white;
+}
+
+
+/* .bannerBack{
+  background-image:url('https://i.ibb.co/mNjyYv9/2.png');
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  object-fit:fill;
+}  */

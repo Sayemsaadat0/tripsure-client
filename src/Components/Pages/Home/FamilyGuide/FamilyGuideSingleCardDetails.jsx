@@ -29,7 +29,7 @@ const FamilyGuideSingleCardDetails = () => {
     // name restaurant address foodPicture
     const { id } = useParams();
     useEffect(() => {
-        axios.get(`https://tripsure-server-sayemsaadat0.vercel.app/familyDetails/${id}`)
+        axios.get(`${import.meta.env.VITE_BACKEND_API}/familyDetails/${id}`)
             .then((res) => {
                 setFamilyGuideDetails(res.data);
             })
@@ -38,9 +38,9 @@ const FamilyGuideSingleCardDetails = () => {
     /*   console.log('family details', id, familyGuideDetails); */
     return (
         <Container>
-            <div className='md:mt-10 md:p-5 p-2'>
-                <div>
-                    <h3 className='text-3xl text-[#7bb9b9] font-semibold'>{title}</h3 >
+            <div className='md:mt-20  md:p-5 p-2'>
+                <div className='tracking-widest'>
+                    <h3 className='text-3xl  font-semibold'>{title}</h3 >
                     <div className='flex gap-5 mt-2'>
                         <p className='font-extralight text-sm'>{country}</p>
                         <p className='font-extralight text-sm'>{postedBy}</p>

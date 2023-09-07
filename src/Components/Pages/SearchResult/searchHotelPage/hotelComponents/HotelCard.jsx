@@ -46,9 +46,7 @@ const HotelCard = ({ data }) => {
             </div>
             <Link to={data?.hotel_website} target="_blank" className="mt-5">
               <button
-               
-                className="btn btn-primary"
-              >
+                className="btn btn-primary">
                 view details
               </button>
             </Link>

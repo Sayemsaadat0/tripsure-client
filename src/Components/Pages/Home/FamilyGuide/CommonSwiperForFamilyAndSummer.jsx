@@ -44,12 +44,11 @@ const CommonSwiperForFamilyAndSummer = ({ SwiperData }) => {
               <div className="card-body">
                 <h2 className="card-title">{todo?.title}</h2>
                 <p>{todo?.introduction.slice(0, 120)}...</p>
-                <div className="card-actions justify-end">
+                <div className="card-actions justify-start">
                   <Link
                     to={`/FamilyGuideSingleCardDetails/${todo?._id}`}
-                    className="btn btn-primary"
-                  >
-                    details<FaArrowTurnUp></FaArrowTurnUp>
+                    className="btn-link text-blue-500 flex justify-center items-center gap-1">
+                    Read More<FaArrowTurnUp></FaArrowTurnUp>
                   </Link>
                 </div>
               </div>

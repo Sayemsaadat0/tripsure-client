@@ -16,7 +16,7 @@ const Eat = ({ country }) => {
 
   useEffect(() => {
     axios
-      .get(`https://tripsure-server-sayemsaadat0.vercel.app/restaurant`)
+      .get(`${import.meta.env.VITE_BACKEND_API}/restaurant`)
       .then((data) => {
         setRestaurants(data.data);
       })

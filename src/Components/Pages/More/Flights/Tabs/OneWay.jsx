@@ -15,7 +15,7 @@ const OneWay = () => {
  
   
   
-  const url = `http://localhost:1000/flights?from=${searchQuery}&to=${destinationQuery}&date=${dateQuery}`;
+  const url = `${import.meta.env.VITE_BACKEND_API}/flights?from=${searchQuery}&to=${destinationQuery}&date=${dateQuery}`;
 
   useEffect(() => {
     if (searchQuery||destinationQuery|| dateQuery) {

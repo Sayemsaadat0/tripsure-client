@@ -25,10 +25,6 @@ const SearchSection = () => {
       icon: <IoBedOutline />,
     },
     {
-      title: "Things To Do",
-      icon: <FaArrowsToDot />,
-    },
-    {
       title: "Restaurants",
       icon: <IoRestaurantSharp />,
     },
@@ -48,11 +44,12 @@ const SearchSection = () => {
     const searchText = e.target.searchText.value;
     dispatch(setSearchText(searchText));
     fetch(
-      `https://tripsure-server-sayemsaadat0.vercel.app/searchResult/${
+      `${import.meta.env.VITE_BACKEND_API}/searchResult/${
         activeCategory.toLowerCase() === "search all"
           ? "search-all"
           : activeCategory.toLowerCase() === "things to do"
-          ? "search-all" : activeCategory.toLowerCase()
+          ? "search-all"
+          : activeCategory.toLowerCase()
       }/${searchText}`
     )
       .then((res) => res.json())
@@ -62,21 +59,17 @@ const SearchSection = () => {
   };
 
   return (
-    <div className="w-full md:max-w-3xl mx-auto mt-20 text-[#79c7ff]">
+    <div className="w-full md:max-w-3xl mx-auto mt-20 ">
       <div>
         <div>
-          <h1 className="text-center text-5xl font-bold hidden md:block">
+          <h1 className="text-center text-5xl text-[#79c7ff] font-bold hidden md:block">
             {activeCategory === "Hotels"
               ? "Stay somewhere great"
-              : activeCategory === "Things To Do"
-              ? "Do something fun"
               : activeCategory === "Restaurants"
               ? "Find places to eat"
-              : activeCategory === "Vacation Rentals"
-              ? "Explore places to rent"
               : "Where to?"}
           </h1>
-          <ul className="flex overflow-x-auto w-full justify-center mx-auto my-5">
+          <ul className="flex w-full justify-center mx-auto my-5">
             {categories.map((category, i) => (
               <li
                 key={i}
@@ -118,8 +111,8 @@ const SearchSection = () => {
               />
             </div>
             <div className="w-full md:w-[120px] md:absolute md:bottom-[6px] md:right-2 ">
-              <button 
-              className="
+              <button
+                className="
               hover:bg-[#6599b1] 
               text-white 
               bg-[#79c7ff] 
@@ -128,11 +121,11 @@ const SearchSection = () => {
               font-semibold 
               rounded-full 
               w-full mt-5 
-              flex justify-center items-center gap-2">
-              <BsSearch></BsSearch>   
-              Search
+              flex justify-center items-center gap-2"
+              >
+                <BsSearch></BsSearch>
+                Search
               </button>
-
             </div>
           </div>
         </form>

@@ -9,7 +9,7 @@ const useAxiosSecure = () => {
   const navigate = useNavigate();
 
   const axiosSecure = axios.create({
-    baseURL: 'https://tripsure-server-sayemsaadat0.vercel.app',
+    baseURL: '${import.meta.env.VITE_BACKEND_API}',
   });
 
   useEffect(() => {

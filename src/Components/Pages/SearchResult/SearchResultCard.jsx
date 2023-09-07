@@ -59,11 +59,10 @@ const SearchResultCard = ({ data, country }) => {
 
             {data.address ? (
               <p className="font-normal">
-                {data.address?.state}, {data?.address?.street},{" "}
-                {data.address?.city}
+                {`${data.address.state}, ${data.address.street}, ${data.address.city}`},
               </p>
             ) : (
-              <p className="font-normal">{data.placetitle}</p>
+              <p className="font-normal">{data.placetitle ? data.placetitle : data.address}</p>
             )}
           </div>
         </div>

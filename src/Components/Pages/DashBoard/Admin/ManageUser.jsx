@@ -3,6 +3,7 @@ import { FaTrashAlt, FaUserCheck, FaUserShield } from "react-icons/fa";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
 import { useEffect, useState } from "react";
+import UserStatus from "../../../Shared/Status/UserStatus";
 
 const ManageUser = () => {
 
@@ -66,7 +67,7 @@ const ManageUser = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://tripsure-server-sayemsaadat0.vercel.app/users/${user._id}`, {
+        fetch(`${import.meta.env.VITE_BACKEND_API}/users/${user._id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -83,7 +84,7 @@ const ManageUser = () => {
 
   const handleMakeAdmin = user => {
     console.log(user)
-    fetch(`https://tripsure-server-sayemsaadat0.vercel.app/users/admin/${user._id}`, {
+    fetch(`${import.meta.env.VITE_BACKEND_API}/users/admin/${user._id}`, {
       method: 'PATCH'
     })
       .then(res => res.json())
@@ -104,7 +105,7 @@ const ManageUser = () => {
 
   const handleMakeOperator = (user) => {
     console.log(user)
-    fetch(`https://tripsure-server-sayemsaadat0.vercel.app/users/operator/${user._id}`, {
+    fetch(`${import.meta.env.VITE_BACKEND_API}/users/operator/${user._id}`, {
       method: 'PATCH'
     })
       .then(res => res.json())
@@ -128,7 +129,7 @@ const ManageUser = () => {
   const [searchResults, setSearchResults] = useState([]);
   const handleSearch = async () => {
     try {
-      const response = await fetch(`https://tripsure-server-sayemsaadat0.vercel.app/users?email=${searchTerm}`);
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_API}/users?email=${searchTerm}`);
       const data = await response.json();
       setSearchResults(data);
     } catch (error) {
@@ -139,10 +140,13 @@ const ManageUser = () => {
 
   return (
     <div className="w-full">
-      <div className="flex justify-end mr-10 mt-4">
-        <h2 className="text-center mb-6 font-bold text-2xl">
+      <div className="flex justify-between items-center mr-10 mt-4">
+        <h2 className="text-center mb-6 ml-4 font-bold text-2xl">
           Total Users : <span className="text-red-500">{usersdata.length}</span>
         </h2>
+        <div>
+          <UserStatus/>
+        </div>
       </div>
 
 

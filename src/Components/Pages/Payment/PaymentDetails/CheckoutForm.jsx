@@ -49,7 +49,7 @@ const CheckoutForm = ({ price, orderDetails }) => {
   useEffect(() => {
     axios
       .post(
-        "http://localhost:1000/stripe-payment-intent",
+        `${import.meta.env.VITE_BACKEND_API}/stripe-payment-intent`,
         { price },
         {
           headers: {
@@ -116,7 +116,7 @@ const CheckoutForm = ({ price, orderDetails }) => {
         travelerCount: orderDetails?.travelerCount,
       };
       axios
-        .post(`http://localhost:1000/payments`, payment)
+        .post(`${import.meta.env.VITE_BACKEND_API}/payments`, payment)
         .then((response) => {
           console.log("Payment successful:", response.data);
           if (response.data.insertedId) {
@@ -199,4 +199,4 @@ export default CheckoutForm;
 
 
 
-// https://tripsure-server-sayemsaadat0.vercel.app
+// ${import.meta.env.VITE_BACKEND_API}

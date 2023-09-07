@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import KeepExploring from "../KeepExploring";
+// import KeepExploring from "../KeepExploring";
 import { useParams } from "react-router-dom";
 
 const Stories = () => {
@@ -7,7 +7,7 @@ const Stories = () => {
   const { id } = useParams()
   console.log(id)
   useEffect(() => {
-    fetch(`https://tripsure-server-sayemsaadat0.vercel.app/story/${id}`)
+    fetch(`${import.meta.env.VITE_BACKEND_API}/story/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setStory(data);
@@ -21,7 +21,7 @@ const Stories = () => {
       <article>
         {/* title  */}
         <h1 className="text-black text-3xl my-5  md:text-5xl font-bold">
-          Where to go between July 4th and Labor Day
+           to go between July 4th and Labor Day
         </h1>
         <div className="bg-cover bg-center  mx-auto ">
           <h4 className="text-xl md:text-3xl font-bold text-black my-5">
@@ -54,7 +54,6 @@ const Stories = () => {
           </div>
         </div>
       </article>
-      <KeepExploring />
     </div>
   );
 };

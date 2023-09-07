@@ -13,21 +13,20 @@ const TopThingsToDo = () => {
   }, []);
   return (
     <Container>
-      <SectionTitle text={'Top Things to Do for '} coloredText={'Every Adventurer'} subText={'Worldwide Escapes'}></SectionTitle>
+      <SectionTitle text={'Top Travel Categories & Destinations'} subText={'Things to Do for Every Adventurer'}></SectionTitle>
 
-      <section className='grid overflow-x-auto lg:grid-cols-4 gap-12 px-5 py-20 '>
+      <section className='grid lg:grid-cols-3 gap-12 px-5 pb-20 pt-12'>
 
         {
           TopThingsTodo.map((todo, index) => (
 
             <Link to={`/travelerChoose-thingsToDo/${todo?.categoryName}`}>
-              <div className=" 
-                hover:scale-110 duration-700 ">
-                <img className='h-64 w-full  
-                relative 
+              <div className="overflow-hidden rounded-xl">
+                <img className='h-40 hover:scale-110 duration-700 rounded-lg w-full  lg:w-[85%]  
+
                 object-cover'
                   src={todo.picture} alt="" />
-                <h2 className='font-extrabold text-xl  '>{todo.categoryName}</h2>
+                <h2 className='font-bold mt-3  '>{todo.categoryName}</h2>
               </div>
             </Link>
           ))}
@@ -40,15 +39,18 @@ const TopThingsToDo = () => {
 export default TopThingsToDo;
 
 
+
+
+
+
+
+
 /* 
-
-
-
 const TopDestinations = () => {
   const [TopDestinations, setTopDestinations] = useState([]);
 
   useEffect(() => {
-    fetch("https://tripsure-server-sayemsaadat0.vercel.app/top-destinations")
+    fetch("${import.meta.env.VITE_BACKEND_API}/top-destinations")
       .then((res) => res.json())
       .then((data) => setTopDestinations(data));
   }, []);

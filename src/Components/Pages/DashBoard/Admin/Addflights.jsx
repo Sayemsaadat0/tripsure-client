@@ -8,34 +8,7 @@ const Addflights = () => {
 
     const { register, handleSubmit } = useForm();
 
-    // {
-    //     "flight_number": "BGD456",
-    //     "airline": "Bangladesh Airways",
-    //     "route": "Bangladesh to United States",
-    //     "departure_airport": {
-    //       "code": "DAC",
-    //       "name": "Hazrat Shahjalal International Airport",
-    //       "country": "Bangladesh"
-    //     },
-    //     "arrival_airport": {
-    //       "code": "JFK",
-    //       "name": "John F. Kennedy International Airport",
-    //       "country": "United States"
-    //     },
-    //     "departure_time": "2023-09-15 18:00",
-    //     "arrival_time": "2023-09-16 05:30",
-    //     "total_time": "11 hours 30 minutes",
-    //     "prices": {
-    //       "economy": 450,
-    //       "business": 950,
-    //       "first_class": 1500
-    //     },
-    //     "unavailable_dates": [
-    //       "2023-12-25",
-    //       "2024-01-01",
-    //       "2024-04-15"
-    //     ]
-    //   }
+
     const onSubmit = (data) => {
         console.log(data);
         const { airline, arrival_airport, arrival_code, arrival_country, arrival_time, business_price, departure_airport, departure_code, departure_country, departure_time, economy_price, flight_number, frist_class_price, route } = data
@@ -71,7 +44,7 @@ const Addflights = () => {
                 first_class: frist_class_price
             }
         }
-        axios.post(`http://localhost:1000/flights`, flighs)
+        axios.post(`${import.meta.env.VITE_BACKEND_API}/flights`, flighs)
        .then(res => {
         console.log(res)
        })
