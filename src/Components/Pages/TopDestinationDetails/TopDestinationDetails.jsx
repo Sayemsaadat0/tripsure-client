@@ -77,51 +77,7 @@ const TopDestinationDetails = () => {
 
           {/* travel advice section design start */}
 
-          <div>
-            <h3 className="text-2xl text-black font-bold">Travel Advice</h3>
-            <div className="text-center lg:flex grid grid-cols-2 gap-4 my-6  justify-between">
-              <Link className="inline-flex p-4 px-8 gap-3 items-center border-2 border-black rounded-3xl">
-                <div>
-                  <img
-                    className="w-14 rounded-full "
-                    src={ClockLogo}
-                    alt=""
-                  />
-                </div>
-                <h3 className="font-bold">Best Time to Visit</h3>
-              </Link>
-              <Link className="inline-flex p-4 px-8 gap-3 items-center border-2 border-black rounded-3xl">
-                <div>
-                  <img
-                    className="w-14 rounded-full "
-                    src={tripcustome}
-                    alt=""
-                  />
-                </div>
-                <h3 className="font-bold">Local Guides for Travel</h3>
-              </Link>
-              <Link className="inline-flex p-4 px-8 gap-3 items-center border-2 border-black rounded-3xl">
-                <div>
-                  <img
-                    className="w-14 rounded-full "
-                    src={bestTrip}
-                    alt=""
-                  />
-                </div>
-                <h3 className="font-bold">Best Trip For You</h3>
-              </Link>
-              <Link className="inline-flex px-8 p-4 gap-3 items-center border-2 border-black rounded-3xl">
-                <div>
-                  <img
-                    className="w-14 rounded-full "
-                    src={lightLogo}
-                    alt=""
-                  />
-                </div>
-                <h3 className="font-bold">Travel Trips & Tricks</h3>
-              </Link>
-            </div>
-          </div>
+         
           {/* do section and swiper slider */}
           <div>
             <h3 className="text-2xl font-bold text-black my-8">Essential {topDestinationDetails?.cardtitle}</h3>
@@ -141,8 +97,7 @@ const TopDestinationDetails = () => {
               <div className="">
                 <h3 className="text-2xl font-bold text-black">Stay</h3>
                 <p>
-                  Places to see, ways to wander, and signature experiences that
-                  define .
+                A mix of the charming, iconic, and modern.
                 </p>
               </div>
               <div>
@@ -153,8 +108,7 @@ const TopDestinationDetails = () => {
               <div className="">
                 <h3 className="text-2xl font-bold text-black">Eat</h3>
                 <p>
-                  Places to see, ways to wander, and signature experiences that
-                  define.
+                Quintessential  restaurants, bars, and beyond.
                 </p>
                 
               </div>

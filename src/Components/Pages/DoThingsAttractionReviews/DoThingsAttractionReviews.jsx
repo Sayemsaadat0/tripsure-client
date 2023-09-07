@@ -41,7 +41,7 @@ const DoThingsAttractionReviews = () => {
             <p>Things to do in {doThingsAttractionReviews?.placetitle}</p>
             <p>• {doThingsAttractionReviews?.categoryname}</p>
           </div>
-          <h4 className="my-2 space-x-2"><Link className="underline">Open now</Link><span>8:00 AM - 4:45 AM</span> <Link className="underline">Write a review</Link></h4>
+          <h4 className="my-2 space-x-2">Open now<Link className="underline"></Link><span>8:00 AM - 4:45 AM</span></h4>
           <div className="md:grid gap-4 justify-between my-10 grid-cols-[30%_minmax(70%,_1fr)_100px]">
             <div className="shadow-2xl  border rounded-2xl p-6">
               <h1 className="font-bold text-xl my-3">About</h1>
@@ -51,11 +51,10 @@ const DoThingsAttractionReviews = () => {
               <h3 className="font-bold mt-4">Suggested duration</h3>
               <p>{doThingsAttractionReviews?.conditions?.duration}</p>
               <h2 className="font-semibold mt-2">Suggest edits to improve what we show.</h2>
-              <Link className="underline">Improve this listing</Link>
+              <Link className="">Improve this listing</Link>
               <div className="divider"></div>
               <h2 className="font-semibold">Tours & experiences</h2>
               <p>Explore different ways to experience this place.</p>
-              <button className="btn text-white mt-4 bg-black w-full rounded-full hover:bg-black">See option</button>
             </div>
             <div className="w-full">
                 <img className="w-full" src={doThingsAttractionReviews?.picture} alt="" />
