@@ -9,6 +9,7 @@ import lightLogo from "../../../assets/light.png"
 import tripcustome from "../../../assets/tripcustome.png"
 import Container from "../../../LayOut/Container";
 import LazyLoad from "react-lazy-load";
+import bestTrip from "../../../assets/travelpng.png"
 
 const TopDestinationDetails = () => {
   const { id } = useParams();
@@ -106,7 +107,6 @@ const TopDestinationDetails = () => {
                   Places to see, ways to wander, and signature experiences that
                   define .
                 </p>
-
               </div>
               <div>
                 <DoSwiper doPlace={doPlace.slice(1,)}></DoSwiper>
@@ -119,7 +119,6 @@ const TopDestinationDetails = () => {
                   Places to see, ways to wander, and signature experiences that
                   define .
                 </p>
-
               </div>
               <div>
                 <CommonSwiper allHotels={allHotels}></CommonSwiper>
@@ -130,9 +129,8 @@ const TopDestinationDetails = () => {
                 <h3 className="tracking-widest font-bold my-2 text-gray-700">Culinary Experiences</h3>
                 <p>
                   Places to see, ways to wander, and signature experiences that
-                  define Tulum.
+                  define.
                 </p>
-
               </div>
               <div>
                 <RestaurantSwiper restaurant={restaurants}></RestaurantSwiper>
