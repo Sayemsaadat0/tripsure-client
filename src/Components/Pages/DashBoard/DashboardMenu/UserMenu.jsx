@@ -10,6 +10,7 @@ import useAuth from '../../../../Hooks/useAuth'
 import Logo from '../../../Shared/Navbar/Logo'
 import GuideMenu from './GuideMenu'
 import AdminMenu from './AdminMenu'
+import DasNav from '../DasNav'
 const UserMenu = () => {
     const navigate = useNavigate()
     const [toggle, setToggle] = useState(false)
@@ -40,16 +41,15 @@ const UserMenu = () => {
 
                 <button
                     onClick={handleToggle}
-                    className='mobile-menu-button p-4 focus:outline-none focus:bg-gray-200'
-                >
+                    className='mobile-menu-button p-4 focus:outline-none focus:bg-gray-200'>
                     <AiOutlineBars className='h-5 w-5' />
                 </button>
             </div>
+            
             {/* Sidebar */}
             <div
                 className={`z-10 md:fixed flex flex-col justify-between overflow-x-hidden bg-gray-100 w-64 space-y-6 px-2 py-4 absolute inset-y-0 left-0 transform ${isActive && '-translate-x-full'
-                    }  md:translate-x-0  transition duration-200 ease-in-out`}
-            >
+                    }  md:translate-x-0  transition duration-200 ease-in-out`}   >
                 <div>
                     {/* Branding & Profile Info */}
                     <div>
@@ -80,9 +80,9 @@ const UserMenu = () => {
 
                     {/* Nav Items */}
                     <div className='flex flex-col justify-between flex-1 mt-6'>
-                    <nav>
+                        <nav>
 
-{/* {
+                            {/* {
     role === 'guide' ? <GuideMenu></GuideMenu> :
         role === 'admin' ? <AdminMenu></AdminMenu> : <> <label
             htmlFor='Toggle3'
@@ -117,8 +117,8 @@ const UserMenu = () => {
             </NavLink>
         </>
 } */}
-<AdminMenu></AdminMenu>
-          </nav>
+                            <AdminMenu></AdminMenu>
+                        </nav>
                     </div>
                 </div>
 
