@@ -2,25 +2,68 @@ import React, { useEffect, useState } from 'react';
 import SectionTitle from '../../../Shared/SectionTitle/SectionTitle';
 import { Link } from 'react-router-dom';
 import { GoLocation, GoStarFill } from 'react-icons/go';
+import { GrFavorite } from 'react-icons/gr'
+import { BsSuitHeartFill, BsSuitHeart } from 'react-icons/bs'
 import Container from '../../../../LayOut/Container';
+import { useAddToFavoriteMutation, useGetFavoriteItemsQuery } from '../../../../Features/favorite/favoriteApi';
+import useAuth from '../../../../Hooks/useAuth';
 
 
 const TravelDeals = () => {
   const [travelDeals, setTravelDeals] = useState([]);
-  console.log(travelDeals);
+  const { user } = useAuth()
   useEffect(() => {
     fetch('https://tripsure-server-sayemsaadat0.vercel.app/travelDeals')
       .then(res => res.json())
       .then(data => setTravelDeals(data));
   }, []);
+
+  // add to favorite 
+  const [setFavorite, { isLoading, isError, data}] = useAddToFavoriteMutation()
+  const { data: favoriteItems, refetch } = useGetFavoriteItemsQuery()
+  const handleAddToFavorite = (deals) => {
+    if (user) {
+      const { displayName, email } = user
+      const {
+        dealExpires,
+        destination,
+        discountPercentage,
+        duration,
+        newPrice,
+        picture,
+        price,
+        reviews,
+        savings,
+        title,
+        totalPeople,
+      } = deals
+      const hotelId = deals._id
+      const favoriteItem = {
+        dealExpires, destination, discountPercentage, duration, newPrice, picture, price, reviews, savings, title, totalPeople, hotelId, displayName, email
+      }
+      console.log('favorite item', favoriteItem)
+      setFavorite(favoriteItem)
+      refetch()
+    }
+  }
+  // console.log(data)
+
   return (
     <Container>
-      <SectionTitle subText={'Savings Safari'} text={'Hunt for the Hottest Deals'}  />
+      <SectionTitle subText={'Savings Safari'} text={'Hunt for the Hottest Deals'} />
       <section className='overflow-x-auto md:grid  md:grid-cols-3 gap-12 px-5 py-12 '>
 
         {travelDeals.map((deals, index) => (
           <div key={index} className="card card-compact bg-base-100 border overflow-hidden">
-            <p className='badge badge-primary absolute right-1 z-10 top-3 animate-bounce p-3'>Save {deals.discountPercentage}%</p>
+            {/* <span  className='absolute left-1 z-10 top-3 cursor-pointer bg-gray-100  p-2 rounded-full'><GrFavorite size={20}></GrFavorite></span> */}
+            <button
+              onClick={() => handleAddToFavorite(deals)}
+              className={`absolute left-1 z-10 top-3 p-2 rounded-full bg-white`}>
+              <BsSuitHeart className="text-lg" />
+            </button>
+            <p className='badge badge-primary absolute right-1 z-10 top-3 animate-bounce p-3'>
+              Save {deals.discountPercentage}%
+            </p>
 
             <Link to={`/TravelDeals/${deals?._id}`} >
               <figure><img className='transition duration-700 ease-in-out hover:scale-110 rounded-lg' src={deals.picture} alt={deals.title} /></figure></Link>

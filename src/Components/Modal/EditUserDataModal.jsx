@@ -56,7 +56,7 @@ const EditUserDataModal = ({ closeModal, isOpen }) => {
                                         as="h3"
                                         className="text-lg font-medium leading-6 text-gray-900"
                                     >
-                                        Payment successful
+                                        Edit Your Details
                                     </Dialog.Title>
                                     <form onSubmit={handleSubmit(onSubmit)}>
                                         <div className="mb-4">

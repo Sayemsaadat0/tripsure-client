@@ -11,7 +11,7 @@ const Main = () => {
         <div>
             {noHeaderFooter || <Navbar></Navbar>}
             <Outlet></Outlet>
-            {noHeaderFooter || <Footar></Footar>}
+            {/* {noHeaderFooter || <Footar></Footar>} */}
         </div>
     );
 };

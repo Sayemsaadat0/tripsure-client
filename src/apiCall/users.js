@@ -35,3 +35,10 @@ export const findUserbyEmail = async (email) => {
     // console.log(response)
     return response.data
 }
+// get user role
+export const getRole = async email => {
+    const response = await fetch(`http://localhost:1000/users/${email}`)
+    const user = await response.json()
+    // console.log(user)
+    return user?.role
+  }
