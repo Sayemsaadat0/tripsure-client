@@ -4,8 +4,8 @@ const CustomChatBot = () => {
   return (
     <div>
       <MessengerCustomerChat
-        pageId={process.env.VITE_CHAT_BOT_PAGEID}
-        appId={process.env.VITE_CHAT_BOT_APPID}
+        pageId='100212222778918'
+        appId='827058012417136'
       />
     </div>
   );
