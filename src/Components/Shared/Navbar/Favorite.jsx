@@ -9,14 +9,14 @@ const Favorite = () => {
   const [favoritePackage, setFavoritePackage] = useState([]);
 
   useEffect(() => {
-    axios.get(`https://tripsure-server-sayemsaadat0.vercel.app/getFavoritePackage/${user?.email}/favorite-packages`)
+    axios.get(`${import.meta.env.VITE_BACKEND_API}/getFavoritePackage/${user?.email}/favorite-packages`)
       .then((res) => {
         setFavoritePackage(res.data);
       });
   }, [user]);
 
   const handleRemoveFromFavorite = (packageId) => {
-    axios.put(`https://tripsure-server-sayemsaadat0.vercel.app/removeFromFavorite/${user?.email}`, { "packageId": packageId })
+    axios.put(`${import.meta.env.VITE_BACKEND_API}/removeFromFavorite/${user?.email}`, { "packageId": packageId })
       .then((res) => {
         if (res.data.modifiedCount > 0) {
           setFavoritePackage(prevFavoritePackage => prevFavoritePackage.filter(item => item._id !== packageId));

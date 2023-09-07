@@ -14,7 +14,7 @@ const Do = ({ country }) => {
 
   useEffect(() => {
     axios
-      .get(`https://tripsure-server-sayemsaadat0.vercel.app/category`)
+      .get(`${import.meta.env.VITE_BACKEND_API}/category`)
       .then((data) => {
         setAllCategory(data.data);
         console.log(data.data);

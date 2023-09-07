@@ -7,7 +7,7 @@ const UserGuide = () => {
   useEffect(() => {
     async function fetchGuideData() {
       try {
-        const response = await axios.get("https://tripsure-server-sayemsaadat0.vercel.app/allguide");
+        const response = await axios.get(`${import.meta.env.VITE_BACKEND_API}/allguide`);
         setGuideData(response.data);
       } catch (error) {
         console.error(error.message);

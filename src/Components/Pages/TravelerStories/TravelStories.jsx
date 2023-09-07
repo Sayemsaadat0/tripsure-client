@@ -1,16 +1,16 @@
 import { Link } from "react-router-dom";
 import FoodAndDrink from "./FoodAndDrink";
-import KeepExploring from "./KeepExploring";
-import PlacesToVisit from "./PlacesToVisit";
+// import KeepExploring from "./KeepExploring";
+// import PlacesToVisit from "./PlacesToVisit";
 import "./TravelerStories.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import stories from "./Stories/Stories";
+// import stories from "./Stories/Stories";
 
 const TravelarStories = () => {
   const [stories, setStories] = useState([])
   useEffect(() => {
-    axios.get(`https://tripsure-server-sayemsaadat0.vercel.app/story`)
+    axios.get(`${import.meta.env.VITE_BACKEND_API}/story`)
       .then(res => {
         setStories(res.data)
         console.log(res.data)
@@ -50,8 +50,7 @@ const TravelarStories = () => {
           }
         </div>
 
-        <PlacesToVisit />
-        <KeepExploring />
+
       </div>
     </div>
   );

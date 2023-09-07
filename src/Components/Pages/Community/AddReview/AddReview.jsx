@@ -35,7 +35,7 @@ const AddReview = () => {
       return; // Do not submit the review if the condition is not met
     }
 
-    fetch(`https://tripsure-server-sayemsaadat0.vercel.app/addReview/${user.email}`, {
+    fetch(`${import.meta.env.VITE_BACKEND_API}/addReview/${user.email}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

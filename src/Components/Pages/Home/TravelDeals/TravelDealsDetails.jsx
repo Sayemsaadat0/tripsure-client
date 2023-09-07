@@ -33,7 +33,7 @@ const TravelDealsDetails = () => {
         includedItems,
     } = travelDealsDetails
     useEffect(() => {
-        axios.get(`https://tripsure-server-sayemsaadat0.vercel.app/travelDeals/${id}`)
+        axios.get(`${import.meta.env.VITE_BACKEND_API}/travelDeals/${id}`)
             .then((res) => {
                 setTravelDealsDetails(res.data)
             })

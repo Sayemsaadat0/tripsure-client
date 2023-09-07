@@ -14,7 +14,7 @@ const Feedback = () => {
 
 
   useEffect(() => {
-    fetch("https://tripsure-server-sayemsaadat0.vercel.app/addReview")
+    fetch(`${import.meta.env.VITE_BACKEND_API}/addReview`)
       .then((res) => res.json())
       .then((data) => {
         setFeedbacks(data)

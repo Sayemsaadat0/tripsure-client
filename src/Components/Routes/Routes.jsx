@@ -180,7 +180,7 @@ const router = createBrowserRouter([
         path: "searchCardDetails/:id",
         element: <SearchDetails />,
         loader: ({ params }) =>
-          fetch(`https://tripsure-server-sayemsaadat0.vercel.app/searchResult/${params.id}`),
+          fetch(`${import.meta.env.VITE_BACKEND_API}/searchResult/${params.id}`),
       },
       {
         path: "contactDetails",

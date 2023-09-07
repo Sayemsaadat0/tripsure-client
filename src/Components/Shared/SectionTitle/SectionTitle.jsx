@@ -10,7 +10,7 @@ const SectionTitle = ({ text, subText }) => {
             </div>
             <hr className='w-1/2 border-2 mx-auto ' />
             <div className='flex justify-center gap-2 mt-2'>
-                <h2 className='text-3xl font-semibold'>{text} </h2>
+                <h2 className='text-3xl font-semibold tracking-widest'>{text} </h2>
 
                 <BsChatQuoteFill className='text-2xl '></BsChatQuoteFill>
             </div>

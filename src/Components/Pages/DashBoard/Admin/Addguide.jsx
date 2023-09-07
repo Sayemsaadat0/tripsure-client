@@ -11,7 +11,7 @@ const Addguide = () => {
   const onSubmit = async (data) => {
     try {
         setLoading(true);
-        const response = await axios.post("https://tripsure-server-sayemsaadat0.vercel.app/addguide", data);
+        const response = await axios.post(`${import.meta.env.VITE_BACKEND_API}/addguide`, data);
         console.log(response.data); // Response from the server
   
         setLoading(false);

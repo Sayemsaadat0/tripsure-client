@@ -50,7 +50,7 @@ const TopDestinations = () => {
   const [TopDestinations, setTopDestinations] = useState([]);
 
   useEffect(() => {
-    fetch("https://tripsure-server-sayemsaadat0.vercel.app/top-destinations")
+    fetch("${import.meta.env.VITE_BACKEND_API}/top-destinations")
       .then((res) => res.json())
       .then((data) => setTopDestinations(data));
   }, []);

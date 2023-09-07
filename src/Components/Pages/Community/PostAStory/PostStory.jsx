@@ -20,7 +20,7 @@ const PostStory = () => {
             .then(data => {
                 const url = data.data.display_url
                 const story = { description, title, withYou, whenYouGo, url, imgUrlTitleDescription }
-                axios.post(`https://tripsure-server-sayemsaadat0.vercel.app/sotry`, story)
+                axios.post(`${import.meta.env.VITE_BACKEND_API}/story`, story)
                     .then(res => {
                         console.log(res)
                     })

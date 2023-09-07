@@ -15,7 +15,7 @@ const OneWay = () => {
  
   
   
-  const url = `https://tripsure-server-sayemsaadat0.vercel.app/flights?from=${searchQuery}&to=${destinationQuery}&date=${dateQuery}`;
+  const url = `${import.meta.env.VITE_BACKEND_API}/flights?from=${searchQuery}&to=${destinationQuery}&date=${dateQuery}`;
 
   useEffect(() => {
     if (searchQuery||destinationQuery|| dateQuery) {

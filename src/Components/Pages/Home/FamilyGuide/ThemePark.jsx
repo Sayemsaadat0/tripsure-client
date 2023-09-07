@@ -5,6 +5,8 @@ import { Pagination } from 'swiper/modules';
 import { Link } from 'react-router-dom';
 import Container from '../../../../LayOut/Container';
 import axios from 'axios';
+import { FaArrowTurnUp } from "react-icons/fa6";
+
 import { useEffect, useState } from 'react';
 
 const ThemePark = () => {
@@ -12,7 +14,7 @@ const ThemePark = () => {
   const [allThemePark, setAllThemePark] = useState([]);
 
   useEffect(()=>{
-    axios.get(`https://tripsure-server-sayemsaadat0.vercel.app/allFamilyGuide/theme%20park`)
+    axios.get(`${import.meta.env.VITE_BACKEND_API}/allFamilyGuide/theme%20park`)
     .then((res)=>{
       setAllThemePark(res.data)
     })
@@ -22,7 +24,7 @@ const ThemePark = () => {
   return (
     <div >
       <Container>
-      <h2 className='pt-10 ps-4 md:ps-10 text-2xl md:text-6xl font-bold'>ThemeParks</h2>
+      <h2 className='pt-10  text-2xl md:text-3xl text-center font-semibold underline underline-offset-2 tracking-widest'>ThemeParks</h2>
         <div >
       
           <Swiper
@@ -51,15 +53,19 @@ const ThemePark = () => {
             {allThemePark.map((item, index) => (
               <SwiperSlide key={index} className='lg:p-10' >
                 <div className="card card-compact bg-white shadow-2xl relative ">
-                  <figure><img className='rounded-lg' src="https://i.pinimg.com/736x/9d/93/08/9d9308a98680e14a64f98f1c3f22222c.jpg" alt="" /></figure>
+                  <figure><img className='rounded-lg h-40 w-full  object-cover' src="https://i.pinimg.com/736x/9d/93/08/9d9308a98680e14a64f98f1c3f22222c.jpg" alt="" /></figure>
                   <div className="card-body">
                     <h2 className="card-title">{item?.title}</h2>
-                    <p>Country</p>
-                    <p>PostedTime</p>
-                    <div>
-                      {/* todo habibullah- bhai id diye data aina diyen */}
-                      <Link to={`/FamilyGuideSingleCardDetails/${item?._id}`} className="btn">Read More</Link>
-                    </div>
+                    <p>{item.Country}</p>
+                    <div className="card-actions justify-start">
+                  <Link
+                   to={`/FamilyGuideSingleCardDetails/${item?._id}`}
+                    className="btn-link text-blue-500 flex justify-center items-center gap-1">
+                    Read More <FaArrowTurnUp></FaArrowTurnUp>
+                  </Link>
+                </div>
+
+
                   </div>
                 </div>
               </SwiperSlide>

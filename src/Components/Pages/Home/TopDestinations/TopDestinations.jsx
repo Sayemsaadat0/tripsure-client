@@ -13,7 +13,7 @@ const TopDestinations = () => {
   const [TopDestinations, setTopDestinations] = useState([]);
 
   useEffect(() => {
-    fetch("https://tripsure-server-sayemsaadat0.vercel.app/top-destinations")
+    fetch(`${import.meta.env.VITE_BACKEND_API}/top-destinations`)
       .then((res) => res.json())
       .then((data) => setTopDestinations(data));
   }, []);
@@ -22,10 +22,9 @@ const TopDestinations = () => {
       <div className="bg-white b my-20 ">
         <div>
           <SectionTitle
-            text={"Explor the Ultimate"}
-            coloredText={"Top Destinations"}
-            subText={"Journey to Perfection"}
-          ></SectionTitle>
+            text={"Explor our Ultimate Top Destinations "}
+            subText={"Journey to Perfection"}>
+          </SectionTitle>
         </div>
         <div>
           <Swiper

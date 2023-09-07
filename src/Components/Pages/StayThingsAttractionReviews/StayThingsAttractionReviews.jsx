@@ -24,7 +24,7 @@ const StayThingsAttractionReviews = () => {
   console.log(id);
   useEffect(() => {
     axios
-      .get(`https://tripsure-server-sayemsaadat0.vercel.app/stayThingsAttractionReviews/${id}`)
+      .get(`${import.meta.env.VITE_BACKEND_API}/stayThingsAttractionReviews/${id}`)
       .then((data) => {
         setHotelDetails(data.data);
       });

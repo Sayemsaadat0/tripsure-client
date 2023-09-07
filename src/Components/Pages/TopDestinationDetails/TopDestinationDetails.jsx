@@ -21,26 +21,26 @@ const TopDestinationDetails = () => {
  
 
   useEffect(()=> {
-    axios.get(`https://tripsure-server-sayemsaadat0.vercel.app/top-destinations/${id}`)
+    axios.get(`${import.meta.env.VITE_BACKEND_API}/top-destinations/${id}`)
     .then((data)=>{
       setTopDestinationsDetails(data.data);
     })
   },[])
   
   useEffect(()=> {
-    axios.get(`https://tripsure-server-sayemsaadat0.vercel.app/all-hotels/${topDestinationDetails?.country}`)
+    axios.get(`${import.meta.env.VITE_BACKEND_API}/all-hotels/${topDestinationDetails?.country}`)
     .then((data)=>{
       setAllHotels(data.data);
     })
   },[topDestinationDetails])
   useEffect(()=> {
-    axios.get(`https://tripsure-server-sayemsaadat0.vercel.app/tourCountry/${topDestinationDetails?.country}`)
+    axios.get(`${import.meta.env.VITE_BACKEND_API}/tourCountry/${topDestinationDetails?.country}`)
     .then((data)=>{
       setDoPlace(data.data);
     })
   },[topDestinationDetails])
   useEffect(()=> {
-    axios.get(`https://tripsure-server-sayemsaadat0.vercel.app/restaurant/${topDestinationDetails?.country}`)
+    axios.get(`${import.meta.env.VITE_BACKEND_API}/restaurant/${topDestinationDetails?.country}`)
     .then((data)=>{
       setRestaurants(data.data);
     })
@@ -51,7 +51,7 @@ const TopDestinationDetails = () => {
       <div className="lg:mx-10 mx-2">
       <div>
         <h1 className="text-5xl space-x-5 font-bold">{topDestinationDetails?.cardtitle}</h1>
-        <div className="text-center mx-auto lg:grid lg:overflow-x-hidden overflow-y-hidden flex lg:grid-cols-4 my-4 gap-2 overflow-scroll  ">
+     {/*    <div className="text-center mx-auto lg:grid lg:overflow-x-hidden overflow-y-hidden flex lg:grid-cols-4 my-4 gap-2 overflow-scroll  ">
           <button className="btn btn-md btn-outline lg:btn-wide">Hotel</button>
           <button className="btn btn-md btn-outline lg:btn-wide">
             Things To do
@@ -74,7 +74,7 @@ const TopDestinationDetails = () => {
           <button className="btn btn-md btn-outline lg:btn-wide">
             Trip Advice
           </button>
-        </div>
+        </div> */}
         <div className="my-6">
           <img
             className="w-full h-60 md:h-72 lg:h-[28rem] object-bottom rounded-md bg-cover object-cover"
@@ -84,17 +84,12 @@ const TopDestinationDetails = () => {
         </div>
         <div>
           <div className="lg:flex justify-between">
+     
             <div className="lg:w-2/3">
               <h1 className="text-2xl font-bold">About {topDestinationDetails?.cardtitle}</h1>
-              <p className="text-xl my-5">
-                {topDestinationDetails?.placedetails} Or hop on an ATV for an
-                off-roading adventure across the sugary sand dunes. And after
-                all that heart-pumping activity, eat your heart out at the
-                authentic mezcalerias, low-key beach shacks, and celeb-chef,
-                fine-dining spots.
-              </p>
-            </div>
+             
             <h4>Best of {topDestinationDetails?.placetitle}</h4>
+            </div>
           </div>
 
           {/* travel advice section design start */}
@@ -198,4 +193,4 @@ export default TopDestinationDetails;
 
 
 
-// https://tripsure-server-sayemsaadat0.vercel.app
+// ${import.meta.env.VITE_BACKEND_API}

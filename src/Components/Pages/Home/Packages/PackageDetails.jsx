@@ -34,7 +34,7 @@ const PackageDetails = () => {
        } = packageDetails 
         console.log(packageDetails);
     useEffect(() => {
-        axios.get(`https://tripsure-server-sayemsaadat0.vercel.app/packages/${id}`)
+        axios.get(`${import.meta.env.VITE_BACKEND_API}/packages/${id}`)
             .then((response) => {
                 setPackageDetails(response.data)
             })
