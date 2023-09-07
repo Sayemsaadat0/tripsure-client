@@ -20,7 +20,7 @@ const TopThingsToDo = () => {
         {
           TopThingsTodo.map((todo, index) => (
 
-            <Link to={`/travelerChoose-thingsToDo/${todo?.categoryName}`}>
+            <Link key={index} to={`/travelerChoose-thingsToDo/${todo?.categoryName}`}>
               <div className="overflow-hidden rounded-xl">
                 <img className='h-40 hover:scale-110 duration-700 rounded-lg w-full  lg:w-[85%]  
 

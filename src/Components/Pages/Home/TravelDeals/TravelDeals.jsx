@@ -19,7 +19,7 @@ const TravelDeals = () => {
   }, []);
 
   // add to favorite 
-  const [setFavorite, { isLoading, isError, data}] = useAddToFavoriteMutation()
+  const [setFavorite, { isLoading, isError, data }] = useAddToFavoriteMutation()
   const { data: favoriteItems, refetch } = useGetFavoriteItemsQuery()
   const handleAddToFavorite = (deals) => {
     if (user) {
@@ -74,7 +74,7 @@ const TravelDeals = () => {
             <div className="card-body">
               <Link to={`/TravelDeals/${deals?._id}`} ><h2 className="card-title hover:text-[#79c7ff] duration-500">{deals.title}</h2></Link>
               <div className='flex justify-between w-full'>
-                <p className='flex gap-2 '><FaLocationDot className='text-xl'></FaLocationDot> {deals.destination}  </p>
+                <p className='flex gap-2 '><GoLocation className='text-xl'></GoLocation> {deals.destination}  </p>
                 <p className='text-right'>
                   <span
                     className='text-red-500  font-bold text-lg'>
