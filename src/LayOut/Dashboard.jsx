@@ -69,7 +69,7 @@ const Dashboard = () => {
           <li className="mt-2">
             <NavLink to='/dashboard/managebookings'>
               <FiSettings></FiSettings>
-              Resource  Management
+              Resource Management
             </NavLink>
           </li>
 
@@ -84,7 +84,7 @@ const Dashboard = () => {
             <NavLink
               to="/dashboard/usergueide">
               <BsCollectionFill></BsCollectionFill>
-             Userguiede
+             User Guiede
             </NavLink>
           </li>
         </ul>

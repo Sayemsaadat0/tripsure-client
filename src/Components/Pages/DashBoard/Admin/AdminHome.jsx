@@ -8,6 +8,7 @@ import { ResponsiveContainer, PieChart, Pie, Cell, Legend } from "recharts";
 
 
 import useUsers from '../../../../Hooks/useUsers';
+import UserStatus from '../../../Shared/Status/UserStatus';
 
 const AdminHome = () => {
 
@@ -39,7 +40,7 @@ const COLORS = ['#34a0a4' ]
     <div className=' pt-4 px-4 mx-auto '>
 
       {/* input */}
-      <section className='flex justify-end'>
+      <section className='flex justify-between items-center'>
 
 
         {/*  <div>
@@ -85,10 +86,13 @@ const COLORS = ['#34a0a4' ]
           </ul>
         </div>
       )} */}
-        <div className='bg-white p-3 rounded-lg shadow-md'>
+        <div className='bg-white p-3 rounded-lg shadow-md '>
           <p>{moment().format('Do MMMM YYYY, h:mm a')} </p>
 
         </div>
+          <div>
+          <UserStatus/>
+         </div>
       </section>
 
 

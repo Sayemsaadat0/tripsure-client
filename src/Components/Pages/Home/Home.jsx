@@ -16,8 +16,10 @@ const Home = () => {
                 <SearchSection></SearchSection>
             </section>
             <Banner></Banner>
+            {/* https://i.ibb.co/9NPLGRs/1.png
+https://i.ibb.co/9HhFbwm/2.png*/}
             <section
-                className='pt-32 bg-gradient-to-tr from-[#efd9fb] to-[#d8f3dc]'>
+                className='pt-32 bg-[url("https://i.ibb.co/MMd76r0/Untitled-design-8.png")]  w-full object-center mx-auto'>
                 <TravelDeals></TravelDeals>
                 <Packages></Packages>
             </section>

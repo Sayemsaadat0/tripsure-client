@@ -66,23 +66,29 @@ const TravelDeals = () => {
             </p>
 
             <Link to={`/TravelDeals/${deals?._id}`} >
-              <figure><img className='transition duration-700 ease-in-out hover:scale-110 rounded-lg' src={deals.picture} alt={deals.title} /></figure></Link>
+              <figure>
+                <img className='transition duration-700 ease-in-out hover:scale-110 rounded-lg h-48 object-cover w-full' src={deals.picture} alt={deals.title} />
+              </figure>
+            </Link>
 
-            <div className="card-body ">
+            <div className="card-body">
               <Link to={`/TravelDeals/${deals?._id}`} ><h2 className="card-title hover:text-[#79c7ff] duration-500">{deals.title}</h2></Link>
-              <p className='flex gap-2'><GoLocation className='text-xl'></GoLocation> {deals.destination}</p>
-              <p>
-                <span
-                  className='text-red-500 font-bold text-lg'>
-                  {deals.newPrice?.adult}</span>/person
-              </p>
+              <div className='flex justify-between w-full'>
+                <p className='flex gap-2 '><FaLocationDot className='text-xl'></FaLocationDot> {deals.destination}  </p>
+                <p className='text-right'>
+                  <span
+                    className='text-red-500  font-bold text-lg'>
+                    ${deals.newPrice?.adult}</span>/person
+                </p>
+              </div>
               <div
                 className='flex justify-between w-full'>
                 <p>Booking End Date : {deals.dealExpires}</p>
                 <p
                   className='flex justify-end items-center gap-1'>
                   <GoStarFill className='text-red-500'></GoStarFill>
-                  {deals.reviews?.ratings?.overall} (45)
+                  {/* todo add ratings */}
+                  4.5(40)
                 </p>
               </div>
             </div>
