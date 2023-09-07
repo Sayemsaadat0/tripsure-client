@@ -8,9 +8,10 @@ import ClockLogo from "../../../assets/time-png-6175.png"
 import lightLogo from "../../../assets/light.png"
 import tripcustome from "../../../assets/tripcustome.png"
 import Container from "../../../LayOut/Container";
+import LazyLoad from "react-lazy-load";
 
 const TopDestinationDetails = () => {
-  const {id} = useParams();
+  const { id } = useParams();
   const [topDestinationDetails, setTopDestinationsDetails] = useState({})
   const [allHotels, setAllHotels] = useState([])
   const [doPlace, setDoPlace] = useState([])
@@ -18,40 +19,40 @@ const TopDestinationDetails = () => {
   const eatWithSwiper = doPlace.slice(1,)
 
 
- 
 
-  useEffect(()=> {
+
+  useEffect(() => {
     axios.get(`${import.meta.env.VITE_BACKEND_API}/top-destinations/${id}`)
-    .then((data)=>{
-      setTopDestinationsDetails(data.data);
-    })
-  },[])
-  
-  useEffect(()=> {
+      .then((data) => {
+        setTopDestinationsDetails(data.data);
+      })
+  }, [])
+
+  useEffect(() => {
     axios.get(`${import.meta.env.VITE_BACKEND_API}/all-hotels/${topDestinationDetails?.country}`)
-    .then((data)=>{
-      setAllHotels(data.data);
-    })
-  },[topDestinationDetails])
-  useEffect(()=> {
+      .then((data) => {
+        setAllHotels(data.data);
+      })
+  }, [topDestinationDetails])
+  useEffect(() => {
     axios.get(`${import.meta.env.VITE_BACKEND_API}/tourCountry/${topDestinationDetails?.country}`)
-    .then((data)=>{
-      setDoPlace(data.data);
-    })
-  },[topDestinationDetails])
-  useEffect(()=> {
+      .then((data) => {
+        setDoPlace(data.data);
+      })
+  }, [topDestinationDetails])
+  useEffect(() => {
     axios.get(`${import.meta.env.VITE_BACKEND_API}/restaurant/${topDestinationDetails?.country}`)
-    .then((data)=>{
-      setRestaurants(data.data);
-    })
-  },[topDestinationDetails])
- 
+      .then((data) => {
+        setRestaurants(data.data);
+      })
+  }, [topDestinationDetails])
+
   return (
     <Container>
-      <div className="lg:mx-10 mx-2">
-      <div>
-        <h1 className="text-5xl space-x-5 font-bold">{topDestinationDetails?.cardtitle}</h1>
-     {/*    <div className="text-center mx-auto lg:grid lg:overflow-x-hidden overflow-y-hidden flex lg:grid-cols-4 my-4 gap-2 overflow-scroll  ">
+      <div className="mx-2 mt-20">
+        <div>
+          <h1 className="text-5xl underline underline-offset-4 tracking-widest">{topDestinationDetails?.placetitle}</h1>
+          {/*    <div className="text-center mx-auto lg:grid lg:overflow-x-hidden overflow-y-hidden flex lg:grid-cols-4 my-4 gap-2 overflow-scroll  ">
           <button className="btn btn-md btn-outline lg:btn-wide">Hotel</button>
           <button className="btn btn-md btn-outline lg:btn-wide">
             Things To do
@@ -75,116 +76,72 @@ const TopDestinationDetails = () => {
             Trip Advice
           </button>
         </div> */}
-        <div className="my-6">
-          <img
-            className="w-full h-60 md:h-72 lg:h-[28rem] object-bottom rounded-md bg-cover object-cover"
-            src={topDestinationDetails?.picture}
-            alt=""
-          />
-        </div>
-        <div>
-          <div className="lg:flex justify-between">
-     
-            <div className="lg:w-2/3">
-              <h1 className="text-2xl font-bold">About {topDestinationDetails?.cardtitle}</h1>
-             
-            <h4>Best of {topDestinationDetails?.placetitle}</h4>
-            </div>
+          <div className="my-6">
+
+
+            <img
+              className="w-full 
+              h-60 
+              lg:h-[40rem] 
+            object-bottom
+            rounded-md 
+            bg-cover 
+            object-cover"
+              src={topDestinationDetails?.picture}
+              alt="" />
           </div>
 
-          {/* travel advice section design start */}
 
-          <div>
-            <h3 className="text-2xl text-black font-bold">Travel Advice</h3>
-            <div className="text-center lg:flex grid grid-cols-2 gap-4 my-6  justify-between">
-              <Link className="inline-flex p-4 px-8 gap-3 items-center border-2 border-black rounded-3xl">
-                <div>
-                  <img
-                    className="w-14 rounded-full "
-                    src={ClockLogo}
-                    alt=""
-                  />
-                </div>
-                <h3 className="font-bold">Best Time to Visit</h3>
-              </Link>
-              <Link className="inline-flex p-4 px-8 gap-3 items-center border-2 border-black rounded-3xl">
-                <div>
-                  <img
-                    className="w-14 rounded-full "
-                    src={tripcustome}
-                    alt=""
-                  />
-                </div>
-                <h3 className="font-bold">Local Guides for Travel</h3>
-              </Link>
-              <Link className="inline-flex p-4 px-8 gap-3 items-center border-2 border-black rounded-3xl">
-                <div>
-                  <img
-                    className="w-14 rounded-full "
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAuTWa_9svFXYKl_R7w5WOuNO1J_OAtcFStg&usqp=CAU"
-                    alt=""
-                  />
-                </div>
-                <h3 className="font-bold">Best Trip For You</h3>
-              </Link>
-              <Link className="inline-flex px-8 p-4 gap-3 items-center border-2 border-black rounded-3xl">
-                <div>
-                  <img
-                    className="w-14 rounded-full "
-                    src={lightLogo}
-                    alt=""
-                  />
-                </div>
-                <h3 className="font-bold">Travel Trips & Tricks</h3>
-              </Link>
-            </div>
-          </div>
           {/* do section and swiper slider */}
           <div>
-            <h3 className="text-2xl font-bold text-black my-8">Essential {topDestinationDetails?.cardtitle}</h3>
+            <h3
+              className="
+              text-2xl 
+              tracking-widest underline text-center text-black my-12">
+              Essential {topDestinationDetails?.cardtitle}</h3>
             <div className="lg:grid justify-between gap-2 grid-cols-[300px_minmax(900px,_1fr)_100px]">
               <div className="">
-                <h3 className="text-2xl font-bold text-black">Do</h3>
+                <h3 className="tracking-widest font-bold my-2 text-gray-700">Local Adventures</h3>
                 <p>
                   Places to see, ways to wander, and signature experiences that
                   define .
                 </p>
-               
+
               </div>
               <div>
-               <DoSwiper doPlace={doPlace.slice(1,)}></DoSwiper>
+                <DoSwiper doPlace={doPlace.slice(1,)}></DoSwiper>
               </div>
             </div>
             <div className="lg:grid lg:my-32 my-20 justify-between gap-2 grid-cols-[300px_minmax(900px,_1fr)_100px]">
               <div className="">
-                <h3 className="text-2xl font-bold text-black">Stay</h3>
+                <h3 className="tracking-widest font-bold my-2 text-gray-700">Overnight Options</h3>
                 <p>
                   Places to see, ways to wander, and signature experiences that
                   define .
                 </p>
-               
+
               </div>
               <div>
-               <CommonSwiper allHotels={allHotels}></CommonSwiper>
+                <CommonSwiper allHotels={allHotels}></CommonSwiper>
               </div>
             </div>
             <div className="lg:grid justify-between gap-2 grid-cols-[300px_minmax(900px,_1fr)_100px]">
               <div className="">
-                <h3 className="text-2xl font-bold text-black">Eat</h3>
+                <h3 className="tracking-widest font-bold my-2 text-gray-700">Culinary Experiences</h3>
                 <p>
                   Places to see, ways to wander, and signature experiences that
                   define Tulum.
                 </p>
-               
+
               </div>
               <div>
-               <RestaurantSwiper restaurant={restaurants}></RestaurantSwiper>
+                <RestaurantSwiper restaurant={restaurants}></RestaurantSwiper>
               </div>
             </div>
           </div>
+
         </div>
       </div>
-    </div>
     </Container>
   );
 };
