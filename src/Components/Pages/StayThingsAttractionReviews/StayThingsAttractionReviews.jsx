@@ -70,9 +70,6 @@ const StayThingsAttractionReviews = () => {
             <FaWhatsapp></FaWhatsapp>{hotelDetails?.hotline_number}
           </Link>
         </div>
-        <Link className="flex gap-2 items-center underline">
-          <FaPen></FaPen> Write Reviews
-        </Link>
         <img
           className="w-full h-60 md:h-72 my-5 lg:h-[28rem] object-bottom rounded-md bg-cover object-cover"
           src={hotelDetails?.picture}

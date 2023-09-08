@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Container from "../../../../../LayOut/Container";
 import { SlLocationPin } from "react-icons/sl";
 import { LuUsers } from "react-icons/lu";
 
-const FindRentalCars = () => {
+
+const FindRentalCars = ({setPickUpDate, setPickUpLocation, setDropOutDate, handleFindRentalCardSearch}) => {
+  
   return (
     <div className="rentalCarBackground h-96 mb-8 sm:mb-0 md:relative">
       <Container>
@@ -14,13 +16,14 @@ const FindRentalCars = () => {
             className="select border-round focus:outline-none rounded-none mt-3"
           >
             <option value="same">Same drop off</option>
-            <option value="defferent">Defferent drop off</option>
+            <option value="defferent">Different drop off</option>
           </select>
           <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-[2px] sm:gap-2 mt-4 ">
             <div className="relative">
               <input
                 type="text"
                 name=""
+                onChange={(e)=>setPickUpLocation(e.target.value)}
                 placeholder="City or Airport"
                 className="input focus:outline-none border-round rounded-none border-neutral-500 w-full pl-9 pt-5 p-3 text-black font-semibold"
               />
@@ -34,7 +37,8 @@ const FindRentalCars = () => {
               <input
                 type="datetime-local"
                 name=""
-                placeholder="pick up"
+                onChange={(e)=> setPickUpDate(e.target.value)}
+                placeholder="pick  up"
                 className="input focus:outline-none border-neutral-500 rounded-none border w-full pt-2 text-black font-semibold border-round"
               />
               <span className="absolute inline-block top-0 left-4 text-xs">
@@ -46,6 +50,7 @@ const FindRentalCars = () => {
                 type="datetime-local"
                 name=""
                 placeholder="pick up"
+                onChange={(e)=>setDropOutDate(e.target.value)}
                 className="input focus:outline-none border-neutral-500 rounded-none border w-full pt-2 text-black font-semibold border-round"
               />
               <span className="absolute inline-block top-0 left-4 text-xs">
@@ -74,7 +79,7 @@ const FindRentalCars = () => {
                 Passengers (optional)
               </span>
             </div>
-            <button className="btn btn-neutral sm:rounded-2xl rounded-md btn-block">
+            <button onClick={handleFindRentalCardSearch} className="btn btn-neutral sm:rounded-2xl rounded-md btn-block">
               Find Rental cars
             </button>
           </div>
@@ -99,6 +104,7 @@ const FindRentalCars = () => {
             </select>
           </div>
         </div>
+      
       </Container>
     </div>
   );

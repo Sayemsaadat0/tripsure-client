@@ -132,9 +132,6 @@ const RestaurantAttractionReview = () => {
               </form>
             </dialog>
           </div>
-          <Link className="flex gap-2 items-center underline">
-            <FaPen></FaPen> Write Reviews
-          </Link>
         </div>
         <img
           className="w-full h-60 md:h-72 my-5 lg:h-[28rem] object-bottom rounded-md bg-cover object-cover"
