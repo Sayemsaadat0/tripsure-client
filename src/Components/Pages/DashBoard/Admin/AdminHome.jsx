@@ -7,7 +7,7 @@ import { ResponsiveContainer, PieChart, Pie, Cell, Legend } from "recharts";
 
 
 
-import useUsers from '../../../../Hooks/useUsers';
+// import useUsers from '../../../../Hooks/useUsers';
 import UserStatus from '../../../Shared/Status/UserStatus';
 import AdminHomeUserData from './AdminHomeUserData';
 import AdminHomePriceChart from './AdminHomePriceChart';
