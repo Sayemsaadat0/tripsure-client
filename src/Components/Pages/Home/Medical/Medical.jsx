@@ -3,7 +3,7 @@ import Container from "../../../../LayOut/Container";
 import { Link } from "react-router-dom";
 
 
-const Medical = () => {
+const MedicalCard = () => {
   return (
     <div className="Medical">
       <div className="text-white bg-black bg-opacity-40 flex flex-col justify-center items-center text-center h-[450px] ">
@@ -13,7 +13,7 @@ const Medical = () => {
           <p className="md:w-[60%] p-4 mx-auto text-center">
             Your trusted companion for maintaining health and safety in a global environment. Discover essential medical resources, practical tips, and comprehensive guidance for worry-free experiences.
           </p>
-          <Link to='/Medicaldetails'>
+          <Link to="/madicalCard">
             <button className="btn mt-2">
               Details
             </button>
@@ -25,5 +25,5 @@ const Medical = () => {
   );
 };
 
-export default Medical;
+export default MedicalCard;
 

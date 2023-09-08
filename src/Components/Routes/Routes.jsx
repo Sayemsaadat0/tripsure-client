@@ -55,6 +55,10 @@ import PaymentDetails from "../Pages/Payment/PaymentDetails/PaymentDetails";
 import AddRentalCars from "../Pages/DashBoard/Admin/Overview/AddRentalCars";
 import PaymentSuccessPage from "../Pages/Payment/PaymentSuccessPage/PaymentSuccessPage";
 import PaymentFailPage from "../Pages/Payment/PaymentFailPage/PaymentFailPage";
+import MedicalCard from "../Pages/Home/Medical/Medical";
+import MadicalCard from "../Pages/Home/Medical/MadicalCard";
+import MadicalDetails from "../Pages/Home/Medical/MadicalDetails";
+
 
 
 const router = createBrowserRouter([
@@ -205,7 +209,16 @@ const router = createBrowserRouter([
       {
         path: "/payment/fail/:id",
         element: <PaymentFailPage></PaymentFailPage>
+      },
+      {
+        path: "madicalCard",
+        element: <MadicalCard/>
+      },
+      {
+        path: "madicalDetails",
+        element: <MadicalDetails/>
       }
+     
     ],
   },
   {
