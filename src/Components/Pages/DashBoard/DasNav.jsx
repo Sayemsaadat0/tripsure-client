@@ -50,7 +50,6 @@ const DasNav = () => {
                 </div>
             </div>
             <div className="noti icon flex gap-4">
-                <AiFillMessage className='text-2xl'></AiFillMessage>
 
                 {/* profile */}
                 <div className="dropdown dropdown-end">

@@ -102,22 +102,37 @@ const PackageDetails = () => {
         {/* price and section image */}
         <div className='grid grid-cols-1  md:grid-cols-2 md:gap-10 w-full'>
           <div>
-            <img src={picture} alt="" />
+            <img className='w-full rounded-xl' src={picture} alt="" />
 
-            <p className='font-bold'>Offer Price </p>
+            <p className='font-bold'>Package Price </p>
             <div className='flex items-center gap-3 '>
-              <p className='font-light text-sm'><span className='text-2xl font-bold text-red-500'>$newPrice?.adult</span> (Adult) </p>
-              <p className='line-through font-light text-sm'> price?.adult</p>
+              <p className='font-light text-sm'><span className='text-2xl font-bold text-red-500'>${price?.adult}</span> /Adult </p>
             </div>
             <div className='flex gap-3 items-center '>
-              <p className='font-light text-sm'> <span className='text-2xl font-bold text-red-500'>$newPrice?.child</span> (Child)</p>
-              <p className='line-through font-light text-sm'>price?.child</p>
+              <p className='font-light text-sm'> <span className='text-2xl font-bold text-red-500'>${price?.child}</span> /Child</p>
             </div>
+            <div className='mt-5'>
+              <h3 className='text-lg font-semibold'>Departure Details : </h3>
+              <div>
+                <p>Departure Time :  {departureTime}</p>
+                <p>Departure Place :  {departurePlace}</p>
+              </div>
+            </div>
+
+             {/* Conditions */}
+          <div>
+            <p className='font-bold'>Conditions:</p>
+            {conditions && conditions.map((condition, index) => (
+              <li key={index}>{condition}</li>
+            ))}
           </div>
+   
+          </div>
+
           <div className=' p-4'>
 
             {/* price */}
-            <div className="border-2 h-fit m-6 rounded-2xl">
+            <div className="border-2 h-fit  rounded-2xl">
               {/* revers your slot section */}
               <div className="p-4">
                 <h2 className="text-3xl font-bold pb-6">Reserve your spot</h2>
@@ -280,27 +295,6 @@ const PackageDetails = () => {
           </div>
         </div>
 
-        <div className='grid grid-cols-1 md:grid-cols-2'>
-          {/* departure  */}
-          <div className='mt-5'>
-            <h3 className='text-lg font-semibold'>Departure Details : </h3>
-            <div>
-              <p>Departure Time :  {departureTime}</p>
-              <p>Departure Place :  {departurePlace}</p>
-            </div>
-            <hr className='my-2' />
-          </div>
-
-          {/* Conditions */}
-          <div>
-            <p className='font-bold'>Conditions:</p>
-            {conditions && conditions.map((condition, index) => (
-              <li key={index}>{condition}</li>
-            ))}
-          </div>
-        </div>
-
-
         {/* items and activies */}
         <div className='grid grid-cols-1 md:grid-cols-2'>
           {/* includes item */}
@@ -322,9 +316,9 @@ const PackageDetails = () => {
         <hr />
 
         {/* itinerary */}
-        <div>
-          <p className='font-bold'>Itinerary</p>
-          <div className='grid grid-cols-1 sm:grid-cols-2 lg::grid-cols-3'>
+        <div className='md:my-10'>
+          <p className='font-bold md:my-5'>Itinerary</p>
+          <div className='grid grid-cols-1 sm:grid-cols-2 lg::grid-cols-3 md:my-5'>
             {itinerary?.map((day, dayIndex) => (
               <div key={dayIndex}>
                 <h3 className='font-bold flex items-center gap-2'>
@@ -341,7 +335,7 @@ const PackageDetails = () => {
           <hr />
         </div>
 
-        <div className='grid grid-cols-1 md:grid-cols-2'>
+        <div className='grid grid-cols-1 md:grid-cols-2 md:my-20'>
           {/* hotels */}
           <div>
             <p className='font-bold flex items-center gap-2'><FaHotel></FaHotel> Accommodations </p>
