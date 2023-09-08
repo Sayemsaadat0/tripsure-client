@@ -82,7 +82,7 @@ const UserMenu = () => {
                     <div className='flex flex-col justify-between flex-1 mt-6'>
                         <nav>
 
-                            {
+                            {/* {
                                 role === 'guide' ? <GuideMenu></GuideMenu> :
                                     role === 'admin' ? <AdminMenu></AdminMenu> : <> <label
                                         htmlFor='Toggle3'
@@ -116,12 +116,8 @@ const UserMenu = () => {
                                             <span className='mx-4 font-medium'>Add Room</span>
                                         </NavLink>
                                     </>
-                            }
-                            <>
-
-                                {/* Menu Links */}
-
-                            </>
+                            } */}
+                           <AdminMenu></AdminMenu>
                         </nav>
                     </div>
                 </div>
