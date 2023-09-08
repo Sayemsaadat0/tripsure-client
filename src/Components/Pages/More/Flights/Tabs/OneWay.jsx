@@ -1,17 +1,14 @@
-import Card from "antd/es/card/Card";
 import React, { useEffect, useState } from "react";
 import { HiLocationMarker } from "react-icons/hi";
 import FlightCard from "./FlightCard";
 
 
 const OneWay = () => {
-  const [isChecked, setIsChecked] = useState(false);
-  const [isChecked2, setIsChecked2] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [destinationQuery, setDestinationQuery] = useState("");
   const [dateQuery, setDateQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
-  console.log(searchResults,destinationQuery);
+
  
   
   
@@ -30,12 +27,7 @@ const OneWay = () => {
     }
   }, [searchQuery, destinationQuery, dateQuery]);
 
-  const handleCheckboxChange = () => {
-    setIsChecked(!isChecked);
-  };
-  const handleCheckboxChange2 = () => {
-    setIsChecked2(!isChecked2);
-  };
+
 
   return (
     <>

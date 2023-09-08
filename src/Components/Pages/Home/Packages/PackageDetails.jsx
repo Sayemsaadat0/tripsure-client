@@ -254,13 +254,13 @@ const PackageDetails = () => {
                 <p>(No additional taxes or booking fees)</p>
               </div>
               <div className="flex gap-3 items-center justify-around">
-                {/* <Link  disabled={selectedDate == null}
+                <Link  disabled={selectedDate == null}
                  to={user ? '/contactDetails' : '/login'}
                   state={{ orderDetails: orderDetails }}
                   className="btn rounded-full lg:px-14 btn-warning"
                 >
                   Reserve Now
-                </Link> */}
+                </Link>
               </div>
               <p className="p-4">
                 Not sure? You can cancel this reservation up to 24 hours in

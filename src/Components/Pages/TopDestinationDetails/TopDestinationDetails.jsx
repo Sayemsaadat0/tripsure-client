@@ -116,8 +116,7 @@ const TopDestinationDetails = () => {
               <div className="">
                 <h3 className="tracking-widest font-bold my-2 text-gray-700">Overnight Options</h3>
                 <p>
-                  Places to see, ways to wander, and signature experiences that
-                  define .
+                A mix of the charming, iconic, and modern.
                 </p>
               </div>
               <div>
@@ -128,8 +127,7 @@ const TopDestinationDetails = () => {
               <div className="">
                 <h3 className="tracking-widest font-bold my-2 text-gray-700">Culinary Experiences</h3>
                 <p>
-                  Places to see, ways to wander, and signature experiences that
-                  define.
+                Quintessential  restaurants, bars, and beyond.
                 </p>
               </div>
               <div>

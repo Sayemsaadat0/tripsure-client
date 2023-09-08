@@ -15,6 +15,7 @@ import { BiTimeFive } from "react-icons/bi";
 import { FaLocationDot } from 'react-icons/fa6';
 import { IoIosShareAlt } from "react-icons/io";
 import SocialMediaShare from "../../../Shared/SocialMediaShare/SocialMediaShare";
+import { MdFeedback } from "react-icons/md";
 
 const Packages = () => {
   const { logOut, user } = useAuth();

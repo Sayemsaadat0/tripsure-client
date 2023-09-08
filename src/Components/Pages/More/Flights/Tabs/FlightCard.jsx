@@ -8,7 +8,7 @@ const FlightCard = ({ searchResults }) => {
       <Container>
         <div className="my-12 grid mx-2 lg:mx-4 lg:grid-cols-1 gap-5">
           {
-            searchResults.map((cardItem)=> <div className="border p-5 shadow-lg rounded-lg">
+            searchResults.map((cardItem, _id)=> <div key={_id} className="border p-5 shadow-lg rounded-lg">
             <div className="lg:flex gap-3 space-y-2 md:space-y-0">
               <div className=" rounded-md p-2">
                 <span className="bg-orange-500 mb-0 pb-0 text-xs rounded-2xl text-white  px-2">
