@@ -21,7 +21,7 @@ const Addhotels = () => {
     const reviews = form.reviews.value;
     const language = form.language.value;
     const ratings = form.ratings.value;
-    const roomFeatures = form.roomFeatures.value;
+    // const roomFeatures = form.roomFeatures.value;
     const faq = form.faq.value;
     const details = form.details.value;
     const picture = event.target.image.files[0];
@@ -36,7 +36,7 @@ const Addhotels = () => {
       reviews,
       language,
       ratings,
-      roomFeatures,
+      roomFeatures: selectedRoomFeatures,
       faq,
       details,
       picture,
@@ -56,7 +56,7 @@ const Addhotels = () => {
           reviews,
           language,
           ratings: parseFloat(ratings),
-          roomFeatures,
+          roomFeatures: selectedRoomFeatures,
           faq,
           details,
           picture: data.data.display_url,
@@ -68,6 +68,7 @@ const Addhotels = () => {
             console.log(data);
             setUploadButtonText("Uploaded!");
             setLoading(false);
+            console.log(roomData)
             alert("Room Added!");
             // navigate('/dashboard/adminhome')
           })
@@ -87,22 +88,45 @@ const Addhotels = () => {
     setUploadButtonText(image.name);
   };
 
-  const [selectedFeatures, setSelectedFeatures] = useState([]);
-  const features = ["Wi-Fi", "TV", "Air Conditioning", "Mini Fridge"];
+  const features = [
+  "Blackout Curtains",
+  "Air-Conditioned Rooms",
+  "Cable / Satellite TV",
+  "Mini Refrigerator",
+  "In-Room Safe",
+  "Luxurious Bathrobes",
+  "Complimentary Toiletries",
+  "Work Desk and Chair",
+  "Coffee / Tea Maker",
+  "High-Speed Internet"];
+ 
 
-  const handleFeatureChange = (event) => {
-    const { value } = event.target;
-    if (value === "all") {
-      setSelectedFeatures(event.target.checked ? features : []);
+  const handleRoomFeatureChange = (event) => {
+    const feature = event.target.value;
+    if (event.target.checked) {
+      // Add the feature to the selectedRoomFeatures array if it's checked
+      setSelectedRoomFeatures([...selectedRoomFeatures, feature]);
     } else {
-      setSelectedFeatures((prevSelected) =>
-        event.target.checked
-          ? [...prevSelected, value]
-          : prevSelected.filter((feature) => feature !== value)
+      // Remove the feature from the selectedRoomFeatures array if it's unchecked
+      setSelectedRoomFeatures(
+        selectedRoomFeatures.filter((item) => item !== feature)
       );
     }
   };
 
+  
+
+  const handleSelectAllChange = (event) => {
+    const checked = event.target.checked;
+    setSelectAll(checked);
+
+    // If "Select All" is checked, set all room features as selected; otherwise, clear the selectedRoomFeatures array.
+    if (checked) {
+      setSelectedRoomFeatures(features);
+    } else {
+      setSelectedRoomFeatures([]);
+    }
+  };
   const languages = [
     {
       label: "bangla",
@@ -246,14 +270,7 @@ const Addhotels = () => {
               >
                 Language
               </label>
-              {/* <input
-                className="w-full px-4 py-3 text-gray-800 border border-cyan-300  focus:outline-cyan-500 rounded-md "
-                name="language"
-                id="language"
-                type="text"
-                placeholder="language"
-                required
-              /> */}
+             
               <select
                 required
                 className="w-full px-4 py-3 text-gray-800 border border-cyan-300  focus:outline-cyan-500 rounded-md"
@@ -287,52 +304,28 @@ const Addhotels = () => {
               />
             </div>
             <div className="space-y-1 text-sm">
-              <label
-                htmlFor="roomFeatures"
-                className="block text-gray-600 mb-2 text-lg"
-              >
-                Room Features
+              <label className="flex items-center space-x-2">
+                <input
+                  type="checkbox"
+                  onChange={handleSelectAllChange}
+                  checked={selectAll}
+                />
+                <span>Select All</span>
               </label>
-              {/* <div className="flex items-center">
-                <label className="cursor-pointer label">
-                  <span className="label-text">Select All</span>
-                  <input
-                    type="checkbox"
-                    className="checkbox checkbox-accent"
-                    value="all"
-                    checked={selectedFeatures.length === features.length}
-                    onChange={handleFeatureChange}
-                  />
-                </label>
-              </div> */}
-              {/* {features.map((feature, index) => (
-                <div key={index} className="flex items-center">
-                  <label className="cursor-pointer label">
-                    <span className="label-text">{feature}</span>
-                    <input
-                      type="checkbox"
-                      className="checkbox checkbox-accent"
-                      value={feature}
-                      name= "roomFeatures"
-                      checked={selectedFeatures.includes(feature)}
-                      onChange={handleFeatureChange}
-                    />
-                  </label>
-                </div>
-              ))} */}
-               <select
-                required
-                className="w-full px-4 py-3 text-gray-800 border border-cyan-300  focus:outline-cyan-500 rounded-md"
-                name="roomFeatures"
-              >
-                {features.map((category) => (
-                  <option value={category} key={category}>
-                    {category}
-                  </option>
-                ))}
-              </select>
-
             </div>
+
+            {features.map((category) => (
+              <label key={category} className=" flex  items-center space-x-2">
+                <input
+                  type="checkbox"
+                  name="roomFeatures"
+                  value={category}
+                  onChange={handleRoomFeatureChange}
+                  checked={selectedRoomFeatures.includes(category)}
+                />
+                <span>{category}</span>
+              </label>
+            ))}
             <div className=" p-4 bg-white w-full  m-auto rounded-lg">
               <div className="file_upload px-5 py-3 relative border-4 border-dotted border-gray-300 rounded-lg">
                 <div className="flex flex-col w-max mx-auto text-center">

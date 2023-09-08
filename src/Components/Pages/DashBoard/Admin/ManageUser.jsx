@@ -32,9 +32,9 @@ const ManageUser = () => {
     // Sort users based on sortColumn and sortOrder
     filteredAndSortedUsers.sort((a, b) => {
       if (sortOrder === 'asc') {
-        return a[sortColumn].localeCompare(b[sortColumn]);
+        return a[sortColumn]?.localeCompare(b[sortColumn]);
       } else {
-        return b[sortColumn].localeCompare(a[sortColumn]);
+        return b[sortColumn]?.localeCompare(a[sortColumn]);
       }
     });
 
@@ -74,6 +74,7 @@ const ManageUser = () => {
           .then((data) => {
             if (data.deletedCount > 0) {
               Swal.fire("Deleted!", "Your file has been deleted.", "success");
+              refetch()
             }
           });
       }
@@ -81,16 +82,19 @@ const ManageUser = () => {
   };
 
   //  make role handlling
+  const makeAdmin = (user) => {
 
-  const handleMakeAdmin = user => {
-    console.log(user)
-    fetch(`${import.meta.env.VITE_BACKEND_API}/users/admin/${user._id}`, {
-      method: 'PATCH'
+      fetch(`${import.meta.env.VITE_BACKEND_API}/users/admin/${user._id}`, {
+      method: 'PUT',
+      headers: {
+        "content-type": 'application/json'
+      },
+      body: JSON.stringify({role: 'admin'})
     })
       .then(res => res.json())
       .then(data => {
         console.log(data)
-        if (data?.acknowledged) {
+        if (data?.modifiedCount > 0) {
           refetch();
           Swal.fire({
             position: 'top-end',
@@ -98,27 +102,6 @@ const ManageUser = () => {
             title: `WOW is an Admin Now!`,
             showConfirmButton: false,
             timer: 1500
-          })
-        }
-      })
-  }
-
-  const handleMakeOperator = (user) => {
-    console.log(user)
-    fetch(`${import.meta.env.VITE_BACKEND_API}/users/operator/${user._id}`, {
-      method: 'PATCH'
-    })
-      .then(res => res.json())
-      .then(data => {
-        console.log(data)
-        if (data.acknowledged) {
-          refetch();
-          Swal.fire({
-
-            icon: 'success',
-            title: `WOW is an operator Now!`,
-            showConfirmButton: false,
-            timer: 1000
           })
         }
       })
@@ -170,7 +153,6 @@ const ManageUser = () => {
             value={operator} onChange={(e) => setOperator(e.target.value)}>
             <option value="">All Users</option>
             <option value="admin">Admin</option>
-            <option value="operator">Operator</option>
           </select>
 
         </div>
@@ -185,7 +167,6 @@ const ManageUser = () => {
               <th onClick={() => handleSort('name')}>Name</th>
               <th>Role</th>
               <th>Admin</th>
-              <th>Operator</th>
               <th>Delete</th>
 
             </tr>
@@ -214,24 +195,11 @@ const ManageUser = () => {
                     "admin"
                   ) : (
                     <button
-                      onClick={() => handleMakeAdmin(user)}
+                      onClick={() => makeAdmin(user)}
                       disabled={user.role === "operator"}
                       className="btn btn-ghost bg-orange-600  text-white"
                     >
                       <FaUserShield></FaUserShield>
-                    </button>
-                  )}
-                </td>
-                <td >
-                  {user.role === "operator" ? (
-                    "operator"
-                  ) : (
-                    <button
-                      onClick={() => handleMakeOperator(user)}
-                      disabled={user.role === "admin"}
-                      className="btn btn-ghost bg-teal-800  text-white"
-                    >
-                      <FaUserCheck></FaUserCheck>
                     </button>
                   )}
                 </td>
