@@ -53,6 +53,9 @@ import SearchDetails from "../Pages/SearchResult/SearchDetails";
 // payment
 import PaymentDetails from "../Pages/Payment/PaymentDetails/PaymentDetails";
 import AddRentalCars from "../Pages/DashBoard/Admin/Overview/AddRentalCars";
+import MedicalCard from "../Pages/Home/Medical/Medical";
+import MadicalCard from "../Pages/Home/Medical/MadicalCard";
+
 
 
 const router = createBrowserRouter([
@@ -196,6 +199,11 @@ const router = createBrowserRouter([
         path: "/paymentDetails",
         element: <PaymentDetails></PaymentDetails>
       },
+      {
+        path: "madicalCard",
+        element: <MadicalCard/>
+      }
+     
     ],
   },
   {
