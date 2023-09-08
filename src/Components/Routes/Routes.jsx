@@ -55,6 +55,7 @@ import PaymentDetails from "../Pages/Payment/PaymentDetails/PaymentDetails";
 import AddRentalCars from "../Pages/DashBoard/Admin/Overview/AddRentalCars";
 import MedicalCard from "../Pages/Home/Medical/Medical";
 import MadicalCard from "../Pages/Home/Medical/MadicalCard";
+import MadicalDetails from "../Pages/Home/Medical/MadicalDetails";
 
 
 
@@ -202,6 +203,10 @@ const router = createBrowserRouter([
       {
         path: "madicalCard",
         element: <MadicalCard/>
+      },
+      {
+        path: "madicalDetails",
+        element: <MadicalDetails/>
       }
      
     ],

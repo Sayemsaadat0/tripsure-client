@@ -1,5 +1,6 @@
 import React from 'react';
 import Container from '../../../../LayOut/Container';
+import { Link } from 'react-router-dom';
 
 const MadicalCard = () => {
     return (
@@ -38,9 +39,9 @@ const MadicalCard = () => {
                     [Destination Name] Health Guidelines
                   </h2>
                   <p>If a dog chews shoes whose shoes does he choose?</p>
-                  <div className="card-actions">
+                  <Link to="/madicalDetails">
                     <button className="btn btn-primary">Learn More</button>
-                  </div>
+                  </Link>
                 </div>
               </div>
             </div>
