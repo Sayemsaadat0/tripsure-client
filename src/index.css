@@ -124,6 +124,13 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+.story {
+  background-image: url("https://i.ibb.co/VT6G4T0/Site-Traffi-Sources.gif");
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 /* .aboutus {
   background-image: url("https://i.ibb.co/VxPk4Xx/2.png");
   background-attachment: fixed;
