@@ -38,13 +38,13 @@ const RentalSingleCard = ({data}) => {
                   <div>
                     <h2 className="text-green-500 flex gap-2 items-center text-md text-lg">Features:</h2>
                     {
-                        cardItem?.features?.map((feature) =><li className='text-slate-500'>{feature}</li>)
+                        cardItem?.features?.map((feature, index) =><li key={index} className='text-slate-500'>{feature}</li>)
                     }
                     <h3 className="text-green-500 flex gap-2 items-center text-md ">
                       Sit Capacity:
                       <span className="font-semibold">{cardItem?.seating_capacity}</span>
                     </h3>
-                    <p className="text-lg text-green-500">Daily Rate: {cardItem?.daily_rate}</p>
+                    <p className="text-md text-green-500">Daily Rate: <span className='font-semibold'>{cardItem?.daily_rate}</span></p>
                   </div>
                   <div className="flex justify-end ">
                     <button className="bg-orange-400 ms-auto hover:bg-orange-600 hover:translate-x-2 font-bold hover:translate-y-2 transition-all  px-4 py-2 rounded-full text-white">
