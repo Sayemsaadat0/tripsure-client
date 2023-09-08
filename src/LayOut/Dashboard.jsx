@@ -105,12 +105,12 @@ import DasNav from '../Components/Pages/DashBoard/DasNav'
 
 const DashboardLayout = () => {
   return (
-    <div className='relative min-h-screen md:flex'>
+    <div className='relative min-h-screen md:flex '>
       {/* <Sidebar /> */}
       <UserMenu></UserMenu>
       <div className='flex-1  md:ml-64'>
         <div className='p-5'>
-          {/* <DasNav></DasNav> */}
+          <DasNav></DasNav>
           <Outlet />
         </div>
       </div>

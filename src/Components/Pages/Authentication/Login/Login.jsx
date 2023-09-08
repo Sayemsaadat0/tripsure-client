@@ -64,7 +64,7 @@ const Login = () => {
 
         {/* box */}
        
-        <div className="p-6  w-80 shadow-sm hover:shadow-sm rounded-lg text-white md:hover:shadow-white duration-700">
+        <div className="p-6  w-80 shadow-sm hover:shadow-sm rounded-lg text-white md:hover:shadow-white duration-700 backdrop-blur-sm">
 
           <div className="flex justify-start gap-4 ">
             <img className="w-16 h-16" loading="lazy" src="https://i.ibb.co/ng9Sdrp/Untitled-design-1-unscreen.gif" alt="" />
