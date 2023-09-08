@@ -30,7 +30,7 @@ const RestaurantAttractionReview = () => {
 
   return (
     <Container>
-      <div className="mx-4 lg:mx-10">
+      <div className="mx-4 lg:mx-10 mt-20">
         <h1 className="text-3xl font-bold my-5 mt-10">
           {restaurantsDetails?.title}
         </h1>

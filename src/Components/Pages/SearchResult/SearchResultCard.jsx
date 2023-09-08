@@ -33,7 +33,7 @@ const SearchResultCard = ({ data, country }) => {
                 : data.cardtitle)}
           </h3>
           <div className="flex space-x-2 ">
-            <p className="text-green-600 ">
+           {/*  <p className="text-green-600 ">
               <Rating
                 placeholderRating={
                   data &&
@@ -44,12 +44,12 @@ const SearchResultCard = ({ data, country }) => {
                 fullSymbol={<FaCircle className="w-4 "></FaCircle>}
                 readonly
               />
-            </p>
-            {data.reviews && (
+            </p> */}
+            {/* {data.reviews && (
               <p className="text-sm border-b-[2px] border-dotted p-0">
                 {data.reviews.length}
               </p>
-            )}
+            )} */}
           </div>
           {data.address && (
             <p className="font-medium">{data?.address?.country}</p>
