@@ -1,6 +1,7 @@
 import React from 'react';
 import Container from '../../../../LayOut/Container';
 import { Link } from 'react-router-dom';
+import { Carousel } from 'antd';
 
 const MadicalCard = () => {
     return (
@@ -16,11 +17,11 @@ const MadicalCard = () => {
               a worry-free and enjoyable travel experience.
             </p>
           </div>
-          <img
-            className="w-[100%] h-[390px] mt-8"
-            src="https://i.ibb.co/RYqkf1K/image.png"
-            alt="medical"
-          />
+         <Carousel autoplay>
+          <img src="https://i.ibb.co/L0Gf3Vw/1.png" alt="" />
+          <img src="https://i.ibb.co/c34NFv9/2.png" alt="" />
+   
+         </Carousel>
           <div className="mt-10">
             <h3 className="text-2xl text-center font-bold underline">
               Specific Health Guidelines

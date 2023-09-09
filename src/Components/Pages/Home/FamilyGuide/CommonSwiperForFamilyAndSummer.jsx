@@ -5,8 +5,11 @@ import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import { Link } from "react-router-dom";
 import { FaArrowTurnUp } from "react-icons/fa6";
+import LazyLoad from "react-lazy-load";
+import { Carousel } from 'antd';
 
 const CommonSwiperForFamilyAndSummer = ({ SwiperData }) => {
+
   return (
     <div className="">
       <Swiper
@@ -30,18 +33,22 @@ const CommonSwiperForFamilyAndSummer = ({ SwiperData }) => {
             spaceBetween: 30,
           },
         }}
-        onSwiper={(swiper) => console.log(swiper)}
+        onSwiper={(swiper) => (swiper)}
       >
         {SwiperData?.map((todo, index) => (
           <SwiperSlide className="" key={index}>
-            <div className="card  bg-base-100 shadow-xl">
-              <figure>
-                <img
-                  src="https://w0.peakpx.com/wallpaper/67/341/HD-wallpaper-royal-enfield-bike-dirt-ladakh-leh-moterbike-re-road-trip.jpg"
-                  alt="Shoes"
-                />
-              </figure>
-              <div className="card-body">
+            <div className="card">
+            
+            <Carousel autoplay>
+           
+                  {
+                      todo.pictures.map((picture, index) => (
+                        <img className='rounded-lg h-40 w-full object-cover' key={index} src={picture} alt="" />
+                      ))
+                    }
+          
+                  </Carousel>
+              <div className="my-6">
                 <h2 className="card-title">{todo?.title}</h2>
                 <p>{todo?.introduction.slice(0, 120)}...</p>
                 <div className="card-actions justify-start">

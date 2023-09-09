@@ -27,7 +27,7 @@ const TravelerChoose = () => {
           {/* //tour  card */}
        <hr className="my-4"/>
           {
-            allTour.slice(0, 1).map((fistOneCard, index) => <div key={index} className="shadow-2xl pb-4  rounded-lg bg-base-300">
+            allTour.slice(0, 1).map((fistOneCard, index) => <div key={index} className="shadow-2xl pb-4  rounded-lg bg-blue-100">
               <div className="">
                 <img
                   className="w-full h-60 md:h-72 lg:h-[30rem] rounded-2xl bg-cover object-cover"
@@ -37,7 +37,7 @@ const TravelerChoose = () => {
               </div>
               <div className="m-10 lg:flex  items-center  gap-4  space-y-3">
                 <div className="space-y-4 ">
-                  <h2 className="text-xl ">0{index + 1}.</h2>
+                  <h2 className="text-7xl font-bold border-b-4 border-blue-400 w-10 py-3 text-gray-400">0{index + 1}.</h2>
                   <Link to={`/tourDetails/${fistOneCard?._id}`} className="text-4xl font-bold text-black">
                     {fistOneCard?.cardtitle}
                   </Link>
