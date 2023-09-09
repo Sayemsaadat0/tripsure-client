@@ -8,6 +8,7 @@ import GoogleLogin from "../../../SocialLogin/GoogleLogin";
 import ResetPassword from "../../../Modal/ResetPassword";
 import { BsFillEyeFill, BsFillEyeSlashFill } from 'react-icons/bs';
 import Particle from "../Particle";
+import LazyLoad from "react-lazy-load";
 
 
 const Login = () => {
@@ -63,11 +64,13 @@ const Login = () => {
       <div className="flex items-center  justify-center w-full min-h-screen ">
 
         {/* box */}
-       
+
         <div className="p-6  w-80 shadow-sm hover:shadow-sm rounded-lg text-white md:hover:shadow-white duration-700 backdrop-blur-sm">
 
           <div className="flex justify-start gap-4 ">
-            <img className="w-16 h-16" loading="lazy" src="https://i.ibb.co/ng9Sdrp/Untitled-design-1-unscreen.gif" alt="" />
+            <LazyLoad>
+              <img className="w-16 h-16" loading="lazy" src="https://i.ibb.co/ng9Sdrp/Untitled-design-1-unscreen.gif" alt="" />
+            </LazyLoad>
             <h2
               className="text-2xl  font-bold mb-4">
               Hello ,
@@ -160,8 +163,8 @@ export default Login;
 
 
 
-  // bg-[url('https://i.ibb.co/9h7VBjC/two-athletic-man-floats-red-boat-river.jpg')] bg-no-repeat bg-cover
-  // bg-[url('https://i.ibb.co/Qnf5MgH/ABCDEFGHI-JKLMNO-1.png')] bg-no-repeat bg-cover
-  // authentication
+// bg-[url('https://i.ibb.co/9h7VBjC/two-athletic-man-floats-red-boat-river.jpg')] bg-no-repeat bg-cover
+// bg-[url('https://i.ibb.co/Qnf5MgH/ABCDEFGHI-JKLMNO-1.png')] bg-no-repeat bg-cover
+// authentication
 
 
