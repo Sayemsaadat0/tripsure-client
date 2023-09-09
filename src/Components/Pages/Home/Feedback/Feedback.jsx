@@ -70,7 +70,7 @@ const Feedback = () => {
       <dialog id="my_modal_3" className="modal ">
         <form method="dialog" className="modal-box">
           <button
-            className=" hover:text-white btn-circle btn-ghost absolute duration-500 right-2 top-2 hover:bg-red-500"
+            className=" hover:text-white  btn-ghost absolute duration-500 right-2 top-2 hover:bg-red-500"
             onClick={() => setSelectedReview(null)}>
             ✕
           </button>
@@ -99,31 +99,3 @@ export default Feedback;
 
 
 
-
-/* 
-
- 
-
-*/
-
-/* 
-  
-
-*/
-
-
-
-/* 
- 
-
-
-*/
-
-
-
-/* 
- 
-*/
-
-
-/*   */

@@ -165,7 +165,7 @@ const Footar = () => {
               <a class="text-gray-500">
                 <svg
                   fill="currentColor"
-                  stroke-linecap="round"
+                  strokeLinecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
                   class="w-5 h-5"
@@ -177,7 +177,7 @@ const Footar = () => {
               <a class="ml-3 text-gray-500">
                 <svg
                   fill="currentColor"
-                  stroke-linecap="round"
+                  strokeLinecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
                   class="w-5 h-5"
@@ -190,7 +190,7 @@ const Footar = () => {
                 <svg
                   fill="none"
                   stroke="currentColor"
-                  stroke-linecap="round"
+                  strokeLinecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
                   class="w-5 h-5"
@@ -204,7 +204,7 @@ const Footar = () => {
                 <svg
                   fill="currentColor"
                   stroke="currentColor"
-                  stroke-linecap="round"
+                  strokeLinecap="round"
                   stroke-linejoin="round"
                   stroke-width="0"
                   class="w-5 h-5"

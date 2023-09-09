@@ -7,6 +7,7 @@ import { BsSuitHeartFill, BsSuitHeart } from 'react-icons/bs'
 import Container from '../../../../LayOut/Container';
 import { useAddToFavoriteMutation, useGetFavoriteItemsQuery } from '../../../../Features/favorite/favoriteApi';
 import useAuth from '../../../../Hooks/useAuth';
+import LazyLoad from 'react-lazy-load';
 
 
 const TravelDeals = () => {
@@ -67,7 +68,9 @@ const TravelDeals = () => {
 
             <Link to={`/TravelDeals/${deals?._id}`} >
               <figure>
-                <img className='transition duration-700 ease-in-out hover:scale-110 rounded-lg h-48 object-cover w-full' src={deals.picture} alt={deals.title} />
+                <LazyLoad width={'100%'}>
+                  <img className='transition duration-700 ease-in-out hover:scale-110 rounded-lg h-48 object-cover w-full' src={deals.picture} alt={deals.title} />
+                </LazyLoad>
               </figure>
             </Link>
 
@@ -87,7 +90,6 @@ const TravelDeals = () => {
                 <p
                   className='flex justify-end items-center gap-1'>
                   <GoStarFill className='text-red-500'></GoStarFill>
-                  {/* todo add ratings */}
                   4.5(40)
                 </p>
               </div>

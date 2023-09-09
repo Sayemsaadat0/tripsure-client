@@ -8,6 +8,8 @@ import SectionTitle from "../../../Shared/SectionTitle/SectionTitle";
 import { Link } from "react-router-dom";
 import { GoStarFill } from "react-icons/go";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
+import LazyLoad from "react-lazy-load";
+
 
 const TopDestinations = () => {
   const [TopDestinations, setTopDestinations] = useState([]);
@@ -54,10 +56,15 @@ const TopDestinations = () => {
               <SwiperSlide key={index}>
                 <Link to={`/top-destination-details/${todo?._id}`}>
                   <div className="">
-                    <img
-                      className="h-40 w-full object-cover rounded-xl hover:scale-105 duration-700 "
-                      src={todo.picture}
-                      alt="" />
+
+                    <LazyLoad >
+                      <img
+                        className="h-40 w-full object-cover rounded-xl hover:scale-105 duration-700 "
+                        src={todo.picture}
+                        alt="" />
+                    </LazyLoad>
+
+
                     <h2 className="font-semibold mt-3 hover:text-blue-400 duration-500">
                       {todo.placetitle}
                     </h2>

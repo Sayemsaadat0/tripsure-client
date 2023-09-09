@@ -10,7 +10,6 @@ const Flights = () => {
   return (
     <>
       <div className="max-w-7xl mx-auto"><OneWay /></div>
-      <AirLineReview />
     </>
   );
 };

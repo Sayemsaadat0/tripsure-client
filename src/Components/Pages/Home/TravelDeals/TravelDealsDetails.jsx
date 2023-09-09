@@ -10,6 +10,7 @@ import { GrCircleInformation } from 'react-icons/gr';
 import useAuth from '../../../../Hooks/useAuth';
 import { DatePicker } from 'antd';
 import { FaUserGroup } from 'react-icons/fa6';
+import LazyLoad from 'react-lazy-load';
 
 const TravelDealsDetails = () => {
   const [modalForCountPeople, setModalForCountPeople] = useState(false);
@@ -113,11 +114,13 @@ const TravelDealsDetails = () => {
         {/* price and section image */}
         <div className='grid grid-cols-1 md:grid-cols-2 md:gap-10 w-full'>
           <div>
-            <img src={picture} className='w-full rounded-xl ' alt="" />
+           <LazyLoad>
+           <img src={picture} className='w-full rounded-xl ' alt="" />
+           </LazyLoad>
 
             <div>
               <h2 className='font-bold md:py-6 text-xl tracking-widest'>Grab it Now, Save Big</h2>
-              <h3 className='text-3xl font-bold text-[#7bb9b9]'>
+              <h3 className='text-3xl font-bold text-[#79c7ff]'>
 
                 <Typewriter words={words}
                   loop={Infinity}
@@ -188,7 +191,7 @@ const TravelDealsDetails = () => {
                                 onClick={() =>
                                   setAdultCount((adultCount) => adultCount - 1)
                                 }
-                                className="btn btn-sm btn-circle bg-black hover:bg-black  rounded-full"
+                                className="btn btn-sm  bg-black hover:bg-black  rounded-full"
                               >
                                 <FaMinus className="w-4 text-white "></FaMinus>
                               </button>
@@ -197,7 +200,7 @@ const TravelDealsDetails = () => {
                                 onClick={() =>
                                   setAdultCount((adultCount) => adultCount + 1)
                                 }
-                                className="btn btn-sm btn-circle bg-black hover:bg-black  rounded-full"
+                                className="btn btn-sm  bg-black hover:bg-black  rounded-full"
                               >
                                 <FaPlus className="w-4 text-white "></FaPlus>
                               </button>
@@ -216,7 +219,7 @@ const TravelDealsDetails = () => {
                                     (childrenCount) => childrenCount - 1
                                   )
                                 }
-                                className="btn btn-sm btn-circle bg-black hover:bg-black  rounded-full"
+                                className="btn btn-sm  bg-black hover:bg-black  rounded-full"
                               >
                                 <FaMinus className="w-4 text-white "></FaMinus>
                               </button>
@@ -227,7 +230,7 @@ const TravelDealsDetails = () => {
                                     (childrenCount) => childrenCount + 1
                                   )
                                 }
-                                className="btn btn-sm btn-circle bg-black hover:bg-black  rounded-full"
+                                className="btn btn-sm  bg-black hover:bg-black  rounded-full"
                               >
                                 <FaPlus className="w-4 text-white "></FaPlus>
                               </button>
@@ -246,7 +249,7 @@ const TravelDealsDetails = () => {
                                     (infantsCount) => infantsCount - 1
                                   )
                                 }
-                                className="btn btn-sm btn-circle bg-black hover:bg-black  rounded-full"
+                                className="btn btn-sm  bg-black hover:bg-black  rounded-full"
                               >
                                 <FaMinus className="w-4 text-white "></FaMinus>
                               </button>
@@ -258,7 +261,7 @@ const TravelDealsDetails = () => {
                                     (infantsCount) => infantsCount + 1
                                   )
                                 }
-                                className="btn btn-sm btn-circle bg-black hover:bg-black  rounded-full"
+                                className="btn btn-sm  bg-black hover:bg-black  rounded-full"
                               >
                                 <FaPlus className="w-4 text-white "></FaPlus>
                               </button>
@@ -285,12 +288,15 @@ const TravelDealsDetails = () => {
                     </p>
                     <p>(No additional taxes or booking fees)</p>
                   </div>
-                  <div className="flex gap-3 items-center justify-around">
+                  <div className="flex gap-3 items-center justify-around"> 
+                  {/*todo functioon to add to favorite */}
+                  <Link className='btn-primary'>
+                  Add To Favorite
+                  </Link>
                     <Link disabled={selectedDate == null}
                       to={user ? '/contactDetails' : '/login'}
                       state={{ orderDetails: orderDetails }}
-                      className="btn rounded-full lg:px-14 btn-warning"
-                    >
+                      className="btn rounded-full lg:px-14 btn-warning">
                       Reserve Now
                     </Link>
                   </div>
