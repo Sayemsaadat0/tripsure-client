@@ -20,7 +20,6 @@ const MadicalCard = () => {
          <Carousel autoplay>
           <img src="https://i.ibb.co/L0Gf3Vw/1.png" alt="" />
           <img src="https://i.ibb.co/c34NFv9/2.png" alt="" />
-   
          </Carousel>
           <div className="mt-10">
             <h3 className="text-2xl text-center font-bold underline">
