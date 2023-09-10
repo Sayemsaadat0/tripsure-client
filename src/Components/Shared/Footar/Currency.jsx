@@ -4,7 +4,7 @@ import CurrencyConvert from "./CurrencyConvert";
 
 const Currency = () => {
   const BASE_API =
-    "http://data.fixer.io/api/latest?access_key=971d0916c06f7f19df164ac2fdce7fcd&format=1";
+    "http://data.fixer.io/api/latest?access_key=e6d22b35d8834afb01391701d2301fff";
 
   const [amount1, setAmount1] = useState(1);
   const [amount2, setAmount2] = useState(1);
@@ -36,10 +36,11 @@ const Currency = () => {
     setAmount2(format((amount1 * rates[currency2]) / rates[currency1]));
     setCurrency1(currency1);
   };
-  const handleAmount2Change = (amount2) => {
-    setAmount2(format((amount2 * rates[currency1]) / rates[currency2]));
-    setAmount2(amount2);
+  const handleAmount2Change = (newAmount2) => {
+    setAmount1(format((newAmount2 * rates[currency1]) / rates[currency2]));
+    setAmount2(newAmount2);
   };
+  
 
   const handleCurrency2Change = (currency2) => {
     setAmount2(format((amount2 * rates[currency1]) / rates[currency2]));

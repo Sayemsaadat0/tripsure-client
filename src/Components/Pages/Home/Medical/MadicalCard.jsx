@@ -65,9 +65,9 @@ const MadicalCard = () => {
                     [Destination Name] Health Guidelines
                   </h2>
                   <p>If a dog chews shoes whose shoes does he choose?</p>
-                  <div className="card-actions">
+                  <Link to="/madicalDetails">
                     <button className="btn btn-primary">Learn More</button>
-                  </div>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -88,9 +88,9 @@ const MadicalCard = () => {
                 <div className="card-body">
                   <h2 className="text-lg font-bold">First Aid Kit</h2>
                   <p>If a dog chews shoes whose shoes does he choose?</p>
-                  <div className="card-actions">
+                  <Link to="/madicalDetails">
                     <button className="btn btn-primary">Learn More</button>
-                  </div>
+                  </Link>
                 </div>
               </div>
             </div>
