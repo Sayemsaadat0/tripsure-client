@@ -19,7 +19,6 @@ const Feedback = () => {
       .then((res) => res.json())
       .then((data) => {
         setFeedbacks(data)
-        console.log(data);
       })
       .catch((err) => console.log(err.message));
   }, []);

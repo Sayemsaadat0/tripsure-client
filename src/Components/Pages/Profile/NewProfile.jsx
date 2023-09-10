@@ -3,7 +3,7 @@ import { AiTwotoneStar, AiOutlineGlobal } from 'react-icons/ai';
 import { FaLocationDot } from 'react-icons/fa6'
 import { GrDocumentVerified } from 'react-icons/gr'
 import useAuth from '../../../Hooks/useAuth';
-import { addCoverPhoto, findUserbyEmail } from '../../../apiCall/users';
+import {  findUserbyEmail } from '../../../apiCall/users';
 import { imageUpload } from '../../../api/utilities';
 import GuidesReview from './GuidesReview';
 import LazyLoad from 'react-lazy-load';

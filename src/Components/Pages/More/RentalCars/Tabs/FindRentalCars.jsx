@@ -10,14 +10,6 @@ const FindRentalCars = ({setPickUpDate, setPickUpLocation, setDropOutDate, handl
     <div className="rentalCarBackground h-96 mb-8 sm:mb-0 md:relative">
       <Container>
         <div className="clear-glass h-auto  px-8 pb-12 md:pb-8 md:absolute left-[10px] bottom-9 border-round">
-          <select
-            name=""
-            id=""
-            className="select border-round focus:outline-none rounded-none mt-3"
-          >
-            <option value="same">Same drop off</option>
-            <option value="defferent">Different drop off</option>
-          </select>
           <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-[2px] sm:gap-2 mt-4 ">
             <div className="relative">
               <input

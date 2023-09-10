@@ -50,7 +50,7 @@ const TopDestinations = () => {
                 spaceBetween: 30,
               },
             }}
-            onSwiper={(swiper) => console.log(swiper)}
+            onSwiper={(swiper) =>(swiper)}
           >
             {TopDestinations.map((todo, index) => (
               <SwiperSlide key={index}>

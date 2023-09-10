@@ -10,7 +10,7 @@ import Swal from "sweetalert2";
 import Dropdown from "../../Dropdown/Drpodown";
 import MobileDropdown from "./MobileDropdown";
 import { useGetYourFavoritItemsQuery } from "../../../Features/favorite/favoriteApi";
-import BecomeGuestModal from "../becomeGuide/BecomeGuidetModal";
+// import BecomeGuestModal from "../becomeGuide/BecomeGuidetModal";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -119,7 +119,7 @@ const Navbar = () => {
             </li>
           )}
         </div>
-        <BecomeGuestModal isOpen={isOpen} setIsOpen={setIsOpen}></BecomeGuestModal>
+        {/* <BecomeGuestModal isOpen={isOpen} setIsOpen={setIsOpen}></BecomeGuestModal> */}
         <div
           onClick={() => setMenuOpen(!menuOpen)}
           className="cursor-pointer  text-gray-800 lg:hidden"

@@ -32,8 +32,6 @@ const SearchSection = () => {
   const activeCategory = useSelector((state) => state.category.category);
   const searchResult = useSelector((state) => state.searchData);
 
-  console.log("activeCategory" + activeCategory);
-  console.log(searchResult);
   const dispatch = useDispatch();
   const handleCategoryClick = (category) => {
     dispatch(setActiveCategory(category));

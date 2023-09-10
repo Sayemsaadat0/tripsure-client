@@ -1,4 +1,4 @@
-import propTypes from "prop-types";
+/* import propTypes from "prop-types";
 
 const CurrencyConvert = (props) => {
   return (
@@ -9,13 +9,13 @@ const CurrencyConvert = (props) => {
         value={props.amount}
         onChange={(e) => props.onAmountChange(e.target.value)}
       />
-      <select
+      <select 
         className="p-[.5rem] rounded-md  focus:outline-dotted"
         value={props.currency}
         onChange={(e) => props.onCurrencyChange(e.target.value)}
       >
-        {props.currencies.map((currency) => (
-          <option  value={currency}>{currency}</option>
+        {props.currencies.map((currency,index) => (
+          <option key={index} value={currency}>{currency}</option>
         ))}
       </select>
     </div>
@@ -31,3 +31,4 @@ CurrencyConvert.propTypes = {
 };
 
 export default CurrencyConvert;
+ */

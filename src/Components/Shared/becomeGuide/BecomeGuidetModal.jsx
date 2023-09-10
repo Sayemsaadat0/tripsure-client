@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+/* import React, { useEffect, useState } from 'react';
 import ShareModal from '../../Modal/ShareModal';
 import useAuth from '../../../Hooks/useAuth';
 import Swal from 'sweetalert2';
@@ -70,4 +70,4 @@ const BecomeGuestModal = ({ isOpen, setIsOpen }) => {
     );
 };
 
-export default BecomeGuestModal;
+export default BecomeGuestModal; */

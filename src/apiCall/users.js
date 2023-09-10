@@ -10,18 +10,17 @@ export const saveUser = async (user, countryName, phone, gender) => {
         countryName,
         phone,
         gender,
-        coverPhoto: ''
     }
     console.log(user)
     const data = await axios.put(`${import.meta.env.VITE_BACKEND_API}/users/${user?.email}`, currentUser)
     console.log(data)
 }
 // add cover photo 
-export const addCoverPhoto = async (email, coverPhoto) => {
+/* export const addCoverPhoto = async (email, coverPhoto) => {
     console.log(coverPhoto)
     const response = await axios.patch(`${import.meta.env.VITE_BACKEND_API}/users/${email}`, {coverPhoto})
     return response
-}
+} */
 // update details 
 export const updateUserDeatails = async (email, details) => {
     console.log(details)
