@@ -162,7 +162,7 @@ const router = createBrowserRouter([
 
       {
         path: "travelGuides",
-        element: <TravelGuides />,
+        element: <PrivateRoutes><TravelGuides /></PrivateRoutes>
       },
       {
         path: "/travelerChoose-thingsToDo/:category",
