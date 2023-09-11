@@ -7,7 +7,7 @@ const Stories = () => {
   const { id } = useParams()
   console.log(id)
   useEffect(() => {
-    fetch(`https://tripsure-server-sayemsaadat0.vercel.app/story/${id}`)
+    fetch(`http://localhost:1000/story/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setStory(data);

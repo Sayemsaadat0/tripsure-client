@@ -10,7 +10,7 @@ import stories from "./Stories/Stories";
 const TravelarStories = () => {
   const [stories, setStories] = useState([])
   useEffect(() => {
-    axios.get(`https://tripsure-server-sayemsaadat0.vercel.app/story`)
+    axios.get(`http://localhost:1000/story`)
       .then(res => {
         setStories(res.data)
         console.log(res.data)

@@ -36,7 +36,7 @@ const NewProfile = () => {
     }, [user])
 
     return (
-        <div className=' pt-20 relative w-full min-h-screen'>
+        <div className='pt-20 relative w-full min-h-screen'>
             <div className='max-w-6xl mx-auto'>
                 <div className=' flex flex-col lg:flex-row gap-10'>
                     <div className='max-w-sm w-full'>
