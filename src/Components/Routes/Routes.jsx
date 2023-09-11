@@ -148,10 +148,6 @@ const router = createBrowserRouter([
         element: <TopDestinationDetails></TopDestinationDetails>,
       },
       {
-        path: "/top-destination-details/:id",
-        element: <TopDestinationDetails></TopDestinationDetails>,
-      },
-      {
         path: "rentalcars",
         element: <RentalCars />,
       },

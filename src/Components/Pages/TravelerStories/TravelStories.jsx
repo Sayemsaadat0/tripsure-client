@@ -13,7 +13,6 @@ const TravelarStories = () => {
     axios.get(`${import.meta.env.VITE_BACKEND_API}/story`)
       .then(res => {
         setStories(res.data)
-        console.log(res.data)
       })
   }, [])
 

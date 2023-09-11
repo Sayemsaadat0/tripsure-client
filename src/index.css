@@ -343,6 +343,7 @@
   filter: blur(0); /* Remove the blur when visible */
 }
 
-
-
-
+/* ant design card */
+ :where(.css-dev-only-do-not-override-byeoj0).ant-card .ant-card-body {
+  padding: 0px;
+}

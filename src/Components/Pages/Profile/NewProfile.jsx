@@ -20,18 +20,6 @@ const NewProfile = () => {
         setIsOpen(false)
     }
    
-  /*   const [image, setImage] = useState()
-
-    useEffect(() => {
-        if (image) {
-            imageUpload(image)
-                .then(data => {
-                    const url = data.data?.display_url
-                    addCoverPhoto(user.email, url)
-                })
-        }
-    }, [image])
- */
     const { countryName, phone, name, email, gender, photo, coverPhoto, role } = userDetails
   
 
@@ -166,7 +154,6 @@ export default NewProfile;
 
 
 /* 
-
 import React, { useEffect, useState } from 'react';
 import { AiTwotoneStar, AiOutlineGlobal } from 'react-icons/ai';
 import { FaLocationDot } from 'react-icons/fa6'

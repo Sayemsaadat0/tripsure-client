@@ -14,11 +14,14 @@ import LazyLoad from "react-lazy-load";
 const TopDestinations = () => {
   const [TopDestinations, setTopDestinations] = useState([]);
 
+
   useEffect(() => {
     fetch(`${import.meta.env.VITE_BACKEND_API}/top-destinations`)
       .then((res) => res.json())
       .then((data) => setTopDestinations(data));
   }, []);
+  console.log(TopDestinations._id);
+
   return (
     <Container>
       <div className="bg-white b my-20 ">
@@ -35,7 +38,6 @@ const TopDestinations = () => {
             modules={[Navigation]}
             className="mySwiper"
             // navigation={true}
-            onSlideChange={() => console.log("slide change")}
             breakpoints={{
               640: {
                 slidesPerView: 2,
@@ -54,7 +56,8 @@ const TopDestinations = () => {
           >
             {TopDestinations.map((todo, index) => (
               <SwiperSlide key={index}>
-                <Link to={`/top-destination-details/${todo?._id}`}>
+                <Link state={todo._id} to={`/top-destination-details/${todo?._id}`}>
+
                   <div className="">
 
                     <LazyLoad >
@@ -67,6 +70,9 @@ const TopDestinations = () => {
 
                     <h2 className="font-semibold mt-3 hover:text-blue-400 duration-500">
                       {todo.placetitle}
+                    </h2>
+                    <h2 className="font-semibold mt-3 hover:text-blue-400 duration-500">
+                      {todo._id}
                     </h2>
                     <div className='flex justify-between'>
                       <p>{todo.costperperson}$/ <span className='text-xs'>per person</span> </p>

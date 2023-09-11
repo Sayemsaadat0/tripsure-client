@@ -1,9 +1,10 @@
-{
+[
+  {
     "name": "Mizanur Rahman",
     "email": "mizanurrahman55@gmail.com",
-    "picture": "bangladeshi-guide.jpg",
-    "residence": "Dhaka, Bangladesh",
-    "occupation": "Local Culture and Nature Guide",
+    "picture": "https://i.ibb.co/Hdg9Ccs/1.png",
+    "country": "Dhaka, Bangladesh",
+    "occupation": "Culture and Nature Guide",
     "speaks": ["Bengali", "English"],
     "age": 30,
     "gender": "male",
@@ -13,5 +14,73 @@
     "specialties": ["Cultural Heritage", "Eco-Tourism"],
     "description": "Explore the rich cultural heritage and breathtaking natural beauty of Bangladesh with me. From bustling Dhaka to the serene Sundarbans, I'll be your guide to this remarkable land.",
     "rating": 4.7
-  }
+  },
+  {
+    "name": "Amit Sharma",
+    "email": "amitsharma@example.com",
+    "picture": "https://i.ibb.co/jDq8L4M/3.png",
+    "country": "Delhi, India",
+    "occupation": "Culture and Nature Guide",
+    "speaks": ["Hindi", "English"],
+    "age": 32,
+    "gender": "male",
+    "dateofbirth": "25", 
+    "phone": "91XXXXXXXXXX", 
+    "guiding_locations": ["Delhi", "Jaipur", "Rishikesh"],
+    "specialties": ["Cultural Heritage", "Adventure Tourism"],
+    "description": "Discover the vibrant culture and adventurous landscapes of India with me. From the historic streets of Delhi to the majestic forts of Jaipur, I'll be your guide to this incredible country.",
+    "rating": 4.8
+},
+{
+  "name": "Rajendra Thapa",
+  "email": "rajendrathapa@example.com",
+  "picture": "https://i.ibb.co/Hdg9Ccs/4.png",
+  "country": "Kathmandu, Nepal",
+  "occupation": "Culture and Nature Guide",
+  "speaks": ["Nepali", "English"],
+  "age": 30,
+  "gender": "male",
+  "dateofbirth": "15", 
+  "phone": "977XXXXXXXXX", 
+  "guiding_locations": ["Kathmandu", "Pokhara", "Chitwan"],
+  "specialties": ["Cultural Heritage", "Hiking and Trekking"],
+  "description": "Experience the rich cultural tapestry and stunning landscapes of Nepal with me. From the vibrant streets of Kathmandu to the serene beauty of the Annapurna region, I'll be your guide to this Himalayan paradise.",
+  "rating": 4.8
+},
+{
+  "name": "Siddharth Banerjee",
+  "email": "siddharthbanerjee@example.com",
+  "picture": "https://i.ibb.co/jDq8L4M/5.png",
+  "country": "Kolkata, India",
+  "occupation": "Culture and Nature Guide",
+  "speaks": ["Hindi", "English"],
+  "age": 30,
+  "gender": "male",
+  "dateofbirth": "20", 
+  "phone": "91XXXXXXXXXX", 
+  "guiding_locations": ["Kolkata", "Darjeeling", "Sundarbans"],
+  "specialties": ["Cultural Heritage", "Adventure Tourism"],
+  "description": "Explore the vibrant culture and natural wonders of Kolkata and its surrounding regions with me. From the bustling streets of Kolkata to the serene beauty of Sundarbans, I'll be your guide to this diverse and enchanting region.",
+  "rating": 4.7
+},
+{
+  "name": "Siddharth Banerjee",
+  "email": "siddharthbanerjee@example.com",
+  "picture": "https://i.ibb.co/jDq8L4M/5.png",
+  "country": "Kolkata, India",
+  "occupation": "Culture and Nature Guide",
+  "speaks": ["Hindi", "English"],
+  "age": 30,
+  "gender": "male",
+  "dateofbirth": "20", 
+  "phone": "91XXXXXXXXXX", 
+  "guiding_locations": ["Kolkata", "Darjeeling", "Sundarbans"],
+  "specialties": ["Cultural Heritage", "Adventure Tourism"],
+  "description": "Explore the vibrant culture and natural wonders of Kolkata and its surrounding regions with me. From the bustling streets of Kolkata to the serene beauty of Sundarbans, I'll be your guide to this diverse and enchanting region.",
+  "rating": 4.7
+}
+
+
+
   
+]
