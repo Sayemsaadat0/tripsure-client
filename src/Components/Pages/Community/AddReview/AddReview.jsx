@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+ import React, { useState } from "react";
 import Container from "../../../../LayOut/Container";
 import Rating from "react-rating";
 import useAuth from "../../../../Hooks/useAuth";
@@ -7,11 +7,11 @@ import { useNavigate } from "react-router-dom";
 import { BsStar, BsStarFill } from "react-icons/bs";
 
 const AddReview = () => {
-  const [rating, setRating] = useState(5); // Set the default rating to 5
+  const [rating, setRating] = useState(5); 
   const [textareaValue, setTextareaValue] = useState("");
   const { user } = useAuth();
   const navigate = useNavigate();
-  const MIN_WORDS = 10; // Minimum required words
+  const MIN_WORDS = 10;
 
   const handleTextareaChange = (event) => {
     setTextareaValue(event.target.value);
@@ -24,7 +24,7 @@ const AddReview = () => {
       user,
     };
 
-    // Check if the textarea value has at least 50 words
+   
     if (textareaValue.split(" ").filter((word) => word.trim() !== "").length < MIN_WORDS) {
       Swal.fire({
         icon: "error",
@@ -32,10 +32,10 @@ const AddReview = () => {
         showConfirmButton: false,
         timer: 1500,
       });
-      return; // Do not submit the review if the condition is not met
+      return; 
     }
 
-    fetch(`https://tripsure-server-sayemsaadat0.vercel.app/addReview/${user.email}`, {
+    fetch(`${import.meta.env.VITE_BACKEND_API}/addReview/${user.email}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -53,7 +53,7 @@ const AddReview = () => {
           });
         }
         setTextareaValue("");
-        setRating(5); // Reset the rating to 5 after submission
+        setRating(5);
         navigate("/");
         console.log(data);
       })
@@ -70,15 +70,15 @@ const AddReview = () => {
   return (
     <Container>
       <div className="min-h-screen md:flex justify-around items-center">
-        <div className="md:w-1/2 flex justify-center mt-20 md:mt-0">
+        <div className=" flex justify-center mt-20 md:mt-0">
           <img className="w-3/4" src="https://i.ibb.co/2YzNmXy/We-wab-Feedback-2.gif" alt="" />
         </div>
 
-        <div className="md:w-1/2 p-10">
-          <div className="shadow-2xl px-6 py-5 border rounded-xl">
-            <h3 className="text-3xl font-semibold sectionTitle">How Was Your Experience?</h3>
+        <div className=" p-10">
+          <div className="px-6 py-5 ">
+            <h3 className="text-2xl tracking-widest font-semibold ">How Was Your Experience?</h3>
             <p className="my-3 text-lg">
-              Scale : <span className="text-red-500 font-bold">{rating}</span>
+              Rating : <span className="text-red-500 font-bold">{rating}</span>
             </p>
             <Rating
               emptySymbol={<BsStar size={30} color="red" />}
@@ -92,7 +92,7 @@ const AddReview = () => {
             />
             <div className="mt-5">
               <label className="label">
-                <span>Review</span>
+                <span>Your Precious Comment</span>
               </label>
               <textarea
                 value={textareaValue}
@@ -108,10 +108,10 @@ const AddReview = () => {
             </div>
             <div className="flex flex-row justify-between mt-4">
               <button disabled={!textareaValue || isButtonDisabled} onClick={handleCancel} className="btn-primary">
-                Cancel
+              Empty
               </button>
               <button onClick={handleAddReview} className={`btn ${isButtonDisabled ? "disabled" : ""}`}>
-                Add review
+                Give Feedback
               </button>
             </div>
           </div>
@@ -122,3 +122,5 @@ const AddReview = () => {
 };
 
 export default AddReview;
+
+

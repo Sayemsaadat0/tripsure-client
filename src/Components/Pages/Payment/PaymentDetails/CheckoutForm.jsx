@@ -46,10 +46,33 @@ const CheckoutForm = ({ price, orderDetails }) => {
 
   const { user } = useAuth();
 
+  const [selectedValue, setSelectedValue] = useState('cardPayment');
+  
+  const handleRadioChange = (event) => {
+    setSelectedValue(event.target.value);
+  };
+
+  const handlePaymentWithSsl = () => {
+    axios
+      .post(
+        "http://localhost:1000/sll-commerz",
+        { orderDetails },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      )
+      .then((res) => res.data)
+      .then((data) => {
+        window.location.replace(data.url);
+      });
+  };
+
   useEffect(() => {
     axios
       .post(
-        "https://tripsure-server-sayemsaadat0.vercel.app/stripe-payment-intent",
+        `${import.meta.env.VITE_BACKEND_API}/stripe-payment-intent`,
         { price },
         {
           headers: {
@@ -114,19 +137,20 @@ const CheckoutForm = ({ price, orderDetails }) => {
         detailsPrice: orderDetails?.price,
         selectedDate: orderDetails?.selectedDate,
         travelerCount: orderDetails?.travelerCount,
+        paidStatus: true,
       };
       axios
-        .post(`https://tripsure-server-sayemsaadat0.vercel.app/payments`, payment)
+        .post(`${import.meta.env.VITE_BACKEND_API}/payments`, payment)
         .then((response) => {
           console.log("Payment successful:", response.data);
           if (response.data.insertedId) {
             Swal.fire({
-              position: 'top-end',
-              icon: 'success',
-              title: 'Your Payment successfully Done',
+              position: "top-end",
+              icon: "success",
+              title: "Your Payment successfully Done",
               showConfirmButton: false,
-              timer: 1500
-            })
+              timer: 1500,
+            });
           }
         })
         .catch((error) => {
@@ -137,7 +161,27 @@ const CheckoutForm = ({ price, orderDetails }) => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+     <div className="my-4 space-x-4 border rounded-2xl p-4">
+     <input
+        type="radio"
+        name="radio-5"
+        className="radio radio-success"
+        value="cardPayment"
+        checked={selectedValue === 'cardPayment'}
+        onChange={handleRadioChange}
+      /><span className="text-xl">Credit/Debit Card</span>
+      <input
+        type="radio"
+        name="radio-5"
+        className="radio radio-success"
+        value="sslPayment"
+        checked={selectedValue === 'sslPayment'}
+        onChange={handleRadioChange}
+      />
+      <span className="text-xl">SSL Commerz</span>
+     </div>
+      {selectedValue === "cardPayment" &&
+        <form onSubmit={handleSubmit}>
         <div id="card-element">
           <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
             <span>Credit/Debit Card</span>
@@ -182,7 +226,10 @@ const CheckoutForm = ({ price, orderDetails }) => {
             Payment
           </button>
         </div>
-      </form>
+      </form>}
+      {selectedValue === "sslPayment" &&<button className="btn" onClick={handlePaymentWithSsl}>
+        pay with SSL commerz
+      </button>}
 
       {cardError && <p>{cardError}</p>}
       {transactionId && (
@@ -199,4 +246,4 @@ export default CheckoutForm;
 
 
 
-// https://tripsure-server-sayemsaadat0.vercel.app
+// ${import.meta.env.VITE_BACKEND_API}

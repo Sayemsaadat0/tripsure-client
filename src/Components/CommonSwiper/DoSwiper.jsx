@@ -5,13 +5,13 @@ import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import { Link } from "react-router-dom";
 import Rating from "react-rating";
-import { FaCircle, FaCircleNotch } from "react-icons/fa6";
+import { BsStar, BsStarFill } from "react-icons/bs";
 
 
-const DoSwiper = ({doPlace}) => {
-    return (
-        <div>
-            <Swiper
+const DoSwiper = ({ doPlace }) => {
+  return (
+    <div className="lg:p-6 ">
+      <Swiper
         slidesPerView={1}
         spaceBetween={10}
         modules={[Navigation]}
@@ -38,30 +38,35 @@ const DoSwiper = ({doPlace}) => {
           <SwiperSlide key={index}>
             <Link to={`/dothings-attraction-reviews/${todo._id}`}>
               <img
-                className="h-64 w-full  object-cover"
+                className="h-40  w-full rounded-lg object-cover"
                 src={todo.picture}
                 alt=""
               />
-              <h2 className="text-black font-bold text-xl">{todo.placetitle}</h2>
-              <p className="text-green-700  flex items-center  justify-between gap-2">
-                <Rating
-                  placeholderRating={todo.ratings}
-                  emptySymbol={<FaCircleNotch className="w-3"></FaCircleNotch>}
-                  placeholderSymbol={<FaCircle className="w-3"></FaCircle>}
-                  fullSymbol={<FaCircle className="w-4"></FaCircle>}
-                  readonly
-                />
-                <span className="text-sm">{todo.visitcount}</span>
-              </p>
-              <h3 className="text-md font-bold">
-                {todo.cardtitle}
-              </h3>
+              <div className="mt-3">
+                <h2 className="text-black font-semibold">{todo.placetitle}</h2>
+
+                <div className="flex justify-between ">
+                  <p className="text-sm">
+                    <span className="text-red-500 font-bold">${todo.costperperson}</span> /person
+                  </p>
+                  <p className="text-red-500  flex items-center  justify-between gap-2">
+                    <Rating
+                      placeholderRating={todo.ratings}
+                      placeholderSymbol={<BsStarFill className="w-3"></BsStarFill>}
+                      emptySymbol={<BsStar className="w-3"></BsStar>}
+                      fullSymbol={<BsStarFill className="w-4"></BsStarFill>}
+                      readonly
+                    />
+                    <span className="text-black text-sm">(45)</span>
+                  </p>
+                </div>
+              </div>
             </Link>
           </SwiperSlide>
         ))}
       </Swiper>
-        </div>
-    );
+    </div>
+  );
 };
 
 export default DoSwiper;

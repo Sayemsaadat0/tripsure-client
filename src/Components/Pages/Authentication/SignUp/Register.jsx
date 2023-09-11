@@ -79,7 +79,7 @@ const Register = () => {
         <div className='authenticationImg'>
             <div className='flex items-center justify-center w-full min-h-screen'>
       
-                <div className="p-6  w-96 shadow-sm hover:shadow-sm rounded-lg text-white md:hover:shadow-white duration-700">
+                <div className="p-6  w-96 shadow-sm hover:shadow-sm rounded-lg text-white md:hover:shadow-white duration-700 backdrop-blur-sm">
                     <div className='flex gap-2'>
                         <img className="w-16 h-16" loading='lazy' src="https://i.ibb.co/ng9Sdrp/Untitled-design-1-unscreen.gif" alt="" />
                         <div>

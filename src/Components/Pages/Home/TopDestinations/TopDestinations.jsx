@@ -8,12 +8,14 @@ import SectionTitle from "../../../Shared/SectionTitle/SectionTitle";
 import { Link } from "react-router-dom";
 import { GoStarFill } from "react-icons/go";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
+import LazyLoad from "react-lazy-load";
+
 
 const TopDestinations = () => {
   const [TopDestinations, setTopDestinations] = useState([]);
 
   useEffect(() => {
-    fetch("https://tripsure-server-sayemsaadat0.vercel.app/top-destinations")
+    fetch(`${import.meta.env.VITE_BACKEND_API}/top-destinations`)
       .then((res) => res.json())
       .then((data) => setTopDestinations(data));
   }, []);
@@ -22,10 +24,9 @@ const TopDestinations = () => {
       <div className="bg-white b my-20 ">
         <div>
           <SectionTitle
-            text={"Explor the Ultimate"}
-            coloredText={"Top Destinations"}
-            subText={"Journey to Perfection"}
-          ></SectionTitle>
+            text={"Explor our Ultimate Top Destinations "}
+            subText={"Journey to Perfection"}>
+          </SectionTitle>
         </div>
         <div>
           <Swiper
@@ -49,16 +50,21 @@ const TopDestinations = () => {
                 spaceBetween: 30,
               },
             }}
-            onSwiper={(swiper) => console.log(swiper)}
+            onSwiper={(swiper) =>(swiper)}
           >
             {TopDestinations.map((todo, index) => (
               <SwiperSlide key={index}>
                 <Link to={`/top-destination-details/${todo?._id}`}>
                   <div className="">
-                    <img
-                      className="h-40 w-full object-cover rounded-xl hover:scale-105 duration-700 "
-                      src={todo.picture}
-                      alt="" />
+
+                    <LazyLoad >
+                      <img
+                        className="h-40 w-full object-cover rounded-xl hover:scale-105 duration-700 "
+                        src={todo.picture}
+                        alt="" />
+                    </LazyLoad>
+
+
                     <h2 className="font-semibold mt-3 hover:text-blue-400 duration-500">
                       {todo.placetitle}
                     </h2>

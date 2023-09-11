@@ -1,7 +1,5 @@
-import { RotatingLines } from 'react-loader-spinner'
 import { Navigate, useLocation } from "react-router";
 import useAuth from "../../Hooks/useAuth";
-// import Loader from "../components/Loader";
 
 const PrivateRoutes = ({ children }) => {
     const { user, loading } = useAuth();
@@ -10,13 +8,7 @@ const PrivateRoutes = ({ children }) => {
 
     if (loading) {
         return <div className="flex h-screen w-full justify-center items-center">
-            <RotatingLines
-                strokeColor="grey"
-                strokeWidth="5"
-                animationDuration="0.75"
-                width="96"
-                visible={true}
-            />
+        <img className='w-28' src="https://i.ibb.co/5B7qR4q/Studio.gif" alt="" />
         </div>
     }
 

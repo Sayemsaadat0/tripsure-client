@@ -32,8 +32,6 @@ const SearchSection = () => {
   const activeCategory = useSelector((state) => state.category.category);
   const searchResult = useSelector((state) => state.searchData);
 
-  console.log("activeCategory" + activeCategory);
-  console.log(searchResult);
   const dispatch = useDispatch();
   const handleCategoryClick = (category) => {
     dispatch(setActiveCategory(category));
@@ -44,7 +42,7 @@ const SearchSection = () => {
     const searchText = e.target.searchText.value;
     dispatch(setSearchText(searchText));
     fetch(
-      `http://localhost:1000/searchResult/${
+      `${import.meta.env.VITE_BACKEND_API}/searchResult/${
         activeCategory.toLowerCase() === "search all"
           ? "search-all"
           : activeCategory.toLowerCase() === "things to do"

@@ -11,7 +11,7 @@ const Addguide = () => {
   const onSubmit = async (data) => {
     try {
         setLoading(true);
-        const response = await axios.post("https://tripsure-server-sayemsaadat0.vercel.app/addguide", data);
+        const response = await axios.post(`${import.meta.env.VITE_BACKEND_API}/addguide`, data);
         console.log(response.data); // Response from the server
   
         setLoading(false);
@@ -46,7 +46,7 @@ const Addguide = () => {
               Guide Name:
             </label>
             <input
-              className="w-full px-4 py-3 text-gray-800 border border-cyan-300  focus:outline-cyan-500 rounded-md "
+              className="w-full px-4 py-3 text-gray-800 border   focus:outline-cyan-500 rounded-md "
               type="text"
               id="name"
               placeholder="name"
@@ -59,7 +59,7 @@ const Addguide = () => {
               Language:
             </label>
             <input
-              className="w-full px-4 py-3 text-gray-800 border border-cyan-300  focus:outline-cyan-500 rounded-md "
+              className="w-full px-4 py-3 text-gray-800 border   focus:outline-cyan-500 rounded-md "
               type="text"
               id="language"
               placeholder="language"
@@ -72,7 +72,7 @@ const Addguide = () => {
               Experience:
             </label>
             <input
-              className="w-full px-4 py-3 text-gray-800 border border-cyan-300  focus:outline-cyan-500 rounded-md "
+              className="w-full px-4 py-3 text-gray-800 border   focus:outline-cyan-500 rounded-md "
               type="number"
               id="experience"
               placeholder="experience"
@@ -85,7 +85,7 @@ const Addguide = () => {
               Availability:
             </label>
             <input
-              className="w-full px-4 py-3 text-gray-800 border border-cyan-300  focus:outline-cyan-500 rounded-md "
+              className="w-full px-4 py-3 text-gray-800 border   focus:outline-cyan-500 rounded-md "
               type="text"
               id="availability"
               placeholder="availability"
@@ -112,3 +112,19 @@ const Addguide = () => {
 };
 
 export default Addguide;
+
+
+/* "name": "Mizanur Rahman",
+"email": "mizanurrahman55@gmail.com",
+"picture": "bangladeshi-guide.jpg"
+"residence": "Dhaka, Bangladesh",
+"occupation": "Local Culture and Nature Guide",
+"speaks": ["Bengali", "English"],
+"age" : 30 
+"gender" : "male" 
+"dateofbirth" : 30 
+"phone" : 019999999999 
+"guiding_locations": ["Dhaka", "Cox's Bazar", "Sundarbans"],
+"specialties": ["Cultural Heritage", "Eco-Tourism"],
+"description": "Explore the rich cultural heritage and breathtaking natural beauty of Bangladesh with me. From bustling Dhaka to the serene Sundarbans, I'll be your guide to this remarkable land.",
+"rating": 4.7, */

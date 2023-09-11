@@ -44,7 +44,7 @@ const Addflights = () => {
                 first_class: frist_class_price
             }
         }
-        axios.post(`https://tripsure-server-sayemsaadat0.vercel.app/flights`, flighs)
+        axios.post(`${import.meta.env.VITE_BACKEND_API}/flights`, flighs)
        .then(res => {
         console.log(res)
        })

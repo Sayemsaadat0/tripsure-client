@@ -67,7 +67,7 @@ const ManageUser = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://tripsure-server-sayemsaadat0.vercel.app/users/${user._id}`, {
+        fetch(`${import.meta.env.VITE_BACKEND_API}/users/${user._id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -83,8 +83,8 @@ const ManageUser = () => {
 
   //  make role handlling
   const makeAdmin = (user) => {
-    console.log(user)
-    fetch(`http://localhost:1000/users/updateRole/${user._id}`, {
+
+      fetch(`${import.meta.env.VITE_BACKEND_API}/users/admin/${user._id}`, {
       method: 'PUT',
       headers: {
         "content-type": 'application/json'
@@ -112,7 +112,7 @@ const ManageUser = () => {
   const [searchResults, setSearchResults] = useState([]);
   const handleSearch = async () => {
     try {
-      const response = await fetch(`https://tripsure-server-sayemsaadat0.vercel.app/users?email=${searchTerm}`);
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_API}/users?email=${searchTerm}`);
       const data = await response.json();
       setSearchResults(data);
     } catch (error) {

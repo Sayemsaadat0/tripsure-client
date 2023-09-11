@@ -9,6 +9,8 @@ import { ResponsiveContainer, PieChart, Pie, Cell, Legend } from "recharts";
 
 import useUsers from '../../../../Hooks/useUsers';
 import UserStatus from '../../../Shared/Status/UserStatus';
+import AdminHomeUserData from './AdminHomeUserData';
+import AdminHomePriceChart from './AdminHomePriceChart';
 
 const AdminHome = () => {
 
@@ -22,7 +24,7 @@ const AdminHome = () => {
     { name: "Group C", month: "March", value: 300 },
 
   ];
-const COLORS = ['#34a0a4' ]
+  const COLORS = ['#34a0a4']
 
 
   // useEffect(() => {
@@ -30,11 +32,6 @@ const COLORS = ['#34a0a4' ]
   // }, [searchTerm]);
 
   const users = useUsers()
-  
-
-
-
-  
 
   return (
     <div className=' pt-4 px-4 mx-auto '>
@@ -86,23 +83,25 @@ const COLORS = ['#34a0a4' ]
           </ul>
         </div>
       )} */}
-        <div className='bg-white p-3 rounded-lg shadow-md '>
-          <p>{moment().format('Do MMMM YYYY, h:mm a')} </p>
-
+        <div className=' flex justify-between w-full'>
+          <p className='bg-white p-3 rounded-lg shadow-md'>{moment().format('Do MMMM YYYY, h:mm a')}
+          </p>
+          <UserStatus />
         </div>
-          <div>
-          <UserStatus/>
-         </div>
+
       </section>
 
 
 
 
-      <div className="flex flex-col lg:flex-row mt-4 ">
+      <div className="flex flex-col lg:flex-row pt-4  ">
         {/* left content */}
-        <div className="grid flex-grow card shadow-md shadow-gray-400 w-3/5 bg-white p-2">
+        <div className="grid flex-grow card shadow-gray-400  w-3/5  p-2">
 
           <section className='grid grid-cols-1 md:grid-cols-3   w-full'>
+            <AdminHomeUserData></AdminHomeUserData>
+          </section>
+          {/*      <section className='grid grid-cols-1 md:grid-cols-3   w-full'>
             <div className='border flex flex-col items-center  justify-center card bg-red-100 shadow-md w-40  h-28'>
               <h3 className='text-3xl font-semibold '>45646</h3>
               <p>Total Users</p>
@@ -115,86 +114,98 @@ const COLORS = ['#34a0a4' ]
               <h3 className='text-3xl font-semibold '>54k</h3>
               <p>total earning</p>
             </div>
-          </section>
+          </section> */}
 
+          
+            <AdminHomePriceChart></AdminHomePriceChart>
+          
 
         </div>
 
 
-        <div className="divider lg:divider-horizontal"></div>
+
 
         {/* right conent */}
-        <div className="grid flex-grow w-2/5 card bg-white  shadow-md shadow-gray-400 ">
+        <div className="grid flex-grow w-2/5    shadow-gray-400 ">
 
           {/* table */}
-          <div className="overflow-x-auto">
-            <p className='px-2 font-bold mt-2 text-xl'>New Users</p>
+          <div className="overflow-x-auto bg-blue-50 rounded-lg shadow-xl">
+            <p className='px-2 font-semibold mt-2 text-xl tracking-widest my-6'>New Users</p>
             <table className="table">
               {/* head */}
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Job</th>
-                  <th>Favorite Color</th>
-                </tr>
-              </thead>
-              <tbody>
+              <tbody className=''>
                 {/* row 1 */}
                 <tr>
-                  <td><span className='font-semibold'>Abu Saadat Md sayem </span></td>
-                  <td>QualityControl@Specialist.com
-                    <br />
-                    country
+                  <td className='flex  items-center gap-4'>
+                    <img className='w-16 rounded-full ' src="https://i.pinimg.com/564x/65/a5/84/65a5840460a9dfb8eebacfb8a1a9ffd5.jpg" alt="" />
+                    <div>
+                      <p
+                        className='font-bold  text-lg'>Yhwach
+                      </p>
+                      <p>
+                        Qualityol@Specialist.com
+                      </p>
+                    </div>
                   </td>
-                  <td>Blue</td>
-
+                  <td> Japan </td>
                 </tr>
+                {/* row 1 */}
                 <tr>
-                  <td><span className='font-semibold'>Abu Saadat Md sayem </span></td>
-                  <td>QualityControl@Specialist.com
-                    <br />
-                    country
+                  <td className='flex  items-center gap-4'>
+                    <img className='w-16 rounded-full ' src="https://i.pinimg.com/736x/f1/f3/aa/f1f3aa31515c92f76eeb7a37a3308172.jpg" alt="" />
+                    <div>
+                      <p
+                        className='font-bold  text-lg'>Aizen
+                      </p>
+                      <p>
+                        Qualityol@Specialist.com
+                      </p>
+                    </div>
                   </td>
-                  <td>Blue</td>
-                </tr>
-                <tr>
-                  <td><span className='font-semibold'>Abu Saadat Md sayem </span></td>
-                  <td>QualityControl@Specialist.com
-                    <br />
-                    country
-                  </td>
-                  <td>Blue</td>
-                </tr>
-                <tr>
-                  <td><span className='font-semibold'>Abu Saadat Md sayem </span></td>
-                  <td>QualityControl@Specialist.com
-                    <br />
-                    country
-                  </td>
-                  <td>Blue</td>
-                </tr>
-                <tr>
-                  <td><span className='font-semibold'>Abu Saadat Md sayem </span></td>
-                  <td>QualityControl@Specialist.com
-                    <br />
-                    country
-                  </td>
-                  <td>Blue</td>
+                  <td>Seoul, Korea</td>
                 </tr>
               </tbody>
             </table>
-            <hr />
+           
           </div>
 
+        
+
+          <div className="overflow-x-auto mt-20 bg-green-50 shadow-lg">
+            <p className='px-2 font-semibold mt-2 text-xl tracking-widest my-4'>Last Transition</p>
+            <table className="table">
+              {/* head */}
+              <tbody className=''>
+                {/* row 1 */}
+                <tr>
+                  <td className='flex  items-center gap-4'>
+                    <img className='w-16 rounded-full ' src="https://i.pinimg.com/736x/29/74/d2/2974d2663612eabd1ef31b3b00108f4a.jpg" alt="" />
+                    <div>
+                      <p
+                        className='font-bold  text-lg'>Abu Saadat Md sayem
+                      </p>
+                      <p>
+                        Qualityol@Specialist.com
+                      </p>
+                    </div>
+                  </td>
+                 
+                  <td className='text-xl text-red-300 font-bold'> $457 USD</td>
+
+                </tr>
+              </tbody>
+            </table>
+           
+          </div>
           {/* chart */}
-          <section className='flex  justify-center'>
-            <h2 className='px-4 py-2 font-bold text-xl'>Total Earning : 42k</h2>
+          <section className='flex  justify-center mt-20'>
+            <h2 className='px-4 py-2 font-bold text-xl'>Visitors by Nations </h2>
             <div style={{ width: 350, height: 200 }}>
               <ResponsiveContainer>
                 <PieChart>
                   <Pie dataKey="value" data={data} label fill="#fff">
                     {data.map((entry, index) => (
-                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                      <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                     ))}
                   </Pie>
                 </PieChart>
@@ -202,10 +213,9 @@ const COLORS = ['#34a0a4' ]
             </div>
             <hr />
           </section>
-
-
         </div>
       </div>
+        
     </div>
   );
 };

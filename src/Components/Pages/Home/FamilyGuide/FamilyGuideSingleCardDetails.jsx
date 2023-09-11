@@ -6,6 +6,7 @@ import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 import Container from '../../../../LayOut/Container';
 import { useParams } from 'react-router';
+import LazyLoad from 'react-lazy-load';
 
 
 
@@ -23,13 +24,9 @@ const FamilyGuideSingleCardDetails = () => {
         pictures,
         foods
     } = familyGuideDetails
-    console.log(tips);
-    // name placePicture description tips
-    // title description tipsPicture 
-    // name restaurant address foodPicture
     const { id } = useParams();
     useEffect(() => {
-        axios.get(`https://tripsure-server-sayemsaadat0.vercel.app/familyDetails/${id}`)
+        axios.get(`${import.meta.env.VITE_BACKEND_API}/familyDetails/${id}`)
             .then((res) => {
                 setFamilyGuideDetails(res.data);
             })
@@ -38,9 +35,9 @@ const FamilyGuideSingleCardDetails = () => {
     /*   console.log('family details', id, familyGuideDetails); */
     return (
         <Container>
-            <div className='md:mt-10 md:p-5 p-2'>
-                <div>
-                    <h3 className='text-3xl text-[#7bb9b9] font-semibold'>{title}</h3 >
+            <div className='md:mt-20  md:p-5 p-2'>
+                <div className='tracking-widest'>
+                    <h3 className='text-3xl font-semibold'>{title}</h3 >
                     <div className='flex gap-5 mt-2'>
                         <p className='font-extralight text-sm'>{country}</p>
                         <p className='font-extralight text-sm'>{postedBy}</p>
@@ -66,8 +63,10 @@ const FamilyGuideSingleCardDetails = () => {
 
                     {places_to_visit?.map((p, index) => (
                         <SwiperSlide className='lg:p-4 p-2' >
-                            <figure><img className='rounded-lg ' src="https://i.pinimg.com/736x/9d/93/08/9d9308a98680e14a64f98f1c3f22222c.jpg" alt="" /></figure>
-                            <div className="card card-compact relative p-">
+                            <LazyLoad>
+                                <img className='rounded-lg ' src={p.placePicture} alt="" />
+                            </LazyLoad>
+                            <div className="card card-compact relative ">
                                 <div className="card-body">
                                     <h2 className="card-title">{p.name}</h2>
                                     <p>{p.description}</p>

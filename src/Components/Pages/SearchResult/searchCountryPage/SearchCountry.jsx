@@ -15,7 +15,7 @@ const SearchCountry = () => {
   const { country } = useParams();
 
   useEffect(() => {
-    axios.get(`https://tripsure-server-sayemsaadat0.vercel.app/tourCountry/${country}`).then((data) => {
+    axios.get(`${import.meta.env.VITE_BACKEND_API}/tourCountry/${country}`).then((data) => {
       setCountryDatas(data.data).catch(err => console.log(err))
     });
   
@@ -33,7 +33,7 @@ const SearchCountry = () => {
           </h2>
           {/* todo: todo overflow isnt working well */}
 
-          <div className="mt-8 flex md:grid  md:grid-cols-4  overflow-x-auto gap-4 p-4">
+       {/*    <div className="mt-8 flex md:grid  md:grid-cols-4  overflow-x-auto gap-4 p-4">
             <button className="btn">Hotel</button>
             <button className="btn">Thingn to Do</button>
             <button className="btn">Vacantion Rentals</button>
@@ -42,11 +42,11 @@ const SearchCountry = () => {
             <button className="btn">Hire a Trip Desiger</button>
             <button className="btn">Flights</button>
             <button className="btn">More</button>
-          </div>
+          </div> */}
           <div className="grid md:grid-cols-3 gap-1 mt-8">
             <div className="md:col-span-2 col-span-3 ">
               <img
-                className="w-full hover:bg-white hover:opacity-80 duration-300"
+                className="w-full hover:bg-white  hover:opacity-80 duration-300"
                 src="https://i.ibb.co/54DH6LW/image.png"
                 alt=""
               />
@@ -55,14 +55,14 @@ const SearchCountry = () => {
               <div className="col-span-1 ">
                 <img
                   className="w-full hover:bg-white hover:opacity-80 duration-300"
-                  src="https://i.ibb.co/54DH6LW/image.png"
+                  src="https://i.pinimg.com/564x/19/42/f9/1942f9f7422cfd6c564a19b289670c1e.jpg"
                   alt=""
                 />
               </div>
               <div className="col-span-1">
                 <img
-                  className="w-full hover:bg-white hover:opacity-80 duration-300"
-                  src="https://i.ibb.co/54DH6LW/image.png"
+                  className="w-full h-80 hover:bg-white hover:opacity-80 duration-300"
+                  src="https://i.pinimg.com/736x/36/2c/11/362c11448cdc31e661cb509252f8f5df.jpg"
                   alt=""
                 />
               </div>

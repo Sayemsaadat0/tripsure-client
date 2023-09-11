@@ -1,6 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../LayOut/Main/Main";
 import Home from "../Pages/Home/Home";
+
+import AboutUsDetails from "../Pages/Home/AboutUs/AboutUsDetails";
 import Overview from "../Pages/Overview/Overview";
 import Login from "../Pages/Authentication/Login/Login";
 import Register from "../Pages/Authentication/SignUp/Register";
@@ -51,7 +53,13 @@ import SearchDetails from "../Pages/SearchResult/SearchDetails";
 // payment
 import PaymentDetails from "../Pages/Payment/PaymentDetails/PaymentDetails";
 import AddRentalCars from "../Pages/DashBoard/Admin/Overview/AddRentalCars";
-import AboutUsDetails from "../Pages/Home/AboutUs/AboutUsDetails";
+import PaymentSuccessPage from "../Pages/Payment/PaymentSuccessPage/PaymentSuccessPage";
+import PaymentFailPage from "../Pages/Payment/PaymentFailPage/PaymentFailPage";
+import MedicalCard from "../Pages/Home/Medical/Medical";
+import MadicalCard from "../Pages/Home/Medical/MadicalCard";
+import MadicalDetails from "../Pages/Home/Medical/MadicalDetails";
+
+
 
 const router = createBrowserRouter([
   {
@@ -180,7 +188,7 @@ const router = createBrowserRouter([
         path: "searchCardDetails/:id",
         element: <SearchDetails />,
         loader: ({ params }) =>
-          fetch(`http://localhost:1000/searchResult/${params.id}`),
+          fetch(`${import.meta.env.VITE_BACKEND_API}/searchResult/${params.id}`),
       },
       {
         path: "contactDetails",
@@ -194,6 +202,23 @@ const router = createBrowserRouter([
         path: "/paymentDetails",
         element: <PaymentDetails></PaymentDetails>
       },
+      {
+        path: "/payment/success/:id",
+        element: <PaymentSuccessPage></PaymentSuccessPage>
+      },
+      {
+        path: "/payment/fail/:id",
+        element: <PaymentFailPage></PaymentFailPage>
+      },
+      {
+        path: "madicalCard",
+        element: <MadicalCard/>
+      },
+      {
+        path: "madicalDetails",
+        element: <MadicalDetails/>
+      }
+     
     ],
   },
   {

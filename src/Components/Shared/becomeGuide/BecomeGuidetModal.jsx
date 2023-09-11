@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+/* import React, { useEffect, useState } from 'react';
 import ShareModal from '../../Modal/ShareModal';
 import useAuth from '../../../Hooks/useAuth';
 import Swal from 'sweetalert2';
@@ -9,7 +9,7 @@ const BecomeGuestModal = ({ isOpen, setIsOpen }) => {
     const [loading, setLoading] = useState(true)
     const { user } = useAuth()
     useEffect(() => {
-        axios(`http://localhost:1000/users/${user?.email}`)
+        axios(`${import.meta.env.VITE_BACKEND_API}/${user?.email}`)
             .then(res => {
                 setLogin_user(res.data)
             })
@@ -18,7 +18,7 @@ const BecomeGuestModal = ({ isOpen, setIsOpen }) => {
     const handleBecomeHost = () => {
         setLoading(true)
         console.log(user)
-        fetch(`http://localhost:1000/users/updateRole/${login_user._id}`, {
+        fetch(`${import.meta.env.VITE_BACKEND_API}/users/updateRole/${login_user._id}`, {
             method: 'PUT',
             headers: {
                 "content-type": 'application/json'
@@ -70,4 +70,4 @@ const BecomeGuestModal = ({ isOpen, setIsOpen }) => {
     );
 };
 
-export default BecomeGuestModal;
+export default BecomeGuestModal; */

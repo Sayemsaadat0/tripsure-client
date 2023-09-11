@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Container from "../../../../LayOut/Container";
 import { Link } from "react-router-dom";
 import SectionTitle from "../../../Shared/SectionTitle/SectionTitle";
+import LazyLoad from "react-lazy-load";
 
 const TopThingsToDo = () => {
   const [TopThingsTodo, setTopThingsTodo] = useState([]);
@@ -22,10 +23,13 @@ const TopThingsToDo = () => {
 
             <Link key={index} to={`/travelerChoose-thingsToDo/${todo?.categoryName}`}>
               <div className="overflow-hidden rounded-xl">
-                <img className='h-40 hover:scale-110 duration-700 rounded-lg w-full  lg:w-[85%]  
-
+                <LazyLoad>
+                  <img className='h-40 
+                hover:scale-110 duration-700 
+                rounded-lg w-full  lg:w-[85%]  
                 object-cover'
-                  src={todo.picture} alt="" />
+                    src={todo.picture} alt="" />
+                </LazyLoad>
                 <h2 className='font-bold mt-3  '>{todo.categoryName}</h2>
               </div>
             </Link>
@@ -50,7 +54,7 @@ const TopDestinations = () => {
   const [TopDestinations, setTopDestinations] = useState([]);
 
   useEffect(() => {
-    fetch("https://tripsure-server-sayemsaadat0.vercel.app/top-destinations")
+    fetch("${import.meta.env.VITE_BACKEND_API}/top-destinations")
       .then((res) => res.json())
       .then((data) => setTopDestinations(data));
   }, []);

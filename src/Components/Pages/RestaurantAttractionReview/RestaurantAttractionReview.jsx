@@ -21,7 +21,7 @@ const RestaurantAttractionReview = () => {
   const [restaurantsDetails, setRestaurantsDetails] = useState({});
   useEffect(() => {
     axios
-      .get(`https://tripsure-server-sayemsaadat0.vercel.app/restaurantAttractionReviews/${id}`)
+      .get(`${import.meta.env.VITE_BACKEND_API}/restaurantAttractionReviews/${id}`)
       .then((data) => {
         setRestaurantsDetails(data.data);
       });
@@ -30,7 +30,7 @@ const RestaurantAttractionReview = () => {
 
   return (
     <Container>
-      <div className="mx-4 lg:mx-10">
+      <div className="mx-4 lg:mx-10 mt-20">
         <h1 className="text-3xl font-bold my-5 mt-10">
           {restaurantsDetails?.title}
         </h1>
@@ -132,9 +132,6 @@ const RestaurantAttractionReview = () => {
               </form>
             </dialog>
           </div>
-          <Link className="flex gap-2 items-center underline">
-            <FaPen></FaPen> Write Reviews
-          </Link>
         </div>
         <img
           className="w-full h-60 md:h-72 my-5 lg:h-[28rem] object-bottom rounded-md bg-cover object-cover"

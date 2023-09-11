@@ -42,7 +42,7 @@ const DasNav = () => {
     }
 
     return (
-        <div className="navbar bg-white shadow ">
+        <div className="navbar bg-white shadow mx-4">
             <div className="flex-1">
                 <div>
                     <p className='font-extralight'>{greeting},</p>
@@ -50,7 +50,6 @@ const DasNav = () => {
                 </div>
             </div>
             <div className="noti icon flex gap-4">
-                <AiFillMessage className='text-2xl'></AiFillMessage>
 
                 {/* profile */}
                 <div className="dropdown dropdown-end">

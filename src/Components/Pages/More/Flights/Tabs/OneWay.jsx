@@ -1,21 +1,18 @@
-import Card from "antd/es/card/Card";
 import React, { useEffect, useState } from "react";
 import { HiLocationMarker } from "react-icons/hi";
 import FlightCard from "./FlightCard";
 
 
 const OneWay = () => {
-  const [isChecked, setIsChecked] = useState(false);
-  const [isChecked2, setIsChecked2] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [destinationQuery, setDestinationQuery] = useState("");
   const [dateQuery, setDateQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
-  console.log(searchResults,destinationQuery);
+
  
   
   
-  const url = `https://tripsure-server-sayemsaadat0.vercel.app/flights?from=${searchQuery}&to=${destinationQuery}&date=${dateQuery}`;
+  const url = `${import.meta.env.VITE_BACKEND_API}/flights?from=${searchQuery}&to=${destinationQuery}&date=${dateQuery}`;
 
   useEffect(() => {
     if (searchQuery||destinationQuery|| dateQuery) {
@@ -30,17 +27,12 @@ const OneWay = () => {
     }
   }, [searchQuery, destinationQuery, dateQuery]);
 
-  const handleCheckboxChange = () => {
-    setIsChecked(!isChecked);
-  };
-  const handleCheckboxChange2 = () => {
-    setIsChecked2(!isChecked2);
-  };
+
 
   return (
     <>
-    <div className="py-36 w-full flightBackground ">
-    <h3 className="text-center text-4xl font-bold text-white mb-10">
+    <div className="py-36 w-full flightBackground">
+    <h3 className="text-center md:text-5xl  text-white tracking-widest mb-10">
           Find the best flight for the right price
         </h3>
       <div className="grid mx-4  md:grid-cols-5 mb-6">
