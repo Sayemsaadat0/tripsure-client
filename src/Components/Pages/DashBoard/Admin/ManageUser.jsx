@@ -25,8 +25,8 @@ const ManageUser = () => {
 
     if (operator === 'admin') {
       filteredAndSortedUsers = filteredAndSortedUsers.filter(user => user.role === 'admin');
-    } else if (operator === 'operator') {
-      filteredAndSortedUsers = filteredAndSortedUsers.filter(user => user.role === 'operator');
+    } else if (operator === 'guide') {
+      filteredAndSortedUsers = filteredAndSortedUsers.filter(user => user.role === 'guide');
     }
 
     // Sort users based on sortColumn and sortOrder
@@ -67,7 +67,7 @@ const ManageUser = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://tripsure-server-sayemsaadat0.vercel.app/users/${user._id}`, {
+        fetch(`http://localhost:1000/users/${user._id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -82,36 +82,55 @@ const ManageUser = () => {
 
   //  make role handlling
 
-  const handleMakeAdmin = user => {
-    console.log(user)
-    fetch(`https://tripsure-server-sayemsaadat0.vercel.app/users/admin/${user._id}`, {
-      method: 'PATCH'
+  // const handleMakeAdmin = user => {
+  //   console.log(user)
+  //   fetch(`http://localhost:1000/users/admin/${user._id}`, {
+  //     method: 'PATCH'
+  //   })
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       console.log(data)
+  //       if(data.acknowledged) {
+  //         refetch();
+  //         Swal.fire({
+  //           position: 'top-end',
+  //           icon: 'success',
+  //           title: `WOW is an Admin Now!`,
+  //           showConfirmButton: false,
+  //           timer: 1500
+  //         })
+  //       }
+  //     })
+  // }
+  const handleMakeAdmin = user =>{
+    console.log(user._id)
+    fetch(`http://localhost:1000/users/admin/${user._id}`, {
+        method: 'PATCH'
     })
-      .then(res => res.json())
-      .then(data => {
+    .then(res => res.json())
+    .then(data => {
         console.log(data)
-        if (data?.acknowledged) {
-          refetch();
-          Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: `WOW is an Admin Now!`,
-            showConfirmButton: false,
-            timer: 1500
-          })
+        if(data.modifiedCount ){
+            refetch();
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: `${user.name} is an Admin Now!`,
+                showConfirmButton: false,
+                timer: 1500
+              })
         }
-      })
-  }
-
+    })
+}
   const handleMakeOperator = (user) => {
     console.log(user)
-    fetch(`https://tripsure-server-sayemsaadat0.vercel.app/users/operator/${user._id}`, {
+    fetch(`http://localhost:1000/users/operator/${user._id}`, {
       method: 'PATCH'
     })
       .then(res => res.json())
       .then(data => {
         console.log(data)
-        if (data.acknowledged) {
+        if (data.modifiedCount){
           refetch();
           Swal.fire({
 
@@ -170,7 +189,7 @@ const ManageUser = () => {
             value={operator} onChange={(e) => setOperator(e.target.value)}>
             <option value="">All Users</option>
             <option value="admin">Admin</option>
-            <option value="operator">Operator</option>
+            <option value="guide">guide</option>
           </select>
 
         </div>
@@ -185,7 +204,7 @@ const ManageUser = () => {
               <th onClick={() => handleSort('name')}>Name</th>
               <th>Role</th>
               <th>Admin</th>
-              <th>Operator</th>
+              <th>guide</th>
               <th>Delete</th>
 
             </tr>
@@ -215,7 +234,7 @@ const ManageUser = () => {
                   ) : (
                     <button
                       onClick={() => handleMakeAdmin(user)}
-                      disabled={user.role === "operator"}
+                      disabled={user.role === "guide"}
                       className="btn btn-ghost bg-orange-600  text-white"
                     >
                       <FaUserShield></FaUserShield>
@@ -223,8 +242,8 @@ const ManageUser = () => {
                   )}
                 </td>
                 <td >
-                  {user.role === "operator" ? (
-                    "operator"
+                  {user.role === "guide" ? (
+                    "guide"
                   ) : (
                     <button
                       onClick={() => handleMakeOperator(user)}
