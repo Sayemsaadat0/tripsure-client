@@ -1,46 +1,110 @@
-import React from 'react';
-import { useForm } from 'react-hook-form';
-import Container from '../../../../LayOut/Container';
-import { Typewriter } from 'react-simple-typewriter';
-
+import React, { useState } from 'react';
+import "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
+import {
+    MainContainer,
+    ChatContainer,
+    MessageList,
+    Message,
+    MessageInput,
+    TypingIndicator,
+} from "@chatscope/chat-ui-kit-react";
 
 const OpenAi = () => {
+    const API_KEY = "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";
 
-    const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
-    console.log(errors);
+    const [messages, setMessages] = useState([
+        {
+            message: "hello! How can i help you today?",
+            sender: "ChatGPT",
+        },
+    ]);
+    const [typing, setTyping] = useState(false);
 
-    const words = ['Can you suggest a travel destination for a romantic getaway in November?',]
+    const handleSend = async (message) => {
+        const newMessage = {
+            message: message,
+            sender: "user",
+            direction: "outgoing",
+        };
+
+        const newMessages = [...messages, newMessage];
+        setMessages(newMessages);
+
+        setTyping(true);
+        await processMessageToChatGPT(newMessages);
+    };
+
+    async function processMessageToChatGPT(chatMessages) {
+        let apiMessages = chatMessages.map((messageObject) => {
+            let role = "";
+            if (messageObject.sender === "ChatGPT") {
+                role = "assistant";
+            } else {
+                role = "user";
+            }
+            return { role: role, content: messageObject.message };
+        });
+
+        const systemMessage = {
+            role: "system",
+            content: "Explain all concepts like I am 10 years old.",
+        };
+
+        const apiRequestBody = {
+            model: "gpt-3.5-turbo",
+            messages: [systemMessage, ...apiMessages],
+        };
+
+        try {
+            const response = await fetch("https://api.openai.com/v1/chat/completions", {
+                method: "POST",
+                headers: {
+                    Authorization: `Bearer ${API_KEY}`,
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(apiRequestBody),
+            });
+            const data = await response.json();
+            console.log(data);
+        } catch (error) {
+            console.error("ChatGPT API Error:", error);
+        }
+
+        setTyping(false);
+    };
 
     return (
+        <div>
+            <button onClick={() => document.getElementById('my_modal_1').showModal()} className='fixed tooltip tooltip-left right-3 top-20 z-10' data-tip="Ask anything!"> <img className='w-12 md:w-16' src="https://i.ibb.co/tCVGzf8/Ask-Anything-3.png" alt="" /> </button>
 
-        <div className='bg-blue-50'>
-                <div className='md:flex max-w-[1920px] items-center justify-center my-20 mx-auto  md:justify-between w-full  p-10' >
-
-                    {/* forom */}
-                    <div className='md:w-1/2 '>
-
-                        <form className='flex flex-col  py-20 justify-center items-center ' onSubmit={handleSubmit(onSubmit)}>
-                            <h3>having trouble to make desicion? ask anything !</h3>
-
-                            <input
-                                className='input input-bordered input-md lg:w-[55%] w-72   my-5 '
-                                type="text"
-                                placeholder="questions"
-                                {...register("question", { required: true, maxLength: 30 })} />
-
-                            <button className='btn-primary lg:w-[55%] w-72' type='submit'>Send</button>
-
-                            <p className='text-center  py-10 '>answerd messege answerd messegeanswerd messege  answerd messege sdsdjs sdhsd  sjdsd  sjdskdj  sjds dsjdskd  askdjsd  asdjd answerd messege</p>
+            <dialog id="my_modal_1" className="modal backdrop-blur-sm">
+                <div className="modal-box relative pt-20">
+                    <div className="mx-auto  w-96 ">
+                        <MainContainer className='pt-10 rounded-lg'>
+                            <ChatContainer>
+                                <MessageList
+                                    typingIndicator={
+                                        typing ? (
+                                            <TypingIndicator content="Please wait for a reply" />
+                                        ) : null }>
+                                    {messages.map((message, i) => {
+                                        return <Message key={i} model={message} />;
+                                    })}
+                                </MessageList>
+                                <MessageInput placeholder="Type your issues here" onSend={handleSend} />
+                            </ChatContainer>
+                        </MainContainer>
+                    </div>
+                    <div className="modal-action">
+                        <form method="dialog">
+                            <button>Close</button>
                         </form>
                     </div>
-                    {/* ........ */}
-                    <div className='md:w-1/2 flex justify-center'>
-                        <img className='md:w-[55%] ' src="https://i.ibb.co/TRNM1Mq/Untitled-design-6.png" alt="" />
-                    </div>
                 </div>
+            </dialog>
         </div>
     );
 };
 
 export default OpenAi;
+

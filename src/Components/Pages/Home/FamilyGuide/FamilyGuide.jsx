@@ -10,7 +10,7 @@ const FamilyGuide = () => {
             className="hero h-[100%] background1" >
                 <div className='hero-overlay bg-opacity-20 '></div>
                 <div className="hero-content text-center text-neutral-content">
-                    <div className="max-w-xl p-10 py-24 text-white">
+                    <div className="max-w-3xl p-10 py-24 text-white">
                         <h1 className="mb-5 text-3xl font-bold ">The ultimate family travel guide</h1>
                         <p  className="mb-5 ">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et</p>
                         <Link className='btn ' to='/familyguidedetails'>Read More</Link>

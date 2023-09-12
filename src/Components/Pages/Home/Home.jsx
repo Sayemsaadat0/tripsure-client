@@ -32,7 +32,6 @@ const Home = () => {
 
             <section className='md:my-40'>
                 <Medical></Medical>
-                <OpenAi></OpenAi>
             </section>
 
             <section>

@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+.main {
+  font-family: "Poppins", sans-serif;
+}
 /* dashboard */
 .DashColor {
   background-image: radial-gradient(
@@ -152,7 +155,6 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  
 }
 
 /* rental cars */
@@ -162,8 +164,6 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-
-
 
 .border-round {
   border-radius: 4px;
@@ -309,7 +309,6 @@
   background-color: #91d8f9;
 }
 
-
 /* Width and appearance of the scrollbar track */
 ::-webkit-scrollbar {
   width: 10px;
@@ -324,12 +323,11 @@
 ::-webkit-scrollbar-thumb {
   border-radius: 10px 20px;
   background: #6290cb;
- background-clip: content-box;
+  background-clip: content-box;
 }
-::-webkit-scrollbar-thumb:hover {  
+::-webkit-scrollbar-thumb:hover {
   background: #33527a;
 }
-
 
 /* lazyload */
 .LazyLoad {
@@ -344,6 +342,6 @@
 }
 
 /* ant design card */
- :where(.css-dev-only-do-not-override-byeoj0).ant-card .ant-card-body {
+:where(.css-dev-only-do-not-override-byeoj0).ant-card .ant-card-body {
   padding: 0px;
 }

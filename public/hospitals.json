@@ -1,0 +1,103 @@
+[
+    {
+        "type": "hospital",
+        "hospital_name": "Mumbai Central Hospital",
+        "country": "India",
+        "location": "456 Oak Avenue, Mumbai, India",
+        "position_in_country": 7,
+        "govt_or_private": "Private",
+        "ratings": 4.6,
+        "website": "https://www.mumbaihospital.in",
+        "contact_no": "+91-1234567890",
+        "open_hours": {
+          "Monday-Friday": "8:00 AM - 7:00 PM",
+          "Saturday": "9:00 AM - 5:00 PM",
+          "Sunday": "Closed"
+        },
+        "winning_prizes": [
+          {
+            "year": 2022,
+            "award": "Hospital of Excellence"
+          },
+          {
+            "year": 2021,
+            "award": "Patient-Centered Care Award"
+          }
+        ],
+        "details": "Mumbai Central Hospital is a leading private medical institution committed to delivering exceptional healthcare services to our patients and the community in India.",
+        "medical_departments": ["Cardiology", "Orthopedics", "Pediatrics", "Dermatology"],
+        "doctors": [
+          {
+            "name": "Dr. Priya Sharma",
+            "degree": "MD",
+            "medical_college": "Mumbai Medical College"
+          },
+          {
+            "name": "Dr. Rajesh Patel",
+            "degree": "MD, PhD",
+            "medical_college": "All India Institute of Medical Sciences (AIIMS)"
+          },
+          {
+            "name": "Dr. Nisha Gupta",
+            "degree": "DO",
+            "medical_college": "Kolkata Medical College"
+          }
+        ],
+        "pictures": [
+          "https://hhinternet.blob.core.windows.net/uploads/2023/05/nyc-health-hospitals-south-brooklyn-health.jpg",
+          "https://kffhealthnews.org/wp-content/uploads/sites/2/2022/08/StPatrickHospital_01-resized.jpg?w=1270",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS36uEojM9gP1J8sW-9iLBPcRZ_ZIwLvZWdCQ&usqp=CAU"
+        ]
+      },
+      {
+        "type": "hospital",
+        "hospital_name": "Dhaka General Hospital",
+        "country": "Bangladesh",
+        "location": "123 Elm Street, Dhaka, Bangladesh",
+        "position_in_country": 3,
+        "govt_or_private": "Private",
+        "ratings": 4.5,
+        "website": "https://www.dhakageneralhospital.com",
+        "contact_no": "+123-456-7890",
+        "open_hours": {
+          "Monday-Friday": "9:00 AM - 6:00 PM",
+          "Saturday": "10:00 AM - 4:00 PM",
+          "Sunday": "Closed"
+        },
+        "winning_prizes": [
+          {
+            "year": 2022,
+            "award": "Hospital of Excellence"
+          },
+          {
+            "year": 2021,
+            "award": "Patient-Centered Care Award"
+          }
+        ],
+        "details": "Dhaka General Hospital is a leading private medical institution committed to delivering exceptional healthcare services to our patients and the community.",
+        "medical_departments": ["Cardiology", "Orthopedics", "Pediatrics", "Dermatology"],
+        "doctors": [
+          {
+            "name": "Dr. Emily Johnson",
+            "degree": "MD",
+            "medical_college": "Dhaka Medical College"
+          },
+          {
+            "name": "Dr. Michael Davis",
+            "degree": "MD, PhD",
+            "medical_college": "Bangladesh Medical University"
+          },
+          {
+            "name": "Dr. Maria Ramirez",
+            "degree": "DO",
+            "medical_college": "Chittagong Medical College"
+          }
+        ],
+        "pictures": [
+          "https://storage.googleapis.com/jacksonh/1/JHS_Vendors_Location-Image2.jpg",
+          "https://media.bizj.us/view/img/877881/jackson-memorial-hospital.jpg",
+          "https://www.ctsnet.org/sites/default/files/images/Jackson%20Memorial%20Hospital.jpg"
+        ]
+      }
+      
+]
