@@ -1,14 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import moment from 'moment';
 import { ResponsiveContainer, PieChart, Pie, Cell, Legend } from "recharts";
-
-
-
-
-
-
 import useUsers from '../../../../Hooks/useUsers';
 import UserStatus from '../../../Shared/Status/UserStatus';
+import axios from 'axios';
 
 const AdminHome = () => {
 
@@ -25,16 +20,41 @@ const AdminHome = () => {
 const COLORS = ['#34a0a4' ]
 
 
-  // useEffect(() => {
-  //   handleSearch();
-  // }, [searchTerm]);
+  
 
   const users = useUsers()
   
+console.log({users})
 
-
-
+const newAdded = users.filter( user => user.role === 'user')
+console.log(newAdded)
   
+
+// pyaemnt bookings
+const [payments,setPyaments] = useState([])
+const [totalPrice, setTotalPrice] = useState(0); 
+  useEffect(() =>{
+    axios.get("http://localhost:1000/payments")
+    .then(res =>{
+      setPyaments(res.data)
+    })
+    .catch(error =>{
+      console.error('Error:', error);
+    })
+  },[])
+  
+  useEffect(() => {
+    // Use reduce to sum the 'price' property of each payment
+    const calculatedTotalPrice = payments.reduce(
+      (total, payment) => total + payment.price,
+      0 // Initialize total with 0
+    );
+    setTotalPrice(calculatedTotalPrice); // Update total price state
+  }, [payments]); 
+
+
+
+
 
   return (
     <div className=' pt-4 px-4 mx-auto '>
@@ -43,49 +63,7 @@ const COLORS = ['#34a0a4' ]
       <section className='flex justify-between items-center'>
 
 
-        {/*  <div>
-          <div className="overflow-x-auto">
-            <table className="table">
-              head
-              <thead>
-                <tr>
-                  <th></th>
-                  <th>Name</th>
-                  <th>Job</th>
-                  <th>Favorite Color</th>
-                </tr>
-              </thead>
-              <tbody>
-
-                {
-                  searchResults.length > 0 && (
-                    searchResults.map(user => (
-                      <tr>
-                        <th>1</th>
-                        <td>{user.name}</td>
-                        <td>{user.email}</td>
-                        <td>Blue</td>
-                      </tr>
-                    ))
-                  )
-                }
-
-              </tbody>
-            </table>
-          </div>
-        </div> */}
-
-        {/* 
-    {searchResults.length > 0 && (
-        <div>
-          <h2>Search Results:</h2>
-          <ul>
-            {searchResults.map((user) => (
-              <li key={user._id}>{user.email}</li>
-            ))}
-          </ul>
-        </div>
-      )} */}
+        
         <div className='bg-white p-3 rounded-lg shadow-md '>
           <p>{moment().format('Do MMMM YYYY, h:mm a')} </p>
 
@@ -104,15 +82,15 @@ const COLORS = ['#34a0a4' ]
 
           <section className='grid grid-cols-1 md:grid-cols-3   w-full'>
             <div className='border flex flex-col items-center  justify-center card bg-red-100 shadow-md w-40  h-28'>
-              <h3 className='text-3xl font-semibold '>45646</h3>
-              <p>Total Users</p>
+              <h3 className='text-3xl font-semibold '>{users.length}+</h3>
+              <p>Total Users </p>
             </div>
             <div className='border flex flex-col items-center justify-center card bg-amber-100 shadow-md w-40 h-28'>
               <h3 className='text-3xl font-semibold '>150</h3>
               <p>New Bookings</p>
             </div>
             <div className='border flex flex-col items-center justify-center card bg-indigo-200 shadow-md w-40 h-28'>
-              <h3 className='text-3xl font-semibold '>54k</h3>
+              <h3 className='text-3xl font-semibold '>{totalPrice} + </h3>
               <p>total earning</p>
             </div>
           </section>

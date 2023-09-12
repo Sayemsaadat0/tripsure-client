@@ -65,13 +65,13 @@ const Dashboard = () => {
             <FaBookmark></FaBookmark>
             Bookings Management
           </NavLink></li>
-
+{/* 
           <li className="mt-2">
             <NavLink to='/dashboard/managebookings'>
               <FiSettings></FiSettings>
               Resource  Management
             </NavLink>
-          </li>
+          </li> */}
 
           <li className="mt-2">
             <NavLink
