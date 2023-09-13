@@ -25,7 +25,7 @@ const ContactDetails = () => {
     
     
   };
-
+console.log(location);
   const handleLoader = ()=>{
     if (contactDetails == null) {
       setIsLoading(true);
@@ -37,6 +37,10 @@ const ContactDetails = () => {
       console.log('activityDetails', contactDetails);
     }
   }
+
+  useEffect(()=>{
+    
+  },[])
 
 
 useEffect(()=>{
@@ -135,11 +139,8 @@ useEffect(()=>{
           </div>
           <div className="my-5">
             <h2 className="text-2xl font-semibold pb-3 border-b-2">
-              Promo Code
+        
             </h2>
-            <p className="text-lg underline mt-3 cursor-pointer text-green-800">
-              Enter Promo Code
-            </p>
           </div>
           <div className="text-center">
             <Link onClick={handleLoader} 

@@ -2,6 +2,7 @@ import React from 'react';
 
 
 const ReviewCard = ({orderDetails}) => {
+  console.log(orderDetails);
   return (
     <div className="card md:w-96 bg-base-100 border-2 rounded-xl">
       <div className="card-body">

@@ -10,14 +10,7 @@ const FindRentalCars = ({setPickUpDate, setPickUpLocation, setDropOutDate, handl
     <div className="rentalCarBackground h-96 mb-8 sm:mb-0 md:relative">
       <Container>
         <div className="clear-glass h-auto  px-8 pb-12 md:pb-8 md:absolute left-[10px] bottom-9 border-round">
-          <select
-            name=""
-            id=""
-            className="select border-round focus:outline-none rounded-none mt-3"
-          >
-            <option value="same">Same drop off</option>
-            <option value="defferent">Different drop off</option>
-          </select>
+         
           <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-[2px] sm:gap-2 mt-4 ">
             <div className="relative">
               <input
@@ -83,26 +76,7 @@ const FindRentalCars = ({setPickUpDate, setPickUpLocation, setDropOutDate, handl
               Find Rental cars
             </button>
           </div>
-          <div className="flex items-center gap-3 mt-5">
-            <span className="font-semibold">Drive's age</span>
-            <select
-              name=""
-              id=""
-              className=" select-sm select-bordered border-neutral-500 border"
-            >
-              <option value="30">30+</option>
-              <option value="29">29</option>
-              <option value="28">28</option>
-              <option value="27">27</option>
-              <option value="26">30</option>
-              <option value="25">25</option>
-              <option value="24">24</option>
-              <option value="23">23</option>
-              <option value="22">22</option>
-              <option value="21">21</option>
-              <option value="20">under 20</option>
-            </select>
-          </div>
+          
         </div>
       
       </Container>
