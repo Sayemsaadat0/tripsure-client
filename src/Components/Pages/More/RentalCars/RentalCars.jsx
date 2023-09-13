@@ -24,7 +24,7 @@ const RentalCars = () => {
 
   return (
     <div className="mt-12">
-      <h3 className="md:text-4xl mt-20 text-2xl text-slate-600 font-bold text-center">
+      <h3 className="md:text-4xl mt-20 text-2xl tracking-widest text-slate-600 font-bold text-center">
         Search for the Best Rental Car Deals
       </h3>
       <div className=" h-auto mt-12">

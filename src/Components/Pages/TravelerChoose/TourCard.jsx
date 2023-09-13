@@ -5,18 +5,17 @@ import { Link } from "react-router-dom";
 
 const TourCard = ({singleTour, index}) => {
     const {_id, picture, cardtitle,ratings,country,placetitle,placedetails,conditions} = singleTour;
-    console.log(_id);
   return (
     <div className="grid lg:grid-cols-2 gap-6 mb-10">
       <div className="">
-        <img className="rounded-lg w-full"
+        <img className="rounded-lg w-full md:h-96"
           src={picture}
           alt=""
         />
       </div>
       <div className="space-y-3">
-        <h2 className="text-xl">0{index+2}.</h2>
-        <Link to={`/tourDetails/${_id}`} className="text-3xl font-semibold">{placetitle}</Link>
+        <h2 className="text-7xl font-bold border-b-4 border-blue-400 w-10 py-3 text-gray-400">0{index+2}</h2>
+        <Link to={`/tourDetails/${_id}`} className="text-2xl tracking-widest  font-semibold">{placetitle}</Link>
         <h4 className="flex items-center gap-2">
           <FaLocationDot></FaLocationDot> {country}
         </h4>

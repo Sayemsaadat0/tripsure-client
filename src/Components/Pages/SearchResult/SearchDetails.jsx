@@ -5,7 +5,6 @@ import { GoShare, GoLocation } from "react-icons/go";
 import { FaStar } from "react-icons/fa";
 import { BiDockTop } from "react-icons/bi";
 import { AiOutlineArrowRight } from "react-icons/ai";
-import ShareModal from "../../Modal/ShareModal";
 import PlaceDetails from "./PlaceDetails";
 import { useLoaderData } from "react-router-dom";
 
@@ -23,7 +22,7 @@ const SearchDetails = () => {
     specialties,
     description,
   } = searchDetailsData;
-
+  console.log('searchDetailsData',searchDetailsData)
   const ratingValues = Object.values(ratings);
   const sumOfRatings = ratingValues.reduce((sum, rating) => sum + rating, 0);
   const averageRating = (sumOfRatings / ratingValues.length).toFixed(1);
@@ -60,9 +59,9 @@ const SearchDetails = () => {
             </div>
           </div>
           <div className=" mb-8">
-            <div className="md:w-full">
+            <div className="flex">
               <img
-                className="rounded-lg w-full"
+                className="rounded-lg md:w-[50%] "
                 src={searchDetailsData && picture}
                 alt="hotel"
               />
@@ -80,13 +79,6 @@ const SearchDetails = () => {
                     <span>2 guests,</span> <span>1 bedroom,</span>{" "}
                     <span>1 bed,</span> <span>5 baths,</span>
                   </p>
-                </div>
-                <div>
-                  <img
-                    className="w-14 h-14 rounded-full"
-                    src="https://i.ibb.co/MZkMY4V/room4.webp"
-                    alt="user"
-                  />
                 </div>
               </div>
               <div className="divider"></div>
@@ -124,13 +116,12 @@ const SearchDetails = () => {
               </div>
               <div className="divider"></div>
               <p>{searchDetailsData && description.slice(0, 80)}...</p>
-              <div
+              <button
                 onClick={() => setIsOpen(true)}
-                className="cursor-pointer group w-fit flex gap-1 items-center underline underline-offset-2 font-bold"
-              >
-                <span>Show More </span>
+                className="btn-link  group w-fit flex gap-1 items-center    text-blue-500">
+                <span>Read More </span>
                 <AiOutlineArrowRight className="duration-300 mt-2 group-hover:ml-1"></AiOutlineArrowRight>
-              </div>
+              </button>
               <PlaceDetails
                 isOpen={isOpen}
                 setIsOpen={setIsOpen}
@@ -148,3 +139,7 @@ const SearchDetails = () => {
 };
 
 export default SearchDetails;
+
+
+// todo show all the data dynamically here 
+// mobile responsive

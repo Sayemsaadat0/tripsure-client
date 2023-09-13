@@ -10,7 +10,7 @@ const SearchResult = () => {
   
   const searchText = useSelector((state) => state.searchData.searchText);
 
-  console.log(searchData);
+
   // pagination
   const [currentPage, setCurrentPage] = useState(0);
   const totalSearchData = searchData.length;

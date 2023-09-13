@@ -1,12 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../LayOut/Main/Main";
 import Home from "../Pages/Home/Home";
+
+import AboutUsDetails from "../Pages/Home/AboutUs/AboutUsDetails";
 import Overview from "../Pages/Overview/Overview";
 import Login from "../Pages/Authentication/Login/Login";
 import Register from "../Pages/Authentication/SignUp/Register";
-// import Reviews from "../Pages/DashBoard/Admin/Reviews";
-// import Inquiries from "../Pages/DashBoard/Admin/Inquiries";
-// import AddTour from "../Pages/DashBoard/Admin/AddTour";
 import AddReview from "../Pages/Community/AddReview/AddReview";
 import TravelerChoose from "../Pages/TravelerChoose/TravelerChoose";
 import ErrorPage from "../../LayOut/ErrorPage/ErrorPage";
@@ -16,14 +15,13 @@ import RentalCars from "../Pages/More/RentalCars/RentalCars";
 import TravelarStories from "../Pages/TravelerStories/TravelStories";
 import Stories from "../Pages/TravelerStories/Stories/Stories";
 import TravelGuides from "../Pages/TravelGuides/TravelGuides";
-import GuideDetails from "../Pages/TravelGuides/GuideDetails/GuideDetails";
 import TourDetails from "../Pages/TourDetails/TourDetails";
 import TopDestinationDetails from "../Pages/TopDestinationDetails/TopDestinationDetails";
 import Favorite from "../Shared/Navbar/Favorite";
 
 // dashboard ad resources
 import Addresource from "../Pages/DashBoard/Admin/Addresource";
-import Addthings from "../Pages/DashBoard/Admin/Addthings";
+
 import Addplaces from "../Pages/DashBoard/Admin/addplaces";
 import Addhotels from "../Pages/DashBoard/Admin/Addhotels";
 import Addflights from "../Pages/DashBoard/Admin/Addflights";
@@ -35,9 +33,7 @@ import AdminHome from "../Pages/DashBoard/Admin/AdminHome";
 import ManageUser from "../Pages/DashBoard/Admin/ManageUser";
 import ManageBookings from "../Pages/DashBoard/Admin/ManageBookings";
 import ManagePackage from "../Pages/DashBoard/Admin/ManagePackage";
-import KnowMore from "../Pages/AboutUs/KnowMore";
 import Dashboard from "../../LayOut/Dashboard";
-import Totallview from "../Pages/DashBoard/Admin/Totallview";
 import DoThingsAttractionReviews from "../Pages/DoThingsAttractionReviews/DoThingsAttractionReviews";
 import StayThingsAttractionReviews from "../Pages/StayThingsAttractionReviews/StayThingsAttractionReviews";
 import RestaurantAttractionReview from "../Pages/RestaurantAttractionReview/RestaurantAttractionReview";
@@ -49,21 +45,21 @@ import ActivityDetails from "../Pages/Payment/ActivityDetails/ActivityDetails";
 import PrivateRoutes from "./PrivateRoutes";
 import NewProfile from "../Pages/Profile/NewProfile";
 import PostStory from "../Pages/Community/PostAStory/PostStory";
-
-
-
 // search
 import SearchResult from "../Pages/SearchResult/SearchResult";
 import SearchCountry from "../Pages/SearchResult/searchCountryPage/SearchCountry";
 import SearchHotel from "../Pages/SearchResult/searchHotelPage/SearchHotel";
 import SearchDetails from "../Pages/SearchResult/SearchDetails";
-
-
 // payment
 import PaymentDetails from "../Pages/Payment/PaymentDetails/PaymentDetails";
 import AddRentalCars from "../Pages/DashBoard/Admin/Overview/AddRentalCars";
 import PaymentSuccessPage from "../Pages/Payment/PaymentSuccessPage/PaymentSuccessPage";
 import PaymentFailPage from "../Pages/Payment/PaymentFailPage/PaymentFailPage";
+import MedicalCard from "../Pages/Home/Medical/Medical";
+import MadicalCard from "../Pages/Home/Medical/MadicalCard";
+import MadicalDetails from "../Pages/Home/Medical/MadicalDetails";
+
+
 
 const router = createBrowserRouter([
   {
@@ -76,8 +72,8 @@ const router = createBrowserRouter([
         element: <Home></Home>,
       },
       {
-        path: "knowmore",
-        element: <KnowMore />,
+        path : "aboutusdetails",
+        element : <AboutUsDetails></AboutUsDetails>
       },
       {
         path: "/FamilyGuideSingleCardDetails/:id",
@@ -108,10 +104,6 @@ const router = createBrowserRouter([
         element: <Overview></Overview>,
       },
       {
-        path: "travelarsstory",
-        element: <KnowMore />,
-      },
-      {
         path: "/TravelDeals/:id",
         element: <TravelDealsDetails></TravelDealsDetails>,
       },
@@ -121,7 +113,6 @@ const router = createBrowserRouter([
       },
       {
         path: "postastory",
-        // render new component which name <PostStory> but previus Component name <PostAStory>
         element: <PostStory></PostStory>,
       },
       {
@@ -157,10 +148,6 @@ const router = createBrowserRouter([
         element: <TopDestinationDetails></TopDestinationDetails>,
       },
       {
-        path: "/top-destination-details/:id",
-        element: <TopDestinationDetails></TopDestinationDetails>,
-      },
-      {
         path: "rentalcars",
         element: <RentalCars />,
       },
@@ -175,11 +162,7 @@ const router = createBrowserRouter([
 
       {
         path: "travelGuides",
-        element: <TravelGuides />,
-      },
-      {
-        path: "travelGuides/details",
-        element: <GuideDetails />,
+        element: <PrivateRoutes><TravelGuides /></PrivateRoutes>
       },
       {
         path: "/travelerChoose-thingsToDo/:category",
@@ -201,7 +184,7 @@ const router = createBrowserRouter([
         path: "searchCardDetails/:id",
         element: <SearchDetails />,
         loader: ({ params }) =>
-          fetch(`http://localhost:1000/searchResult/${params.id}`),
+          fetch(`${import.meta.env.VITE_BACKEND_API}/searchResult/${params.id}`),
       },
       {
         path: "contactDetails",
@@ -222,7 +205,16 @@ const router = createBrowserRouter([
       {
         path: "/payment/fail/:id",
         element: <PaymentFailPage></PaymentFailPage>
+      },
+      {
+        path: "madicalCard",
+        element: <MadicalCard/>
+      },
+      {
+        path: "madicalDetails",
+        element: <MadicalDetails/>
       }
+     
     ],
   },
   {
@@ -242,11 +234,6 @@ const router = createBrowserRouter([
         path: "adminhome",
         element: <AdminHome></AdminHome>,
       },
-
-      {
-        path: "admin/totalview",
-        element: <Totallview />,
-      },
       {
         path: "manageusers",
         element: <ManageUser></ManageUser>,
@@ -259,25 +246,9 @@ const router = createBrowserRouter([
         path: "managepackage",
         element: <ManagePackage />,
       },
-     /*  {
-        path: "reviews",
-        element: <Reviews />,
-      },
-      {
-        path: "inquires",
-        element: <Inquiries />,
-      },
-      {
-        path: "addtour",
-        element: <AddTour />,
-      }, */
       {
         path: "addresource",
         element: <Addresource />,
-      },
-      {
-        path: "addthings",
-        element: <Addthings />,
       },
       {
         path: "addhotels",

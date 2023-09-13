@@ -32,8 +32,8 @@ const OneWay = () => {
 
   return (
     <>
-    <div className="py-36 w-full flightBackground ">
-    <h3 className="text-center text-4xl font-bold text-white mb-10">
+    <div className="py-36 w-full flightBackground">
+    <h3 className="text-center md:text-5xl  text-white tracking-widest mb-10">
           Find the best flight for the right price
         </h3>
       <div className="grid mx-4  md:grid-cols-5 mb-6">

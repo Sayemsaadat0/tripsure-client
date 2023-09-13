@@ -8,7 +8,7 @@ const PlacesToVisit = () => {
           <h1 className="text-4xl font-bold text-black">Places to Visit</h1>
           <p className="text-xl mt-3">
             The most exciting destinations, experiences, hidden gems, and traveler
-            faves to check out now.
+            faves to check out     sdsnow.
           </p>
         </div>
         {/* Articles cards  */}

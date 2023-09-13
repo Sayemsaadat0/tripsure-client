@@ -1,71 +1,228 @@
-import React from 'react';
-import Container from '../../../LayOut/Container';
-import { MdOutlineEmail } from 'react-icons/md'
-import { CiMobile4, CiYoutube } from 'react-icons/ci'
-import { SlLocationPin, SlClock } from 'react-icons/sl'
-import { FaFacebookF, FaYoutube, FaLinkedinIn } from 'react-icons/fa'
-import footarvideo from '../../../../public/footar.mp4'
-    ;
-const Footar = () => {
+import React from "react";
+import Wave from "react-wavify";
+// import Currency from "./Currency";
+import { Link } from "react-router-dom";
 
-    const currentYear = new Date().getFullYear()
-    return (
-        <div className='bg-blue-100'>
-            {/* footar-image / next div -bg-black w-full bg-opacity-50 */}
-            <footer className=' text-blue-400 py-20'>
-                <div>
-                    <Container>
-                        <div className="p-4 mx-auto justify-between grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 py-8 md:py-12 gap-8">
-                            <div className="mb-4 md:mb-0">
-                                <h2 className="text-xl font-semibold mb-2">About Us</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquam purus a ultrices.</p>
-                                <img className='mt-4 w-full max-w-[200px]' src={"https://i.ibb.co/tqZsGcq/logo-4.png"} alt="" />
-                            </div>
-                            <div>
-                                <h2 className="text-xl font-semibold mb-2">Contact</h2>
-                                <div className='flex items-center gap-4 mb-2'>
-                                    <MdOutlineEmail size={25}></MdOutlineEmail>
-                                    <p className='text-lg'>info@example5com</p>
-                                </div>
-                                <div className='flex items-center gap-4 mb-2'>
-                                    <CiMobile4 size={25}></CiMobile4>
-                                    <p className='text-lg'>+1 (123) 456-7890</p>
-                                </div>
-                                <div className='flex items-center gap-4 mb-2'>
-                                    <SlLocationPin size={25}></SlLocationPin>
-                                    <p className='text-lg'>London, 51 Street, 43</p>
-                                </div>
-                                <div className='flex items-center gap-4 mb-2'>
-                                    <SlClock size={25}></SlClock>
-                                    <p className='text-lg'>Mon - Sat 8.00 - 18.00</p>
-                                </div>
-                            </div>
-                            <div>
-                                <h2 className="text-xl font-semibold mb-2">Recent Trips</h2>
-                                <div className='grid grid-cols-3 gap-4 '>
-                                    <img className='h-full w-full rounded-lg' src='https://mobirise.com/extensions/travelm4/assets/images/021.jpg' alt="" />
-                                    <img className='h-full w-full rounded-lg' src='https://mobirise.com/extensions/travelm4/assets/images/010.jpg' alt="" />
-                                    <img className='h-full w-full rounded-lg' src='https://mobirise.com/extensions/travelm4/assets/images/032.jpg' alt="" />
-                                    <img className='h-full w-full rounded-lg' src='https://mobirise.com/extensions/travelm4/assets/images/043.jpg' alt="" />
-                                    <img className='h-full w-full rounded-lg' src='https://mobirise.com/extensions/travelm4/assets/images/054.jpg' alt="" />
-                                    <img className='h-full w-full rounded-lg' src='https://mobirise.com/extensions/travelm4/assets/images/065.jpg' alt="" />
-                                </div>
-                            </div>
-                            <div>
-                                <h2 className="text-xl font-semibold mb-2">Follow Us</h2>
-                                <div className="flex space-x-4 text-white">
-                                    <span className='bg-[#79c7ff] p-2 rounded-full hoer:bg-[#6bccd3] hover:scale-110 cursor-pointer duration-300'><FaFacebookF size={20}></FaFacebookF></span>
-                                    <span className='bg-[#79c7ff] p-2 rounded-full hoer:bg-[#6bccd3] hover:scale-110 cursor-pointer duration-300'><FaYoutube size={20}></FaYoutube></span>
-                                    <span className='bg-[#79c7ff] p-2 rounded-full hoer:bg-[#6bccd3] hover:scale-110 cursor-pointer duration-300'><FaLinkedinIn size={20}></FaLinkedinIn></span>
-                                </div>
-                            </div>
-                        </div>
-                        <p className='w-full text-center py-6'>Copyright (c) {currentYear} by <span className='font-bold'>Tripsure Enterprise LTD.</span></p>
-                    </Container>
-                </div>
-            </footer>
+const Footar = () => {
+  // /
+  const currentYear = new Date().getFullYear();
+  return (
+    <div className="">
+      <Wave
+        fill="#edede9"
+        paused={false}
+        style={{ display: "flex" }}
+        options={{
+          height: 80,
+          amplitude: 20,
+          speed: 0.4,
+          points: 4,
+        }}
+      />
+      {/* footar-image / next div -bg-black w-full bg-opacity-50 */}
+      <footer className="text-gray-600 body-font bg-[#edede9]">
+        <div className="container px-5 py-12 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+          <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mt-0 mt-10">
+            <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+              <img src="https://i.ibb.co/9mX5YKW/logo-6.png  " alt="" />
+            </a>
+            <p className="mt-2 text-sm text-gray-500">
+              Air plant banjo lyft occupy retro adaptogen indego
+            </p>
+          </div>
+          <div className="flex-grow flex flex-wrap md:pr-20 -mb-10 md:text-left text-center order-first">
+            <div className="lg:w-1/4 md:w-1/2 w-full px-4">
+              <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3 uppercase">
+                Explore
+              </h2>
+              <nav className="list-none mb-10">
+                <li>
+                  <a
+                    href="https://www.tripadvisor.com/UserReview"
+                    className="text-gray-600 hover:text-gray-800"
+                  >
+                    Help Center
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.tripadvisor.com/Profile/farhada371"
+                    className="text-gray-600 hover:text-gray-800"
+                  >
+                    Join
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.tripadvisor.com/Articles"
+                    className="text-gray-600 hover:text-gray-800"
+                  >
+                    Articles
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.tripadvisor.com/Plus"
+                    className="text-gray-600 hover:text-gray-800"
+                  >
+                    Tripsure plus
+                  </a>
+                </li>
+              </nav>
+            </div>
+            <div className="lg:w-1/4 md:w-1/2 w-full px-4">
+              <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3 uppercase">
+                About Tripsure
+              </h2>
+              <nav className="list-none mb-10">
+                <li>
+                  <Link
+                    to={'/aboutusdetails'}
+                    className="text-gray-600 hover:text-gray-800"
+                  >
+                    About us
+                  </Link>
+                </li>
+                <li>
+                  <a
+                    href="https://tripadvisor.mediaroom.com/US-contact-us"
+                    className="text-gray-600 hover:text-gray-800"
+                  >
+                    Contact Us
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://ir.tripadvisor.com/"
+                    className="text-gray-600 hover:text-gray-800"
+                  >
+                    Investor Relations
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.tripadvisor.com/Trust"
+                    className="text-gray-600 hover:text-gray-800"
+                  >
+                    Trust & Safety
+                  </a>
+                </li>
+              </nav>
+            </div>
+            <div className="lg:w-1/4 md:w-1/2 w-full px-4">
+              <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3 uppercase">
+                Hosting
+              </h2>
+              <nav className="list-none mb-10">
+                <li>
+                  <a
+                    href="https://www.airbnb.com/airbnb-friendly"
+                    className="text-gray-600 hover:text-gray-800"
+                  >
+                    Tripsure friendly
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.airbnb.com/help/article/1376"
+                    className="text-gray-600 hover:text-gray-800"
+                  >
+                    Hosting responsibly
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://community.withairbnb.com/t5/Community-Center/ct-p/community-center"
+                    className="text-gray-600 hover:text-gray-800"
+                  >
+                    Community forum
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.airbnb.com/resources/hosting-homes"
+                    className="text-gray-600 hover:text-gray-800"
+                  >
+                    Hosting resources
+                  </a>
+                </li>
+              </nav>
+            </div>
+            <div className="lg:w-1/4 md:w-1/2 w-full px-4">
+              <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
+                CONVERTOR
+              </h2>
+              {/* <Currency /> */}
+            </div>
+          </div>
         </div>
-    );
+        <div className="bg-gray-100">
+          <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+            <p className="text-gray-500 text-sm text-center sm:text-left">
+              © {currentYear} Tripsure
+            </p>
+            <span className="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+              <a className="text-gray-500">
+                <svg
+                  fill="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  className="w-5 h-5"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                </svg>
+              </a>
+              <a className="ml-3 text-gray-500">
+                <svg
+                  fill="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  className="w-5 h-5"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                </svg>
+              </a>
+              <a className="ml-3 text-gray-500">
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  className="w-5 h-5"
+                  viewBox="0 0 24 24"
+                >
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                </svg>
+              </a>
+              <a className="ml-3 text-gray-500">
+                <svg
+                  fill="currentColor"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="0"
+                  className="w-5 h-5"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke="none"
+                    d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
+                  ></path>
+                  <circle cx="4" cy="4" r="2" stroke="none"></circle>
+                </svg>
+              </a>
+            </span>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
 };
 
 export default Footar;

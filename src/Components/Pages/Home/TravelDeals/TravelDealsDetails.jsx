@@ -10,6 +10,7 @@ import { GrCircleInformation } from "react-icons/gr";
 import useAuth from "../../../../Hooks/useAuth";
 import { DatePicker } from "antd";
 import { FaUserGroup } from "react-icons/fa6";
+import LazyLoad from "react-lazy-load";
 
 const TravelDealsDetails = () => {
   const [modalForCountPeople, setModalForCountPeople] = useState(false);
@@ -27,16 +28,27 @@ const TravelDealsDetails = () => {
     setSelectedDate(date);
   };
 
-  const handlePeopleForReserve = () => {
-    setModalForCountPeople(!modalForCountPeople);
-  };
+
   const onChange = (date, dateString) => {
     // dateString);
   };
 
+  const handlePeopleForReserve = () => {
+    setModalForCountPeople(!modalForCountPeople);
+  };
+ 
+
   const isDateUnavailable = (date) => {
     return unavailableDates.includes(date.format("YYYY-MM-DD"));
   };
+
+  useEffect(() => {
+    axios
+      .get(`https://tripsure-server-sayemsaadat0.vercel.app/travelDeals/${id}`)
+      .then((res) => {
+        setTravelDealsDetails(res.data);
+      });
+  }, [id]);
 
   const {
     title,
@@ -45,7 +57,6 @@ const TravelDealsDetails = () => {
     price,
     savings,
     newPrice,
-    departureDates,
     totalPeople,
     limitPerBooking,
     conditions,
@@ -60,22 +71,14 @@ const TravelDealsDetails = () => {
     additionalInfo,
     hotels,
     includedItems,
-    reviews,
   } = travelDealsDetails;
-  console.log(travelDealsDetails);
   useEffect(() => {
     axios
-      .get(`https://tripsure-server-sayemsaadat0.vercel.app/travelDeals/${id}`)
+      .get(`${import.meta.env.VITE_BACKEND_API}/travelDeals/${id}`)
       .then((res) => {
         setTravelDealsDetails(res.data);
       });
   }, [id]);
-
-  const words = [
-    `Experience joy and save  ${discountPercentage}%`,
-    `Get ${savings?.adult} off per adult`,
-    `and ${savings?.child} off per child.`,
-  ];
 
   const orderDetails = {
     email: user?.email,
@@ -95,11 +98,19 @@ const TravelDealsDetails = () => {
     },
   };
 
+  const words = [
+    `Experience joy and save  ${discountPercentage}%`,
+    `Get ${savings?.adult} off per adult`,
+    `and ${savings?.child} off per child.`,
+  ];
+
   return (
     <Container>
       <div className="my-4 md:my-20 px-4 md:px-10 leading-8">
         {/* primary */}
-        <h2 className="text-4xl font-bold text-[#79c7ff]">{title}</h2>
+        <h2 className="text-4xl font-bold text-[#79c7ff] tracking-widest">
+          {title}
+        </h2>
         <div className="flex items-center my-3 gap-5 ">
           <p className="flex items-center gap-2 ">
             <GoLocation className="text-xl"></GoLocation> {destination}
@@ -117,13 +128,15 @@ const TravelDealsDetails = () => {
         {/* price and section image */}
         <div className="grid grid-cols-1 md:grid-cols-2 md:gap-10 w-full">
           <div>
-            <img src={picture} alt="" />
-          </div>
-          <div className=" p-4">
-            {/* percentage */}
+            <LazyLoad>
+              <img src={picture} className="w-full rounded-xl " alt="" />
+            </LazyLoad>
+
             <div>
-              <h2 className="font-bold">Grab it Now, Save Big</h2>
-              <h3 className="text-3xl font-bold text-[#7bb9b9]">
+              <h2 className="font-bold md:py-6 text-xl tracking-widest">
+                Grab it Now, Save Big
+              </h2>
+              <h3 className="text-3xl font-bold text-[#79c7ff]">
                 <Typewriter
                   words={words}
                   loop={Infinity}
@@ -135,38 +148,37 @@ const TravelDealsDetails = () => {
               </h3>
             </div>
 
+            <p className="font-bold">Offer Price </p>
+            <div className="flex items-center gap-3 ">
+              <p className="font-light text-sm">
+                <span className="text-2xl font-bold text-red-500">
+                  ${newPrice?.adult}
+                </span>{" "}
+                (Adult){" "}
+              </p>
+              <p className="line-through font-light text-sm"> {price?.adult}</p>
+            </div>
+            <div className="flex gap-3 items-center ">
+              <p className="font-light text-sm">
+                {" "}
+                <span className="text-2xl font-bold text-red-500">
+                  ${newPrice?.child}
+                </span>{" "}
+                (Child)
+              </p>
+              <p className="line-through font-light text-sm">{price?.child}</p>
+            </div>
+          </div>
+          <div className="">
+            {/* percentage */}
+
             {/* price */}
             <div>
-              <p className="font-bold">Offer Price </p>
-              <div className="flex items-center gap-3 ">
-                <p className="font-light text-sm">
-                  <span className="text-2xl font-bold text-red-500">
-                    {newPrice?.adult}
-                  </span>{" "}
-                  (Adult){" "}
-                </p>
-                <p className="line-through font-light text-sm">
-                  {" "}
-                  {price?.adult}
-                </p>
-              </div>
-              <div className="flex gap-3 items-center ">
-                <p className="font-light text-sm">
-                  {" "}
-                  <span className="text-2xl font-bold text-red-500">
-                    {newPrice?.child}
-                  </span>{" "}
-                  (Child)
-                </p>
-                <p className="line-through font-light text-sm">
-                  {price?.child}
-                </p>
-              </div>
-
-              <div className="mt-5">
-                <hr />
-                <div className="p-4">
-                  <h2 className="text-3xl font-bold pb-6">Reserve your spot</h2>
+              <div className="">
+                <div className="">
+                  <h2 className="text-3xl tracking-widest pb-6">
+                    Reserve your spot
+                  </h2>
                   <div className="flex gap-4 relative">
                     <button className="font-bold h-10 border-2 border-black rounded-full">
                       {/* <Space direction="vertical" size={14}>
@@ -206,7 +218,7 @@ const TravelDealsDetails = () => {
                                 onClick={() =>
                                   setAdultCount((adultCount) => adultCount - 1)
                                 }
-                                className="btn btn-sm btn-circle bg-black hover:bg-black  rounded-full"
+                                className="btn btn-sm  bg-black hover:bg-black  rounded-full"
                               >
                                 <FaMinus className="w-4 text-white "></FaMinus>
                               </button>
@@ -215,7 +227,7 @@ const TravelDealsDetails = () => {
                                 onClick={() =>
                                   setAdultCount((adultCount) => adultCount + 1)
                                 }
-                                className="btn btn-sm btn-circle bg-black hover:bg-black  rounded-full"
+                                className="btn btn-sm  bg-black hover:bg-black  rounded-full"
                               >
                                 <FaPlus className="w-4 text-white "></FaPlus>
                               </button>
@@ -234,7 +246,7 @@ const TravelDealsDetails = () => {
                                     (childrenCount) => childrenCount - 1
                                   )
                                 }
-                                className="btn btn-sm btn-circle bg-black hover:bg-black  rounded-full"
+                                className="btn btn-sm  bg-black hover:bg-black  rounded-full"
                               >
                                 <FaMinus className="w-4 text-white "></FaMinus>
                               </button>
@@ -245,7 +257,7 @@ const TravelDealsDetails = () => {
                                     (childrenCount) => childrenCount + 1
                                   )
                                 }
-                                className="btn btn-sm btn-circle bg-black hover:bg-black  rounded-full"
+                                className="btn btn-sm  bg-black hover:bg-black  rounded-full"
                               >
                                 <FaPlus className="w-4 text-white "></FaPlus>
                               </button>
@@ -264,7 +276,7 @@ const TravelDealsDetails = () => {
                                     (infantsCount) => infantsCount - 1
                                   )
                                 }
-                                className="btn btn-sm btn-circle bg-black hover:bg-black  rounded-full"
+                                className="btn btn-sm  bg-black hover:bg-black  rounded-full"
                               >
                                 <FaMinus className="w-4 text-white "></FaMinus>
                               </button>
@@ -276,7 +288,7 @@ const TravelDealsDetails = () => {
                                     (infantsCount) => infantsCount + 1
                                   )
                                 }
-                                className="btn btn-sm btn-circle bg-black hover:bg-black  rounded-full"
+                                className="btn btn-sm  bg-black hover:bg-black  rounded-full"
                               >
                                 <FaPlus className="w-4 text-white "></FaPlus>
                               </button>
@@ -305,6 +317,8 @@ const TravelDealsDetails = () => {
                     <p>(No additional taxes or booking fees)</p>
                   </div>
                   <div className="flex gap-3 items-center justify-around">
+                    {/*todo functioon to add to favorite */}
+                    <Link className="btn-primary">Add To Favorite</Link>
                     <Link
                       disabled={selectedDate == null}
                       to={user ? "/contactDetails" : "/login"}
@@ -328,15 +342,6 @@ const TravelDealsDetails = () => {
           {/* departure  */}
           <div className="mt-5">
             <h3 className="text-lg font-semibold">Departure Details : </h3>
-
-            <p className="flex gap-2">
-              Departure Dates :
-              <span>
-                {" "}
-                {departureDates &&
-                  departureDates.map((d, index) => <li key={index}>{d}</li>)}
-              </span>
-            </p>
             <div>
               <p>Departure Time : {departureTime}</p>
               <p>Departure Place : {departurePlace}</p>
@@ -365,7 +370,7 @@ const TravelDealsDetails = () => {
               </li>
             ))}
           </div>
-          {/* optional activities */}
+          {/* optional activites */}
           <div>
             <p className="font-bold">optional Activities </p>
             {optionalActivities?.map((d, index) => (
@@ -408,11 +413,6 @@ const TravelDealsDetails = () => {
                 <h2>Title : {hotel.name}</h2>
                 <p>Type : {hotel.type}</p>
                 <p>Duration of Stay : {hotel.nights} Nights</p>
-
-                <p className="font-bold"> Amenity </p>
-                {hotel?.amenities?.map((amenity, amenityIndex) => (
-                  <li key={amenityIndex}>{amenity}</li>
-                ))}
               </div>
             ))}
           </div>
@@ -425,30 +425,5 @@ const TravelDealsDetails = () => {
 
 export default TravelDealsDetails;
 
-{
-  /* 
-
-toggle see more button
-
- const [showFullReview, setShowFullReview] = useState(false);
-
-    const toggleShowReview = () => {
-        setShowFullReview(!showFullReview);
-    };
-
-
-<h3>
-Review :{' '}
-{showFullReview ? (
-    <>
-        {reviews?.review}
-        <button className='text-blue-500 btn-link' onClick={toggleShowReview}>Show Less</button>
-    </>
-) : (
-    <>
-        {reviews?.review.split(' ').slice(0, 10).join(' ')}...
-        <button className='text-blue-500 btn-link' onClick={toggleShowReview}>Show More</button>
-    </>
-)}
-</h3> */
-}
+// todo think about how you implement the itrenary
+// todo add ratings as number

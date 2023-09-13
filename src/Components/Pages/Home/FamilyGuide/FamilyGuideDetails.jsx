@@ -7,23 +7,23 @@ import Zoo from "./Zoo";
 import ThemePark from "./ThemePark";
 import axios from "axios";
 import CommonSwiperForFamilyAndSummer from "./CommonSwiperForFamilyAndSummer";
+import LazyLoad from "react-lazy-load";
 // import div from '../../../../LayOut/div';
 
 const FamilyGuideDetails = () => {
   const [inspiredByFamily, setInspiredByFamily] = useState([]);
   const [summerData, setSummerData] = useState([]);
   useEffect(() => {
-    axios.get(`https://tripsure-server-sayemsaadat0.vercel.app/allFamilyGuide/family`).then((res) => {
+    axios.get(`${import.meta.env.VITE_BACKEND_API}/allFamilyGuide/family`).then((res) => {
       setInspiredByFamily(res.data);
     });
   }, []);
   useEffect(() => {
-    axios.get(`https://tripsure-server-sayemsaadat0.vercel.app/allFamilyGuide/summer`).then((res) => {
+    axios.get(`${import.meta.env.VITE_BACKEND_API}/allFamilyGuide/summer`).then((res) => {
       setSummerData(res.data);
     });
   }, []);
-  console.log(inspiredByFamily);
-  console.log(summerData);
+
 
   return (
     <div>
@@ -32,22 +32,19 @@ const FamilyGuideDetails = () => {
         {/* introduction */}
         <Container>
           <div>
-            <section className="pt-10 mx-4">
-              <div className="md:w-[70%] mx-auto">
-                <h1 className="text-5xl font-bold">Family travel, handled</h1>
+            <section className="pt-20 mx-4">
 
-                <h3 className="text-4xl font-bold mt-10 md:w-[80%]">
+              <div className="md:w-[70%] mx-auto">
+                <h1 className="text-4xl text-center underline underline-offset-4 tracking-widest font-semibold">Family travel, handled</h1>
+
+                <h3 className="text-xl text-center mt-4 tracking-widest">
                   An inspo-packed playbook filled with tips, destination ideas,
                   and more.
                 </h3>
               </div>
-              <img
-                className="w-full mt-10"
-                src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/29/8e/35/3b/caption.jpg?w=600&h=-1&s=1&cx=1920&cy=1080&chk=v1_0c8c6b548b6dbfffe194"
-                alt=""
-              />
 
-              <div className="mt-10 mb-10">
+
+              <div className="mt-10 mb-10 ">
                 <p className="md:w-[70%] mx-auto text-xl ">
                   Let’s face it: If there are a million-gazillion-bajillion—in
                   5-year-old parlance—ways to be a family, there are a
@@ -73,27 +70,26 @@ const FamilyGuideDetails = () => {
 
 
         {/* Tips part */}
-        <section className="mt-10 w-full h-full bg-green-50">
+        <section className="mt-10 w-full h-full">
           <Container>
             <div>
-              <h1 className="pt-10 ps-4 md:ps-10 text-4xl md:text-6xl font-bold ">
-                Destinations & trip ideas
-              </h1>
               <img
                 className="w-full mt-10"
                 src="
-                 https://dynamic-media-cdn.tripadvisor.com/media/photo-o/29/99/f2/1d/caption.jpg?w=1200&h=-1&s=1&cx=1920&cy=1080&chk=v1_6ffa4750a90bd1263eb1"
+                 https://i.ibb.co/zGtGhxT/trip-ideas.png"
                 alt=""
               />
 
               <KidsGuide></KidsGuide>
               <HoneyMoons></HoneyMoons>
 
-              <img
-                className="w-full"
-                src="https://w0.peakpx.com/wallpaper/67/341/HD-wallpaper-royal-enfield-bike-dirt-ladakh-leh-moterbike-re-road-trip.jpg"
-                alt=""
-              />
+              <LazyLoad>
+                <img
+                  className="w-full"
+                  src="https://i.ibb.co/4t9BwDQ/footar.png"
+                  alt=""
+                />
+              </LazyLoad>
 
               <FamilyBeach></FamilyBeach>
               <Zoo></Zoo>
@@ -108,7 +104,7 @@ const FamilyGuideDetails = () => {
             <div>
               {/* inspiration */}
               <div className="mt-20">
-                <h2 className="pt-10 ps-4 md:ps-10 text-2xl md:text-6xl font-bold">
+                <h2 className="pt-10  text-2xl md:text-3xl text-center font-semibold underline underline-offset-2 tracking-widest">
                   Get inspired by real family
                 </h2>
                 <div className="my-10  gap-5 md:p-4">
@@ -119,7 +115,7 @@ const FamilyGuideDetails = () => {
               </div>
               {/* Summer Trip tips for family */}
               <div className="mt-20">
-                <h2 className="pt-10 ps-4 md:ps-10 text-2xl md:text-6xl font-bold">
+                <h2 className="pt-10  text-2xl md:text-3xl text-center font-semibold underline underline-offset-2 tracking-widest">
                   Summer Trip tips for family
                 </h2>
                 <div className="mt-10 md:p-4">

@@ -8,6 +8,8 @@ import FamilyGuide from './FamilyGuide/FamilyGuide';
 import WhyUs from './WhyUs/WhyUs';
 import TravelDeals from './TravelDeals/TravelDeals';
 import Packages from './Packages/Packages';
+import Medical from './Medical/Medical';
+import OpenAi from './OpenAi/OpenAi';
 
 const Home = () => {
     return (
@@ -17,23 +19,29 @@ const Home = () => {
             </section>
             <Banner></Banner>
             <section
-                className='shadow-lg bg-gradient-to-r from-sky-100 to-purple-100'>
+                className='pt-32 bg-[url("https://i.ibb.co/MMd76r0/Untitled-design-8.png")]  w-full object-center mx-auto'>
                 <TravelDeals></TravelDeals>
                 <Packages></Packages>
             </section>
+
             <FamilyGuide></FamilyGuide>
-            <TopDestinations></TopDestinations>
-            <TopThingsToDo></TopThingsToDo>
+            <section className='md:my-40'>
+                <TopDestinations></TopDestinations>
+                <TopThingsToDo></TopThingsToDo>
+            </section>
 
             <section className='md:my-40'>
-                <AboutUs></AboutUs>
+                <Medical></Medical>
             </section>
 
-
-            <section className=''>
+            <section>
                 <WhyUs></WhyUs>
+            </section>
+
+            <section className='py-24'>
                 <Feedback></Feedback>
             </section>
+
         </div>
     );
 };

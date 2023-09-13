@@ -1,7 +1,5 @@
 import {
   CardElement,
-  LinkAuthenticationElement,
-  PaymentElement,
   useElements,
   useStripe,
 } from "@stripe/react-stripe-js";
@@ -20,16 +18,33 @@ import {
 import "./cardElement.css";
 import Swal from "sweetalert2";
 
+
+
+
+
+
+
+
+
+
+
+
+
 const CheckoutForm = ({ price, orderDetails }) => {
-  console.log(price, orderDetails);
+ 
   const stripe = useStripe();
+
   const elements = useElements();
+
   const [cardError, setCardError] = useState("");
+
   const [clientSecret, setClientSecret] = useState("");
+
   const [processing, setProcessing] = useState(false);
+
   const [transactionId, setTransactionId] = useState("");
+
   const { user } = useAuth();
-  console.log(user);
 
   const [selectedValue, setSelectedValue] = useState('cardPayment');
   
@@ -57,7 +72,7 @@ const CheckoutForm = ({ price, orderDetails }) => {
   useEffect(() => {
     axios
       .post(
-        "http://localhost:1000/stripe-payment-intent",
+        `${import.meta.env.VITE_BACKEND_API}/stripe-payment-intent`,
         { price },
         {
           headers: {
@@ -91,7 +106,6 @@ const CheckoutForm = ({ price, orderDetails }) => {
       setCardError(error.message);
     } else {
       setCardError("");
-      // console.log('payment method', paymentMethod);
     }
     setProcessing(true);
     const { paymentIntent, error: confirmError } =
@@ -120,13 +134,15 @@ const CheckoutForm = ({ price, orderDetails }) => {
         transactionId: transactionId,
         price,
         tourId: orderDetails?.card?._id,
+        card: orderDetails?.card,
         detailsPrice: orderDetails?.price,
         selectedDate: orderDetails?.selectedDate,
         travelerCount: orderDetails?.travelerCount,
         paidStatus: true,
+        date: new Date(),
       };
       axios
-        .post(`http://localhost:1000/payments`, payment)
+        .post(`${import.meta.env.VITE_BACKEND_API}/payments`, payment)
         .then((response) => {
           console.log("Payment successful:", response.data);
           if (response.data.insertedId) {
@@ -229,3 +245,7 @@ const CheckoutForm = ({ price, orderDetails }) => {
 };
 
 export default CheckoutForm;
+
+
+
+// ${import.meta.env.VITE_BACKEND_API}

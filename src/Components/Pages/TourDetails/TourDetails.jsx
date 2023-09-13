@@ -25,15 +25,15 @@ const TourDetails = () => {
   const [childrenCount, setChildrenCount] = useState(0);
   const [infantsCount, setInfantsCount] = useState(0);
   const { id } = useParams();
-  const {user} = useAuth()
+  const { user } = useAuth()
   const [unavailableDates, setUnavailableDates] = useState([]);
- 
+
   const [selectedDate, setSelectedDate] = useState(null);
   const handleDateChange = (date) => {
     setSelectedDate(date);
   };
- 
-  
+
+
   useEffect(() => {
     axios
       .get(`https://tripsure-server.vercel.app/tourDetails/${id}`)
@@ -93,9 +93,8 @@ const TourDetails = () => {
   return (
     <div className="lg:mx-10 mx-4 mt-24">
       <div>
-        <h2 className="text-3xl font-bold">{placetitle}</h2>
-        <h4 className="my-2">Posted By {postedby}</h4>
-        <h1 className="font-semibold flex items-center ">
+        <h2 className="text-3xl font-semibold tracking-widest underline">{placetitle}</h2>
+        {/*    <h1 className="font-semibold flex items-center ">
           <p className=" flex gap-2">
             <p className="text-green-700">
               <Rating
@@ -108,7 +107,7 @@ const TourDetails = () => {
             </p>
           </p>{" "}
           <span className="ms-5">9,324 reviews</span>
-        </h1>
+        </h1> */}
         <div className="my-6">
           <img
             className="w-full h-60 md:h-72 lg:h-[25rem] object-bottom rounded-md bg-cover object-cover"
@@ -118,25 +117,23 @@ const TourDetails = () => {
         </div>
         <div className="grid lg:grid-cols-2">
           <div>
-            <h3 className="font-bold text-black text-xl">About</h3>
+            <h3 className="text-2xl tracking-widest">About</h3>
             <p>
               {placedetails} Halona Blowhole, the Byodo-In Temple and the
               surfing beaches of the North Shore. Plus, you'll have time to
               explore Haleiwa town.
             </p>
-            { price && <p className="my-3">
+            {price && <p className="my-3">
               from{" "}
               <span className="text-2xl font-semibold">
                 ${price[0]?.amount}.00
               </span>{" "}
               per adult
             </p>}
-            <p className="flex items-center gap-2">
-              <FaSimplybuilt></FaSimplybuilt>
-              <span className="underline">Lowest price guarantee</span>{" "}
-              <span className="underline">Reserve now & pay later</span>{" "}
-              <span className="underline">Free cancellation</span>
-            </p>
+            <p className="underline">Lowest price guarantee</p>{" "}
+            <p className="underline">Reserve now & pay later</p>{" "}
+            <p className="underline">Free cancellation</p>
+
             <div className="divider"></div>
 
             <p className="flex items-center gap-2">
@@ -158,7 +155,7 @@ const TourDetails = () => {
               {conditions?.language}
             </p>
 
-            <div className="flex gap-2 items-center my-6">
+            {/*    <div className="flex gap-2 items-center my-6">
               <img
                 className="w-16"
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQb27p0pyMXikGN60bM3tbL8wwUWuwbb8caN9NTvKYuGyHN2EFb340SPXAcE7hFCm_Bku4&usqp=CAU"
@@ -171,9 +168,9 @@ const TourDetails = () => {
                 <br />
                 <span>2023</span>
               </div>
-            </div>
+            </div> */}
             {/* accordion */}
-            <div className="collapse collapse-arrow bg-base-200">
+            <div className="collapse collapse-arrow bg-base-200 mt-10">
               <input type="radio" name="my-accordion-2" checked="checked" />
               <div className="collapse-title text-xl font-medium">
                 What's Includes
@@ -199,7 +196,7 @@ const TourDetails = () => {
               <input type="radio" name="my-accordion-2" />
               <div className="collapse-title text-xl font-medium">FAQ</div>
               <div className="collapse-content">
-                {faq?.map((item,index) => (
+                {faq?.map((item, index) => (
                   <h2 key={index}>
                     <span className="font-bold">
                       Question: {item?.question}
@@ -264,7 +261,7 @@ const TourDetails = () => {
                             onClick={() =>
                               setAdultCount((adultCount) => adultCount - 1)
                             }
-                            className="btn btn-sm btn-circle bg-black hover:bg-black  rounded-full"
+                            className="btn btn-sm  bg-black hover:bg-black  rounded-full"
                           >
                             <FaMinus className="w-4 text-white "></FaMinus>
                           </button>
@@ -273,7 +270,7 @@ const TourDetails = () => {
                             onClick={() =>
                               setAdultCount((adultCount) => adultCount + 1)
                             }
-                            className="btn btn-sm btn-circle bg-black hover:bg-black  rounded-full"
+                            className="btn btn-sm  bg-black hover:bg-black  rounded-full"
                           >
                             <FaPlus className="w-4 text-white "></FaPlus>
                           </button>
@@ -292,7 +289,7 @@ const TourDetails = () => {
                                 (childrenCount) => childrenCount - 1
                               )
                             }
-                            className="btn btn-sm btn-circle bg-black hover:bg-black  rounded-full"
+                            className="btn btn-sm  bg-black hover:bg-black  rounded-full"
                           >
                             <FaMinus className="w-4 text-white "></FaMinus>
                           </button>
@@ -303,7 +300,7 @@ const TourDetails = () => {
                                 (childrenCount) => childrenCount + 1
                               )
                             }
-                            className="btn btn-sm btn-circle bg-black hover:bg-black  rounded-full"
+                            className="btn btn-sm  bg-black hover:bg-black  rounded-full"
                           >
                             <FaPlus className="w-4 text-white "></FaPlus>
                           </button>
@@ -322,7 +319,7 @@ const TourDetails = () => {
                                 (infantsCount) => infantsCount - 1
                               )
                             }
-                            className="btn btn-sm btn-circle bg-black hover:bg-black  rounded-full"
+                            className="btn btn-sm  bg-black hover:bg-black  rounded-full"
                           >
                             <FaMinus className="w-4 text-white "></FaMinus>
                           </button>
@@ -333,13 +330,13 @@ const TourDetails = () => {
                                 (infantsCount) => infantsCount + 1
                               )
                             }
-                            className="btn btn-sm btn-circle bg-black hover:bg-black  rounded-full"
+                            className="btn btn-sm  bg-black hover:bg-black  rounded-full"
                           >
                             <FaPlus className="w-4 text-white "></FaPlus>
                           </button>
                         </div>
                       </div>
-                      
+
                       {/*  <div className="flex justify-end">
                         <button className="btn btn-warning rounded-full">
                           Update search
@@ -371,8 +368,11 @@ const TourDetails = () => {
                 <p>(No additional taxes or booking fees)</p>
               </div>
               <div className="flex gap-3 items-center justify-around">
-                <Link  disabled={selectedDate == null}
-                 to={user ? '/contactDetails' : '/login'}
+                <button className="btn rounded-full lg:px-14 btn-warning">
+                  Add TO Favorite
+                </button>
+                <Link disabled={selectedDate == null}
+                  to={user ? '/contactDetails' : '/login'}
                   state={{ orderDetails: orderDetails }}
                   className="btn rounded-full lg:px-14 btn-warning"
                 >

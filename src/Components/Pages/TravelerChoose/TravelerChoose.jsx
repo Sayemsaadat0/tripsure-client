@@ -5,7 +5,6 @@ import { Link, useParams } from "react-router-dom";
 import { FaLocationDot, FaClockRotateLeft, FaUserGroup, FaCircle, FaCircleNotch } from "react-icons/fa6";
 import Rating from "react-rating";
 import TourCard from "./TourCard";
-import TravelChooseBanner from "./TravelChooseBanner";
 
 const TravelerChoose = () => {
   const { category } = useParams();
@@ -20,26 +19,15 @@ const TravelerChoose = () => {
   return (
     <Container>
       <div>
-        <TravelChooseBanner image={'https://images.unsplash.com/photo-1519046904884-53103b34b206?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80'} subText={'Ultimate Escapes'} title={'Top Things TO Do'}></TravelChooseBanner>
-        <div className="lg:mx-10 mx-2 mt-10">
-          <details className="dropdown mb-20">
-            <summary className="m-1 font-bold btn btn-outline border-2 rounded-full w-60">
-              Filter by Country
-            </summary>
-            <ul className="p-2 font-semibold shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-60">
-              <li>
-                <a>Bangladesh</a>
-              </li>
-              <li>
-                <a>Nepal</a>
-              </li>
-            </ul>
-          </details>
-
+        <div className="my-20 text-center">
+          <h3 className=" text-3xl tracking-widest  underline uppercase">Adventure Escapes & Dreamy Getaways</h3>
+          <p className="mt-2"> Explore diverse travel categories and discover dream destinations <br />  to plan your next adventure.</p>
+        </div>
+        <div className="lg:mx-10 mx-2 mt-20">
           {/* //tour  card */}
-          <div className="divider"></div>
+       <hr className="my-4"/>
           {
-            allTour.slice(0, 1).map((fistOneCard, index) => <div key={index} className="shadow-2xl pb-4  rounded-lg bg-base-300">
+            allTour.slice(0, 1).map((fistOneCard, index) => <div key={index} className="shadow-2xl pb-4  rounded-lg bg-blue-100">
               <div className="">
                 <img
                   className="w-full h-60 md:h-72 lg:h-[30rem] rounded-2xl bg-cover object-cover"
@@ -49,7 +37,7 @@ const TravelerChoose = () => {
               </div>
               <div className="m-10 lg:flex  items-center  gap-4  space-y-3">
                 <div className="space-y-4 ">
-                  <h2 className="text-xl ">0{index + 1}.</h2>
+                  <h2 className="text-7xl font-bold border-b-4 border-blue-400 w-10 py-3 text-gray-400">0{index + 1}.</h2>
                   <Link to={`/tourDetails/${fistOneCard?._id}`} className="text-4xl font-bold text-black">
                     {fistOneCard?.cardtitle}
                   </Link>
@@ -100,3 +88,21 @@ const TravelerChoose = () => {
 };
 
 export default TravelerChoose;
+
+
+
+/* 
+   <details className="dropdown mb-20 ">
+            <summary className="m-1 font-bold btn btn-outline border-2 rounded-full w-60">
+              Filter by Country
+            </summary>
+            <ul className="p-2 font-semibold shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-60">
+              <li>
+                <a>Bangladesh</a>
+              </li>
+              <li>
+                <a>Nepal</a>
+              </li>
+            </ul>
+          </details>
+*/

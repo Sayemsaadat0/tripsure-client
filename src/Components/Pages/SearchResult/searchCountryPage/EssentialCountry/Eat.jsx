@@ -16,7 +16,7 @@ const Eat = ({ country }) => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:1000/restaurant`)
+      .get(`${import.meta.env.VITE_BACKEND_API}/restaurant`)
       .then((data) => {
         setRestaurants(data.data);
       })
