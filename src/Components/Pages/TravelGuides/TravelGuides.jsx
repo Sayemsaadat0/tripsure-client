@@ -2,15 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { Card } from 'antd';
 import Container from '../../../LayOut/Container';
 import { AutoComplete } from 'antd';
-import axios from 'axios';
 
 const { Meta } = Card;
 
 const TravelGuides = () => {
   const [guides, setGuides] = useState([]);
   const [selectedValue, setSelectedValue] = useState('');
-  const [selectedGuide, setSelectedGuide] = useState(null); // State for selected guide
+  const [selectedGuide, setSelectedGuide] = useState(null); 
 
+  
   useEffect(() => {
     fetch('/guides.json')
       .then((res) => res.json())
@@ -30,7 +30,7 @@ const TravelGuides = () => {
   const openGuideDetails = (guide) => {
     setSelectedGuide(guide);
     const modal = document.getElementById('guide_modal');
-    modal.open = true; // Set the open attribute to true to show the modal
+    modal.open = true; 
   };
 
   return (

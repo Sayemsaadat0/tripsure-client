@@ -262,7 +262,6 @@ const router = createBrowserRouter([
         path: "addresturants",
         element: <AddResturants />,
       },
-      
       {
         path: "addguide",
         element: <Addguide />,
