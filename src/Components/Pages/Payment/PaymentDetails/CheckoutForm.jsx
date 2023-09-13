@@ -19,17 +19,6 @@ import "./cardElement.css";
 import Swal from "sweetalert2";
 
 
-
-
-
-
-
-
-
-
-
-
-
 const CheckoutForm = ({ price, orderDetails }) => {
  
   const stripe = useStripe();
@@ -138,6 +127,7 @@ const CheckoutForm = ({ price, orderDetails }) => {
         selectedDate: orderDetails?.selectedDate,
         travelerCount: orderDetails?.travelerCount,
         paidStatus: true,
+        whenYouPayment: new Date()
       };
       axios
         .post(`${import.meta.env.VITE_BACKEND_API}/payments`, payment)

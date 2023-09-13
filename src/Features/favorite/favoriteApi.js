@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 const baseFavoriteApi = createApi({
     reducerPath: 'favorite',
     baseQuery: fetchBaseQuery({
-        baseUrl: `${import.meta.env.VITE_BACKEND_API},`
+        baseUrl: `${import.meta.env.VITE_BACKEND_API}`
     }), 
     endpoints: (builder) => ({
         getFavoriteItems: builder.query({

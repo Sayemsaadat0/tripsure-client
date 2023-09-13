@@ -49,7 +49,7 @@ const Favorite = () => {
                 <h2 className="card-title">{favoritePackage?.title}</h2>
                 {/* <p>{favoritePackage?.description.slice(0, 100)}...</p> */}
                 <div className="flex justify-between items-center">
-                  <Link to={`/travelDeals/${favoritePackage.hotelId}`}>
+                  <Link to={`/travelDeals/${favoritePackage.id}`}>
                     <button className="btn">View Details</button>
                   </Link>
                   {/* <button className="absoulte top-2 right-2" onClick={() => handleRemoveFromFavorite(favoritePackage._id)}>

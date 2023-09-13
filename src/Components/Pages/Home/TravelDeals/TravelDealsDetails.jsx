@@ -11,6 +11,7 @@ import useAuth from '../../../../Hooks/useAuth';
 import { DatePicker } from 'antd';
 import { FaUserGroup } from 'react-icons/fa6';
 import LazyLoad from 'react-lazy-load';
+import { useAddToFavoriteMutation, useGetFavoriteItemsQuery } from '../../../../Features/favorite/favoriteApi';
 
 const TravelDealsDetails = () => {
   const [modalForCountPeople, setModalForCountPeople] = useState(false);
@@ -61,6 +62,7 @@ const TravelDealsDetails = () => {
     additionalInfo,
     hotels,
     includedItems,
+    _id
   } = travelDealsDetails
   useEffect(() => {
     axios.get(`${import.meta.env.VITE_BACKEND_API}/travelDeals/${id}`)
@@ -95,13 +97,28 @@ const TravelDealsDetails = () => {
     }
   }
 
+    // add to favorite 
+    const [setFavorite, { isLoading, isError, data }] = useAddToFavoriteMutation()
+    const { data: favoriteItems, refetch } = useGetFavoriteItemsQuery()
+    const handleAddToFavorite = () => {
+      if (user) {
+        const { displayName, email } = user
+        const favoriteItem = {
+          dealExpires, destination, discountPercentage,id:_id, duration, newPrice, picture, price, savings, title, totalPeople, displayName, email
+        }
+        console.log('favorite item', favoriteItem)
+        setFavorite(favoriteItem)
+        refetch()
+      }
+    }
+// console.log(data)
 
   return (
     <Container>
-      <div className='my-4 md:my-20 px-4 md:px-10 leading-8'>
+      <div className='my-4 md:my-20 px-4 md:px-10 pt-16 leading-8'>
         {/* primary */}
-        <h2 className='text-4xl font-bold text-[#79c7ff] tracking-widest'>{title}</h2>
-        <div className='flex items-center my-3 gap-5 '>
+        <h2 className='text-2xl md:text-4xl font-bold text-[#79c7ff] tracking-widest'>{title}</h2>
+        <div className='flex md:flex-row flex-col items-center my-3 gap-1 md:gap-5 '>
           <p className='flex items-center gap-2 '><GoLocation className='text-xl'></GoLocation> {destination}</p>
           <p className='flex items-center gap-2 '><BiTime className='text-xl'></BiTime> Duration : {duration}</p>
           <p>Booking End: {dealExpires}</p>
@@ -272,7 +289,7 @@ const TravelDealsDetails = () => {
                     )}
                   </div>
                   <p className="py-4 text-md">1 option available for 8/17</p>
-                  <div className="m-4 border-2 space-y-2 p-3 border-black rounded-3xl">
+                  <div className="my-4 border-2 space-y-2 p-3 border-black rounded-3xl">
                     <p className="text-xl font-bold">{title}</p>
                     <p>Pickup included</p>
                     <p>
@@ -290,9 +307,9 @@ const TravelDealsDetails = () => {
                   </div>
                   <div className="flex gap-3 items-center justify-around"> 
                   {/*todo functioon to add to favorite */}
-                  <Link className='btn-primary'>
+                  <button onClick={handleAddToFavorite} className='btn-primary'>
                   Add To Favorite
-                  </Link>
+                  </button>
                     <Link disabled={selectedDate == null}
                       to={user ? '/contactDetails' : '/login'}
                       state={{ orderDetails: orderDetails }}
@@ -323,7 +340,7 @@ const TravelDealsDetails = () => {
           </div>
 
           {/* Conditions */}
-          <div>
+          <div className='mb-5'>
             <p className='font-bold'>Conditions:</p>
             {conditions && conditions.map((condition, index) => (
               <li key={index}>{condition}</li>
@@ -335,7 +352,7 @@ const TravelDealsDetails = () => {
         {/* items and activies */}
         <div className='grid grid-cols-1 md:grid-cols-2'>
           {/* includes item */}
-          <div>
+          <div className='mb-5'>
             <p className='font-bold'>Includes Items : </p>
             {includedItems?.map((d, index) => (
               <li className='list-disc' key={index}>{d}</li>
@@ -354,10 +371,10 @@ const TravelDealsDetails = () => {
 
         {/* itinerary */}
         <div>
-          <p className='font-bold'>Itinerary</p>
+          <p className='font-bold mt-5'>Itinerary</p>
           <div className='grid grid-cols-1 sm:grid-cols-2 lg::grid-cols-3'>
             {itinerary?.map((day, dayIndex) => (
-              <div key={dayIndex}>
+              <div className='mb-5' key={dayIndex}>
                 <h3 className='font-bold flex items-center gap-2'>
                   <FaCalendarDay></FaCalendarDay> Day {day.day}</h3>
                 <p>

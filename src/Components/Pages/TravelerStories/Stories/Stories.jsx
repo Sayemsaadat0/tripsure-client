@@ -19,18 +19,18 @@ const Stories = () => {
     <div className="max-w-5xl w-full mx-auto mt-16 my-10">
       <article>
         {/* title  */}
-        <h1 className="text-black text-3xl my-5  md:text-5xl font-bold">
+        <h1 className="text-black text-3xl my-5 px-2 md:px-5 md:text-5xl font-bold">
            to go between July 4th and Labor Day
         </h1>
         <div className="bg-cover bg-center  mx-auto ">
-          <h4 className="text-xl md:text-3xl font-bold text-black my-5">
+          <h4 className="text-xl px-2 md:px-5 md:text-3xl font-bold text-black my-5">
             {title}
           </h4>
           <img className="w-full max-h-[500px] h-full"
             src={url}
             alt=""
           />
-          <p className="text-xl text-black text-justify">
+          <p className="text-xl px-2 md:px-5 text-black text-justify">
             {description}
           </p>
         </div>

@@ -20,7 +20,7 @@ const Home = () => {
             {/* https://i.ibb.co/9NPLGRs/1.png
 https://i.ibb.co/9HhFbwm/2.png*/}
             <section
-                className='pt-32 bg-[url("https://i.ibb.co/MMd76r0/Untitled-design-8.png")]  w-full object-center mx-auto'>
+                className='pt-14 md:pt-24 bg-[url("https://i.ibb.co/MMd76r0/Untitled-design-8.png")]  w-full object-center mx-auto'>
                 <TravelDeals></TravelDeals>
                 <Packages></Packages>
             </section>
@@ -29,12 +29,12 @@ https://i.ibb.co/9HhFbwm/2.png*/}
 
 
 
-            <section className='md:my-40'>
+            <section className='md:my-20'>
                 <TopDestinations></TopDestinations>
                 <TopThingsToDo></TopThingsToDo>
             </section>
 
-            <section className='md:my-40'>
+            <section className='my-24'>
                 <Medical></Medical>
             </section>
 
@@ -42,7 +42,7 @@ https://i.ibb.co/9HhFbwm/2.png*/}
                 <WhyUs></WhyUs>
             </section>
 
-            <section className='py-24'>
+            <section className='py-10'>
                 <Feedback></Feedback>
             </section>
 

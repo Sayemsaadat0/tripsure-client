@@ -35,7 +35,7 @@ const FamilyGuideSingleCardDetails = () => {
     /*   console.log('family details', id, familyGuideDetails); */
     return (
         <Container>
-            <div className='md:mt-20  md:p-5 p-2'>
+            <div className='md:mt-20 pt-16  md:p-5 p-2'>
                 <div className='tracking-widest'>
                     <h3 className='text-3xl font-semibold'>{title}</h3 >
                     <div className='flex gap-5 mt-2'>
@@ -62,7 +62,7 @@ const FamilyGuideSingleCardDetails = () => {
                     className='mySwiper'>
 
                     {places_to_visit?.map((p, index) => (
-                        <SwiperSlide className='lg:p-4 p-2' >
+                        <SwiperSlide key={index} className='lg:p-4 p-2' >
                             <LazyLoad>
                                 <img className='rounded-lg ' src={p.placePicture} alt="" />
                             </LazyLoad>
@@ -86,11 +86,11 @@ const FamilyGuideSingleCardDetails = () => {
 
                 {/* Tips */}
 
-                <div className='md:flex gap-4 mt-5'>
-                    <h3 className='mt-10 font-bold text-xl w-60'>Tips </h3>
+                <div className='lg:flex gap-4 mt-5'>
+                    <h3 className='mt-10 mb-5 font-bold text-xl w-60'>Tips </h3>
 
                     {
-                        tips?.map((t, index) => <div className='card border p-5' key={index}>
+                        tips?.map((t, index) => <div className='card border p-5 mb-3'  key={index}>
                             <p className='font-bold mb-4'> {t.title} </p>
                             <p > {t.description} </p>
                         </div>)
@@ -100,11 +100,11 @@ const FamilyGuideSingleCardDetails = () => {
 
                 {/* Food */}
 
-                <div className='md:flex gap-4 mt-5'>
-                    <h3 className='mt-10 font-bold text-xl w-60'>Foods </h3>
+                <div className='lg:flex gap-4 mt-5'>
+                    <h3 className='mt-10 mb-5 font-bold text-xl w-60'>Foods </h3>
 
                     {
-                        foods?.map((t, index) => <div className='card border p-5' key={index}>
+                        foods?.map((t, index) => <div className='card border p-5 mb-3' key={index}>
                             <p className='font-bold mb-4'> {t.name} </p>
                             <p > {t.restaurant} </p>
                             <p > {t.address} </p>

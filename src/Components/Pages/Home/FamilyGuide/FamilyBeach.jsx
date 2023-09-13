@@ -21,7 +21,7 @@ const FamilyBeach = () => {
   return (
     <div >
       <Container>
-        <h2 className='pt-10  text-2xl md:text-3xl text-center font-semibold underline underline-offset-2 tracking-widest'>Coastal Family Paradise</h2>
+        <h2 className='pt-14 pb-10  text-2xl md:text-3xl text-center font-semibold underline underline-offset-2 tracking-widest'>Coastal Family Paradise</h2>
         <div >
 
           <Swiper
@@ -48,7 +48,7 @@ const FamilyBeach = () => {
             className='mySwiper'
           >
             {allBeach.map((item, index) => (
-              <SwiperSlide className='lg:p-10' key={index} >
+              <SwiperSlide className='' key={index} >
                 <div className="card card-compact bg-white  relative ">
                   <Carousel autoplay>
              

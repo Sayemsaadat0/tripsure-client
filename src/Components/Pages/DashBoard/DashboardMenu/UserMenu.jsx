@@ -15,7 +15,6 @@ const UserMenu = () => {
     const navigate = useNavigate()
     const [toggle, setToggle] = useState(false)
     const { user, logOut, role } = useAuth()
-    console.log(role)
 
     const [isActive, setActive] = useState('false')
     const toggleHandler = event => {

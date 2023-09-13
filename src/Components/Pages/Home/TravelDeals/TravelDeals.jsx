@@ -38,7 +38,7 @@ const TravelDeals = () => {
         title,
         totalPeople,
       } = deals
-      const hotelId = deals._id
+      const id = deals._id
       const favoriteItem = {
         dealExpires, destination, discountPercentage, duration, newPrice, picture, price, reviews, savings, title, totalPeople, hotelId, displayName, email
       }
@@ -52,7 +52,7 @@ const TravelDeals = () => {
   return (
     <Container>
       <SectionTitle subText={'Savings Safari'} text={'Hunt for the Hottest Deals'} />
-      <section className='overflow-x-auto md:grid  md:grid-cols-3 gap-12 px-5 py-12 '>
+      <section className='overflow-x-auto md:grid  md:grid-cols-3 gap-12 px-2 pb-12 '>
 
         {travelDeals.map((deals, index) => (
           <div key={index} className="card card-compact bg-base-100 border md:w-96 overflow-hidden">

@@ -74,7 +74,7 @@ const FamilyGuideDetails = () => {
           <Container>
             <div>
               <img
-                className="w-full mt-10"
+                className="w-full min-h-[200px] my-10"
                 src="
                  https://i.ibb.co/zGtGhxT/trip-ideas.png"
                 alt=""
@@ -85,7 +85,7 @@ const FamilyGuideDetails = () => {
 
               <LazyLoad>
                 <img
-                  className="w-full"
+                  className="w-full my-10 min-h-[200px]"
                   src="https://i.ibb.co/4t9BwDQ/footar.png"
                   alt=""
                 />
@@ -99,22 +99,22 @@ const FamilyGuideDetails = () => {
         </section>
 
         {/* get inspired by real familys */}
-        <section className="mb-20">
+        <section className="mb-10">
           <Container>
             <div>
               {/* inspiration */}
-              <div className="mt-20">
+              <div className="mt-10">
                 <h2 className="pt-10  text-2xl md:text-3xl text-center font-semibold underline underline-offset-2 tracking-widest">
                   Get inspired by real family
                 </h2>
-                <div className="my-10  gap-5 md:p-4">
+                <div className="mt-10  gap-5 md:p-4">
                   <CommonSwiperForFamilyAndSummer
                     SwiperData={inspiredByFamily}
                   ></CommonSwiperForFamilyAndSummer>
                 </div>
               </div>
               {/* Summer Trip tips for family */}
-              <div className="mt-20">
+              <div className="mt-10">
                 <h2 className="pt-10  text-2xl md:text-3xl text-center font-semibold underline underline-offset-2 tracking-widest">
                   Summer Trip tips for family
                 </h2>
