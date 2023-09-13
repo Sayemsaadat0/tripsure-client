@@ -67,7 +67,7 @@ const SearchSection = () => {
               ? "Find places to eat"
               : "Where to?"}
           </h1>
-          <ul className="flex w-full justify-center mx-auto my-5">
+          <ul className="flex w-full justify-center mx-auto overflow-x-auto my-5">
             {categories.map((category, i) => (
               <li
                 key={i}

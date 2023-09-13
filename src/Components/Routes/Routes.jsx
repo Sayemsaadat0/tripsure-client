@@ -58,6 +58,7 @@ import PaymentFailPage from "../Pages/Payment/PaymentFailPage/PaymentFailPage";
 import MedicalCard from "../Pages/Home/Medical/Medical";
 import MadicalCard from "../Pages/Home/Medical/MadicalCard";
 import MadicalDetails from "../Pages/Home/Medical/MadicalDetails";
+import MyBookings from "../Pages/myBookings/MyBookings";
 
 
 
@@ -102,6 +103,10 @@ const router = createBrowserRouter([
       {
         path: "overview",
         element: <Overview></Overview>,
+      },
+      {
+        path: 'my_bookings',
+        element: <MyBookings></MyBookings>
       },
       {
         path: "/TravelDeals/:id",

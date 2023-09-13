@@ -4,16 +4,24 @@ import Swal from "sweetalert2";
 import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
 import { useEffect, useState } from "react";
 import UserStatus from "../../../Shared/Status/UserStatus";
+import UserDetailsModa from "./UserDetailsModa";
 
 const ManageUser = () => {
 
-
+  const [isOpen, setIsOpen] = useState(false)
+  const [userEmail, setUserEmail] = useState('')
   const [axiosSecure] = useAxiosSecure();
+  const handleOpenUserDetailsModal = (email) => {
+    setUserEmail(email)
+    setIsOpen(true)
+  }
+
+
   const { data: usersdata = [], refetch } = useQuery(['users'], async () => {
     const res = await axiosSecure.get('/users')
     return res.data;
   })
-
+  // console.log(usersdata)
 
   const [operator, setOperator] = useState('');
   const [sortOrder, setSortOrder] = useState('asc');
@@ -86,12 +94,12 @@ const ManageUser = () => {
   //  make role handlling
   const makeAdmin = (user) => {
 
-      fetch(`${import.meta.env.VITE_BACKEND_API}/users/admin/${user._id}`, {
+    fetch(`${import.meta.env.VITE_BACKEND_API}/users/admin/${user._id}`, {
       method: 'PUT',
       headers: {
         "content-type": 'application/json'
       },
-      body: JSON.stringify({role: 'admin'})
+      body: JSON.stringify({ role: 'admin' })
     })
       .then(res => res.json())
       .then(data => {
@@ -130,7 +138,7 @@ const ManageUser = () => {
           Total Users : <span className="text-red-500">{usersdata.length}</span>
         </h2>
         <div>
-          <UserStatus/>
+          <UserStatus />
         </div>
       </div>
 
@@ -170,6 +178,7 @@ const ManageUser = () => {
               <th>Role</th>
               <th>Admin</th>
               <th>Delete</th>
+              <th>Action</th>
 
             </tr>
           </thead>
@@ -205,18 +214,22 @@ const ManageUser = () => {
                     </button>
                   )}
                 </td>
-                <th   >
+                <td>
                   <button
                     onClick={() => handleDelete(user)}
                     className=" btn mr-4" >
                     <FaTrashAlt></FaTrashAlt>
                   </button>
-                </th>
+                </td>
+                <td>
+                  <button onClick={() => handleOpenUserDetailsModal(user.email)} className=" btn mr-4" >View Details</button>
+                </td>
               </tr>
 
             ))}
           </tbody>
         </table>
+        <UserDetailsModa userEmail={userEmail} isOpen={isOpen} setIsOpen={setIsOpen}></UserDetailsModa>
       </div>
     </div>
   );

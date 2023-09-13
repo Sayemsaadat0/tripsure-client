@@ -8,14 +8,14 @@ import axios from "axios";
 const TravelarStories = () => {
   const [stories, setStories] = useState([])
   useEffect(() => {
-    axios.get(`${import.meta.env.VITE_BACKEND_API}/story`)
+    axios.get(`http://localhost:1000/story`)
       .then(res => {
         setStories(res.data)
       })
   }, [])
 
   return (
-    <div className="max-w-7xl mx-auto mt-20 pb-10">
+    <div className="max-w-7xl mx-auto mt-20 pb-10 px-2 md:px-5">
       <div className="mx-auto">
         {/* Banner  */}
         <h2 className="text-center text-3xl tracking-widest underline underline-offset-2 ">Discover the Tales from the Trail</h2>

@@ -2,6 +2,7 @@ import { Menu, Transition } from '@headlessui/react'
 import { Fragment, useEffect, useRef, useState } from 'react'
 import { CgProfile } from 'react-icons/cg'
 import { LuView } from 'react-icons/lu'
+import {LiaAddressBook} from 'react-icons/lia'
 import useAuth from '../../Hooks/useAuth'
 import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2'
@@ -67,6 +68,13 @@ const Dropdown = () => {
                 '>
                   <LuView size={20} color='19a0c9'></LuView>
                   <span className='text-lg'>View Overview</span>
+                </Link>
+              </Menu.Item>
+              <Menu.Item>
+                <Link to='/my_bookings' className='flex items-center gap-3 px-2 py-1 hover:bg-gray-300 rounded
+                '>
+                  <LiaAddressBook size={20} color='19a0c9'/>
+                  <span className='text-lg'>My Bookings</span>
                 </Link>
               </Menu.Item>
             </div>

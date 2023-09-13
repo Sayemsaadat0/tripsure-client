@@ -4,10 +4,11 @@ import { Link } from 'react-router-dom';
 
 
 const FamilyGuide = () => {
-   
+
     return (
-            <div 
+        <div
             className="hero h-[100%] background1" >
+<<<<<<< HEAD
                 <div className='hero-overlay bg-opacity-20 '></div>
                 <div className="hero-content text-center text-neutral-content">
                     <div className="max-w-3xl p-10 py-24 text-white">
@@ -15,9 +16,18 @@ const FamilyGuide = () => {
                         <p  className="mb-5 ">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et</p>
                         <Link className='btn ' to='/familyguidedetails'>Read More</Link>
                     </div>
+=======
+            <div className='hero-overlay bg-opacity-20 '></div>
+            <div className="hero-content text-center text-neutral-content">
+                <div className="max-w-xl p-3 md:p-10 py-24 text-white">
+                    <h1 className="mb-5 text-3xl font-bold ">The ultimate family travel guide</h1>
+                    <p className="mb-5 ">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et</p>
+                    <Link className='btn ' to='/familyguidedetails'>Read More</Link>
+>>>>>>> ef414277a9409a5c88119778b2fe6c44f22f6be1
                 </div>
             </div>
-      
+        </div>
+
     );
 };
 
