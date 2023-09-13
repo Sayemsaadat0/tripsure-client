@@ -25,7 +25,7 @@ const COLORS = ['#34a0a4' ]
   const users = useUsers()
   
 console.log({users})
-
+// todo
 const newAdded = users.filter( user => user.role === 'user')
 console.log(newAdded)
   
