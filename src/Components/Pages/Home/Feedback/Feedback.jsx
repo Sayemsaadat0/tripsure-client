@@ -7,6 +7,7 @@ import Container from "../../../../LayOut/Container";
 import SectionTitle from "../../../Shared/SectionTitle/SectionTitle";
 import Rating from "react-rating";
 import { BsStar, BsStarFill } from 'react-icons/bs';
+import LazyLoad from "react-lazy-load";
 
 const Feedback = () => {
   const [feedbacks, setFeedbacks] = useState([]);
@@ -18,7 +19,6 @@ const Feedback = () => {
       .then((res) => res.json())
       .then((data) => {
         setFeedbacks(data)
-        console.log(data);
       })
       .catch((err) => console.log(err.message));
   }, []);
@@ -70,7 +70,7 @@ const Feedback = () => {
       <dialog id="my_modal_3" className="modal ">
         <form method="dialog" className="modal-box">
           <button
-            className=" hover:text-white btn-circle btn-ghost absolute duration-500 right-2 top-2 hover:bg-red-500"
+            className=" hover:text-white  btn-ghost absolute duration-500 right-2 top-2 hover:bg-red-500"
             onClick={() => setSelectedReview(null)}>
             ✕
           </button>
@@ -78,11 +78,13 @@ const Feedback = () => {
             <div className="">
               <h3 className="font-bold text-lg">Testimonials</h3>
               <div className="flex justify-center mt-5">
-                <img
-                  className="h-20 w-20 rounded-full"
-                  src={selectedReview?.user?.photoURL}
-                  alt="Review user picture"
-                />
+                <LazyLoad>
+                  <img
+                    className="h-20 w-20 rounded-full"
+                    src={selectedReview?.user?.photoURL}
+                    alt="Review user picture"
+                  />
+                </LazyLoad>
               </div>
               <h2 className="font-bold">{selectedReview.name}</h2>
               <h2 className="font-light">{selectedReview.destination}</h2>
@@ -99,31 +101,3 @@ export default Feedback;
 
 
 
-
-/* 
-
- 
-
-*/
-
-/* 
-  
-
-*/
-
-
-
-/* 
- 
-
-
-*/
-
-
-
-/* 
- 
-*/
-
-
-/*   */

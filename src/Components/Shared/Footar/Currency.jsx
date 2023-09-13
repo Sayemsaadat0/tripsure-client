@@ -1,4 +1,4 @@
-import axios from "axios";
+/* import axios from "axios";
 import { useEffect, useState } from "react";
 import CurrencyConvert from "./CurrencyConvert";
 
@@ -49,23 +49,28 @@ const Currency = () => {
 
   return (
     <div className="grid gap-2 ">
-      <CurrencyConvert
-        onAmountChange={handleAmount1Change}
-        onCurrencyChange={handleCurrency1Change}
-        currencies={Object.keys(rates)}
-        amount={amount1}
-        currency={currency1}
-      />
+      {Object.keys(rates).length > 0 && (
+        <>
+          <CurrencyConvert
+            onAmountChange={handleAmount1Change}
+            onCurrencyChange={handleCurrency1Change}
+            currencies={Object.keys(rates)}
+            amount={amount1}
+            currency={currency1}
+          />
 
-      <CurrencyConvert
-        onAmountChange={handleAmount2Change}
-        onCurrencyChange={handleCurrency2Change}
-        currencies={Object.keys(rates)}
-        amount={amount2}
-        currency={currency2}
-      />
+          <CurrencyConvert
+            onAmountChange={handleAmount2Change}
+            onCurrencyChange={handleCurrency2Change}
+            currencies={Object.keys(rates)}
+            amount={amount2}
+            currency={currency2}
+          />
+        </>
+      )}
     </div>
   );
 };
 
 export default Currency;
+ */

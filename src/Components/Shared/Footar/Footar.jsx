@@ -1,6 +1,6 @@
 import React from "react";
 import Wave from "react-wavify";
-import Currency from "./Currency";
+// import Currency from "./Currency";
 import { Link } from "react-router-dom";
 
 const Footar = () => {
@@ -152,7 +152,7 @@ const Footar = () => {
               <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
                 CONVERTOR
               </h2>
-              <Currency />
+              {/* <Currency /> */}
             </div>
           </div>
         </div>

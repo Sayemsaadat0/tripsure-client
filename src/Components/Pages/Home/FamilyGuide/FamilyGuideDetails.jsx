@@ -7,6 +7,7 @@ import Zoo from "./Zoo";
 import ThemePark from "./ThemePark";
 import axios from "axios";
 import CommonSwiperForFamilyAndSummer from "./CommonSwiperForFamilyAndSummer";
+import LazyLoad from "react-lazy-load";
 // import div from '../../../../LayOut/div';
 
 const FamilyGuideDetails = () => {
@@ -22,8 +23,7 @@ const FamilyGuideDetails = () => {
       setSummerData(res.data);
     });
   }, []);
-  console.log(inspiredByFamily);
-  console.log(summerData);
+
 
   return (
     <div>
@@ -33,7 +33,7 @@ const FamilyGuideDetails = () => {
         <Container>
           <div>
             <section className="pt-20 mx-4">
-             
+
               <div className="md:w-[70%] mx-auto">
                 <h1 className="text-4xl text-center underline underline-offset-4 tracking-widest font-semibold">Family travel, handled</h1>
 
@@ -83,11 +83,13 @@ const FamilyGuideDetails = () => {
               <KidsGuide></KidsGuide>
               <HoneyMoons></HoneyMoons>
 
-              <img
-                className="w-full"
-                src="https://i.ibb.co/XJPmynZ/7901676-ai-2.png"
-                alt=""
-              />
+              <LazyLoad>
+                <img
+                  className="w-full"
+                  src="https://i.ibb.co/4t9BwDQ/footar.png"
+                  alt=""
+                />
+              </LazyLoad>
 
               <FamilyBeach></FamilyBeach>
               <Zoo></Zoo>

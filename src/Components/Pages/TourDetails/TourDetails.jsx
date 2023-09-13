@@ -72,6 +72,7 @@ const TourDetails = () => {
 
 
   const orderDetails = {
+    email: user?.email,
     card: tourDetails,
     selectedDate: selectedDate?.format("YYYY-MM-DD"),
     price: {
@@ -260,7 +261,7 @@ const TourDetails = () => {
                             onClick={() =>
                               setAdultCount((adultCount) => adultCount - 1)
                             }
-                            className="btn btn-sm btn-circle bg-black hover:bg-black  rounded-full"
+                            className="btn btn-sm  bg-black hover:bg-black  rounded-full"
                           >
                             <FaMinus className="w-4 text-white "></FaMinus>
                           </button>
@@ -269,7 +270,7 @@ const TourDetails = () => {
                             onClick={() =>
                               setAdultCount((adultCount) => adultCount + 1)
                             }
-                            className="btn btn-sm btn-circle bg-black hover:bg-black  rounded-full"
+                            className="btn btn-sm  bg-black hover:bg-black  rounded-full"
                           >
                             <FaPlus className="w-4 text-white "></FaPlus>
                           </button>
@@ -288,7 +289,7 @@ const TourDetails = () => {
                                 (childrenCount) => childrenCount - 1
                               )
                             }
-                            className="btn btn-sm btn-circle bg-black hover:bg-black  rounded-full"
+                            className="btn btn-sm  bg-black hover:bg-black  rounded-full"
                           >
                             <FaMinus className="w-4 text-white "></FaMinus>
                           </button>
@@ -299,7 +300,7 @@ const TourDetails = () => {
                                 (childrenCount) => childrenCount + 1
                               )
                             }
-                            className="btn btn-sm btn-circle bg-black hover:bg-black  rounded-full"
+                            className="btn btn-sm  bg-black hover:bg-black  rounded-full"
                           >
                             <FaPlus className="w-4 text-white "></FaPlus>
                           </button>
@@ -318,7 +319,7 @@ const TourDetails = () => {
                                 (infantsCount) => infantsCount - 1
                               )
                             }
-                            className="btn btn-sm btn-circle bg-black hover:bg-black  rounded-full"
+                            className="btn btn-sm  bg-black hover:bg-black  rounded-full"
                           >
                             <FaMinus className="w-4 text-white "></FaMinus>
                           </button>
@@ -329,7 +330,7 @@ const TourDetails = () => {
                                 (infantsCount) => infantsCount + 1
                               )
                             }
-                            className="btn btn-sm btn-circle bg-black hover:bg-black  rounded-full"
+                            className="btn btn-sm  bg-black hover:bg-black  rounded-full"
                           >
                             <FaPlus className="w-4 text-white "></FaPlus>
                           </button>

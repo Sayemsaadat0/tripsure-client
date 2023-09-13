@@ -15,6 +15,8 @@ import { BiTimeFive } from "react-icons/bi";
 import { FaLocationDot } from 'react-icons/fa6';
 import { IoIosShareAlt } from "react-icons/io";
 import SocialMediaShare from "../../../Shared/SocialMediaShare/SocialMediaShare";
+import { MdFeedback } from "react-icons/md";
+import LazyLoad from "react-lazy-load";
 
 const Packages = () => {
   const { logOut, user } = useAuth();
@@ -83,10 +85,12 @@ const Packages = () => {
                 <SwiperSlide className="" key={index}>
                   <div className="card card-compact bg-white border shadow-xl w-96 relative  overflow-hidden">
                     <Link to={`/packageDetails/${packageItem?._id}`}>
-                      <img
+                    <LazyLoad width={'100%'}>
+                    <img
                         className="h-48 w-full object-cover duration-700 hover:scale-105 rounded-lg"
                         src={packageItem?.picture}
                         alt={packageItem.title} />
+                    </LazyLoad>
                     </Link>
                     <button
                       onClick={() => handleAddToFavorite(packageItem?._id)}

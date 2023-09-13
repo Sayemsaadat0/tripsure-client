@@ -10,7 +10,7 @@ import Swal from "sweetalert2";
 import Dropdown from "../../Dropdown/Drpodown";
 import MobileDropdown from "./MobileDropdown";
 import { useGetYourFavoritItemsQuery } from "../../../Features/favorite/favoriteApi";
-import BecomeGuestModal from "../becomeGuide/BecomeGuidetModal";
+// import BecomeGuestModal from "../becomeGuide/BecomeGuidetModal";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -104,9 +104,9 @@ const Navbar = () => {
                   <span className="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 transform translate-x-1/2 -translate-y-1/2 bg-red-600 rounded-full">{data?.length}</span>
                 </span>
               </NavLink>
-              {
+            {/*   {
                 role === 'admin' || role === 'guide' ? '' : <button onClick={() => setIsOpen(true)} className={`inline-flex justify-center rounded-md border border-transparent bg-sky-100 px-4 py-2 text-sm font-medium text-gray-700  focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 whitespace-nowrap`}>become guide</button>
-              }
+              } */}
               <Dropdown></Dropdown>
             </div>
           ) : (
@@ -119,7 +119,7 @@ const Navbar = () => {
             </li>
           )}
         </div>
-        <BecomeGuestModal isOpen={isOpen} setIsOpen={setIsOpen}></BecomeGuestModal>
+        {/* <BecomeGuestModal isOpen={isOpen} setIsOpen={setIsOpen}></BecomeGuestModal> */}
         <div
           onClick={() => setMenuOpen(!menuOpen)}
           className="cursor-pointer  text-gray-800 lg:hidden"

@@ -6,8 +6,9 @@ import { Link } from 'react-router-dom';
 import Container from '../../../../LayOut/Container';
 import axios from 'axios';
 import { FaArrowTurnUp } from "react-icons/fa6";
-
+import { Carousel } from 'antd';
 import { useEffect, useState } from 'react';
+import LazyLoad from 'react-lazy-load';
 
 const ThemePark = () => {
 
@@ -19,7 +20,7 @@ const ThemePark = () => {
       setAllThemePark(res.data)
     })
   },[])
-  console.log(allThemePark);
+
 
   return (
     <div >
@@ -52,9 +53,17 @@ const ThemePark = () => {
           >
             {allThemePark.map((item, index) => (
               <SwiperSlide key={index} className='lg:p-10' >
-                <div className="card card-compact bg-white shadow-2xl relative ">
-                  <figure><img className='rounded-lg h-40 w-full  object-cover' src="https://i.pinimg.com/736x/9d/93/08/9d9308a98680e14a64f98f1c3f22222c.jpg" alt="" /></figure>
-                  <div className="card-body">
+                <div className="card card-compact bg-white relative ">
+                <Carousel autoplay>
+              
+                  {
+                      item.pictures.map((picture, index) => (
+                        <img className='rounded-lg h-40 w-full object-cover' key={index} src={picture} alt="" />
+                      ))
+                    }
+             
+                  </Carousel>
+                  <div className="my-4">
                     <h2 className="card-title">{item?.title}</h2>
                     <p>{item.Country}</p>
                     <div className="card-actions justify-start">

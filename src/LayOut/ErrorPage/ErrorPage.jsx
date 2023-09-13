@@ -9,24 +9,26 @@ const ErrorPage = () => {
 
 
 
-            <div className="flex w-full justify-center items-center min-h-screen ">
-                <div className="grid flex-grow  rounded-box ">
-                    <div className='px-12'>
+            <div className="md:flex w-full justify-center items-center min-h-screen mt-20 md:mt-0">
+                <div className="grid flex-grow text-center rounded-box md:text-left">
+                    <div className='md:px-12'>
                         <h3 className='text-5xl '>Lost?</h3>
                         <p className='font-extralight mt-2'>Some places are great to lose yourself in. But not on this occasion. <br /> You could reuturn to our home page</p>
-                        <Link
-                            className='flex 
+                        <div className='flex md:block justify-center items-center'>
+                            <Link
+                                className='flex 
                         mt-5
                         btn-primary
                         gap-5  
-                        items-center
+                        md:items-center
                         border
-                        w-[40%]                        
-                        '
-                            to='/'>
-                            <BsArrowLeftCircle className='text-2xl'>
-                            </BsArrowLeftCircle>
-                            Go Back Home</Link>
+                        w-[60%]
+                        md:w-[40%] justify-center  '
+                                to='/'>
+                                <BsArrowLeftCircle className='text-2xl'>
+                                </BsArrowLeftCircle>
+                                Go Back Home</Link>
+                        </div>
                     </div>
                 </div>
                 <div className="grid flex-grow  rounded-box place-items-center">

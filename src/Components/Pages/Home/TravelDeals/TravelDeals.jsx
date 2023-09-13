@@ -7,6 +7,7 @@ import { BsSuitHeartFill, BsSuitHeart } from 'react-icons/bs'
 import Container from '../../../../LayOut/Container';
 import { useAddToFavoriteMutation, useGetFavoriteItemsQuery } from '../../../../Features/favorite/favoriteApi';
 import useAuth from '../../../../Hooks/useAuth';
+import LazyLoad from 'react-lazy-load';
 
 
 const TravelDeals = () => {
@@ -54,7 +55,7 @@ const TravelDeals = () => {
       <section className='overflow-x-auto md:grid  md:grid-cols-3 gap-12 px-5 py-12 '>
 
         {travelDeals.map((deals, index) => (
-          <div key={index} className="card card-compact bg-base-100 border overflow-hidden">
+          <div key={index} className="card card-compact bg-base-100 border md:w-96 overflow-hidden">
             {/* <span  className='absolute left-1 z-10 top-3 cursor-pointer bg-gray-100  p-2 rounded-full'><GrFavorite size={20}></GrFavorite></span> */}
             <button
               onClick={() => handleAddToFavorite(deals)}
@@ -67,7 +68,9 @@ const TravelDeals = () => {
 
             <Link to={`/TravelDeals/${deals?._id}`} >
               <figure>
-                <img className='transition duration-700 ease-in-out hover:scale-110 rounded-lg h-48 object-cover w-full' src={deals.picture} alt={deals.title} />
+                <LazyLoad width={'100%'}>
+                  <img className='transition duration-700 ease-in-out hover:scale-110 rounded-lg h-48 object-cover w-full' src={deals.picture} alt={deals.title} />
+                </LazyLoad>
               </figure>
             </Link>
 
@@ -87,7 +90,6 @@ const TravelDeals = () => {
                 <p
                   className='flex justify-end items-center gap-1'>
                   <GoStarFill className='text-red-500'></GoStarFill>
-                  {/* todo add ratings */}
                   4.5(40)
                 </p>
               </div>

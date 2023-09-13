@@ -53,7 +53,7 @@ const HotelBanner = () => {
                         onClick={() =>
                           setAdultCount((adultCount) => adultCount - 1)
                         }
-                        className="btn btn-sm btn-circle bg-black hover:bg-black  rounded-full"
+                        className="btn btn-sm  bg-black hover:bg-black  rounded-full"
                       >
                         <FaMinus className="w-4 text-white "></FaMinus>
                       </button>
@@ -62,7 +62,7 @@ const HotelBanner = () => {
                         onClick={() =>
                           setAdultCount((adultCount) => adultCount + 1)
                         }
-                        className="btn btn-sm btn-circle bg-black hover:bg-black  rounded-full"
+                        className="btn btn-sm  bg-black hover:bg-black  rounded-full"
                       >
                         <FaPlus className="w-4 text-white "></FaPlus>
                       </button>
@@ -79,7 +79,7 @@ const HotelBanner = () => {
                         onClick={() =>
                           setChildrenCount((childrenCount) => childrenCount - 1)
                         }
-                        className="btn btn-sm btn-circle bg-black hover:bg-black  rounded-full"
+                        className="btn btn-sm  bg-black hover:bg-black  rounded-full"
                       >
                         <FaMinus className="w-4 text-white "></FaMinus>
                       </button>
@@ -88,7 +88,7 @@ const HotelBanner = () => {
                         onClick={() =>
                           setChildrenCount((childrenCount) => childrenCount + 1)
                         }
-                        className="btn btn-sm btn-circle bg-black hover:bg-black  rounded-full"
+                        className="btn btn-sm  bg-black hover:bg-black  rounded-full"
                       >
                         <FaPlus className="w-4 text-white "></FaPlus>
                       </button>
@@ -105,7 +105,7 @@ const HotelBanner = () => {
                         onClick={() =>
                           setInfantsCount((infantsCount) => infantsCount - 1)
                         }
-                        className="btn btn-sm btn-circle bg-black hover:bg-black  rounded-full"
+                        className="btn btn-sm  bg-black hover:bg-black  rounded-full"
                       >
                         <FaMinus className="w-4 text-white "></FaMinus>
                       </button>
@@ -114,7 +114,7 @@ const HotelBanner = () => {
                         onClick={() =>
                           setInfantsCount((infantsCount) => infantsCount + 1)
                         }
-                        className="btn btn-sm btn-circle bg-black hover:bg-black  rounded-full"
+                        className="btn btn-sm  bg-black hover:bg-black  rounded-full"
                       >
                         <FaPlus className="w-4 text-white "></FaPlus>
                       </button>

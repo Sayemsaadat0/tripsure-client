@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Card } from 'antd';
 import Container from '../../../LayOut/Container';
 const { Meta } = Card;
 import { AutoComplete } from 'antd';
+import axios from 'axios';
+
 
 const TravelGuides = () => {
+
+  const [guides, setGuides] = useState([]);
+
+  useEffect(() => {
+   fetch('guides.json')
+   .then(res=> res.json())
+   .then(data => console.log('mara khao khao'))
+  }, []);
+
   const options = [
     {
       value: 'Burns Bay Road',
@@ -33,7 +44,7 @@ const TravelGuides = () => {
               options={options}
               placeholder="try to type `b`"
               filterOption={(inputValue, option) =>
-                option.value.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1 }/>
+                option.value.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1} />
 
             <select className="select select-bordered">
               <option disabled selected>Country</option>
@@ -45,18 +56,20 @@ const TravelGuides = () => {
 
         </div>
         <div className='pt-16 px-10'>
-          <Card
+        
+            <Card 
+        
             hoverable
             style={{
-              width: 240,
-            }}
+              width: 240,}}
             cover={<img className='h-[300px]' alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}>
-            <p>Name</p>
+            <p>guide.name</p>
             <p>Location</p>
             <p>Ocupation</p>
             <p></p>
             <p>Rating</p>
           </Card>
+        
         </div>
       </Container>
     </div>
@@ -67,7 +80,7 @@ export default TravelGuides;
 
 
 // todo  make guide data with
-// search by name or email implement 
+// search by name or email implement
 // sort by country 
 /* 
  {

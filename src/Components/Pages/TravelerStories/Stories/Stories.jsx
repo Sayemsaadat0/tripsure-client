@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom";
 const Stories = () => {
   const [story, setStory] = useState({});
   const { id } = useParams()
-  console.log(id)
   useEffect(() => {
     fetch(`${import.meta.env.VITE_BACKEND_API}/story/${id}`)
       .then((res) => res.json())

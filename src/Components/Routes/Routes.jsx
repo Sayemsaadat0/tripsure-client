@@ -53,6 +53,8 @@ import SearchDetails from "../Pages/SearchResult/SearchDetails";
 // payment
 import PaymentDetails from "../Pages/Payment/PaymentDetails/PaymentDetails";
 import AddRentalCars from "../Pages/DashBoard/Admin/Overview/AddRentalCars";
+import PaymentSuccessPage from "../Pages/Payment/PaymentSuccessPage/PaymentSuccessPage";
+import PaymentFailPage from "../Pages/Payment/PaymentFailPage/PaymentFailPage";
 import MedicalCard from "../Pages/Home/Medical/Medical";
 import MadicalCard from "../Pages/Home/Medical/MadicalCard";
 import MadicalDetails from "../Pages/Home/Medical/MadicalDetails";
@@ -199,6 +201,14 @@ const router = createBrowserRouter([
       {
         path: "/paymentDetails",
         element: <PaymentDetails></PaymentDetails>
+      },
+      {
+        path: "/payment/success/:id",
+        element: <PaymentSuccessPage></PaymentSuccessPage>
+      },
+      {
+        path: "/payment/fail/:id",
+        element: <PaymentFailPage></PaymentFailPage>
       },
       {
         path: "madicalCard",

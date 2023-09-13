@@ -8,30 +8,30 @@ const FlightCard = ({ searchResults }) => {
       <Container>
         <div className="my-12 grid mx-2 lg:mx-4 lg:grid-cols-1 gap-5">
           {
-            searchResults.map((cardItem)=> <div className="border p-5 shadow-lg rounded-lg">
+            searchResults.map((cardItem, _id)=> <div key={_id} className="border p-5 shadow-lg rounded-lg">
             <div className="lg:flex gap-3 space-y-2 md:space-y-0">
               <div className=" rounded-md p-2">
-                <span className="bg-orange-500 mb-0 pb-0 text-xs rounded-2xl text-white  px-2">
+                <span className="bg-cyan-500 mb-0 pb-0 text-xs rounded-2xl text-white  px-2">
                   Departure
                 </span>
-                <span className="text-4xl  font-bold text-green-500">
+                <span className="text-4xl  font-bold text-cyan-500">
                   <FaPlaneDeparture></FaPlaneDeparture>
                 </span>
 
-                <h3 className="text-green-500 flex gap-2 items-center text-xl font-medium">
+                <h3 className="text-cyan-500 flex gap-2 items-center text-xl font-medium">
                   <span>{cardItem?.departure_airport?.name}</span>
                 </h3>
                 <p className="text-slate-500">{cardItem?.departure_airport?.country}</p>
                 <p className="text-slate-500">{cardItem?.departure_time}</p>
               </div>
               <div className="py-3 rounded-md p-2">
-                <span className="bg-orange-500 mb-0 pb-0 text-xs rounded-2xl text-white  px-2">
+                <span className="bg-cyan-500 mb-0 pb-0 text-xs rounded-2xl text-white  px-2">
                   Arrival
                 </span>
-                <span className="text-4xl font-bold text-green-500">
+                <span className="text-4xl font-bold text-cyan-500">
                   <FaPlaneArrival></FaPlaneArrival>
                 </span>
-                <h3 className="text-green-500 flex gap-2 items-center text-xl font-medium">
+                <h3 className="text-cyan-500 flex gap-2 items-center text-xl font-medium">
                   <span>{cardItem?.arrival_airport?.name}</span>
                 </h3>
                 <p className="text-slate-500">{cardItem?.arrival_airport?.country}</p>
@@ -40,18 +40,18 @@ const FlightCard = ({ searchResults }) => {
               <div className="py-3  rounded-md p-2">
                 <div className="flex gap-2 justify-between items-end">
                   <div>
-                    <h3 className="text-green-500 flex gap-2 items-center text-md ">
+                    <h3 className="text-cyan-500 flex gap-2 items-center text-md ">
                       Total Flight Time:{" "}
                       <span className="font-semibold">{cardItem?.total_time}</span>
                     </h3>
 
-                    <p className="text-xl text-green-500">Price:</p>
-                    <p className="text-slate-500">Economy: <span className="font-semibold text-orange-400">${cardItem?.prices?.economy}</span></p>
-                    <p className="text-slate-500">Business Class: <span className="font-semibold text-orange-400">${cardItem?.prices?.business}</span></p>
-                    <p className="text-slate-500">First Class: <span className="font-semibold text-orange-400">${cardItem?.prices?.first_class}</span></p>
+                    <p className="text-xl text-cyan-500">Price:</p>
+                    <p className="text-slate-500">Economy: <span className="font-semibold text-cyan-400">${cardItem?.prices?.economy}</span></p>
+                    <p className="text-slate-500">Business Class: <span className="font-semibold text-cyan-400">${cardItem?.prices?.business}</span></p>
+                    <p className="text-slate-500">First Class: <span className="font-semibold text-cyan-400">${cardItem?.prices?.first_class}</span></p>
                   </div>
                   <div className="flex justify-end">
-                    <button className="bg-orange-400 hover:bg-orange-600 hover:translate-x-2 font-bold hover:translate-y-2 transition-all  px-4 py-2 rounded-full text-white">
+                    <button className="bg-cyan-400 hover:bg-cyan-600 hover:translate-x-2 font-bold hover:translate-y-2 transition-all  px-4 py-2 rounded-full text-white">
                       See Deals
                     </button>
                   </div>
