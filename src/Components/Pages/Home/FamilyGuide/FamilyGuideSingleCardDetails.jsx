@@ -85,7 +85,6 @@ const FamilyGuideSingleCardDetails = () => {
                 <hr />
 
                 {/* Tips */}
-
                 <div className='lg:flex gap-4 mt-5'>
                     <h3 className='mt-10 mb-5 font-bold text-xl w-60'>Tips </h3>
 

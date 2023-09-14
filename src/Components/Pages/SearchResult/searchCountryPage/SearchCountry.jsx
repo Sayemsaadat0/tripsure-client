@@ -46,7 +46,7 @@ const SearchCountry = () => {
           <div className="grid md:grid-cols-3 gap-1 mt-8">
             <div className="md:col-span-2 col-span-3 ">
               <img
-                className="w-full hover:bg-white  hover:opacity-80 duration-300"
+                className="w-full md:h-full hover:bg-white  hover:opacity-80 duration-300"
                 src="https://i.ibb.co/54DH6LW/image.png"
                 alt=""
               />

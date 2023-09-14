@@ -3,9 +3,9 @@ import Container from "../../../../LayOut/Container";
 
 const MadicalDetails = () => {
   return (
-    <div className="mt-20 h-screen ">
+    <div className="mt-20 min-h-screen ">
       <Container>
-        <div className="md:h-[380px] h-auto w-[80%] mx-auto ">
+        <div className="md:h-[380px] h-full w-[80%] mx-auto ">
           <img
             className="rounded-lg h-full w-full "
             src="https://i.ibb.co/41xnK2X/image.png"
@@ -16,8 +16,8 @@ const MadicalDetails = () => {
             <p className="font-bold">Location</p>
           </div>
 
-          <div className="flex mt-10 ">
-            <div className=" space-y-3">
+          <div className="flex flex-co flex-col-reverse md:flex-row md:items-center gap-8 mt-10 ">
+            <div className=" lg:w-1/2 space-y-3">
               <h3 className="text-xl font-bold">Discription</h3>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
@@ -29,8 +29,8 @@ const MadicalDetails = () => {
               </p>
               <button className="btn">Button</button>
             </div>
-            <div>
-              <img className="rounded-lg hover:scale-105 transition" src="https://i.ibb.co/9Zm7TJp/image.png" alt="" />
+            <div className="lg:w-1/2">
+              <img className="rounded-lg w-full hover:scale-105 transition" src="https://i.ibb.co/9Zm7TJp/image.png" alt="" />
             </div>
           </div>
         </div>

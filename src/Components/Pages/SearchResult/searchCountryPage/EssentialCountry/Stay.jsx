@@ -12,7 +12,6 @@ const Stay = ({ countryDatas, country }) => {
   // todo: gettin empty array in stayData
   // const stayData = countryDatas.filter(countryData => countryData.country === country);
   // console.log(stayData);
-
   return (
     <div>
       <h2 className="text-3xl font-semibold my-10">Essential {country }</h2>

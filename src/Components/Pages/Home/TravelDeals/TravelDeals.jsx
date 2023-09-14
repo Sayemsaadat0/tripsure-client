@@ -40,7 +40,7 @@ const TravelDeals = () => {
       } = deals
       const id = deals._id
       const favoriteItem = {
-        dealExpires, destination, discountPercentage, duration, newPrice, picture, price, reviews, savings, title, totalPeople, hotelId, displayName, email
+        dealExpires, destination, discountPercentage, duration, newPrice, picture, price, reviews, savings, title, totalPeople, id, displayName, email
       }
       console.log('favorite item', favoriteItem)
       setFavorite(favoriteItem)

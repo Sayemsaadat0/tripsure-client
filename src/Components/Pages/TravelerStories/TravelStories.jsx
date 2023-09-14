@@ -10,7 +10,7 @@ import axios from "axios";
 const TravelarStories = () => {
   const [stories, setStories] = useState([])
   useEffect(() => {
-    axios.get(`http://localhost:1000/story`)
+    axios.get(`${import.meta.env.VITE_BACKEND_API}/story`)
       .then(res => {
         setStories(res.data)
         console.log(res.data)
