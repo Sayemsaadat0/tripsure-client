@@ -8,23 +8,23 @@ const RentalSingleCard = ({ data }) => {
   console.log(data);
 
 
-  const orderDetails = {
-    email: user?.email,
-    card: data,
+  // const orderDetails = {
+  //   email: user?.email,
+  //   card: data,
     
-    // price: {
-    //   adult: tourDetails?.price?.[0]?.amount * adultCount,
-    //   children: tourDetails?.price?.[1]?.amount * childrenCount,
-    //   infants: tourDetails?.price?.[2]?.amount * infantsCount,
-    //   totalPrice: tourDetails?.price?.[0]?.amount * adultCount + tourDetails?.price?.[1]?.amount * childrenCount + tourDetails?.price?.[2]?.amount * infantsCount
+  //   price: {
+  //     adult: tourDetails?.price?.[0]?.amount * adultCount,
+  //     children: tourDetails?.price?.[1]?.amount * childrenCount,
+  //     infants: tourDetails?.price?.[2]?.amount * infantsCount,
+  //     totalPrice: tourDetails?.price?.[0]?.amount * adultCount + tourDetails?.price?.[1]?.amount * childrenCount + tourDetails?.price?.[2]?.amount * infantsCount
 
-    // },
-    // travelerCount: {
-    //   adult: adultCount,
-    //   children: childrenCount,
-    //   infants: infantsCount
-    // }
-  }
+  //   },
+  //   travelerCount: {
+  //     adult: adultCount,
+  //     children: childrenCount,
+  //     infants: infantsCount
+  //   }
+  // }
 
 
 
@@ -90,7 +90,7 @@ const RentalSingleCard = ({ data }) => {
                     </button> */}
                       <Link
                         to={user ? "/contactDetails" : "/login"}
-                        state={{ orderDetails: orderDetails, carId: cardItem._id}}
+                        state={{id: cardItem._id}}
                         className="bg-orange-400 ms-auto hover:bg-orange-600 hover:translate-x-2 font-bold hover:translate-y-2 transition-all  px-4 py-2 rounded-full text-white"
                       >
                         Reserve Now

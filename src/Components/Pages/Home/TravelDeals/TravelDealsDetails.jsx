@@ -1,18 +1,3 @@
-<<<<<<< HEAD
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import Container from "../../../../LayOut/Container";
-import { GoLocation } from "react-icons/go";
-import { BiTime } from "react-icons/bi";
-import { Typewriter } from "react-simple-typewriter";
-import { FaCalendarDay, FaHotel, FaMinus, FaPlus } from "react-icons/fa";
-import { GrCircleInformation } from "react-icons/gr";
-import useAuth from "../../../../Hooks/useAuth";
-import { DatePicker } from "antd";
-import { FaUserGroup } from "react-icons/fa6";
-import LazyLoad from "react-lazy-load";
-=======
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
@@ -27,7 +12,6 @@ import { DatePicker } from 'antd';
 import { FaUserGroup } from 'react-icons/fa6';
 import LazyLoad from 'react-lazy-load';
 import { useAddToFavoriteMutation, useGetFavoriteItemsQuery } from '../../../../Features/favorite/favoriteApi';
->>>>>>> ef414277a9409a5c88119778b2fe6c44f22f6be1
 
 const TravelDealsDetails = () => {
   const [modalForCountPeople, setModalForCountPeople] = useState(false);
@@ -88,12 +72,8 @@ const TravelDealsDetails = () => {
     additionalInfo,
     hotels,
     includedItems,
-<<<<<<< HEAD
-  } = travelDealsDetails;
-=======
     _id
   } = travelDealsDetails
->>>>>>> ef414277a9409a5c88119778b2fe6c44f22f6be1
   useEffect(() => {
     axios
       .get(`${import.meta.env.VITE_BACKEND_API}/travelDeals/${id}`)
@@ -120,28 +100,6 @@ const TravelDealsDetails = () => {
     },
   };
 
-<<<<<<< HEAD
-  const words = [
-    `Experience joy and save  ${discountPercentage}%`,
-    `Get ${savings?.adult} off per adult`,
-    `and ${savings?.child} off per child.`,
-  ];
-
-  return (
-    <Container>
-      <div className="my-4 md:my-20 px-4 md:px-10 leading-8">
-        {/* primary */}
-        <h2 className="text-4xl font-bold text-[#79c7ff] tracking-widest">
-          {title}
-        </h2>
-        <div className="flex items-center my-3 gap-5 ">
-          <p className="flex items-center gap-2 ">
-            <GoLocation className="text-xl"></GoLocation> {destination}
-          </p>
-          <p className="flex items-center gap-2 ">
-            <BiTime className="text-xl"></BiTime> Duration : {duration}
-          </p>
-=======
     // add to favorite 
     const [setFavorite, { isLoading, isError, data }] = useAddToFavoriteMutation()
     const { data: favoriteItems, refetch } = useGetFavoriteItemsQuery()
@@ -166,7 +124,6 @@ const TravelDealsDetails = () => {
         <div className='flex md:flex-row flex-col items-center my-3 gap-1 md:gap-5 '>
           <p className='flex items-center gap-2 '><GoLocation className='text-xl'></GoLocation> {destination}</p>
           <p className='flex items-center gap-2 '><BiTime className='text-xl'></BiTime> Duration : {duration}</p>
->>>>>>> ef414277a9409a5c88119778b2fe6c44f22f6be1
           <p>Booking End: {dealExpires}</p>
         </div>
         {/* about */}
@@ -365,14 +322,6 @@ const TravelDealsDetails = () => {
                     </p>
                     <p>(No additional taxes or booking fees)</p>
                   </div>
-<<<<<<< HEAD
-                  <div className="flex gap-3 items-center justify-around">
-                    {/*todo functioon to add to favorite */}
-                    <Link className="btn-primary">Add To Favorite</Link>
-                    <Link
-                      disabled={selectedDate == null}
-                      to={user ? "/contactDetails" : "/login"}
-=======
                   <div className="flex gap-3 items-center justify-around"> 
                   {/*todo functioon to add to favorite */}
                   <button onClick={handleAddToFavorite} className='btn-primary'>
@@ -380,7 +329,6 @@ const TravelDealsDetails = () => {
                   </button>
                     <Link disabled={selectedDate == null}
                       to={user ? '/contactDetails' : '/login'}
->>>>>>> ef414277a9409a5c88119778b2fe6c44f22f6be1
                       state={{ orderDetails: orderDetails }}
                       className="btn rounded-full lg:px-14 btn-warning"
                     >
@@ -409,33 +357,19 @@ const TravelDealsDetails = () => {
           </div>
 
           {/* Conditions */}
-<<<<<<< HEAD
-          <div>
-            <p className="font-bold">Conditions:</p>
-            {conditions &&
-              conditions.map((condition, index) => (
-                <li key={index}>{condition}</li>
-              ))}
-=======
           <div className='mb-5'>
             <p className='font-bold'>Conditions:</p>
             {conditions && conditions.map((condition, index) => (
               <li key={index}>{condition}</li>
             ))}
->>>>>>> ef414277a9409a5c88119778b2fe6c44f22f6be1
           </div>
         </div>
 
         {/* items and activies */}
         <div className="grid grid-cols-1 md:grid-cols-2">
           {/* includes item */}
-<<<<<<< HEAD
-          <div>
-            <p className="font-bold">Includes Items : </p>
-=======
           <div className='mb-5'>
             <p className='font-bold'>Includes Items : </p>
->>>>>>> ef414277a9409a5c88119778b2fe6c44f22f6be1
             {includedItems?.map((d, index) => (
               <li className="list-disc" key={index}>
                 {d}
@@ -456,22 +390,12 @@ const TravelDealsDetails = () => {
 
         {/* itinerary */}
         <div>
-<<<<<<< HEAD
-          <p className="font-bold">Itinerary</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg::grid-cols-3">
-            {itinerary?.map((day, dayIndex) => (
-              <div key={dayIndex}>
-                <h3 className="font-bold flex items-center gap-2">
-                  <FaCalendarDay></FaCalendarDay> Day {day.day}
-                </h3>
-=======
           <p className='font-bold mt-5'>Itinerary</p>
           <div className='grid grid-cols-1 sm:grid-cols-2 lg::grid-cols-3'>
             {itinerary?.map((day, dayIndex) => (
               <div className='mb-5' key={dayIndex}>
                 <h3 className='font-bold flex items-center gap-2'>
                   <FaCalendarDay></FaCalendarDay> Day {day.day}</h3>
->>>>>>> ef414277a9409a5c88119778b2fe6c44f22f6be1
                 <p>
                   {day.activities.map((activity, activityIndex) => (
                     <li key={activityIndex}>{activity}</li>

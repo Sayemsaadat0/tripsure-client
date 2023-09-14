@@ -25,14 +25,10 @@ const Home = () => {
             </section>
 
             <FamilyGuide></FamilyGuide>
-<<<<<<< HEAD
-            <section className='md:my-40'>
-=======
 
 
 
             <section className='md:my-20'>
->>>>>>> ef414277a9409a5c88119778b2fe6c44f22f6be1
                 <TopDestinations></TopDestinations>
                 <TopThingsToDo></TopThingsToDo>
             </section>

@@ -20,7 +20,7 @@ import { Elements } from "@stripe/react-stripe-js";
 
 const PaymentDetails = () => {
   const location = useLocation();
-  const price = location?.state?.orderDetails?.price?.totalPrice
+  const price = location?.state?.orderDetails?.price?.totalPrice || location?.state?.orderDetails?.daily_rate
   const totalPrice = parseFloat(price?.toFixed(2)) 
   console.log(location,totalPrice);
   const {
