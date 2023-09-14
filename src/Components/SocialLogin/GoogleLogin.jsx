@@ -41,13 +41,14 @@ const GoogleLogin = () => {
         <>
             {
                 loading ? <button disabled={true}
-                    className="relative w-full flex justify-center ">
+                    className="relative w-full flex justify-center bg-black py-3 text-white rounded-md">
                     <FaSpinner
                         className='animate-spin' size={25}>
                     </FaSpinner>
                 </button>
-                    : <button onClick={handleGoogleLogin} className=" relative w-full flex justify-center shadow-sm py-2 rounded-lg shadow-white hover:scale-105 duration-500">
-                        <FaGoogle size={25}></FaGoogle>
+                    : <button onClick={handleGoogleLogin} className=" relative w-full flex justify-center bg-black py-4 text-white rounded-md gap-4">
+                        <FaGoogle size={25}></FaGoogle> 
+                        Sign in with Google 
                     </button>
             }
         </>

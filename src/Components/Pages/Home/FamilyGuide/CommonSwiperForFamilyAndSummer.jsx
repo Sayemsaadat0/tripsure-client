@@ -38,16 +38,18 @@ const CommonSwiperForFamilyAndSummer = ({ SwiperData }) => {
         {SwiperData?.map((todo, index) => (
           <SwiperSlide className="" key={index}>
             <div className="card">
-            
-            <Carousel autoplay>
-           
-                  {
-                      todo.pictures.map((picture, index) => (
-                        <img className='rounded-lg h-40 w-full object-cover' key={index} src={picture} alt="" />
-                      ))
-                    }
-          
-                  </Carousel>
+
+              <Carousel autoplay>
+
+                {
+                  todo.pictures.map((picture, index) => (
+                    <LazyLoad>
+                      <img className='rounded-lg h-40 w-full object-cover' key={index} src={picture} alt="" />
+                    </LazyLoad>
+                  ))
+                }
+
+              </Carousel>
               <div className="my-6">
                 <h2 className="card-title">{todo?.title}</h2>
                 <p>{todo?.introduction.slice(0, 120)}...</p>

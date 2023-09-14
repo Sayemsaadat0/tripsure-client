@@ -37,7 +37,7 @@ const TopDestinations = () => {
             spaceBetween={10}
             modules={[Navigation]}
             className="mySwiper"
-            // navigation={true}
+        
             breakpoints={{
               640: {
                 slidesPerView: 2,
@@ -71,11 +71,8 @@ const TopDestinations = () => {
                     <h2 className="font-semibold mt-3 hover:text-blue-400 duration-500">
                       {todo.placetitle}
                     </h2>
-                    <h2 className="font-semibold mt-3 hover:text-blue-400 duration-500">
-                      {todo._id}
-                    </h2>
                     <div className='flex justify-between'>
-                      <p>{todo.costperperson}$/ <span className='text-xs'>per person</span> </p>
+                      <p className="text-red-500 font-bold">{todo.costperperson}$/ <span className='text-xs text-black'>per person</span> </p>
                       <p className='flex items-center gap-2'><GoStarFill className='text-red-500'></GoStarFill>  {todo.ratings}</p>
                     </div>
 
