@@ -10,7 +10,7 @@ import Swal from "sweetalert2";
 import Dropdown from "../../Dropdown/Drpodown";
 import MobileDropdown from "./MobileDropdown";
 import { useGetYourFavoritItemsQuery } from "../../../Features/favorite/favoriteApi";
-// import BecomeGuestModal from "../becomeGuide/BecomeGuidetModal";
+
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -46,7 +46,7 @@ const Navbar = () => {
       <div className='max-w-[1920px] mx-auto px-1 md:px-3 lg:px-5 h-full flex justify-between items-center  text-gray-800'>
         <Link to='/'>
           {/* logo */}
-          <img className='md:w-full md:h-[30%] w-[120px] max-w-[180px]' src="https://i.ibb.co/9mX5YKW/logo-6.png  " alt="" />
+          <img className='md:w-full md:h-[30%] w-[120px] max-w-[180px]' src="https://i.ibb.co/9mX5YKW/logo-6.png" alt="" />
         </Link>
 
         <div className="hidden lg:flex items-center gap-4 lg:gap-7 text-[#79c7ff]">
