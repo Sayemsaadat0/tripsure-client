@@ -27,7 +27,7 @@ const MadicalDetails = () => {
                 voluptas qui! Corrupti dolor corporis autem cupiditate accusamus
                 expedita dolorem quae sint.
               </p>
-              <button className="btn">Button</button>
+              <button className="btn-primary">Button</button>
             </div>
             <div>
               <img className="rounded-lg hover:scale-105 transition" src="https://i.ibb.co/9Zm7TJp/image.png" alt="" />

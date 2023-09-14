@@ -9,20 +9,15 @@ import { Link } from "react-router-dom";
 import { BsSuitHeart, BsSuitHeartFill } from "react-icons/bs";
 import useAuth from "../../../../Hooks/useAuth";
 import axios from "axios";
-import Swal from "sweetalert2";
-import { GoLocation, GoStarFill } from "react-icons/go";
+import { GoStarFill } from "react-icons/go";
 import { BiTimeFive } from "react-icons/bi";
-import { FaLocationDot } from 'react-icons/fa6';
-import { IoIosShareAlt } from "react-icons/io";
-import SocialMediaShare from "../../../Shared/SocialMediaShare/SocialMediaShare";
-import { MdFeedback } from "react-icons/md";
+import { FaLocationDot } from "react-icons/fa6";
 import LazyLoad from "react-lazy-load";
 
 const Packages = () => {
   const { logOut, user } = useAuth();
   const [packages, setPackages] = useState([]);
   const [favoritePackageIds, setFavoritePackageIds] = useState([]); // Store favorite package IDs
-  const [showSocialMediaIcons, setShowSocialMediaIcons] = useState(false);
 
   useEffect(() => {
     fetch(`${import.meta.env.VITE_BACKEND_API}/packages`)
@@ -34,7 +29,9 @@ const Packages = () => {
     if (user) {
       axios
         .get(
-          `${import.meta.env.VITE_BACKEND_API}/getFavoritePackage/${user?.email}/favorite-packages`
+          `${import.meta.env.VITE_BACKEND_API}/getFavoritePackage/${
+            user?.email
+          }/favorite-packages`
         )
         .then((res) => {
           const favoriteIds = res.data.map((item) => item._id);
@@ -42,13 +39,6 @@ const Packages = () => {
         });
     }
   }, [user]);
-// todo : button toggol problem 
-  const handleOpenSocialIcon = (packageId) => {
-    console.log(packageId)
-    let findId = packages.find(p => p._id === packageId)
-    console.log(findId)
-    setShowSocialMediaIcons(!showSocialMediaIcons)
-  };
 
   return (
     <div className="px-10 pb-10">
@@ -56,7 +46,8 @@ const Packages = () => {
         <div>
           <SectionTitle
             subText={"Create Memories"}
-            text={"Select Your Ideal Tour Package"} />
+            text={"Select Your Ideal Tour Package"}
+          />
           <Swiper
             slidesPerView={1}
             spaceBetween={10}
@@ -78,23 +69,26 @@ const Packages = () => {
               },
             }}
             modules={[Pagination]}
-            className="mySwiper">
+            className="mySwiper"
+          >
             {packages.map((packageItem, index) => {
               const isFavorite = favoritePackageIds.includes(packageItem._id);
               return (
                 <SwiperSlide className="" key={index}>
-                  <div className="card card-compact bg-white border shadow-xl w-96 relative  overflow-hidden">
+                  <div className="card card-compact bg-white border w-96 relative  overflow-hidden">
                     <Link to={`/packageDetails/${packageItem?._id}`}>
-                    <LazyLoad width={'100%'}>
-                    <img
-                        className="h-48 w-full object-cover duration-700 hover:scale-105 rounded-lg"
-                        src={packageItem?.picture}
-                        alt={packageItem.title} />
-                    </LazyLoad>
+                      <LazyLoad width={"100%"}>
+                        <img
+                          className="h-48 w-full object-cover duration-700 hover:scale-105 rounded-lg"
+                          src={packageItem?.picture}
+                          alt={packageItem.title}
+                        />
+                      </LazyLoad>
                     </Link>
                     <button
                       onClick={() => handleAddToFavorite(packageItem?._id)}
-                      className="absolute top-2 right-2 p-2  rounded-full bg-white" >
+                      className="absolute top-2 right-2 p-2  rounded-full bg-white"
+                    >
                       {isFavorite ? (
                         <BsSuitHeartFill className="text-lg" />
                       ) : (
@@ -108,19 +102,19 @@ const Packages = () => {
                         </Link>
                       </h2>
 
-                   <div className="flex justify-between">
-                   <p className="flex gap-1 items-center">
-                        <FaLocationDot className="text-xl"></FaLocationDot>{" "}
-                        {packageItem.destination}
-                      </p>
+                      <div className="flex justify-between">
+                        <p className="flex gap-1 items-center">
+                          <FaLocationDot className="text-xl"></FaLocationDot>{" "}
+                          {packageItem.destination}
+                        </p>
 
-                      <p className="flex gap-1 justify-end items-center">
-                        <span className="font-bold text-lg text-red-500">
-                          {packageItem.price?.adult}
-                        </span>
-                        /person
-                      </p>
-                   </div>
+                        <p className="flex gap-1 justify-end items-center">
+                          <span className="font-bold text-lg text-red-500">
+                            {packageItem.price?.adult}
+                          </span>
+                          /person
+                        </p>
+                      </div>
 
                       <div className="flex">
                         <p className="flex gap-1 items-center">
@@ -133,22 +127,12 @@ const Packages = () => {
                           {packageItem?.reviews?.ratings?.overall} (45)
                         </p>
                       </div>
-                      <div>
-                        <button
-                          onClick={() => handleOpenSocialIcon(packageItem._id)}
-                          className={
-                            showSocialMediaIcons
-                              ? "btn flex justify-between items-center "
-                              : " btn" }>
-                          <IoIosShareAlt size={22}/>
-                          {showSocialMediaIcons && <SocialMediaShare />}
-                        </button>
-                      </div>
+                      <div></div>
                     </div>
                   </div>
                 </SwiperSlide>
               );
-                })}
+            })}
           </Swiper>
         </div>
       </Container>
@@ -157,8 +141,5 @@ const Packages = () => {
 };
 
 export default Packages;
-
-
-
 
 // todo share button remove from here and add to story or tips

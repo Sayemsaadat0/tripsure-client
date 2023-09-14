@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import CommonSwiper from "../../CommonSwiper/CommonSwiper";
 import axios from "axios";
 import DoSwiper from "../../CommonSwiper/DoSwiper";
@@ -13,19 +13,23 @@ import bestTrip from "../../../assets/travelpng.png";
 
 const TopDestinationDetails = () => {
   const { id } = useParams();
-  const [topDestinationDetails, setTopDestinationsDetails] = useState({});
-  const [allHotels, setAllHotels] = useState([]);
-  const [doPlace, setDoPlace] = useState([]);
+  console.log(id);
+  const [topDestinationDetails, setTopDestinationsDetails] = useState({})
+  const [allHotels, setAllHotels] = useState([])
+  const [doPlace, setDoPlace] = useState([])
   const [restaurants, setRestaurants] = useState([]);
-  const eatWithSwiper = doPlace.slice(1);
+  const eatWithSwiper = doPlace.slice(1,)
+
+  const location = useLocation()
 
   useEffect(() => {
-    axios
-      .get(`${import.meta.env.VITE_BACKEND_API}/top-destinations/${id}`)
+    axios.get(`${import.meta.env.VITE_BACKEND_API}/top-destinations/${location.state}`)
       .then((data) => {
         setTopDestinationsDetails(data.data);
       });
   }, []);
+
+
 
   useEffect(() => {
     axios
@@ -61,6 +65,7 @@ const TopDestinationDetails = () => {
       });
   }, [topDestinationDetails]);
 
+ 
   return (
     <Container>
       <div className="mx-2 mt-20">
@@ -111,10 +116,8 @@ const TopDestinationDetails = () => {
             <h3
               className="
               text-2xl 
-              tracking-widest underline text-center text-black my-12"
-            >
-              Essential {topDestinationDetails?.cardtitle}
-            </h3>
+              tracking-widest underline text-center text-black my-12">
+              Essential {topDestinationDetails?.cardtitle} </h3>
             <div className="lg:grid justify-between gap-2 grid-cols-[300px_minmax(900px,_1fr)_100px]">
               <div className="">
                 <h3 className="tracking-widest font-bold my-2 text-gray-700">
@@ -131,10 +134,10 @@ const TopDestinationDetails = () => {
             </div>
             <div className="lg:grid lg:my-32 my-20 justify-between gap-2 grid-cols-[300px_minmax(900px,_1fr)_100px]">
               <div className="">
-                <h3 className="tracking-widest font-bold my-2 text-gray-700">
-                  Overnight Options
-                </h3>
-                <p>A mix of the charming, iconic, and modern.</p>
+                <h3 className="tracking-widest font-bold my-2 text-gray-700">Overnight Options</h3>
+                <p>
+                  A mix of the charming, iconic, and modern.
+                </p>
               </div>
               <div>
                 <CommonSwiper allHotels={allHotels}></CommonSwiper>
@@ -142,10 +145,10 @@ const TopDestinationDetails = () => {
             </div>
             <div className="lg:grid justify-between gap-2 grid-cols-[300px_minmax(900px,_1fr)_100px]">
               <div className="">
-                <h3 className="tracking-widest font-bold my-2 text-gray-700">
-                  Culinary Experiences
-                </h3>
-                <p>Quintessential restaurants, bars, and beyond.</p>
+                <h3 className="tracking-widest font-bold my-2 text-gray-700">Culinary Experiences</h3>
+                <p>
+                  Quintessential  restaurants, bars, and beyond.
+                </p>
               </div>
               <div>
                 <RestaurantSwiper restaurant={restaurants}></RestaurantSwiper>

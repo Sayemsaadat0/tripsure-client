@@ -5,6 +5,7 @@ import Container from '../../../../LayOut/Container';
 import AddPhotoModal from './AddPhotoModal';
 import { imageUpload } from '../../../../api/utilities';
 import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const PostStory = () => {
     const [isOpen, setIsOpen] = useState(false)
@@ -15,14 +16,19 @@ const PostStory = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
         const storyss = { imgUrlTitleDescription, ...data }
-        const { description, title, withYou, whenYouGo } = data
+        const { description, title, withYou, whenYouGo, country } = data
         imageUpload(data.image[0])
             .then(data => {
                 const url = data.data.display_url
-                const story = { description, title, withYou, whenYouGo, url, imgUrlTitleDescription }
+                const story = { description,country, title, withYou, whenYouGo, url, imgUrlTitleDescription,  }
                 axios.post(`${import.meta.env.VITE_BACKEND_API}/story`, story)
                     .then(res => {
                         console.log(res)
+                        Swal.fire(
+                            'Thank You',
+                            'Successfully posted Your story',
+                            'success'
+                          )
                     })
                 console.log(url)
             })
@@ -66,6 +72,10 @@ const PostStory = () => {
                             <div className=' mb-3  flex flex-col gap-2'>
                                 <label htmlFor="title">Give a Title to Your Story</label>
                                 <input type='text' placeholder='Summarize your experience' className='w-full border-2 border-gray-400 py-1 px-2 rounded-md md:w-96 ' {...register("title")} />
+                            </div>
+                            <div className=' mb-3  flex flex-col gap-2'>
+                                <label htmlFor="title">Country You Visited</label>
+                                <input type='text' placeholder='Country Name' className='w-full border-2 border-gray-400 py-1 px-2 rounded-md md:w-96 ' {...register("country")} />
                             </div>
                             <div className=' mb-3 flex flex-col gap-2'>
                                 <label htmlFor="title">Add Few Details About Your Trip </label>

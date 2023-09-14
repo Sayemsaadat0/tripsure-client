@@ -152,7 +152,7 @@ const Footar = () => {
               <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
                 CONVERTOR
               </h2>
-              {/* <Currency /> */}
+           
             </div>
           </div>
         </div>

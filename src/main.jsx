@@ -10,7 +10,7 @@ import {
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query'
-/* import CustomChatBot from './Components/Shared/CustomChatBot/CustomChatBot' */
+ import CustomChatBot from './Components/Shared/CustomChatBot/CustomChatBot' 
 
 const queryClient = new QueryClient()
 

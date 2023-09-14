@@ -21,7 +21,6 @@ const TopDestinations = () => {
   }, []);
 
   const filterData = TopDestinations.filter((t) => t._id !== t.picture);
-  console.log(filterData);
 
   return (
     <Container>
@@ -39,7 +38,6 @@ const TopDestinations = () => {
             modules={[Navigation]}
             className="mySwiper"
             // navigation={true}
-            onSlideChange={() => console.log("slide change")}
             breakpoints={{
               640: {
                 slidesPerView: 2,
@@ -56,15 +54,18 @@ const TopDestinations = () => {
             }}
             onSwiper={(swiper) => swiper}
           >
-            {TopDestinations.map((todo, index) => (
-              <SwiperSlide key={index}>
-                <Link to={`/top-destination-details/${todo?._id}`}>
+            {TopDestinations.map((todo) => (
+              <SwiperSlide key={todo._id}>
+                <Link
+                  state={todo._id}
+                  to={`/top-destination-details/${todo?._id}`}
+                >
                   <div className="">
                     <LazyLoad>
                       <img
                         className="h-40 w-full object-cover rounded-xl hover:scale-105 duration-700 "
                         src={todo.picture}
-                        alt=""
+                        alt="TopDestinationPhoto"
                       />
                     </LazyLoad>
 
@@ -74,7 +75,7 @@ const TopDestinations = () => {
                       </h2>
                       <div>
                         {filterData.map((t) => t._id === todo._id) && (
-                          <SocialMediaShare todo={todo} />
+                          <SocialMediaShare todo={todo} key={todo._id} />
                         )}
                       </div>
                     </div>
