@@ -72,7 +72,12 @@ const TopDestinations = () => {
                       {todo.placetitle}
                     </h2>
                     <div className='flex justify-between'>
-                      <p className="text-red-500 font-bold">{todo.costperperson}$/ <span className='text-xs text-black'>per person</span> </p>
+                      {
+                        todo.price?.map((p, index)=> <div className="flex" key={index}>
+                          <p> {p.type} :</p>
+                          <p className="text-red-500 font-bold"> {p.amount} $</p>
+                        </div> )
+                      }
                       <p className='flex items-center gap-2'><GoStarFill className='text-red-500'></GoStarFill>  {todo.ratings}</p>
                     </div>
 

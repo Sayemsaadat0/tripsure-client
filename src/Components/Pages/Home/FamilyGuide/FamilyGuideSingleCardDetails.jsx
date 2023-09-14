@@ -7,6 +7,7 @@ import { Pagination } from 'swiper/modules';
 import Container from '../../../../LayOut/Container';
 import { useParams } from 'react-router';
 import LazyLoad from 'react-lazy-load';
+import { Carousel } from 'antd';
 
 
 
@@ -63,9 +64,15 @@ const FamilyGuideSingleCardDetails = () => {
 
                     {places_to_visit?.map((p, index) => (
                         <SwiperSlide className='lg:p-4 p-2' >
-                            <LazyLoad>
-                                <img className='rounded-lg ' src={p.placePicture} alt="" />
-                            </LazyLoad>
+                            <Carousel autoplay>
+
+                                {
+                                    pictures.map((photo, index) => <LazyLoad>
+                                        <img className='rounded-lg ' key={index} src={photo} alt="" />
+                                    </LazyLoad>)
+                                }
+
+                            </Carousel>
                             <div className="card card-compact relative ">
                                 <div className="card-body">
                                     <h2 className="card-title">{p.name}</h2>

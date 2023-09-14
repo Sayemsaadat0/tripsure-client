@@ -31,7 +31,7 @@ import Swal from "sweetalert2";
 
 
 const CheckoutForm = ({ price, orderDetails }) => {
- 
+
   const stripe = useStripe();
 
   const elements = useElements();
@@ -47,7 +47,7 @@ const CheckoutForm = ({ price, orderDetails }) => {
   const { user } = useAuth();
 
   const [selectedValue, setSelectedValue] = useState('cardPayment');
-  
+
   const handleRadioChange = (event) => {
     setSelectedValue(event.target.value);
   };
@@ -55,7 +55,7 @@ const CheckoutForm = ({ price, orderDetails }) => {
   const handlePaymentWithSsl = () => {
     axios
       .post(
-        "http://localhost:1000/sll-commerz",
+        `${import.meta.env.VITE_BACKEND_API}/sll-commerz`,
         { orderDetails },
         {
           headers: {
@@ -145,7 +145,6 @@ const CheckoutForm = ({ price, orderDetails }) => {
           console.log("Payment successful:", response.data);
           if (response.data.insertedId) {
             Swal.fire({
-              position: "top-end",
               icon: "success",
               title: "Your Payment successfully Done",
               showConfirmButton: false,
@@ -161,81 +160,83 @@ const CheckoutForm = ({ price, orderDetails }) => {
 
   return (
     <>
-     <div className="my-4 space-x-4 border rounded-2xl p-4">
-     <input
-        type="radio"
-        name="radio-5"
-        className="radio radio-success"
-        value="cardPayment"
-        checked={selectedValue === 'cardPayment'}
-        onChange={handleRadioChange}
-      /><span className="text-xl">Credit/Debit Card</span>
-      <input
-        type="radio"
-        name="radio-5"
-        className="radio radio-success"
-        value="sslPayment"
-        checked={selectedValue === 'sslPayment'}
-        onChange={handleRadioChange}
-      />
-      <span className="text-xl">SSL Commerz</span>
-     </div>
+      <div className="my-4 space-x-4 border rounded-2xl p-4">
+        <input
+          type="radio"
+          name="radio-5"
+          className="radio radio-success"
+          value="cardPayment"
+          checked={selectedValue === 'cardPayment'}
+          onChange={handleRadioChange}
+        /><span className="text-xl">Credit/Debit Card</span>
+        <input
+          type="radio"
+          name="radio-5"
+          className="radio radio-success"
+          value="sslPayment"
+          checked={selectedValue === 'sslPayment'}
+          onChange={handleRadioChange}
+        />
+        <span className="text-xl">SSL Commerz</span>
+      </div>
       {selectedValue === "cardPayment" &&
         <form onSubmit={handleSubmit}>
-        <div id="card-element">
-          <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
-            <span>Credit/Debit Card</span>
-            <FaCcVisa className="text-blue-700"></FaCcVisa>
-            <FaCreditCard className="text-blue-700"></FaCreditCard>
-            <FaCcJcb className="text-orange-500"></FaCcJcb>
-            <FaCcDiscover className="text-green-600"></FaCcDiscover>
-            <FaCcMastercard className="text-red-700"></FaCcMastercard>
-          </h2>
-          <CardElement
-            options={{
-              style: {
-                base: {
-                  fontSize: "24px",
-                  color: "#333",
-                  "::placeholder": {
-                    color: "#999",
+          <div id="card-element">
+            <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
+              <span>Credit/Debit Card</span>
+              <FaCcVisa className="text-blue-700"></FaCcVisa>
+              <FaCreditCard className="text-blue-700"></FaCreditCard>
+              <FaCcJcb className="text-orange-500"></FaCcJcb>
+              <FaCcDiscover className="text-green-600"></FaCcDiscover>
+              <FaCcMastercard className="text-red-700"></FaCcMastercard>
+            </h2>
+            <CardElement
+              options={{
+                style: {
+                  base: {
+                    fontSize: "24px",
+                    color: "#333",
+                    "::placeholder": {
+                      color: "#999",
+                    },
+                    padding: "20px",
+                    borderWidth: "1px",
+                    borderStyle: "solid",
+                    borderColor: "#ccc",
+                    borderRadius: "5px",
+                    backgroundColor: "#fff",
                   },
-                  padding: "20px",
-                  borderWidth: "1px",
-                  borderStyle: "solid",
-                  borderColor: "#ccc",
-                  borderRadius: "5px",
-                  backgroundColor: "#fff",
+                  invalid: {
+                    color: "#e74c3c",
+                    borderColor: "#e74c3c",
+                  },
                 },
-                invalid: {
-                  color: "#e74c3c",
-                  borderColor: "#e74c3c",
-                },
-              },
-            }}
-            id="card-number"
-          />
-        </div>
+              }}
+              id="card-number"
+            />
+          </div>
 
-        <div className="flex justify-center mt-5">
-          <button
-            className="btn w-[40%] rounded-full bg-black hover:bg-[#584B9F] text-white "
-            type="submit"
-            disabled={!stripe || !clientSecret || processing}
-          >
-            Payment
+          <div className="flex justify-center mt-5">
+            <button
+              className="btn-primary w-full md:w-[50%] "
+              type="submit"
+              disabled={!stripe || !clientSecret || processing}  >
+              Payment
+            </button>
+          </div>
+        </form>}
+      {selectedValue === "sslPayment" &&
+        <div className="flex justify-center py-10">
+          <button className="btn-primary" onClick={handlePaymentWithSsl}>
+            pay with SSL commerz
           </button>
-        </div>
-      </form>}
-      {selectedValue === "sslPayment" &&<button className="btn" onClick={handlePaymentWithSsl}>
-        pay with SSL commerz
-      </button>}
+        </div>}
 
       {cardError && <p>{cardError}</p>}
       {transactionId && (
-        <p>
+        <p className=" mt-20 text-center ">
           {" "}
-          Your Payment Successfully Done!. your transaction ID: {transactionId}
+          Your Payment Successfully Done!. your transaction ID:   <span className="text-xl font-semibold text-green-500"><br /> {transactionId}</span>
         </p>
       )}
     </>

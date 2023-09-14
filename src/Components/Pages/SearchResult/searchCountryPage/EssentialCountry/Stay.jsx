@@ -58,9 +58,7 @@ const Stay = ({ countryDatas, country }) => {
                     src={countryData && countryData?.picture}
                     alt="hotel"
                   />
-                  <button className="btn absolute top-2 right-2">
-                    <FaHeart size={20} />
-                  </button>
+                
                   <div>
                     <h3 className="text-xl font-bold hover:underline mt-2">
                      {countryData && countryData?.cardtitle}

@@ -51,7 +51,7 @@ const Packages = () => {
   };
 
   return (
-    <div className="px-10 pb-10">
+    <div className="px-10 md:pb-20">
       <Container>
         <div>
           <SectionTitle
@@ -134,7 +134,7 @@ const Packages = () => {
                         </p>
                       </div>
                       <div>
-                        <button
+                     {/*    <button
                           onClick={() => handleOpenSocialIcon(packageItem._id)}
                           className={
                             showSocialMediaIcons
@@ -142,7 +142,7 @@ const Packages = () => {
                               : " btn" }>
                           <IoIosShareAlt size={22}/>
                           {showSocialMediaIcons && <SocialMediaShare />}
-                        </button>
+                        </button> */}
                       </div>
                     </div>
                   </div>

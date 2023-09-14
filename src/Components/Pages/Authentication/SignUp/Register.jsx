@@ -89,12 +89,15 @@ const Register = () => {
                         <h2
                             className="text-4xl font-bold mb-4">
                             Create Your Account, Enter, and Discover a World of New Experiences.</h2>
+
+                            <p className='text-lg'>Travel isn't just about reaching destinations; it's about discovering yourself along the way and finding the extraordinary in the ordinary.</p>
+                            <p>- Unknown</p>
                     </div>
                 </div>
                 <p className="text-white absolute bottom-4 left-4">@{currentYear} Tripsure Ltd.</p>
             </div>
             {/* form section */}
-            <div className="flex bg-blue-100 justify-center w-full min-h-screen items-center px-4">
+            <div className="flex bg-gradient-to-tr from-blue-300 to-emerald-100 justify-center w-full min-h-screen items-center px-4">
                 <div className=" lg:p-20">
                     <h2 className="text-center text-3xl md:text-4xl lg:text-5xl mb-10 "><span className="text-2xl lg:text-3xl tracking-widest">Join and Explore Fresh Horizons</span> <br /> <span className="font-bold">Sign Up Now</span> </h2>
                     <div >

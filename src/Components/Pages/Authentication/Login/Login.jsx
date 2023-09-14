@@ -63,7 +63,10 @@ const Login = () => {
       <div className="w-3/5  bg-black hidden lg:block">
         <video className="relative h-full w-full object-fill" muted autoPlay loop src="login.mp4"></video>
         <div className="absolute p-5 top-0">
-          <img className="w-40 z-10 " src="https://i.ibb.co/9mX5YKW/logo-6.png" alt="logo" />
+
+          <Link to={'/'}>
+            <img className="w-40 z-10 " src="https://i.ibb.co/9mX5YKW/logo-6.png" alt="logo" />
+          </Link>
 
           {/* hello section */}
           <div className="mt-96 text-white  w-[420px] gap-4 ">
@@ -71,12 +74,14 @@ const Login = () => {
               className="text-4xl font-bold mb-4">
               Enter Your Account and <br />Discover New <br /> Experiences
             </h2>
+
+            <p className="text-lg">Travel opens your heart, broadens your mind, and fills your life with stories to tell. <br /> - <span className="text-sm">Paula Bendfeldt</span></p>
           </div>
         </div>
         <p className="text-white absolute  bottom-4 left-4">@{currentYear} Tripsure Ltd.</p>
       </div>
       {/* form section */}
-      <div className="flex bg-blue-100 justify-center w-full min-h-screen items-center px-4">
+      <div className="flex bg-gradient-to-tr from-blue-300 to-emerald-100 justify-center w-full min-h-screen items-center px-4">
         <div className=" lg:p-20">
           <h2 className="text-center text-3xl md:text-4xl lg:text-5xl mb-10 "><span className="text-2xl lg:text-3xl tracking-widest">Open the Door to Excitement -</span> <br /> <span className="font-bold">Sign In</span> </h2>
           <div >

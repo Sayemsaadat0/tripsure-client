@@ -110,7 +110,7 @@ const TourDetails = () => {
         </h1> */}
         <div className="my-6">
           <img
-            className="w-full h-60 md:h-72 lg:h-[25rem] object-bottom rounded-md bg-cover object-cover"
+            className="w-full h-60 md:h-72 lg:h-[36rem] object-bottom rounded-md bg-cover object-cover"
             src={picture}
             alt=""
           />
@@ -368,9 +368,7 @@ const TourDetails = () => {
                 <p>(No additional taxes or booking fees)</p>
               </div>
               <div className="flex gap-3 items-center justify-around">
-                <button className="btn rounded-full lg:px-14 btn-warning">
-                  Add TO Favorite
-                </button>
+
                 <Link disabled={selectedDate == null}
                   to={user ? '/contactDetails' : '/login'}
                   state={{ orderDetails: orderDetails }}
