@@ -42,9 +42,14 @@ const TravelDeals = () => {
       const favoriteItem = {
         dealExpires, destination, discountPercentage, duration, newPrice, picture, price, reviews, savings, title, totalPeople, id, displayName, email
       }
-      console.log('favorite item', favoriteItem)
       setFavorite(favoriteItem)
-      refetch()
+      if (acknowledged) {
+        Swal.fire(
+          'Added to Favorite',
+          ' ',
+          'success'
+        )
+      }
     }
   }
   // console.log(data)

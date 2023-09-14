@@ -9,6 +9,7 @@ import WhyUs from './WhyUs/WhyUs';
 import TravelDeals from './TravelDeals/TravelDeals';
 import Packages from './Packages/Packages';
 import Medical from './Medical/Medical';
+import OpenAi from './OpenAi/OpenAi';
 
 const Home = () => {
     return (
@@ -17,8 +18,6 @@ const Home = () => {
                 <SearchSection></SearchSection>
             </section>
             <Banner></Banner>
-            {/* https://i.ibb.co/9NPLGRs/1.png
-https://i.ibb.co/9HhFbwm/2.png*/}
             <section
                 className='pt-14 md:pt-24 bg-[url("https://i.ibb.co/MMd76r0/Untitled-design-8.png")]  w-full object-center mx-auto'>
                 <TravelDeals></TravelDeals>

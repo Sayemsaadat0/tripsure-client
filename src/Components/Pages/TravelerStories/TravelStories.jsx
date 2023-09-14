@@ -1,11 +1,9 @@
 import { Link } from "react-router-dom";
 import FoodAndDrink from "./FoodAndDrink";
-// import KeepExploring from "./KeepExploring";
-// import PlacesToVisit from "./PlacesToVisit";
+
 import "./TravelerStories.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
-// import stories from "./Stories/Stories";
 
 const TravelarStories = () => {
   const [stories, setStories] = useState([])
@@ -13,7 +11,6 @@ const TravelarStories = () => {
     axios.get(`${import.meta.env.VITE_BACKEND_API}/story`)
       .then(res => {
         setStories(res.data)
-        console.log(res.data)
       })
   }, [])
 
@@ -25,7 +22,6 @@ const TravelarStories = () => {
         {/* food and drink  */}
         <div>
           <div className="mx-auto text-center mt-10">
-            <h1 className="text-2xl tracking-widest underline font-semibold text-gray-500">Food and Drink</h1>
             <p className="font-light tracking-wider mt-3">
               Dig into the best restaurants and bars, street food, and culinary
               hotspots around the world. <br /> Whos hungry?

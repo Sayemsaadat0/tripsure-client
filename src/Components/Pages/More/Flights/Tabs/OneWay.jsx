@@ -8,13 +8,13 @@ const OneWay = () => {
   const [destinationQuery, setDestinationQuery] = useState("");
   const [dateQuery, setDateQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+  console.log(searchResults); 
 
  
   
   
-  const url = `${import.meta.env.VITE_BACKEND_API}/flights?from=${searchQuery}&to=${destinationQuery}&date=${dateQuery}`;
-
-  useEffect(() => {
+  const url = `http://localhost:1000/flights?from=${searchQuery}&to=${destinationQuery}&date=${dateQuery}`;
+  const handleFindFlights = ()=>{
     if (searchQuery||destinationQuery|| dateQuery) {
       fetch(url)
         .then((response) => response.json())
@@ -25,7 +25,8 @@ const OneWay = () => {
     } else {
       setSearchResults([]);
     }
-  }, [searchQuery, destinationQuery, dateQuery]);
+  }
+
 
 
 
@@ -78,7 +79,7 @@ const OneWay = () => {
           <option value="business">Business Class</option>
           <option value="first">First Class</option>
         </select>
-        <button className="px-5 py-3 bg-blue-500 text-white font-semibold md:rounded-r-full">
+        <button onClick={handleFindFlights} className="px-5 py-3 bg-blue-500 text-white font-semibold md:rounded-r-full">
           Find Flights
         </button>
       </div>

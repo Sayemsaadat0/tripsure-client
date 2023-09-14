@@ -122,12 +122,13 @@ const CheckoutForm = ({ price, orderDetails }) => {
         user: user?.email,
         transactionId: transactionId,
         price,
-        tourId: orderDetails?.card?._id,
+        tourId: orderDetails?.card?._id || orderDetails._id,
+        card: orderDetails?.card || orderDetails,
         detailsPrice: orderDetails?.price,
         selectedDate: orderDetails?.selectedDate,
         travelerCount: orderDetails?.travelerCount,
         paidStatus: true,
-        whenYouPayment: new Date()
+        date: new Date()
       };
       axios
         .post(`${import.meta.env.VITE_BACKEND_API}/payments`, payment)

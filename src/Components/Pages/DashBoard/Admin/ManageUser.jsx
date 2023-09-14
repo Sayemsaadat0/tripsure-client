@@ -31,12 +31,12 @@ const ManageUser = () => {
   useEffect(() => {
     let filteredAndSortedUsers = [...usersdata];
 
+    
     if (operator === 'admin') {
       filteredAndSortedUsers = filteredAndSortedUsers.filter(user => user.role === 'admin');
     } else if (operator === 'operator') {
       filteredAndSortedUsers = filteredAndSortedUsers.filter(user => user.role === 'operator');
     }
-
     // Sort users based on sortColumn and sortOrder
     filteredAndSortedUsers.sort((a, b) => {
       if (sortOrder === 'asc') {
@@ -45,9 +45,11 @@ const ManageUser = () => {
         return b[sortColumn]?.localeCompare(a[sortColumn]);
       }
     });
-
     setFilteredUsers(filteredAndSortedUsers);
   }, [usersdata, operator, sortColumn, sortOrder]);
+
+
+
 
   const handleSort = (column) => {
     if (sortColumn === column) {

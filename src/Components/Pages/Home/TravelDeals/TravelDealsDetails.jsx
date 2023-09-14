@@ -30,19 +30,29 @@ const TravelDealsDetails = () => {
   };
 
 
-  const handlePeopleForReserve = () => {
-    setModalForCountPeople(!modalForCountPeople);
-  };
   const onChange = (date, dateString) => {
     // dateString);
   };
+
+  const handlePeopleForReserve = () => {
+    setModalForCountPeople(!modalForCountPeople);
+  };
+ 
 
   const isDateUnavailable = (date) => {
     return unavailableDates.includes(date.format("YYYY-MM-DD"));
   };
 
+  useEffect(() => {
+    axios
+      .get(`https://tripsure-server-sayemsaadat0.vercel.app/travelDeals/${id}`)
+      .then((res) => {
+        setTravelDealsDetails(res.data);
+      });
+  }, [id]);
 
-  const { title,
+  const {
+    title,
     destination,
     duration,
     price,
@@ -65,20 +75,12 @@ const TravelDealsDetails = () => {
     _id
   } = travelDealsDetails
   useEffect(() => {
-    axios.get(`${import.meta.env.VITE_BACKEND_API}/travelDeals/${id}`)
+    axios
+      .get(`${import.meta.env.VITE_BACKEND_API}/travelDeals/${id}`)
       .then((res) => {
-        setTravelDealsDetails(res.data)
-      })
-  }, [id])
-
-
-  const words = [
-    `Experience joy and save  ${discountPercentage}%`,
-    `Get ${savings?.adult} off per adult`,
-    `and ${savings?.child} off per child.`,
-  ];
-
-
+        setTravelDealsDetails(res.data);
+      });
+  }, [id]);
 
   const orderDetails = {
     email: user?.email,
@@ -87,15 +89,16 @@ const TravelDealsDetails = () => {
     price: {
       adult: travelDealsDetails?.newPrice?.adult * adultCount,
       children: travelDealsDetails?.newPrice?.child * childrenCount,
-      totalPrice: travelDealsDetails?.newPrice?.adult * adultCount + travelDealsDetails?.newPrice?.child * childrenCount
-
+      totalPrice:
+        travelDealsDetails?.newPrice?.adult * adultCount +
+        travelDealsDetails?.newPrice?.child * childrenCount,
     },
     travelerCount: {
       adult: adultCount,
       children: childrenCount,
-      infants: infantsCount
-    }
-  }
+      infants: infantsCount,
+    },
+  };
 
     // add to favorite 
     const [setFavorite, { isLoading, isError, data }] = useAddToFavoriteMutation()
@@ -124,51 +127,64 @@ const TravelDealsDetails = () => {
           <p>Booking End: {dealExpires}</p>
         </div>
         {/* about */}
-        <div className='my-3'>
-          <h4 className='font-bold'>About : </h4>
+        <div className="my-3">
+          <h4 className="font-bold">About : </h4>
           <p>{description}</p>
         </div>
         {/* price and section image */}
-        <div className='grid grid-cols-1 md:grid-cols-2 md:gap-10 w-full'>
+        <div className="grid grid-cols-1 md:grid-cols-2 md:gap-10 w-full">
           <div>
-           <LazyLoad>
-           <img src={picture} className='w-full rounded-xl ' alt="" />
-           </LazyLoad>
+            <LazyLoad>
+              <img src={picture} className="w-full rounded-xl " alt="" />
+            </LazyLoad>
 
             <div>
-              <h2 className='font-bold md:py-6 text-xl tracking-widest'>Grab it Now, Save Big</h2>
-              <h3 className='text-3xl font-bold text-[#79c7ff]'>
-
-                <Typewriter words={words}
+              <h2 className="font-bold md:py-6 text-xl tracking-widest">
+                Grab it Now, Save Big
+              </h2>
+              <h3 className="text-3xl font-bold text-[#79c7ff]">
+                <Typewriter
+                  words={words}
                   loop={Infinity}
                   delaySpeed={2000}
                   typeSpeed={120}
                   deleteSpeed={80}
-                  cursor />
+                  cursor
+                />
               </h3>
             </div>
 
-            <p className='font-bold'>Offer Price </p>
-              <div className='flex items-center gap-3 '>
-                <p className='font-light text-sm'><span className='text-2xl font-bold text-red-500'>${newPrice?.adult}</span> (Adult) </p>
-                <p className='line-through font-light text-sm'> {price?.adult}</p>
-              </div>
-              <div className='flex gap-3 items-center '>
-                <p className='font-light text-sm'> <span className='text-2xl font-bold text-red-500'>${newPrice?.child}</span> (Child)</p>
-                <p className='line-through font-light text-sm'>{price?.child}</p>
-              </div>
-
+            <p className="font-bold">Offer Price </p>
+            <div className="flex items-center gap-3 ">
+              <p className="font-light text-sm">
+                <span className="text-2xl font-bold text-red-500">
+                  ${newPrice?.adult}
+                </span>{" "}
+                (Adult){" "}
+              </p>
+              <p className="line-through font-light text-sm"> {price?.adult}</p>
+            </div>
+            <div className="flex gap-3 items-center ">
+              <p className="font-light text-sm">
+                {" "}
+                <span className="text-2xl font-bold text-red-500">
+                  ${newPrice?.child}
+                </span>{" "}
+                (Child)
+              </p>
+              <p className="line-through font-light text-sm">{price?.child}</p>
+            </div>
           </div>
-          <div className=''>
+          <div className="">
             {/* percentage */}
-            
 
             {/* price */}
             <div>
-
-              <div className=''>
+              <div className="">
                 <div className="">
-                  <h2 className="text-3xl tracking-widest pb-6">Reserve your spot</h2>
+                  <h2 className="text-3xl tracking-widest pb-6">
+                    Reserve your spot
+                  </h2>
                   <div className="flex gap-4 relative">
                     <button className="font-bold h-10 border-2 border-black rounded-full">
                       {/* <Space direction="vertical" size={14}>
@@ -296,7 +312,8 @@ const TravelDealsDetails = () => {
                       {adultCount} Adults x ${newPrice?.adult * adultCount}
                     </p>
                     <p>
-                      {childrenCount} Children x ${newPrice?.child * childrenCount}
+                      {childrenCount} Children x $
+                      {newPrice?.child * childrenCount}
                     </p>
                     <p className="text-xl font-semibold">
                       Total $
@@ -313,7 +330,8 @@ const TravelDealsDetails = () => {
                     <Link disabled={selectedDate == null}
                       to={user ? '/contactDetails' : '/login'}
                       state={{ orderDetails: orderDetails }}
-                      className="btn rounded-full lg:px-14 btn-warning">
+                      className="btn rounded-full lg:px-14 btn-warning"
+                    >
                       Reserve Now
                     </Link>
                   </div>
@@ -323,20 +341,19 @@ const TravelDealsDetails = () => {
                   </p>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
 
-        <div className='grid grid-cols-1 md:grid-cols-2'>
+        <div className="grid grid-cols-1 md:grid-cols-2">
           {/* departure  */}
-          <div className='mt-5'>
-            <h3 className='text-lg font-semibold'>Departure Details : </h3>
+          <div className="mt-5">
+            <h3 className="text-lg font-semibold">Departure Details : </h3>
             <div>
-              <p>Departure Time :  {departureTime}</p>
-              <p>Departure Place :  {departurePlace}</p>
+              <p>Departure Time : {departureTime}</p>
+              <p>Departure Place : {departurePlace}</p>
             </div>
-            <hr className='my-2' />
+            <hr className="my-2" />
           </div>
 
           {/* Conditions */}
@@ -348,22 +365,24 @@ const TravelDealsDetails = () => {
           </div>
         </div>
 
-
         {/* items and activies */}
-        <div className='grid grid-cols-1 md:grid-cols-2'>
+        <div className="grid grid-cols-1 md:grid-cols-2">
           {/* includes item */}
           <div className='mb-5'>
             <p className='font-bold'>Includes Items : </p>
             {includedItems?.map((d, index) => (
-              <li className='list-disc' key={index}>{d}</li>
-
+              <li className="list-disc" key={index}>
+                {d}
+              </li>
             ))}
           </div>
           {/* optional activites */}
-          <div >
-            <p className='font-bold'>optional Activities </p>
+          <div>
+            <p className="font-bold">optional Activities </p>
             {optionalActivities?.map((d, index) => (
-              <li className='list-disc' key={index}>{d}</li>
+              <li className="list-disc" key={index}>
+                {d}
+              </li>
             ))}
           </div>
         </div>
@@ -384,18 +403,19 @@ const TravelDealsDetails = () => {
                 </p>
               </div>
             ))}
-
           </div>
           <hr />
         </div>
 
-        <div className='grid grid-cols-1 md:grid-cols-2'>
+        <div className="grid grid-cols-1 md:grid-cols-2">
           {/* hotels */}
           <div>
-            <p className='font-bold flex items-center gap-2'><FaHotel></FaHotel> Accommodations </p>
+            <p className="font-bold flex items-center gap-2">
+              <FaHotel></FaHotel> Accommodations{" "}
+            </p>
             {hotels?.map((hotel, index) => (
               <div key={index}>
-                <h2>Title  : {hotel.name}</h2>
+                <h2>Title : {hotel.name}</h2>
                 <p>Type : {hotel.type}</p>
                 <p>Duration of Stay : {hotel.nights} Nights</p>
               </div>
@@ -410,11 +430,5 @@ const TravelDealsDetails = () => {
 
 export default TravelDealsDetails;
 
-
-
 // todo think about how you implement the itrenary
 // todo add ratings as number
-
-
-
-

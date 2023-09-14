@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import CommonSwiper from "../../CommonSwiper/CommonSwiper";
 import axios from "axios";
 import DoSwiper from "../../CommonSwiper/DoSwiper";
@@ -13,21 +13,23 @@ import bestTrip from "../../../assets/travelpng.png"
 
 const TopDestinationDetails = () => {
   const { id } = useParams();
+  console.log(id);
   const [topDestinationDetails, setTopDestinationsDetails] = useState({})
   const [allHotels, setAllHotels] = useState([])
   const [doPlace, setDoPlace] = useState([])
   const [restaurants, setRestaurants] = useState([]);
   const eatWithSwiper = doPlace.slice(1,)
 
-
-
+  const location = useLocation()
 
   useEffect(() => {
-    axios.get(`${import.meta.env.VITE_BACKEND_API}/top-destinations/${id}`)
+    axios.get(`${import.meta.env.VITE_BACKEND_API}/top-destinations/${location.state}`)
       .then((data) => {
         setTopDestinationsDetails(data.data);
       })
   }, [])
+
+
 
   useEffect(() => {
     axios.get(`${import.meta.env.VITE_BACKEND_API}/all-hotels/${topDestinationDetails?.country}`)
@@ -35,19 +37,27 @@ const TopDestinationDetails = () => {
         setAllHotels(data.data);
       })
   }, [topDestinationDetails])
-  useEffect(() => {
+
+  console.log("🚀 ~ file: TopDestinationDetails.jsx:42 ~ TopDestinationDetails ~ allHotels:", allHotels)
+  
+ 
+/*   useEffect(() => {
     axios.get(`${import.meta.env.VITE_BACKEND_API}/tourCountry/${topDestinationDetails?.country}`)
       .then((data) => {
         setDoPlace(data.data);
       })
   }, [topDestinationDetails])
-  useEffect(() => {
+ 
+  */
+ 
+ /*  useEffect(() => {
     axios.get(`${import.meta.env.VITE_BACKEND_API}/restaurant/${topDestinationDetails?.country}`)
       .then((data) => {
         setRestaurants(data.data);
       })
   }, [topDestinationDetails])
 
+  */
   return (
     <Container>
       <div className="mx-2 mt-20">
@@ -97,7 +107,7 @@ const TopDestinationDetails = () => {
               className="
               text-2xl 
               tracking-widest underline text-center text-black my-12">
-              Essential {topDestinationDetails?.cardtitle}</h3>
+              Essential {topDestinationDetails?.cardtitle} </h3>
             <div className="lg:grid justify-between gap-2 grid-cols-[300px_minmax(900px,_1fr)_100px]">
               <div className="">
                 <h3 className="tracking-widest font-bold my-2 text-gray-700">Local Adventures</h3>
