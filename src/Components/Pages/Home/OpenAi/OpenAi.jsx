@@ -75,12 +75,12 @@ const OpenAi = () => {
 
     return (
         <div>
-            <button onClick={() => document.getElementById('my_modal_1').showModal()} className='fixed tooltip tooltip-left right-3 top-20 z-10' data-tip="Ask anything!"> <img className='w-12 md:w-16' src="https://i.ibb.co/tCVGzf8/Ask-Anything-3.png" alt="" /> </button>
+            <button onClick={() => document.getElementById('my_modal_1').showModal()} className='fixed tooltip tooltip-left right-4 top-72 z-10' data-tip="Ask anything!"> <img className='w-12 md:w-16' src="https://i.ibb.co/tCVGzf8/Ask-Anything-3.png" alt="" /> </button>
 
             <dialog id="my_modal_1" className="modal backdrop-blur-sm">
-                <div className="modal-box relative pt-20">
-                    <div className="mx-auto  w-96 ">
-                        <MainContainer className='pt-10 rounded-lg'>
+                <div className="modal-box relative pt-36">
+                    <div className="mx-auto w-96 ">
+                        <MainContainer className='pt-20 rounded-lg'>
                             <ChatContainer>
                                 <MessageList
                                     typingIndicator={

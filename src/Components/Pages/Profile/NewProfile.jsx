@@ -42,8 +42,10 @@ const NewProfile = () => {
                                 <LazyLoad>
                                 <img className=' w-32 h-32 rounded-full mx-auto' src={photo} alt="" />
                                 </LazyLoad>
-                                <p className='text-xl font-semibold my-3'>{name}</p>
+                        
+                               <p className='text-xl font-semibold my-3'>{name}</p>
                                 <p className='text-xl font-semibold flex justify-center items-center gap-2'><FaLocationDot></FaLocationDot> Bangladesh</p>
+                              
                             </div>
                             <div className='divide-y-2 space-y-2 w-1/3'>
                                 <div className='w-full'>
@@ -70,7 +72,7 @@ const NewProfile = () => {
                             <p className='flex items-center gap-3'><GrDocumentVerified /> <span className='text-[1.2rem]'>Joined on Tripsure :  12/12/2022</span></p>
                         </div>
                         
-                    <button className='pt-10 btn-link text-black'>Report Profile</button>
+                    {/* <button className='pt-10 btn-link text-black'>Report Profile</button> */}
                     </div>
                     <div className='lg:w-2/3 '>
                         <div>
@@ -93,13 +95,13 @@ const NewProfile = () => {
             <div className=' flex flex-col lg:flex-row gap-10'>
                 <div className='w-full'>
         
-                    <div className=' rounded-2xl border-4 py-7 px-5  h-fit  shadow-lg md:flex justify-center text-center md:text-left items-center'>
+                    <div className=' rounded-2xl border-4 py-7 px-5  h-fit  shadow-lg md:flex justify-center text-center md:text-left items-center gap-4'>
         
                         <LazyLoad>
                             <img className='w-40 h-40 rounded-full mx-auto' src={user?.photoURL} alt="" />
                         </LazyLoad>
                         <div>
-                            <p className='text-xl font-semibold my-3'>{name}</p>
+                            <p className='text-xl font-semibold my-3 '>{name}</p>
                             <p className='text-xl font-semibold flex justify-center items-center gap-2'><FaLocationDot></FaLocationDot> Bangladesh</p>
                         </div>
         
