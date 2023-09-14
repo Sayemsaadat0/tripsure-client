@@ -59,9 +59,9 @@ const Login = () => {
 
 
   return (
-    <div className="min-h-screen flex ">
-      <div className="w-3/5  bg-yellow-100 hidden lg:block">
-        <video className="relative h-full w-full object-fill" muted autoPlay loop src="login1.mp4"></video>
+    <div className="flex ">
+      <div className="w-3/5  bg-black hidden lg:block">
+        <video className="relative h-full w-full object-fill" muted autoPlay loop src="login.mp4"></video>
         <div className="absolute p-5 top-0">
           <img className="w-40 z-10 " src="https://i.ibb.co/9mX5YKW/logo-6.png" alt="logo" />
 
@@ -73,7 +73,7 @@ const Login = () => {
             </h2>
           </div>
         </div>
-        <p className="text-white absolute bottom-4 left-4">@{currentYear} Tripsure Ltd.</p>
+        <p className="text-white absolute  bottom-4 left-4">@{currentYear} Tripsure Ltd.</p>
       </div>
       {/* form section */}
       <div className="flex bg-blue-100 justify-center w-full min-h-screen items-center px-4">

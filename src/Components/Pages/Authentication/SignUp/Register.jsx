@@ -20,6 +20,7 @@ import { BsFillEyeFill, BsFillEyeSlashFill } from 'react-icons/bs';
 
 
 const Register = () => {
+    const currentYear = new Date().getFullYear();
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const { createUser, updateUserProfile, logOut } = useAuth()
     const [loading, setLoading] = useState(false)
@@ -76,136 +77,147 @@ const Register = () => {
     };
 
     return (
-        <div className='authenticationImg'>
-            <div className='flex items-center justify-center w-full min-h-screen'>
-      
-                <div className="p-6  w-96 shadow-sm hover:shadow-sm rounded-lg text-white md:hover:shadow-white duration-700 backdrop-blur-sm">
-                    <div className='flex gap-2'>
-                        <img className="w-16 h-16" loading='lazy' src="https://i.ibb.co/ng9Sdrp/Untitled-design-1-unscreen.gif" alt="" />
-                        <div>
-                            <h2 className="text-2xl   font-bold ">Welcome to Tripsure</h2>
-                            <p>Register Your Account</p>
-                        </div>
-                    </div>
 
-                    <form onSubmit={handleSubmit(onSubmit)}>
-                        <div className="mb-4 mt-4">
-                            <input
-                                type="text"
-                                name="name"
-                                placeholder='Enter Name'
-                                {...register('name', { required: 'Name is required' })}
-                                className='w-full shadow-sm  shadow-white bg-transparent px-3 py-2 rounded-md focus:outline-none placeholder-text-color'
-                            />
-                            {errors.name && (
-                                <span className="text-red-500 text-sm">{errors.name.message}</span>
-                            )}
-                        </div>
-                        <div className="mb-4">
-                            <input
-                                type="text"
-                                name="country"
-                                placeholder='Country Name'
-                                {...register('countryName', { required: 'Country Name is required' })}
-                                className='w-full shadow-sm  shadow-white bg-transparent px-3 py-2 rounded-md focus:outline-none placeholder-text-color'
-                            />
-                            {errors.countryName && (
-                                <span className="text-red-500 text-sm">{errors.countryName.message}</span>
-                            )}
-                        </div>
-                        <div className='md:flex gap-3 '>
-                            <div className="w-full mb-4">
+        <div className="min-h-screen flex ">
+            <div className="w-3/5  bg-black hidden lg:block">
+                <video className="relative h-full w-full object-fill" muted autoPlay loop src="login.mp4"></video>
+                <div className="absolute p-5 top-0">
+                    <img className="w-40 z-10 " src="https://i.ibb.co/9mX5YKW/logo-6.png" alt="logo" />
+
+                    {/* hello section */}
+                    <div className="mt-96 text-white  w-[420px] gap-4 ">
+                        <h2
+                            className="text-4xl font-bold mb-4">
+                            Enter Your Account and <br />Discover New <br /> Experiences
+                        </h2>
+                    </div>
+                </div>
+                <p className="text-white absolute bottom-4 left-4">@{currentYear} Tripsure Ltd.</p>
+            </div>
+            {/* form section */}
+            <div className="flex bg-blue-100 justify-center w-full min-h-screen items-center px-4">
+                <div className=" lg:p-20">
+                    <h2 className="text-center text-3xl md:text-4xl lg:text-5xl mb-10 "><span className="text-2xl lg:text-3xl tracking-widest">Open the Door to Excitement -</span> <br /> <span className="font-bold">Sign In</span> </h2>
+                    <div >
+                        <form onSubmit={handleSubmit(onSubmit)}>
+                            <div className="mb-4 mt-4">
                                 <input
                                     type="text"
-                                    name="phone"
-                                    placeholder='Enter Phone'
-                                    {...register('phone', { required: 'phone is required' })}
+                                    name="name"
+                                    placeholder='Enter Name'
+                                    {...register('name', { required: 'Name is required' })}
                                     className='w-full shadow-sm  shadow-white bg-transparent px-3 py-2 rounded-md focus:outline-none placeholder-text-color'
                                 />
-                                {errors.phone && (
-                                    <span className="text-red-500 text-sm">{errors.phone.message}</span>
+                                {errors.name && (
+                                    <span className="text-red-500 text-sm">{errors.name.message}</span>
                                 )}
                             </div>
-                            <div className="w-full mb-4">
-
-                                <select
+                            <div className="mb-4">
+                                <input
+                                    type="text"
+                                    name="country"
+                                    placeholder='Country Name'
+                                    {...register('countryName', { required: 'Country Name is required' })}
                                     className='w-full shadow-sm  shadow-white bg-transparent px-3 py-2 rounded-md focus:outline-none placeholder-text-color'
-                                    {...register("gender")} >
-                                    <option className='text-black ' value="female">female</option>
-                                    <option className='text-black ' value="male">male</option>
-                                    <option className='text-black ' value="other">other</option>
-                                </select>
+                                />
+                                {errors.countryName && (
+                                    <span className="text-red-500 text-sm">{errors.countryName.message}</span>
+                                )}
                             </div>
-                        </div>
-                        <div className="mb-4">
-                            <input
-                                type="email"
-                                name="email"
-                                placeholder='Enter Email'
-                                {...register('email', {
-                                    required: 'Email is required',
-                                    pattern: {
-                                        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                                        message: 'Invalid email address',
-                                    },
-                                })}
-                                className="w-full shadow-sm  shadow-white bg-transparent px-3 py-2 rounded-md focus:outline-none placeholder-text-color"
-                            />
-                            {errors.email && (
-                                <span className="text-red-500 text-sm">{errors.email.message}</span>
-                            )}
-                        </div>
-                        <div className="mb-4 relative">
+                            <div className='md:flex gap-3 '>
+                                <div className="w-full mb-4">
+                                    <input
+                                        type="text"
+                                        name="phone"
+                                        placeholder='Enter Phone'
+                                        {...register('phone', { required: 'phone is required' })}
+                                        className='w-full shadow-sm  shadow-white bg-transparent px-3 py-2 rounded-md focus:outline-none placeholder-text-color'
+                                    />
+                                    {errors.phone && (
+                                        <span className="text-red-500 text-sm">{errors.phone.message}</span>
+                                    )}
+                                </div>
+                                <div className="w-full mb-4">
 
-                            <input
-                                type={`${show ? 'text' : 'password'}`}
-                                name="password"
-                                placeholder='Enter Password'
-                                {...register('password', {
-                                    required: 'Password is required',
-                                    minLength: {
-                                        value: 6,
-                                        message: 'Password must be at least 6 characters',
-                                    },
-                                })}
-                                className="w-full shadow-sm  shadow-white bg-transparent px-3 py-2 rounded-md focus:outline-none placeholder-text-color" />
-                            <span
-                                className="w-fit mr-0 cursor-pointer absolute right-2 top-3 "
-                                onClick={() => setShow(!show)}>
-                                {show ? <BsFillEyeFill></BsFillEyeFill> : <BsFillEyeSlashFill></BsFillEyeSlashFill>}
-                            </span>
-                            {errors.password && (
-                                <span className="text-red-500 text-sm">{errors.password.message}</span>
-                            )}
-                        </div>
-                        <div className="mb-4">
+                                    <select
+                                        className='w-full shadow-sm  shadow-white bg-transparent px-3 py-2 rounded-md focus:outline-none placeholder-text-color'
+                                        {...register("gender")} >
+                                        <option className='text-black ' value="female">female</option>
+                                        <option className='text-black ' value="male">male</option>
+                                        <option className='text-black ' value="other">other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div className="mb-4">
+                                <input
+                                    type="email"
+                                    name="email"
+                                    placeholder='Enter Email'
+                                    {...register('email', {
+                                        required: 'Email is required',
+                                        pattern: {
+                                            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                                            message: 'Invalid email address',
+                                        },
+                                    })}
+                                    className="w-full shadow-sm  shadow-white bg-transparent px-3 py-2 rounded-md focus:outline-none placeholder-text-color"
+                                />
+                                {errors.email && (
+                                    <span className="text-red-500 text-sm">{errors.email.message}</span>
+                                )}
+                            </div>
+                            <div className="mb-4 relative">
 
-                            <input
-                                type="file"
-                                name="image"
-                                {...register('image', { required: 'Image is required' })}
-                                className="w-full border   px-3 py-2 rounded-md focus:outline-none ring-[#6bccd3] focus:ring-2  ring-offset-2 focus:border-blue-500"
-                            />
-                            {errors.image && (
-                                <span className="text-red-500 text-sm">{errors.image.message}</span>
-                            )}
-                        </div>
+                                <input
+                                    type={`${show ? 'text' : 'password'}`}
+                                    name="password"
+                                    placeholder='Enter Password'
+                                    {...register('password', {
+                                        required: 'Password is required',
+                                        minLength: {
+                                            value: 6,
+                                            message: 'Password must be at least 6 characters',
+                                        },
+                                    })}
+                                    className="w-full shadow-sm  shadow-white bg-transparent px-3 py-2 rounded-md focus:outline-none placeholder-text-color" />
+                                <span
+                                    className="w-fit mr-0 cursor-pointer absolute right-2 top-3 "
+                                    onClick={() => setShow(!show)}>
+                                    {show ? <BsFillEyeFill></BsFillEyeFill> : <BsFillEyeSlashFill></BsFillEyeSlashFill>}
+                                </span>
+                                {errors.password && (
+                                    <span className="text-red-500 text-sm">{errors.password.message}</span>
+                                )}
+                            </div>
+                            <div className="mb-4">
 
-                        <div className="mt-4">
-                            {
-                                loading ? <LoadingButton></LoadingButton>
-                                    : <button
-                                        type="submit"
-                                        className=" w-full flex justify-center shadow-sm py-2 rounded-lg shadow-white hover:scale-105 duration-500">
-                                        Register
-                                    </button>}
-                        </div>
-                        <p className=' w-fit '>alredy have an account <Link className='my-link  font-bold relative' to={'/login'}>Login</Link></p>
-                        <div className='divider'>
-                            <p>or</p>
-                        </div>
-                        <GoogleLogin></GoogleLogin>
-                    </form>
+                                <input
+                                    type="file"
+                                    name="image"
+                                    {...register('image', { required: 'Image is required' })}
+                                    className="w-full border   px-3 py-2 rounded-md focus:outline-none ring-[#6bccd3] focus:ring-2  ring-offset-2 focus:border-blue-500"
+                                />
+                                {errors.image && (
+                                    <span className="text-red-500 text-sm">{errors.image.message}</span>
+                                )}
+                            </div>
+
+                            <div className="mt-4">
+                                {
+                                    loading ? <LoadingButton></LoadingButton>
+                                        : <button
+                                            type="submit"
+                                            className=" w-full flex justify-center shadow-sm py-2 rounded-lg shadow-white hover:scale-105 duration-500">
+                                            Register
+                                        </button>}
+                            </div>
+                            <p className=' w-fit '>alredy have an account <Link className='my-link  font-bold relative' to={'/login'}>Login</Link></p>
+                            <div className='divider'>
+                                <p>or</p>
+                            </div>
+                            <GoogleLogin></GoogleLogin>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -213,3 +225,151 @@ const Register = () => {
 };
 
 export default Register;
+
+
+
+
+/* 
+
+
+<div className="min-h-screen flex ">
+    <div className="w-3/5  bg-black hidden lg:block">
+        <video className="relative h-full w-full object-fill" muted autoPlay loop src="login.mp4"></video>
+        <div className="absolute p-5 top-0">
+            <img className="w-40 z-10 " src="https://i.ibb.co/9mX5YKW/logo-6.png" alt="logo" />
+
+            <div className="mt-96 text-white  w-[420px] gap-4 ">
+                <h2
+                    className="text-4xl font-bold mb-4">
+                    Enter Your Account and <br />Discover New <br /> Experiences
+                </h2>
+            </div>
+        </div>
+        <p className="text-white absolute bottom-4 left-4">@{currentYear} Tripsure Ltd.</p>
+    </div>
+    <div className="flex bg-blue-100 justify-center w-full min-h-screen items-center px-4">
+        <div className=" lg:p-20">
+            <h2 className="text-center text-3xl md:text-4xl lg:text-5xl mb-10 "><span className="text-2xl lg:text-3xl tracking-widest">Open the Door to Excitement -</span> <br /> <span className="font-bold">Sign In</span> </h2>
+            <div >
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    <div className="mb-4 mt-4">
+                        <input
+                            type="text"
+                            name="name"
+                            placeholder='Enter Name'
+                            {...register('name', { required: 'Name is required' })}
+                            className='w-full shadow-sm  shadow-white bg-transparent px-3 py-2 rounded-md focus:outline-none placeholder-text-color'
+                        />
+                        {errors.name && (
+                            <span className="text-red-500 text-sm">{errors.name.message}</span>
+                        )}
+                    </div>
+                    <div className="mb-4">
+                        <input
+                            type="text"
+                            name="country"
+                            placeholder='Country Name'
+                            {...register('countryName', { required: 'Country Name is required' })}
+                            className='w-full shadow-sm  shadow-white bg-transparent px-3 py-2 rounded-md focus:outline-none placeholder-text-color'
+                        />
+                        {errors.countryName && (
+                            <span className="text-red-500 text-sm">{errors.countryName.message}</span>
+                        )}
+                    </div>
+                    <div className='md:flex gap-3 '>
+                        <div className="w-full mb-4">
+                            <input
+                                type="text"
+                                name="phone"
+                                placeholder='Enter Phone'
+                                {...register('phone', { required: 'phone is required' })}
+                                className='w-full shadow-sm  shadow-white bg-transparent px-3 py-2 rounded-md focus:outline-none placeholder-text-color'
+                            />
+                            {errors.phone && (
+                                <span className="text-red-500 text-sm">{errors.phone.message}</span>
+                            )}
+                        </div>
+                        <div className="w-full mb-4">
+
+                            <select
+                                className='w-full shadow-sm  shadow-white bg-transparent px-3 py-2 rounded-md focus:outline-none placeholder-text-color'
+                                {...register("gender")} >
+                                <option className='text-black ' value="female">female</option>
+                                <option className='text-black ' value="male">male</option>
+                                <option className='text-black ' value="other">other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div className="mb-4">
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder='Enter Email'
+                            {...register('email', {
+                                required: 'Email is required',
+                                pattern: {
+                                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                                    message: 'Invalid email address',
+                                },
+                            })}
+                            className="w-full shadow-sm  shadow-white bg-transparent px-3 py-2 rounded-md focus:outline-none placeholder-text-color"
+                        />
+                        {errors.email && (
+                            <span className="text-red-500 text-sm">{errors.email.message}</span>
+                        )}
+                    </div>
+                    <div className="mb-4 relative">
+
+                        <input
+                            type={`${show ? 'text' : 'password'}`}
+                            name="password"
+                            placeholder='Enter Password'
+                            {...register('password', {
+                                required: 'Password is required',
+                                minLength: {
+                                    value: 6,
+                                    message: 'Password must be at least 6 characters',
+                                },
+                            })}
+                            className="w-full shadow-sm  shadow-white bg-transparent px-3 py-2 rounded-md focus:outline-none placeholder-text-color" />
+                        <span
+                            className="w-fit mr-0 cursor-pointer absolute right-2 top-3 "
+                            onClick={() => setShow(!show)}>
+                            {show ? <BsFillEyeFill></BsFillEyeFill> : <BsFillEyeSlashFill></BsFillEyeSlashFill>}
+                        </span>
+                        {errors.password && (
+                            <span className="text-red-500 text-sm">{errors.password.message}</span>
+                        )}
+                    </div>
+                    <div className="mb-4">
+
+                        <input
+                            type="file"
+                            name="image"
+                            {...register('image', { required: 'Image is required' })}
+                            className="w-full border   px-3 py-2 rounded-md focus:outline-none ring-[#6bccd3] focus:ring-2  ring-offset-2 focus:border-blue-500"
+                        />
+                        {errors.image && (
+                            <span className="text-red-500 text-sm">{errors.image.message}</span>
+                        )}
+                    </div>
+
+                    <div className="mt-4">
+                        {
+                            loading ? <LoadingButton></LoadingButton>
+                                : <button
+                                    type="submit"
+                                    className=" w-full flex justify-center shadow-sm py-2 rounded-lg shadow-white hover:scale-105 duration-500">
+                                    Register
+                                </button>}
+                    </div>
+                    <p className=' w-fit '>alredy have an account <Link className='my-link  font-bold relative' to={'/login'}>Login</Link></p>
+                    <div className='divider'>
+                        <p>or</p>
+                    </div>
+                    <GoogleLogin></GoogleLogin>
+                </form>
+            </div>
+        </div>
+    </div>
+</div> */
