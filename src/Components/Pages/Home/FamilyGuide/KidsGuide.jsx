@@ -13,20 +13,23 @@ const KidsGuide = () => {
   const [kidsAllData, setKidsAllData] = useState([]);
 
   useEffect(() => {
-    axios
-      .get(`${import.meta.env.VITE_BACKEND_API}/allFamilyGuide/kids`)
+    axios.get(`${import.meta.env.VITE_BACKEND_API}/allFamilyGuide/kids`)
       .then((res) => {
-        setKidsAllData(res.data);
-      });
-  }, []);
+        setKidsAllData(res.data)
+      })
+  }, [])
+
+
+
+
+
 
   return (
     <div>
       <Container>
-        <h2 className="pt-10  text-2xl md:text-3xl text-center font-semibold underline underline-offset-2 tracking-widest">
-          Funville for Kids
-        </h2>
-        <div>
+        <h2 className='pt-14 pb-10  text-2xl md:text-3xl text-center font-semibold underline underline-offset-2 tracking-widest'>Funville for Kids</h2>
+        <div >
+
           <Swiper
             slidesPerView={1}
             spaceBetween={10}
@@ -50,18 +53,17 @@ const KidsGuide = () => {
             modules={[Pagination]}
             className="mySwiper"
           >
-            {kidsAllData.map((item, i) => (
-              <SwiperSlide key={i} className="lg:p-10">
+            {kidsAllData.map((item, index) => (
+              <SwiperSlide key={index} className='' >
                 <div className="card card-compact bg-white  relative ">
                   <Carousel autoplay>
-                    {item.pictures.map((picture, index) => (
-                      <img
-                        className="rounded-lg h-40 w-full object-cover"
-                        key={index}
-                        src={picture}
-                        alt="placePhoto"
-                      />
-                    ))}
+
+                    {
+                      item.pictures.map((picture, index) => (
+                        <img className='rounded-lg h-40 w-full object-cover' key={index} src={picture} alt="" />
+                      ))
+                    }
+
                   </Carousel>
                   <div className="my-4">
                     <h2 className="card-title">{item?.title}</h2>

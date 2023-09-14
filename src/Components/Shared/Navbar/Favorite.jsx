@@ -28,7 +28,7 @@ const Favorite = () => {
               <div className="card-body">
                 <h2 className="card-title">{favoritePackage?.title}</h2>
                 <div className="flex justify-between items-center">
-                  <Link to={`/travelDeals/${favoritePackage.hotelId}`}>
+                  <Link to={`/travelDeals/${favoritePackage.id}`}>
                     <button className="btn">View Details</button>
                   </Link>
                   <button

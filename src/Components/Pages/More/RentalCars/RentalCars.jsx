@@ -15,7 +15,7 @@ const RentalCars = () => {
     console.log(pickUpDate, pickUpLocation, dropOutDate);
 
     fetch(
-      `${import.meta.env.VITE_BACKEND_API}/rentalcards/search?location=${pickUpLocation}&pickUpDate=${pickUpDate}&dropOffDate=${dropOutDate}&UnavailableDate=${unavailableDate}`
+      `http://localhost:1000/rentalcards/search?location=${pickUpLocation}&pickUpDate=${pickUpDate}&dropOffDate=${dropOutDate}&UnavailableDate=${unavailableDate}`
     )
       .then((response) => response.json())
       .then((data) => setAllCards(data))

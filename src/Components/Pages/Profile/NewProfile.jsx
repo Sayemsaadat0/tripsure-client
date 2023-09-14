@@ -191,6 +191,8 @@ const NewProfile = () => {
     }, [user])
 
     return (
+        <div className='pt-20 relative w-full min-h-screen'>
+            <div className='max-w-6xl mx-auto'>
         <div className=' flex justify-center px-4 sm:px-0 items-center pt-20 sm:pt-0  relative w-full min-h-screen'>
             <div className='max-w-5xl'>
                 <div className=' flex flex-col lg:flex-row gap-10'>

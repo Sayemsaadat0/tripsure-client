@@ -9,14 +9,14 @@ const FoodAndDrink = ({story}) => {
         <div className="mt-10">
           {/* article1 */}
           <div className="flex flex-col lg:flex-row mx-auto mb-10 lg:mx-0 justify-between gap-6 items-center">
-            <div className="lg:w-[40%] w-full">
+            <div className="lg:w-2/5 w-full">
               <img
-                className="rounded-md w-full"
+                className="rounded-md max-h-[300px] h-full w-full"
                 src={story.url}
                 alt=""
               />
             </div>
-            <div  className="lg:w-[60%] w-full">
+            <div  className="lg:w-3/5 w-full">
               <h2 className="text-2xl md:text-3xl text-black font-bold">
                 {story.title}
               </h2>

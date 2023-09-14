@@ -19,18 +19,21 @@ const Home = () => {
             </section>
             <Banner></Banner>
             <section
-                className='pt-32 bg-[url("https://i.ibb.co/MMd76r0/Untitled-design-8.png")]  w-full object-center mx-auto'>
+                className='pt-14 md:pt-24 bg-[url("https://i.ibb.co/MMd76r0/Untitled-design-8.png")]  w-full object-center mx-auto'>
                 <TravelDeals></TravelDeals>
                 <Packages></Packages>
             </section>
 
             <FamilyGuide></FamilyGuide>
-            <section className='md:my-40'>
+
+
+
+            <section className='md:my-20'>
                 <TopDestinations></TopDestinations>
                 <TopThingsToDo></TopThingsToDo>
             </section>
 
-            <section className='md:my-40'>
+            <section className='my-24'>
                 <Medical></Medical>
             </section>
 
@@ -38,7 +41,7 @@ const Home = () => {
                 <WhyUs></WhyUs>
             </section>
 
-            <section className='py-24'>
+            <section className='py-10'>
                 <Feedback></Feedback>
             </section>
 

@@ -75,7 +75,6 @@ const FindRentalCars = ({setPickUpDate, setPickUpLocation, setDropOutDate, handl
               Find Rental cars
             </button>
           </div>
-
         </div>
       
       </Container>

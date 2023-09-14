@@ -35,9 +35,9 @@ const Feedback = () => {
         text={"What Our clients Say"}>
       </SectionTitle>
       <p className="text-right mb-2">Total Feedback : {feedbacks.length}</p>
-      <section className='grid overflow-x-auto lg:grid-cols-4 gap-12 px-5 py-5 '>
+      <section className='grid overflow-x-auto lg:grid-cols-4 gap-8 px-2 py-5 '>
         {feedbacks.map((feedback) => (
-          <div key={feedback._id} className="card mb-16">
+          <div key={feedback._id} className="card lg:mb-16">
             <div className="card-body m-0 p-0 h-72 ">
               <div className="p-3 flex justify-center">
                 <img

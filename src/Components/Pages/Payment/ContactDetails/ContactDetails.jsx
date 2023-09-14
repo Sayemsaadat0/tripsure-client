@@ -5,45 +5,64 @@ import ReviewCard from "../ReviewCard";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../../../Hooks/useAuth";
 import { useEffect, useState } from "react";
+import axios from "axios";
 
 const ContactDetails = () => {
-  const [contactDetails, setContactDetails] = useState(null)
-  const [orderDetails, setOrderDetails] = useState({})
-  const [isLoading, setIsLoading] = useState(false)
-  const navigate = useNavigate()
-  const {user} = useAuth();
-  console.log(user);
+  const [contactDetails, setContactDetails] = useState(null);
+  const [orderDetails, setOrderDetails] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
+  const [carOrder, setCarOrder] = useState({});
+  const navigate = useNavigate();
+  const { user } = useAuth();
+  
   const location = useLocation();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+
+  // Define your functions outside of the render function
   const onSubmit = (data) => {
     console.log(data);
-    setContactDetails(data)
-    
-    
+    setContactDetails(data);
   };
 
-  const handleLoader = ()=>{
+  const handleLoader = () => {
     if (contactDetails == null) {
       setIsLoading(true);
       console.log(contactDetails);
-    }
-    else{
+    } else {
       setIsLoading(false);
-      navigate('/activityDetails')
+      navigate('/activityDetails');
       console.log('activityDetails', contactDetails);
     }
-  }
+  };
 
+  useEffect(() => {
+    if (location.state && location.state.id) {
+      const carId = location.state.id;
+      axios.get(`http://localhost:1000/rentalcards/forpayment?id=${carId}`)
+        .then((res) => {
+          setCarOrder(res.data);
+          
+        })
+        .catch((error) => {
+          console.error("Error fetching data:", error);
+        });
+    }
+  }, [location.state]);
 
-useEffect(()=>{
-  if (orderDetails && location.state) {
-    setOrderDetails(location.state.orderDetails);
-  }
-},[location.state])
+  useEffect(() => {
+    if (orderDetails && location.state) {
+      setOrderDetails(location.state.orderDetails);
+    }
+    if (location.state && location.state.id) {
+      setOrderDetails(carOrder);
+      
+    }
+  }, [location.state, carOrder, orderDetails]);
+  carOrder.email = user?.email;
   return (
     <div>
       {
@@ -135,11 +154,8 @@ useEffect(()=>{
           </div>
           <div className="my-5">
             <h2 className="text-2xl font-semibold pb-3 border-b-2">
-              Promo Code
+        
             </h2>
-            <p className="text-lg underline mt-3 cursor-pointer text-green-800">
-              Enter Promo Code
-            </p>
           </div>
           <div className="text-center">
             <Link onClick={handleLoader} 
@@ -157,7 +173,7 @@ useEffect(()=>{
         </form>
              
         <div className="space-y-3 w-4/4 mx-auto">
-          <ReviewCard  orderDetails={location?.state?.orderDetails} />
+          <ReviewCard  orderDetails={location?.state?.orderDetails || orderDetails} />
           <BookInfoCard />
         </div>
       </div>

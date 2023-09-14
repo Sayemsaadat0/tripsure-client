@@ -12,10 +12,9 @@ import GuideMenu from "./GuideMenu";
 import AdminMenu from "./AdminMenu";
 import DasNav from "../DasNav";
 const UserMenu = () => {
-  const navigate = useNavigate();
-  const [toggle, setToggle] = useState(false);
-  const { user, logOut, role } = useAuth();
-  console.log(role);
+    const navigate = useNavigate()
+    const [toggle, setToggle] = useState(false)
+    const { user, logOut, role } = useAuth()
 
   const [isActive, setActive] = useState("false");
   const toggleHandler = (event) => {

@@ -13,7 +13,7 @@ const SearchResultCard = ({ data, country }) => {
         data.country ? `/searchCountry/${data.country}` : data.hotelName ? `/searchHotel/${data.hotelName}` : `/searchCardDetails/${data._id}`
       }
     >
-      <div className=" hover:shadow-2xl group w-full border flex items-center cursor-pointer">
+      <div className=" hover:shadow-2xl group w-full border flex items-center cursor-pointer mb-5">
         <figure className="  md:p-5 p-3">
           <img
             className="md:w-[210px] sm:w-[200px] w-[190px] md:h-[150px] sm:h-[140px] h-[130px] rounded-[2px] group-hover:scale-105 duration-500"

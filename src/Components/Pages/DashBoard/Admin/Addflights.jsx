@@ -18,7 +18,7 @@ const Addflights = () => {
         const duration = moment.duration(arrivalMoment.diff(departureMoment));
         const totalHours = duration.hours();
         const totalMinutes = duration.minutes();
-        const total_time = `${totalHours} hours ${totalMinutes} minutes`;
+        const total_time = `${totalHours} hrs ${totalMinutes} mins`;
         console.log(total_time)
 
         const flighs = {

@@ -48,9 +48,9 @@ const Stay = ({ countryDatas, country }) => {
         </SwiperSlide>
 
         {countryDatas &&
-          countryDatas.slice(0,9).map((countryData) => (
+          countryDatas.slice(0,9).map((countryData, index) => (
           
-            <SwiperSlide>
+            <SwiperSlide key={index}>
               <Link to={`/dothings-attraction-reviews/${countryData._id}`}>
                 <div>
                   <img

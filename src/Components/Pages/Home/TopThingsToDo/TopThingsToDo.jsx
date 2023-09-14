@@ -16,7 +16,7 @@ const TopThingsToDo = () => {
     <Container>
       <SectionTitle text={'Top Travel Categories & Destinations'} subText={'Things to Do for Every Adventurer'}></SectionTitle>
 
-      <section className='grid lg:grid-cols-3 gap-12 px-5 pb-20 pt-12'>
+      <section className='grid md:grid-cols-2 lg:grid-cols-3 gap-12 px-2'>
 
         {
           TopThingsTodo.map((todo, index) => (
@@ -26,7 +26,7 @@ const TopThingsToDo = () => {
                 <LazyLoad>
                   <img className='h-40 
                 hover:scale-110 duration-700 
-                rounded-lg w-full  lg:w-[85%]  
+                rounded-lg w-full   
                 object-cover'
                     src={todo.picture} alt="" />
                 </LazyLoad>
