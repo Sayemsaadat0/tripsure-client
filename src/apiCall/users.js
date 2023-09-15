@@ -4,11 +4,11 @@ export const saveUser = async (user, countryName, phone, gender) => {
         name: user.displayName,
         email: user.email,
         photo: user.photoURL,
-        role :"user",
+        role: "user",
         countryName,
         phone,
         gender,
-        registerDate: new Date ()
+        registerDate: new Date()
     }
     console.log(user)
     const data = await axios.put(`${import.meta.env.VITE_BACKEND_API}/users/${user?.email}`, currentUser)
@@ -30,7 +30,7 @@ export const updateUserDeatails = async (email, details) => {
 
 export const findUserbyEmail = async (email) => {
     const response = await axios.get(`${import.meta.env.VITE_BACKEND_API}/users/${email}`)
-    // console.log(response)
+    console.log(response)
     return response.data
 }
 export const allUsers = async () => {
@@ -40,8 +40,7 @@ export const allUsers = async () => {
 }
 // get user role
 export const getRole = async email => {
-    const response = await fetch(`${import.meta.env.VITE_BACKEND_API}/users/${email}`)
-    const user = await response.json()
-    // console.log(user)
-    return user?.role
-  }
+    const response = await axios.get(`${import.meta.env.VITE_BACKEND_API}/users/${email}`)
+    // console.log(response)
+    return response?.data?.role
+}

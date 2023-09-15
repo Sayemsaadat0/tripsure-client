@@ -16,13 +16,14 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
   const [isOpen, setIsOpen] = useState(false);
 
-  const { logOut, user, role, } = useAuth()
+  const { logOut, user, role } = useAuth()
+  console.log(role)
   const { data, refetch } = useGetYourFavoritItemsQuery(user?.email)
   const naviItems = [
     { id: 1, name: 'discover', dropdown: true, routes: [{ routeName: 'travel story', linkName: 'travelStory' }, { routeName: 'travel guides', linkName: 'travelGuides' }] },
     { id: 2, name: 'community', dropdown: true, routes: [{ routeName: 'post a story', linkName: 'postastory' }, { routeName: 'add a review', linkName: 'addareview' }] },
     { id: 3, name: 'more', dropdown: true, routes: [{ routeName: 'flights', linkName: 'flights' }, { routeName: 'Rental Cars', linkName: 'rentalcars' }] },
-    { id: 4, name: 'dashboard', linkName: "dashboard/adminhome" },
+    { id: 4, name: 'dashboard not', linkName: "dashboard/adminhome" },
   ]
 
   const handleLogout = () => {
@@ -92,6 +93,18 @@ const Navbar = () => {
               )}
             </div>
           ))}
+          {
+            role === 'admin' && <li className="my-link relative list-none cursor-pointer font-bold uppercase duration-300">
+              <NavLink
+                to={'dashboard/adminhome'}
+                className={({ isActive }) =>
+                  isActive ? "text-[#79c7ff]" : ""
+                }
+              >
+                dashboard
+              </NavLink>
+            </li>
+          }
         </div>
         <div className="hidden lg:flex">
           {user ? (
@@ -104,7 +117,7 @@ const Navbar = () => {
                   <span className="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 transform translate-x-1/2 -translate-y-1/2 bg-red-600 rounded-full">{data?.length}</span>
                 </span>
               </NavLink>
-            {/*   {
+              {/*   {
                 role === 'admin' || role === 'guide' ? '' : <button onClick={() => setIsOpen(true)} className={`inline-flex justify-center rounded-md border border-transparent bg-sky-100 px-4 py-2 text-sm font-medium text-gray-700  focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 whitespace-nowrap`}>become guide</button>
               } */}
               <Dropdown></Dropdown>

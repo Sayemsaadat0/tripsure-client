@@ -31,7 +31,7 @@ const ManageUser = () => {
   useEffect(() => {
     let filteredAndSortedUsers = [...usersdata];
 
-    
+
     if (operator === 'admin') {
       filteredAndSortedUsers = filteredAndSortedUsers.filter(user => user.role === 'admin');
     } else if (operator === 'operator') {
@@ -93,8 +93,8 @@ const ManageUser = () => {
 
   //  make role handlling
   const makeAdmin = (user) => {
-
-    fetch(`${import.meta.env.VITE_BACKEND_API}/users/admin/${user._id}`, {
+// console.log(user)
+    fetch(`${import.meta.env.VITE_BACKEND_API}/users/updateRole/${user._id}`, {
       method: 'PUT',
       headers: {
         "content-type": 'application/json'

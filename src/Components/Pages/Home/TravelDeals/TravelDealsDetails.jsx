@@ -142,7 +142,7 @@ const TravelDealsDetails = () => {
               <h2 className="font-bold md:py-6 text-xl tracking-widest">
                 Grab it Now, Save Big
               </h2>
-              <h3 className="text-3xl font-bold text-[#79c7ff]">
+              {/* <h3 className="text-3xl font-bold text-[#79c7ff]">
                 <Typewriter
                   words={words}
                   loop={Infinity}
@@ -151,7 +151,7 @@ const TravelDealsDetails = () => {
                   deleteSpeed={80}
                   cursor
                 />
-              </h3>
+              </h3> */}
             </div>
 
             <p className="font-bold">Offer Price </p>

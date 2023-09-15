@@ -24,7 +24,7 @@ const UserMenu = () => {
     const handleToggle = () => {
         setActive(!isActive)
     }
- 
+
     return (
         <>
             {/* Small Screen Navbar */}
@@ -59,40 +59,40 @@ const UserMenu = () => {
                         <nav>
 
                             {/* {
-    role === 'guide' ? <GuideMenu></GuideMenu> :
-        role === 'admin' ? <AdminMenu></AdminMenu> : <> <label
-            htmlFor='Toggle3'
-            className='inline-flex w-full justify-center items-center px-2 rounded-md cursor-pointer text-gray-800'
-        >
-            <input
-                onChange={toggleHandler}
-                id='Toggle3'
-                type='checkbox'
-                className='hidden peer'
-            />
-            <span className='px-4 py-1 rounded-l-md bg-rose-400 peer-checked:bg-gray-300'>
-                Guest
-            </span>
-            <span className='px-4 py-1 rounded-r-md bg-gray-300 peer-checked:bg-rose-400'>
-                Guide
-            </span>
-        </label>
+                                role === 'guide' ? <GuideMenu></GuideMenu> :
+                                    role === 'admin' ? <AdminMenu></AdminMenu> : <> <label
+                                        htmlFor='Toggle3'
+                                        className='inline-flex w-full justify-center items-center px-2 rounded-md cursor-pointer text-gray-800'
+                                    >
+                                        <input
+                                            onChange={toggleHandler}
+                                            id='Toggle3'
+                                            type='checkbox'
+                                            className='hidden peer'
+                                        />
+                                        <span className='px-4 py-1 rounded-l-md bg-rose-400 peer-checked:bg-gray-300'>
+                                            Guest
+                                        </span>
+                                        <span className='px-4 py-1 rounded-r-md bg-gray-300 peer-checked:bg-rose-400'>
+                                            Guide
+                                        </span>
+                                    </label>
 
-        
 
-            <NavLink
-                to='add-room'
-                className={({ isActive }) =>
-                    `flex items-center px-4 py-2 mt-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${isActive ? 'bg-gray-300  text-gray-700' : 'text-gray-600'
-                    }`
-                }
-            >
-                <BsFillHouseAddFill className='w-5 h-5' />
 
-                <span className='mx-4 font-medium'>Add Room</span>
-            </NavLink>
-        </>
-} */}
+                                        <NavLink
+                                            to='add-room'
+                                            className={({ isActive }) =>
+                                                `flex items-center px-4 py-2 mt-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${isActive ? 'bg-gray-300  text-gray-700' : 'text-gray-600'
+                                                }`
+                                            }
+                                        >
+                                            <BsFillHouseAddFill className='w-5 h-5' />
+
+                                            <span className='mx-4 font-medium'>Add Room</span>
+                                        </NavLink>
+                                    </>
+                            } */}
                             <AdminMenu></AdminMenu>
                         </nav>
                     </div>
