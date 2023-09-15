@@ -143,14 +143,14 @@ const TravelDealsDetails = () => {
                 Grab it Now, Save Big
               </h2>
               <h3 className="text-3xl font-bold text-[#79c7ff]">
-                <Typewriter
+             {/*    <Typewriter
                   words={words}
                   loop={Infinity}
                   delaySpeed={2000}
                   typeSpeed={120}
                   deleteSpeed={80}
                   cursor
-                />
+                /> */}
               </h3>
             </div>
 
@@ -323,10 +323,7 @@ const TravelDealsDetails = () => {
                     <p>(No additional taxes or booking fees)</p>
                   </div>
                   <div className="flex gap-3 items-center justify-around"> 
-                  {/*todo functioon to add to favorite */}
-                  <button onClick={handleAddToFavorite} className='btn-primary'>
-                  Add To Favorite
-                  </button>
+               
                     <Link disabled={selectedDate == null}
                       to={user ? '/contactDetails' : '/login'}
                       state={{ orderDetails: orderDetails }}
