@@ -14,16 +14,19 @@ const FamilyGuideDetails = () => {
   const [inspiredByFamily, setInspiredByFamily] = useState([]);
   const [summerData, setSummerData] = useState([]);
   useEffect(() => {
-    axios.get(`${import.meta.env.VITE_BACKEND_API}/allFamilyGuide/family`).then((res) => {
-      setInspiredByFamily(res.data);
-    });
+    axios
+      .get(`${import.meta.env.VITE_BACKEND_API}/allFamilyGuide/family`)
+      .then((res) => {
+        setInspiredByFamily(res.data);
+      });
   }, []);
   useEffect(() => {
-    axios.get(`${import.meta.env.VITE_BACKEND_API}/allFamilyGuide/summer`).then((res) => {
-      setSummerData(res.data);
-    });
+    axios
+      .get(`${import.meta.env.VITE_BACKEND_API}/allFamilyGuide/summer`)
+      .then((res) => {
+        setSummerData(res.data);
+      });
   }, []);
-
 
   return (
     <div>
@@ -33,17 +36,16 @@ const FamilyGuideDetails = () => {
         <Container>
           <div>
             <section className="pt-20 mx-4">
-
               <div className="md:w-[70%] mx-auto">
-                <h1 className="text-4xl text-center underline underline-offset-4 tracking-widest font-semibold">Family travel, handled</h1>
+                <h1 className="text-4xl text-center underline underline-offset-4 tracking-widest font-semibold">
+                  Family travel, handled
+                </h1>
 
                 <h3 className="text-xl text-center mt-4 tracking-widest">
                   An inspo-packed playbook filled with tips, destination ideas,
                   and more.
                 </h3>
               </div>
-
-
               <div className="mt-10 mb-10 ">
                 <p className="md:w-[70%] mx-auto text-xl ">
                   Let’s face it: If there are a million-gazillion-bajillion—in
@@ -68,7 +70,6 @@ const FamilyGuideDetails = () => {
           </div>
         </Container>
 
-
         {/* Tips part */}
         <section className="mt-10 w-full h-full">
           <Container>
@@ -77,20 +78,17 @@ const FamilyGuideDetails = () => {
                 className="w-full min-h-[200px] my-10"
                 src="
                  https://i.ibb.co/zGtGhxT/trip-ideas.png"
-                alt=""
+                alt="BannerPhoto"
               />
-
               <KidsGuide></KidsGuide>
               <HoneyMoons></HoneyMoons>
-
               <LazyLoad>
                 <img
                   className="w-full my-10 min-h-[200px]"
                   src="https://i.ibb.co/4t9BwDQ/footar.png"
-                  alt=""
+                  alt="BannerPhoto"
                 />
               </LazyLoad>
-
               <FamilyBeach></FamilyBeach>
               <Zoo></Zoo>
               <ThemePark></ThemePark>
@@ -120,8 +118,8 @@ const FamilyGuideDetails = () => {
                 </h2>
                 <div className="mt-10 md:p-4">
                   <CommonSwiperForFamilyAndSummer
-                    SwiperData={summerData}>
-                  </CommonSwiperForFamilyAndSummer>
+                    SwiperData={summerData}
+                  ></CommonSwiperForFamilyAndSummer>
                 </div>
               </div>
             </div>

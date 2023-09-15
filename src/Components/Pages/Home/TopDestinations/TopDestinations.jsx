@@ -7,20 +7,20 @@ import Container from "../../../../LayOut/Container";
 import SectionTitle from "../../../Shared/SectionTitle/SectionTitle";
 import { Link } from "react-router-dom";
 import { GoStarFill } from "react-icons/go";
-import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
+import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import LazyLoad from "react-lazy-load";
-
+import SocialMediaShare from "../../../Shared/SocialMediaShare/SocialMediaShare";
 
 const TopDestinations = () => {
   const [TopDestinations, setTopDestinations] = useState([]);
-
 
   useEffect(() => {
     fetch(`${import.meta.env.VITE_BACKEND_API}/top-destinations`)
       .then((res) => res.json())
       .then((data) => setTopDestinations(data));
   }, []);
-  console.log(TopDestinations._id);
+
+  const filterData = TopDestinations.filter((t) => t._id !== t.picture);
 
   return (
     <Container>
@@ -28,8 +28,8 @@ const TopDestinations = () => {
         <div>
           <SectionTitle
             text={"Explor our Ultimate Top Destinations "}
-            subText={"Journey to Perfection"}>
-          </SectionTitle>
+            subText={"Journey to Perfection"}
+          ></SectionTitle>
         </div>
         <div>
           <Swiper
@@ -52,19 +52,21 @@ const TopDestinations = () => {
                 spaceBetween: 30,
               },
             }}
-            onSwiper={(swiper) =>(swiper)}
+            onSwiper={(swiper) => swiper}
           >
-            {TopDestinations.map((todo, index) => (
-              <SwiperSlide key={index}>
-                <Link state={todo._id} to={`/top-destination-details/${todo?._id}`}>
-
+            {TopDestinations.map((todo) => (
+              <SwiperSlide key={todo._id}>
+                <Link
+                  state={todo._id}
+                  to={`/top-destination-details/${todo?._id}`}
+                >
                   <div className="">
-
-                    <LazyLoad >
+                    <LazyLoad>
                       <img
                         className="h-40 w-full object-cover rounded-xl hover:scale-105 duration-700 "
                         src={todo.picture}
-                        alt="" />
+                        alt="TopDestinationPhoto"
+                      />
                     </LazyLoad>
 
 
@@ -80,7 +82,6 @@ const TopDestinations = () => {
                       }
                       <p className='flex items-center gap-2'><GoStarFill className='text-red-500'></GoStarFill>  {todo.ratings}</p>
                     </div>
-
                   </div>
                 </Link>
               </SwiperSlide>
@@ -115,5 +116,3 @@ export default TopDestinations;
 
             </div>
 */
-
-

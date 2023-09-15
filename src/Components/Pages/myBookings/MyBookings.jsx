@@ -13,7 +13,7 @@ const MyBookings = () => {
     const [viewBooking, setViewBooking] = useState({});
 
     useEffect(()=>{
-        axios.get(`http://localhost:1000/my-bookings/${user.email}`)
+        axios.get(`${import.meta.env.VITE_BACKEND_API}/my-bookings/${user.email}`)
         .then((response)=>{
             setMyBookings(response.data);
         })

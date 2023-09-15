@@ -216,9 +216,10 @@ const router = createBrowserRouter([
         element: <MadicalCard/>
       },
       {
-        path: "madicalDetails",
-        element: <MadicalDetails/>
-      }
+        path: "madicalDetails/:id",
+        element: <MadicalDetails />,
+        loader: ({params}) => fetch(`${import.meta.env.VITE_BACKEND_API}/medicals/${params.id}`) 
+      },
      
     ],
   },

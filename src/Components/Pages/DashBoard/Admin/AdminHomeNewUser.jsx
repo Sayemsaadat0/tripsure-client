@@ -10,7 +10,7 @@ const NewUser = () => {
 	const [newUser, setNewUsers] = useState()
 	console.log(newUser)
 	useEffect(() => {
-		axios.get('http://localhost:1000/users')
+		axios.get(`${import.meta.env.VITE_BACKEND_API}/users`)
 			.then(res => {
 				console.log(res.data);
 				setNewUsers([...res.data].reverse()) // Assuming the response contains data you want to log

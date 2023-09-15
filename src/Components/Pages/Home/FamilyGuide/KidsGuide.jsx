@@ -25,7 +25,7 @@ const KidsGuide = () => {
 
 
   return (
-    <div >
+    <div>
       <Container>
         <h2 className='pt-10  text-2xl md:text-3xl text-center font-semibold underline underline-offset-2 tracking-widest'>Funville for Kids</h2>
         <div >
@@ -51,7 +51,7 @@ const KidsGuide = () => {
               },
             }}
             modules={[Pagination]}
-            className='mySwiper'
+            className="mySwiper"
           >
             {kidsAllData.map((item, index) => (
               <SwiperSlide key={index} className='' >
@@ -73,7 +73,12 @@ const KidsGuide = () => {
                     <p>PostedTime</p>
                     <div>
                       {/* todo habibullah- bhai id diye data aina diyen */}
-                      <Link to={`/FamilyGuideSingleCardDetails/${item?._id}`} className="btn-link text-blue-500">Read More</Link>
+                      <Link
+                        to={`/FamilyGuideSingleCardDetails/${item?._id}`}
+                        className="btn-link text-blue-500"
+                      >
+                        Read More
+                      </Link>
                     </div>
                   </div>
                 </div>

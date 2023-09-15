@@ -42,7 +42,7 @@ const ContactDetails = () => {
   useEffect(() => {
     if (location.state && location.state.id) {
       const carId = location.state.id;
-      axios.get(`http://localhost:1000/rentalcards/forpayment?id=${carId}`)
+      axios.get(`${import.meta.env.VITE_BACKEND_API}/rentalcards/forpayment?id=${carId}`)
         .then((res) => {
           setCarOrder(res.data);
           

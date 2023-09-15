@@ -4,30 +4,34 @@ import {
   TwitterShareButton,
   TwitterIcon,
 } from "react-share";
+import "./styles.css";
 
-const SocialMediaShare = () => {
+const SocialMediaShare = ({ todo }) => {
 
-    const sharchUrl = "https://tripsure-client.web.app/"
 
-    
+
+  const topDestinationUrl = `https://tripsure-client.web.app/top-destination-details/${todo._id}`
+
 
 
   return (
     <div>
       <div className="flex items-center gap-1">
         <FacebookShareButton
-          url={sharchUrl}
-          quote="Our Trip sure"
-          hashtag="#tripSure"
+          className="FacebookShareButton"
+          url={todo && topDestinationUrl }
+          quote={todo.cardtitle}
+          hashtag="#TripSure #Travel"
         >
-          <FacebookIcon size={40} round={true} />
+          <FacebookIcon size={20} round={true} />
         </FacebookShareButton>
         <TwitterShareButton
-          url={sharchUrl}
-          quote="Our Trip sure"
-          hashtag="#tripSure"
+          className="TwitterShareButton"
+          url={todo && topDestinationUrl }
+          quote={todo.cardtitle}
+          hashtag="#TripSure #Travel"
         >
-          <TwitterIcon size={40} round={true} />
+          <TwitterIcon size={20} round={true} />
         </TwitterShareButton>
       </div>
     </div>

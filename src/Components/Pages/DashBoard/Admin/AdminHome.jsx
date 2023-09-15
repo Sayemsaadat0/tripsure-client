@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import moment from 'moment';
+import React, { useEffect, useState } from "react";
+import moment from "moment";
 import { ResponsiveContainer, PieChart, Pie, Cell, Legend } from "recharts";
 import useUsers from '../../../../Hooks/useUsers';
 import UserStatus from '../../../Shared/Status/UserStatus';
@@ -19,10 +19,8 @@ const AdminHome = () => {
     { name: "Group B", month: "February", value: 300 },
     { name: "Group B", month: "February", value: 300 },
     { name: "Group C", month: "March", value: 300 },
-
   ];
-  const COLORS = ['#34a0a4']
-
+  const COLORS = ["#34a0a4"];
 
   
 
@@ -38,7 +36,7 @@ console.log(newAdded)
 const [payments,setPyaments] = useState([])
 const [totalPrice, setTotalPrice] = useState(0); 
   useEffect(() =>{
-    axios.get("http://localhost:1000/payments")
+    axios.get (`${import.meta.env.VITE_BACKEND_API}/payments`)
     .then(res =>{
       setPyaments(res.data)
     })

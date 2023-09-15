@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react';
 import SectionTitle from '../../../Shared/SectionTitle/SectionTitle';
 import { Link } from 'react-router-dom';
 import { GoLocation, GoStarFill } from 'react-icons/go';
-import { GrFavorite } from 'react-icons/gr'
-import { BsSuitHeartFill, BsSuitHeart } from 'react-icons/bs'
+import { BsSuitHeart } from 'react-icons/bs'
 import Container from '../../../../LayOut/Container';
 import { useAddToFavoriteMutation, useGetFavoriteItemsQuery } from '../../../../Features/favorite/favoriteApi';
 import useAuth from '../../../../Hooks/useAuth';

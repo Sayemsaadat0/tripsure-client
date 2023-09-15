@@ -8,7 +8,7 @@ const Footar = () => {
   const currentYear = new Date().getFullYear();
   return (
     <div className="">
-      <Wave
+      {/* <Wave
         fill="#edede9"
         paused={false}
         style={{ display: "flex" }}
@@ -18,7 +18,8 @@ const Footar = () => {
           speed: 0.4,
           points: 4,
         }}
-      />
+      /> */}
+  
       {/* footar-image / next div -bg-black w-full bg-opacity-50 */}
       <footer className="text-gray-600 body-font bg-[#edede9]">
         <div className="container px-5 py-12 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
@@ -38,7 +39,7 @@ const Footar = () => {
               <nav className="list-none mb-10">
                 <li>
                   <a
-                    href="https://www.tripadvisor.com/UserReview"
+                    href="https://www.kayak.co.in/help"
                     className="text-gray-600 hover:text-gray-800"
                   >
                     Help Center
@@ -46,26 +47,26 @@ const Footar = () => {
                 </li>
                 <li>
                   <a
-                    href="https://www.tripadvisor.com/Profile/farhada371"
+                    href="https://www.expedia.com/Destinations-In-United-States-Of-America.d201.Flight-Destinations"
                     className="text-gray-600 hover:text-gray-800"
                   >
-                    Join
+                    Domestic fligth
                   </a>
                 </li>
                 <li>
                   <a
-                    href="https://www.tripadvisor.com/Articles"
+                    href="https://www.opentable.com/?ref=16087"
                     className="text-gray-600 hover:text-gray-800"
                   >
-                    Articles
+                    Restaurant reservations
                   </a>
                 </li>
                 <li>
                   <a
-                    href="https://www.tripadvisor.com/Plus"
+                    href="https://tinyurl.com/bdmnd6be"
                     className="text-gray-600 hover:text-gray-800"
                   >
-                    Tripsure plus
+                   Car Rental
                   </a>
                 </li>
               </nav>
@@ -85,7 +86,7 @@ const Footar = () => {
                 </li>
                 <li>
                   <a
-                    href="https://tripadvisor.mediaroom.com/US-contact-us"
+                    href="https://help.priceline.com/"
                     className="text-gray-600 hover:text-gray-800"
                   >
                     Contact Us
@@ -93,7 +94,7 @@ const Footar = () => {
                 </li>
                 <li>
                   <a
-                    href="https://ir.tripadvisor.com/"
+                    href="https://ir.bookingholdings.com/overview/default.aspx"
                     className="text-gray-600 hover:text-gray-800"
                   >
                     Investor Relations
@@ -101,10 +102,10 @@ const Footar = () => {
                 </li>
                 <li>
                   <a
-                    href="https://www.tripadvisor.com/Trust"
+                    href="https://www.priceline.com/partner/v2/summer-release-2023"
                     className="text-gray-600 hover:text-gray-800"
                   >
-                    Trust & Safety
+                    Learn About New Features
                   </a>
                 </li>
               </nav>
@@ -152,7 +153,7 @@ const Footar = () => {
               <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
                 CONVERTOR
               </h2>
-              {/* <Currency /> */}
+           
             </div>
           </div>
         </div>
@@ -165,9 +166,9 @@ const Footar = () => {
               <a href="https://web.facebook.com/programmingHero" className="text-gray-500">
                 <svg
                   fill="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
                   className="w-5 h-5"
                   viewBox="0 0 24 24"
                 >
@@ -181,9 +182,9 @@ const Footar = () => {
                 <svg
                   fill="currentColor"
                   stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="0"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="0"
                   className="w-5 h-5"
                   viewBox="0 0 24 24"
                 >

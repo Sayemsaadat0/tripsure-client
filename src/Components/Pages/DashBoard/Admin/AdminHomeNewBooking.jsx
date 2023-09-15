@@ -52,7 +52,7 @@ const popularProducts = [
 const NewBookings = () => {
     useEffect(() => {
         axios
-            .get(`http://localhost:1000/payments/pay`)
+            .get(`${import.meta.env.VITE_BACKEND_API}/payments/pay`)
             .then((data) => {
                 console.log(data)
             })

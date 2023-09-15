@@ -32,7 +32,7 @@ describe('UserGuide', () => {
 
     // Wait for data to load
     await waitFor(() => {
-      expect(axios.get).toHaveBeenCalledWith('http://localhost:1000/allguide');
+      expect(axios.get).toHaveBeenCalledWith(`${import.meta.env.VITE_BACKEND_API}/allguide`);
       expect(axios.get).toHaveBeenCalledTimes(1);
     });
 
@@ -57,7 +57,7 @@ describe('UserGuide', () => {
 
     // Wait for data to load
     await waitFor(() => {
-      expect(axios.get).toHaveBeenCalledWith('http://localhost:1000/allguide');
+      expect(axios.get).toHaveBeenCalledWith(`${import.meta.env.VITE_BACKEND_API}/allguide`);
       expect(axios.get).toHaveBeenCalledTimes(1);
     });
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   BarChart,
   Bar,
@@ -82,55 +82,6 @@ const AdminHomePriceChart = () => {
         </BarChart>
       </ResponsiveContainer>
     </div>
-    // <div className='bg-white p-4 rounded-sm border border-gray-200'>
-    //   <div>
-    //     <h3 className='uppercase my-10 font-semibold tracking-widest text-xl'>total sales chart </h3>
-    //   </div>
-    //   {/* <ResponsiveContainer width="100%" height="20"> */}
-    //   <div className='lg:hidden'>
-    //     <BarChart
-    //       width={600}
-    //       height={250}
-    //       data={data}
-    //       margin={{
-    //         top: 5,
-    //         right: 30,
-    //         left: 20,
-    //         bottom: 5
-    //       }}
-    //       barSize={20}
-    //     >
-    //       <XAxis dataKey="name" scale="point" padding={{ left: 10, right: 10 }} />
-    //       <YAxis />
-    //       <Tooltip />
-    //       <Legend />
-    //       <CartesianGrid strokeDasharray="3 3" />
-    //       <Bar dataKey="months" fill="#34a0a4" background={{ fill: "#eee" }} />
-    //     </BarChart>
-    //   </div>
-    //   <div className='hidden lg:flex'>
-    //     <BarChart
-    //       width={700}
-    //       height={250}
-    //       data={data}
-    //       margin={{
-    //         top: 5,
-    //         right: 30,
-    //         left: 20,
-    //         bottom: 5
-    //       }}
-    //       barSize={20}
-    //     >
-    //       <XAxis dataKey="name" scale="point" padding={{ left: 10, right: 10 }} />
-    //       <YAxis />
-    //       <Tooltip />
-    //       <Legend />
-    //       <CartesianGrid strokeDasharray="3 3" />
-    //       <Bar dataKey="months" fill="#34a0a4" background={{ fill: "#eee" }} />
-    //     </BarChart>
-    //   </div>
-    //   {/* </ResponsiveContainer> */}
-    // </div>
   );
 };
 

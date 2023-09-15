@@ -1,17 +1,16 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import { Pagination } from 'swiper/modules';
-import { Link } from 'react-router-dom';
-import Container from '../../../../LayOut/Container';
-import axios from 'axios';
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination } from "swiper/modules";
+import { Link } from "react-router-dom";
+import Container from "../../../../LayOut/Container";
+import axios from "axios";
 import { FaArrowTurnUp } from "react-icons/fa6";
-import { Carousel } from 'antd';
-import { useEffect, useState } from 'react';
-import LazyLoad from 'react-lazy-load';
+import { Carousel } from "antd";
+import { useEffect, useState } from "react";
+import LazyLoad from "react-lazy-load";
 
 const ThemePark = () => {
-
   const [allThemePark, setAllThemePark] = useState([]);
 
   useEffect(() => {
@@ -23,7 +22,7 @@ const ThemePark = () => {
 
 
   return (
-    <div >
+    <div>
       <Container>
         <h2 className='pt-10  text-2xl md:text-3xl text-center font-semibold underline underline-offset-2 tracking-widest'>ThemeParks</h2>
         <div >
@@ -49,10 +48,10 @@ const ThemePark = () => {
               },
             }}
             modules={[Pagination]}
-            className='mySwiper'
+            className="mySwiper"
           >
             {allThemePark.map((item, index) => (
-              <SwiperSlide key={index} className='' >
+              <SwiperSlide key={index} className="lg:p-10">
                 <div className="card card-compact bg-white relative ">
                   <Carousel autoplay>
 
