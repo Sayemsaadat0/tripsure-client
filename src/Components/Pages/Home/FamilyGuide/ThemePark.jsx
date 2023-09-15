@@ -52,7 +52,7 @@ const ThemePark = () => {
             className='mySwiper'
           >
             {allThemePark.map((item, index) => (
-              <SwiperSlide key={index} className='lg:p-10' >
+              <SwiperSlide key={index} className='' >
                 <div className="card card-compact bg-white relative ">
                   <Carousel autoplay>
 

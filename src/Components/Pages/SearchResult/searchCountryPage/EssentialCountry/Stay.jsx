@@ -12,7 +12,6 @@ const Stay = ({ countryDatas, country }) => {
   // todo: gettin empty array in stayData
   // const stayData = countryDatas.filter(countryData => countryData.country === country);
   // console.log(stayData);
-
   return (
     <div>
       <h2 className="text-3xl font-semibold my-10">Essential {country }</h2>
@@ -48,9 +47,9 @@ const Stay = ({ countryDatas, country }) => {
         </SwiperSlide>
 
         {countryDatas &&
-          countryDatas.slice(0,9).map((countryData) => (
+          countryDatas.slice(0,9).map((countryData, index) => (
           
-            <SwiperSlide>
+            <SwiperSlide key={index}>
               <Link to={`/dothings-attraction-reviews/${countryData._id}`}>
                 <div>
                   <img

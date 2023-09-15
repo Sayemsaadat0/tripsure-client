@@ -24,7 +24,7 @@ const HoneyMoons = () => {
   return (
     <div >
       <Container>
-        <h2 className='pt-10 text-2xl md:text-3xl text-center font-semibold underline underline-offset-2 tracking-widest'>Lovebirds' Hideaway</h2>
+        <h2 className='pt-14 pb-10 text-2xl md:text-3xl text-center font-semibold underline underline-offset-2 tracking-widest'>Lovebirds' Hideaway</h2>
         <div >
 
           <Swiper
@@ -51,7 +51,7 @@ const HoneyMoons = () => {
             className='mySwiper'
           >
             {allHoneyMoons.map((item, index) => (
-              <SwiperSlide className='lg:p-10' >
+              <SwiperSlide key={index} className='' >
                 <div className="card card-compact bg-white  relative ">
                   <Carousel autoplay>
 

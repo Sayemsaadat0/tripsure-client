@@ -53,8 +53,8 @@ const Do = ({ country }) => {
           </div>
         </SwiperSlide>
         {allCategory &&
-          allCategory.slice(0, 9).map((category) => (
-            <SwiperSlide>
+          allCategory.slice(0, 9).map((category, index) => (
+            <SwiperSlide key={index}>
               <Link  to={`/staythinngs-attraction-reviews/${category._id}`}>
                 <div>
                   <img

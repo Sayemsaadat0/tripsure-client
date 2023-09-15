@@ -134,7 +134,7 @@ const Navbar = () => {
 
         {/* mobile device  */}
         {menuOpen && (
-          <ul className="absolute z-10 top-16 bg-base-200 box-border md:mt-4 md:mr-2 shadow-lg w-full md:max-w-[50vw] rounded-xl py-6 right-0">
+          <ul className="absolute z-10 top-12 bg-base-200 box-border md:mt-4 md:mr-2 shadow-lg w-full md:max-w-[50vw] rounded-xl py-6 right-0">
             {user ? (
               <div className="flex px-6  flex-col gap-2 items-center">
                 <img
