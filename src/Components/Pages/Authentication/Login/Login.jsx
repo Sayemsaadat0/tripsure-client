@@ -40,7 +40,7 @@ const Login = () => {
           confirmButtonText: "Cool",
         });
         if (role === 'admin') {
-          navigate("dashboard/adminhome", { replace: true });
+          navigate("/dashboard/adminhome", { replace: true });
         } else {
           navigate("/", { replace: true });
         }

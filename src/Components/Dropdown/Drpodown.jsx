@@ -13,9 +13,7 @@ const Dropdown = () => {
     logOut()
       .then(() => {
         Swal.fire(
-          'Good job!',
           'log Out your account ',
-          'success'
         )
       })
       .catch(error => {
@@ -47,7 +45,6 @@ const Dropdown = () => {
             <div className="p-3 space-y-3">
               <Menu.Item>
                 <div className=' space-y-1'>
-                {/*   <img className='w-20 h-20 mx-auto rounded-full border-2 border-[#2d969e] p-[2px]' src={`${user?.photoURL}`} alt="" /> */}
                   <p className='text-lg font-medium'>{user?.displayName}</p>
                 </div>
               </Menu.Item>
@@ -60,10 +57,8 @@ const Dropdown = () => {
                 </Link>
               </Menu.Item>
               <Menu.Item>
-                <Link to='/overview' className='flex items-center gap-3 py-1 hover:text-blue-400 rounded
-                '>
-          
-                  <span className='text-lg'>View Overview</span>
+                <Link to='/my_bookings' className='hover:text-blue-400 rounded'>
+                  <span className='text-lg'>My Bookings</span>
                 </Link>
               </Menu.Item>
               <Menu.Item>

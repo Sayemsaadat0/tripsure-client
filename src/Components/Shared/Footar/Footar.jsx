@@ -2,6 +2,7 @@ import React from "react";
 import Wave from "react-wavify";
 // import Currency from "./Currency";
 import { Link } from "react-router-dom";
+import WeatherForecast from "../../Pages/Overview/WeatherForecast";
 
 const Footar = () => {
   // /
@@ -150,6 +151,13 @@ const Footar = () => {
               </nav>
             </div>
 
+            <div className="lg:w-1/4 md:w-1/2 w-full px-4">
+            <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3 uppercase">
+                Weather
+              </h2>
+              <WeatherForecast></WeatherForecast>
+            </div>
+
           </div>
         </div>
         <div className="bg-gray-100">
@@ -181,8 +189,7 @@ const Footar = () => {
                   stroke-linejoin="round"
                   stroke-width="0"
                   className="w-5 h-5"
-                  viewBox="0 0 24 24"
-                >
+                  viewBox="0 0 24 24">
                   <path
                     stroke="none"
                     d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
