@@ -10,7 +10,7 @@ import {
 } from "@chatscope/chat-ui-kit-react";
 
 const OpenAi = () => {
-  const API_KEY = "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";
+    const API_KEY = `${import.meta.env.VITE_OPENAI_API_KEY}`;
 
   const [messages, setMessages] = useState([
     {

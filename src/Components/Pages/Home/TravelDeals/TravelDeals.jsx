@@ -8,6 +8,7 @@ import Container from '../../../../LayOut/Container';
 import { useAddToFavoriteMutation, useGetFavoriteItemsQuery } from '../../../../Features/favorite/favoriteApi';
 import useAuth from '../../../../Hooks/useAuth';
 import LazyLoad from 'react-lazy-load';
+import Swal from 'sweetalert2';
 
 
 const TravelDeals = () => {
@@ -42,14 +43,12 @@ const TravelDeals = () => {
       const favoriteItem = {
         dealExpires, destination, discountPercentage, duration, newPrice, picture, price, reviews, savings, title, totalPeople, hotelId, displayName, email
       }
-      setFavorite(favoriteItem)
-      if (acknowledged) {
+      setFavorite(favoriteItem)  
         Swal.fire(
           'Added to Favorite',
           ' ',
           'success'
         )
-      }
     }
   }
   // console.log(data)

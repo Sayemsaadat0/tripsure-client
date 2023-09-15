@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { Card } from 'antd';
 import Container from '../../../LayOut/Container';
 import { AutoComplete } from 'antd';
-import axios from 'axios';
 
 const { Meta } = Card;
 
 const TravelGuides = () => {
   const [guides, setGuides] = useState([]);
   const [selectedValue, setSelectedValue] = useState('');
-  const [selectedGuide, setSelectedGuide] = useState(null); // State for selected guide
+  const [selectedGuide, setSelectedGuide] = useState(null);
+
 
   useEffect(() => {
     fetch('/guides.json')
@@ -30,7 +30,7 @@ const TravelGuides = () => {
   const openGuideDetails = (guide) => {
     setSelectedGuide(guide);
     const modal = document.getElementById('guide_modal');
-    modal.open = true; // Set the open attribute to true to show the modal
+    modal.open = true;
   };
 
   return (
@@ -41,12 +41,13 @@ const TravelGuides = () => {
             Meet Our Guides
           </h3>
 
-          <div className='flex justify-start my-5'>
+          <div className='flex gap-4 items-center justify-start my-5'>
+            <p>Search</p>
             <AutoComplete
               className=''
               style={{ width: 250 }}
               options={options}
-              placeholder='Search by country or name'
+              placeholder='country or name'
               filterOption={(inputValue, option) =>
                 option.label.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1
               }
@@ -93,7 +94,7 @@ const TravelGuides = () => {
 
       {/* Guide Details Modal */}
       {selectedGuide && (
-        <dialog id="guide_modal" className="modal bg-white">
+        <dialog id="guide_modal" className="modal bg-transparent">
           <form method="dialog" className="modal-box">
             <button
               className="hover:text-white w-8 h-8 rounded-full absolute duration-500 right-2 top-2 hover:bg-[#79c7ff]"
@@ -103,23 +104,24 @@ const TravelGuides = () => {
             <div className="">
               <h3 > <span className="font-bold text-lg my-2">{selectedGuide.name} </span>Details</h3>
 
-              <div className='my-4'>
+              <div className='my-4 flex justify-centers items-center gap-5'>
                 <img
-                  className="w-32 md:rounded-full"
+                  className="w-32 rounded-md"
                   src={selectedGuide.picture}
                   alt="Guide's picture"
                 />
-
+                <div className='leading-8'>
+                  <p><span className='underline underline-offset-4'>Speaks: </span>{selectedGuide.speaks.join(', ')}</p>
+                  <p><span className='underline underline-offset-4'>Guiding Locations:</span> {selectedGuide.guiding_locations.join(', ')}</p>
+                  <p><span className='underline underline-offset-4'>Specialties :</span> {selectedGuide.specialties.join(', ')}</p>
+                  <p><span className='underline underline-offset-4'>Rating:</span> {selectedGuide.rating}</p>
+                </div>
               </div>
               <div>
-                <h2 className="font-bold"></h2>
-                <p><span className='font-bold'>Speaks: </span>{selectedGuide.speaks.join(', ')}</p>
                 <p><span className='font-bold'>Age: </span> {selectedGuide.age}</p>
-                <p>Gender: {selectedGuide.gender}</p>
-                <p>Guiding Locations: {selectedGuide.guiding_locations.join(', ')}</p>
-                <p>Specialties: {selectedGuide.specialties.join(', ')}</p>
-                <p>Description: {selectedGuide.description}</p>
-                <p>Rating: {selectedGuide.rating}</p>
+                <p><span className='font-bold'>Gender:</span> {selectedGuide.gender}</p>
+                <p>{selectedGuide.description}</p>
+
               </div>
             </div>
           </form>

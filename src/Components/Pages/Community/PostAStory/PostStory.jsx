@@ -6,6 +6,7 @@ import AddPhotoModal from './AddPhotoModal';
 import { imageUpload } from '../../../../api/utilities';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import useAuth from '../../../../Hooks/useAuth';
 
 const PostStory = () => {
     const [isOpen, setIsOpen] = useState(false)
@@ -13,24 +14,42 @@ const PostStory = () => {
     const closeModal = () => {
         setIsOpen(false)
     }
-    const { register, handleSubmit, formState: { errors } } = useForm();
+
+    const { user } = useAuth()
+    console.log(user)
+    // console.log(user.displayName)
+
+    const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const onSubmit = data => {
+        const postedBy = user.displayName
+        const photoURL = user.photoURL
+        console.log(postedBy);
         const storyss = { imgUrlTitleDescription, ...data }
-        const { description, title, withYou, whenYouGo, country } = data
+
+
+        const { description, title, withYou, whenYouGo, country, } = data
         imageUpload(data.image[0])
             .then(data => {
                 const url = data.data.display_url
-                const story = { description,country, title, withYou, whenYouGo, url, imgUrlTitleDescription,  }
+
+                const story = {
+                    description, country, postedBy, photoURL
+                    , title, withYou, whenYouGo, url, imgUrlTitleDescription,
+                }
                 axios.post(`${import.meta.env.VITE_BACKEND_API}/story`, story)
                     .then(res => {
-                        console.log(res)
-                        Swal.fire(
-                            'Thank You',
-                            'Successfully posted Your story',
-                            'success'
-                          )
+                        if (!res) {
+                            return '...loading'
+                        }
+                        else {
+                            Swal.fire(
+                                'Thank You',
+                                'Successfully posted Your story',
+                                'success'
+                            )
+                        }
                     })
-                console.log(url)
+                reset()
             })
         // console.log(console.log(story))
     }
@@ -47,11 +66,11 @@ const PostStory = () => {
     // https://i.ibb.co/PzTmkVY/1.png
     // https://i.ibb.co/X8j5MnR/2.png
     return (
-        <div className='pt-16 story bg-no-repeat'>
+        <div className='pt-16 story bg-no-repeat border'>
             <Container>
 
-                <h2 className='font-semibold text-2xl underline  tracking-widest text-center pt-10 px-4'>Wanderlust Chronicles: A Traveler's Diary </h2>
-                <p className='text-center my-2 '>
+                <h2 className='font-semibold text-2xl underline  tracking-widest text-center pt-10 '>Wanderlust Chronicles: A Traveler's Diary </h2>
+                <p className='text-center my-2'>
                     From remote villages to bustling cities, this diary-style narrative offers <br /> an easy-to-follow glimpse into my travel escapades.
                 </p>
                 <div className='mx-auto gap-20 mt-10  md:flex justify-center text-center items-center 
@@ -63,25 +82,31 @@ const PostStory = () => {
                                 <input
                                     type="file"
                                     name="image"
-                                    {...register('image', { required: 'Image is required' })}
-                                    className='file-input file-input-ghost border file-input-sm rounded-md md:w-96  border-gray-400' />
+                                    {...register('image', { required: 'Image is required', })}
+                                    className='file-input file-input-ghost border file-input-sm rounded-md w-full md:w-96  border-gray-400' />
                                 {errors.image && (
                                     <span className="text-red-500 text-sm">{errors.image.message}</span>
                                 )}
                             </div>
-                            <div className=' mb-3  flex flex-col gap-2'>
+                            <div className='mb-3 flex flex-col justify-center items-center gap-2'>
                                 <label htmlFor="title">Give a Title to Your Story</label>
-                                <input type='text' placeholder='Summarize your experience' className='w-full border-2 border-gray-400 py-1 px-2 rounded-md md:w-96 ' {...register("title")} />
+                                <input
+                                    type='text'
+                                    placeholder='Summarize your experience'
+                                    className='w-full border-2 border-gray-400 py-1 px-2 rounded-md md:w-96'
+                                    {...register("title", {  
+                                    })}
+                                />
                             </div>
-                            <div className=' mb-3  flex flex-col gap-2'>
+                            <div className=' mb-3  flex flex-col justify-center items-center gap-2 '>
                                 <label htmlFor="title">Country You Visited</label>
                                 <input type='text' placeholder='Country Name' className='w-full border-2 border-gray-400 py-1 px-2 rounded-md md:w-96 ' {...register("country")} />
                             </div>
-                            <div className=' mb-3 flex flex-col gap-2'>
+                            <div className=' mb-3 flex flex-col justify-center items-center gap-2'>
                                 <label htmlFor="title">Add Few Details About Your Trip </label>
-                                <textarea placeholder='What were some things you enjoyed about this experience? How can it be improved?' className='rounded-xl  w-full border-2 border-gray-400 py-1 px-2'  {...register("description")} cols="30" rows="5"></textarea>
+                                <textarea placeholder='What were some things you enjoyed about this experience? How can it be improved?' className='rounded-xl  w-full border-2 border-gray-400 py-1 px-2 md:w-96 '  {...register("description")} cols="30" rows="5"></textarea>
                             </div>
-                            <div className=' mb-3 flex flex-col gap-2'>
+                            <div className=' mb-3 flex flex-col gap-2 justify-center items-center'>
                                 <label htmlFor="deadline">When did you go? (required)</label>
                                 <select className='rounded-md md:w-96  w-full  border-2 border-gray-400 py-1 px-2' {...register("whenYouGo")}>
                                     <option value="" disabled>Select one</option>
@@ -99,7 +124,7 @@ const PostStory = () => {
                                     <option value="9,2022">September 2022 </option>
                                 </select>
                             </div>
-                            <div className=' mb-3 flex flex-col gap-2'>
+                            <div className=' mb-3 flex flex-col gap-2 justify-center items-center'>
                                 <label htmlFor="priority">Who was with you? (required)</label>
                                 <select className='rounded-md md:w-96   w-full border-2 border-gray-400 py-1 px-2' {...register("withYou")}>
                                     <option disabled>Select one</option>
@@ -113,18 +138,18 @@ const PostStory = () => {
 
 
 
-                            <div>
+                            <div className='flex flex-col justify-center items-center'>
                                 <p className='my-2'>Add More Details</p>
                                 <p onClick={() => setIsOpen(true)} className='mb-3 rounded-md md:w-96  cursor-pointer  px-3 py-2 border-2 border-dashed border-gray-400 flex justify-center items-center'>
                                     <AiOutlineCamera size={30} color='#388091'></AiOutlineCamera>
                                 </p>
 
                                 {
-                                    imgUrlTitleDescription.length > 0 && <div className='border-2 px-2 divide-y-2'>
+                                    imgUrlTitleDescription.length > 0 && <div className='border-2 px-2 divide-y-2 md:w-96'>
                                         {
                                             imgUrlTitleDescription.map(urlTitleBox => <div key={urlTitleBox.url} className='flex py-2 justify-between items-center w-full h-20 gap-3 md:gap-0'>
                                                 <img className='w-20 h-full rounded-b-lg rounded-tr-lg' src={urlTitleBox.url} alt="" />
-                                                <h2 className='grow ml-2 text-lg font-medium '>{urlTitleBox.title}</h2>
+                                              {/*   <h2 className='grow ml-2 text-lg font-medium '>{urlTitleBox.title}</h2> */}
                                                 <p className='text-blue-400 cursor-pointer' onClick={() => handleRemoveImage(urlTitleBox)}>remove</p>
                                             </div>)}
                                     </div>

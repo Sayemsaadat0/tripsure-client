@@ -9,7 +9,7 @@ import AirLineReview from "./AirLineReview";
 const Flights = () => {
   return (
     <>
-      <div className="max-w-7xl mx-auto"><OneWay /></div>
+      <div className="max-w-7xl mx-auto min-h-screen"><OneWay /></div>
     </>
   );
 };

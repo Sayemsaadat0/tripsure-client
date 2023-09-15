@@ -1,13 +1,13 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import { Pagination } from "swiper/modules";
-import { Link } from "react-router-dom";
-import Container from "../../../../LayOut/Container";
-import { useEffect, useState } from "react";
-import axios from "axios";
-import { Carousel } from "antd";
-import LazyLoad from "react-lazy-load";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import {  Pagination } from 'swiper/modules';
+import { Link } from 'react-router-dom';
+import Container from '../../../../LayOut/Container';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import { Carousel } from 'antd';
+import LazyLoad from 'react-lazy-load';
 
 const KidsGuide = () => {
   const [kidsAllData, setKidsAllData] = useState([]);
@@ -27,7 +27,7 @@ const KidsGuide = () => {
   return (
     <div>
       <Container>
-        <h2 className='pt-14 pb-10  text-2xl md:text-3xl text-center font-semibold underline underline-offset-2 tracking-widest'>Funville for Kids</h2>
+        <h2 className='pt-10  text-2xl md:text-3xl text-center font-semibold underline underline-offset-2 tracking-widest'>Funville for Kids</h2>
         <div >
 
           <Swiper
@@ -60,7 +60,9 @@ const KidsGuide = () => {
 
                     {
                       item.pictures.map((picture, index) => (
-                        <img className='rounded-lg h-40 w-full object-cover' key={index} src={picture} alt="" />
+                        <LazyLoad>
+                          <img className='rounded-lg h-40 w-full object-cover' key={index} src={picture} alt="" />
+                        </LazyLoad>
                       ))
                     }
 

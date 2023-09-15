@@ -28,59 +28,47 @@ const ManageBookings = () => {
   );
 
   return (
-    <div className="w-full ">
-      <div className="">
-        <h2 className="text-center my-20 text-2xl font-bold">
-          {" "}
-          Manage Bookings{" "}
-        </h2>
+    <div className=" w-full">
+ <div className="bg-white w-full overflow-x-auto">
+  <h3 className="font-semibold text-base px-4 py-3">Manage Bookings</h3>
+  <table className="w-full">
+    <thead>
+      <tr className="bg-[#34A0A4] text-white">
+        <th className="px-4 py-2">Se.No</th>
+        <th className="px-6 py-2">User Email</th> {/* Added extra px for more space */}
+        <th className="px-8 py-2">Selected Date</th> {/* Added extra px for more space */}
+        <th className="px-4 py-2">Price</th>
+      </tr>
+    </thead>
+    <tbody className="bg-gray-200">
+      {displayedBookings.map((booking, index) => (
+        <tr key={booking._id} className="bg-white border-b-2 border-gray-200">
+          <td className="px-4 py-2">{currentPage * dataPerPage + index + 1}</td>
+          <td className="px-6 py-2"> {/* Added extra px for more space */}
+            <div className="flex items-center space-x-3">
+              <div className="w-8 h-8 bg-gray-300 rounded-full overflow-hidden">
+                {/* Your image */}
+              </div>
+              <div>
+                <div className="text-sm opacity-80">
+                  {booking?.user ? booking.user : "User email not found"}
+                </div>
+              </div>
+            </div>
+          </td>
+          <td className="px-8 py-2"> {/* Added extra px for more space */}
+            {booking?.selectedDate ? booking.selectedDate : "No selected date"}
+          </td>
+          <td className="px-4 py-2">{`$ ${booking?.price ? booking.price : "00"}`}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
 
-        <div className="card mb-10 m-2">
-          <p className="card-title">
-            total Bookings & inquiries :{" "}
-            <span className="text-pink-500">{allBookings?.length} </span>
-          </p>
-        </div>
 
-        <div className="overflow-x-auto">
-          <table className="table w-full">
-            <thead>
-              <tr className="text-base text-black ">
-                <th>Se.No</th>
-                <th>Image</th>
-                <th>user email</th>
-                <th>selected date</th>
-                <th>price</th>
-              </tr>
-            </thead>
-            <tbody>
-              {displayedBookings.map((booking, index) => (
-                <tr key={booking._id}>
-                  <th>{currentPage * dataPerPage + index + 1}</th>
-                  <td>
-                    <div className="flex items-center space-x-3">
-                      <div className="avatar">{/* Your image */}</div>
-                      <div>
-                        <div className="text-sm opacity-50">
-                          {booking?.user
-                            ? booking.user
-                            : "user email not found"}
-                        </div>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    {booking?.selectedDate
-                      ? booking.selectedDate
-                      : "no selected date"}
-                  </td>
-                  <td>$ {booking?.price ? booking.price : "00"}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
+
+
 
       <div className="flex justify-center gap-2 mb-12 pt-8">
         <ReactPaginate

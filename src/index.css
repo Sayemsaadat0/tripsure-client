@@ -79,7 +79,8 @@
 }
 
 .placeholder-text-color::placeholder {
-  color: white;
+  color: black;
+  font-size: larger;
 }
 
 .DashNav {
@@ -268,7 +269,7 @@
 .btn-primary {
   @apply bg-white text-black rounded-md border border-black 
   hover:hover:bg-[#79c7ff]  hover:border-white hover:text-white
-   uppercase 
+   
    font-semibold
    duration-500 
    px-4 py-2;

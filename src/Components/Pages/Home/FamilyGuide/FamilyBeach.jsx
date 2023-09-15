@@ -52,14 +52,15 @@ const FamilyBeach = () => {
               <SwiperSlide className='' key={index} >
                 <div className="card card-compact bg-white  relative ">
                   <Carousel autoplay>
-                    {item.pictures.map((picture, index) => (
-                      <img
-                        className="rounded-lg h-40 w-full object-cover"
-                        key={index}
-                        src={picture}
-                        alt="BeachPhoto"
-                      />
-                    ))}
+
+                    {
+                      item.pictures.map((picture, index) => (
+                        <LazyLoad>
+                          <img className='rounded-lg h-40 w-full object-cover' key={index} src={picture} alt="" />
+                        </LazyLoad>
+                      ))
+                    }
+
                   </Carousel>
                   <div className="card-body">
                     <h2 className="card-title">{item?.title}</h2>

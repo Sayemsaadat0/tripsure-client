@@ -37,7 +37,7 @@ const TopDestinations = () => {
             spaceBetween={10}
             modules={[Navigation]}
             className="mySwiper"
-            // navigation={true}
+        
             breakpoints={{
               640: {
                 slidesPerView: 2,
@@ -69,25 +69,13 @@ const TopDestinations = () => {
                       />
                     </LazyLoad>
 
-                    <div className="mt-[10px] flex justify-between items-center">
-                      <h2 className="font-semibold mt-3 hover:text-blue-400 duration-500">
-                        {todo.placetitle}
-                      </h2>
-                      <div>
-                        {filterData.map((t) => t._id === todo._id) && (
-                          <SocialMediaShare todo={todo} key={todo._id} />
-                        )}
-                      </div>
-                    </div>
-                    <div className="flex justify-between">
-                      <p>
-                        {todo.costperperson}$/{" "}
-                        <span className="text-xs">per person</span>{" "}
-                      </p>
-                      <p className="flex items-center gap-2">
-                        <GoStarFill className="text-red-500"></GoStarFill>{" "}
-                        {todo.ratings}
-                      </p>
+
+                    <h2 className="font-semibold mt-3 hover:text-blue-400 duration-500">
+                      {todo.placetitle}
+                    </h2>
+                    <div className='flex justify-between'>
+                      <p className="text-red-500 font-bold">{todo.costperperson}$/ <span className='text-xs text-black'>per person</span> </p>
+                      <p className='flex items-center gap-2'><GoStarFill className='text-red-500'></GoStarFill>  {todo.ratings}</p>
                     </div>
                   </div>
                 </Link>

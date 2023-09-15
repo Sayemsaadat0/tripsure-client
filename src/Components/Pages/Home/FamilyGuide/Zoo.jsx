@@ -14,20 +14,19 @@ const Zoo = () => {
   const [allZoo, setAllZoo] = useState([]);
 
   useEffect(() => {
-    axios
-      .get(`${import.meta.env.VITE_BACKEND_API}/allFamilyGuide/zoo`)
+    axios.get(`${import.meta.env.VITE_BACKEND_API}/allFamilyGuide/zoo`)
       .then((res) => {
-        setAllZoo(res.data);
-      });
-  }, []);
+        setAllZoo(res.data)
+      })
+  }, [])
+
 
   return (
     <div>
       <Container>
-        <h2 className="pt-10  text-2xl md:text-3xl text-center font-semibold underline underline-offset-2 tracking-widest">
-          Wildlife Sanctuary
-        </h2>
-        <div>
+        <h2 className='pt-10  text-2xl md:text-3xl text-center font-semibold underline underline-offset-2 tracking-widest'>Wildlife Sanctuary</h2>
+        <div >
+
           <Swiper
             slidesPerView={1}
             spaceBetween={10}
@@ -55,14 +54,15 @@ const Zoo = () => {
               <SwiperSlide key={index} className="lg:p-10">
                 <div className="card card-compact bg-white relative ">
                   <Carousel autoplay>
-                    {item.pictures.map((picture, index) => (
-                      <img
-                        className="rounded-lg h-40 w-full object-cover"
-                        key={index}
-                        src={picture}
-                        alt="ZooPhoto"
-                      />
-                    ))}
+
+                    {
+                      item.pictures.map((picture, index) => (
+                        <LazyLoad>
+                          <img className='rounded-lg h-40 w-full object-cover' key={index} src={picture} alt="" />
+                        </LazyLoad>
+                      ))
+                    }
+
                   </Carousel>
                   <div className="my-4">
                     <h2 className="card-title">{item?.title}</h2>

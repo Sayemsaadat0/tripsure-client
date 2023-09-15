@@ -57,8 +57,10 @@ const HoneyMoons = () => {
 
                     {
                       item.pictures.map((picture, index) => (
+                        <LazyLoad>
                           <img className='rounded-lg h-40 w-full object-cover' key={index} src={picture} alt="" />
-                     
+                        </LazyLoad>
+
                       ))
                     }
 

@@ -115,7 +115,7 @@ const NewProfile = () => {
                         <p> Gender : Male </p>
                         <p> Joined on Tripsure : 12/12/2022</p>
                     </div>
-                    <button className='pt-10 btn-link text-black'>Report Profile</button>
+                    {/* <button className='pt-10 btn-link text-black'>Report Profile</button> */}
                 </div>
                 <div className='lg:w-2/3 '>
                     <div>
