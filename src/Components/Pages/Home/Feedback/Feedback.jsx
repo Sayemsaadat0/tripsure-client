@@ -76,8 +76,8 @@ const Feedback = () => {
                   <h2 className="font-bold">{feedback?.user?.displayName}</h2>
                   <Rating
                     initialRating={feedback?.rating}
-                    fullSymbol={<BsStarFill size={30} color="red" />}
-                    emptySymbol={<BsStar size={30} color="red" />}
+                    fullSymbol={<BsStarFill size={20} color="red" />}
+                    emptySymbol={<BsStar size={20} color="red" />}
                     style={{ maxWidth: 200 }}
                     readonly
                   />
