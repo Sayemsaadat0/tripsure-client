@@ -7,6 +7,8 @@ import AddHotelQ_Ans from "./AddHotelQ_Ans";
 const Addhotels = () => {
   const [loading, setLoading] = useState(false);
   const [QA, setQA] = useState([])
+  const [selectedRoomFeatures, setSelectedRoomFeatures] = useState([]);
+  const [selectAll, setSelectAll] = useState(false);
   console.log(QA)
   const handle_submit = (event) => {
     event.preventDefault();
@@ -114,7 +116,7 @@ const Addhotels = () => {
     }
   };
 
-  
+ 
 
   const handleSelectAllChange = (event) => {
     const checked = event.target.checked;
