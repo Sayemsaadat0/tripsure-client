@@ -136,33 +136,7 @@ const ManageUser = () => {
 
       <div className="overflow-x-auto">
         <div className="flex justify-between mr-10">
-         {/*  <div className="form-control ml-3">
-            <div className="input-group">
-              <input
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                type="text"
-                placeholder="Enter Email"
-                className="input input-bordered"
-              />
-              <button className="btn" onClick={handleSearch}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                  />
-                </svg>
-              </button>
-            </div>
-          </div> */}
+      
           <select
             className="select shadow-lg w-40 focus:outline-none"
             value={operator}

@@ -17,7 +17,7 @@ const Login = () => {
     formState: { errors },
   } = useForm();
   const navigate = useNavigate();
-  const { signInUser } = useAuth();
+  const { signInUser, role } = useAuth();
   const [loading, setLoading] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -39,7 +39,11 @@ const Login = () => {
           icon: "success",
           confirmButtonText: "Cool",
         });
-        navigate("/", { replace: true });
+        if (role === 'admin') {
+          navigate("dashboard/adminhome", { replace: true });
+        } else {
+          navigate("/", { replace: true });
+        }
         setLoading(false);
       })
       .catch((error) => {

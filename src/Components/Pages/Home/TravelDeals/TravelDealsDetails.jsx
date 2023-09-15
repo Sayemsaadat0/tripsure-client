@@ -143,14 +143,7 @@ const TravelDealsDetails = () => {
                 Grab it Now, Save Big
               </h2>
               <h3 className="text-3xl font-bold text-[#79c7ff]">
-             {/*    <Typewriter
-                  words={words}
-                  loop={Infinity}
-                  delaySpeed={2000}
-                  typeSpeed={120}
-                  deleteSpeed={80}
-                  cursor
-                /> */}
+         
               </h3>
             </div>
 
