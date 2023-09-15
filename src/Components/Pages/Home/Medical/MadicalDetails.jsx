@@ -3,7 +3,7 @@ import Container from "../../../../LayOut/Container";
 
 const MadicalDetails = () => {
   return (
-    <div className="mt-20 min-h-screen ">
+    <div className="mt-20 min-h-screen h-full ">
       <Container>
         <div className="md:h-[380px] h-full w-[80%] mx-auto ">
           <img
