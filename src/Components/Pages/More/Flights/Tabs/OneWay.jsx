@@ -26,7 +26,7 @@ const OneWay = () => {
   return (
     <>
       <div className="mt-20 w-full ">
-        <h3 className="text-center md:text-5xl  tracking-widest mb-14">
+        <h3 className="text-center md:text-4xl text-2xl  tracking-widest mb-14">
           Find the best flight for the right price
         </h3>
         <div className="sm:flex items-center justify-center gap-4 w-full">
