@@ -21,7 +21,7 @@ import LazyLoad from "react-lazy-load";
 const Packages = () => {
   const { logOut, user } = useAuth();
   const [packages, setPackages] = useState([]);
-  const [favoritePackageIds, setFavoritePackageIds] = useState([]); // Store favorite package IDs
+  const [favoritePackageIds, setFavoritePackageIds] = useState([]); 
   const [showSocialMediaIcons, setShowSocialMediaIcons] = useState(false);
 
   useEffect(() => {
@@ -42,7 +42,7 @@ const Packages = () => {
         });
     }
   }, [user]);
-// todo : button toggol problem 
+
   const handleOpenSocialIcon = (packageId) => {
     console.log(packageId)
     let findId = packages.find(p => p._id === packageId)
@@ -134,15 +134,6 @@ const Packages = () => {
                         </p>
                       </div>
                       <div>
-                     {/*    <button
-                          onClick={() => handleOpenSocialIcon(packageItem._id)}
-                          className={
-                            showSocialMediaIcons
-                              ? "btn flex justify-between items-center "
-                              : " btn" }>
-                          <IoIosShareAlt size={22}/>
-                          {showSocialMediaIcons && <SocialMediaShare />}
-                        </button> */}
                       </div>
                     </div>
                   </div>
