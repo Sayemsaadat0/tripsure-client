@@ -234,7 +234,7 @@ const TourDetails = () => {
                   />
                   {selectedDate && (
                     <p className="mt-2">
-                      Selected date: {selectedDate.format("YYYY-MM-DD")}
+                      Your departure date: {selectedDate.format("YYYY-MM-DD")}
                     </p>
                   )}
                 </button>
@@ -368,9 +368,6 @@ const TourDetails = () => {
                 <p>(No additional taxes or booking fees)</p>
               </div>
               <div className="flex gap-3 items-center justify-around">
-                <button className="btn rounded-full lg:px-14 btn-warning">
-                  Add TO Favorite
-                </button>
                 <Link disabled={selectedDate == null}
                   to={user ? '/contactDetails' : '/login'}
                   state={{ orderDetails: orderDetails }}

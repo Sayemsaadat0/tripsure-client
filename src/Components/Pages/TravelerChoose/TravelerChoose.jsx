@@ -39,7 +39,7 @@ const TravelerChoose = () => {
                 <div className="space-y-4 ">
                   <h2 className="text-7xl font-bold border-b-4 border-blue-400 w-10 py-3 text-gray-400">0{index + 1}.</h2>
                   <Link to={`/tourDetails/${fistOneCard?._id}`} className="text-4xl font-bold text-black">
-                    {fistOneCard?.cardtitle}
+                    {fistOneCard?.placetitle}
                   </Link>
                   <h4 className="flex items-center gap-2">
                     <FaLocationDot></FaLocationDot>{fistOneCard?.country}
