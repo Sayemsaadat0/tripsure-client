@@ -40,12 +40,12 @@ const MadicalCard = () => {
 
 
 
-        {/* <div className="mt-16">
+         <div className="mt-16">
           <h3 className="tracking-widest text-2xl underline font-semibold ">
             Explore Hospitals by its Specialties
           </h3>
           <HospitalbySpeciality></HospitalbySpeciality>
-        </div> */}
+        </div> 
 
 
 

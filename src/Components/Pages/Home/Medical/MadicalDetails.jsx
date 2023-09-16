@@ -91,7 +91,7 @@ const MadicalDetails = () => {
               Visit website
             </a>
 
-
+{/* 
             <div className="my-10">
               <h3 className="text-xl font-semibold"> the Iconic Department this Medical has : </h3>
               <div
@@ -102,7 +102,7 @@ const MadicalDetails = () => {
                 }
               </div>
 
-            </div>
+            </div> */}
           </div>
 
 
