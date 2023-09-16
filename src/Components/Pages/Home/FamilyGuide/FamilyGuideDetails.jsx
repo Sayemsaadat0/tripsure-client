@@ -74,12 +74,14 @@ const FamilyGuideDetails = () => {
         <section className="mt-10 w-full h-full">
           <Container>
             <div>
-              <img
+             <LazyLoad>
+             <img
                 className="w-full min-h-[200px] my-10"
                 src="
                  https://i.ibb.co/zGtGhxT/trip-ideas.png"
                 alt="BannerPhoto"
               />
+             </LazyLoad>
               <KidsGuide></KidsGuide>
               <HoneyMoons></HoneyMoons>
               <LazyLoad>
