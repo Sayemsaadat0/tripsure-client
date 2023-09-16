@@ -90,18 +90,14 @@ const MadicalDetails = () => {
           </div>
           <div className="md:w-[40%] border p-6">
             <h3 className="text-2xl font-bold pb-8 ">Doctors</h3>
-            {medicalData?.doctors.map((doctor, i) => {
-              <div className="border p-4 rounded-md" key={i}>
-                <div className="flex space-x-2">
-               
-                  <span>
-                    <h3 className="text-xl font-bold">{doctor.name} alskdjflasjdf </h3>
-                    <p>{doctor.degree}</p>
-                  </span>
+            {
+              doctors.map((d, index) => {
+                <div key={ index}>
+                
+                  <h3>{ d.name}</h3>
                 </div>
-                <p>{doctor.medical_college}</p>
-              </div>;
-            })}
+              })
+           }
           </div>
         </div>
       </Container>
