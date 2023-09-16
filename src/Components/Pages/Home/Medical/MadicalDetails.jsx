@@ -91,18 +91,18 @@ const MadicalDetails = () => {
               Visit website
             </a>
 
-{/* 
+
             <div className="my-10">
               <h3 className="text-xl font-semibold"> the Iconic Department this Medical has : </h3>
               <div
                 className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 {
-                  medical_departments?.map((p, index) => <p 
-                  className="text-center border p-6 mx-5 my-4 rounded-md hover:bg-[#303131] duration-500 hover:text-white uppercase  shadow-xl">{p}ss</p>)
+                  medical_departments?.map((p, index) => <p
+                    className="text-center border p-6 mx-5 my-4 rounded-md hover:bg-[#303131] duration-500 hover:text-white uppercase  shadow-xl">{p}ss</p>)
                 }
               </div>
 
-            </div> */}
+            </div>
           </div>
 
 
