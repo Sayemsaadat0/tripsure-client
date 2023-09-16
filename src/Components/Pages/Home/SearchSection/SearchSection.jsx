@@ -1,7 +1,6 @@
 import "./searchSection.css";
 import { BiHomeAlt2 } from "react-icons/bi";
 import { IoBedOutline, IoRestaurantSharp } from "react-icons/io5";
-import { FaArrowsToDot } from "react-icons/fa6";
 import { AiOutlineSearch } from "react-icons/ai";
 import { useSelector, useDispatch } from "react-redux";
 
@@ -119,8 +118,7 @@ const SearchSection = () => {
               font-semibold 
               rounded-full 
               w-full mt-5 
-              flex justify-center items-center gap-2"
-              >
+              flex justify-center items-center gap-2">
                 <BsSearch></BsSearch>
                 Search
               </button>
