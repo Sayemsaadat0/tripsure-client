@@ -17,7 +17,8 @@ import LazyLoad from "react-lazy-load";
 const Packages = () => {
   const { logOut, user } = useAuth();
   const [packages, setPackages] = useState([]);
-  const [favoritePackageIds, setFavoritePackageIds] = useState([]); // Store favorite package IDs
+  const [favoritePackageIds, setFavoritePackageIds] = useState([]); 
+  const [showSocialMediaIcons, setShowSocialMediaIcons] = useState(false);
 
   useEffect(() => {
     fetch(`${import.meta.env.VITE_BACKEND_API}/packages`)
@@ -39,6 +40,13 @@ const Packages = () => {
         });
     }
   }, [user]);
+
+  const handleOpenSocialIcon = (packageId) => {
+    console.log(packageId)
+    let findId = packages.find(p => p._id === packageId)
+    console.log(findId)
+    setShowSocialMediaIcons(!showSocialMediaIcons)
+  };
 
   return (
     <div className="px-2 pb-20">
@@ -127,6 +135,8 @@ const Packages = () => {
                           {packageItem?.reviews?.ratings?.overall} (45)
                         </p>
                       </div>
+                      <div>
+                      </div>
                       <div></div>
                     </div>
                   </div>
@@ -142,4 +152,4 @@ const Packages = () => {
 
 export default Packages;
 
-// todo share button remove from here and add to story or tips
+

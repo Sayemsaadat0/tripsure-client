@@ -13,9 +13,7 @@ const Dropdown = () => {
     logOut()
       .then(() => {
         Swal.fire(
-          'Good job!',
           'log Out your account ',
-          'success'
         )
       })
       .catch(error => {
@@ -43,39 +41,28 @@ const Dropdown = () => {
           leaveFrom="transform opacity-100 scale-100"
           leaveTo="transform opacity-0 scale-95"
         >
-          <Menu.Items className="absolute z-10 right-0 mt-6 w-60 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+          <Menu.Items className="absolute z-10 right-0  w-44 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
             <div className="p-3 space-y-3">
               <Menu.Item>
-                <div className='text-center space-y-1'>
-                  <img className='w-20 h-20 mx-auto rounded-full border-2 border-[#2d969e] p-[2px]' src={`${user?.photoURL}`} alt="" />
+                <div className=' space-y-1'>
                   <p className='text-lg font-medium'>{user?.displayName}</p>
-                  <p>{user?.email}</p>
                 </div>
               </Menu.Item>
-              <Menu.Item>
-                <button onClick={handleLogout} className="logout-button ">Log Out</button>
-              </Menu.Item>
+            
 
               <Menu.Item>
-                <Link to={`/profile/${user?.email.split('.')[0]}`} className='flex items-center gap-3 px-2 py-1 hover:bg-gray-300 rounded
-                '>
-                  <CgProfile size={20} color='19a0c9'></CgProfile>
+                <Link to={`/profile/${user?.email.split('.')[0]}`} className='flex items-center gap-3 py-1 hover:text-blue-400 rounded '>
+                
                   <span className='text-lg'>Your Profile</span>
                 </Link>
               </Menu.Item>
               <Menu.Item>
-                <Link to='/overview' className='flex items-center gap-3 px-2 py-1 hover:bg-gray-300 rounded
-                '>
-                  <LuView size={20} color='19a0c9'></LuView>
-                  <span className='text-lg'>View Overview</span>
+                <Link to='/my_bookings' className='hover:text-blue-400 rounded'>
+                  <span className='text-lg'>My Bookings</span>
                 </Link>
               </Menu.Item>
               <Menu.Item>
-                <Link to='/my_bookings' className='flex items-center gap-3 px-2 py-1 hover:bg-gray-300 rounded
-                '>
-                  <LiaAddressBook size={20} color='19a0c9'/>
-                  <span className='text-lg'>My Bookings</span>
-                </Link>
+                <button onClick={handleLogout} className='hover:text-blue-400'>Log Out</button>
               </Menu.Item>
             </div>
           </Menu.Items>

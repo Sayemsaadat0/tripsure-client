@@ -70,33 +70,8 @@ const TopDestinationDetails = () => {
     <Container>
       <div className="mx-2 mt-20">
         <div>
-          <h1 className="text-5xl underline underline-offset-4 tracking-widest">
-            {topDestinationDetails?.placetitle}
-          </h1>
-          {/*    <div className="text-center mx-auto lg:grid lg:overflow-x-hidden overflow-y-hidden flex lg:grid-cols-4 my-4 gap-2 overflow-scroll  ">
-          <button className="btn btn-md btn-outline lg:btn-wide">Hotel</button>
-          <button className="btn btn-md btn-outline lg:btn-wide">
-            Things To do
-          </button>
-          <button className="btn btn-md btn-outline lg:btn-wide">
-            Trip Advice
-          </button>
-          <button className="btn btn-md btn-outline lg:btn-wide">
-            Trip Advice
-          </button>
-          <button className="btn btn-md btn-outline lg:btn-wide">
-            Trip Advice
-          </button>
-          <button className="btn btn-md btn-outline lg:btn-wide">
-            Trip Advice
-          </button>
-          <button className="btn btn-md btn-outline lg:btn-wide">
-            Trip Advice
-          </button>
-          <button className="btn btn-md btn-outline lg:btn-wide">
-            Trip Advice
-          </button>
-        </div> */}
+          <h1 className="text-2xl md:text-5xl underline underline-offset-4 tracking-widest">{topDestinationDetails?.placetitle}</h1>
+         
           <div className="my-6">
             <img
               className="w-full 

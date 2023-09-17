@@ -60,11 +60,8 @@ const Do = ({ country }) => {
                   <img
                     className="h-64  w-full  hover:scale-105 duration-300  object-cover hover:bg-white hover:opacity-80"
                     src={category && category?.picture}
-                    alt="place photo"
-                  />
-                  <button className="btn absolute top-2 right-2">
-                    <FaHeart size={20} />
-                  </button>
+                    alt="place photo" />
+              
                   <div>
                     <h3 className="text-xl font-bold hover:underline mt-2">
                       {category && category?.placetitle}

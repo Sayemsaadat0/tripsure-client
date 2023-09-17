@@ -12,7 +12,6 @@ const Stay = ({ countryDatas, country }) => {
   // todo: gettin empty array in stayData
   // const stayData = countryDatas.filter(countryData => countryData.country === country);
   // console.log(stayData);
-
   return (
     <div>
       <h2 className="text-3xl font-semibold my-10">Essential {country }</h2>
@@ -58,9 +57,7 @@ const Stay = ({ countryDatas, country }) => {
                     src={countryData && countryData?.picture}
                     alt="hotel"
                   />
-                  <button className="btn absolute top-2 right-2">
-                    <FaHeart size={20} />
-                  </button>
+                
                   <div>
                     <h3 className="text-xl font-bold hover:underline mt-2">
                      {countryData && countryData?.cardtitle}

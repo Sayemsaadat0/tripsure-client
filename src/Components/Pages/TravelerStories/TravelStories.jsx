@@ -24,7 +24,7 @@ const TravelarStories = () => {
 
 
   useEffect(() => {
-    axios.get(`http://localhost:1000/story`)
+    axios.get(`${import.meta.env.VITE_BACKEND_API}/story`)
       .then(res => {
         setStories(res.data)
       })

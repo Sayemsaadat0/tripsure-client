@@ -6,7 +6,7 @@ const Stories = () => {
   const [story, setStory] = useState({});
   const { id } = useParams()
   useEffect(() => {
-    fetch(`http://localhost:1000/story/${id}`)
+    fetch(`${import.meta.env.VITE_BACKEND_API}/story/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setStory(data);

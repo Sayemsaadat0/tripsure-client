@@ -25,7 +25,7 @@ const SearchResult = () => {
       </div>
       <div className=" w-full bg-base-100 rounded-tl-lg rounded-tr-lg">
         <Container>
-          <div className="border-t border-x p-4 ">
+          <div className="p-4">
             <h4 className="text-xl font-semibold">
               Search results matching "{searchText}"
             </h4>

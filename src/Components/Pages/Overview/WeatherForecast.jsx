@@ -22,8 +22,7 @@ const WeatherForecast = () => {
     }, [location]);
 
     return (
-        <div className="container mx-auto p-4 mt-4">
-            <h1 className="text-2xl font-bold mb-4">Weather Forecast</h1>
+        <div className="container mx-auto ">
             <input
                 type="text"
                 className="p-2 border rounded"
@@ -32,7 +31,7 @@ const WeatherForecast = () => {
                 onChange={(e) => setLocation(e.target.value)}
             />
             {weatherData && (
-                <div className="mt-4 p-4 border rounded">
+                <div className=" border rounded">
                     <h2 className="text-xl font-semibold">{weatherData.name}, {weatherData.sys.country}</h2>
                     <p>Temperature: {weatherData.main.temp}°C</p>
                     <p>Weather: {weatherData.weather[0].description}</p>

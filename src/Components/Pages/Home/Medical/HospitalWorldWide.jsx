@@ -10,7 +10,7 @@ const HospitalWorldWide = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:1000/medicals`)
+      .get(`${import.meta.env.VITE_BACKEND_API}/medicals`)
       .then((data) => {
         setHospitals(data.data);
         setFilteredHospitals(data.data);

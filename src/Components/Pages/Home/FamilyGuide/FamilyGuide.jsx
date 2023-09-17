@@ -7,7 +7,7 @@ const FamilyGuide = () => {
 
     return (
         <div
-            className="hero h-[100%] background1" >
+            className="hero h-96 background1" >
             <div className='hero-overlay bg-opacity-20 '></div>
             <div className="hero-content text-center text-neutral-content">
                 <div className="max-w-xl p-3 md:p-10 py-24 text-white">

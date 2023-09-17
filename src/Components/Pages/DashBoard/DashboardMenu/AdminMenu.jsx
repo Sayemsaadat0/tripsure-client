@@ -45,7 +45,7 @@ const AdminMenu = () => {
 
         <span className="mx-4 font-medium"> Manage Bookings</span>
       </NavLink>
-      <NavLink
+{/*       <NavLink
         to="/dashboard/managebookings"
         className={({ isActive }) =>
           `flex items-center px-4 py-2 mt-4  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
@@ -56,7 +56,7 @@ const AdminMenu = () => {
         <FiSettings className="w-5 h-5" />
 
         <span className="mx-4 font-medium"> Resource Management</span>
-      </NavLink>
+      </NavLink> */}
       <NavLink
         to="/dashboard/addresource"
         className={({ isActive }) =>

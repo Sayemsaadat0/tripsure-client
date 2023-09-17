@@ -40,17 +40,17 @@ const MadicalCard = () => {
 
 
 
-        <div className="mt-16">
+        {/* <div className="mt-16">
           <h3 className="tracking-widest text-2xl underline font-semibold ">
             Explore Hospitals by its Specialties
           </h3>
           <HospitalbySpeciality></HospitalbySpeciality>
-        </div>
+        </div> */}
 
 
 
         {/* .............. */}
-        <div className="mt-16">
+      {/*   <div className="mt-16">
           <h3 className="tracking-widest text-lg underline font-semibold text-center ">
           Health & Wellness Tips
           </h3>
@@ -72,7 +72,7 @@ const MadicalCard = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </Container>
     </div>
   );
