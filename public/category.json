@@ -1,149 +1,1343 @@
 [
-    {
-      "categoryname": "Restaurant",
-      "country": "United States",
-      "visitcount": 1200,
-      "cardtitle": "New York Bistro Delights",
-      "postedby": "Culinary Discoveries",
-      "picture": "https://example.com/nyc-bistro.jpg",
-      "ratings": 4.7,
-      "placetitle": "New York City, Culinary Haven",
-      "placedetails": "Experience the diverse culinary scene of New York City as you dine in charming bistros, taste gourmet creations, and immerse yourself in the vibrant food culture...",
-      "costperperson": 85,
-      "conditions": {
-        "agelimitations": "Minimum age: 12 years",
-        "duration": "4 hours",
-        "startTime": "6:00 PM",
-        "language": "English",
-        "awards": ["TripAdvisor Certificate of Excellence", "Culinary Delights Award"]
+  {
+    "categoryname": "Beach",
+    "country": "United States",
+    "visitcount": 800,
+    "title": "Sandy Shores Getaway",
+    "postedby": "Seaside Escapes",
+    "picture": "https://img.freepik.com/free-photo/woman-with-hat-sitting-chairs-beach-beautiful-tropical-beach-woman-relaxing-tropical-beach-koh-nangyuan-island_335224-1110.jpg?size=626&ext=jpg&uid=R91874933&semt=ais",
+    "ratings": 4.8,
+    "placetitle": "Tropical Paradise Beach Resort",
+    "placedetails": "Escape to a tranquil tropical paradise where you can relax on sandy shores, swim in crystal-clear waters, and experience the beauty of marine life...",
+    "price": [
+      {
+        "type": "adult",
+        "amount": 120
       },
-      "included": [
-        "Visit to renowned NYC bistros",
-        "Multi-course gourmet dinner",
-        "Wine pairings with each course",
-        "Expert commentary from culinary guide",
-        "Opportunity to meet local chefs",
-        "Local transportation between venues"
-      ],
-      "itinerary": [
-        "6:00 PM: Start at iconic bistro, Welcome aperitif",
-        "7:30 PM: Move to second venue, Appetizer and wine pairing",
-        "8:45 PM: Third venue, Main course and wine pairing",
-        "10:00 PM: Final stop, Dessert and farewell"
-      ],
-      "additionalInfo": [
-        "Dress code: Smart casual attire.",
-        "Currency: US Dollar ($)",
-        "Weather: Check local forecast before your visit.",
-        "Emergency contact: +1 123-456-7890",
-        "Recommended dietary preferences in advance."
-      ],
-      "faq": [
-        {
-          "question": "Is this tour suitable for vegetarians?",
-          "answer": "Yes, vegetarian options are available at each venue."
-        },
-        {
-          "question": "Is alcohol included in the tour?",
-          "answer": "Yes, wine pairings are included with dinner."
-        },
-        {
-          "question": "Can I bring children on the tour?",
-          "answer": "The tour is recommended for ages 12 and up."
-        },
-        {
-          "question": "Is transportation provided between venues?",
-          "answer": "Yes, local transportation is arranged between restaurants."
-        },
-        {
-          "question": "Can I customize the itinerary?",
-          "answer": "The tour follows a set itinerary to showcase the best culinary experiences."
-        },
-        {
-          "question": "How do I make a reservation?",
-          "answer": "You can reserve online through our website or by contacting our customer service."
-        }
-      ],
-      "refundprocess": [
-        "Full refund available up to 7 days before the tour.",
-        "50% refund if canceled 3-6 days prior.",
-        "No refunds for cancellations within 48 hours of the tour.",
-        "Refunds processed within 14 business days.",
-        "Contact our support team for refund inquiries."
+      {
+        "type": "child",
+        "amount": 70
+      },
+      {
+        "type": "infant",
+        "amount": 20
+      }
+    ],
+    "unavailableSlots": [
+      "2023-09-08",
+      "2023-09-15",
+      "2023-09-22",
+      "2023-09-29",
+      "2023-10-06",
+      "2023-10-13",
+      "2023-10-20"
+    ],
+    "conditions": {
+      "agelimitations": "Suitable for all ages",
+      "duration": "7 days",
+      "startTime": "9:00 AM",
+      "language": "English",
+      "features": [
+        "Private beach access",
+        "Snorkeling tours",
+        "Beachside yoga"
       ]
     },
-    {
-      "categoryname": "Restaurant",
-      "country": "France",
-      "visitcount": 950,
-      "cardtitle": "Parisian Gastronomy Journey",
-      "postedby": "French Flavors Tours",
-      "picture": "https://example.com/paris-restaurant.jpg",
-      "ratings": 4.9,
-      "placetitle": "Paris, Culinary Elegance",
-      "placedetails": "Embark on a gastronomic adventure through the enchanting streets of Paris, where Michelin-starred restaurants and charming bistros await...",
-      "costperperson": 135,
-      "conditions": {
-        "agelimitations": "Minimum age: 16 years",
-        "duration": "5 hours",
-        "startTime": "7:30 PM",
-        "language": "English and French",
-        "awards": ["TripAdvisor Certificate of Excellence", "Culinary Delights Award"]
+"included": [
+      "Accommodation at the beachfront resort",
+      "Daily beachside breakfast",
+      "Guided snorkeling tour",
+      "Beachside yoga sessions",
+      "Evening bonfire and entertainment"
+    ],
+    "itinerary": [
+      "Day 1: Check-in and explore the resort",
+      "Day 2-5: Enjoy the beach and resort amenities",
+      "Day 6: Guided snorkeling tour in the morning",
+      "Day 7: Check-out and departure"
+    ],
+    "additionalInfo": [
+      "Pack sunscreen and beachwear.",
+      "Currency: US Dollar ($)",
+      "Weather: Tropical climate, prepare for rain.",
+      "Emergency contact: +1 123-456-7890",
+      "Notify us of dietary restrictions."
+    ],
+    "faq": [
+      {
+        "question": "Are snorkeling gears provided?",
+        "answer": "Yes, snorkeling equipment is included."
       },
-      "included": [
-        "Dinner at renowned Parisian restaurants",
-        "Multiple-course gourmet meal",
-        "Wine pairings curated by sommelier",
-        "Insights from culinary expert",
-        "Chance to meet renowned chefs",
-        "Transportation to and from venues"
-      ],
-      "itinerary": [
-        "7:30 PM: Begin at Michelin-starred restaurant, Welcome champagne",
-        "8:45 PM: Second venue, Appetizer and wine pairing",
-        "9:30 PM: Main course at charming bistro, Wine pairing",
-        "10:45 PM: Culinary masterpiece dessert"
-      ],
-      "additionalInfo": [
-        "Elegant attire is recommended.",
-        "Currency: Euro (€)",
-        "Weather: Varies by season, plan accordingly.",
-        "Emergency contact: +33 (0)1 23 45 67 89",
-        "Advance notice of dietary restrictions required."
-      ],
-      "faq": [
-        {
-          "question": "Are vegetarian meal options available?",
-          "answer": "Yes, vegetarian options are available at each restaurant."
-        },
-        {
-          "question": "Is transportation included?",
-          "answer": "Yes, transportation to and from the restaurants is provided."
-        },
-        {
-          "question": "Can children participate in the tour?",
-          "answer": "The tour is designed for adult participants."
-        },
-        {
-          "question": "Can I customize the itinerary?",
-          "answer": "The tour follows a set itinerary to showcase the finest dining experiences."
-        },
-        {
-          "question": "Is there a dress code for the tour?",
-          "answer": "Elegant attire is recommended for the upscale dining venues."
-        },
-        {
-          "question": "How do I make a reservation?",
-          "answer": "You can reserve online through our website or by contacting our customer service."
-        }
-      ],
-      "refundprocess": [
-        "Full refund available up to 7 days before the tour.",
-        "50% refund if canceled 3-6 days prior.",
-        "No refunds for cancellations within 48 hours of the tour.",
-        "Refunds processed within 14 business days.",
-        "Contact our support team for refund inquiries."
+      {
+        "question": "Is Wi-Fi available at the resort?",
+        "answer": "Yes, the resort offers free Wi-Fi."
+      },
+      {
+        "question": "How can I book this beach getaway?",
+        "answer": "You can book online or contact our customer service."
+      }
+    ],
+    "refundprocess": [
+      "Full refund available up to 14 days before the start of the getaway.",
+      "50% refund if canceled 7-14 days prior.",
+      "No refunds for cancellations within 7 days of the start.",
+      "Refunds processed within 21 business days.",
+      "Contact our support team for refund inquiries."
+    ],
+    "reviews": [
+      {
+        "name": "BeachLover123",
+        "rating": 5,
+        "date": "2023-08-25",
+        "comment": "The sandy beaches were absolutely stunning, and the snorkeling tour was a highlight of the trip. The resort staff were friendly and made our stay unforgettable!"
+      }
+    ]
+  },
+  {
+    "categoryname": "Beach",
+    "country": "Greece",
+    "visitcount": 700,
+    "title": "Mediterranean Bliss Retreat",
+    "postedby": "Coastal Escapes",
+    "picture": "https://img.freepik.com/free-photo/sea-beach_1203-3515.jpg?size=626&ext=jpg&uid=R91874933&semt=ais",
+    "ratings": 4.9,
+    "placetitle": "Aegean Paradise Beach Resort",
+    "placedetails": "Indulge in the serenity of the Aegean Sea, where golden sands meet crystal-clear waters. Experience ultimate relaxation and natural beauty...",
+    "price": [
+      {
+        "type": "adult",
+        "amount": 150
+      },
+      {
+        "type": "child",
+        "amount": 80
+      },
+      {
+        "type": "infant",
+        "amount": 25
+      }
+    ],
+    "unavailableSlots": [
+      "2023-09-12",
+      "2023-09-19",
+      "2023-09-26",
+      "2023-10-03",
+      "2023-10-10"
+    ],
+    "conditions": {
+      "agelimitations": "Suitable for all ages",
+      "duration": "6 days",
+      "startTime": "10:00 AM",
+      "language": "English",
+      "features": [
+        "Private beach access",
+        "Water sports activities",
+        "Sunset yoga sessions"
       ]
-    }
+    },
+    "included": [
+      "Accommodation at the beachfront resort",
+      "Daily beachfront breakfast",
+      "Water sports activities",
+      "Sunset yoga sessions",
+      "Beachside entertainment"
+    ],
+    "itinerary": [
+      "Day 1: Check-in and explore the resort",
+      "Day 2-4: Enjoy the beach and water sports",
+      "Day 5: Sunset yoga session in the evening",
+      "Day 6: Check-out and departure"
+    ],
+    "additionalInfo": [
+      "Pack sunscreen and swimwear.",
+      "Currency: Euro (€)",
+      "Weather: Mediterranean climate, sunny days.",
+      "Emergency contact: +30 123-456-7890",
+      "Notify us of dietary preferences."
+    ],
+    "faq": [
+      {
+        "question": "Are water sports equipment provided?",
+        "answer": "Yes, water sports equipment is included."
+      },
+      {
+        "question": "Is Wi-Fi available at the resort?",
+        "answer": "Yes, complimentary Wi-Fi is provided."
+      },
+      {
+        "question": "How can I book this beach retreat?",
+        "answer": "You can book online or contact our customer service."
+      }
+    ],
+    "refundprocess": [
+      "Full refund available up to 14 days before the start of the retreat.",
+      "50% refund if canceled 7-14 days prior.",
+      "No refunds for cancellations within 7 days of the start.",
+      "Refunds processed within 21 business days.",
+      "Contact our support team for refund inquiries."
+    ],
+    "reviews": [
+      {
+        "name": "BeachLover456",
+        "rating": 5,
+        "date": "2023-08-28",
+        "comment": "The Aegean Paradise Beach Resort is a true gem. The beachfront location is breathtaking, and the water sports were so much fun. Highly recommend!"
+      }
+    ]
+  },
+  {
+    "categoryname": "Beach",
+    "country": "Thailand",
+    "visitcount": 1000,
+    "title": "Tropical Paradise Escape",
+    "postedby": "Tropical Getaways",
+    "picture": "https://img.freepik.com/free-photo/beautiful-girl-standing-viewpoint-koh-nangyuan-island-near-koh-tao-island-surat-thani-thailand_335224-1094.jpg?size=626&ext=jpg&uid=R91874933&semt=ais",
+    "ratings": 4.7,
+    "placetitle": "Koh Samui Beach Resort",
+    "placedetails": "Experience the beauty of Thailand's Koh Samui island. Relax on pristine beaches, explore lush jungles, and savor the flavors of Thai cuisine...",
+    "price": [
+      {
+        "type": "adult",
+        "amount": 180
+      },
+      {
+        "type": "child",
+        "amount": 100
+      },
+      {
+        "type": "infant",
+        "amount": 30
+      }
+    ],
+    "unavailableSlots": [
+      "2023-09-18",
+      "2023-09-25",
+      "2023-10-02",
+      "2023-10-09",
+      "2023-10-16"
+    ],
+    "conditions": {
+      "agelimitations": "Suitable for all ages",
+      "duration": "8 days",
+      "startTime": "11:00 AM",
+      "language": "English",
+      "features": [
+        "Private beach access",
+        "Jungle trekking",
+        "Thai cooking classes"
+      ]
+    },
+    "included": [
+      "Accommodation at the beachfront resort",
+      "Daily Thai breakfast",
+      "Guided jungle trekking",
+      "Thai cooking classes",
+      "Beachside cultural performances"
+    ],
+    "itinerary": [
+      "Day 1: Check-in and explore the resort",
+      "Day 2-5: Enjoy the beach and jungle adventures",
+      "Day 6: Thai cooking class",
+      "Day 7: Beachside cultural performance",
+      "Day 8: Check-out and departure"
+    ],
+    "additionalInfo": [
+      "Pack sunscreen and tropical attire.",
+      "Currency: Thai Baht (฿)",
+      "Weather: Tropical climate, occasional rain showers.",
+      "Emergency contact: +66 123-456-7890",
+      "Notify us of dietary preferences."
+    ],
+    "faq": [
+      {
+        "question": "Is jungle trekking suitable for beginners?",
+        "answer": "Yes, the jungle trekking is beginner-friendly."
+      },
+      {
+        "question": "Is Wi-Fi available at the resort?",
+        "answer": "Yes, complimentary Wi-Fi is provided."
+      },
+      {
+        "question": "How can I book this tropical escape?",
+        "answer": "You can book online or contact our customer service."
+      }
+    ],
+    "refundprocess": [
+      "Full refund available up to 14 days before the start of the escape.",
+      "50% refund if canceled 7-14 days prior.",
+      "No refunds for cancellations within 7 days of the start.",
+      "Refunds processed within 21 business days.",
+      "Contact our support team for refund inquiries."
+    ],
+    "reviews": [
+      {
+        "name": "BeachExplorer789",
+        "rating": 4,
+        "date": "2023-08-30",
+        "comment": "Koh Samui Beach Resort is a lovely place. The jungle trekking was adventurous, and I learned to cook delicious Thai dishes. Truly a paradise escape!"
+      }
+    ]
+  }, 
+  {
+    "categoryname": "Nature & Outdoor",
+    "country": "Canada",
+    "visitcount": 1200,
+    "title": "Canadian Wilderness Expedition",
+    "postedby": "Wilderness Adventures",
+    "picture": "https://img.freepik.com/free-photo/bow-bridge-central-park-new-york-city_1127-3462.jpg?size=626&ext=jpg&uid=R91874933&semt=ais",
+    "ratings": 4.9,
+    "placetitle": "Banff National Park",
+    "placedetails": "Embark on an unforgettable journey through the rugged beauty of Canada's Banff National Park. Explore pristine lakes, hike mountain trails, and spot wildlife.",
+    "price": [
+      {
+        "type": "adult",
+        "amount": 250
+      },
+      {
+        "type": "child",
+        "amount": 150
+      },
+      {
+        "type": "infant",
+        "amount": 50
+      }
+    ],
+    "unavailableSlots": [
+      "2023-09-10",
+      "2023-09-17",
+      "2023-09-24",
+      "2023-10-01",
+      "2023-10-08"
+    ],
+    "conditions": {
+      "agelimitations": "Suitable for all ages",
+      "duration": "5 days",
+      "startTime": "8:00 AM",
+      "language": "English",
+      "features": [
+        "Guided hiking tours",
+        "Wildlife photography",
+        "Campfire evenings"
+      ]
+    },
+    "included": [
+      "Accommodation in wilderness cabins",
+      "Daily wilderness breakfast",
+      "Guided hiking tours",
+      "Wildlife photography sessions",
+      "Campfire evenings"
+    ],
+    "itinerary": [
+      "Day 1: Arrival and check-in",
+      "Day 2-4: Hiking and wildlife photography",
+      "Day 5: Check-out and departure"
+    ],
+    "additionalInfo": [
+      "Pack warm clothing and hiking gear.",
+      "Currency: Canadian Dollar (CAD)",
+      "Weather: Cool mountain climate.",
+      "Emergency contact: +1 123-456-7890",
+      "Notify us of dietary preferences."
+    ],
+    "faq": [
+      {
+        "question": "Is this expedition suitable for beginners?",
+        "answer": "Yes, it's suitable for all skill levels."
+      },
+      {
+        "question": "Are cameras provided for wildlife photography?",
+        "answer": "Participants should bring their own cameras."
+      },
+      {
+        "question": "How can I book this wilderness expedition?",
+        "answer": "You can book online or contact our customer service."
+      }
+    ],
+    "refundprocess": [
+      "Full refund available up to 14 days before the start of the expedition.",
+      "50% refund if canceled 7-14 days prior.",
+      "No refunds for cancellations within 7 days of the start.",
+      "Refunds processed within 21 business days.",
+      "Contact our support team for refund inquiries."
+    ],
+    "reviews": [
+      {
+        "name": "NatureExplorer567",
+        "rating": 5,
+        "date": "2023-08-20",
+        "comment": "Banff National Park is a treasure. The hiking and wildlife photography were incredible. I'll cherish the campfire evenings forever."
+      }
+    ]
+  },
+  {
+    "categoryname": "Nature & Outdoor",
+    "country": "Australia",
+    "visitcount": 900,
+    "title": "Great Barrier Reef Adventure",
+    "postedby": "Reef Explorers",
+    "picture": "https://img.freepik.com/free-photo/camping-tents-pine-trees-with-sunlight-pang-ung-lake-mae-hong-son-thailand_335224-931.jpg?size=626&ext=jpg&uid=R91874933&semt=ais",
+    "ratings": 4.8,
+    "placetitle": "Great Barrier Reef",
+    "placedetails": "Dive into the world's largest coral reef system, the Great Barrier Reef. Witness vibrant marine life, snorkel in clear waters, and explore underwater wonders.",
+    "price": [
+      {
+        "type": "adult",
+        "amount": 300
+      },
+      {
+        "type": "child",
+        "amount": 200
+      },
+      {
+        "type": "infant",
+        "amount": 80
+      }
+    ],
+    "unavailableSlots": [
+      "2023-09-14",
+      "2023-09-21",
+      "2023-09-28",
+      "2023-10-05",
+      "2023-10-12"
+    ],
+    "conditions": {
+      "agelimitations": "Suitable for ages 10 and up",
+      "duration": "4 days",
+      "startTime": "9:00 AM",
+      "language": "English",
+      "features": [
+        "Scuba diving",
+        "Snorkeling excursions",
+        "Marine biology talks"
+      ]
+    },
+    "included": [
+      "Accommodation on a reef island",
+      "Daily reef-side breakfast",
+      "Scuba diving sessions",
+      "Snorkeling excursions",
+      "Marine biology talks"
+    ],
+    "itinerary": [
+      "Day 1: Arrival and check-in on the reef island",
+      "Day 2-3: Dive, snorkel, and explore",
+      "Day 4: Check-out and departure"
+    ],
+    "additionalInfo": [
+      "Pack swimwear and sun protection.",
+      "Currency: Australian Dollar (AUD)",
+      "Weather: Tropical reef climate, sunny days.",
+      "Emergency contact: +61 123-456-7890",
+      "Notify us of dietary preferences."
+    ],
+    "faq": [
+      {
+        "question": "Is scuba diving experience required?",
+        "answer": "No, beginners can participate in scuba diving with instruction."
+      },
+      {
+        "question": "Is Wi-Fi available on the reef island?",
+        "answer": "Limited Wi-Fi is available in designated areas."
+      },
+      {
+        "question": "How can I book this reef adventure?",
+        "answer": "You can book online or contact our customer service."
+      }
+    ],
+    "refundprocess": [
+      "Full refund available up to 14 days before the start of the adventure.",
+      "50% refund if canceled 7-14 days prior.",
+      "No refunds for cancellations within 7 days of the start.",
+      "Refunds processed within 21 business days.",
+      "Contact our support team for refund inquiries."
+    ],
+    "reviews": [
+      {
+        "name": "ReefExplorer789",
+        "rating": 5,
+        "date": "2023-08-22",
+        "comment": "The Great Barrier Reef is a marvel. The scuba diving and marine biology talks were educational and fun. A bucket-list-worthy experience!"
+      }
+    ]
+  },
+  {
+    "categoryname": "Nature & Outdoor",
+    "country": "New Zealand",
+    "visitcount": 1100,
+    "title": "Fiordland Expedition",
+    "postedby": "Fiord Adventures",
+    "picture": "https://img.freepik.com/free-photo/field-with-tents-surrounded-by-mountain-covered-greenery-cloudy-sky-during-sunset_181624-13981.jpg?size=626&ext=jpg&uid=R91874933&semt=ais",
+    "ratings": 4.9,
+    "placetitle": "Fiordland National Park",
+    "placedetails": "Immerse yourself in the stunning landscapes of New Zealand's Fiordland National Park. Cruise through fjords, hike to waterfalls, and spot native wildlife.",
+    "price": [
+      {
+        "type": "adult",
+        "amount": 280
+      },
+      {
+        "type": "child",
+        "amount": 160
+      },
+      {
+        "type": "infant",
+        "amount": 40
+      }
+    ],
+    "unavailableSlots": [
+      "2023-09-12",
+      "2023-09-19",
+      "2023-09-26",
+      "2023-10-03",
+      "2023-10-10"
+    ],
+    "conditions": {
+      "agelimitations": "Suitable for ages 8 and up",
+      "duration": "6 days",
+      "startTime": "10:00 AM",
+      "language": "English",
+      "features": [
+        "Fiord cruises",
+        "Hiking to waterfalls",
+        "Wildlife watching"
+      ]
+    },
+    "included": [
+      "Accommodation in cozy lodges",
+      "Daily breakfast with scenic views",
+      "Guided fiord cruises",
+      "Hiking to waterfalls",
+      "Wildlife watching tours"
+    ],
+    "itinerary": [
+      "Day 1: Arrival and check-in at the lodge",
+      "Day 2-4: Fiord cruises and waterfall hikes",
+      "Day 5: Wildlife watching tour",
+      "Day 6: Check-out and departure"
+    ],
+    "additionalInfo": [
+      "Pack hiking boots and rain gear.",
+      "Currency: New Zealand Dollar (NZD)",
+      "Weather: Changeable with occasional rain.",
+      "Emergency contact: +64 123-456-7890",
+      "Notify us of dietary preferences."
+    ],
+    "faq": [
+      {
+        "question": "Are hiking trails challenging?",
+        "answer": "Some hikes are moderate, suitable for most participants."
+      },
+      {
+        "question": "Is Wi-Fi available at the lodges?",
+        "answer": "Limited Wi-Fi is available in lodge common areas."
+      },
+      {
+        "question": "How can I book this Fiordland expedition?",
+        "answer": "You can book online or contact our customer service."
+      }
+    ],
+    "refundprocess": [
+      "Full refund available up to 14 days before the start of the expedition.",
+      "50% refund if canceled 7-14 days prior.",
+      "No refunds for cancellations within 7 days of the start.",
+      "Refunds processed within 21 business days.",
+      "Contact our support team for refund inquiries."
+    ],
+    "reviews": [
+      {
+        "name": "NatureLover456",
+        "rating": 5,
+        "date": "2023-08-28",
+        "comment": "Fiordland National Park is breathtaking. The cruises and waterfall hikes were highlights. A nature lover's dream come true!"
+      }
+    ]
+  },
+  {
+    "categoryname": "mountain",
+    "country": "Switzerland",
+    "visitcount": 900,
+    "title": "Swiss Alps Adventure",
+    "postedby": "Alpine Expeditions",
+    "picture": "https://img.freepik.com/free-photo/beautiful-shot-ma-shan-country-park-hong-kong_181624-47956.jpg?size=626&ext=jpg&uid=R91874933&semt=sph",
+    "ratings": 4.8,
+    "placetitle": "Swiss Alps",
+    "placedetails": "Embark on an exhilarating journey through the majestic Swiss Alps. Experience thrilling hikes, pristine lakes, and breathtaking mountain vistas.",
+    "price": [
+      {
+        "type": "adult",
+        "amount": 350
+      },
+      {
+        "type": "child",
+        "amount": 200
+      },
+      {
+        "type": "infant",
+        "amount": 60
+      }
+    ],
+    "unavailableSlots": [
+      "2023-09-14",
+      "2023-09-21",
+      "2023-09-28",
+      "2023-10-05",
+      "2023-10-12"
+    ],
+    "conditions": {
+      "agelimitations": "Suitable for ages 12 and up",
+      "duration": "7 days",
+      "startTime": "9:30 AM",
+      "language": "English and German",
+      "features": [
+        "Mountain hikes",
+        "Lake excursions",
+        "Scenic cable car rides"
+      ]
+    },
+    "included": [
+      "Accommodation in alpine chalets",
+      "Daily mountain breakfast",
+      "Guided hikes with experienced mountaineers",
+      "Lake excursions with boat rides",
+      "Cable car rides to mountain peaks"
+    ],
+    "itinerary": [
+      "Day 1: Arrival and chalet check-in",
+      "Day 2-4: Mountain hikes and lake excursions",
+      "Day 5-6: Cable car rides and alpine adventures",
+      "Day 7: Check-out and departure"
+    ],
+    "additionalInfo": [
+      "Pack sturdy hiking boots and warm clothing.",
+      "Currency: Swiss Franc (CHF)",
+      "Weather: Alpine climate, variable conditions.",
+      "Emergency contact: +41 123-456-7890",
+      "Notify us of dietary preferences."
+    ],
+    "faq": [
+      {
+        "question": "Are the hikes suitable for beginners?",
+        "answer": "Some hikes are moderate, while others are more challenging."
+      },
+      {
+        "question": "Is Wi-Fi available in the chalets?",
+        "answer": "Limited Wi-Fi is available in common areas."
+      },
+      {
+        "question": "How can I book this Swiss Alps adventure?",
+        "answer": "You can book online or contact our customer service."
+      }
+    ],
+    "refundprocess": [
+      "Full refund available up to 14 days before the start of the adventure.",
+      "50% refund if canceled 7-14 days prior.",
+      "No refunds for cancellations within 7 days of the start.",
+      "Refunds processed within 21 business days.",
+      "Contact our support team for refund inquiries."
+    ],
+    "reviews": [
+      {
+        "name": "MountainExplorer789",
+        "rating": 5,
+        "date": "2023-08-25",
+        "comment": "The Swiss Alps are a paradise for nature lovers. The hikes and cable car rides provided unforgettable views. Highly recommended!"
+      }
+    ]
+  },
+  {
+    "categoryname": "mountain",
+    "country": "Nepal",
+    "visitcount": 750,
+    "title": "Himalayan Trekking Expedition",
+    "postedby": "Himalaya Treks",
+    "picture": "https://img.freepik.com/free-photo/mesmerizing-view-sassolungo-mountain-italy_181624-42103.jpg?size=626&ext=jpg&uid=R91874933&semt=sph",
+    "ratings": 4.7,
+    "placetitle": "Himalayan Mountains",
+    "placedetails": "Embark on an epic journey through the legendary Himalayan Mountains. Trek to base camps, witness stunning peaks, and immerse in local culture.",
+    "price": [
+      {
+        "type": "adult",
+        "amount": 400
+      },
+      {
+        "type": "child",
+        "amount": 250
+      },
+      {
+        "type": "infant",
+        "amount": 80
+      }
+    ],
+    "unavailableSlots": [
+      "2023-09-16",
+      "2023-09-23",
+      "2023-09-30",
+      "2023-10-07",
+      "2023-10-14"
+    ],
+    "conditions": {
+      "agelimitations": "Suitable for ages 16 and up",
+      "duration": "9 days",
+      "startTime": "8:00 AM",
+      "language": "English and Nepali",
+      "features": [
+        "High-altitude trekking",
+        "Base camp visits",
+        "Cultural encounters"
+      ]
+    },
+    "included": [
+      "Trekking permits and accommodations",
+      "Daily mountain meals",
+      "Guided trekking with experienced guides",
+      "Village visits and cultural experiences"
+    ],
+    "itinerary": [
+      "Day 1: Arrival and trek briefing",
+      "Day 2-5: Trekking to Himalayan villages",
+      "Day 6-8: Base camp adventures and cultural encounters",
+      "Day 9: Check-out and departure"
+    ],
+    "additionalInfo": [
+      "Pack warm clothing and trekking gear.",
+      "Currency: Nepalese Rupee (NPR)",
+      "Weather: Varies with altitude, prepare for cold.",
+      "Emergency contact: +977 123-456-7890",
+      "Notify us of dietary preferences."
+    ],
+    "faq": [
+      {
+        "question": "Is prior trekking experience required?",
+        "answer": "Some treks are suitable for beginners, while others are more challenging."
+      },
+      {
+        "question": "Is Wi-Fi available in the Himalayan villages?",
+        "answer": "Limited Wi-Fi may be available in some villages."
+      },
+      {
+        "question": "How can I book this Himalayan trekking expedition?",
+        "answer": "You can book online or contact our customer service."
+      }
+    ],
+    "refundprocess": [
+      "Full refund available up to 30 days before the start of the trek.",
+      "50% refund if canceled 15-30 days prior.",
+      "No refunds for cancellations within 15 days of the start.",
+      "Refunds processed within 21 business days.",
+      "Contact our support team for refund inquiries."
+    ],
+    "reviews": [
+      {
+        "name": "TrekkingEnthusiast123",
+        "rating": 5,
+        "date": "2023-08-15",
+        "comment": "Trekking in the Himalayas was a life-changing experience. The guides were excellent, and the scenery was breathtaking!"
+      }
+    ]
+  },
+  {
+    "categoryname": "mountain",
+    "country": "USA",
+    "visitcount": 800,
+    "title": "Rocky Mountain Retreat",
+    "postedby": "Rocky Escapes",
+    "picture": "https://img.freepik.com/free-photo/waterfall-level-2-erawan-national-park-kanchanaburi-thailand_554837-657.jpg?size=626&ext=jpg&uid=R91874933&semt=sph",
+    "ratings": 4.9,
+    "placetitle": "Rocky Mountains",
+    "placedetails": "Discover the rugged beauty of the Rocky Mountains in the USA. Hike pristine trails, explore alpine lakes, and witness diverse wildlife.",
+    "price": [
+      {
+        "type": "adult",
+        "amount": 320
+      },
+      {
+        "type": "child",
+        "amount": 180
+      },
+      {
+        "type": "infant",
+        "amount": 50
+      }
+    ],
+    "unavailableSlots": [
+      "2023-09-18",
+      "2023-09-25",
+      "2023-10-02",
+      "2023-10-09",
+      "2023-10-16"
+    ],
+    "conditions": {
+      "agelimitations": "Suitable for ages 10 and up",
+      "duration": "5 days",
+      "startTime": "9:00 AM",
+      "language": "English",
+      "features": [
+        "Mountain hikes",
+        "Alpine lake exploration",
+        "Wildlife observation"
+      ]
+    },
+    "included": [
+      "Lodging in mountain cabins",
+      "Daily mountain breakfast",
+      "Guided hikes with naturalist guides",
+      "Alpine lake excursions",
+      "Wildlife observation tours"
+    ],
+    "itinerary": [
+      "Day 1: Arrival and cabin check-in",
+      "Day 2-3: Mountain hikes and alpine lakes",
+      "Day 4: Wildlife observation tour",
+      "Day 5: Check-out and departure"
+    ],
+    "additionalInfo": [
+      "Pack hiking boots and layers for changing weather.",
+      "Currency: US Dollar (USD)",
+      "Weather: Varies by elevation, prepare for cooler temperatures.",
+      "Emergency contact: +1 123-456-7890",
+      "Notify us of dietary preferences."
+    ],
+    "faq": [
+      {
+        "question": "Are the hikes suitable for beginners?",
+        "answer": "Yes, some hikes are suitable for beginners, while others are more moderate."
+      },
+      {
+        "question": "Is Wi-Fi available in the mountain cabins?",
+        "answer": "Limited Wi-Fi may be available in common areas."
+      },
+      {
+        "question": "How can I book this Rocky Mountain retreat?",
+        "answer": "You can book online or contact our customer service."
+      }
+    ],
+    "refundprocess": [
+      "Full refund available up to 14 days before the start of the retreat.",
+      "50% refund if canceled 7-14 days prior.",
+      "No refunds for cancellations within 7 days of the start.",
+      "Refunds processed within 21 business days.",
+      "Contact our support team for refund inquiries."
+    ],
+    "reviews": [
+      {
+        "name": "MountainExplorer456",
+        "rating": 5,
+        "date": "2023-08-22",
+        "comment": "The Rocky Mountains are a natural wonder. The hikes and wildlife tours were exceptional. A fantastic outdoor experience!"
+      }
+    ]
+  },
+  {
+    "categoryname": "resorts",
+    "country": "Maldives",
+    "visitcount": 2000,
+    "title": "Maldivian Paradise Resort",
+    "postedby": "Tropical Getaways",
+    "picture": "https://img.freepik.com/free-photo/umbrella-chair-around-swimming-pool_1203-2410.jpg?size=626&ext=jpg&uid=R91874933&semt=sph",
+    "ratings": 4.9,
+    "placetitle": "Maldives Luxury Resort",
+    "placedetails": "Escape to a luxurious paradise in the Maldives. Enjoy overwater bungalows, white sandy beaches, and vibrant coral reefs.",
+    "price": [
+      {
+        "type": "adult",
+        "amount": 800
+      },
+      {
+        "type": "child",
+        "amount": 400
+      },
+      {
+        "type": "infant",
+        "amount": 100
+      }
+    ],
+    "unavailableSlots": [
+      "2023-09-09",
+      "2023-09-16",
+      "2023-09-23",
+      "2023-09-30",
+      "2023-10-07"
+    ],
+    "conditions": {
+      "agelimitations": "Suitable for all ages",
+      "duration": "7 days",
+      "startTime": "10:00 AM",
+      "language": "English and local dialect",
+      "features": [
+        "Overwater bungalow accommodation",
+        "Snorkeling in crystal-clear waters",
+        "Beachfront dining"
+      ]
+    },
+    "included": [
+      "Luxury overwater bungalow accommodation",
+      "Daily gourmet meals with ocean views",
+      "Guided snorkeling adventures",
+      "Beachfront dining experiences",
+      "Sunset cruises"
+    ],
+    "itinerary": [
+      "Day 1: Arrival and check-in to your overwater bungalow",
+      "Day 2-5: Relax on the beach and snorkel in the coral reefs",
+      "Day 6: Sunset cruise and beachfront dining",
+      "Day 7: Check-out and departure"
+    ],
+    "additionalInfo": [
+      "Pack swimwear and sunscreen.",
+      "Currency: Maldivian Rufiyaa (MVR)",
+      "Weather: Tropical with occasional rain showers.",
+      "Emergency contact: +960 123-456-789",
+      "Special dietary requests can be accommodated."
+    ],
+    "faq": [
+      {
+        "question": "Is Wi-Fi available in the overwater bungalows?",
+        "answer": "Yes, complimentary Wi-Fi is provided."
+      },
+      {
+        "question": "How can I book this Maldivian paradise resort?",
+        "answer": "You can book online or contact our customer service."
+      }
+    ],
+    "refundprocess": [
+      "Full refund available up to 30 days before the start of the resort stay.",
+      "50% refund if canceled 15-30 days prior.",
+      "No refunds for cancellations within 15 days of the start.",
+      "Refunds processed within 21 business days.",
+      "Contact our support team for refund inquiries."
+    ],
+    "reviews": [
+      {
+        "name": "BeachDreamer123",
+        "rating": 5,
+        "date": "2023-08-15",
+        "comment": "This Maldivian resort is pure paradise. The overwater bungalows are a dream come true, and the snorkeling is out of this world!"
+      }
+    ]
+  },
+  {
+    "categoryname": "resorts",
+    "country": "Thailand",
+    "visitcount": 1500,
+    "title": "Tropical Oasis Retreat",
+    "postedby": "Exotic Escapes",
+    "picture": "https://img.freepik.com/free-photo/leisure-beautiful-health-garden-landscape_1203-4856.jpg?size=626&ext=jpg&uid=R91874933&semt=sph",
+    "ratings": 4.7,
+    "placetitle": "Thailand Beachfront Resort",
+    "placedetails": "Indulge in a tropical oasis in Thailand. Enjoy pristine beaches, lush gardens, and authentic Thai cuisine.",
+    "price": [
+      {
+        "type": "adult",
+        "amount": 600
+      },
+      {
+        "type": "child",
+        "amount": 300
+      },
+      {
+        "type": "infant",
+        "amount": 80
+      }
+    ],
+    "unavailableSlots": [
+      "2023-09-11",
+      "2023-09-18",
+      "2023-09-25",
+      "2023-10-02",
+      "2023-10-09"
+    ],
+    "conditions": {
+      "agelimitations": "Suitable for all ages",
+      "duration": "6 days",
+      "startTime": "11:00 AM",
+      "language": "English and Thai",
+      "features": [
+        "Beachfront villa accommodation",
+        "Traditional Thai spa treatments",
+        "Thai cooking classes"
+      ]
+    },
+    "included": [
+      "Beachfront villa accommodation",
+      "Daily Thai-inspired meals",
+      "Traditional Thai spa treatments",
+      "Thai cooking classes",
+      "Island-hopping tour"
+    ],
+    "itinerary": [
+      "Day 1: Arrival and check-in to your beachfront villa",
+      "Day 2-4: Relax on the beach and indulge in spa treatments",
+      "Day 5: Thai cooking class and island-hopping tour",
+      "Day 6: Check-out and departure"
+    ],
+    "additionalInfo": [
+      "Pack swimwear and light clothing.",
+      "Currency: Thai Baht (THB)",
+      "Weather: Tropical, prepare for occasional rain.",
+      "Emergency contact: +66 123-456-7890",
+      "Let us know about any dietary preferences in advance."
+    ],
+    "faq": [
+      {
+        "question": "Is Wi-Fi available in the beachfront villas?",
+        "answer": "Yes, complimentary Wi-Fi is provided."
+      },
+      {
+        "question": "How can I book this tropical oasis retreat in Thailand?",
+        "answer": "You can book online or contact our customer service."
+      }
+    ],
+    "refundprocess": [
+      "Full refund available up to 30 days before the start of the resort stay.",
+      "50% refund if canceled 15-30 days prior.",
+      "No refunds for cancellations within 15 days of the start.",
+      "Refunds processed within 21 business days.",
+      "Contact our support team for refund inquiries."
+    ],
+    "reviews": [
+      {
+        "name": "TropicalParadise456",
+        "rating": 4,
+        "date": "2023-08-20",
+        "comment": "Thailand's tropical oasis is beautiful, but some services were a bit slow. Overall, a relaxing experience."
+      }
+    ]
+  },
+  {
+    "categoryname": "Amusement & Water Parks",
+    "country": "Canada",
+    "visitcount": 1200,
+    "title": "Splashdown Park",
+    "postedby": "Water Adventure World",
+    "picture": "https://img.freepik.com/free-photo/full-shot-cute-couple-having-fun-together_23-2148311246.jpg?size=626&ext=jpg&uid=R91874933&semt=ais",
+    "ratings": 4.5,
+    "placetitle": "Water Adventure World - Splashdown Park",
+    "placedetails": "Experience the ultimate water adventure at Splashdown Park. Enjoy thrilling water slides, wave pools, and lazy rivers.",
+    "price": [
+      {
+        "type": "adult",
+        "amount": 50
+      },
+      {
+        "type": "child",
+        "amount": 30
+      },
+      {
+        "type": "infant",
+        "amount": 5
+      }
+    ],
+    "unavailableSlots": [
+      "2023-09-15",
+      "2023-09-22",
+      "2023-09-29",
+      "2023-10-06",
+      "2023-10-13"
+    ],
+    "conditions": {
+      "agelimitations": "Suitable for all ages",
+      "duration": "1 day",
+      "startTime": "11:00 AM",
+      "language": "English and French",
+      "features": [
+        "Water slides",
+        "Wave pools",
+        "Lazy rivers"
+      ]
+    },
+    "included": [
+      "Full access to all water attractions",
+      "Dining options within the park",
+      "Entertainment shows",
+      "Complimentary waterproof phone pouch"
+    ],
+    "additionalInfo": [
+      "Wear swimwear and bring sunscreen.",
+      "Currency: Canadian Dollar (CAD)",
+      "Check weather conditions before visiting.",
+      "Emergency contact: +1 123-456-7890",
+      "Lockers available for personal items."
+    ],
+    "faq": [
+      {
+        "question": "Is parking available at the park?",
+        "answer": "Yes, there is ample parking on-site."
+      },
+      {
+        "question": "Can I bring my own food?",
+        "answer": "Outside food and beverages are not allowed."
+      },
+      {
+        "question": "How can I purchase tickets for Splashdown Park?",
+        "answer": "You can buy tickets at the park's entrance or online."
+      }
+    ],
+    "refundprocess": [
+      "Full refund available up to 7 days before the visit date.",
+      "No refunds for cancellations within 7 days of the visit.",
+      "Refunds processed within 14 business days.",
+      "Contact our support team for refund inquiries."
+    ],
+    "reviews": [
+      {
+        "name": "WaterBaby83",
+        "rating": 4.7,
+        "date": "2023-08-20",
+        "comment": "Splashdown Park is a fantastic water paradise! The slides are a blast, and the wave pools are so much fun."
+      }
+    ]
+  },
+  {
+    "categoryname": "Amusement & Water Parks",
+    "country": "United Kingdom",
+    "visitcount": 800,
+    "title": "Adventura Splash",
+    "postedby": "UK Water World",
+    "picture": "https://img.freepik.com/free-photo/ground-red-outdoor-child-complex-colorful_1417-494.jpg?size=626&ext=jpg&uid=R91874933&semt=ais",
+    "ratings": 4.6,
+    "placetitle": "UK Water World - Adventura Splash",
+    "placedetails": "Dive into adventure at Adventura Splash. Experience thrilling water slides, wave pools, and a water-themed adventure playground.",
+    "price": [
+      {
+        "type": "adult",
+        "amount": 45
+      },
+      {
+        "type": "child",
+        "amount": 25
+      },
+      {
+        "type": "infant",
+        "amount": 10
+      }
+    ],
+    "unavailableSlots": [
+      "2023-09-14",
+      "2023-09-21",
+      "2023-09-28",
+      "2023-10-05",
+      "2023-10-12"
+    ],
+    "conditions": {
+      "agelimitations": "Suitable for all ages",
+      "duration": "1 day",
+      "startTime": "10:30 AM",
+      "language": "English",
+      "features": [
+        "Water slides",
+        "Wave pools",
+        "Adventure playground"
+      ]
+    },
+    "included": [
+      "Full access to all water attractions",
+      "Dining options within the park",
+      "Entertainment shows",
+      "Adventura Splash souvenir"
+    ],
+    "additionalInfo": [
+      "Wear swimwear and bring a change of clothes.",
+      "Currency: British Pound (£)",
+      "Plan your visit on weekdays for shorter lines.",
+      "Emergency contact: +44 1234-567890",
+      "Lockers available for personal items."
+    ],
+    "faq": [
+      {
+        "question": "Is parking available at the park?",
+        "answer": "Yes, there is a parking lot on-site."
+      },
+      {
+        "question": "Can I bring my own floatation devices?",
+        "answer": "Yes, you can bring your own floatation devices."
+      },
+      {
+        "question": "Do they have lifeguards on duty?",
+        "answer": "Yes, there are lifeguards stationed at all water attractions."
+      }
+    ],
+    "refundprocess": [
+      "Full refund available up to 7 days before the visit date.",
+      "No refunds for cancellations within 7 days of the visit.",
+      "Refunds processed within 14 business days.",
+      "Contact our support team for refund inquiries."
+    ],
+    "reviews": [
+      {
+        "name": "SplashExplorer123",
+        "rating": 4.8,
+        "date": "2023-08-16",
+        "comment": "Adventura Splash is a water wonderland! The slides are exhilarating, and the wave pools are perfect for relaxation."
+      }
+    ]
+  },
+  {
+    "categoryname": "Family-Friendly Attractions",
+    "country": "Canada",
+    "visitcount": 1800,
+    "title": "AdventureLand",
+    "postedby": "Canadian Family Fun",
+    "picture": "https://img.freepik.com/free-photo/full-shot-happy-kids-playing-together_23-2149264959.jpg?size=626&ext=jpg&uid=R91874933&semt=ais",
+    "ratings": 4.6,
+    "placetitle": "Canadian Family Fun - AdventureLand",
+    "placedetails": "Embark on a magical adventure at AdventureLand, the ultimate family destination. Enjoy enchanting rides, shows, and games.",
+    "price": [
+      {
+        "type": "adult",
+        "amount": 45
+      },
+      {
+        "type": "child",
+        "amount": 35
+      },
+      {
+        "type": "infant",
+        "amount": 10
+      }
+    ],
+    "unavailableSlots": [
+      "2023-09-14",
+      "2023-09-21",
+      "2023-09-28",
+      "2023-10-05",
+      "2023-10-12"
+    ],
+    "conditions": {
+      "agelimitations": "Suitable for all ages",
+      "duration": "1 day",
+      "startTime": "9:30 AM",
+      "language": "English and French",
+      "features": [
+        "Family-friendly rides",
+        "Live entertainment",
+        "Magical shows"
+      ]
+    },
+    "included": [
+      "Full access to all attractions and shows",
+      "Dining options within the park",
+      "Interactive character meet and greets",
+      "Complimentary family photo"
+    ],
+    "additionalInfo": [
+      "Dress comfortably for a day of fun.",
+      "Currency: Canadian Dollar (CAD)",
+      "Check the park's calendar for character appearances.",
+      "Emergency contact: +1 234-567-8901",
+      "Stroller rentals available for families."
+    ],
+    "faq": [
+      {
+        "question": "Is parking available at the park?",
+        "answer": "Yes, there is plenty of parking on-site."
+      },
+      {
+        "question": "Can I bring my own costumes for character meet and greets?",
+        "answer": "Yes, dressing up is encouraged!"
+      },
+      {
+        "question": "How can I purchase tickets for AdventureLand?",
+        "answer": "You can buy tickets at the park's entrance or online."
+      }
+    ],
+    "refundprocess": [
+      "Full refund available up to 7 days before the visit date.",
+      "No refunds for cancellations within 7 days of the visit.",
+      "Refunds processed within 14 business days.",
+      "Contact our support team for refund inquiries."
+    ],
+    "reviews": [
+      {
+        "name": "AdventureSeeker77",
+        "rating": 4.8,
+        "date": "2023-08-25",
+        "comment": "AdventureLand is a magical place for kids and adults alike. The shows are incredible!"
+      }
+    ]
+  },
+  {
+    "categoryname": "Family-Friendly Attractions",
+    "country": "United Kingdom",
+    "visitcount": 1500,
+    "title": "Fantasy Park",
+    "postedby": "UK Family Adventures",
+    "picture": "https://img.freepik.com/free-photo/happy-family-with-three-kids_1398-4063.jpg?size=626&ext=jpg&uid=R91874933&semt=ais",
+    "ratings": 4.5,
+    "placetitle": "UK Family Adventures - Fantasy Park",
+    "placedetails": "Enter a world of fantasy at Fantasy Park, the ultimate family adventure. Enjoy magical rides, live shows, and enchanting experiences.",
+    "price": [
+      {
+        "type": "adult",
+        "amount": 50
+      },
+      {
+        "type": "child",
+        "amount": 35
+      },
+      {
+        "type": "infant",
+        "amount": 5
+      }
+    ],
+    "unavailableSlots": [
+      "2023-09-14",
+      "2023-09-21",
+      "2023-09-28",
+      "2023-10-05",
+      "2023-10-12"
+    ],
+    "conditions": {
+      "agelimitations": "Suitable for all ages",
+      "duration": "1 day",
+      "startTime": "10:00 AM",
+      "language": "English",
+      "features": [
+        "Fantasy-themed rides",
+        "Live character shows",
+        "Interactive play zones"
+      ]
+    },
+    "included": [
+      "Full access to all rides and attractions",
+      "Dining options within the park",
+      "Character meet and greets",
+      "Complimentary family photo"
+    ],
+    "additionalInfo": [
+      "Dress in your favorite fantasy-themed attire.",
+      "Currency: British Pound (£)",
+      "Check for special character appearances on the park's website.",
+      "Emergency contact: +44 1234-567890",
+      "Stroller rentals available for families."
+    ],
+    "faq": [
+      {
+        "question": "Is parking available at the park?",
+        "answer": "Yes, there is ample parking on-site."
+      },
+      {
+        "question": "Can I bring my own costumes for character meet and greets?",
+        "answer": "Yes, dressing up is encouraged!"
+      },
+      {
+        "question": "How can I purchase tickets for Fantasy Park?",
+        "answer": "You can buy tickets at the park's entrance or online."
+      }
+    ],
+    "refundprocess": [
+      "Full refund available up to 7 days before the visit date.",
+      "No refunds for cancellations within 7 days of the visit.",
+      "Refunds processed within 14 business days.",
+      "Contact our support team for refund inquiries."
+    ],
+    "reviews": [
+      {
+        "name": "FantasyExplorer88",
+        "rating": 4.7,
+        "date": "2023-08-18",
+        "comment": "Fantasy Park is a dream come true for families. The rides are magical, and the shows are enchanting."
+      }
+    ]
+  }
   ]
   

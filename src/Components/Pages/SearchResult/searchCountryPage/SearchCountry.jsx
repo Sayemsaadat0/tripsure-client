@@ -33,20 +33,11 @@ const SearchCountry = () => {
           </h2>
           {/* todo: todo overflow isnt working well */}
 
-       {/*    <div className="mt-8 flex md:grid  md:grid-cols-4  overflow-x-auto gap-4 p-4">
-            <button className="btn">Hotel</button>
-            <button className="btn">Thingn to Do</button>
-            <button className="btn">Vacantion Rentals</button>
-            <button className="btn"> Restaurants</button>
-            <button className="btn">Travel Forums</button>
-            <button className="btn">Hire a Trip Desiger</button>
-            <button className="btn">Flights</button>
-            <button className="btn">More</button>
-          </div> */}
+
           <div className="grid md:grid-cols-3 gap-1 mt-8">
             <div className="md:col-span-2 col-span-3 ">
               <img
-                className="w-full hover:bg-white  hover:opacity-80 duration-300"
+                className="w-full md:h-full hover:bg-white  hover:opacity-80 duration-300"
                 src="https://i.ibb.co/54DH6LW/image.png"
                 alt=""
               />

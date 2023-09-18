@@ -110,7 +110,7 @@ const TourDetails = () => {
         </h1> */}
         <div className="my-6">
           <img
-            className="w-full h-60 md:h-72 lg:h-[25rem] object-bottom rounded-md bg-cover object-cover"
+            className="w-full h-60 md:h-72 lg:h-[36rem] object-bottom rounded-md bg-cover object-cover"
             src={picture}
             alt=""
           />
@@ -155,21 +155,7 @@ const TourDetails = () => {
               {conditions?.language}
             </p>
 
-            {/*    <div className="flex gap-2 items-center my-6">
-              <img
-                className="w-16"
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQb27p0pyMXikGN60bM3tbL8wwUWuwbb8caN9NTvKYuGyHN2EFb340SPXAcE7hFCm_Bku4&usqp=CAU"
-                alt=""
-              />
-              <div>
-                <span className="font-semibold">
-                  Travelers’ Choice Best of the Best
-                </span>{" "}
-                <br />
-                <span>2023</span>
-              </div>
-            </div> */}
-            {/* accordion */}
+         
             <div className="collapse collapse-arrow bg-base-200 mt-10">
               <input type="radio" name="my-accordion-2" checked="checked" />
               <div className="collapse-title text-xl font-medium">

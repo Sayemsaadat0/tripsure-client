@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { Pagination } from 'swiper/modules';
+import {  Pagination } from 'swiper/modules';
 import { Link } from 'react-router-dom';
 import Container from '../../../../LayOut/Container';
 import { useEffect, useState } from 'react';
@@ -25,9 +25,9 @@ const KidsGuide = () => {
 
 
   return (
-    <div >
+    <div>
       <Container>
-        <h2 className='pt-14 pb-10  text-2xl md:text-3xl text-center font-semibold underline underline-offset-2 tracking-widest'>Funville for Kids</h2>
+        <h2 className='pt-10  text-2xl md:text-3xl text-center font-semibold underline underline-offset-2 tracking-widest'>Funville for Kids</h2>
         <div >
 
           <Swiper
@@ -51,7 +51,7 @@ const KidsGuide = () => {
               },
             }}
             modules={[Pagination]}
-            className='mySwiper'
+            className="mySwiper"
           >
             {kidsAllData.map((item, index) => (
               <SwiperSlide key={index} className='' >
@@ -60,7 +60,9 @@ const KidsGuide = () => {
 
                     {
                       item.pictures.map((picture, index) => (
-                        <img className='rounded-lg h-40 w-full object-cover' key={index} src={picture} alt="" />
+                        <LazyLoad>
+                          <img className='rounded-lg h-40 w-full object-cover' key={index} src={picture} alt="" />
+                        </LazyLoad>
                       ))
                     }
 
@@ -71,7 +73,12 @@ const KidsGuide = () => {
                     <p>PostedTime</p>
                     <div>
                       {/* todo habibullah- bhai id diye data aina diyen */}
-                      <Link to={`/FamilyGuideSingleCardDetails/${item?._id}`} className="btn-link text-blue-500">Read More</Link>
+                      <Link
+                        to={`/FamilyGuideSingleCardDetails/${item?._id}`}
+                        className="btn-link text-blue-500"
+                      >
+                        Read More
+                      </Link>
                     </div>
                   </div>
                 </div>

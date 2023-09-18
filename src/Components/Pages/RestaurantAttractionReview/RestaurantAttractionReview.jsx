@@ -209,7 +209,7 @@ const RestaurantAttractionReview = () => {
           </div>
           <div className="p-4 bg-[#F2F2F2]">
             <h2 className="text-xl font-semibold pb-4">Location and contact</h2>
-            <img src="https://png.pngtree.com/thumb_back/fh260/background/20220103/pngtree-young-woman-presenting-colorful-world-map-communication-land-beautiful-photo-image_7675206.jpg" alt="" />
+            <img className="w-full" src="https://png.pngtree.com/thumb_back/fh260/background/20220103/pngtree-young-woman-presenting-colorful-world-map-communication-land-beautiful-photo-image_7675206.jpg" alt="" />
            
             <h4 className="my-3 flex items-center gap-2"><FaLocationDot className="w-6"></FaLocationDot> {restaurantsDetails?.address?.street},{restaurantsDetails?.address?.city},{restaurantsDetails?.address?.state},{restaurantsDetails?.address?.country} </h4>
             <Link  to={restaurantsDetails?.website} className="my-3 flex items-center gap-2 underline"><FaLaptop className="w-6"></FaLaptop> Visit website</Link>

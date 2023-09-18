@@ -42,7 +42,7 @@ const DasNav = () => {
     }
 
     return (
-        <div className="navbar bg-white shadow mx-4">
+        <div className="navbar bg-white shadow">
             <div className="flex-1">
                 <div>
                     <p className='font-extralight'>{greeting},</p>

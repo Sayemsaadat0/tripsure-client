@@ -56,8 +56,8 @@ const DoThingsAttractionReviews = () => {
               <h2 className="font-semibold">Tours & experiences</h2>
               <p>Explore different ways to experience this place.</p>
             </div>
-            <div className="w-full">
-                <img className="w-full" src={doThingsAttractionReviews?.picture} alt="" />
+            <div className="">
+                <img className="w-full object-contain" src={doThingsAttractionReviews?.picture} alt="" />
             </div>
           </div>
         </div>

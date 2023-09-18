@@ -1,0 +1,11 @@
+.FacebookShareButton:hover {
+    transform: scale(1.06); 
+    transition: transform 0.3s ease; 
+  }
+  
+
+  .TwitterShareButton:hover {
+    transform: scale(1.06); 
+    transition: transform 0.3s ease; 
+  }
+  

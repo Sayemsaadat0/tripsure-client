@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react';
 import SectionTitle from '../../../Shared/SectionTitle/SectionTitle';
 import { Link } from 'react-router-dom';
 import { GoLocation, GoStarFill } from 'react-icons/go';
-import { GrFavorite } from 'react-icons/gr'
-import { BsSuitHeartFill, BsSuitHeart } from 'react-icons/bs'
+import { BsSuitHeart } from 'react-icons/bs'
 import Container from '../../../../LayOut/Container';
 import { useAddToFavoriteMutation, useGetFavoriteItemsQuery } from '../../../../Features/favorite/favoriteApi';
 import useAuth from '../../../../Hooks/useAuth';
 import LazyLoad from 'react-lazy-load';
+import Swal from 'sweetalert2';
 
 
 const TravelDeals = () => {
@@ -40,16 +40,14 @@ const TravelDeals = () => {
       } = deals
       const id = deals._id
       const favoriteItem = {
-        dealExpires, destination, discountPercentage, duration, newPrice, picture, price, reviews, savings, title, totalPeople, hotelId, displayName, email
+        dealExpires, destination, discountPercentage, duration, newPrice, picture, price, reviews, savings, title, totalPeople, id, displayName, email
       }
-      setFavorite(favoriteItem)
-      if (acknowledged) {
+      setFavorite(favoriteItem)  
         Swal.fire(
           'Added to Favorite',
           ' ',
           'success'
         )
-      }
     }
   }
   // console.log(data)
@@ -61,7 +59,6 @@ const TravelDeals = () => {
 
         {travelDeals.map((deals, index) => (
           <div key={index} className="card card-compact bg-base-100 border md:w-96 overflow-hidden">
-            {/* <span  className='absolute left-1 z-10 top-3 cursor-pointer bg-gray-100  p-2 rounded-full'><GrFavorite size={20}></GrFavorite></span> */}
             <button
               onClick={() => handleAddToFavorite(deals)}
               className={`absolute left-1 z-10 top-3 p-2 rounded-full bg-white`}>
@@ -108,15 +105,3 @@ const TravelDeals = () => {
 
 export default TravelDeals;
 
-/* 
-
-
-
-
-*/
-
-
-
-/* 
-
-*/

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { FaGoogle, FaSpinner } from 'react-icons/fa';
 import useAuth from '../../Hooks/useAuth';
+import { FcGoogle} from 'react-icons/fc';
+import { ImSpinner9 } from 'react-icons/im';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
 import { saveUser } from '../../apiCall/users';
@@ -41,13 +42,16 @@ const GoogleLogin = () => {
         <>
             {
                 loading ? <button disabled={true}
-                    className="relative w-full flex justify-center ">
-                    <FaSpinner
+                    className="relative 
+                    w-full  flex justify-center py-3 rounded-md   border border-black hover:bg-black hover:text-white duration-500 font-bold">
+                    <ImSpinner9
                         className='animate-spin' size={25}>
-                    </FaSpinner>
+                    </ImSpinner9>
                 </button>
-                    : <button onClick={handleGoogleLogin} className=" relative w-full flex justify-center shadow-sm py-2 rounded-lg shadow-white hover:scale-105 duration-500">
-                        <FaGoogle size={25}></FaGoogle>
+                    : <button onClick={handleGoogleLogin} className=" relative 
+                    w-full  flex justify-center py-3 rounded-md   border border-black hover:bg-[#1e2222] gap-4 hover:text-white duration-500 font-bold">
+                        <FcGoogle size={25}></FcGoogle> 
+                        Sign in with Google 
                     </button>
             }
         </>
@@ -55,3 +59,7 @@ const GoogleLogin = () => {
 };
 
 export default GoogleLogin;
+
+
+/* 
+ */

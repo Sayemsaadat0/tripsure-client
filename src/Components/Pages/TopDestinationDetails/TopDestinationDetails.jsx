@@ -4,12 +4,12 @@ import CommonSwiper from "../../CommonSwiper/CommonSwiper";
 import axios from "axios";
 import DoSwiper from "../../CommonSwiper/DoSwiper";
 import RestaurantSwiper from "../../CommonSwiper/RestaurantSwiper";
-import ClockLogo from "../../../assets/time-png-6175.png"
-import lightLogo from "../../../assets/light.png"
-import tripcustome from "../../../assets/tripcustome.png"
+import ClockLogo from "../../../assets/time-png-6175.png";
+import lightLogo from "../../../assets/light.png";
+import tripcustome from "../../../assets/tripcustome.png";
 import Container from "../../../LayOut/Container";
 import LazyLoad from "react-lazy-load";
-import bestTrip from "../../../assets/travelpng.png"
+import bestTrip from "../../../assets/travelpng.png";
 
 const TopDestinationDetails = () => {
   const { id } = useParams();
@@ -32,7 +32,12 @@ const TopDestinationDetails = () => {
 
 
   useEffect(() => {
-    axios.get(`${import.meta.env.VITE_BACKEND_API}/all-hotels/${topDestinationDetails?.country}`)
+    axios
+      .get(
+        `${import.meta.env.VITE_BACKEND_API}/all-hotels/${
+          topDestinationDetails?.country
+        }`
+      )
       .then((data) => {
         setAllHotels(data.data);
       })
@@ -54,8 +59,8 @@ const TopDestinationDetails = () => {
     axios.get(`${import.meta.env.VITE_BACKEND_API}/restaurant/${topDestinationDetails?.country}`)
       .then((data) => {
         setRestaurants(data.data);
-      })
-  }, [topDestinationDetails])
+      });
+  }, [topDestinationDetails]);
 
  
   return (
@@ -65,8 +70,6 @@ const TopDestinationDetails = () => {
           <h1 className="text-5xl underline underline-offset-4 tracking-widest">{topDestinationDetails?.placetitle}</h1>
           
           <div className="my-6">
-
-
             <img
               className="w-full 
               h-60 
@@ -76,9 +79,9 @@ const TopDestinationDetails = () => {
             bg-cover 
             object-cover"
               src={topDestinationDetails?.picture}
-              alt="" />
+              alt=""
+            />
           </div>
-
 
           {/* do section and swiper slider */}
           <div>
@@ -91,14 +94,16 @@ const TopDestinationDetails = () => {
               <p className="mb-4">{topDestinationDetails?.placedetails}</p>
             <div className="lg:grid justify-between gap-2 grid-cols-[300px_minmax(900px,_1fr)_100px]">
               <div className="">
-                <h3 className="tracking-widest font-bold my-2 text-gray-700">Local Adventures</h3>
+                <h3 className="tracking-widest font-bold my-2 text-gray-700">
+                  Local Adventures
+                </h3>
                 <p>
                   Places to see, ways to wander, and signature experiences that
                   define .
                 </p>
               </div>
               <div>
-                <DoSwiper doPlace={doPlace.slice(1,)}></DoSwiper>
+                <DoSwiper doPlace={doPlace.slice(1)}></DoSwiper>
               </div>
             </div>
             <div className="lg:grid lg:my-32 my-20 justify-between gap-2 grid-cols-[300px_minmax(900px,_1fr)_100px]">
@@ -124,7 +129,6 @@ const TopDestinationDetails = () => {
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </Container>
@@ -132,7 +136,5 @@ const TopDestinationDetails = () => {
 };
 
 export default TopDestinationDetails;
-
-
 
 // ${import.meta.env.VITE_BACKEND_API}

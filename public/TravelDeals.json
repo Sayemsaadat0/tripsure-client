@@ -123,16 +123,16 @@
     "country": "Chile",
     "duration": "6 days",
     "price": {
-      "adult": "$1200",
-      "child": "$800"
+      "adult": 1200,
+      "child": 800
     },
     "savings": {
-      "adult": "$250",
-      "child": "$150"
+      "adult": 250,
+      "child": 150
     },
     "newPrice": {
-      "adult": "$950",
-      "child": "$650"
+      "adult": 950,
+      "child": 650
     },
     "departureDates": [
       "2023-09-05",

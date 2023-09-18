@@ -17,7 +17,7 @@ describe('API Functions', () => {
     const result = await addRoom(roomData);
 
     // Assert
-    expect(fetch).toHaveBeenCalledWith('http://localhost:1000/dashboard/addhotels', {
+    expect(fetch).toHaveBeenCalledWith(`${import.meta.env.VITE_BACKEND_API}/dashboard/addhotels`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

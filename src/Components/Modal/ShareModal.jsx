@@ -41,11 +41,11 @@ const ShareModal = ({ isOpen, setIsOpen, children, viewBookingDetails, title }) 
                     {viewBookingDetails?.card?.card?.title}
                     
                   </Dialog.Title>
-                    {viewBookingDetails?.card?.card?.description?.slice(0,200)}...
+                    {viewBookingDetails?.card?.card?.description?.slice(0,200)}
                     
-                    <h4 className="mt-4">Selected Date: {viewBookingDetails?.selectedDate}</h4>
-                    <h4>Booking Date: {viewBookingDetails?.date}</h4>
-                    <h1>Price: ${viewBookingDetails?.price}</h1>
+                    <h4 className="mt-4">{viewBookingDetails?.selectedDate}</h4>
+                    <h4>{viewBookingDetails?.date}</h4>
+                    <h1>{viewBookingDetails?.price}</h1>
                   {children}
                 </Dialog.Panel>
               </Transition.Child>

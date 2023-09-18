@@ -42,7 +42,7 @@ const ContactDetails = () => {
   useEffect(() => {
     if (location.state && location.state.id) {
       const carId = location.state.id;
-      axios.get(`http://localhost:1000/rentalcards/forpayment?id=${carId}`)
+      axios.get(`${import.meta.env.VITE_BACKEND_API}/rentalcards/forpayment?id=${carId}`)
         .then((res) => {
           setCarOrder(res.data);
           
@@ -139,19 +139,7 @@ const ContactDetails = () => {
               )}
             </div>
           </div>
-          <div className="form-control">
-            <label className="label cursor-pointer flex justify-start gap-2">
-              <input
-                type="checkbox"
-                {...register("receiveSMS")}
-                checked="checked"
-                className="checkbox"
-              />
-              <span className="label-text">
-                Receive SMS updates about your booking. Message rates may apply.
-              </span>
-            </label>
-          </div>
+      
           <div className="my-5">
             <h2 className="text-2xl font-semibold pb-3 border-b-2">
         
