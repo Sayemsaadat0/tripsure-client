@@ -20,7 +20,7 @@ const TopDestinations = () => {
       .then((res) => res.json())
       .then((data) => setTopDestinations(data));
   }, []);
-  console.log(TopDestinations._id);
+  
 
   return (
     <Container>
@@ -71,11 +71,11 @@ const TopDestinations = () => {
                     <h2 className="font-semibold mt-3 hover:text-blue-400 duration-500">
                       {todo.placetitle}
                     </h2>
-                    <h2 className="font-semibold mt-3 hover:text-blue-400 duration-500">
-                      {todo._id}
+                    <h2 className=" mt-3 hover:text-blue-400 duration-500">
+                      {todo.placedetails.slice(0,70)}...
                     </h2>
                     <div className='flex justify-between'>
-                      <p>{todo.costperperson}$/ <span className='text-xs'>per person</span> </p>
+                      <p>${todo.price[0].amount} <span className='text-xs'>per person(adult)</span> </p>
                       <p className='flex items-center gap-2'><GoStarFill className='text-red-500'></GoStarFill>  {todo.ratings}</p>
                     </div>
 
