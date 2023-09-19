@@ -6,7 +6,7 @@ import { IoLocationSharp } from "react-icons/io5";
 
 const MadicalDetails = () => {
   const medicalData = useLoaderData();
-  console.log(medicalData);
+
 
   const {
     doctors,

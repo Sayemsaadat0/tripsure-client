@@ -35,44 +35,6 @@ const MadicalCard = () => {
           </div>
           <HospitalWorldWide></HospitalWorldWide>
         </div>
-        {/* .. */}
-
-
-
-
-        {/* <div className="mt-16">
-          <h3 className="tracking-widest text-2xl underline font-semibold ">
-            Explore Hospitals by its Specialties
-          </h3>
-          <HospitalbySpeciality></HospitalbySpeciality>
-        </div> */}
-
-
-
-        {/* .............. */}
-      {/*   <div className="mt-16">
-          <h3 className="tracking-widest text-lg underline font-semibold text-center ">
-          Health & Wellness Tips
-          </h3>
-          <div className=" grid sm:grid-cols-2  md:grid-cols-3 lg:grid-cols-4 sm:gap-4 gap-5 mt-8">
-            <div className="group card w-full bg-base-100 border-2 hover:shadow-xl  duration-200">
-              <figure className="px-2 pt-2">
-                <img
-                  src="https://i.ibb.co/YcM8cq4/image.png"
-                  alt="health"
-                  className="rounded-xl  "
-                />
-              </figure>
-              <div className="card-body">
-                <h2 className="text-lg font-bold">First Aid Kit</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
-                <Link to="/madicalDetails" className="">
-                  <button className="btn-primary ">Learn More</button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div> */}
       </Container>
     </div>
   );
