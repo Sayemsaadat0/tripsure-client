@@ -2,8 +2,8 @@ import React from 'react';
 import { Outlet, useLocation } from "react-router-dom";
 import Navbar from '../../Components/Shared/Navbar/Navbar';
 import Footar from '../../Components/Shared/Footar/Footar';
-import OpenAi from '../../Components/Pages/Home/OpenAi/OpenAi';
 import DialogflowAi from '../../Components/Pages/Home/OpenAi/DialogflowAi'
+import CustomChatBot from '../../Components/Shared/CustomChatBot/CustomChatBot';
 
 const Main = () => {
     const location = useLocation();
@@ -12,8 +12,10 @@ const Main = () => {
     return (
         <div className='scroll-container main'>
             {noHeaderFooter || <Navbar></Navbar>}
-            {/* <OpenAi></OpenAi> */}
-            <DialogflowAi/>
+            <div className='flex'>
+                <DialogflowAi />
+                <CustomChatBot></CustomChatBot>
+            </div>
             <Outlet></Outlet>
             {noHeaderFooter || <Footar></Footar>}
         </div>
