@@ -12,7 +12,7 @@ const Main = () => {
     return (
         <div className='scroll-container main'>
             {noHeaderFooter || <Navbar></Navbar>}
-            <div className='flex'>
+            <div>
                 <DialogflowAi />
                 <CustomChatBot></CustomChatBot>
             </div>
@@ -26,5 +26,3 @@ export default Main;
 
 
 
-
-// todo mobile responsiveness
