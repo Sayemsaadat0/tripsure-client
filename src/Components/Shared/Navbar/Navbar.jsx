@@ -49,7 +49,7 @@ const Navbar = () => {
           <img className='md:w-full md:h-[30%] w-[120px] max-w-[180px]' src="https://i.ibb.co/9mX5YKW/logo-6.png" alt="" />
         </Link>
 
-        <div className="hidden lg:flex items-center gap-4 lg:gap-7 text-[#79c7ff]">
+        <div className="hidden lg:flex items-center gap-4 lg:gap-7 text-[#0184a4]">
           {naviItems.map((navItem) => (
             <div
               className=" cursor-pointer font-bold uppercase duration-300"
@@ -62,7 +62,7 @@ const Navbar = () => {
                   </label>
                   <ul
                     tabIndex={0}
-                    className="dropdown-content z-10  menu shadow text-[#79c7ff] rounded-lg w-52 bg-base-300 p-0">
+                    className="dropdown-content z-10  menu shadow text-[#0184a4] rounded-lg w-52 bg-base-300 p-0">
                     {navItem.routes.map((route, index) => (
                       <NavLink
                         className={({ isActive }) =>

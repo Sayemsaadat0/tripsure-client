@@ -1,4 +1,4 @@
-import "./searchSection.css";
+/* import "./searchSection.css";
 import { BiHomeAlt2 } from "react-icons/bi";
 import { IoBedOutline, IoRestaurantSharp } from "react-icons/io5";
 import { AiOutlineSearch } from "react-icons/ai";
@@ -110,6 +110,67 @@ const SearchSection = () => {
             <div className="w-full md:w-[120px] md:absolute md:bottom-[6px] md:right-2 ">
               <button
                 className="
+              hover:bg-[#6599b1] 
+              text-white 
+              bg-[#79c7ff] 
+              transition duration-300 px-4 py-2 
+              text-lg 
+              font-semibold 
+              rounded-full 
+              w-full mt-5 
+              flex justify-center items-center gap-2">
+                <BsSearch></BsSearch>
+                Search
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default SearchSection;
+ */
+
+
+import "./searchSection.css";
+import { AiOutlineSearch } from "react-icons/ai";
+import { BsSearch } from "react-icons/bs";
+
+
+
+const SearchSection = () => {
+ 
+  
+
+  const handleSearch = (e) => {
+   
+  };
+
+  return (
+    <div className="w-full md:max-w-3xl mx-auto mt-20 ">
+      <div>
+        <div>
+          <h1 className="text-center text-xl text-[#0184a4] font-bold hidden md:block">
+            Discover The World
+          </h1>
+        </div>
+        <form >
+          <div className="searchField rounded-xl md:rounded-full w-[90%] mx-auto md:w-full p-2 relative">
+            <p className="absolute top-3">
+              <AiOutlineSearch className="text-3xl " />
+            </p>
+            <div>
+              <input
+                type="text"
+                name="searchText"
+                placeholder="All Destinations"
+                className="py-2 pl-10 block w-full md:rounded-full border-b-2 md:border-none focus:outline-0 text-md"
+              />
+            </div>
+            <div className="w-full md:w-[120px] md:absolute md:bottom-[6px] md:right-2 ">
+              <button className="
               hover:bg-[#6599b1] 
               text-white 
               bg-[#79c7ff] 

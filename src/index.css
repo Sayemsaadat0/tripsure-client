@@ -5,6 +5,10 @@
 .main {
   font-family: "Poppins", sans-serif;
 }
+
+p{
+  font-size: medium;
+}
 /* dashboard */
 .DashColor {
   background-image: radial-gradient(

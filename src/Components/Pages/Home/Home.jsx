@@ -15,7 +15,6 @@ const Home = () => {
     return (
         <div>
             <section className='mb-14'>
-                <SearchSection></SearchSection>
             </section>
             <Banner></Banner>
             <section
