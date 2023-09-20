@@ -59,7 +59,6 @@ const TravelDealsDetails = () => {
     savings,
     newPrice,
     totalPeople,
-    limitPerBooking,
     conditions,
     picture,
     discountPercentage,

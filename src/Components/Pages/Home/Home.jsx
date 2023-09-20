@@ -2,14 +2,12 @@ import SearchSection from './SearchSection/SearchSection';
 import Banner from './Banner/Banner';
 import TopThingsToDo from './TopThingsToDo/TopThingsToDo';
 import TopDestinations from './TopDestinations/TopDestinations';
-import AboutUs from './AboutUs/AboutUs';
 import Feedback from './Feedback/Feedback';
 import FamilyGuide from './FamilyGuide/FamilyGuide';
 import WhyUs from './WhyUs/WhyUs';
 import TravelDeals from './TravelDeals/TravelDeals';
 import Packages from './Packages/Packages';
 import Medical from './Medical/Medical';
-import OpenAi from './OpenAi/OpenAi';
 
 const Home = () => {
     return (
@@ -17,16 +15,20 @@ const Home = () => {
             <section className='mb-14'>
                 <SearchSection></SearchSection>
             </section>
-            <Banner></Banner>
+
+            <section>
+                <Banner></Banner>
+            </section>
+
             <section
                 className='py-32 bg-[url("https://i.ibb.co/MMd76r0/Untitled-design-8.png")]  w-full object-center mx-auto'>
                 <TravelDeals></TravelDeals>
                 <Packages></Packages>
             </section>
 
-            <FamilyGuide></FamilyGuide>
-
-
+            <section>
+                <FamilyGuide></FamilyGuide>
+            </section>
 
             <section className='md:my-20'>
                 <TopDestinations></TopDestinations>
