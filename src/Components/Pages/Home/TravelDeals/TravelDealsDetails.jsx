@@ -118,10 +118,10 @@ const TravelDealsDetails = () => {
 
   return (
     <Container>
-      <div className='my-4 md:my-20 px-4 md:px-10 pt-16 leading-8'>
+      <div className='my-16 md:my-16 px-2 md:px-4  leading-8'>
         {/* primary */}
         <h2 className='text-2xl md:text-4xl font-bold text-[#79c7ff] tracking-widest'>{title}</h2>
-        <div className='flex md:flex-row flex-col items-center my-3 gap-1 md:gap-5 '>
+        <div className='flex md:flex-row flex-col md:items-center my-3 gap-1 md:gap-5 '>
           <p className='flex items-center gap-2 '><GoLocation className='text-xl'></GoLocation> {destination}</p>
           <p className='flex items-center gap-2 '><BiTime className='text-xl'></BiTime> Duration : {duration}</p>
           <p>Booking End: {dealExpires}</p>
@@ -139,7 +139,7 @@ const TravelDealsDetails = () => {
             </LazyLoad>
 
             <div>
-              <h2 className="font-bold md:py-6 text-xl tracking-widest">
+              <h2 className="font-bold py-4 md:py-6 text-xl tracking-widest">
                 Grab it Now, Save Big
               </h2>
               <h3 className="text-3xl font-bold text-[#79c7ff]">
