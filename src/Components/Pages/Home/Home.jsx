@@ -2,14 +2,12 @@ import SearchSection from './SearchSection/SearchSection';
 import Banner from './Banner/Banner';
 import TopThingsToDo from './TopThingsToDo/TopThingsToDo';
 import TopDestinations from './TopDestinations/TopDestinations';
-import AboutUs from './AboutUs/AboutUs';
 import Feedback from './Feedback/Feedback';
 import FamilyGuide from './FamilyGuide/FamilyGuide';
 import WhyUs from './WhyUs/WhyUs';
 import TravelDeals from './TravelDeals/TravelDeals';
 import Packages from './Packages/Packages';
 import Medical from './Medical/Medical';
-import OpenAi from './OpenAi/OpenAi';
 
 const Home = () => {
     return (
@@ -36,9 +34,8 @@ const Home = () => {
                 <Medical></Medical>
             </section>
 
-            <section>
+        
                 <WhyUs></WhyUs>
-            </section>
 
             <section className='py-10'>
                 <Feedback></Feedback>

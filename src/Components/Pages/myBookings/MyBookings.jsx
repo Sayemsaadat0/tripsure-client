@@ -90,7 +90,7 @@ const MyBookings = () => {
     setBookingId(id);
   };
   return (
-    <div className="pt-20">
+    <div className="pt-20 min-h-screen">
       <Container>
         <h2 className="text-2xl font-bold py-8 whitespace-nowrap">
           My Bookings
