@@ -1,4 +1,4 @@
-/* import { useSelector } from "react-redux";
+/*  import { useSelector } from "react-redux";
 import SearchResultCard from "./SearchResultCard";
 import SearchSection from "../Home/SearchSection/SearchSection";
 import Container from "../../../LayOut/Container";
@@ -6,7 +6,6 @@ import { useState } from "react";
 
 const SearchResult = () => {
   const searchData = useSelector((state) => state.searchData.data);
-  
   const searchText = useSelector((state) => state.searchData.searchText);
 
 
@@ -58,9 +57,9 @@ const SearchResult = () => {
   );
 };
 
-export default SearchResult;
-  */
-/* 
+export default SearchResult; */
+  
+ 
  import React from 'react';
 
 const SearchResult = ({ results }) => {
@@ -80,10 +79,10 @@ const SearchResult = ({ results }) => {
   );
 };
 
-export default SearchResult;  */
+export default SearchResult;  
 
 
-import React from 'react';
+/* import React from 'react';
 
 const SearchResult = ({ location }) => {
   const { state } = location;
@@ -105,4 +104,4 @@ const SearchResult = ({ location }) => {
   );
 };
 
-export default SearchResult;
+export default SearchResult; */

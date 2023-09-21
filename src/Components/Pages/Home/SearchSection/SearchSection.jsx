@@ -205,7 +205,6 @@ const SearchSection = () => {
   const navigate = useNavigate(); 
 
   useEffect(() => {
-   
     fetch("/destinations.json")
       .then((response) => response.json())
       .then((data) => {
@@ -217,14 +216,11 @@ const SearchSection = () => {
   const handleSearch = (e) => {
     e.preventDefault();
 
-
     const filteredResults = results.filter((destination) =>
       destination.title.toLowerCase().includes(searchText.toLowerCase())
     );
 
     setResults(filteredResults); 
-
-   
     navigate("/searchResult"); 
   };
 
