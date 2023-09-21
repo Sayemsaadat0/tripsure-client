@@ -37,6 +37,7 @@ const MadicalCard = () => {
           </div>
           <HospitalWorldWide></HospitalWorldWide>
         </div>
+        <HospitalbySpeciality/>
       </Container>
     </div>
   );

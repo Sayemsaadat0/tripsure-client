@@ -4,6 +4,7 @@ import SearchResultCard from "./SearchResultCard";
 import SearchSection from "../Home/SearchSection/SearchSection";
 import Container from "../../../LayOut/Container";
 import { useState } from "react";
+import PageTitle from "../../PageTitle/PageTitle";
 
 const SearchResult = () => {
   const searchData = useSelector((state) => state.searchData.data);
@@ -20,6 +21,7 @@ const SearchResult = () => {
 
   return (
     <div className=" pt-12">
+      <PageTitle title="Search Result"/>
       <div className="mb-12">
         <SearchSection />
       </div>

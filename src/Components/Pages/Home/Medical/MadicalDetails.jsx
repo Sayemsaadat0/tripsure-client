@@ -4,6 +4,7 @@ import { useLoaderData } from "react-router-dom";
 import { FaHospitalAlt } from "react-icons/fa";
 import { IoLocationSharp } from "react-icons/io5";
 import { AiTwotonePhone } from "react-icons/ai";
+import PageTitle from "../../../PageTitle/PageTitle";
 
 const MadicalDetails = () => {
   const medicalData = useLoaderData();
@@ -25,6 +26,7 @@ const MadicalDetails = () => {
 
   return (
     <div className=" mt-20">
+       <PageTitle title="Medical Details"/>
       <Container>
         <div className=" w-full">
           <Carousel autoplay className="rounded-lg">
