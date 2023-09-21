@@ -133,7 +133,7 @@ const SearchSection = () => {
 export default SearchSection;
  */
 
-
+/* 
 import "./searchSection.css";
 import { AiOutlineSearch } from "react-icons/ai";
 import { BsSearch } from "react-icons/bs";
@@ -192,3 +192,142 @@ const SearchSection = () => {
 };
 
 export default SearchSection;
+ */
+
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom"; 
+import { AiOutlineSearch } from "react-icons/ai";
+import { BsSearch } from "react-icons/bs";
+
+const SearchSection = () => {
+  const [searchText, setSearchText] = useState("");
+  const [results, setResults] = useState([]);
+  const navigate = useNavigate(); 
+
+  useEffect(() => {
+   
+    fetch("/destinations.json")
+      .then((response) => response.json())
+      .then((data) => {
+        setResults(data.destinations);
+      })
+      .catch((error) => console.error("Error fetching data:", error));
+  }, []);
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+
+
+    const filteredResults = results.filter((destination) =>
+      destination.title.toLowerCase().includes(searchText.toLowerCase())
+    );
+
+    setResults(filteredResults); 
+
+   
+    navigate("/searchResult"); 
+  };
+
+  return (
+    <div className="w-full md:max-w-3xl mx-auto mt-20">
+      <div>
+        <div>
+          <h1 className="text-center text-xl text-[#0184a4] font-bold hidden md:block">
+            Discover The World
+          </h1>
+        </div>
+        <form onSubmit={handleSearch}>
+          <div className="searchField rounded-xl md:rounded-full w-[90%] mx-auto md:w-full p-2 relative">
+            <p className="absolute top-3">
+              <AiOutlineSearch className="text-3xl " />
+            </p>
+            <div>
+              <input
+                type="text"
+                name="searchText"
+                placeholder="All Destinations"
+                className="py-2 pl-10 block w-full md:rounded-full border-b-2 md:border-none focus:outline-0 text-md"
+                value={searchText}
+                onChange={(e) => setSearchText(e.target.value)}
+              />
+            </div>
+            <div className="w-full md:w-[120px] md:absolute md:bottom-[6px] md:right-2">
+              <button className="
+              hover:bg-[#6599b1] 
+              text-white 
+              bg-[#79c7ff] 
+              transition duration-300 px-4 py-2 
+              text-lg 
+              font-semibold 
+              rounded-full 
+              w-full mt-5 
+              flex justify-center items-center gap-2">
+                <BsSearch></BsSearch>
+                Search
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default SearchSection;
+ 
+
+
+/* 
+import { AiOutlineSearch } from "react-icons/ai";
+import { BsSearch } from "react-icons/bs";
+
+const SearchSection = () => {
+
+
+
+  return (
+    <div className="w-full md:max-w-3xl mx-auto mt-20">
+      <div>
+        <div>
+          <h1 className="text-center text-xl text-[#0184a4] font-bold hidden md:block">
+            Discover The World
+          </h1>
+        </div>
+        <form>
+          <div className="searchField rounded-xl md:rounded-full w-[90%] mx-auto md:w-full p-2 relative">
+            <p className="absolute top-3">
+              <AiOutlineSearch className="text-3xl " />
+            </p>
+            <div>
+              <input
+                type="text"
+                name="searchText"
+                placeholder="All Destinations"
+                className="py-2 pl-10 block w-full md:rounded-full border-b-2 md:border-none focus:outline-0 text-md"
+              />
+            </div>
+            <div className="w-full md:w-[120px] md:absolute md:bottom-[6px] md:right-2">
+              <button
+                className="
+                hover:bg-[#6599b1] 
+                text-white 
+                bg-[#79c7ff] 
+                transition duration-300 px-4 py-2 
+                text-lg 
+                font-semibold 
+                rounded-full 
+                w-full mt-5 
+                flex justify-center items-center gap-2">
+                <BsSearch></BsSearch>
+                Search
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default SearchSection;
+ */

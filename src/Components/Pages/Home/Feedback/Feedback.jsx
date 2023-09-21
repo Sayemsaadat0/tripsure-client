@@ -56,7 +56,7 @@ const Feedback = () => {
             spaceBetween: 30,
           },
         }}
-        onSwiper={(swiper) => console.log(swiper)}
+        onSwiper={(swiper) => (swiper)}
       >
         {feedbacks.map((feedback) => (
           <SwiperSlide key={feedback._id}>

@@ -1,5 +1,4 @@
-// import React, { useState } from "react";
-import { useSelector } from "react-redux";
+/* import { useSelector } from "react-redux";
 import SearchResultCard from "./SearchResultCard";
 import SearchSection from "../Home/SearchSection/SearchSection";
 import Container from "../../../LayOut/Container";
@@ -11,7 +10,6 @@ const SearchResult = () => {
   const searchText = useSelector((state) => state.searchData.searchText);
 
 
-  // pagination
   const [currentPage, setCurrentPage] = useState(0);
   const totalSearchData = searchData.length;
   const dataPerPages = 5;
@@ -56,6 +54,53 @@ const SearchResult = () => {
           </button>
         ))}
       </div>
+    </div>
+  );
+};
+
+export default SearchResult;
+  */
+/* 
+ import React from 'react';
+
+const SearchResult = ({ results }) => {
+  return (
+    <div className="mt-4">
+      {results.map((result, index) => (
+        <div key={index} className="mb-2">
+          <p>{result.title}</p>
+          {result.type === "country" && <p>This is a country</p>}
+          {result.type === "hotel" && <p>This is hotel data</p>}
+          {result.type === "restaurant" && <p>This is restaurant</p>}
+          {result.type === "area" && <p>This is area</p>}
+          {result.type === "resort" && <p>This is resort</p>}
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default SearchResult;  */
+
+
+import React from 'react';
+
+const SearchResult = ({ location }) => {
+  const { state } = location;
+  const results = state ? state.results : [];
+
+  return (
+    <div className="mt-4">
+      {results.map((result, index) => (
+        <div key={index} className="mb-2">
+          <p>{result.title}</p>
+          {result.type === "country" && <p>This is a country</p>}
+          {result.type === "hotel" && <p>This is hotel data</p>}
+          {result.type === "restaurant" && <p>This is restaurant</p>}
+          {result.type === "area" && <p>This is area</p>}
+          {result.type === "resort" && <p>This is resort</p>}
+        </div>
+      ))}
     </div>
   );
 };
