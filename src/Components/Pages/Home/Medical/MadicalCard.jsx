@@ -5,10 +5,12 @@ import { Carousel } from 'antd';
 import SearchHospital from './SearchHospital';
 import HospitalWorldWide from './HospitalWorldWide';
 import HospitalbySpeciality from './HospitalbySpeciality';
+import PageTitle from '../../../PageTitle/PageTitle';
 
 const MadicalCard = () => {
   return (
     <div className="mt-20">
+      <PageTitle title="Medicals"/>
       <Container>
         <div className="text-center space-y-3 md:w-[60%] mx-auto">
           <h3 className="tracking-widest  font-semibold text-2xl underline">

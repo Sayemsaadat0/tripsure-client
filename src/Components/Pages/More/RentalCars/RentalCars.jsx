@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import BottomSection from "./Tabs/BottomSection";
 import FindRentalCars from "./Tabs/FindRentalCars";
 import RentalSingleCard from "./Tabs/RentalSingleCard/RentalSingleCard";
+import PageTitle from "../../../PageTitle/PageTitle";
+
 
 const RentalCars = () => {
   const [pickUpLocation, setPickUpLocation] = useState("");
@@ -24,6 +26,7 @@ const RentalCars = () => {
 
   return (
     <div className="mt-12">
+      <PageTitle title="Rental Cars"/>
       <h3 className="md:text-4xl mt-20 text-2xl tracking-widest text-slate-600 font-bold text-center">
         Search for the Best Rental Car Deals
       </h3>

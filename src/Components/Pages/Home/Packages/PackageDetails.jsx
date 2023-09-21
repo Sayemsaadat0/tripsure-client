@@ -9,6 +9,7 @@ import { BiTime } from 'react-icons/bi';
 import { DatePicker } from 'antd';
 import { FaUserGroup } from 'react-icons/fa6';
 import useAuth from '../../../../Hooks/useAuth';
+import PageTitle from '../../../PageTitle/PageTitle';
 
 
 
@@ -86,6 +87,7 @@ const PackageDetails = () => {
 
   return (
     <Container>
+      <PageTitle title="Package"/>
       <div className='my-4 md:my-20 px-4 md:px-10 leading-8'>
         {/* primary */}
         <h2 className='text-4xl font-bold text-[#7bb9b9]'>{title}</h2>

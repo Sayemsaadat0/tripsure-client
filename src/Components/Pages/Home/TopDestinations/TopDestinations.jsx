@@ -37,7 +37,6 @@ const TopDestinations = () => {
             spaceBetween={10}
             modules={[Navigation]}
             className="mySwiper"
-        
             breakpoints={{
               640: {
                 slidesPerView: 2,
@@ -69,18 +68,26 @@ const TopDestinations = () => {
                       />
                     </LazyLoad>
 
-
-                    <h2 className="font-semibold mt-3 hover:text-blue-400 duration-500">
-                      {todo.placetitle}
-                    </h2>
-                    <div className='flex justify-between'>
-                      {
-                        todo.price?.map((p, index)=> <div className="flex" key={index}>
+                    <div className="flex justify-between items-center">
+                      <h2 className="font-semibold mt-3 hover:text-blue-400 duration-500">
+                        {todo.placetitle}
+                      </h2>
+                      <SocialMediaShare todo={filterData.find(fd => fd._id === todo._id)}/>
+                    </div>
+                    <div className="flex justify-between">
+                      {todo.price?.map((p, index) => (
+                        <div className="flex" key={index}>
                           <p> {p.type} :</p>
-                          <p className="text-red-500 font-bold"> {p.amount} $</p>
-                        </div> )
-                      }
-                      <p className='flex items-center gap-2'><GoStarFill className='text-red-500'></GoStarFill>  {todo.ratings}</p>
+                          <p className="text-red-500 font-bold">
+                            {" "}
+                            {p.amount} $
+                          </p>
+                        </div>
+                      ))}
+                      <p className="flex items-center gap-2">
+                        <GoStarFill className="text-red-500"></GoStarFill>{" "}
+                        {todo.ratings}
+                      </p>
                     </div>
                   </div>
                 </Link>

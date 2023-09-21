@@ -6,6 +6,7 @@ import { FaXmark } from "react-icons/fa6";
 import CancelBookinTimer from "./CancelBookingTimer";
 import axios from "axios";
 import useAuth from "../../../Hooks/useAuth";
+import PageTitle from "../../PageTitle/PageTitle";
 // import {FaXmark} from 'react-icons/fa'
 const MyBookings = () => {
     const {user} = useAuth();
@@ -91,6 +92,7 @@ const MyBookings = () => {
   };
   return (
     <div className="pt-20">
+      <PageTitle title="My Bookings"/>
       <Container>
         <h2 className="text-2xl font-bold py-8 whitespace-nowrap">
           My Bookings
