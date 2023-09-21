@@ -7,8 +7,6 @@ const WeatherForecast = () => {
 
     useEffect(() => {
         if (location) {
-            // Replace with your weather API endpoint and API key
-            const apiKey = 'YOUR_API_KEY';
             const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=83e533c18c1fed055e1c613985cc52aa&units=metric`;
 
             axios.get(apiUrl)

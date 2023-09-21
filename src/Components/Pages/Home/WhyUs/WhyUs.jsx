@@ -9,7 +9,7 @@ const WhyUs = () => {
         <Container>
             <SectionTitle subText={'Discover the Difference'} text={'why choose us?'}>
             </SectionTitle>
-            <div className='grid grid-cols-1  md:grid-cols- lg:grid-cols-4 place-items-center gap-10 mt-20'>
+            <div className='grid grid-cols-1  md:grid-cols-2 lg:grid-cols-4 place-items-center gap-10 mt-20'>
                 {/* 1 */}
                 <div className='min-w-[280px]'>
                     <img className='w-16 h-16' src="https://i.ibb.co/zHqNS1d/1.png" alt="" />

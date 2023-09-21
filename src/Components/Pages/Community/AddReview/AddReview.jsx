@@ -21,7 +21,8 @@ const AddReview = () => {
     const review = {
       rating,
       textareaValue,
-      user,
+      userName: user.displayName,
+      title: 'tripsure'
     };
 
    
@@ -86,7 +87,7 @@ const AddReview = () => {
               fractions={2}
               style={{ maxWidth: 200 }}
               value={rating}
-              initialRating={5}
+              initialRating={rating}
               onChange={setRating}
               isRequired
             />

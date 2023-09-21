@@ -55,10 +55,10 @@ const TravelDeals = () => {
   return (
     <Container>
       <SectionTitle subText={'Savings Safari'} text={'Hunt for the Hottest Deals'} />
-      <section className='overflow-x-auto md:grid  md:grid-cols-3 gap-12 px-2 pb-12 '>
+      <section className='overflow-x-auto grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-10 px-2 pb-12 '>
 
         {travelDeals.map((deals, index) => (
-          <div key={index} className="card card-compact bg-base-100 border md:w-96 overflow-hidden">
+          <div key={index} className="card card-compact bg-base-100 border w-full max-w-xl mx-auto md:mx-0 overflow-hidden">
             <button
               onClick={() => handleAddToFavorite(deals)}
               className={`absolute left-1 z-10 top-3 p-2 rounded-full bg-white`}>

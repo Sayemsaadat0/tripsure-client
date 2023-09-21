@@ -24,7 +24,7 @@ export const saveUser = async (user, countryName, phone, gender) => {
 export const updateUserDeatails = async (email, details) => {
     console.log(details)
     const response = await axios.put(`${import.meta.env.VITE_BACKEND_API}/users/${email}`, details)
-    console.log(response)
+    // console.log(response)
     return response
 }
 
@@ -35,7 +35,7 @@ export const findUserbyEmail = async (email) => {
 }
 export const allUsers = async () => {
     const response = await axios.get(`${import.meta.env.VITE_BACKEND_API}/users`)
-    console.log(response)
+    // console.log(response)
     return response.data
 }
 // get user role

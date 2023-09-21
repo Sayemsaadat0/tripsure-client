@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Card } from 'antd';
 import Container from '../../../LayOut/Container';
 import { AutoComplete } from 'antd';
+import GuideReview from './GuideReview';
 
 const { Meta } = Card;
 
@@ -124,6 +125,7 @@ const TravelGuides = () => {
 
               </div>
             </div>
+            <GuideReview></GuideReview>
           </form>
         </dialog>
       )}

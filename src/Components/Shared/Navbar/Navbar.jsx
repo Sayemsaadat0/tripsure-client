@@ -17,7 +17,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const { logOut, user, role } = useAuth()
-  console.log(role)
+  // console.log(role)
   const { data, refetch } = useGetYourFavoritItemsQuery(user?.email)
   const naviItems = [
     { id: 1, name: 'discover', dropdown: true, routes: [{ routeName: 'travel story', linkName: 'travelStory' }, { routeName: 'travel guides', linkName: 'travelGuides' }] },
