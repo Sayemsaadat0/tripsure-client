@@ -11,7 +11,7 @@ import {
 } from "react-icons/fa6";
 import Rating from "react-rating";
 import TourCard from "./TourCard";
-import SocialMediaShare from "../../Shared/SocialMediaShare/SocialMediaShare";
+import PageTitle from "../../PageTitle/PageTitle";
 
 const TravelerChoose = () => {
   const { category } = useParams();
@@ -27,6 +27,7 @@ const TravelerChoose = () => {
   }, []);
   return (
     <Container>
+      <PageTitle title="Travel Choose"/>
       <div>
         <div className="my-20 text-center">
           <h3 className=" text-3xl tracking-widest  underline uppercase">
@@ -65,7 +66,6 @@ const TravelerChoose = () => {
                   >
                     {fistOneCard?.placetitle}
                     </Link>
-                    <SocialMediaShare />
                   </div>
                   <h4 className="flex items-center gap-2">
                     <FaLocationDot></FaLocationDot>

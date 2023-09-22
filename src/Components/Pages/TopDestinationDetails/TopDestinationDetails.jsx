@@ -10,6 +10,7 @@ import tripcustome from "../../../assets/tripcustome.png";
 import Container from "../../../LayOut/Container";
 import LazyLoad from "react-lazy-load";
 import bestTrip from "../../../assets/travelpng.png";
+import PageTitle from "../../PageTitle/PageTitle";
 
 const TopDestinationDetails = () => {
   const { id } = useParams();
@@ -65,6 +66,7 @@ const TopDestinationDetails = () => {
  
   return (
     <Container>
+      <PageTitle title="Top Destination"/>
       <div className="mx-2 mt-20">
         <div>
           <h1 className="text-5xl underline underline-offset-4 tracking-widest">{topDestinationDetails?.placetitle}</h1>

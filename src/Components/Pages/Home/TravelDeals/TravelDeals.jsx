@@ -57,6 +57,8 @@ const TravelDeals = () => {
 
   return (
     <Container>
+
+
       <SectionTitle subText={'Savings Safari'} text={'Hunt for the Hottest Deals'} />
 
       <Swiper

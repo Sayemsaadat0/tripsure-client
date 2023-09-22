@@ -5,6 +5,7 @@ import useAuth from "../../../../Hooks/useAuth";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import { BsStar, BsStarFill } from "react-icons/bs";
+import PageTitle from "../../../PageTitle/PageTitle";
 
 const AddReview = () => {
   const [rating, setRating] = useState(5); 
@@ -70,6 +71,7 @@ const AddReview = () => {
 
   return (
     <Container>
+      <PageTitle title="Add Review"/>
       <div className="min-h-screen md:flex justify-around items-center">
         <div className=" flex justify-center mt-20 md:mt-0">
           <img className="w-3/4" src="https://i.ibb.co/2YzNmXy/We-wab-Feedback-2.gif" alt="" />

@@ -58,6 +58,7 @@ import MedicalCard from "../Pages/Home/Medical/Medical";
 import MadicalCard from "../Pages/Home/Medical/MadicalCard";
 import MadicalDetails from "../Pages/Home/Medical/MadicalDetails";
 import MyBookings from "../Pages/myBookings/MyBookings";
+import HospitalsFilterBySpeciality from "../Pages/Home/Medical/HospitalsFilterBySpeciality";
 
 
 
@@ -215,6 +216,11 @@ const router = createBrowserRouter([
         element: <MadicalDetails />,
         loader: ({params}) => fetch(`${import.meta.env.VITE_BACKEND_API}/medicals/${params.id}`) 
       },
+      {
+        path: "hospitalsFilterBySpeciality/:text",
+        element: <HospitalsFilterBySpeciality />,
+     
+      }
      
     ],
   },

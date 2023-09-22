@@ -12,6 +12,7 @@ import useAuth from '../../../../Hooks/useAuth';
 import GivingReview from '../../../Shared/GivingReview';
 import Rating from 'react-rating';
 import { BsStar, BsStarFill } from 'react-icons/bs';
+import PageTitle from '../../../PageTitle/PageTitle';
 
 
 

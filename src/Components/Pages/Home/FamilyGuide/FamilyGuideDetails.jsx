@@ -8,6 +8,7 @@ import ThemePark from "./ThemePark";
 import axios from "axios";
 import CommonSwiperForFamilyAndSummer from "./CommonSwiperForFamilyAndSummer";
 import LazyLoad from "react-lazy-load";
+import PageTitle from "../../../PageTitle/PageTitle";
 
 const FamilyGuideDetails = () => {
   const [inspiredByFamily, setInspiredByFamily] = useState([]);
@@ -30,6 +31,7 @@ const FamilyGuideDetails = () => {
   return (
     <div>
       {/* todo by sayem need to dynamix this datas */}
+      <PageTitle title="Family Guides"/>
       <div>
         {/* introduction */}
         <Container>

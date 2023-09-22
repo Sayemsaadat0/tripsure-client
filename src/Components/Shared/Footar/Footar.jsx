@@ -41,7 +41,7 @@ const Footar = () => {
                 <li>
                   <a
                     href="https://www.kayak.co.in/help"
-                    className="text-gray-600 hover:text-gray-800"
+                   className="text-gray-600 hover:text-gray-800 capitalize  "
                   >
                     Help Center
                   </a>
@@ -49,7 +49,7 @@ const Footar = () => {
                 <li>
                   <a
                     href="https://www.expedia.com/Destinations-In-United-States-Of-America.d201.Flight-Destinations"
-                    className="text-gray-600 hover:text-gray-800"
+                   className="text-gray-600 hover:text-gray-800 capitalize "
                   >
                     Domestic fligth
                   </a>
@@ -57,7 +57,7 @@ const Footar = () => {
                 <li>
                   <a
                     href="https://www.opentable.com/?ref=16087"
-                    className="text-gray-600 hover:text-gray-800"
+                   className="text-gray-600 hover:text-gray-800 capitalize "
                   >
                     Restaurant reservations
                   </a>
@@ -65,7 +65,7 @@ const Footar = () => {
                 <li>
                   <a
                     href="https://tinyurl.com/bdmnd6be"
-                    className="text-gray-600 hover:text-gray-800"
+                   className="text-gray-600 hover:text-gray-800 capitalize "
                   >
                    Car Rental
                   </a>
@@ -80,7 +80,7 @@ const Footar = () => {
                 <li>
                   <Link
                     to={'/aboutusdetails'}
-                    className="text-gray-600 hover:text-gray-800"
+                   className="text-gray-600 hover:text-gray-800 capitalize "
                   >
                     About us
                   </Link>
@@ -88,7 +88,7 @@ const Footar = () => {
                 <li>
                   <a
                     href="https://help.priceline.com/"
-                    className="text-gray-600 hover:text-gray-800"
+                   className="text-gray-600 hover:text-gray-800 capitalize "
                   >
                     Contact Us
                   </a>
@@ -96,7 +96,7 @@ const Footar = () => {
                 <li>
                   <a
                     href="https://ir.bookingholdings.com/overview/default.aspx"
-                    className="text-gray-600 hover:text-gray-800"
+                   className="text-gray-600 hover:text-gray-800 capitalize "
                   >
                     Investor Relations
                   </a>
@@ -104,7 +104,7 @@ const Footar = () => {
                 <li>
                   <a
                     href="https://www.priceline.com/partner/v2/summer-release-2023"
-                    className="text-gray-600 hover:text-gray-800"
+                   className="text-gray-600 hover:text-gray-800 capitalize "
                   >
                     Learn About New Features
                   </a>
@@ -119,7 +119,7 @@ const Footar = () => {
                 <li>
                   <a
                     href="https://www.airbnb.com/airbnb-friendly"
-                    className="text-gray-600 hover:text-gray-800"
+                   className="text-gray-600 hover:text-gray-800 capitalize "
                   >
                     Tripsure friendly
                   </a>
@@ -127,7 +127,7 @@ const Footar = () => {
                 <li>
                   <a
                     href="https://www.airbnb.com/help/article/1376"
-                    className="text-gray-600 hover:text-gray-800"
+                   className="text-gray-600 hover:text-gray-800 capitalize "
                   >
                     Hosting responsibly
                   </a>
@@ -135,7 +135,7 @@ const Footar = () => {
                 <li>
                   <a
                     href="https://community.withairbnb.com/t5/Community-Center/ct-p/community-center"
-                    className="text-gray-600 hover:text-gray-800"
+                   className="text-gray-600 hover:text-gray-800 capitalize "
                   >
                     Community forum
                   </a>
@@ -143,7 +143,7 @@ const Footar = () => {
                 <li>
                   <a
                     href="https://www.airbnb.com/resources/hosting-homes"
-                    className="text-gray-600 hover:text-gray-800"
+                   className="text-gray-600 hover:text-gray-800 capitalize "
                   >
                     Hosting resources
                   </a>
