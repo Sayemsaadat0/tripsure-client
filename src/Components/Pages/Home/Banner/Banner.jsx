@@ -48,7 +48,7 @@ const Banner = () => {
                     <input
                       type="text"
                       name="searchText"
-                      placeholder="All Destinations"
+                      placeholder="Search Here"
                       className="py-4 pl-10 block w-full rounded-full border-b-2 md:border-none focus:outline-none text-black text-md"
                     />
                   </div>
