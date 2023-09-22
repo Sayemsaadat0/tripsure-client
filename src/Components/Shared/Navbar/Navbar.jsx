@@ -147,7 +147,7 @@ const Navbar = () => {
             {user ? (
               <div className="flex px-6  flex-col gap-2 items-center">
                 <img
-                  className="w-20 h-20 rounded-full border-2 border-[#19a0c9] p-[2px]"
+                  className="w-20  h-20 rounded-full border-2 border-[#19a0c9] p-[2px]"
                   src={`${user?.photoURL}`}
                   alt=""
                 />

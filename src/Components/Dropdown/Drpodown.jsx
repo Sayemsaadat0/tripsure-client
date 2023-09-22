@@ -30,7 +30,7 @@ const Dropdown = () => {
     <div className=" w-[56px] text-right">
       <Menu as="div" className="relative inline-block text-left">
         <Menu.Button className="">
-          <img className='w-full h-full rounded-full border-2 border-[#19a0c9] p-[2px]' src={`${user?.photoURL}`} alt="" />
+          <img className='w-20 h-20 object-contain rounded-full   p-[2px]' src={`${user?.photoURL}`} alt="" />
         </Menu.Button>
         <Transition
           as={Fragment}
