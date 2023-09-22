@@ -132,7 +132,7 @@ const Banner = () => {
                       <h2 className="card-title">{result.title}</h2>
                       <div className="flex justify-between">
                         <p>{result.address}</p>
-                        <p>{result.review?.rating}</p>
+                       
                       </div>
                     </div>
                   </div>
@@ -157,7 +157,7 @@ const Banner = () => {
                       <h2 className="card-title">{result.title}</h2>
                       <div className="flex justify-between">
                         <p>{result.address}</p>
-                        <p>{result.review?.rating}</p>
+                       
                       </div>
                     </div>
                   </div>
@@ -181,7 +181,7 @@ const Banner = () => {
                       <h2 className="card-title">{result.title}</h2>
                       <div className="flex justify-between">
                         <p>{result.address}</p>
-                        <p>{result.review?.rating}</p>
+                   
                       </div>
                     </div>
                   </div>
@@ -207,7 +207,6 @@ const Banner = () => {
                       <h2 className="card-title">{result.title}</h2>
                       <div className="flex justify-between">
                         <p>{result.address}</p>
-                        <p>{result.review?.rating}</p>
                       </div>
                     </div>
                   </div>

@@ -21,7 +21,6 @@ import Favorite from "../Shared/Navbar/Favorite";
 
 // dashboard ad resources
 import Addresource from "../Pages/DashBoard/Admin/Addresource";
-
 import Addplaces from "../Pages/DashBoard/Admin/addplaces";
 import Addhotels from "../Pages/DashBoard/Admin/Addhotels";
 import Addflights from "../Pages/DashBoard/Admin/Addflights";

@@ -54,6 +54,7 @@ const SearchDetails = () => {
               ))}
             </Carousel>
             <h3 className="text-3xl tracking-widest font-semibold mt-3">{title}</h3>
+            <p className="mt-3">{ description}</p>
             <div className="space-y-2 my-5">
               
               <p className="flex items-center gap-2 ">
@@ -76,7 +77,6 @@ const SearchDetails = () => {
               )}
             </div>
             <div>
-              <p className="mt-3">{ description}</p>
             </div>
           </div>
           {/* rating */}
