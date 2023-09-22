@@ -38,7 +38,7 @@ const Banner = () => {
     <div>
       <div className="relative h-[45rem] bg-cover bg-center">
         <div className="absolute inset-0 flex items-center justify-start bg-black">
-          <video className='h-full object-cover mx-auto w-full ' src="Travel.mp4" autoPlay loop muted></video>
+          <video className='h-full object-cover mx-auto w-full ' src="bannervid.mp4" autoPlay loop muted></video>
           <div className="text-center text-white  bg-opacity-70 w-full rounded-r-lg banner py-12">
             <Container>
               <img className='w-96 mx-auto' src="https://i.ibb.co/PcF17Pp/Travel-1.png" alt="" />

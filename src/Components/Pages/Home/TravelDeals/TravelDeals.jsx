@@ -83,7 +83,7 @@ const TravelDeals = () => {
       >
         {travelDeals.map((deals, index) => (
           <SwiperSlide key={index}>
-            <div className="card card-compact bg-base-100 border md:w-96 overflow-hidden">
+            <div className="card card-compact bg-base-100 border w-full overflow-hidden">
               <button
                 onClick={() => handleAddToFavorite(deals)}
                 className={`absolute left-1 z-10 top-3 p-2 rounded-full bg-white`}

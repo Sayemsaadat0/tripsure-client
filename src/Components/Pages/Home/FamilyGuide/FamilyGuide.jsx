@@ -8,7 +8,7 @@ const FamilyGuide = () => {
     return (
         <div
             className="hero h-96 background1" >
-            <div className='hero-overlay bg-opacity-20 '></div>
+            <div className=''></div>
             <div className="hero-content text-center text-neutral-content">
                 <div className="max-w-xl p-3 md:p-10 py-24 text-white">
                     <h1 className="mb-5 text-3xl font-bold ">The ultimate family travel guide</h1>

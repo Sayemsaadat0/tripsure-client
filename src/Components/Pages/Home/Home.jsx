@@ -29,7 +29,7 @@ const Home = () => {
                 <FamilyGuide></FamilyGuide>
             </section>
 
-            <section className='md:my-20'>
+            <section className='my-20'>
                 <TopDestinations></TopDestinations>
                 <TopThingsToDo></TopThingsToDo>
             </section>
