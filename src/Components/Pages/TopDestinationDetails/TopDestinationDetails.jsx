@@ -18,16 +18,16 @@ const TopDestinationDetails = () => {
   const [allHotels, setAllHotels] = useState([])
   const [doPlace, setDoPlace] = useState([])
   const [restaurants, setRestaurants] = useState([]);
-  const eatWithSwiper = doPlace.slice(1,)
 
   const location = useLocation()
+  console.log(location);
 
   useEffect(() => {
-    axios.get(`${import.meta.env.VITE_BACKEND_API}/top-destinations/${location.state}`)
+    axios.get(`${import.meta.env.VITE_BACKEND_API}/top-destinations/${id}`)
       .then((data) => {
         setTopDestinationsDetails(data.data);
-      });
-  }, []);
+      })
+  }, [id])
 
 
 
@@ -40,26 +40,23 @@ const TopDestinationDetails = () => {
       )
       .then((data) => {
         setAllHotels(data.data);
-      });
-  }, [topDestinationDetails]);
+      })
+  }, [topDestinationDetails])
+
+
+  
+ 
   useEffect(() => {
-    axios
-      .get(
-        `${import.meta.env.VITE_BACKEND_API}/tourCountry/${
-          topDestinationDetails?.country
-        }`
-      )
+    axios.get(`${import.meta.env.VITE_BACKEND_API}/tourCountry/${topDestinationDetails?.country}`)
       .then((data) => {
         setDoPlace(data.data);
-      });
-  }, [topDestinationDetails]);
-  useEffect(() => {
-    axios
-      .get(
-        `${import.meta.env.VITE_BACKEND_API}/restaurant/${
-          topDestinationDetails?.country
-        }`
-      )
+      })
+  }, [topDestinationDetails])
+ 
+ 
+ 
+ useEffect(() => {
+    axios.get(`${import.meta.env.VITE_BACKEND_API}/restaurant/${topDestinationDetails?.country}`)
       .then((data) => {
         setRestaurants(data.data);
       });
@@ -70,8 +67,8 @@ const TopDestinationDetails = () => {
     <Container>
       <div className="mx-2 mt-20">
         <div>
-          <h1 className="text-2xl md:text-5xl underline underline-offset-4 tracking-widest">{topDestinationDetails?.placetitle}</h1>
-         
+          <h1 className="text-5xl underline underline-offset-4 tracking-widest">{topDestinationDetails?.placetitle}</h1>
+          
           <div className="my-6">
             <img
               className="w-full 
@@ -91,8 +88,10 @@ const TopDestinationDetails = () => {
             <h3
               className="
               text-2xl 
-              tracking-widest underline text-center text-black my-12">
-              Essential {topDestinationDetails?.cardtitle} </h3>
+              tracking-widest underline  text-black my-12">
+              Essential {topDestinationDetails?.cardtitle? topDestinationDetails?.cardtitle: topDestinationDetails?.placetitle} </h3>
+              <h2 className="text-xl font-bold">About</h2>
+              <p className="mb-4">{topDestinationDetails?.placedetails}</p>
             <div className="lg:grid justify-between gap-2 grid-cols-[300px_minmax(900px,_1fr)_100px]">
               <div className="">
                 <h3 className="tracking-widest font-bold my-2 text-gray-700">

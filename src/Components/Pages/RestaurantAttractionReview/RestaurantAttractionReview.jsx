@@ -30,7 +30,7 @@ const RestaurantAttractionReview = () => {
 
   return (
     <Container>
-      <div className="mx-4 lg:mx-10 mt-20">
+      <div className="mx-4 lg:mx-10 my-20">
         <h1 className="text-3xl font-bold my-5 mt-10">
           {restaurantsDetails?.title}
         </h1>
@@ -85,14 +85,14 @@ const RestaurantAttractionReview = () => {
               {restaurantsDetails?.phone}
             </Link>
             <button
-              onClick={() => window.my_modal_1.showModal()}
+              onClick={()=>document.getElementById('my_modal_res').showModal()}
               className="flex gap-2 items-center underline"
             >
               <FaClock></FaClock> Closed now: See all hours
             </button>
             {/* Open the modal using ID.showModal() method */}
 
-            <dialog id="my_modal_1" className="modal">
+            <dialog id="my_modal_res" className="modal">
               <form method="dialog" className="modal-box">
                 <h3 className="font-bold text-lg">Hours</h3>
                 <div className="divider"></div>

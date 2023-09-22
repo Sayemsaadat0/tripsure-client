@@ -8,7 +8,6 @@ import ThemePark from "./ThemePark";
 import axios from "axios";
 import CommonSwiperForFamilyAndSummer from "./CommonSwiperForFamilyAndSummer";
 import LazyLoad from "react-lazy-load";
-// import div from '../../../../LayOut/div';
 
 const FamilyGuideDetails = () => {
   const [inspiredByFamily, setInspiredByFamily] = useState([]);

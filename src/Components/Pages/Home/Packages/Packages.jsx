@@ -83,7 +83,7 @@ const Packages = () => {
               const isFavorite = favoritePackageIds.includes(packageItem._id);
               return (
                 <SwiperSlide className="" key={index}>
-                  <div className="card card-compact bg-white border shadow-xl md:w-96 relative  overflow-hidden">
+                  <div className="card card-compact bg-white border shadow-xl w-full relative  overflow-hidden">
                     <Link to={`/packageDetails/${packageItem?._id}`}>
                       <LazyLoad width={"100%"}>
                         <img

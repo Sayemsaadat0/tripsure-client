@@ -3,24 +3,20 @@ import { format } from 'date-fns'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import useAuth from '../../../../Hooks/useAuth'
+import moment from 'moment'
 
 
+const NewUser = ({ newUser }) => {
 
-const NewUser = () => {
-	const [newUser, setNewUsers] = useState()
-	console.log(newUser)
-	useEffect(() => {
-		axios.get(`${import.meta.env.VITE_BACKEND_API}/users`)
-			.then(res => {
-				console.log(res.data);
-				setNewUsers([...res.data].reverse()) // Assuming the response contains data you want to log
-			})
-			.catch(error => {
-				console.error('Error:', error);
-			});
-	}, []);
-	// console.log()
-	// const users = [...newUser]?.reverse()
+	// const diffreenceHours = (registerTime) => {
+	// 	// Current date
+	// 	const currentDate = moment();
+	// 	const specificDate = moment(registerTime);
+	// 	const differenceInHours = specificDate.diff(currentDate, 'hours');
+	// 	console.log(differenceInHours)
+	// }
+
+	// const u = newUser?.filter(us => diffreenceHours(us.registerDate) < 0 && 24) 
 
 	return (
 		<div className="bg-white w-full">

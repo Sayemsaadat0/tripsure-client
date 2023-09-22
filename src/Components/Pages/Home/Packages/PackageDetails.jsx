@@ -9,6 +9,9 @@ import { BiTime } from 'react-icons/bi';
 import { DatePicker } from 'antd';
 import { FaUserGroup } from 'react-icons/fa6';
 import useAuth from '../../../../Hooks/useAuth';
+import GivingReview from '../../../Shared/GivingReview';
+import Rating from 'react-rating';
+import { BsStar, BsStarFill } from 'react-icons/bs';
 
 
 
@@ -83,12 +86,22 @@ const PackageDetails = () => {
       infants: infantsCount
     }
   }
-
+  // get review 
+  const [reviews, setReviews] = useState([])
+  useEffect(() => {
+    axios
+      .get(`${import.meta.env.VITE_BACKEND_API}/addReview`)
+      .then((res) => {
+        setReviews(res.data);
+      });
+  }, [id]);
+  const reviewForThis = reviews.filter(review => review.title === title)
+  console.log(reviewForThis)
   return (
     <Container>
-      <div className='my-4 md:my-20 px-4 md:px-10 leading-8'>
+      <div className='md:mt-20  leading-8'>
         {/* primary */}
-        <h2 className='text-4xl font-bold text-[#7bb9b9]'>{title}</h2>
+        <h2 className='text-4xl font-bold text-[#89cdff]'>{title}</h2>
         <div className='flex items-center my-3 gap-5 '>
           <p className='flex items-center gap-2 '><GoLocation className='text-xl'></GoLocation> {destination}</p>
           <p className='flex items-center gap-2 '><BiTime className='text-xl'></BiTime> Duration : {duration}</p>
@@ -119,14 +132,14 @@ const PackageDetails = () => {
               </div>
             </div>
 
-             {/* Conditions */}
-          <div>
-            <p className='font-bold'>Conditions:</p>
-            {conditions && conditions.map((condition, index) => (
-              <li key={index}>{condition}</li>
-            ))}
-          </div>
-   
+            {/* Conditions */}
+            <div>
+              <p className='font-bold'>Conditions:</p>
+              {conditions && conditions.map((condition, index) => (
+                <li key={index}>{condition}</li>
+              ))}
+            </div>
+
           </div>
 
           <div className=' p-4'>
@@ -358,6 +371,33 @@ const PackageDetails = () => {
           </div>
         </div>
         <hr />
+      </div>
+      {/* show review */}
+      <div className='flex flex-col md:flex-row justify-between gap-8'>
+      <GivingReview title={title}></GivingReview>
+        <div className=' p-4'>
+          {
+            reviewForThis.map((reviw, index) => <div key={index} className='border-2 p-4 mb-6'>
+              <div className='flex gap-3 mb-4'>
+                <img className='w-12 h-12 rounded-full border-2 border-[#19a0c9] p-[2px]' src={`${reviw.userPhoto}`} alt="" />
+                <div>
+                  <p className='text-lg font-semibold'>{reviw.userName}</p>
+                  <p>{reviw.userEmail}</p>
+                </div>
+              </div>
+              <Rating
+                emptySymbol={<BsStar size={30} color="red" />}
+                fullSymbol={<BsStarFill size={30} color="red" />}
+                fractions={2}
+                style={{ maxWidth: 200 }}
+                value={reviw.rating}
+                initialRating={reviw.rating}
+              />
+              <p>{reviw.textareaValue}</p>
+            </div>)
+          }
+        </div>
+      
       </div>
     </Container>
   );

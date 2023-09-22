@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { TbFidgetSpinner } from "react-icons/tb"
 import moment from 'moment';
 import axios from 'axios';
+import Swal from 'sweetalert2'
 const Addflights = () => {
     const [loading, setLoading] = useState(false)
 
@@ -10,6 +11,7 @@ const Addflights = () => {
 
 
     const onSubmit = (data) => {
+        setLoading(true)
         console.log(data);
         const { airline, arrival_airport, arrival_code, arrival_country, arrival_time, business_price, departure_airport, departure_code, departure_country, departure_time, economy_price, flight_number, frist_class_price, route } = data
         // get total time
@@ -45,15 +47,21 @@ const Addflights = () => {
             }
         }
         axios.post(`${import.meta.env.VITE_BACKEND_API}/flights`, flighs)
-       .then(res => {
-        console.log(res)
-       })
+            .then(res => {
+                console.log(res)
+                Swal.fire(
+                    'Good job!',
+                    'flight added successfull!',
+                    'success'
+                )
+                setLoading(false)
+            })
         console.log(flighs)
     };
 
     return (
         <div>
-            <div className='bg-[#F3F4F6] min-h-[calc(100vh-100px)] w-full flex justify-center items-center'>
+            <div className='bg-[#F3F4F6] py-10 min-h-[calc(100vh-100px)] w-full flex justify-center items-center'>
                 <form onSubmit={handleSubmit(onSubmit)} className='max-w-xl w-full  bg-white p-2 md:p-6 lg:p-10'>
                     <div className="w-full mb-3 md:mb-4">
                         <label htmlFor="title" className="block mb-1 text-xs font-medium text-gray-600">
@@ -63,7 +71,7 @@ const Addflights = () => {
                             className="w-full  px-1 sm:px-2 md:px-3 py-1 bg-[#F3F4F6] text-gray-800 border-2  focus:outline-cyan-600  rounded-md "
                             type="text"
                             placeholder="Route"
-                            {...register("route")}
+                            {...register("route", { required: true })}
                         />
                     </div>
 
@@ -76,7 +84,7 @@ const Addflights = () => {
                                 className="w-full max-w-sm px-1 sm:px-2 md:px-3 py-1 bg-[#F3F4F6] text-gray-800 border-2  focus:outline-cyan-600  rounded-md "
                                 type="number"
                                 placeholder="Flight Number"
-                                {...register("flight_number")}
+                                {...register("flight_number", { required: true })}
                             />
                         </div>
                         <div className="w-full">
@@ -87,7 +95,7 @@ const Addflights = () => {
                                 className="w-full max-w-sm px-1 sm:px-2 md:px-3 py-1 bg-[#F3F4F6] text-gray-800 border-2  focus:outline-cyan-600  rounded-md "
                                 type="text"
                                 placeholder="Airline"
-                                {...register("airline")}
+                                {...register("airline", { required: true })}
                             />
                         </div>
                     </div>
@@ -100,7 +108,7 @@ const Addflights = () => {
                             className="w-full  px-1 sm:px-2 md:px-3 py-1 bg-[#F3F4F6] text-gray-800 border-2  focus:outline-cyan-600  rounded-md "
                             type="text"
                             placeholder="Departure Airport Name"
-                            {...register("departure_airport")}
+                            {...register("departure_airport", { required: true })}
                         />
                     </div>
                     <div className='flex  gap-2 md:gap-4 flex-row mb-3 md:mb-4 '>
@@ -112,7 +120,7 @@ const Addflights = () => {
                                 className="w-full  px-1 sm:px-2 md:px-3 py-1 bg-[#F3F4F6] text-gray-800 border-2  focus:outline-cyan-600  rounded-md "
                                 type="text"
                                 placeholder="Code"
-                                {...register("departure_code")}
+                                {...register("departure_code", { required: true })}
                             />
                         </div>
                         <div className="w-full">
@@ -123,7 +131,7 @@ const Addflights = () => {
                                 className="w-full  px-1 sm:px-2 md:px-3 py-1 bg-[#F3F4F6] text-gray-800 border-2  focus:outline-cyan-600  rounded-md "
                                 type="text"
                                 placeholder="Country"
-                                {...register("departure_country")}
+                                {...register("departure_country", { required: true })}
                             />
                         </div>
 
@@ -136,7 +144,7 @@ const Addflights = () => {
                             className="w-full  px-1 sm:px-2 md:px-3 py-1 bg-[#F3F4F6] text-gray-800 border-2  focus:outline-cyan-600  rounded-md "
                             type="datetime-local"
                             placeholder="Departure Time"
-                            {...register("departure_time")}
+                            {...register("departure_time", { required: true })}
                         />
                     </div>
                     <h2 className='text-lg text-gray-600 mb-2 font-semibold text-center'>Arrival Airport</h2>
@@ -148,7 +156,7 @@ const Addflights = () => {
                             className="w-full  px-1 sm:px-2 md:px-3 py-1 bg-[#F3F4F6] text-gray-800 border-2  focus:outline-cyan-600  rounded-md "
                             type="text"
                             placeholder="Arrival Airport Name"
-                            {...register("arrival_airport")}
+                            {...register("arrival_airport", { required: true })}
                         />
                     </div>
                     <div className='flex  gap-2 md:gap-4 flex-row mb-3 md:mb-4 '>
@@ -160,7 +168,7 @@ const Addflights = () => {
                                 className="w-full  px-1 sm:px-2 md:px-3 py-1 bg-[#F3F4F6] text-gray-800 border-2  focus:outline-cyan-600  rounded-md "
                                 type="text"
                                 placeholder="Code"
-                                {...register("arrival_code")}
+                                {...register("arrival_code", { required: true })}
                             />
                         </div>
                         <div className="w-full">
@@ -171,7 +179,7 @@ const Addflights = () => {
                                 className="w-full  px-1 sm:px-2 md:px-3 py-1 bg-[#F3F4F6] text-gray-800 border-2  focus:outline-cyan-600  rounded-md "
                                 type="text"
                                 placeholder="Country"
-                                {...register("arrival_country")}
+                                {...register("arrival_country", { required: true })}
                             />
                         </div>
 
@@ -184,7 +192,7 @@ const Addflights = () => {
                             className="w-full  px-1 sm:px-2 md:px-3 py-1 bg-[#F3F4F6] text-gray-800 border-2  focus:outline-cyan-600  rounded-md "
                             type="datetime-local"
                             placeholder="Arrival Time"
-                            {...register("arrival_time")}
+                            {...register("arrival_time", { required: true })}
                         />
                     </div>
                     <h2 className='text-lg text-gray-600 mb-2 font-semibold text-center'>Price</h2>
@@ -197,7 +205,7 @@ const Addflights = () => {
                                 className="w-full px-1 sm:px-2 md:px-3 py-1 bg-[#F3F4F6] text-gray-800 border-2  focus:outline-cyan-600  rounded-md "
                                 type="number"
                                 placeholder="Economy Price"
-                                {...register("economy_price")}
+                                {...register("economy_price", { required: true })}
                             />
                         </div>
                         <div className="w-full">
@@ -208,7 +216,7 @@ const Addflights = () => {
                                 className="w-full px-1 sm:px-2 md:px-3 py-1 bg-[#F3F4F6] text-gray-800 border-2  focus:outline-cyan-600  rounded-md "
                                 type="number"
                                 placeholder="Business Price"
-                                {...register("business_price")}
+                                {...register("business_price", { required: true })}
                             />
                         </div>
                     </div>
@@ -220,7 +228,7 @@ const Addflights = () => {
                             className="w-full px-1 sm:px-2 md:px-3 py-1 bg-[#F3F4F6] text-gray-800 border-2  focus:outline-cyan-600  rounded-md "
                             type="number"
                             placeholder="Frist Class Price"
-                            {...register("frist_class_price")}
+                            {...register("frist_class_price", { required: true })}
                         />
                     </div>
                     <button

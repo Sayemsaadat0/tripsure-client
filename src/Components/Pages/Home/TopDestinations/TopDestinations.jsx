@@ -10,6 +10,7 @@ import { GoStarFill } from "react-icons/go";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import LazyLoad from "react-lazy-load";
 import SocialMediaShare from "../../../Shared/SocialMediaShare/SocialMediaShare";
+import ReactLeaflet from "../../../reactLeaflet/ReactLeaflet";
 
 const TopDestinations = () => {
   const [TopDestinations, setTopDestinations] = useState([]);
