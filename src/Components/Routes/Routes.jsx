@@ -181,10 +181,10 @@ const router = createBrowserRouter([
         element: <SearchHotel />,
       },
       {
-        path: "searchCardDetails/:id",
+        path: "search/:id",
         element: <SearchDetails />,
         loader: ({ params }) =>
-          fetch(`${import.meta.env.VITE_BACKEND_API}/searchResult/${params.id}`),
+          fetch(`${import.meta.env.VITE_BACKEND_API}/search/${params.id}`),
       },
       {
         path: "contactDetails",

@@ -1,136 +1,79 @@
 import React, { useState } from "react";
 import Container from "../../../LayOut/Container";
-
-import { GoShare, GoLocation } from "react-icons/go";
-import { FaStar } from "react-icons/fa";
-import { BiDockTop } from "react-icons/bi";
-import { AiOutlineArrowRight } from "react-icons/ai";
-import PlaceDetails from "./PlaceDetails";
 import { useLoaderData } from "react-router-dom";
+import { Carousel } from "antd";
+import LazyLoad from "react-lazy-load";
 
 const SearchDetails = () => {
-  const [isOpen, setIsOpen] = useState(false);
 
-  const searchDetailsData = useLoaderData();
-  console.log(searchDetailsData);
+
+
+
+  const searchDetailsData = useLoaderData()
+
   const {
-    address,
-    picture,
     title,
-    reviews,
-    ratings,
-    specialties,
+    address,
+    how_to_get_here,
+    country,
+    hotline_number,
+    website,
+    email,
+    pictures,
     description,
-  } = searchDetailsData;
-  console.log('searchDetailsData',searchDetailsData)
-  const ratingValues = Object.values(ratings);
-  const sumOfRatings = ratingValues.reduce((sum, rating) => sum + rating, 0);
-  const averageRating = (sumOfRatings / ratingValues.length).toFixed(1);
+    language,
+    room_type,
+    room_features,
+    unavailable_dates,
+    review
+
+  } = searchDetailsData
+
+
 
   return (
-    <div className="pt-16">
+    <div className="pt-16 min-h-screen">
       <Container>
-        <div className="mt-10 mb-14">
-          <h2 className="text-xl md:text-3xl mb-2 font-semibold">
-            {searchDetailsData && title}
-          </h2>
-          <div className="flex items-center justify-between gap-4 mb-4">
-            <div className="flex items-center justify-between gap-4">
-              <p className="flex items-center text-black gap-1">
-                <FaStar></FaStar>
-                {searchDetailsData && averageRating}
-                <span className="underline cursor-pointer ml-2">
-                  {" "}
-                  {searchDetailsData && reviews?.length} reviews
-                </span>
-              </p>
-              <p>Superhost</p>
-              <p className="underline cursor-pointer text-black ">
-                {searchDetailsData && address?.city},{" "}
-                {searchDetailsData && address?.state},{" "}
-                {searchDetailsData && address?.country}
-              </p>
-            </div>
-            <div className="flex items-center">
-              <p className="flex items-center text-black gap-2 px-2 py-1 hover:bg-gray-100 rounded-md">
-                <GoShare></GoShare>
-                <span className="underline cursor-pointer">Share</span>
-              </p>
-            </div>
-          </div>
-          <div className=" mb-8">
-            <div className="flex">
-              <img
-                className="rounded-lg md:w-[50%] "
-                src={searchDetailsData && picture}
-                alt="hotel"
-              />
-            </div>
-          </div>
-          <div className="flex gap-5">
-            <div className="md:w-2/3  ">
-              {/* todo: json a ai data ta add korte hobe */}
-              <div className="flex justify-between items-center ">
-                <div>
-                  <h2 className="text-2xl font-semibold">
-                    Treehouse hosted by Veluvana
-                  </h2>
-                  <p>
-                    <span>2 guests,</span> <span>1 bedroom,</span>{" "}
-                    <span>1 bed,</span> <span>5 baths,</span>
-                  </p>
-                </div>
-              </div>
-              <div className="divider"></div>
-              <div className="space-y-4">
-                <div className="flex gap-4">
-                  <div>
-                    <BiDockTop size={25}></BiDockTop>
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-medium">
-                      Veluvana is a Superhost
-                    </h4>
-                    <p className="text-sm">{specialties[0]}</p>
-                  </div>
-                </div>
+        <div className="md:flex justify-between">
+          <div className="md:w-2/3 ">
 
-                <div className="flex gap-4">
-                  <div>
-                    <GoLocation size={25}></GoLocation>
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-medium">Great location</h4>
-                    <p className="text-sm">{specialties[1]}</p>
-                  </div>
-                </div>
+            <Carousel autoplay>
+              {
+                pictures.map((picture, index) => (
+                  <LazyLoad>
+                    <img className='rounded-lg object-cover' key={index} src={picture} alt="" />
+                  </LazyLoad>
+                ))
+              }
+            </Carousel>
+            <h3 className="text-3xl tracking-widest font-semibold">{title}</h3>
 
-                <div className="flex gap-4">
-                  <div>
-                    <BiDockTop size={25}></BiDockTop>
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-medium">{specialties[2]}</h4>
-                  </div>
-                </div>
+            <div>
+              <p>{address}</p>
+              <p>{country}</p>
+              <p>Hotline : {hotline_number}</p>
+              <p>web : {website}</p>
+              <p>email  : {email}</p>
+            </div>
+
+            <div>
+              <h3>How to Get Here </h3>
+           
+            </div>
+
+
+          </div>
+          {/* rating */}
+          <div className="md:w-1/3  m-4">
+            <div className="flex items-center gap-4">
+              <img className="w-20 h-20 rounded-full" src="https://i.pinimg.com/564x/e5/bc/03/e5bc0301b31a319570ac6f913ccbe67e.jpg" alt="" />
+              <div>
+                <p>{review.userName}</p>
+                <p>{review.userAddress}</p>
+                <p>{review.rating}</p>
               </div>
-              <div className="divider"></div>
-              <p>{searchDetailsData && description.slice(0, 80)}...</p>
-              <button
-                onClick={() => setIsOpen(true)}
-                className="btn-link  group w-fit flex gap-1 items-center    text-blue-500">
-                <span>Read More </span>
-                <AiOutlineArrowRight className="duration-300 mt-2 group-hover:ml-1"></AiOutlineArrowRight>
-              </button>
-              <PlaceDetails
-                isOpen={isOpen}
-                setIsOpen={setIsOpen}
-              ></PlaceDetails>
-              <div className="divider"></div>
             </div>
-            <div className="md:w-1/3">
-              {/* add a reserve box habibulla vai */}
-            </div>
+            <p>{review.review}</p>
           </div>
         </div>
       </Container>
@@ -141,5 +84,3 @@ const SearchDetails = () => {
 export default SearchDetails;
 
 
-// todo show all the data dynamically here 
-// mobile responsive
