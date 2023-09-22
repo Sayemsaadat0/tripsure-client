@@ -21,7 +21,8 @@ const AddReview = () => {
     const review = {
       rating,
       textareaValue,
-      user,
+      userName: user.displayName,
+      title: 'tripsure'
     };
 
    
@@ -36,7 +37,7 @@ const AddReview = () => {
     }
 
     fetch(`${import.meta.env.VITE_BACKEND_API}/addReview/${user.email}`, {
-      method: "PUT",
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
@@ -86,7 +87,7 @@ const AddReview = () => {
               fractions={2}
               style={{ maxWidth: 200 }}
               value={rating}
-              initialRating={5}
+              initialRating={rating}
               onChange={setRating}
               isRequired
             />

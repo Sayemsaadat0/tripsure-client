@@ -2,7 +2,7 @@ import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
 // import LoadingButton from "../Button/LoadingButton";
 
-const ShareModal = ({ isOpen, setIsOpen, children, viewBookingDetails, title }) => {
+const ShareModal = ({ isOpen, setIsOpen, children, title }) => {
   const closeModal = () => {
     setIsOpen(false);
   };
@@ -38,14 +38,8 @@ const ShareModal = ({ isOpen, setIsOpen, children, viewBookingDetails, title }) 
                     as="h3"
                     className="text-lg font-medium leading-6 text-gray-900"
                   >
-                    {viewBookingDetails?.card?.card?.title}
-                    
+                    {title}
                   </Dialog.Title>
-                    {viewBookingDetails?.card?.card?.description?.slice(0,200)}
-                    
-                    <h4 className="mt-4">{viewBookingDetails?.selectedDate}</h4>
-                    <h4>{viewBookingDetails?.date}</h4>
-                    <h1>{viewBookingDetails?.price}</h1>
                   {children}
                 </Dialog.Panel>
               </Transition.Child>

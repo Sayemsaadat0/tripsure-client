@@ -85,30 +85,29 @@ const ManageUser = () => {
     });
   };
 
-  const makeAdmin = (user) => {
-    // console.log(user)
-        fetch(`${import.meta.env.VITE_BACKEND_API}/users/updateRole/${user._id}`, {
-          method: 'PUT',
-          headers: {
-            "content-type": 'application/json'
-          },
-          body: JSON.stringify({ role: 'admin' })
-        })
-          .then(res => res.json())
-          .then(data => {
-            console.log(data)
-            if (data?.modifiedCount > 0) {
-              refetch();
-              Swal.fire({
-             
-                icon: 'success',
-                title:' WOW is an Admin Now',
-                showConfirmButton: false,
-                timer: 1500
-              })
-            }
+  const updateRole = ({ user, role }) => {
+    // console.log(user, role)
+    fetch(`${import.meta.env.VITE_BACKEND_API}/users/updateRole/${user._id}`, {
+      method: 'PUT',
+      headers: {
+        "content-type": 'application/json'
+      },
+      body: JSON.stringify({ role: role })
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+        if (data?.modifiedCount > 0) {
+          refetch();
+          Swal.fire({
+            icon: 'success',
+            title: ' WOW update user role successfull',
+            showConfirmButton: false,
+            timer: 1500
           })
-      }
+        }
+      })
+  }
 
   const handleSearch = async () => {
     try {
@@ -136,7 +135,7 @@ const ManageUser = () => {
 
       <div className="overflow-x-auto">
         <div className="flex justify-between mr-10">
-      
+
           <select
             className="select shadow-lg w-40 focus:outline-none"
             value={operator}
@@ -186,7 +185,7 @@ const ManageUser = () => {
                     "Admin"
                   ) : (
                     <button
-                      onClick={() => makeAdmin(user)}
+                      onClick={() => updateRole({ user, role: 'admin' })}
                       disabled={user.role === "operator"}
                       className="btn btn-ghost bg-orange-600  text-white"
                     >
@@ -199,7 +198,7 @@ const ManageUser = () => {
                     "Guide"
                   ) : (
                     <button
-                      onClick={() => handleMakeOperator(user)}
+                      onClick={() => updateRole({ user, role: 'guide' })}
                       disabled={user.role === "admin"}
                       className="btn btn-ghost bg-teal-800  text-white"
                     >

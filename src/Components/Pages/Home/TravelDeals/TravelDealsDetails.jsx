@@ -12,6 +12,10 @@ import { DatePicker } from 'antd';
 import { FaUserGroup } from 'react-icons/fa6';
 import LazyLoad from 'react-lazy-load';
 import { useAddToFavoriteMutation, useGetFavoriteItemsQuery } from '../../../../Features/favorite/favoriteApi';
+import Rating from 'react-rating';
+import { BsStar, BsStarFill } from 'react-icons/bs';
+import Swal from 'sweetalert2';
+import GivingReview from '../../../Shared/GivingReview';
 
 const TravelDealsDetails = () => {
   const [modalForCountPeople, setModalForCountPeople] = useState(false);
@@ -37,7 +41,7 @@ const TravelDealsDetails = () => {
   const handlePeopleForReserve = () => {
     setModalForCountPeople(!modalForCountPeople);
   };
- 
+
 
   const isDateUnavailable = (date) => {
     return unavailableDates.includes(date.format("YYYY-MM-DD"));
@@ -99,22 +103,33 @@ const TravelDealsDetails = () => {
     },
   };
 
-    // add to favorite 
-    const [setFavorite, { isLoading, isError, data }] = useAddToFavoriteMutation()
-    const { data: favoriteItems, refetch } = useGetFavoriteItemsQuery()
-    const handleAddToFavorite = () => {
-      if (user) {
-        const { displayName, email } = user
-        const favoriteItem = {
-          dealExpires, destination, discountPercentage,id:_id, duration, newPrice, picture, price, savings, title, totalPeople, displayName, email
-        }
-        console.log('favorite item', favoriteItem)
-        setFavorite(favoriteItem)
-        refetch()
-      }
-    }
-// console.log(data)
+  // add to favorite 
+  const [setFavorite, { isLoading, isError, data }] = useAddToFavoriteMutation()
+  const { data: favoriteItems, refetch } = useGetFavoriteItemsQuery()
 
+  const handleAddToFavorite = () => {
+    if (user) {
+      const { displayName, email } = user
+      const favoriteItem = {
+        dealExpires, destination, discountPercentage, id: _id, duration, newPrice, picture, price, savings, title, totalPeople, displayName, email
+      }
+      console.log('favorite item', favoriteItem)
+      setFavorite(favoriteItem)
+      refetch()
+    }
+  }
+  // console.log(data)
+  // get review 
+  const [reviews, setReviews] = useState([])
+  useEffect(() => {
+    axios
+      .get(`${import.meta.env.VITE_BACKEND_API}/addReview`)
+      .then((res) => {
+        setReviews(res.data);
+      });
+  }, [id]);
+  const reviewForThis = reviews.filter(review => review.title === title)
+  console.log(reviewForThis)
   return (
     <Container>
       <div className='my-16 md:my-16 px-2 md:px-4  leading-8'>
@@ -142,7 +157,7 @@ const TravelDealsDetails = () => {
                 Grab it Now, Save Big
               </h2>
               <h3 className="text-3xl font-bold text-[#79c7ff]">
-         
+
               </h3>
             </div>
 
@@ -314,8 +329,8 @@ const TravelDealsDetails = () => {
                     </p>
                     <p>(No additional taxes or booking fees)</p>
                   </div>
-                  <div className="flex gap-3 items-center justify-around"> 
-               
+                  <div className="flex gap-3 items-center justify-around">
+
                     <Link disabled={selectedDate == null}
                       to={user ? '/contactDetails' : '/login'}
                       state={{ orderDetails: orderDetails }}
@@ -412,6 +427,33 @@ const TravelDealsDetails = () => {
           </div>
         </div>
         <hr />
+      </div>
+      {/* show review */}
+      <div className='flex flex-col md:flex-row justify-between gap-8'>
+        <GivingReview title={title}></GivingReview>
+        <div className=' p-4'>
+          {
+            reviewForThis.map((reviw, index) => <div key={index} className=' p-4 mb-6'>
+              <div className='flex gap-3 mb-4'>
+                <img className='w-12 h-12 rounded-full border-2 border-[#19a0c9] p-[2px]' src={`${reviw.userPhoto}`} alt="" />
+                <div>
+                  <p className='text-lg font-semibold'>{reviw.userName}</p>
+                  <p>{reviw.userEmail}</p>
+                </div>
+              </div>
+              <Rating
+                emptySymbol={<BsStar size={30} color="red" />}
+                fullSymbol={<BsStarFill size={30} color="red" />}
+                fractions={2}
+                style={{ maxWidth: 200 }}
+                value={reviw.rating}
+                initialRating={reviw.rating}
+              />
+              <p>{reviw.textareaValue}</p>
+            </div>)
+          }
+        </div>
+
       </div>
     </Container>
   );

@@ -20,24 +20,9 @@ const Addresource = () => {
       name: "Add resturants",
     },
     {
-      picture: 'https://i.ibb.co/JQcnVzr/Restaurant-1.png',
-      route: 'addplaces',
-      name: "Add Places",
-    },
-    {
-      picture: 'https://i.ibb.co/t2p9ScG/couple-together-kayaking-river.jpg',
-      route: 'addthings',
-      name: "Add Things to do",
-    },
-    {
       picture: 'https://i.ibb.co/SxcP9T2/Restaurant-2.png',
       route: 'addhotels',
       name: "Add hotels",
-    },
-    {
-      picture: 'https://i.ibb.co/SxcP9T2/Restaurant-2.png',
-      route: 'addguide',
-      name: "Add Guide",
     },
 
     // todo add travelDeals page and form with backend data
@@ -49,8 +34,8 @@ const Addresource = () => {
         <h2 className="uppercase font-semibold text-xl text-center mb-10 h-full"></h2>
       </div>
       <div className="grid grid-cols-3 gap-8">
-        {resources.map((card) => (
-          <>
+        {resources.map((card, index) => (
+          <div key={index}>
             <div className="card card-compact w-78 hover:bg-base-100 duration-500 shadow-xl overflow-hidden">
               <Link to={`/dashboard/${card.route}`} className="link  no-underline hover:underline">
 
@@ -69,7 +54,7 @@ const Addresource = () => {
 
               </div>
             </div >
-          </>
+          </div>
         ))}
       </div>
     </div >

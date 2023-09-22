@@ -1,7 +1,9 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import { IoBagHandle, IoPieChart, IoPeople, IoCart } from 'react-icons/io5'
 
-const AdminHomeUserData = () => {
+const AdminHomeUserData = ({newUser, totalBooking}) => {
+
     return (
 		<div className="flex flex-col md:flex-row gap-4 mb-10">			
 			<BoxWrapper>
@@ -22,7 +24,7 @@ const AdminHomeUserData = () => {
 				<div className="pl-4">
 					<span className="text-sm text-gray-500 font-light">Total Users</span>
 					<div className="flex items-center">
-						<strong className="text-xl text-gray-700 font-semibold">12313</strong>
+						<strong className="text-xl text-gray-700 font-semibold">{newUser?.length}</strong>
 					</div>
 				</div>
 			</BoxWrapper>
@@ -33,7 +35,7 @@ const AdminHomeUserData = () => {
 				<div className="pl-4">
 					<span className="text-sm text-gray-500 font-light">Total Booking</span>
 					<div className="flex items-center">
-						<strong className="text-xl text-gray-700 font-semibold">16432</strong>
+						<strong className="text-xl text-gray-700 font-semibold">{totalBooking?.length}</strong>
 					</div>
 				</div>
 			</BoxWrapper>

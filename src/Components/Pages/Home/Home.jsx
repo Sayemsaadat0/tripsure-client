@@ -21,7 +21,7 @@ const Home = () => {
             </section>
 
             <section
-                className='py-32 bg-[url("https://i.ibb.co/MMd76r0/Untitled-design-8.png")]  w-full object-center mx-auto'>
+                className='py-20 bg-[url("https://i.ibb.co/MMd76r0/Untitled-design-8.png")]  w-full object-center mx-auto'>
                 <TravelDeals></TravelDeals>
                 <Packages></Packages>
             </section>
