@@ -1,28 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import Container from "../../../../../LayOut/Container";
 import { SlLocationPin } from "react-icons/sl";
 import { LuUsers } from "react-icons/lu";
 
-const FindRentalCars = () => {
+
+const FindRentalCars = ({setPickUpDate, setPickUpLocation, setDropOutDate, handleFindRentalCardSearch}) => {
+  
   return (
-    <div className="rentalCarBackground h-80 mb-8 sm:mb-0">
+    <div className="rentalCarBackground h-96 mb-8 sm:mb-0 md:relative">
       <Container>
-        <div className="bg-base-100 w-full h-auto px-8 pb-8">
-          <select
-            name=""
-            id=""
-            className="select focus:outline-none rounded-none mt-3"
-          >
-            <option value="same">Same drop off</option>
-            <option value="defferent">Defferent drop off</option>
-          </select>
+        <div className="clear-glass h-auto  px-8 pb-12 md:pb-8 md:absolute left-[10px] bottom-9 border-round">
           <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-[2px] sm:gap-2 mt-4 ">
             <div className="relative">
               <input
                 type="text"
                 name=""
+                onChange={(e)=>setPickUpLocation(e.target.value)}
                 placeholder="City or Airport"
-                className="input focus:outline-none  rounded-none border-neutral-500 w-full pl-9 pt-5 p-3 text-black font-semibold"
+                className="input focus:outline-none border-round rounded-none border-neutral-500 w-full pl-9 pt-5 p-3 text-black font-semibold"
               />
               <SlLocationPin className="absolute left-3 top-4" size={18} />
 
@@ -34,8 +29,9 @@ const FindRentalCars = () => {
               <input
                 type="datetime-local"
                 name=""
-                placeholder="pick up"
-                className="input focus:outline-none border-neutral-500 rounded-none border w-full pt-2 text-black font-semibold"
+                onChange={(e)=> setPickUpDate(e.target.value)}
+                placeholder="pick  up"
+                className="input focus:outline-none border-neutral-500 rounded-none border w-full pt-2 text-black font-semibold border-round"
               />
               <span className="absolute inline-block top-0 left-4 text-xs">
                 pick up
@@ -46,7 +42,8 @@ const FindRentalCars = () => {
                 type="datetime-local"
                 name=""
                 placeholder="pick up"
-                className="input focus:outline-none border-neutral-500 rounded-none border w-full pt-2 text-black font-semibold"
+                onChange={(e)=>setDropOutDate(e.target.value)}
+                className="input focus:outline-none border-neutral-500 rounded-none border w-full pt-2 text-black font-semibold border-round"
               />
               <span className="absolute inline-block top-0 left-4 text-xs">
                 drop off
@@ -57,7 +54,7 @@ const FindRentalCars = () => {
               <select
                 name=""
                 id=""
-                className="select focus:outline-none rounded-none text-black font-semibold w-full pl-9 pt-2 border-neutral-500"
+                className="select focus:outline-none rounded-none text-black font-semibold w-full pl-9 pt-2 border-neutral-500 border-round"
               >
                 <option defaultValue="Select" value="select">
                   Select
@@ -74,27 +71,12 @@ const FindRentalCars = () => {
                 Passengers (optional)
               </span>
             </div>
-            <button className="btn btn-neutral sm:rounded-2xl rounded-md btn-block">
+            <button onClick={handleFindRentalCardSearch} className="btn btn-neutral sm:rounded-2xl rounded-md btn-block">
               Find Rental cars
             </button>
           </div>
-        <div className="flex items-center gap-3 mt-5">
-          <span>Drive's age</span>
-          <select name="" id="" className=" select-sm select-bordered border-neutral-500 border">
-            <option value="30">30+</option>
-            <option value="29">29</option>
-            <option value="28">28</option>
-            <option value="27">27</option>
-            <option value="26">30</option>
-            <option value="25">25</option>
-            <option value="24">24</option>
-            <option value="23">23</option>
-            <option value="22">22</option>
-            <option value="21">21</option>
-            <option value="20">under 20</option>
-          </select>
         </div>
-        </div>
+      
       </Container>
     </div>
   );

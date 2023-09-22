@@ -1,0 +1,324 @@
+[
+    {
+        "type": "hospital",
+        "hospital_name": "Mumbai Central Hospital",
+        "country": "India",
+        "location": "456 Oak Avenue, Mumbai, India",
+        "position_in_country": 7,
+        "govt_or_private": "Private",
+        "ratings": 4.6,
+        "specialites" : "cancer",
+        "website": "https://www.mumbaihospital.in",
+        "contact_no": "+91-1234567890",
+        "open_hours": {
+          "Monday-Friday": "8:00 AM - 7:00 PM",
+          "Saturday": "9:00 AM - 5:00 PM",
+          "Sunday": "Closed"
+        },
+        "winning_prizes": [
+          {
+            "year": 2022,
+            "award": "Hospital of Excellence"
+          },
+          {
+            "year": 2021,
+            "award": "Patient-Centered Care Award"
+          }
+        ],
+        "details": "Mumbai Central Hospital is a leading private medical institution committed to delivering exceptional healthcare services to our patients and the community in India.",
+        "medical_departments": ["Cardiology", "Orthopedics", "Pediatrics", "Dermatology"],
+        "doctors": [
+          {
+            "name": "Dr. Priya Sharma",
+            "degree": "MD",
+            "medical_college": "Mumbai Medical College"
+          },
+          {
+            "name": "Dr. Rajesh Patel",
+            "degree": "MD, PhD",
+            "medical_college": "All India Institute of Medical Sciences (AIIMS)"
+          },
+          {
+            "name": "Dr. Nisha Gupta",
+            "degree": "DO",
+            "medical_college": "Kolkata Medical College"
+          }
+        ],
+        "pictures": [
+          "https://hhinternet.blob.core.windows.net/uploads/2023/05/nyc-health-hospitals-south-brooklyn-health.jpg",
+          "https://kffhealthnews.org/wp-content/uploads/sites/2/2022/08/StPatrickHospital_01-resized.jpg?w=1270",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS36uEojM9gP1J8sW-9iLBPcRZ_ZIwLvZWdCQ&usqp=CAU"
+        ]
+      },
+      {
+        "type": "hospital",
+        "hospital_name": "Dhaka General Hospital",
+        "country": "Bangladesh",
+        "location": "123 Elm Street, Dhaka, Bangladesh",
+        "position_in_country": 3,
+        "govt_or_private": "Private",
+        "ratings": 4.5,
+        "specialites" : "eyes",
+        "website": "https://www.dhakageneralhospital.com",
+        "contact_no": "+123-456-7890",
+        "open_hours": {
+          "Monday-Friday": "9:00 AM - 6:00 PM",
+          "Saturday": "10:00 AM - 4:00 PM",
+          "Sunday": "Closed"
+        },
+        "winning_prizes": [
+          {
+            "year": 2022,
+            "award": "Hospital of Excellence"
+          },
+          {
+            "year": 2021,
+            "award": "Patient-Centered Care Award"
+          }
+        ],
+        "details": "Dhaka General Hospital is a leading private medical institution committed to delivering exceptional healthcare services to our patients and the community.",
+        "medical_departments": ["Cardiology", "Orthopedics", "Pediatrics", "Dermatology"],
+        "doctors": [
+          {
+            "name": "Dr. Emily Johnson",
+            "degree": "MD",
+            "medical_college": "Dhaka Medical College"
+          },
+          {
+            "name": "Dr. Michael Davis",
+            "degree": "MD, PhD",
+            "medical_college": "Bangladesh Medical University"
+          },
+          {
+            "name": "Dr. Maria Ramirez",
+            "degree": "DO",
+            "medical_college": "Chittagong Medical College"
+          }
+        ],
+        "pictures": [
+          "https://storage.googleapis.com/jacksonh/1/JHS_Vendors_Location-Image2.jpg",
+          "https://media.bizj.us/view/img/877881/jackson-memorial-hospital.jpg",
+          "https://www.ctsnet.org/sites/default/files/images/Jackson%20Memorial%20Hospital.jpg"
+        ]
+      },
+      {
+        "type": "hospital",
+        "hospital_name": "Singapore Medical Center",
+        "country": "Singapore",
+        "location": "456 Orchard Road, Singapore",
+        "position_in_country": 1,
+        "govt_or_private": "Private",
+        "ratings": 4.9,
+        "specialites" : "heart", 
+        "website": "https://www.singaporemedicalcenter.com",
+        "contact_no": "+65-9876-5432",
+        "open_hours": {
+          "Monday-Friday": "7:00 AM - 8:00 PM",
+          "Saturday": "8:00 AM - 6:00 PM",
+          "Sunday": "9:00 AM - 5:00 PM"
+        },
+        "winning_prizes": [
+          {
+            "year": 2023,
+            "award": "Hospital of Excellence"
+          },
+          {
+            "year": 2022,
+            "award": "Patient-Centered Care Award"
+          }
+        ],
+        "details": "Singapore Medical Center is a leading private medical institution committed to delivering exceptional healthcare services to our patients and the community.",
+        "medical_departments": ["Cardiology", "Orthopedics", "Pediatrics", "Dermatology", "Oncology", "Neurology"],
+        "doctors": [
+          {
+            "name": "Dr. Sophia Tan",
+            "degree": "MD",
+            "medical_college": "National University of Singapore"
+          },
+          {
+            "name": "Dr. James Lim",
+            "degree": "MD, PhD",
+            "medical_college": "Singapore Medical School"
+          },
+          {
+            "name": "Dr. Emily Chua",
+            "degree": "DO",
+            "medical_college": "Nanyang Medical College"
+          }
+        ],
+        "pictures": [
+          "https://i.ibb.co/Gx7QTQj/7.png",
+          "https://i.ibb.co/cTVh7F3/8.png"
+        ]
+      },
+      {
+        "type": "hospital",
+        "hospital_name": "New York General Hospital",
+        "country": "United States",
+        "location": "789 Park Avenue, New York, USA",
+        "position_in_country": 5,
+        "govt_or_private": "Private",
+        "ratings": 4.7,
+        "specialties": "Neurology",
+        "website": "https://www.newyorkgeneralhospital.com",
+        "contact_no": "+1-123-456-7890",
+        "open_hours": {
+          "Monday-Friday": "8:00 AM - 7:00 PM",
+          "Saturday": "9:00 AM - 5:00 PM",
+          "Sunday": "Closed"
+        },
+        "winning_prizes": [
+          {
+            "year": 2022,
+            "award": "Hospital of Excellence"
+          },
+          {
+            "year": 2021,
+            "award": "Patient-Centered Care Award"
+          }
+        ],
+        "details": "New York General Hospital is a leading private medical institution committed to delivering exceptional healthcare services to our patients and the community in the United States.",
+        "medical_departments": [
+           "Cardiology",
+           "Neurology",
+            "Ophthalmology"
+        
+        ],
+        "doctors": [
+          {
+            "name": "Dr. Jennifer Smith",
+            "degree": "MD",
+            "medical_college": "Harvard Medical School"
+          },
+          {
+            "name": "Dr. David Johnson",
+            "degree": "MD, PhD",
+            "medical_college": "Columbia University College of Physicians and Surgeons"
+          },
+          {
+            "name": "Dr. Lisa Chen",
+            "degree": "DO",
+            "medical_college": "New York College of Osteopathic Medicine"
+          }
+        ],
+        "pictures": [
+          "https://i.ibb.co/5K4PKZg/6.png",
+          "https://i.ibb.co/XD6PDpf/5.png"
+        ]
+      },
+      {
+        "type": "hospital",
+        "hospital_name": "Paris Medical Center",
+        "country": "France",
+        "location": "567 Rue de la Santé, Paris, France",
+        "position_in_country": 2,
+        "govt_or_private": "Private",
+        "ratings": 4.8,
+        "specialties": "Cardiology",
+        "website": "https://www.parismedicalcenter.fr",
+        "contact_no": "+33-9876-5432",
+        "open_hours": {
+          "Monday-Friday": "7:00 AM - 8:00 PM",
+          "Saturday": "8:00 AM - 6:00 PM",
+          "Sunday": "9:00 AM - 5:00 PM"
+        },
+        "winning_prizes": [
+          {
+            "year": 2023,
+            "award": "Hospital of Excellence"
+          },
+          {
+            "year": 2022,
+            "award": "Patient-Centered Care Award"
+          }
+        ],
+        "details": "Paris Medical Center is a leading private medical institution committed to delivering exceptional healthcare services to our patients and the community in France.",
+        "medical_departments": [
+          "Cardiology",
+         "Orthopedics",
+        "Gastroenterology"
+           
+        ],
+        "doctors": [
+          {
+            "name": "Dr. Marie Leclerc",
+            "degree": "MD",
+            "medical_college": "University of Paris Medical School"
+          },
+          {
+            "name": "Dr. Pierre Dubois",
+            "degree": "MD, PhD",
+            "medical_college": "Paris Medical School"
+          },
+          {
+            "name": "Dr. Sophie Martin",
+            "degree": "DO",
+            "medical_college": "Montpellier Medical College"
+          }
+        ],
+        "pictures": [
+          "https://i.ibb.co/B33FYwf/4.png",
+          "https://i.ibb.co/h933jtx/3.png"
+        ]
+      },
+      {
+        "type": "hospital",
+        "hospital_name": "Sydney Health Clinic",
+        "country": "Australia",
+        "location": "789 King Street, Sydney, Australia",
+        "position_in_country": 4,
+        "govt_or_private": "Private",
+        "ratings": 4.5,
+        "specialties": "Dermatology",
+        "website": "https://www.sydneyhealthclinic.com.au",
+        "contact_no": "+61-9876-1234",
+        "open_hours": {
+          "Monday-Friday": "9:00 AM - 6:00 PM",
+          "Saturday": "10:00 AM - 4:00 PM",
+          "Sunday": "Closed"
+        },
+        "winning_prizes": [
+          {
+            "year": 2022,
+            "award": "Hospital of Excellence"
+          },
+          {
+            "year": 2021,
+            "award": "Patient-Centered Care Award"
+          }
+        ],
+        "details": "Sydney Health Clinic is a leading private medical institution committed to delivering exceptional healthcare services to our patients and the community in Australia.",
+        "medical_departments": [
+          "Dermatology",
+          "Ophthalmology",
+          "Pediatrics",
+          "Orthopedics"
+        ],
+        "doctors": [
+          {
+            "name": "Dr. Sarah Adams",
+            "degree": "MD",
+            "medical_college": "University of Sydney Medical School"
+          },
+          {
+            "name": "Dr. Mark Wilson",
+            "degree": "MD, PhD",
+            "medical_college": "Melbourne Medical College"
+          },
+          {
+            "name": "Dr. Emily White",
+            "degree": "DO",
+            "medical_college": "Queensland Medical School"
+          }
+        ],
+        "pictures": [
+          "https://i.ibb.co/zh8r117/2.png",
+          "https://i.ibb.co/2tQ8YfP/1.png"
+        ]
+      }
+]
+
+
+
+
+

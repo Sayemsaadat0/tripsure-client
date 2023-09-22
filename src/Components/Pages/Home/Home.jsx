@@ -1,38 +1,51 @@
-import React from 'react';
-import Container from '../../../LayOut/Container';
 import SearchSection from './SearchSection/SearchSection';
 import Banner from './Banner/Banner';
 import TopThingsToDo from './TopThingsToDo/TopThingsToDo';
 import TopDestinations from './TopDestinations/TopDestinations';
-import AboutUs from './AboutUs/AboutUs';
 import Feedback from './Feedback/Feedback';
 import FamilyGuide from './FamilyGuide/FamilyGuide';
+import WhyUs from './WhyUs/WhyUs';
+import TravelDeals from './TravelDeals/TravelDeals';
+import Packages from './Packages/Packages';
+import Medical from './Medical/Medical';
 
 const Home = () => {
     return (
-        <Container>
+        <div>
             <section className='mb-14'>
-                <SearchSection></SearchSection>
             </section>
+
             <section>
                 <Banner></Banner>
             </section>
-            <section>
-                <TopThingsToDo></TopThingsToDo>
+
+            <section
+                className='py-20 bg-[url("https://i.ibb.co/MMd76r0/Untitled-design-8.png")]  w-full object-center mx-auto'>
+                <TravelDeals></TravelDeals>
+                <Packages></Packages>
             </section>
+
             <section>
                 <FamilyGuide></FamilyGuide>
             </section>
-            <section>
+
+            <section className='md:my-20'>
                 <TopDestinations></TopDestinations>
+                <TopThingsToDo></TopThingsToDo>
             </section>
-            <section >
-                <AboutUs></AboutUs>
+
+            <section className='my-24'>
+                <Medical></Medical>
             </section>
-            <section>
+
+        
+                <WhyUs></WhyUs>
+
+            <section className='py-10'>
                 <Feedback></Feedback>
             </section>
-        </Container>
+
+        </div>
     );
 };
 

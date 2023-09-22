@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
-import { FaGoogle, FaSpinner } from 'react-icons/fa';
 import useAuth from '../../Hooks/useAuth';
+import { FcGoogle} from 'react-icons/fc';
+import { ImSpinner9 } from 'react-icons/im';
 import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
+import { saveUser } from '../../apiCall/users';
 
 const GoogleLogin = () => {
+    const navigate = useNavigate()
     const { googleLogin } = useAuth()
     const [loading, setLoading] = useState(false)
     const handleGoogleLogin = () => {
@@ -17,7 +21,10 @@ const GoogleLogin = () => {
                     icon: 'success',
                     confirmButtonText: 'Cool'
                 })
+                saveUser(result.user)
                 setLoading(false)
+                navigate('/', { replace: true })
+
             })
             .catch(error => {
                 Swal.fire({
@@ -34,11 +41,17 @@ const GoogleLogin = () => {
     return (
         <>
             {
-                loading ? <button disabled={true} className=" relative w-full flex justify-center items-center gap-2 py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gray-400  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 duration-500">
-                    <FaSpinner className='animate-spin' size={25}></FaSpinner>
+                loading ? <button disabled={true}
+                    className="relative 
+                    w-full  flex justify-center py-3 rounded-md   border border-black hover:bg-black hover:text-white duration-500 font-bold">
+                    <ImSpinner9
+                        className='animate-spin' size={25}>
+                    </ImSpinner9>
                 </button>
-                    : <button onClick={handleGoogleLogin} className=" relative w-full flex justify-center items-center gap-2 py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 duration-500">
-                        <FaGoogle size={25}></FaGoogle>
+                    : <button onClick={handleGoogleLogin} className=" relative 
+                    w-full  flex justify-center py-3 rounded-md   border border-black hover:bg-[#1e2222] gap-4 hover:text-white duration-500 font-bold">
+                        <FcGoogle size={25}></FcGoogle> 
+                        Sign in with Google 
                     </button>
             }
         </>
@@ -46,3 +59,7 @@ const GoogleLogin = () => {
 };
 
 export default GoogleLogin;
+
+
+/* 
+ */

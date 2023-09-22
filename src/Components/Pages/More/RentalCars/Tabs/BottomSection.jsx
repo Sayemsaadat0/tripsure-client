@@ -6,7 +6,7 @@ import { Rating } from "@smastrom/react-rating";
 
 const BottomSection = () => {
   return (
-    <div className="bg-base-200 py-16">
+    <div className=" py-16">
       <Container>
         <div className="grid sm:grid-cols-3 gap-6 mx-4 sm:mx-0">
           <div className="text-black grid justify-items-center text-center">

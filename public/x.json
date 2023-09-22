@@ -1,7 +1,7 @@
 [
     {
-      "categoryName": "Top Overalls",
-      "picture": "https://images.unsplash.com/photo-1473116763249-2faaef81ccda?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=896&q=80",
+      "categoryName": "Beach",
+      "picture": "https://w0.peakpx.com/wallpaper/644/561/HD-wallpaper-dream-beach-beach-chairs-nature-beaches-thumbnail.jpg",
       "logo": "https://example.com/images/logo.png",
       "bannerPicture": "https://images.unsplash.com/photo-1476673160081-cf065607f449?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=872&q=80",
       "title": "Best of the Best Things to Do",
@@ -16,8 +16,8 @@
       "about": "Welcome to Awesome Asia, your gateway to incredible travel experiences. We specialize in crafting memorable Asia to the most breathtaking United State around the world. Our dedicated team of travel experts is committed to providing you with the best possible journey, filled with adventure, culture, and relaxation. Join us in exploring the wonders of our planet, one destination at a time."
     },
     {
-      "categoryName": "Buckets List",
-      "picture": "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+      "categoryName": "Nature and Outdoor",
+      "picture": "https://w0.peakpx.com/wallpaper/37/130/HD-wallpaper-empty-beach-chairs-at-sunset-thumbnail.jpg",
       "logo": "https://example.com/images/adventure_logo.png",
       "bannerPicture": "https://images.unsplash.com/photo-1513604170399-52192b510508?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
       "title": "Best of the Best Things to Do",
@@ -32,24 +32,8 @@
       "about": "Welcome to Adventure Explorers! We're your companions in seeking out heart-pounding adventures in the world's most daring locations. Our team is dedicated to delivering unforgettable experiences that challenge your limits and ignite your passion for exploration. Get ready to dive into the unknown!"
     },
     {
-      "categoryName": "Food % Culinary",
-      "picture": "https://images.unsplash.com/photo-1514190051997-0f6f39ca5cde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
-      "logo": "https://example.com/images/cultural_logo.png",
-      "bannerPicture": "https://images.unsplash.com/photo-1505870136463-c17bc84b30a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=928&q=80",
-      "title": "Best of the Best Things to Do",
-      "subTitle": "Travelers' Choice",
-      "menu": [
-        "World",
-        "Asia",
-        "United State",
-        "Australia",
-        "Switzerland"
-      ],
-      "about": "Welcome to Cultural Voyages! We're here to guide you through immersive journeys that delve deep into the vibrant cultures of our world. Join us in exploring traditions, connecting with locals, and gaining profound insights that transform the way you see the world."
-    },
-    {
-      "categoryName": "Nature & Outdoor",
-      "picture": "https://plus.unsplash.com/premium_photo-1664910200216-cdb7987cea6f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=869&q=80",
+      "categoryName": "Resorts",
+      "picture": "https://cdn.pixabay.com/photo/2017/08/07/09/25/swimming-2601877_640.jpg",
       "logo": "https://example.com/images/nature_logo.png",
       "bannerPicture": "https://images.unsplash.com/photo-1527856263669-12c3a0af2aa6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
       "title": "Best of the Best Things to Do",
@@ -64,8 +48,8 @@
       "about": "Welcome to Nature Escapes! We invite you to escape the hustle and bustle of everyday life and immerse yourself in the tranquility of nature. Our carefully crafted Asia offer breathtaking landscapes, rejuvenating experiences, and a chance to rediscover the serenity of the great outdoors."
     },
     {
-      "categoryName": "Wonderful Beach",
-      "picture": "https://plus.unsplash.com/premium_photo-1684917945314-a6148791249c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=869&q=80",
+      "categoryName": "mountain",
+      "picture": "https://cdn.pixabay.com/photo/2017/08/07/14/40/people-2604535_1280.jpg",
       "logo": "https://example.com/images/luxury_logo.png",
       "bannerPicture": "https://images.unsplash.com/photo-1519338381761-c7523edc1f46?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=977&q=80",
       "title": "Best of the Best Things to Do",
@@ -81,7 +65,7 @@
     },
     {
       "categoryName": "Amusement & Water Parks",
-      "picture": "https://images.unsplash.com/photo-1482685945432-29a7abf2f466?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=889&q=80",
+      "picture": "https://w0.peakpx.com/wallpaper/898/896/HD-wallpaper-singapore-amusement-park-singapore-city-world.jpg",
       "logo": "https://example.com/images/family_logo.png",
       "bannerPicture": "https://images.unsplash.com/photo-1529024241464-61b521f671eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=866&q=80",
       "title": "Best of the Best Things to Do",
@@ -96,8 +80,8 @@
       "about": "Welcome to Family Adventures! We believe that family time is precious, and what better way to strengthen bonds than through shared travel experiences. Our family-friendly Asia are designed to create lasting memories and bring loved ones closer together."
     },
     {
-      "categoryName": "Solo Explorations",
-      "picture": "https://plus.unsplash.com/premium_photo-1673367411999-e9966365f28a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=887&q=80",
+      "categoryName": "Family-Friendly Attractions",
+      "picture": "https://img.freepik.com/free-photo/family-travelers-with-backpacks-walking-track-parents-two-kids-hiking-outdoors-back-view-active-lifestyle-adventure-tourism-concept_74855-11685.jpg?size=626&ext=jpg&uid=R91874933&semt=ais",
       "logo": "https://example.com/images/solo_logo.png",
       "bannerPicture": "https://images.unsplash.com/photo-1504457047772-27faf1c00561?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=947&q=80",
       "title": "Best of the Best Things to Do",

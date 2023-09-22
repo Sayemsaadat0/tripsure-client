@@ -1,0 +1,33 @@
+[
+    {
+        "doctor_name": "Dr. Emily Johnson",
+        "hospital": "HealthyLife Medical Center",
+        "position": "Cardiologist",
+        "picture": "doctor_emily.jpg",
+        "tips_title": "Maintaining Heart Health",
+        "tips": [
+          "Engage in regular aerobic exercise, like brisk walking or cycling, for at least 30 minutes most days of the week.",
+          "Consume a heart-healthy diet high in fruits, vegetables, whole grains, and lean proteins while limiting saturated and trans fats.",
+          "Monitor your blood pressure and cholesterol levels regularly and follow your doctor's recommendations for managing them.",
+          "Reduce stress through relaxation techniques, such as deep breathing exercises or yoga.",
+          "Avoid smoking and limit alcohol intake to lower your risk of heart disease."
+        ],
+        "type": "heart"
+      },
+      {
+        "doctor_name": "Dr. Sarah Adams",
+        "hospital": "WellnessCare Clinic",
+        "position": "Ophthalmologist",
+        "picture": "doctor_sarah.jpg",
+        "tips_title": "Maintaining Eye Health",
+        "tips": [
+          "Protect your eyes from UV radiation by wearing sunglasses with UV-blocking lenses when outdoors.",
+          "Follow the 20-20-20 rule: Every 20 minutes, take a 20-second break, and focus on something at least 20 feet away to reduce eye strain.",
+          "Quit smoking to lower the risk of eye diseases like cataracts and macular degeneration.",
+          "Maintain a balanced diet rich in foods high in vitamins A, C, and E, as well as zinc and omega-3 fatty acids.",
+          "Get regular eye exams to detect and address vision issues or eye diseases early."
+        ],
+        "type": "eyes"
+      }      
+      
+]

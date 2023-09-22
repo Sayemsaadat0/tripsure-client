@@ -1,7 +1,11 @@
 import { Menu, Transition } from '@headlessui/react'
 import { Fragment, useEffect, useRef, useState } from 'react'
 import { CgProfile } from 'react-icons/cg'
+import { LuView } from 'react-icons/lu'
+import {LiaAddressBook} from 'react-icons/lia'
 import useAuth from '../../Hooks/useAuth'
+import { Link } from 'react-router-dom'
+import Swal from 'sweetalert2'
 
 const Dropdown = () => {
   const { user, logOut } = useAuth()
@@ -9,9 +13,7 @@ const Dropdown = () => {
     logOut()
       .then(() => {
         Swal.fire(
-          'Good job!',
           'log Out your account ',
-          'success'
         )
       })
       .catch(error => {
@@ -28,7 +30,7 @@ const Dropdown = () => {
     <div className=" w-[56px] text-right">
       <Menu as="div" className="relative inline-block text-left">
         <Menu.Button className="">
-          <img className='w-full h-full rounded-full border-2 border-[#2d969e] p-[2px]' src={`${user?.photoURL}`} alt="" />
+          <img className='w-20 h-20 object-contain rounded-full   p-[2px]' src={`${user?.photoURL}`} alt="" />
         </Menu.Button>
         <Transition
           as={Fragment}
@@ -39,25 +41,28 @@ const Dropdown = () => {
           leaveFrom="transform opacity-100 scale-100"
           leaveTo="transform opacity-0 scale-95"
         >
-          <Menu.Items className="absolute z-10 right-0 mt-6 w-60 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+          <Menu.Items className="absolute z-10 right-0  w-44 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
             <div className="p-3 space-y-3">
               <Menu.Item>
-                <div className='text-center space-y-1'>
-                  <img className='w-20 h-20 mx-auto rounded-full border-2 border-[#2d969e] p-[2px]' src={`${user?.photoURL}`} alt="" />
+                <div className=' space-y-1'>
                   <p className='text-lg font-medium'>{user?.displayName}</p>
-                  <p>{user?.email}</p>
                 </div>
               </Menu.Item>
-              <Menu.Item>
-                <button onClick={handleLogout} className="logout-button ">Log Out</button>
-              </Menu.Item>
+            
 
               <Menu.Item>
-                <div className='flex items-center gap-3 px-2 py-1 hover:bg-gray-300 rounded
-                '>
-                  <CgProfile size={20} color='19a0c9'></CgProfile>
+                <Link to={`/profile/${user?.email.split('.')[0]}`} className='flex items-center gap-3 py-1 hover:text-blue-400 rounded '>
+                
                   <span className='text-lg'>Your Profile</span>
-                </div>
+                </Link>
+              </Menu.Item>
+              <Menu.Item>
+                <Link to='/my_bookings' className='hover:text-blue-400 rounded'>
+                  <span className='text-lg'>My Bookings</span>
+                </Link>
+              </Menu.Item>
+              <Menu.Item>
+                <button onClick={handleLogout} className='hover:text-blue-400'>Log Out</button>
               </Menu.Item>
             </div>
           </Menu.Items>

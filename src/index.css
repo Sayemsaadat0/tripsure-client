@@ -2,14 +2,156 @@
 @tailwind components;
 @tailwind utilities;
 
+.main {
+  font-family: "Poppins", sans-serif;
+}
+
+p{
+  font-size: medium;
+}
+/* dashboard */
+.DashColor {
+  background-image: radial-gradient(
+      circle at 69% 86%,
+      rgba(105, 101, 101, 0.06) 0%,
+      rgba(165, 165, 165, 0.06) 25%,
+      rgba(193, 193, 193, 0.06) 25%,
+      rgba(193, 193, 193, 0.06) 50%,
+      rgba(221, 221, 221, 0.06) 50%,
+      rgba(221, 221, 221, 0.06) 75%,
+      rgba(249, 249, 249, 0.06) 75%,
+      rgba(249, 249, 249, 0.06) 100%
+    ),
+    radial-gradient(
+      circle at 49% 76%,
+      rgba(129, 129, 129, 0.06) 0%,
+      rgba(129, 129, 129, 0.06) 25%,
+      rgba(164, 164, 164, 0.06) 25%,
+      rgba(164, 164, 164, 0.06) 50%,
+      rgba(200, 200, 200, 0.06) 50%,
+      rgba(200, 200, 200, 0.06) 75%,
+      rgba(235, 235, 235, 0.06) 75%,
+      rgba(235, 235, 235, 0.06) 100%
+    ),
+    radial-gradient(
+      circle at 22% 64%,
+      rgba(173, 173, 173, 0.06) 0%,
+      rgba(173, 173, 173, 0.06) 25%,
+      rgba(119, 119, 119, 0.06) 25%,
+      rgba(119, 119, 119, 0.06) 50%,
+      rgba(64, 64, 64, 0.06) 50%,
+      rgba(64, 64, 64, 0.06) 75%,
+      rgba(10, 10, 10, 0.06) 75%,
+      rgba(10, 10, 10, 0.06) 100%
+    ),
+    linear-gradient(307deg, rgb(211, 236, 240), rgb(255, 255, 255));
+}
+.dashbox {
+  border-radius: 6px;
+  background: #ffffff;
+  box-shadow: 2px 2px 5px #c2c1c1, -5px -5px 10px #ffffff;
+}
+.authentication {
+  background-image: radial-gradient(
+      circle at 32% 12%,
+      rgba(229, 229, 229, 0.05) 0%,
+      rgba(229, 229, 229, 0.05) 50%,
+      rgba(101, 101, 101, 0.05) 50%,
+      rgba(101, 101, 101, 0.05) 100%
+    ),
+    radial-gradient(
+      circle at 49% 59%,
+      rgba(113, 113, 113, 0.05) 0%,
+      rgba(113, 113, 113, 0.05) 50%,
+      rgba(240, 240, 240, 0.05) 50%,
+      rgba(240, 240, 240, 0.05) 100%
+    ),
+    radial-gradient(
+      circle at 16% 86%,
+      rgba(118, 118, 118, 0.05) 0%,
+      rgba(118, 118, 118, 0.05) 50%,
+      rgba(207, 207, 207, 0.05) 50%,
+      rgba(207, 207, 207, 0.05) 100%
+    ),
+    linear-gradient(252deg, rgb(55, 82, 118), rgb(117, 220, 202));
+}
+
+.authenticationImg {
+  background-image: url("https://i.ibb.co/26q4PYj/ABCDEFGHI-JKLMNO-3.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.placeholder-text-color::placeholder {
+  color: black;
+  font-size: larger;
+}
+
+.DashNav {
+  background-image: radial-gradient(
+      circle at 69% 86%,
+      rgba(165, 165, 165, 0.06) 0%,
+      rgba(165, 165, 165, 0.06) 25%,
+      rgba(193, 193, 193, 0.06) 25%,
+      rgba(193, 193, 193, 0.06) 50%,
+      rgba(221, 221, 221, 0.06) 50%,
+      rgba(221, 221, 221, 0.06) 75%,
+      rgba(249, 249, 249, 0.06) 75%,
+      rgba(249, 249, 249, 0.06) 100%
+    ),
+    radial-gradient(
+      circle at 49% 76%,
+      rgba(129, 129, 129, 0.06) 0%,
+      rgba(129, 129, 129, 0.06) 25%,
+      rgba(164, 164, 164, 0.06) 25%,
+      rgba(164, 164, 164, 0.06) 50%,
+      rgba(200, 200, 200, 0.06) 50%,
+      rgba(200, 200, 200, 0.06) 75%,
+      rgba(235, 235, 235, 0.06) 75%,
+      rgba(235, 235, 235, 0.06) 100%
+    ),
+    radial-gradient(
+      circle at 22% 64%,
+      rgba(173, 173, 173, 0.06) 0%,
+      rgba(173, 173, 173, 0.06) 25%,
+      rgba(119, 119, 119, 0.06) 25%,
+      rgba(119, 119, 119, 0.06) 50%,
+      rgba(64, 64, 64, 0.06) 50%,
+      rgba(64, 64, 64, 0.06) 75%,
+      rgba(10, 10, 10, 0.06) 75%,
+      rgba(10, 10, 10, 0.06) 100%
+    ),
+    linear-gradient(307deg, rgb(255, 255, 255), rgb(255, 255, 255));
+}
+
 /* About us section style */
-.background {
-    background-image: url("https://i.ibb.co/v1y0v5m/AboutUs1.png");
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-   
+.Medical {
+  background-image: url("https://i.ibb.co/g46j1Jh/medical.png");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.story {
+  background-image: url("https://i.ibb.co/VT6G4T0/Site-Traffi-Sources.gif");
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* .aboutus {
+  background-image: url("https://i.ibb.co/VxPk4Xx/2.png");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
+.background1 {
+  background-image: url("https://i.ibb.co/c1RMT3p/2.png");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* rental cars */
@@ -39,82 +181,197 @@
 }
 
 /* more route */
-.flightBackground{
-    background-image: url("https://i.ibb.co/pLGYfBQ/image.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.flightBackground {
+  background-image: url("https://i.ibb.co/cbdQSTR/footar-2.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
+/* rental cars */
+.rentalCarBackground {
+  background-image: url("https://i.ibb.co/4Jnx7fv/footar-3.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.border-round {
+  border-radius: 4px;
+}
+
+/* Trips route */
+.tripDesignBackground1 {
+  background-image: url("https://i.ibb.co/CJjVncw/image.png");
+  background-position: center;
+  background-size: cover;
+}
+.tripDesignBackground2 {
+  background-image: url("https://i.ibb.co/54DH6LW/image.png");
+  background-position: center;
+  background-size: cover;
+}
+.tripDesignBackground3 {
+  background-image: url("https://i.ibb.co/fHgBPJs/image.png");
+  background-position: center;
+  background-size: cover;
+}
 
 /* Custom hover and click animation styles */
 .custom-tab-list {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    border-bottom: 1px solid #e0e0e0;
-  }
-  
-  .custom-tab {
-    padding: 10px 20px;
-    background-color: #b2f0bd;
-    color: #333;
-    border: none;
-    cursor: pointer;
-    margin-right: 10px;
-    border-radius: 5px 5px 0 0;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
-  }
-  
-  .custom-tab:hover {
-    background-color: #e0e0e0;
-    color: #555;
-    transform: scale(1.05);
-  }
-  
-  .custom-tab.react-tabs__tab--selected {
-    background-color: #fff;
-    color: #333;
-    border: 1px solid #e0e0e0;
-    border-bottom: none;
-    border-radius: 5px 5px 0 0;
-    transition: transform 0.2s ease;
-  }
-  
-  
-
-
-
-.button1 {
-    position: relative;
-    padding: 8px;
-    overflow: hidden;
-    border-radius: 8px;
-    background-color: #2a99be;
-    color: rgb(255, 255, 255);
-    font-size: larger;
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid #e0e0e0;
 }
 
-.button1:after {
-    content: "";
-    position: absolute;
-    background-color: rgba(10, 10, 10, 0.185);
-    width: 100%;
-    height: 100%;
-    transform: scale(4);
-    transition: transform 0.4s;
+.custom-tab {
+  padding: 10px 20px;
+  background-color: #b2f0bd;
+  color: #333;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+  border-radius: 5px 5px 0 0;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
 
-.button1:hover:after {
-    transform: scale(0);
+.custom-tab:hover {
+  background-color: #e0e0e0;
+  color: #555;
+  transform: scale(1.05);
 }
 
+.custom-tab.react-tabs__tab--selected {
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #e0e0e0;
+  border-bottom: none;
+  border-radius: 5px 5px 0 0;
+  transition: transform 0.2s ease;
+}
+
+.custom-tab.react-tabs__tab--selected:hover {
+  transform: scale(1.05);
+}
+
+.react-tabs__tab-panel.react-tabs__tab-panel--selected {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pulse-animation {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.sectionTitle {
+  font-family: "Space Mono", monospace;
+}
 
 .my-link::after {
-    @apply content-[''] text-black bg-[#6bccd3] w-[0%] h-[3px] absolute left-0 -bottom-1 rounded hover:w-[100%] duration-500;
+  @apply content-[''] text-black bg-[#79c7ff] w-[0%] h-[3px] absolute left-0 -bottom-1 rounded hover:w-[100%] duration-500;
 }
 
 .logout-button {
-    @apply relative w-full flex justify-center items-center gap-2 py-2 px-4 border border-transparent text-sm font-bold uppercase tracking-[1px] rounded-md text-white bg-[#2d969e] hover:bg-[#53a9af] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500 duration-500
+  @apply relative w-full flex justify-center items-center gap-2 py-2 px-3 border border-transparent text-sm font-bold uppercase tracking-[1px] rounded-md text-gray-100 hover:text-white bg-[#79c7ff] hover:bg-[#53a9af] focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-sky-500 duration-300;
+}
+
+.btn {
+  @apply bg-[#79c7ff] 
+    hover:bg-[#66a5bd]  
+    text-white
+    duration-500 
+    rounded-md   border-none;
+}
+.btn-primary {
+  @apply bg-white text-black rounded-md border border-black 
+  hover:hover:bg-[#79c7ff]  hover:border-white hover:text-white
+   font-semibold
+   duration-500 
+   px-4 py-2;
+}
+
+.badge {
+  background: white;
+  border: none;
+  color: red;
+  font-weight: 800;
+}
+
+.footar-image {
+  background-image: url("https://i.ibb.co/vXTRQsZ/7616596-ai.png");
+  background-repeat: no-repeat;
+  margin: auto;
+  background-size: cover;
+}
+
+/* search hotel page banner */
+.hotel-backgroundImg {
+  background-image: url("https://i.ibb.co/FnW1Wbf/image.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 40px 0px;
+}
+
+/* banner */
+
+.banner {
+  position: absolute;
+  z-index: 1;
+}
+
+::selection {
+  color: white;
+  background-color: #91d8f9;
+}
+
+/* Width and appearance of the scrollbar track */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgb(255, 255, 255);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 10px 20px;
+  background: #6290cb;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #33527a;
+}
+
+/* lazyload */
+.LazyLoad {
+  opacity: 0;
+  filter: blur(10px); /* Add a blur effect when loading */
+  transition: all 1s ease-in-out;
+}
+
+.is-visible {
+  opacity: 1;
+  filter: blur(0); /* Remove the blur when visible */
+}
+
+/* ant design card */
+:where(.css-dev-only-do-not-override-byeoj0).ant-card .ant-card-body {
+  padding: 0px;
 }

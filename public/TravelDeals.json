@@ -1,0 +1,252 @@
+[
+  {
+
+  "title": "4 Days in the Majestic Himalayas",
+  "destination": "Himalayas, India",
+  "country": "India",
+  "duration": "4 days",
+  "price": {
+    "adult": "$850",
+    "child": "$500"
+  },
+  "savings": {
+    "adult": "$150",
+    "child": "$100"
+  },
+  "newPrice": {
+    "adult": "$700",
+    "child": "$400"
+  },
+  "departureDates": [
+    "2023-11-10",
+    "2023-12-05"
+  ],
+  "totalPeople": 15,
+  "limitPerBooking": 5,
+  "conditions": [
+    "Participants must be at least 12 years old.",
+    "Infants are not allowed on this tour."
+  ],
+  "picture": "https://i.pinimg.com/564x/9e/b7/46/9eb746bf6fbff7d9bb8e8fdcedc99607.jpg",
+  "discountPercentage": 15,
+  "dealExpires": "2023-10-15",
+  "description": "Escape to the serene Himalayan mountains for a rejuvenating 4-day getaway. Embark on guided hikes through breathtaking landscapes, engage in cultural interactions with local villagers, and savor traditional Himalayan cuisine. Limited spots available, so seize this opportunity to unwind and recharge.",
+  "departureTime": "8:00 AM",
+  "departurePlace": "New Delhi International Airport",
+  "includedItems": [
+    "Accommodation in comfortable hotels",
+    "Guided nature walks",
+    "Meals as per itinerary (Breakfast, Lunch, Dinner)",
+    "Transportation between destinations (by plane)",
+    "Experienced local tour guide",
+    "Travel insurance",
+    "Morning yoga sessions",
+    "Evening meditation sessions",
+    "Bonfire and storytelling sessions",
+    "Cultural workshops",
+    "Airport transfers",
+    "Entrance fees to attractions"
+  ],
+  "optionalActivities": [
+    "Spa and wellness treatments",
+    "Horseback riding in the mountains",
+    "Local handicraft workshops"
+  ],
+  "hotels": [
+    {
+      "name": "Himalayan View Hotel",
+      "type": "Hotel",
+      "nights": 3,
+      "amenities": [
+        "Swimming Pool",
+        "Restaurant",
+        "Spa"
+      ]
+    }
+  ],
+  "itinerary": [
+    {
+      "day": 1,
+      "activities": [
+        "Arrival in Delhi",
+        "Meet at the airport",
+        "Travel to the mountains (by plane)"
+      ]
+    },
+    {
+      "day": 2,
+      "activities": [
+        "Guided hike to scenic viewpoints",
+        "Learn about local flora and fauna",
+        "Picnic lunch amidst nature",
+        "Evening bonfire and storytelling"
+      ]
+    },
+    {
+      "day": 3,
+      "activities": [
+        "Visit local village",
+        "Cultural interactions with villagers",
+        "Experience traditional Himalayan cuisine",
+        "Guided meditation session"
+      ]
+    },
+    {
+      "day": 4,
+      "activities": [
+        "Morning yoga session",
+        "Free time for relaxation",
+        "Return to Delhi (by plane)"
+      ]
+    }
+  ],
+  "additionalInfo": [
+    "Participants should be prepared for light hiking.",
+    "Comfortable clothing and walking shoes are recommended."
+  ],
+"reviews": {
+  "userImage": "https://example.com/user123.jpg",
+  "ratings": {
+    "overall": 5,
+    "accommodation": 4,
+    "activities": 5,
+    "food": 5,
+    "guide": 5
+  },
+  "review": "I had an absolutely amazing time during the 4 Days in the Majestic Himalayas tour. The breathtaking landscapes, guided hikes, and interactions with the local villagers made this trip truly unforgettable. The accommodations at Himalayan View Hotel were comfortable, and the amenities like the swimming pool and spa were a nice touch. The guided nature walks and cultural experiences were well-organized and informative. I particularly enjoyed the traditional Himalayan cuisine and the guided meditation session. Our tour guide was incredibly knowledgeable and made the whole experience even more enriching. This tour exceeded my expectations in every way, and I would highly recommend it to anyone seeking a rejuvenating mountain getaway."
+}
+},
+
+{
+    "title": "Exploring the Enchanting Andes",
+    "destination": "Andes Mountains, Chile",
+    "country": "Chile",
+    "duration": "6 days",
+    "price": {
+      "adult": 1200,
+      "child": 800
+    },
+    "savings": {
+      "adult": 250,
+      "child": 150
+    },
+    "newPrice": {
+      "adult": 950,
+      "child": 650
+    },
+    "departureDates": [
+      "2023-09-05",
+      "2023-10-10"
+    ],
+    "totalPeople": 10,
+    "limitPerBooking": 3,
+    "conditions": [
+      "Participants must be at least 16 years old.",
+      "Children under 16 must be accompanied by an adult."
+    ],
+    "picture": "https://i.pinimg.com/564x/2e/0d/22/2e0d22948d4879b64b02c34d6994f400.jpg",
+    "discountPercentage": 20,
+    "dealExpires": "2023-08-20",
+    "description": "Embark on a captivating 6-day journey to the majestic Andes Mountains in Chile. Immerse yourself in the awe-inspiring landscapes, engage in cultural exchanges with local communities, and relish the flavors of authentic Chilean cuisine. Limited spots available.",
+    "departureTime": "10:00 AM",
+    "departurePlace": "Santiago International Airport",
+    "includedItems": [
+      "Accommodation in charming mountain lodges",
+      "Guided trekking adventures",
+      "Meals as per itinerary (Breakfast, Lunch, Dinner)",
+      "Airport transfers",
+      "Experienced local guide",
+      "Travel insurance",
+      "Cultural workshops",
+      "Visit to local markets",
+      "Traditional dance performances",
+      "Visit to hot springs"
+    ],
+    "optionalActivities": [
+      "Horseback riding expeditions",
+      "Mountain photography tours",
+      "Wine tasting excursions"
+    ],
+    "hotels": [
+      {
+        "name": "Andean Bliss Lodge",
+        "type": "Mountain Lodge",
+        "nights": 5,
+        "amenities": [
+          "Hot Springs",
+          "Restaurant",
+          "Scenic Views"
+        ]
+      }
+    ],
+    "itinerary": [
+      {
+        "day": 1,
+        "activities": [
+          "Arrival in Santiago",
+          "Meet at the airport",
+          "Travel to the Andes (by van)"
+        ]
+      },
+      {
+        "day": 2,
+        "activities": [
+          "Guided trek to high-altitude viewpoints",
+          "Learn about local flora and fauna",
+          "Picnic lunch amidst the mountains",
+          "Evening dance performance"
+        ]
+      },
+      {
+        "day": 3,
+        "activities": [
+          "Visit to a traditional village",
+          "Cultural exchange with local artisans",
+          "Authentic Chilean dinner",
+          "Stargazing session"
+        ]
+      },
+      {
+        "day": 4,
+        "activities": [
+          "Horseback riding through scenic trails",
+          "Free time for relaxation and exploration",
+          "Traditional cooking class",
+          "Bonfire storytelling"
+        ]
+      },
+      {
+        "day": 5,
+        "activities": [
+          "Exploration of local markets",
+          "Wellness session: Hot springs relaxation",
+          "Sunset photography tour",
+          "Return to Santiago (by van)"
+        ]
+      },
+      {
+        "day": 6,
+        "activities": [
+          "Morning yoga session",
+          "Farewell ceremony",
+          "Departure from Santiago"
+        ]
+      }
+    ],
+    "additionalInfo": [
+      "Participants should have a moderate level of fitness.",
+      "Layered clothing suitable for changing weather is recommended."
+    ],
+  "reviews": { 
+    "userImage": "https://example.com/user789.jpg",
+    "ratings": {
+      "overall": 4,
+      "accommodation": 4,
+      "activities": 5,
+      "food": 4,
+      "guide": 5
+    },
+    "review": "My experience on the Exploring the Enchanting Andes tour was incredible. The mountain lodges were cozy and provided stunning views. The guided trekking adventures allowed me to connect with nature and experience the grandeur of the Andes. The cultural workshops and interactions with local artisans were both educational and heartwarming. I enjoyed the traditional Chilean cuisine and the dance performance added a festive touch. The horseback riding and hot springs were definite highlights, offering relaxation and adventure. The tour guide was knowledgeable and made the trip enjoyable with their insights. The photography tour during sunset was magical. This journey allowed me to immerse myself in the culture and beauty of the Andes, and I would highly recommend it to anyone seeking a unique and enriching experience."
+  }
+}
+]
