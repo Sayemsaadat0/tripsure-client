@@ -10,7 +10,7 @@ const SocialMediaShare = ({ todo }) => {
 
 
 
-  const topDestinationUrl = `https://tripsure-client.web.app/top-destination-details/${todo._id}`
+  const topDestinationUrl = `https://tripsure-client.web.app/top-destination-details/${todo?._id}`
 
 
 
@@ -20,7 +20,7 @@ const SocialMediaShare = ({ todo }) => {
         <FacebookShareButton
           className="FacebookShareButton"
           url={todo && topDestinationUrl }
-          quote={todo.cardtitle}
+          quote={todo?.cardtitle}
           hashtag="#TripSure #Travel"
         >
           <FacebookIcon size={20} round={true} />
@@ -28,7 +28,7 @@ const SocialMediaShare = ({ todo }) => {
         <TwitterShareButton
           className="TwitterShareButton"
           url={todo && topDestinationUrl }
-          quote={todo.cardtitle}
+          quote={todo?.cardtitle}
           hashtag="#TripSure #Travel"
         >
           <TwitterIcon size={20} round={true} />

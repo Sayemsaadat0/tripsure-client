@@ -45,7 +45,7 @@ const RestaurantSwiper = ({restaurant}) => {
               <h2 className="text-black font-bold text-xl">{todo.title}</h2>
               <p className="text-green-700  flex items-center  justify-between gap-2">
                 <Rating
-                  placeholderRating={todo.ratings.food}
+                  placeholderRating={todo?.ratings?.food}
                   emptySymbol={<FaCircleNotch className="w-3"></FaCircleNotch>}
                   placeholderSymbol={<FaCircle className="w-3"></FaCircle>}
                   fullSymbol={<FaCircle className="w-4"></FaCircle>}

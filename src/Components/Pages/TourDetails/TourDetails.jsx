@@ -117,7 +117,7 @@ const TourDetails = () => {
         </div>
         <div className="grid lg:grid-cols-2">
           <div>
-            <h3 className="text-2xl tracking-widest">About</h3>
+            <h3 className="text-2xl font-bold tracking-widest">About</h3>
             <p>
               {placedetails} Halona Blowhole, the Byodo-In Temple and the
               surfing beaches of the North Shore. Plus, you'll have time to

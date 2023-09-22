@@ -63,7 +63,7 @@ const TravelerChoose = () => {
                     to={`/tourDetails/${fistOneCard?._id}`}
                     className="text-4xl font-bold text-black"
                   >
-                    {fistOneCard?.cardtitle}
+                    {fistOneCard?.placetitle}
                     </Link>
                     <SocialMediaShare />
                   </div>
