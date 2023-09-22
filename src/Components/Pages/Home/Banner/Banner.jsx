@@ -5,7 +5,9 @@ import React, { useState, useEffect } from "react";
 import Container from '../../../../LayOut/Container';
 import CountUp from 'react-countup';
 import { BsSearch } from "react-icons/bs";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { Carousel } from 'antd';
+import LazyLoad from "react-lazy-load";
 
 const Banner = () => {
 
@@ -97,11 +99,120 @@ const Banner = () => {
           results.map((result, index) => (
             <div key={index} className="mb-2">
               <p>{result.title}</p>
-              {result.type === "country" && <p>This is a country</p>}
-              {result.type === "hotel" && <p>This is hotel data</p>}
-              {result.type === "restaurant" && <p>This is restaurant</p>}
-              {result.type === "area" && <p>This is area</p>}
-              {result.type === "resort" && <p>This is resort</p>}
+              {/* country  */}
+              {result.type === "country" && <div className="mt-20 px-4 md:px-0 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                <div className="card card-compact  bg-base-100 ">
+                  <Carousel>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Landscape_of_Bandarban%2C_Bangladesh.jpg/1200px-Landscape_of_Bandarban%2C_Bangladesh.jpg" alt="Shoes" />
+                    <img src="https://parjatan.portal.gov.bd/sites/default/files/files/parjatan.portal.gov.bd/page/bfb31211_a310_42c9_a003_7b6c36c46180/Kuakata%20Beach.jpg" alt="Shoes" />
+                  </Carousel>
+                  <div className="mt-2">
+                    <h2 className="card-title">{result.title}</h2>
+                    <p>{result.description}</p>
+                  </div>
+                </div>
+              </div>}
+              {/* country finish */}
+
+
+              {/* hotel card */}
+              {result.type === "hotel" && <Link to={`search/${result._id}`}>
+                <div className="mt-20 px-4 md:px-0 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                  <div className="card card-compact  bg-base-100 ">
+                    <Carousel autoplay>
+                      {
+                        result.pictures.map((picture, index) => (
+                          <LazyLoad>
+                            <img className='rounded-lg h-40 w-full object-cover' key={index} src={picture} alt="" />
+                          </LazyLoad>
+                        ))
+                      }
+
+                    </Carousel>
+                    <div className="mt-2">
+                      <h2 className="card-title">{result.title}</h2>
+                      <div className="flex justify-between">
+                        <p>{result.address}</p>
+                        <p>{result.review?.rating}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div></Link>}
+              {/* hotel card finish */}
+
+{/* restaurant */}
+              {result.type === "restaurant" && <Link to={`search/${result._id}`}>
+                <div className="mt-20 px-4 md:px-0 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                  <div className="card card-compact  bg-base-100 ">
+                    <Carousel autoplay>
+                      {
+                        result.pictures.map((picture, index) => (
+                          <LazyLoad>
+                            <img className='rounded-lg h-40 w-full object-cover' key={index} src={picture} alt="" />
+                          </LazyLoad>
+                        ))
+                      }
+
+                    </Carousel>
+                    <div className="mt-2">
+                      <h2 className="card-title">{result.title}</h2>
+                      <div className="flex justify-between">
+                        <p>{result.address}</p>
+                        <p>{result.review?.rating}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div></Link>}
+
+                {/* area */}
+              {result.type === "area" && <Link to={`search/${result._id}`}>
+                <div className="mt-20 px-4 md:px-0 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                  <div className="card card-compact  bg-base-100 ">
+                    <Carousel autoplay>
+                      {
+                        result.pictures.map((picture, index) => (
+                          <LazyLoad>
+                            <img className='rounded-lg h-40 w-full object-cover' key={index} src={picture} alt="" />
+                          </LazyLoad>
+                        ))
+                      }
+
+                    </Carousel>
+                    <div className="mt-2">
+                      <h2 className="card-title">{result.title}</h2>
+                      <div className="flex justify-between">
+                        <p>{result.address}</p>
+                        <p>{result.review?.rating}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div></Link>}
+
+
+
+                {/* resorts */}
+              {result.type === "resort" && <Link to={`search/${result._id}`}>
+                <div className="mt-20 px-4 md:px-0 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                  <div className="card card-compact  bg-base-100 ">
+                    <Carousel autoplay>
+                      {
+                        result.pictures.map((picture, index) => (
+                          <LazyLoad>
+                            <img className='rounded-lg h-40 w-full object-cover' key={index} src={picture} alt="" />
+                          </LazyLoad>
+                        ))
+                      }
+
+                    </Carousel>
+                    <div className="mt-2">
+                      <h2 className="card-title">{result.title}</h2>
+                      <div className="flex justify-between">
+                        <p>{result.address}</p>
+                        <p>{result.review?.rating}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div></Link>}
             </div>
           ))
         ) : " "}
