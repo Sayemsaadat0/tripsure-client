@@ -22,6 +22,7 @@ const AddReview = () => {
       rating,
       textareaValue,
       user,
+      title : "tripsure"
     };
 
    

@@ -46,7 +46,6 @@ import PrivateRoutes from "./PrivateRoutes";
 import NewProfile from "../Pages/Profile/NewProfile";
 import PostStory from "../Pages/Community/PostAStory/PostStory";
 // search
-import SearchResult from "../Pages/SearchResult/SearchResult";
 import SearchCountry from "../Pages/SearchResult/searchCountryPage/SearchCountry";
 import SearchHotel from "../Pages/SearchResult/searchHotelPage/SearchHotel";
 import SearchDetails from "../Pages/SearchResult/SearchDetails";
@@ -172,10 +171,6 @@ const router = createBrowserRouter([
       {
         path: "/travelerChoose-thingsToDo/:category",
         element: <TravelerChoose></TravelerChoose>,
-      },
-      {
-        path: "searchResult",
-        element: <SearchResult />,
       },
       {
         path: "searchCountry/:country",
