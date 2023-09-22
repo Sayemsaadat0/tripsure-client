@@ -36,7 +36,7 @@ const DoSwiper = ({ doPlace }) => {
       >
         {doPlace?.map((todo, index) => (
           <SwiperSlide key={index}>
-            <Link to={`/dothings-attraction-reviews/${todo._id}`}>
+            <Link to={`/tourDetails/${todo._id}`}>
               <img
                 className="h-40  w-full rounded-lg object-cover"
                 src={todo.picture}
