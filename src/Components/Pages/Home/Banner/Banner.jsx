@@ -98,7 +98,6 @@ const Banner = () => {
         {results.length > 0 ? (
           results.map((result, index) => (
             <div key={index} className="mb-2">
-              <p>{result.title}</p>
               {/* country  */}
               {result.type === "country" && <div className="mt-20 px-4 md:px-0 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 <div className="card card-compact  bg-base-100 ">
