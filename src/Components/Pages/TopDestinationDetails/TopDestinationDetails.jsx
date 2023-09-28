@@ -35,8 +35,7 @@ const TopDestinationDetails = () => {
   useEffect(() => {
     axios
       .get(
-        `${import.meta.env.VITE_BACKEND_API}/all-hotels/${
-          topDestinationDetails?.country
+        `${import.meta.env.VITE_BACKEND_API}/all-hotels/${topDestinationDetails?.country
         }`
       )
       .then((data) => {
@@ -45,32 +44,32 @@ const TopDestinationDetails = () => {
   }, [topDestinationDetails])
 
 
-  
- 
+
+
   useEffect(() => {
     axios.get(`${import.meta.env.VITE_BACKEND_API}/tourCountry/${topDestinationDetails?.country}`)
       .then((data) => {
         setDoPlace(data.data);
       })
   }, [topDestinationDetails])
- 
- 
- 
- useEffect(() => {
+
+
+
+  useEffect(() => {
     axios.get(`${import.meta.env.VITE_BACKEND_API}/restaurant/${topDestinationDetails?.country}`)
       .then((data) => {
         setRestaurants(data.data);
       });
   }, [topDestinationDetails]);
 
- 
+
   return (
     <Container>
-      <PageTitle title="Top Destination"/>
+      <PageTitle title="Top Destination" />
       <div className="mx-2 mt-20">
         <div>
           <h1 className="text-5xl underline underline-offset-4 tracking-widest">{topDestinationDetails?.placetitle}</h1>
-          
+
           <div className="my-6">
             <img
               className="w-full 
@@ -85,15 +84,15 @@ const TopDestinationDetails = () => {
             />
           </div>
 
-          {/* do section and swiper slider */}
+
           <div>
             <h3
               className="
               text-2xl 
               tracking-widest underline  text-black my-12">
-              Essential {topDestinationDetails?.cardtitle? topDestinationDetails?.cardtitle: topDestinationDetails?.placetitle} </h3>
-              <h2 className="text-xl font-bold">About</h2>
-              <p className="mb-4">{topDestinationDetails?.placedetails}</p>
+              Essential {topDestinationDetails?.cardtitle ? topDestinationDetails?.cardtitle : topDestinationDetails?.placetitle} </h3>
+            <h2 className="text-xl font-bold">About</h2>
+            <p className="mb-4">{topDestinationDetails?.placedetails}</p>
             <div className="lg:grid justify-between gap-2 grid-cols-[300px_minmax(900px,_1fr)_100px]">
               <div className="">
                 <h3 className="tracking-widest font-bold my-2 text-gray-700">
@@ -139,4 +138,3 @@ const TopDestinationDetails = () => {
 
 export default TopDestinationDetails;
 
-// ${import.meta.env.VITE_BACKEND_API}
