@@ -13,7 +13,6 @@ const Main = () => {
         <div className='scroll-container main'>
             {noHeaderFooter || <Navbar></Navbar>}
             <div>
-                <DialogflowAi />
                 <CustomChatBot></CustomChatBot>
             </div>
             <Outlet></Outlet>
